@@ -1,1 +1,2 @@
 com.kreative.charset.KreativeCharsetProvider
+com.kreative.charset.petscii.PetsciiCharsetProvider
