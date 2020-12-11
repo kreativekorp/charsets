@@ -10,7 +10,14 @@ public class PetsciiCharsetProvider extends CharsetProvider {
 	private final List<Charset> charsets;
 	
 	public PetsciiCharsetProvider() {
-		charsets = Arrays.asList(new Petscii8Charset());
+		charsets = Arrays.asList(
+			new PetsciiCharset(false, false),
+			new PetsciiCharset(true, false),
+			new PetsciiCharset(false, true),
+			new PetsciiCharset(true, true),
+			new Petscii8Charset(),
+			new Latin9PCharset()
+		);
 	}
 	
 	@Override
