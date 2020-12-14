@@ -2,3 +2,4 @@ com.kreative.charset.KreativeCharsetProvider
 com.kreative.charset.apple2.AppleIICharsetProvider
 com.kreative.charset.atari.AtariCharsetProvider
 com.kreative.charset.petscii.PetsciiCharsetProvider
+com.kreative.charset.sinclair.SinclairCharsetProvider
