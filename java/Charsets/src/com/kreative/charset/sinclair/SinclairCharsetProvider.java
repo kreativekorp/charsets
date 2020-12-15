@@ -16,6 +16,8 @@ public class SinclairCharsetProvider extends CharsetProvider {
 		for (ZXSpectrumVariant variant : ZXSpectrumVariant.values()) {
 			charsets.add(new ZXSpectrumCharset(variant));
 		}
+		charsets.add(new SinclairQLCharset(false));
+		charsets.add(new SinclairQLCharset(true));
 	}
 	
 	@Override
