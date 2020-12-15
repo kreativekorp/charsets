@@ -5,10 +5,19 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
 
 public class AtasciiCharset extends Charset {
+	private static final String name(boolean intl, boolean video) {
+		StringBuffer sb = new StringBuffer("x-atascii");
+		if (intl) sb.append("-int");
+		if (video) sb.append("-video");
+		return sb.toString();
+	}
+	
+	private final boolean intl;
 	private final boolean video;
 	
-	public AtasciiCharset(boolean video) {
-		super((video ? "x-atascii-video" : "x-atascii"), new String[]{});
+	public AtasciiCharset(boolean intl, boolean video) {
+		super(name(intl, video), new String[]{});
+		this.intl = intl;
 		this.video = video;
 	}
 	
@@ -19,11 +28,11 @@ public class AtasciiCharset extends Charset {
 	
 	@Override
 	public CharsetDecoder newDecoder() {
-		return new AtasciiDecoder(this, video);
+		return new AtasciiDecoder(this, intl, video);
 	}
 	
 	@Override
 	public CharsetEncoder newEncoder() {
-		return new AtasciiEncoder(this);
+		return new AtasciiEncoder(this, intl, video);
 	}
 }

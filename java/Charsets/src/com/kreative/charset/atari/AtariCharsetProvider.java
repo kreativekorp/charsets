@@ -11,8 +11,10 @@ public class AtariCharsetProvider extends CharsetProvider {
 	
 	public AtariCharsetProvider() {
 		charsets = Arrays.asList(
-			new AtasciiCharset(false),
-			new AtasciiCharset(true),
+			new AtasciiCharset(false, false),
+			new AtasciiCharset(false, true),
+			new AtasciiCharset(true, false),
+			new AtasciiCharset(true, true),
 			new AtariSTCharset(false),
 			new AtariSTCharset(true)
 		);
