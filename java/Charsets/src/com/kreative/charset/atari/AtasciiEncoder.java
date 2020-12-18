@@ -1,71 +1,48 @@
 package com.kreative.charset.atari;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetEncoder;
 
-public class AtasciiEncoder extends CharsetEncoder {
+public class AtasciiEncoder extends AbstractCharsetEncoder {
 	private final boolean intl;
 	private final boolean video;
 	
 	protected AtasciiEncoder(Charset cs, boolean intl, boolean video) {
-		super(cs, 1, 1);
+		super(cs, 1);
 		this.intl = intl;
 		this.video = video;
 	}
 	
-	protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int ch = in.get() & 0xFFFF;
-			if (Character.isHighSurrogate((char)ch)) {
-				if (in.hasRemaining()) {
-					int cl = in.get() & 0xFFFF;
-					if (Character.isLowSurrogate((char)cl)) {
-						ch = Character.toCodePoint((char)ch, (char)cl);
-					} else {
-						in.position(in.position() - 2);
-						return CoderResult.unmappableForLength(1);
-					}
-				} else {
-					in.position(in.position() - 1);
-					return CoderResult.UNDERFLOW;
-				}
-			}
-			if (ch >= 0x20 && ch <= 0x5F) out.put((byte)(video ? (ch - 0x20) : ch));
-			else if (ch >= 0x61 && ch <= 0x7A) out.put((byte)ch);
-			else switch (ch) {
-			case 0x0007:  out.put((byte)0xFD); break; // Bell
-			case 0x0008:  out.put((byte)0x7E); break; // Backspace
-			case 0x0009:  out.put((byte)0x7F); break; // Tab
-			case 0x000A:  out.put((byte)0x9B); break; // End of Line
-			case 0x000B:  out.put((byte)0x7D); break; // Clear Screen
-			case 0x000C:  out.put((byte)0x7D); break; // Clear Screen
-			case 0x000D:  out.put((byte)0x9B); break; // End of Line
-			case 0x001B:  out.put((byte)0x1B); break; // Escape
-			case 0x001C:  out.put((byte)0x1C); break; // Cursor Up
-			case 0x001D:  out.put((byte)0x1D); break; // Cursor Down
-			case 0x001E:  out.put((byte)0x1E); break; // Cursor Left
-			case 0x001F:  out.put((byte)0x1F); break; // Cursor Right
-			case 0x0085:  out.put((byte)0x9B); break; // End of Line
-			case 0x0087:  out.put((byte)0xFD); break; // Bell
-			case 0x0088:  out.put((byte)0xFE); break; // Delete Character
-			case 0x0089:  out.put((byte)0xFF); break; // Insert Character
-			case 0x009B:  out.put((byte)0x9B); break; // End of Line
-			case 0x009C:  out.put((byte)0x9C); break; // Delete Line
-			case 0x009D:  out.put((byte)0x9D); break; // Insert Line
-			case 0x009E:  out.put((byte)0x9E); break; // Clear Tab Stop
-			case 0x009F:  out.put((byte)0x9F); break; // Set Tab Stop
-			default:
-				int b = intl ? encodeCharIntl(ch) : encodeCharGr(ch);
-				if (b < 0) return unmappable(in, ch);
-				else out.put((byte)(video ? (b | 0x40) : b));
-				break;
-			}
+	@Override
+	protected int encode(int ch) {
+		if (ch >= 0x20 && ch <= 0x5F) return (video ? (ch - 0x20) : ch);
+		if (ch >= 0x61 && ch <= 0x7A) return ch;
+		switch (ch) {
+		case 0x0007: return 0xFD; // Bell
+		case 0x0008: return 0x7E; // Backspace
+		case 0x0009: return 0x7F; // Tab
+		case 0x000A: return 0x9B; // End of Line
+		case 0x000B: return 0x7D; // Clear Screen
+		case 0x000C: return 0x7D; // Clear Screen
+		case 0x000D: return 0x9B; // End of Line
+		case 0x001B: return 0x1B; // Escape
+		case 0x001C: return 0x1C; // Cursor Up
+		case 0x001D: return 0x1D; // Cursor Down
+		case 0x001E: return 0x1E; // Cursor Left
+		case 0x001F: return 0x1F; // Cursor Right
+		case 0x0085: return 0x9B; // End of Line
+		case 0x0087: return 0xFD; // Bell
+		case 0x0088: return 0xFE; // Delete Character
+		case 0x0089: return 0xFF; // Insert Character
+		case 0x009B: return 0x9B; // End of Line
+		case 0x009C: return 0x9C; // Delete Line
+		case 0x009D: return 0x9D; // Insert Line
+		case 0x009E: return 0x9E; // Clear Tab Stop
+		case 0x009F: return 0x9F; // Set Tab Stop
+		default:
+			int b = intl ? encodeCharIntl(ch) : encodeCharGr(ch);
+			return (b >= 0 && video) ? (b | 0x40) : b;
 		}
-		return CoderResult.UNDERFLOW;
 	}
 	
 	private int encodeCharGr(int ch) {
@@ -118,7 +95,7 @@ public class AtasciiEncoder extends CharsetEncoder {
 		case 0x1F8B0: return 0x7D; // ARROW POINTING UPWARDS THEN NORTH WEST
 		case 0x1FB82: return 0x0D; // UPPER ONE QUARTER BLOCK
 		case 0x1FB87: return 0x02; // RIGHT ONE QUARTER BLOCK
-		default: return -1;
+		default: return UNMAPPABLE;
 		}
 	}
 	
@@ -162,13 +139,7 @@ public class AtasciiEncoder extends CharsetEncoder {
 		case 0x25B6:  return 0x7F; // BLACK RIGHT-POINTING TRIANGLE
 		case 0x25C0:  return 0x7E; // BLACK LEFT-POINTING TRIANGLE
 		case 0x1F8B0: return 0x7D; // ARROW POINTING UPWARDS THEN NORTH WEST
-		default: return -1;
+		default: return UNMAPPABLE;
 		}
-	}
-	
-	private CoderResult unmappable(CharBuffer in, int ch) {
-		int i = Character.charCount(ch);
-		in.position(in.position() - i);
-		return CoderResult.unmappableForLength(i);
 	}
 }

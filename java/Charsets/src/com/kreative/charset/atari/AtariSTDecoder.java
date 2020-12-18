@@ -1,12 +1,9 @@
 package com.kreative.charset.atari;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class AtariSTDecoder extends CharsetDecoder {
+public class AtariSTDecoder extends AbstractCharsetDecoder {
 	private static final int[] ATARI_ST_LOW = {
 		0x0000,  0x21E7,  0x21E9,  0x21E8,  0x21E6,  0x1FBBD, 0x1FBBE, 0x1FBBF, //  ⇧⇩⇨⇦🮽🮾🮿
 		0x2713,  0x1F552, 0x1F514, 0x266A,  0x240C,  0x240D,  0xF82A,  0xF82B,  // ✓🕒🔔♪␌␍
@@ -35,20 +32,15 @@ public class AtariSTDecoder extends CharsetDecoder {
 	private final boolean video;
 	
 	public AtariSTDecoder(Charset cs, boolean video) {
-		super(cs, 1, 2);
+		super(cs);
 		this.video = video;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b >= 0x80) out.put(Character.toChars(ATARI_ST_HIGH[b & 0x7F]));
-			else if (!video || (b >= 0x20 && b < 0x7F)) out.put((char)b);
-			else if (b == 0x7F) out.put((char)0x2302); // HOUSE
-			else out.put(Character.toChars(ATARI_ST_LOW[b]));
-		}
-		return CoderResult.UNDERFLOW;
+	protected int decode(int b) {
+		if (b >= 0x80) return ATARI_ST_HIGH[b & 0x7F];
+		if (!video || (b >= 0x20 && b < 0x7F)) return b;
+		if (b == 0x7F) return 0x2302; // HOUSE
+		return ATARI_ST_LOW[b];
 	}
 }

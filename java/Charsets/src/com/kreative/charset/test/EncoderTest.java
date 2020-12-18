@@ -1,21 +1,26 @@
 package com.kreative.charset.test;
+
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.IllegalCharsetNameException;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.Scanner;
 
 public class EncoderTest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
 		if (args.length != 1) {
 			System.err.println("Must specify one argument which is encoding name.");
 		} else try {
 			Charset cs = Charset.forName(args[0]);
+			PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out, "UTF-8"), true);
 			Scanner sc = new Scanner(System.in, "UTF-8");
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				line = unescape(line);
 				byte[] bytes = line.getBytes(cs);
-				printBytes(bytes);
+				printBytes(out, bytes, cs);
 			}
 			sc.close();
 		} catch (IllegalCharsetNameException e) {
@@ -88,20 +93,18 @@ public class EncoderTest {
 		return out.toString();
 	}
 	
-	private static void printBytes(byte[] bytes) {
+	private static void printBytes(PrintWriter out, byte[] bytes, Charset cs) {
 		if (bytes.length > 0) {
 			for (byte b : bytes) {
 				String h = Integer.toHexString(b & 0xFF).toUpperCase();
 				while (h.length() < 2) h = "0" + h;
-				System.out.print(h + " ");
+				out.print(h + " ");
 			}
-			System.out.print("| ");
-			for (byte b : bytes) {
-				char c = (char)(b & 0xFF);
-				if (c < 0x20 || c >= 0x7F) c = '.';
-				System.out.print(c);
-			}
+			out.print("| ");
+			String bs = new String(bytes, cs);
+			bs = bs.replaceAll("[\u0000-\u001F\u007F-\u009F]", ".");
+			out.print(bs);
 		}
-		System.out.println();
+		out.println();
 	}
 }

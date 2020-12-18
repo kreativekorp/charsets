@@ -1,30 +1,19 @@
 package com.kreative.charset.ti;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class TI994aDecoder extends CharsetDecoder {
+public class TI994aDecoder extends AbstractCharsetDecoder {
 	public TI994aDecoder(Charset cs) {
-		super(cs, 1, 2);
+		super(cs);
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b == 0x1E) out.put((char)0x2588);
-			else if (b == 0x1F) out.put((char)0xA0);
-			else if (b < 0x7F) out.put((char)b);
-			else if (b < 0xA0) out.put((char)(b | 0xF000));
-			else {
-				in.position(in.position() - 1);
-				return CoderResult.unmappableForLength(1);
-			}
-		}
-		return CoderResult.UNDERFLOW;
+	protected int decode(int b) {
+		if (b == 0x1E) return 0x2588; // FULL BLOCK
+		if (b == 0x1F) return 0x00A0; // NO-BREAK SPACE
+		if (b < 0x7F) return b;
+		if (b < 0xA0) return b | 0xF000;
+		return UNMAPPABLE;
 	}
 }

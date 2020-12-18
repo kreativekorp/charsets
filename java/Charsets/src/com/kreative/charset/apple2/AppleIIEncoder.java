@@ -5,6 +5,7 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetEncoder;
 
 public class AppleIIEncoder extends CharsetEncoder {
 	private final boolean enhanced;
@@ -14,109 +15,106 @@ public class AppleIIEncoder extends CharsetEncoder {
 		this.enhanced = enhanced;
 	}
 	
-	protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
+	@Override
+	protected final CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
 		while (in.hasRemaining()) {
 			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int ch = in.get() & 0xFFFF;
-			if (Character.isHighSurrogate((char)ch)) {
-				if (in.hasRemaining()) {
-					int cl = in.get() & 0xFFFF;
-					if (Character.isLowSurrogate((char)cl)) {
-						ch = Character.toCodePoint((char)ch, (char)cl);
-					} else {
-						in.position(in.position() - 2);
-						return CoderResult.unmappableForLength(1);
-					}
-				} else {
-					in.position(in.position() - 1);
-					return CoderResult.UNDERFLOW;
-				}
-			}
+			int p = in.position();
+			int ch = AbstractCharsetEncoder.getCodePoint(in);
+			if (ch < 0) return CoderResult.UNDERFLOW;
+			
 			// This whole block is just for handling Apple's PUA encoding of its logo.
 			if (ch == 0xF8FF) {
 				if (in.hasRemaining()) {
-					int cl = in.get() & 0xFFFF;
+					int q = in.position();
+					int cl = AbstractCharsetEncoder.getCodePoint(in);
 					if (cl == 0xF87F) {
 						if (enhanced) {
 							out.put((byte)0x41);
 							continue;
 						} else {
-							in.position(in.position() - 2);
-							return CoderResult.unmappableForLength(2);
+							int n = in.position() - p; in.position(p);
+							return CoderResult.unmappableForLength(n);
 						}
 					}
-					in.position(in.position() - 1);
+					in.position(q);
 				}
 				if (enhanced) {
 					out.put((byte)0x40);
 					continue;
 				} else {
-					in.position(in.position() - 1);
-					return CoderResult.unmappableForLength(1);
+					int n = in.position() - p; in.position(p);
+					return CoderResult.unmappableForLength(n);
 				}
 			}
-			if (ch < 0x80) out.put((byte)(ch | 0x80));
-			else if (!enhanced) return unmappable(in, ch);
-			else switch (ch) {
-			case 0x00A0:  out.put((byte)0xA0); break; // NO-BREAK SPACE
-			case 0x00AF:  out.put((byte)0x4C); break; // MACRON
-			case 0x2015:  out.put((byte)0x53); break; // HORIZONTAL BAR
-			case 0x2026:  out.put((byte)0x49); break; // HORIZONTAL ELLIPSIS
-			case 0x2190:  out.put((byte)0x48); break; // LEFTWARDS ARROW
-			case 0x2191:  out.put((byte)0x4B); break; // UPWARDS ARROW
-			case 0x2192:  out.put((byte)0x55); break; // RIGHTWARDS ARROW
-			case 0x2193:  out.put((byte)0x4A); break; // DOWNWARDS ARROW
-			case 0x21B2:  out.put((byte)0x4D); break; // DOWNWARDS ARROW WITH TIP LEFTWARDS
-			case 0x21B5:  out.put((byte)0x4D); break; // DOWNWARDS ARROW WITH CORNER LEFTWARDS
-			case 0x2318:  out.put((byte)0x41); break; // PLACE OF INTEREST SIGN
-			case 0x231B:  out.put((byte)0x43); break; // HOURGLASS
-			case 0x2325:  out.put((byte)0x40); break; // OPTION KEY
-			case 0x23B8:  out.put((byte)0x5F); break; // LEFT VERTICAL BOX LINE
-			case 0x23B9:  out.put((byte)0x5A); break; // RIGHT VERTICAL BOX LINE
-			case 0x23BA:  out.put((byte)0x4C); break; // HORIZONTAL SCAN LINE-1
-			case 0x23BD:  out.put((byte)0xDF); break; // HORIZONTAL SCAN LINE-9
-			case 0x2425:  out.put((byte)0xFF); break; // SYMBOL FOR DELETE FORM TWO
-			case 0x2500:  out.put((byte)0x53); break; // BOX DRAWINGS LIGHT HORIZONTAL
-			case 0x2502:  out.put((byte)0xFC); break; // BOX DRAWINGS LIGHT VERTICAL
-			case 0x2581:  out.put((byte)0xDF); break; // LOWER ONE EIGHTH BLOCK
-			case 0x2589:  out.put((byte)0x4E); break; // LEFT SEVEN EIGHTHS BLOCK
-			case 0x258F:  out.put((byte)0x5F); break; // LEFT ONE EIGHTH BLOCK
-			case 0x2592:  out.put((byte)0x56); break; // MEDIUM SHADE
-			case 0x2594:  out.put((byte)0x4C); break; // UPPER ONE EIGHTH BLOCK
-			case 0x2595:  out.put((byte)0x5A); break; // RIGHT ONE EIGHTH BLOCK
-			case 0x25C6:  out.put((byte)0x5B); break; // BLACK DIAMOND
-			case 0x2666:  out.put((byte)0x5B); break; // BLACK DIAMOND SUIT
-			case 0x2713:  out.put((byte)0x44); break; // CHECK MARK
-			case 0xF812:  out.put((byte)0x41); break; // Open Apple (Linux Private Use Area)
-			case 0xF813:  out.put((byte)0x40); break; // Solid Apple (Linux Private Use Area)
-			case 0x1F34E: out.put((byte)0x40); break; // RED APPLE
-			case 0x1F34F: out.put((byte)0x41); break; // GREEN APPLE
-			case 0x1FB7C: out.put((byte)0x54); break; // LEFT AND LOWER ONE EIGHTH BLOCK
-			case 0x1FB80: out.put((byte)0x5C); break; // UPPER AND LOWER ONE EIGHTH BLOCK
-			case 0x1FB81: out.put((byte)0x47); break; // HORIZONTAL ONE EIGHTH BLOCK-1358
-			case 0x1FB90: out.put((byte)0x57); break; // INVERSE MEDIUM SHADE
-			case 0x1FBB0: out.put((byte)0x42); break; // ARROWHEAD-SHAPED POINTER
-			case 0x1FBB1: out.put((byte)0x45); break; // INVERSE CHECK MARK
-			case 0x1FBB2: out.put((byte)0x46); break; // LEFT HALF RUNNING MAN
-			case 0x1FBB3: out.put((byte)0x47); break; // RIGHT HALF RUNNING MAN
-			case 0x1FBB4: out.put((byte)0x46); break; // INVERSE DOWNWARDS ARROW WITH TIP LEFTWARDS
-			case 0x1FBB5: out.put((byte)0x4F); break; // LEFTWARDS ARROW AND UPPER AND LOWER ONE EIGHTH BLOCK
-			case 0x1FBB6: out.put((byte)0x50); break; // RIGHTWARDS ARROW AND UPPER AND LOWER ONE EIGHTH BLOCK
-			case 0x1FBB7: out.put((byte)0x51); break; // DOWNWARDS ARROW AND RIGHT ONE EIGHTH BLOCK
-			case 0x1FBB8: out.put((byte)0x52); break; // UPWARDS ARROW AND RIGHT ONE EIGHTH BLOCK
-			case 0x1FBB9: out.put((byte)0x58); break; // LEFT HALF FOLDER
-			case 0x1FBBA: out.put((byte)0x59); break; // RIGHT HALF FOLDER
-			case 0x1FBBB: out.put((byte)0x5D); break; // VOIDED GREEK CROSS
-			case 0x1FBBC: out.put((byte)0x5E); break; // RIGHT OPEN SQUARED DOT
-			default: return unmappable(in, ch);
+			
+			int b = encode(ch);
+			if (b >= 0) {
+				out.put((byte)b);
+				continue;
+			} else {
+				int n = in.position() - p; in.position(p);
+				return CoderResult.unmappableForLength(n);
 			}
 		}
 		return CoderResult.UNDERFLOW;
 	}
 	
-	private CoderResult unmappable(CharBuffer in, int ch) {
-		int i = Character.charCount(ch);
-		in.position(in.position() - i);
-		return CoderResult.unmappableForLength(i);
+	protected int encode(int ch) {
+		if (ch < 0x80) return ch | 0x80;
+		if (!enhanced) return -1;
+		switch (ch) {
+		case 0x00A0:  return 0xA0; // NO-BREAK SPACE
+		case 0x00AF:  return 0x4C; // MACRON
+		case 0x2015:  return 0x53; // HORIZONTAL BAR
+		case 0x2026:  return 0x49; // HORIZONTAL ELLIPSIS
+		case 0x2190:  return 0x48; // LEFTWARDS ARROW
+		case 0x2191:  return 0x4B; // UPWARDS ARROW
+		case 0x2192:  return 0x55; // RIGHTWARDS ARROW
+		case 0x2193:  return 0x4A; // DOWNWARDS ARROW
+		case 0x21B2:  return 0x4D; // DOWNWARDS ARROW WITH TIP LEFTWARDS
+		case 0x21B5:  return 0x4D; // DOWNWARDS ARROW WITH CORNER LEFTWARDS
+		case 0x2318:  return 0x41; // PLACE OF INTEREST SIGN
+		case 0x231B:  return 0x43; // HOURGLASS
+		case 0x2325:  return 0x40; // OPTION KEY
+		case 0x23B8:  return 0x5F; // LEFT VERTICAL BOX LINE
+		case 0x23B9:  return 0x5A; // RIGHT VERTICAL BOX LINE
+		case 0x23BA:  return 0x4C; // HORIZONTAL SCAN LINE-1
+		case 0x23BD:  return 0xDF; // HORIZONTAL SCAN LINE-9
+		case 0x2425:  return 0xFF; // SYMBOL FOR DELETE FORM TWO
+		case 0x2500:  return 0x53; // BOX DRAWINGS LIGHT HORIZONTAL
+		case 0x2502:  return 0xFC; // BOX DRAWINGS LIGHT VERTICAL
+		case 0x2581:  return 0xDF; // LOWER ONE EIGHTH BLOCK
+		case 0x2589:  return 0x4E; // LEFT SEVEN EIGHTHS BLOCK
+		case 0x258F:  return 0x5F; // LEFT ONE EIGHTH BLOCK
+		case 0x2592:  return 0x56; // MEDIUM SHADE
+		case 0x2594:  return 0x4C; // UPPER ONE EIGHTH BLOCK
+		case 0x2595:  return 0x5A; // RIGHT ONE EIGHTH BLOCK
+		case 0x25C6:  return 0x5B; // BLACK DIAMOND
+		case 0x2666:  return 0x5B; // BLACK DIAMOND SUIT
+		case 0x2713:  return 0x44; // CHECK MARK
+		case 0xF812:  return 0x41; // Open Apple (Linux Private Use Area)
+		case 0xF813:  return 0x40; // Solid Apple (Linux Private Use Area)
+		case 0x1F34E: return 0x40; // RED APPLE
+		case 0x1F34F: return 0x41; // GREEN APPLE
+		case 0x1FB7C: return 0x54; // LEFT AND LOWER ONE EIGHTH BLOCK
+		case 0x1FB80: return 0x5C; // UPPER AND LOWER ONE EIGHTH BLOCK
+		case 0x1FB81: return 0x47; // HORIZONTAL ONE EIGHTH BLOCK-1358
+		case 0x1FB90: return 0x57; // INVERSE MEDIUM SHADE
+		case 0x1FBB0: return 0x42; // ARROWHEAD-SHAPED POINTER
+		case 0x1FBB1: return 0x45; // INVERSE CHECK MARK
+		case 0x1FBB2: return 0x46; // LEFT HALF RUNNING MAN
+		case 0x1FBB3: return 0x47; // RIGHT HALF RUNNING MAN
+		case 0x1FBB4: return 0x46; // INVERSE DOWNWARDS ARROW WITH TIP LEFTWARDS
+		case 0x1FBB5: return 0x4F; // LEFTWARDS ARROW AND UPPER AND LOWER ONE EIGHTH BLOCK
+		case 0x1FBB6: return 0x50; // RIGHTWARDS ARROW AND UPPER AND LOWER ONE EIGHTH BLOCK
+		case 0x1FBB7: return 0x51; // DOWNWARDS ARROW AND RIGHT ONE EIGHTH BLOCK
+		case 0x1FBB8: return 0x52; // UPWARDS ARROW AND RIGHT ONE EIGHTH BLOCK
+		case 0x1FBB9: return 0x58; // LEFT HALF FOLDER
+		case 0x1FBBA: return 0x59; // RIGHT HALF FOLDER
+		case 0x1FBBB: return 0x5D; // VOIDED GREEK CROSS
+		case 0x1FBBC: return 0x5E; // RIGHT OPEN SQUARED DOT
+		default: return -1;
+		}
 	}
 }

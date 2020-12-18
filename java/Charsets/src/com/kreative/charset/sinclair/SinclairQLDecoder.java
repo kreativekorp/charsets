@@ -1,12 +1,9 @@
 package com.kreative.charset.sinclair;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class SinclairQLDecoder extends CharsetDecoder {
+public class SinclairQLDecoder extends AbstractCharsetDecoder {
 	private static final int[] QL_LOW = {
 		0x0000,  0xF7F1,  0xF7F2,  0xF7F3,  0xF7F4,  0xF7F5,  0x2406,  0x266A,  //  ␆♪
 		0x2408,  0x2409,  0x000A,  0x240B,  0x240C,  0x240D,  0x240E,  0x240F,  // ␈␉ ␋␌␍␎␏
@@ -35,22 +32,15 @@ public class SinclairQLDecoder extends CharsetDecoder {
 	private final boolean video;
 	
 	public SinclairQLDecoder(Charset cs, boolean video) {
-		super(cs, 1, 2);
+		super(cs);
 		this.video = video;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (video && b < 0x20) out.put(Character.toChars(QL_LOW[b]));
-			else if (b < 0x60) out.put((char)b);
-			else if (b == 0x60) out.put((char)0x00A3); // POUND SIGN
-			else if (b < 0x7F) out.put((char)b);
-			else if (b == 0x7F) out.put((char)0x00A9); // COPYRIGHT SIGN
-			else out.put(Character.toChars(QL_HIGH[b & 0x7F]));
-		}
-		return CoderResult.UNDERFLOW;
+	protected int decode(int b) {
+		if (video && b < 0x20) return QL_LOW[b];
+		if (b == 0x60) return 0x00A3; // POUND SIGN
+		if (b == 0x7F) return 0x00A9; // COPYRIGHT SIGN
+		return (b < 0x80) ? b : QL_HIGH[b & 0x7F];
 	}
 }

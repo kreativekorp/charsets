@@ -1,12 +1,8 @@
 package com.kreative.charset;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
 
-public class SuperRomanDecoder extends CharsetDecoder {
+public class SuperRomanDecoder extends AbstractCharsetDecoder {
 	private static final char[] SUPERROMAN_LOW = {
 		'\u0000', '\u00B9', '\u00B2', '\u00B3', '\u00BC', '\u00BD', '\u00BE', '\u00D7',
 		'\b'    , '\t'    , '\n',     '\u000B', '\f'    , '\r'    , '\u02CB', '\u00AD',
@@ -35,19 +31,13 @@ public class SuperRomanDecoder extends CharsetDecoder {
 	private final boolean overrideC0;
 	
 	public SuperRomanDecoder(Charset cs, boolean overrideC0) {
-		super(cs, 1, 1);
+		super(cs);
 		this.overrideC0 = overrideC0;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b < 0x20) out.put(overrideC0 ? SUPERROMAN_LOW[b] : (char)b);
-			else if (b < 0x80) out.put((char)b);
-			else out.put(SUPERROMAN_HIGH[b & 0x7F]);
-		}
-		return CoderResult.UNDERFLOW;
+	protected int decode(int b) {
+		if (overrideC0 && b < 0x20) return SUPERROMAN_LOW[b];
+		return (b < 0x80) ? b : SUPERROMAN_HIGH[b & 0x7F];
 	}
 }

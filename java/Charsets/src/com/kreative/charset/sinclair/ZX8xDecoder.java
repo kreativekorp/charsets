@@ -1,12 +1,9 @@
 package com.kreative.charset.sinclair;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class ZX8xDecoder extends CharsetDecoder {
+public class ZX8xDecoder extends AbstractCharsetDecoder {
 	private static final int[] ZX80_LOW = {
 		0x0020,  0x0022,  0x258C,  0x2584,  0x2598,  0x259D,  0x2596,  0x2597,  //  "▌▄▘▝▖▗
 		0x259E,  0x2592,  0x1FB8F, 0x1FB8E, 0x00A3,  0x0024,  0x003A,  0x003F,  // ▞▒🮏🮎£$:?
@@ -51,22 +48,16 @@ public class ZX8xDecoder extends CharsetDecoder {
 	private final boolean zx81;
 	
 	public ZX8xDecoder(Charset cs, boolean zx81) {
-		super(cs, 1, 2);
+		super(cs);
 		this.zx81 = zx81;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			switch (b & 0xC0) {
-			case 0x00: out.put(Character.toChars((zx81 ? ZX81_LOW : ZX80_LOW)[b & 0x3F])); break;
-			case 0x40: in.position(in.position() - 1); return CoderResult.unmappableForLength(1);
-			case 0x80: out.put(Character.toChars((zx81 ? ZX81_HIGH : ZX80_HIGH)[b & 0x3F])); break;
-			case 0xC0: in.position(in.position() - 1); return CoderResult.unmappableForLength(1);
-			}
+	protected int decode(int b) {
+		switch (b & 0xC0) {
+		case 0x00: return (zx81 ? ZX81_LOW : ZX80_LOW)[b & 0x3F];
+		case 0x80: return (zx81 ? ZX81_HIGH : ZX80_HIGH)[b & 0x3F];
+		default: return UNMAPPABLE;
 		}
-		return CoderResult.UNDERFLOW;
 	}
 }

@@ -7,7 +7,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.IllegalCharsetNameException;
 import java.nio.charset.UnsupportedCharsetException;
 
-public class DecoderTest {
+public class DecEncTest {
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		if (args.length != 1) {
 			System.err.println("Must specify one argument which is encoding name.");
@@ -19,8 +19,8 @@ public class DecoderTest {
 				buf[i & 0xF] = (byte)i;
 				if ((i & 0xF) == 0xF) {
 					String s = new String(buf, cs);
-					s = s.replaceAll("[\u0000-\u001F\u007F-\u009F]", ".");
-					out.println(s);
+					byte[] bytes = s.getBytes(cs);
+					printBytes(out, bytes, cs);
 				}
 			}
 		} catch (IllegalCharsetNameException e) {
@@ -28,5 +28,17 @@ public class DecoderTest {
 		} catch (UnsupportedCharsetException e) {
 			System.err.println("There is no encoding named " + args[0] + ".");
 		}
+	}
+	
+	private static void printBytes(PrintWriter out, byte[] bytes, Charset cs) {
+		for (byte b : bytes) {
+			String h = Integer.toHexString(b & 0xFF).toUpperCase();
+			while (h.length() < 2) h = "0" + h;
+			out.print(h + " ");
+		}
+		out.print("| ");
+		String bs = new String(bytes, cs);
+		bs = bs.replaceAll("[\u0000-\u001F\u007F-\u009F]", ".");
+		out.println(bs);
 	}
 }

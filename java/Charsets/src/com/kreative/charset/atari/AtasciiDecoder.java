@@ -1,12 +1,9 @@
 package com.kreative.charset.atari;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class AtasciiDecoder extends CharsetDecoder {
+public class AtasciiDecoder extends AbstractCharsetDecoder {
 	private static final int[] GR_LOW = {
 		0x2665,  0x251C,  0x23B9,  0x2518,  0x2524,  0x2510,  0x2571,  0x2572,  // ♥├⎹┘┤┐╱╲
 		0x25E2,  0x2597,  0x25E3,  0x259D,  0x2598,  0x23BA,  0x23BD,  0x2596,  // ◢▗◣▝▘⎺⎽▖
@@ -36,64 +33,48 @@ public class AtasciiDecoder extends CharsetDecoder {
 	private final boolean video;
 	
 	public AtasciiDecoder(Charset cs, boolean intl, boolean video) {
-		super(cs, 1, 2);
+		super(cs);
 		this.intl = intl;
 		this.video = video;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (video) {
-				switch (b & 0x60) {
-				case 0x00: case 0x20:
-					out.put((char)((b & 0x7F) + 0x20));
-					break;
-				case 0x40:
-					out.put(Character.toChars((intl ? INTL_LOW : GR_LOW)[b & 0x1F]));
-					break;
-				case 0x60:
-					out.put(Character.toChars((intl ? INTL_HIGH : GR_HIGH)[b & 0x1F]));
-					break;
+	protected int decode(int b) {
+		if (video) {
+			switch (b & 0x60) {
+			case 0x40: return (intl ? INTL_LOW : GR_LOW)[b & 0x1F];
+			case 0x60: return (intl ? INTL_HIGH : GR_HIGH)[b & 0x1F];
+			default: return (b & 0x7F) + 0x20;
+			}
+		} else {
+			switch (b & 0x60) {
+			case 0x00:
+				switch (b) {
+				case 0x1B: return 0x1B; // escape
+				case 0x1C: return 0x1C; // cursor up
+				case 0x1D: return 0x1D; // cursor down
+				case 0x1E: return 0x1E; // cursor left
+				case 0x1F: return 0x1F; // cursor right
+				case 0x9B: return 0x0A; // end of line
+				case 0x9C: return 0x9C; // delete line
+				case 0x9D: return 0x9D; // insert line
+				case 0x9E: return 0x9E; // clear tab stop
+				case 0x9F: return 0x9F; // set tab stop
+				default: return (intl ? INTL_LOW : GR_LOW)[b & 0x1F];
 				}
-			} else {
-				switch (b & 0x60) {
-				case 0x00:
-					if ((b & 0x7F) < 0x1B) {
-						out.put(Character.toChars((intl ? INTL_LOW : GR_LOW)[b & 0x1F]));
-					} else switch (b) {
-						case 0x1B: out.put((char)0x1B); break; // escape
-						case 0x1C: out.put((char)0x1C); break; // cursor up
-						case 0x1D: out.put((char)0x1D); break; // cursor down
-						case 0x1E: out.put((char)0x1E); break; // cursor left
-						case 0x1F: out.put((char)0x1F); break; // cursor right
-						case 0x9B: out.put((char)0x0A); break; // end of line
-						case 0x9C: out.put((char)0x9C); break; // delete line
-						case 0x9D: out.put((char)0x9D); break; // insert line
-						case 0x9E: out.put((char)0x9E); break; // clear tab stop
-						case 0x9F: out.put((char)0x9F); break; // set tab stop
-					}
-					break;
-				case 0x20: case 0x40:
-					out.put((char)(b & 0x7F));
-					break;
-				case 0x60:
-					if ((b & 0x7F) < 0x7D) {
-						out.put(Character.toChars((intl ? INTL_HIGH : GR_HIGH)[b & 0x1F]));
-					} else switch (b) {
-						case 0x7D: out.put((char)0x0C); break; // clear screen
-						case 0x7E: out.put((char)0x08); break; // backspace
-						case 0x7F: out.put((char)0x09); break; // tab
-						case 0xFD: out.put((char)0x07); break; // bell
-						case 0xFE: out.put((char)0x88); break; // delete character
-						case 0xFF: out.put((char)0x89); break; // insert character
-					}
-					break;
+			case 0x60:
+				switch (b) {
+				case 0x7D: return 0x0C; // clear screen
+				case 0x7E: return 0x08; // backspace
+				case 0x7F: return 0x09; // tab
+				case 0xFD: return 0x07; // bell
+				case 0xFE: return 0x88; // delete character
+				case 0xFF: return 0x89; // insert character
+				default: return (intl ? INTL_HIGH : GR_HIGH)[b & 0x1F];
 				}
+			default:
+				return b & 0x7F;
 			}
 		}
-		return CoderResult.UNDERFLOW;
 	}
 }

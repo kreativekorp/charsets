@@ -1,12 +1,9 @@
 package com.kreative.charset.apple2;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class AppleIIDecoder extends CharsetDecoder {
+public class AppleIIDecoder extends AbstractCharsetDecoder {
 	private static final int[] MOUSETEXT_IIE = {
 		0xF813,  0xF812,  0x1FBB0, 0x231B,  0x2713,  0x1FBB1, 0x1FBB2, 0x1FBB3, // 🮰⌛✓🮱🮲🮳
 		0x2190,  0x2026,  0x2193,  0x2191,  0x2594,  0x21B2,  0x2589,  0x1FBB5, // ←…↓↑▔↲▉🮵
@@ -25,37 +22,23 @@ public class AppleIIDecoder extends CharsetDecoder {
 	private final LogoSubstitute logo;
 	
 	public AppleIIDecoder(Charset cs, boolean enhanced, boolean iigs, LogoSubstitute logo) {
-		super(cs, 1, 2);
+		super(cs);
 		this.enhanced = enhanced;
 		this.iigs = iigs;
 		this.logo = logo;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b >= 0x80) out.put((char)(b & 0x7F));
-			else switch (b & 0x60) {
-			case 0x00:
-				out.put((char)(b | 0x40));
-				break;
-			case 0x20:
-				out.put((char)b);
-				break;
-			case 0x40:
-				if (!enhanced) out.put((char)b);
-				else if (b == 0x40) out.put(logo.solidApple());
-				else if (b == 0x41) out.put(logo.openApple());
-				else out.put(Character.toChars((iigs ? MOUSETEXT_IIGS : MOUSETEXT_IIE)[b & 0x1F]));
-				break;
-			case 0x60:
-				if (enhanced) out.put((char)b);
-				else out.put((char)(b & 0x3F));
-				break;
-			}
+	protected int decode(int b) {
+		switch (b & 0xE0) {
+		case 0x00: return b | 0x40;
+		case 0x20: return b;
+		case 0x40: return (!enhanced) ? b :
+		                  (b == 0x40) ? logo.solidApple :
+		                  (b == 0x41) ? logo.openApple :
+		                  (iigs ? MOUSETEXT_IIGS : MOUSETEXT_IIE)[b & 0x1F];
+		case 0x60: return enhanced ? b : (b & 0x3F);
+		default:   return b & 0x7F;
 		}
-		return CoderResult.UNDERFLOW;
 	}
 }

@@ -1,12 +1,9 @@
 package com.kreative.charset.petscii;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class PetsciiDecoder extends CharsetDecoder {
+public class PetsciiDecoder extends AbstractCharsetDecoder {
 	private static final int[] PETSCII_Q1 = {
 		0x0040, 0x0041, 0x0042, 0x0043, 0x0044, 0x0045, 0x0046, 0x0047, // @ABCDEFG
 		0x0048, 0x0049, 0x004A, 0x004B, 0x004C, 0x004D, 0x004E, 0x004F, // HIJKLMNO
@@ -48,37 +45,30 @@ public class PetsciiDecoder extends CharsetDecoder {
 	private final boolean video;
 	
 	public PetsciiDecoder(Charset cs, boolean alt, boolean video) {
-		super(cs, 1, 2);
+		super(cs);
 		this.alt = alt;
 		this.video = video;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (video) {
-				switch (b & 0x60) {
-				case 0x00: out.put(Character.toChars((alt ? PETSCII_Q1A : PETSCII_Q1)[b & 0x1F])); break;
-				case 0x20: out.put((char)(b & 0x7F)); break;
-				case 0x40: out.put(Character.toChars((alt ? PETSCII_Q3A : PETSCII_Q3)[b & 0x1F])); break;
-				case 0x60: out.put(Character.toChars((alt ? PETSCII_Q2A : PETSCII_Q2)[b & 0x1F])); break;
-				}
-			} else {
-				if (b == 0xFF) b = 0xDE;
-				switch (b & 0xE0) {
-				case 0x00: out.put((char)b); break;
-				case 0x20: out.put((char)b); break;
-				case 0x40: out.put(Character.toChars((alt ? PETSCII_Q1A : PETSCII_Q1)[b & 0x1F])); break;
-				case 0x60: out.put(Character.toChars((alt ? PETSCII_Q3A : PETSCII_Q3)[b & 0x1F])); break;
-				case 0x80: out.put((char)b); break;
-				case 0xA0: out.put(Character.toChars((alt ? PETSCII_Q2A : PETSCII_Q2)[b & 0x1F])); break;
-				case 0xC0: out.put(Character.toChars((alt ? PETSCII_Q3A : PETSCII_Q3)[b & 0x1F])); break;
-				case 0xE0: out.put(Character.toChars((alt ? PETSCII_Q2A : PETSCII_Q2)[b & 0x1F])); break;
-				}
+	protected int decode(int b) {
+		if (video) {
+			switch (b & 0x60) {
+			case 0x00: return (alt ? PETSCII_Q1A : PETSCII_Q1)[b & 0x1F];
+			case 0x40: return (alt ? PETSCII_Q3A : PETSCII_Q3)[b & 0x1F];
+			case 0x60: return (alt ? PETSCII_Q2A : PETSCII_Q2)[b & 0x1F];
+			default:   return b & 0x7F;
+			}
+		} else {
+			if (b == 0xFF) b = 0xDE;
+			switch (b & 0xE0) {
+			case 0x40: return (alt ? PETSCII_Q1A : PETSCII_Q1)[b & 0x1F];
+			case 0x60: return (alt ? PETSCII_Q3A : PETSCII_Q3)[b & 0x1F];
+			case 0xA0: return (alt ? PETSCII_Q2A : PETSCII_Q2)[b & 0x1F];
+			case 0xC0: return (alt ? PETSCII_Q3A : PETSCII_Q3)[b & 0x1F];
+			case 0xE0: return (alt ? PETSCII_Q2A : PETSCII_Q2)[b & 0x1F];
+			default:   return b;
 			}
 		}
-		return CoderResult.UNDERFLOW;
 	}
 }

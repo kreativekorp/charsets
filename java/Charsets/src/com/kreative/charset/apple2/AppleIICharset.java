@@ -8,12 +8,7 @@ public class AppleIICharset extends Charset {
 	private static final String name(boolean enhanced, boolean iigs, LogoSubstitute logo) {
 		StringBuffer sb = new StringBuffer("x-apple2");
 		if (enhanced) sb.append(iigs ? "gs" : "e");
-		switch (logo) {
-		case TECHNICAL: sb.append("-mod"); break;
-		case LINUX_PUA: sb.append("-linux"); break;
-		case EMOJI: sb.append("-emoji"); break;
-		default: break;
-		}
+		sb.append(logo.suffix);
 		return sb.toString();
 	}
 	

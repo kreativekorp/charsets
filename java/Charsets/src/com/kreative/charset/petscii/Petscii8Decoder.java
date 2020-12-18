@@ -1,12 +1,9 @@
 package com.kreative.charset.petscii;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class Petscii8Decoder extends CharsetDecoder {
+public class Petscii8Decoder extends AbstractCharsetDecoder {
 	private static final int[] PETSCII8_HIGH = {
 		// PETSCII A0-BF in Uppercase Mode
 		0x00A0,  // NO-BREAK SPACE
@@ -111,17 +108,11 @@ public class Petscii8Decoder extends CharsetDecoder {
 	};
 	
 	public Petscii8Decoder(Charset cs) {
-		super(cs, 1, 2);
+		super(cs);
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b <= 0xA0) out.put((char)b);
-			else out.put(Character.toChars(PETSCII8_HIGH[b - 0xA0]));
-		}
-		return CoderResult.UNDERFLOW;
+	protected int decode(int b) {
+		return (b <= 0xA0) ? b : PETSCII8_HIGH[b - 0xA0];
 	}
 }

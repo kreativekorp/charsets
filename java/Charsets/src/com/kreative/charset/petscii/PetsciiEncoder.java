@@ -1,56 +1,34 @@
 package com.kreative.charset.petscii;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetEncoder;
 
-public class PetsciiEncoder extends CharsetEncoder {
+public class PetsciiEncoder extends AbstractCharsetEncoder {
 	private final boolean alt;
 	private final boolean video;
 	
 	protected PetsciiEncoder(Charset cs, boolean alt, boolean video) {
-		super(cs, 1, 1);
+		super(cs, 1);
 		this.alt = alt;
 		this.video = video;
 	}
 	
-	protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int ch = in.get() & 0xFFFF;
-			if (Character.isHighSurrogate((char)ch)) {
-				if (in.hasRemaining()) {
-					int cl = in.get() & 0xFFFF;
-					if (Character.isLowSurrogate((char)cl)) {
-						ch = Character.toCodePoint((char)ch, (char)cl);
-					} else {
-						in.position(in.position() - 2);
-						return CoderResult.unmappableForLength(1);
-					}
-				} else {
-					in.position(in.position() - 1);
-					return CoderResult.UNDERFLOW;
-				}
+	@Override
+	protected int encode(int ch) {
+		int b = alt ? encodeCharAlt(ch) : encodeChar(ch);
+		if (b >= 0 && video) {
+			switch (b & 0xE0) {
+			case 0x00: return UNMAPPABLE;
+			case 0x20: b ^= 0x00; break;
+			case 0x40: b ^= 0x40; break;
+			case 0x60: b ^= 0x20; break;
+			case 0x80: return UNMAPPABLE;
+			case 0xA0: b ^= 0xC0; break;
+			case 0xC0: b ^= 0x80; break;
+			case 0xE0: b ^= 0x80; break;
 			}
-			int b = alt ? encodeCharAlt(ch) : encodeChar(ch);
-			if (b < 0) return unmappable(in, ch);
-			if (video) {
-				switch (b & 0xE0) {
-				case 0x00: return unmappable(in, ch);
-				case 0x20: b ^= 0x00; break;
-				case 0x40: b ^= 0x40; break;
-				case 0x60: b ^= 0x20; break;
-				case 0x80: return unmappable(in, ch);
-				case 0xA0: b ^= 0xC0; break;
-				case 0xC0: b ^= 0x80; break;
-				case 0xE0: b ^= 0x80; break;
-				}
-			}
-			out.put((byte)b);
 		}
-		return CoderResult.UNDERFLOW;
+		return b;
 	}
 	
 	private int encodeChar(int ch) {
@@ -129,13 +107,14 @@ public class PetsciiEncoder extends CharsetEncoder {
         case 0x1FB88: return 0xB6;
         case 0x1FB8C: return 0xDC;
         case 0x1FB8F: return 0xA8;
-		default: return -1;
+		default: return UNMAPPABLE;
 		}
 	}
 	
 	private int encodeCharAlt(int ch) {
 		if (ch <= 0x40) return ch;
-		if (ch <= 0x5D) return ch ^ 0x80;
+		if (ch <= 0x5A) return ch ^ 0x80;
+		if (ch <= 0x5D) return ch;
 		if (ch >= 0x61 && ch <= 0x7A) return ch ^ 0x20;
 		if (ch >= 0x80 && ch <= 0xA0) return ch;
 		switch (ch) {
@@ -183,13 +162,7 @@ public class PetsciiEncoder extends CharsetEncoder {
         case 0x1FB96: return 0xDE;
         case 0x1FB98: return 0xDF;
         case 0x1FB99: return 0xA9;
-		default: return -1;
+		default: return UNMAPPABLE;
 		}
-	}
-	
-	private CoderResult unmappable(CharBuffer in, int ch) {
-		int i = Character.charCount(ch);
-		in.position(in.position() - i);
-		return CoderResult.unmappableForLength(i);
 	}
 }

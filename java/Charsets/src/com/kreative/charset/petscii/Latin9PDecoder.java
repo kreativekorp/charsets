@@ -1,12 +1,9 @@
 package com.kreative.charset.petscii;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class Latin9PDecoder extends CharsetDecoder {
+public class Latin9PDecoder extends AbstractCharsetDecoder {
 	private static final int[] LATIN9P_LOW = {
 		// PETSCII Lowercase $A9
 		0x1FB99, // UPPER RIGHT TO LOWER LEFT FILL
@@ -218,17 +215,11 @@ public class Latin9PDecoder extends CharsetDecoder {
 	};
 	
 	public Latin9PDecoder(Charset cs) {
-		super(cs, 1, 2);
+		super(cs);
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b < 0xC0) out.put(Character.toChars(LATIN9P_LOW[b]));
-			else out.put((char)b);
-		}
-		return CoderResult.UNDERFLOW;
+	protected int decode(int b) {
+		return (b < 0xC0) ? LATIN9P_LOW[b] : b;
 	}
 }

@@ -1,41 +1,23 @@
 package com.kreative.charset.sinclair;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
+import com.kreative.charset.AbstractCharsetDecoder;
 
-public class ZXSpectrumDecoder extends CharsetDecoder {
+public class ZXSpectrumDecoder extends AbstractCharsetDecoder {
 	private final ZXSpectrumVariant variant;
 	
 	public ZXSpectrumDecoder(Charset cs, ZXSpectrumVariant variant) {
-		super(cs, 1, 2);
+		super(cs);
 		this.variant = variant;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b < 0x5E) out.put((char)b);
-			else if (b == 0x5E) out.put((char)0x2191); // UPWARDS ARROW
-			else if (b == 0x5F) out.put((char)0x005F); // LOW LINE
-			else if (b == 0x60) out.put((char)0x00A3); // POUND SIGN
-			else if (b < 0x7F) out.put((char)b);
-			else if (b == 0x7F) out.put((char)0x00A9); // COPYRIGHT SIGN
-			else {
-				int ch = variant.decode(b);
-				if (ch < 0) return unmappable(in);
-				else out.put(Character.toChars(ch));
-			}
-		}
-		return CoderResult.UNDERFLOW;
-	}
-	
-	private CoderResult unmappable(ByteBuffer in) {
-		in.position(in.position() - 1);
-		return CoderResult.unmappableForLength(1);
+	protected int decode(int b) {
+		if (b == 0x5E) return 0x2191; // UPWARDS ARROW
+		if (b == 0x60) return 0x00A3; // POUND SIGN
+		if (b == 0x7F) return 0x00A9; // COPYRIGHT SIGN
+		if (b < 0x80) return b;
+		int ch = variant.decode(b);
+		return (ch < 0) ? UNMAPPABLE : ch;
 	}
 }

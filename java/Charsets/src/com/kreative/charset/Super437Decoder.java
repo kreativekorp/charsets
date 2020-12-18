@@ -1,12 +1,8 @@
 package com.kreative.charset;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
 
-public class Super437Decoder extends CharsetDecoder {
+public class Super437Decoder extends AbstractCharsetDecoder {
 	private static final char[] SUPER437_LOW = {
 		'\u0000', '\u02CB', '\u02DD', '\u02D9', '\u02DA', '\u02C7', '\u02D8', '\u02DB',
 		'\b',     '\t',     '\n',     '\u000B', '\f',     '\r',     '\uFB01', '\uFB02',
@@ -35,19 +31,13 @@ public class Super437Decoder extends CharsetDecoder {
 	private final boolean overrideC0;
 	
 	public Super437Decoder(Charset cs, boolean overrideC0) {
-		super(cs, 1, 1);
+		super(cs);
 		this.overrideC0 = overrideC0;
 	}
 	
 	@Override
-	public CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		while (in.hasRemaining()) {
-			if (!out.hasRemaining()) return CoderResult.OVERFLOW;
-			int b = in.get() & 0xFF;
-			if (b < 0x20) out.put(overrideC0 ? SUPER437_LOW[b] : (char)b);
-			else if (b < 0x80) out.put((char)b);
-			else out.put(SUPER437_HIGH[b & 0x7F]);
-		}
-		return CoderResult.UNDERFLOW;
+	protected int decode(int b) {
+		if (overrideC0 && b < 0x20) return SUPER437_LOW[b];
+		return (b < 0x80) ? b : SUPER437_HIGH[b & 0x7F];
 	}
 }
