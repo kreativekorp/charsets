@@ -1,0 +1,9 @@
+module com.kreative.charset {
+	provides java.nio.charset.spi.CharsetProvider with
+		com.kreative.charset.KreativeCharsetProvider,
+		com.kreative.charset.apple2.AppleIICharsetProvider,
+		com.kreative.charset.atari.AtariCharsetProvider, 
+		com.kreative.charset.petscii.PetsciiCharsetProvider,
+		com.kreative.charset.sinclair.SinclairCharsetProvider,
+		com.kreative.charset.ti.TICharsetProvider;
+}
