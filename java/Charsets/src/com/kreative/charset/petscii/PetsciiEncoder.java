@@ -4,18 +4,20 @@ import java.nio.charset.Charset;
 import com.kreative.charset.AbstractCharsetEncoder;
 
 public class PetsciiEncoder extends AbstractCharsetEncoder {
+	private final PetsciiPlatform platform;
 	private final boolean alt;
 	private final boolean video;
 	
-	protected PetsciiEncoder(Charset cs, boolean alt, boolean video) {
+	protected PetsciiEncoder(Charset cs, PetsciiPlatform platform, boolean alt, boolean video) {
 		super(cs, 1);
+		this.platform = platform;
 		this.alt = alt;
 		this.video = video;
 	}
 	
 	@Override
 	protected int encode(int ch) {
-		int b = alt ? encodeCharAlt(ch) : encodeChar(ch);
+		int b = encodeChar(ch);
 		if (b >= 0 && video) {
 			switch (b & 0xE0) {
 			case 0x00: return UNMAPPABLE;
@@ -32,6 +34,16 @@ public class PetsciiEncoder extends AbstractCharsetEncoder {
 	}
 	
 	private int encodeChar(int ch) {
+		if (alt) {
+			if (platform == PetsciiPlatform.PET) {
+				return encodeCharAlt(ch, 0x00, 0xA0);
+			}
+			return encodeCharAlt(ch, 0x80, 0x20);
+		}
+		return encodeCharPri(ch);
+	}
+	
+	private int encodeCharPri(int ch) {
 		if (ch <= 0x5D) return ch;
 		if (ch >= 0x61 && ch <= 0x7A) return ch ^ 0x20;
 		if (ch >= 0x80 && ch <= 0xA0) return ch;
@@ -111,11 +123,11 @@ public class PetsciiEncoder extends AbstractCharsetEncoder {
 		}
 	}
 	
-	private int encodeCharAlt(int ch) {
+	private int encodeCharAlt(int ch, int ucm, int lcm) {
 		if (ch <= 0x40) return ch;
-		if (ch <= 0x5A) return ch ^ 0x80;
+		if (ch <= 0x5A) return ch ^ ucm;
 		if (ch <= 0x5D) return ch;
-		if (ch >= 0x61 && ch <= 0x7A) return ch ^ 0x20;
+		if (ch >= 0x61 && ch <= 0x7A) return ch ^ lcm;
 		if (ch >= 0x80 && ch <= 0xA0) return ch;
 		switch (ch) {
         case 0x00A0:  return 0xA0;

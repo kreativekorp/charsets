@@ -7,11 +7,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SuperRomanCharset extends Charset {
-	private static final String CANONICAL_NAME = "X-KK-SuperRoman";
+	private static final String CANONICAL_NAME = "X-KK-SuperRoman-Full";
 	private static final String CANONICAL_NAME_C0 = "X-KK-SuperRoman-C0";
 	
 	private static final String[] ALIASES = {
-		"X-SuperRoman", "X-Kreative-SuperRoman"
+		"X-SuperRoman", "X-KK-SuperRoman", "X-Kreative-SuperRoman",
+		"X-SuperRoman-Full", "X-Kreative-SuperRoman-Full"
 	};
 	private static final String[] ALIASES_C0 = {
 		"X-SuperRoman-C0", "X-Kreative-SuperRoman-C0"

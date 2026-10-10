@@ -7,11 +7,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Super437Charset extends Charset {
-	private static final String CANONICAL_NAME = "X-KK-Super437";
+	private static final String CANONICAL_NAME = "X-KK-Super437-Full";
 	private static final String CANONICAL_NAME_C0 = "X-KK-Super437-C0";
 	
 	private static final String[] ALIASES = {
-		"X-Super437", "X-Kreative-Super437"
+		"X-Super437", "X-KK-Super437", "X-Kreative-Super437",
+		"X-Super437-Full", "X-Kreative-Super437-Full"
 	};
 	private static final String[] ALIASES_C0 = {
 		"X-Super437-C0", "X-Kreative-Super437-C0"

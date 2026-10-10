@@ -12,12 +12,22 @@ public class AppleIICharset extends Charset {
 		return sb.toString();
 	}
 	
+	private static final String[] aliases(boolean enhanced, boolean iigs, LogoSubstitute logo) {
+		if (enhanced && iigs) {
+			StringBuffer sb = new StringBuffer("x-apple2c");
+			sb.append(logo.suffix);
+			return new String[]{sb.toString()};
+		} else {
+			return new String[]{};
+		}
+	}
+	
 	private final boolean enhanced;
 	private final boolean iigs;
 	private final LogoSubstitute logo;
 	
 	public AppleIICharset(boolean enhanced, boolean iigs, LogoSubstitute logo) {
-		super(name(enhanced, iigs, logo), new String[]{});
+		super(name(enhanced, iigs, logo), aliases(enhanced, iigs, logo));
 		this.enhanced = enhanced;
 		this.iigs = iigs;
 		this.logo = logo;

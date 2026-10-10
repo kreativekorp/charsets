@@ -7,11 +7,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SuperMultinationalCharset extends Charset {
-	private static final String CANONICAL_NAME = "X-KK-SuperMultinational";
+	private static final String CANONICAL_NAME = "X-KK-SuperMultinational-Full";
 	private static final String CANONICAL_NAME_C0 = "X-KK-SuperMultinational-C0";
 	
 	private static final String[] ALIASES = {
-		"X-SuperMultinational", "X-Kreative-SuperMultinational"
+		"X-SuperMultinational", "X-KK-SuperMultinational", "X-Kreative-SuperMultinational",
+		"X-SuperMultinational-Full", "X-Kreative-SuperMultinational-Full"
 	};
 	private static final String[] ALIASES_C0 = {
 		"X-SuperMultinational-C0", "X-Kreative-SuperMultinational-C0"
