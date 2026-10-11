@@ -114,6 +114,10 @@ public class SinclairQLEncoder extends AbstractCharsetEncoder {
 		case 0x03C8:  return 0xF0; // GREEK SMALL LETTER PSI
 		case 0x03C9:  return 0xEF; // GREEK SMALL LETTER OMEGA
 		case 0x03D5:  return 0xB2; // GREEK PHI SYMBOL
+		case 0x1D2C:  return video ? 0x1A : UNMAPPABLE; // MODIFIER LETTER CAPITAL A
+		case 0x1D2E:  return video ? 0x1B : UNMAPPABLE; // MODIFIER LETTER CAPITAL B
+		case 0x1D30:  return video ? 0x1D : UNMAPPABLE; // MODIFIER LETTER CAPITAL D
+		case 0x1D31:  return video ? 0x1E : UNMAPPABLE; // MODIFIER LETTER CAPITAL E
 		case 0x1D43:  return video ? 0x1A : UNMAPPABLE; // MODIFIER LETTER SMALL A
 		case 0x1D47:  return video ? 0x1B : UNMAPPABLE; // MODIFIER LETTER SMALL B
 		case 0x1D48:  return video ? 0x1D : UNMAPPABLE; // MODIFIER LETTER SMALL D
@@ -173,12 +177,21 @@ public class SinclairQLEncoder extends AbstractCharsetEncoder {
 		case 0x2665:  return 0xC9; // BLACK HEART SUIT
 		case 0x2666:  return 0xCA; // BLACK DIAMOND SUIT
 		case 0x266A:  return video ? 0x07 : UNMAPPABLE; // EIGHTH NOTE
+		case 0xA7F2:  return video ? 0x1C : UNMAPPABLE; // MODIFIER LETTER CAPITAL C
+		case 0xA7F3:  return video ? 0x1F : UNMAPPABLE; // MODIFIER LETTER CAPITAL F
 		case 0xF7F1:  return video ? 0x01 : UNMAPPABLE; // F1
 		case 0xF7F2:  return video ? 0x02 : UNMAPPABLE; // F2
 		case 0xF7F3:  return video ? 0x03 : UNMAPPABLE; // F3
 		case 0xF7F4:  return video ? 0x04 : UNMAPPABLE; // F4
 		case 0xF7F5:  return video ? 0x05 : UNMAPPABLE; // F5
-		case 0xFF142: return 0xB5; // QL
+		case 0xFF142: return 0xB5; // QV
+		case 0xFFC21: return 0xB5; // QV
+		case 0xFFC2F: return 0xB5; // reversed S with dot below
+		case 0xFFC31: return video ? 0x01 : UNMAPPABLE; // F1
+		case 0xFFC32: return video ? 0x02 : UNMAPPABLE; // F2
+		case 0xFFC33: return video ? 0x03 : UNMAPPABLE; // F3
+		case 0xFFC34: return video ? 0x04 : UNMAPPABLE; // F4
+		case 0xFFC35: return video ? 0x05 : UNMAPPABLE; // F5
 		default:      return UNMAPPABLE;
 		}
 	}
