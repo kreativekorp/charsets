@@ -8,4 +8,4 @@ The file name (without the .txt extension) is always used as the canonical ident
 
 If the file consists of a single line matching the pattern `^\./(.+)\.txt$` the file name is used as an alias for the encoding whose canonical identifier is `\1`. (This is not an include directive; if used, it must be the only line in the file.)
 
-The `tablint.py` tool will check these files for syntax and duplicate mappings.
+The `tablint.py` tool will check these files for syntax, duplicate mappings, and round-tripping, but will not actually perform any encoding or decoding.

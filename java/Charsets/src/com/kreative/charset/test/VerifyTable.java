@@ -200,7 +200,8 @@ public class VerifyTable {
 				} else if (arg.equals("-T")) {
 					roundTrip = true;
 				} else {
-					System.out.println(ERROR + "Unknown option: " + arg);
+					System.out.println(ERROR + " Unknown option: " + arg);
+					ok = false;
 				}
 			} else if (!verify(new File(arg), roundTrip)) {
 				ok = false;
