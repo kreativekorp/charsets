@@ -44,7 +44,7 @@ public class VerifyTable {
 		return s.toString();
 	}
 	
-	private static boolean verifyLines(ArrayList<String> lines, String charset) throws UnsupportedEncodingException {
+	private static boolean verifyLines(ArrayList<String> lines, String charset, boolean roundTrip) throws UnsupportedEncodingException {
 		TreeMap<String,String> bytesToChars = new TreeMap<String,String>();
 		TreeMap<String,String> charsToBytes = new TreeMap<String,String>();
 		TreeSet<Integer> puaChars = new TreeSet<Integer>();
@@ -107,28 +107,30 @@ public class VerifyTable {
 			System.out.println("  " + ERROR + " Syntax error in line: " + line);
 			ok = false;
 		}
-		if (bytesToChars.isEmpty()) {
-			System.out.println("  " + ERROR + " No byte sequences mapped to any character sequences");
-			ok = false;
-		}
-		if (charsToBytes.isEmpty()) {
-			System.out.println("  " + ERROR + " No character sequences mapped to any byte sequences");
-			ok = false;
-		}
-		for (String cbs : charsToBytes.values()) {
-			String ccs = bytesToChars.get(cbs);
-			String rbs = charsToBytes.get(ccs);
-			if (!cbs.equals(rbs)) {
-				System.out.println("  " + ERROR + " Failed to roundtrip 0x" + cbs + "; returned as 0x" + ((rbs != null) ? rbs : "<null>"));
+		if (roundTrip) {
+			if (bytesToChars.isEmpty()) {
+				System.out.println("  " + ERROR + " No byte sequences mapped to any character sequences");
 				ok = false;
 			}
-		}
-		for (String ccs : bytesToChars.values()) {
-			String cbs = charsToBytes.get(ccs);
-			String rcs = bytesToChars.get(cbs);
-			if (!ccs.equals(rcs)) {
-				System.out.println("  " + ERROR + " Failed to roundtrip U" + ccs + "; returned as U" + ((rcs != null) ? rcs : "+<null>"));
+			if (charsToBytes.isEmpty()) {
+				System.out.println("  " + ERROR + " No character sequences mapped to any byte sequences");
 				ok = false;
+			}
+			for (String cbs : charsToBytes.values()) {
+				String ccs = (cbs == null) ? null : bytesToChars.get(cbs);
+				String rbs = (ccs == null) ? null : charsToBytes.get(ccs);
+				if (!cbs.equals(rbs)) {
+					System.out.println("  " + ERROR + " Failed to roundtrip 0x" + cbs + "; returned as 0x" + ((rbs != null) ? rbs : "<null>"));
+					ok = false;
+				}
+			}
+			for (String ccs : bytesToChars.values()) {
+				String cbs = (ccs == null) ? null : charsToBytes.get(ccs);
+				String rcs = (cbs == null) ? null : bytesToChars.get(cbs);
+				if (!ccs.equals(rcs)) {
+					System.out.println("  " + ERROR + " Failed to roundtrip U" + ccs + "; returned as U" + ((rcs != null) ? rcs : "+<null>"));
+					ok = false;
+				}
 			}
 		}
 		if (!puaChars.isEmpty()) {
@@ -146,23 +148,23 @@ public class VerifyTable {
 		return ok;
 	}
 	
-	private static boolean verifyFile(File file, String charset) throws FileNotFoundException {
+	private static boolean verifyFile(File file, String charset, boolean roundTrip) throws FileNotFoundException {
 		ArrayList<String> lines = new ArrayList<String>();
 		Scanner scan = new Scanner(file);
 		while (scan.hasNextLine()) lines.add(scan.nextLine());
 		scan.close();
 		if (lines.size() == 1 && lines.get(0).startsWith("./") && lines.get(0).endsWith(".txt")) {
 			System.out.println("  -> " + lines.get(0));
-			return verifyFile(new File(file.getParentFile(), lines.get(0).substring(2)), charset);
+			return verifyFile(new File(file.getParentFile(), lines.get(0).substring(2)), charset, roundTrip);
 		} else try {
-			return verifyLines(lines, charset);
+			return verifyLines(lines, charset, roundTrip);
 		} catch (UnsupportedEncodingException e) {
 			System.out.println("  " + ERROR + " Unsupported encoding: " + charset);
 			return false;
 		}
 	}
 	
-	private static boolean verify(File file) {
+	private static boolean verify(File file, boolean roundTrip) {
 		if (file.isDirectory()) {
 			boolean ok = true;
 			File[] children = file.listFiles();
@@ -170,7 +172,7 @@ public class VerifyTable {
 			for (File child : children) {
 				if (child.getName().startsWith(".") || child.getName().endsWith("\r")) continue;
 				if (child.isDirectory() || child.getName().endsWith(".txt")) {
-					if (!verify(child)) {
+					if (!verify(child, roundTrip)) {
 						ok = false;
 					}
 				}
@@ -178,7 +180,7 @@ public class VerifyTable {
 			return ok;
 		} else try {
 			System.out.println(file.getName());
-			return verifyFile(file, file.getName().substring(0, file.getName().length() - 4));
+			return verifyFile(file, file.getName().substring(0, file.getName().length() - 4), roundTrip);
 		} catch (FileNotFoundException e) {
 			System.out.println("  " + ERROR + " File does not exist: " + file.getName());
 			return false;
@@ -186,9 +188,21 @@ public class VerifyTable {
 	}
 	
 	public static void main(String[] args) {
+		boolean parseOpts = true;
+		boolean roundTrip = true;
 		boolean ok = true;
 		for (String arg : args) {
-			if (!verify(new File(arg))) {
+			if (parseOpts && arg.startsWith("-")) {
+				if (arg.equals("--")) {
+					parseOpts = false;
+				} else if (arg.equals("-t")) {
+					roundTrip = false;
+				} else if (arg.equals("-T")) {
+					roundTrip = true;
+				} else {
+					System.out.println(ERROR + "Unknown option: " + arg);
+				}
+			} else if (!verify(new File(arg), roundTrip)) {
 				ok = false;
 			}
 		}
