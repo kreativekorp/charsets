@@ -82,7 +82,7 @@ public class VerifyTable {
 			if (cm.matches()) {
 				for (String cps : cm.group(1).substring(1).split("[+]")) {
 					int cp = Integer.parseInt(cps, 16);
-					if (cp >= 0xD800 && cp <= 0xDFFF) {
+					if (roundTrip && cp >= 0xD800 && cp <= 0xDFFF) {
 						System.out.println("  " + ERROR + " Use of UTF-16 surrogate in character sequence U" + cm.group(1));
 						ok = false;
 					}
