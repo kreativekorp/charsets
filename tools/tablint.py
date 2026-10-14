@@ -4,6 +4,8 @@ import os
 import re
 import sys
 
+BYTES_TO_CHARS = r'^0x(([0-9A-F]{2})+)\s+U((\+([1-9A-F]|10)?[0-9A-F]{4})+)$'
+CHARS_TO_BYTES = r'^U((\+([1-9A-F]|10)?[0-9A-F]{4})+)\s+0x(([0-9A-F]{2})+)$'
 ERROR = '\x1B[1;31mERROR:\x1B[0m'
 OK = '\x1B[1;32mOK\x1B[0m'
 ALL_OK = '\x1B[1;32mALL OK\x1B[0m'
@@ -17,7 +19,7 @@ def lint_lines(lines, round_trip):
 		line = line.split('#')[0].strip()
 		if not line:
 			continue
-		m = re.match(r'^0x(([0-9A-F]{2})+)\s+U((\+[0-9A-F]+)+)$', line)
+		m = re.match(BYTES_TO_CHARS, line)
 		if m:
 			for cps in m[3][1:].split('+'):
 				cp = int(cps, 16)
@@ -32,7 +34,7 @@ def lint_lines(lines, round_trip):
 			else:
 				bytes_to_chars[m[1]] = m[3]
 			continue
-		m = re.match(r'^U((\+[0-9A-F]+)+)\s+0x(([0-9A-F]{2})+)$', line)
+		m = re.match(CHARS_TO_BYTES, line)
 		if m:
 			for cps in m[1][1:].split('+'):
 				cp = int(cps, 16)
@@ -45,7 +47,7 @@ def lint_lines(lines, round_trip):
 				print('  %s Duplicate mapping for character sequence U%s' % (ERROR, m[1]))
 				ok = False
 			else:
-				chars_to_bytes[m[1]] = m[3]
+				chars_to_bytes[m[1]] = m[4]
 			continue
 		print('  %s Syntax error in line: %s' % (ERROR, line))
 		ok = False

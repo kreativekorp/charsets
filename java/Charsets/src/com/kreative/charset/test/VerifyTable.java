@@ -13,8 +13,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class VerifyTable {
-	private static final Pattern BYTES_TO_CHARS = Pattern.compile("^0x(([0-9A-F]{2})+)\\s+U((\\+[0-9A-F]+)+)$");
-	private static final Pattern CHARS_TO_BYTES = Pattern.compile("^U((\\+[0-9A-F]+)+)\\s+0x(([0-9A-F]{2})+)$");
+	private static final Pattern BYTES_TO_CHARS = Pattern.compile("^0x(([0-9A-F]{2})+)\\s+U((\\+([1-9A-F]|10)?[0-9A-F]{4})+)$");
+	private static final Pattern CHARS_TO_BYTES = Pattern.compile("^U((\\+([1-9A-F]|10)?[0-9A-F]{4})+)\\s+0x(([0-9A-F]{2})+)$");
 	private static final String ERROR = "\u001B[1;31mERROR:\u001B[0m";
 	private static final String OK = "\u001B[1;32mOK\u001B[0m";
 	private static final String ALL_OK = "\u001B[1;32mALL OK\u001B[0m";
@@ -94,8 +94,8 @@ public class VerifyTable {
 					System.out.println("  " + ERROR + " Duplicate mapping for character sequence U" + cm.group(1));
 					ok = false;
 				} else {
-					charsToBytes.put(cm.group(1), cm.group(3));
-					byte[] expected = hexToBytes(cm.group(3));
+					charsToBytes.put(cm.group(1), cm.group(4));
+					byte[] expected = hexToBytes(cm.group(4));
 					byte[] actual = hexToChars(cm.group(1).substring(1)).getBytes(charset);
 					if (!Arrays.equals(actual, expected)) {
 						System.out.println("  " + ERROR + " Encode failed for character sequence U" + cm.group(1));
