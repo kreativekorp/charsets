@@ -120,7 +120,9 @@ public class VerifyTable {
 				String ccs = (cbs == null) ? null : bytesToChars.get(cbs);
 				String rbs = (ccs == null) ? null : charsToBytes.get(ccs);
 				if (!cbs.equals(rbs)) {
-					System.out.println("  " + ERROR + " Failed to roundtrip 0x" + cbs + "; returned as 0x" + ((rbs != null) ? rbs : "<null>"));
+					cbs = (cbs == null) ? "unmapped" : ("0x" + cbs);
+					rbs = (rbs == null) ? "unmapped" : ("0x" + rbs);
+					System.out.println("  " + ERROR + " Failed to roundtrip " + cbs + "; returned as " + rbs);
 					ok = false;
 				}
 			}
@@ -128,7 +130,9 @@ public class VerifyTable {
 				String cbs = (ccs == null) ? null : charsToBytes.get(ccs);
 				String rcs = (cbs == null) ? null : bytesToChars.get(cbs);
 				if (!ccs.equals(rcs)) {
-					System.out.println("  " + ERROR + " Failed to roundtrip U" + ccs + "; returned as U" + ((rcs != null) ? rcs : "+<null>"));
+					ccs = (ccs == null) ? "unmapped" : ("U" + ccs);
+					rcs = (rcs == null) ? "unmapped" : ("U" + rcs);
+					System.out.println("  " + ERROR + " Failed to roundtrip " + ccs + "; returned as " + rcs);
 					ok = false;
 				}
 			}
