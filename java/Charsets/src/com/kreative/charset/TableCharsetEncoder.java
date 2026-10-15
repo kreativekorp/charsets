@@ -10,8 +10,7 @@ import java.util.Map;
 public class TableCharsetEncoder extends CharsetEncoder {
 	private final Map<Integer,Integer> stateTable;
 	private final Map<Integer,Long> outputTable;
-	private final int[] stack;
-	private int sp, state;
+	private final int stackSize;
 	
 	protected TableCharsetEncoder(
 		Charset cs, float avgbpc, float maxbpc, byte[] rep,
@@ -22,14 +21,7 @@ public class TableCharsetEncoder extends CharsetEncoder {
 		super(cs, avgbpc, maxbpc, rep);
 		this.stateTable = stateTable;
 		this.outputTable = outputTable;
-		this.stack = new int[stackSize];
-		this.sp = 0; this.state = 0;
-	}
-	
-	@Override
-	protected void implReset() {
-		this.sp = 0;
-		this.state = 0;
+		this.stackSize = stackSize;
 	}
 	
 	private static final boolean write(ByteBuffer out, long output) {
@@ -53,78 +45,44 @@ public class TableCharsetEncoder extends CharsetEncoder {
 	
 	@Override
 	protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
-		encodeLoop: while (in.hasRemaining()) {
+		int[] stack = new int[stackSize];
+		while (in.hasRemaining()) {
 			int ip = in.position();
-			int key = (state << 16) | (in.get() & 0xFFFF);
-			if (stateTable.containsKey(key)) {
+			int sp = 0;
+			int state = 0;
+			int key = in.get() & 0xFFFF;
+			while (stateTable.containsKey(key) && in.hasRemaining()) {
 				stack[sp++] = key;
 				state = stateTable.get(key);
-				continue encodeLoop;
-			} else if (outputTable.containsKey(key)) {
-				int op = out.position();
-				if (write(out, outputTable.get(key))) {
-					sp = 0; state = 0;
-					continue encodeLoop;
-				} else {
+				key = (state << 16) | (in.get() & 0xFFFF);
+			}
+			for (;;) {
+				if (outputTable.containsKey(key)) {
+					int op = out.position();
+					if (write(out, outputTable.get(key))) {
+						in.position(ip + sp + 1);
+						break;
+					}
 					out.position(op);
 					in.position(ip);
 					return CoderResult.OVERFLOW;
 				}
-			} else {
-				int tp = sp;
-				while (tp > 0) {
-					key = stack[--tp];
-					if (outputTable.containsKey(key)) {
-						int op = out.position();
-						if (write(out, outputTable.get(key))) {
-							in.position(ip - sp + tp + 1);
-							sp = 0; state = 0;
-							continue encodeLoop;
-						} else {
-							out.position(op);
-							in.position(ip);
-							return CoderResult.OVERFLOW;
+				if (sp == 0) {
+					in.position(ip);
+					if (Character.isHighSurrogate(in.get())) {
+						if (in.hasRemaining()) {
+							if (Character.isLowSurrogate(in.get())) {
+								in.position(ip);
+								return CoderResult.unmappableForLength(2);
+							}
 						}
 					}
+					in.position(ip);
+					return CoderResult.unmappableForLength(1);
 				}
-				int len = sp + 1;
-				in.position(ip - sp);
-				sp = 0; state = 0;
-				return CoderResult.unmappableForLength(len);
+				key = stack[--sp];
 			}
 		}
 		return CoderResult.UNDERFLOW;
-	}
-	
-	@Override
-	protected CoderResult implFlush(ByteBuffer out) {
-		int tp = sp;
-		while (tp > 0) {
-			int key = stack[--tp];
-			if (outputTable.containsKey(key)) {
-				int op = out.position();
-				if (write(out, outputTable.get(key))) {
-					int len = sp - tp - 1;
-					if (len == 0) {
-						sp = 0; state = 0;
-						return CoderResult.UNDERFLOW;
-					} else {
-						char[] rem = new char[len];
-						while (len > 0) rem[--len] = (char)stack[--sp];
-						sp = 0; state = 0;
-						CoderResult res = encodeLoop(CharBuffer.wrap(rem), out);
-						if (res != CoderResult.UNDERFLOW) return res;
-						return implFlush(out);
-					}
-				} else {
-					out.position(op);
-					return CoderResult.OVERFLOW;
-				}
-			}
-		}
-		int len = sp;
-		sp = 0; state = 0;
-		if (len == 0) return CoderResult.UNDERFLOW;
-		return CoderResult.unmappableForLength(len);
 	}
 }
