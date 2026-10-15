@@ -5,22 +5,15 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
-import java.util.Map;
 
-public class TableCharsetEncoder extends CharsetEncoder {
-	private final Map<Integer,Integer> stateTable;
-	private final Map<Integer,Long> outputTable;
+public abstract class TableCharsetEncoder extends CharsetEncoder {
 	private final int stackSize;
 	
 	protected TableCharsetEncoder(
 		Charset cs, float avgbpc, float maxbpc, byte[] rep,
-		Map<Integer,Integer> stateTable,
-		Map<Integer,Long> outputTable,
 		int stackSize
 	) {
 		super(cs, avgbpc, maxbpc, rep);
-		this.stateTable = stateTable;
-		this.outputTable = outputTable;
 		this.stackSize = stackSize;
 	}
 	
@@ -43,24 +36,31 @@ public class TableCharsetEncoder extends CharsetEncoder {
 		}
 	}
 	
+	protected abstract int getNextState(int state, int input);
+	protected abstract long getOutput(int state, int input);
+	
 	@Override
 	protected CoderResult encodeLoop(CharBuffer in, ByteBuffer out) {
-		int[] stack = new int[stackSize];
+		int[] stack = new int[stackSize << 1];
 		while (in.hasRemaining()) {
 			int ip = in.position();
 			int sp = 0;
 			int state = 0;
-			int key = in.get() & 0xFFFF;
-			while (stateTable.containsKey(key) && in.hasRemaining()) {
-				stack[sp++] = key;
-				state = stateTable.get(key);
-				key = (state << 16) | (in.get() & 0xFFFF);
+			int input = in.get() & 0xFFFF;
+			int nextState = getNextState(state, input);
+			while (nextState != 0 && in.hasRemaining()) {
+				stack[sp++] = state;
+				stack[sp++] = input;
+				state = nextState;
+				input = in.get() & 0xFFFF;
+				nextState = getNextState(state, input);
 			}
 			for (;;) {
-				if (outputTable.containsKey(key)) {
+				long output = getOutput(state, input);
+				if (output != 0) {
 					int op = out.position();
-					if (write(out, outputTable.get(key))) {
-						in.position(ip + sp + 1);
+					if (write(out, output)) {
+						in.position(ip + (sp >> 1) + 1);
 						break;
 					}
 					out.position(op);
@@ -80,7 +80,8 @@ public class TableCharsetEncoder extends CharsetEncoder {
 					in.position(ip);
 					return CoderResult.unmappableForLength(1);
 				}
-				key = stack[--sp];
+				input = stack[--sp];
+				state = stack[--sp];
 			}
 		}
 		return CoderResult.UNDERFLOW;

@@ -70,13 +70,13 @@ class JavaTableCharset:
 			output = char_output(bytes_to_chars[bs])
 			state = 0
 			for b in bs[0:-1]:
-				key = (state << 8) | (b & 0xFF)
+				key = (state, b & 0xFF)
 				if key in self.decoder_state_table:
 					state = self.decoder_state_table[key]
 				else:
 					state = len(self.decoder_state_table) + 1
 					self.decoder_state_table[key] = state
-			key = (state << 8) | (bs[-1] & 0xFF)
+			key = (state, bs[-1] & 0xFF)
 			self.decoder_output_table[key] = output
 			chars_per_byte = len(cs) / len(bs)
 			self.avg_chars_per_byte += chars_per_byte
@@ -99,13 +99,13 @@ class JavaTableCharset:
 			output = byte_output(bs)
 			state = 0
 			for c in cs[0:-1]:
-				key = (state << 16) | (c & 0xFFFF)
+				key = (state, c & 0xFFFF)
 				if key in self.encoder_state_table:
 					state = self.encoder_state_table[key]
 				else:
 					state = len(self.encoder_state_table) + 1
 					self.encoder_state_table[key] = state
-			key = (state << 16) | (cs[-1] & 0xFFFF)
+			key = (state, cs[-1] & 0xFFFF)
 			self.encoder_output_table[key] = output
 			bytes_per_char = len(bs) / len(cs)
 			self.avg_bytes_per_char += bytes_per_char
@@ -130,40 +130,87 @@ class JavaTableCharset:
 		with open(out_file, 'w') as f:
 			# Imports
 			f.write('package com.kreative.charset.generated;\n\n')
-			f.write('import com.kreative.charset.TableCharset;\n\n')
+			f.write('import com.kreative.charset.TableCharsetDecoder;\n')
+			f.write('import com.kreative.charset.TableCharsetEncoder;\n')
+			f.write('import java.nio.charset.Charset;\n\n')
 			# Open
-			f.write('public class %s extends TableCharset {\n' % self.classname)
-			f.write('\tpublic %s() {\n' % self.classname)
-			f.write('\t\tsuper(\n')
-			# Decoder Data
-			f.write('\t\t\t%gf,\n' % self.avg_chars_per_byte)
-			f.write('\t\t\t%gf,\n' % self.max_chars_per_byte)
-			f.write('\t\t\t%d,\n' % len(self.decoder_state_table))
-			f.write('\t\t\tnew int[]{%s},\n' % ','.join('0x%X' % i for i in sorted(self.decoder_state_table)))
-			f.write('\t\t\tnew int[]{%s},\n' % ','.join('0x%X' % self.decoder_state_table[i] for i in sorted(self.decoder_state_table)))
-			f.write('\t\t\t%d,\n' % len(self.decoder_output_table))
-			f.write('\t\t\tnew int[]{%s},\n' % ','.join('0x%X' % i for i in sorted(self.decoder_output_table)))
-			f.write('\t\t\tnew long[]{%s},\n' % ','.join('0x%XL' % self.decoder_output_table[i] for i in sorted(self.decoder_output_table)))
-			f.write('\t\t\t%d,\n' % self.decoder_max_bytes)
-			# Encoder Data
-			f.write('\t\t\t%gf,\n' % self.avg_bytes_per_char)
-			f.write('\t\t\t%gf,\n' % self.max_bytes_per_char)
-			f.write('\t\t\tnew byte[]{%s},\n' % ','.join(str(b if b < 128 else b - 256) for b in self.encoder_replacement))
-			f.write('\t\t\t%d,\n' % len(self.encoder_state_table))
-			f.write('\t\t\tnew int[]{%s},\n' % ','.join('0x%X' % i for i in sorted(self.encoder_state_table)))
-			f.write('\t\t\tnew int[]{%s},\n' % ','.join('0x%X' % self.encoder_state_table[i] for i in sorted(self.encoder_state_table)))
-			f.write('\t\t\t%d,\n' % len(self.encoder_output_table))
-			f.write('\t\t\tnew int[]{%s},\n' % ','.join('0x%X' % i for i in sorted(self.encoder_output_table)))
-			f.write('\t\t\tnew long[]{%s},\n' % ','.join('0x%XL' % self.encoder_output_table[i] for i in sorted(self.encoder_output_table)))
-			f.write('\t\t\t%d,\n' % self.encoder_max_chars)
+			f.write('public class %s extends Charset {\n' % self.classname)
 			# Names
-			f.write('\t\t\t"%s"' % self.name)
-			for alias in self.aliases:
-				f.write(',\n\t\t\t"%s"' % alias)
-			f.write('\n')
-			# Close
-			f.write('\t\t);\n')
+			f.write('\tpublic %s() {\n' % self.classname)
+			f.write('\t\tsuper("%s", new String[]{%s});\n' % (self.name, ', '.join('"%s"' % a for a in self.aliases)))
+			f.write('\t}\n\n')
+			# Contains
+			f.write('\tpublic boolean contains(Charset cs) {\n')
+			f.write('\t\treturn false;\n')
+			f.write('\t}\n\n')
+			# Decoder
+			f.write('\tpublic TableCharsetDecoder newDecoder() {\n')
+			f.write('\t\treturn new TableCharsetDecoder(this, %gf, %gf, %d) {\n' % (
+				self.avg_chars_per_byte,
+				self.max_chars_per_byte,
+				self.decoder_max_bytes
+			))
+			f.write('\t\t\tprotected int getNextState(int state, int input) {\n')
+			f.write('\t\t\t\tswitch (state) {\n')
+			for state in sorted(set(k[0] for k in self.decoder_state_table)):
+				f.write('\t\t\t\tcase %d:\n' % state)
+				f.write('\t\t\t\t\tswitch (input) {\n')
+				for input in sorted(k[1] for k in self.decoder_state_table if k[0] == state):
+					f.write('\t\t\t\t\tcase 0x%X: return %d;\n' % (input, self.decoder_state_table[(state, input)]))
+				f.write('\t\t\t\t\tdefault: return 0;\n')
+				f.write('\t\t\t\t\t}\n')
+			f.write('\t\t\t\tdefault: return 0;\n')
+			f.write('\t\t\t\t}\n')
+			f.write('\t\t\t}\n')
+			f.write('\t\t\tprotected long getOutput(int state, int input) {\n')
+			f.write('\t\t\t\tswitch (state) {\n')
+			for state in sorted(set(k[0] for k in self.decoder_output_table)):
+				f.write('\t\t\t\tcase %d:\n' % state)
+				f.write('\t\t\t\t\tswitch (input) {\n')
+				for input in sorted(k[1] for k in self.decoder_output_table if k[0] == state):
+					f.write('\t\t\t\t\tcase 0x%X: return 0x%XL;\n' % (input, self.decoder_output_table[(state, input)]))
+				f.write('\t\t\t\t\tdefault: return 0;\n')
+				f.write('\t\t\t\t\t}\n')
+			f.write('\t\t\t\tdefault: return 0;\n')
+			f.write('\t\t\t\t}\n')
+			f.write('\t\t\t}\n')
+			f.write('\t\t};\n')
+			f.write('\t}\n\n')
+			# Encoder
+			f.write('\tpublic TableCharsetEncoder newEncoder() {\n')
+			f.write('\t\treturn new TableCharsetEncoder(this, %gf, %gf, new byte[]{%s}, %d) {\n' % (
+				self.avg_bytes_per_char,
+				self.max_bytes_per_char,
+				','.join(str(b if b < 128 else b - 256) for b in self.encoder_replacement),
+				self.encoder_max_chars
+			))
+			f.write('\t\t\tprotected int getNextState(int state, int input) {\n')
+			f.write('\t\t\t\tswitch (state) {\n')
+			for state in sorted(set(k[0] for k in self.encoder_state_table)):
+				f.write('\t\t\t\tcase %d:\n' % state)
+				f.write('\t\t\t\t\tswitch (input) {\n')
+				for input in sorted(k[1] for k in self.encoder_state_table if k[0] == state):
+					f.write('\t\t\t\t\tcase 0x%X: return %d;\n' % (input, self.encoder_state_table[(state, input)]))
+				f.write('\t\t\t\t\tdefault: return 0;\n')
+				f.write('\t\t\t\t\t}\n')
+			f.write('\t\t\t\tdefault: return 0;\n')
+			f.write('\t\t\t\t}\n')
+			f.write('\t\t\t}\n')
+			f.write('\t\t\tprotected long getOutput(int state, int input) {\n')
+			f.write('\t\t\t\tswitch (state) {\n')
+			for state in sorted(set(k[0] for k in self.encoder_output_table)):
+				f.write('\t\t\t\tcase %d:\n' % state)
+				f.write('\t\t\t\t\tswitch (input) {\n')
+				for input in sorted(k[1] for k in self.encoder_output_table if k[0] == state):
+					f.write('\t\t\t\t\tcase 0x%X: return 0x%XL;\n' % (input, self.encoder_output_table[(state, input)]))
+				f.write('\t\t\t\t\tdefault: return 0;\n')
+				f.write('\t\t\t\t\t}\n')
+			f.write('\t\t\t\tdefault: return 0;\n')
+			f.write('\t\t\t\t}\n')
+			f.write('\t\t\t}\n')
+			f.write('\t\t};\n')
 			f.write('\t}\n')
+			# Close
 			f.write('}\n')
 
 class JavaGenerator:
