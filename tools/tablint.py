@@ -139,6 +139,8 @@ def main():
 		ok = ok1 and ok2
 	if ok:
 		print(ALL_OK)
+	return ok
 
 if __name__ == '__main__':
-	main()
+	if not main():
+		sys.exit(1)

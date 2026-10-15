@@ -2,7 +2,6 @@ package com.kreative.charset.test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -44,7 +43,33 @@ public class VerifyTable {
 		return s.toString();
 	}
 	
-	private static boolean verifyLines(ArrayList<String> lines, String charset, boolean roundTrip) throws UnsupportedEncodingException {
+	private static String bytesToHex(byte[] bytes) {
+		StringBuffer s = new StringBuffer();
+		for (int i = 0; i < bytes.length; i++) {
+			if (i != 0) s.append(" ");
+			int b = bytes[i] & 0xFF;
+			String h = Integer.toHexString(b);
+			if (h.length() < 2) s.append("0");
+			s.append(h.toUpperCase());
+		}
+		return s.toString();
+	}
+	
+	private static String charsToHex(String chars) {
+		StringBuffer s = new StringBuffer();
+		int i = 0; int n = chars.length();
+		while (i < n) {
+			if (i != 0) s.append("+");
+			int ch = chars.codePointAt(i);
+			String h = Integer.toHexString(ch);
+			while (h.length() < 4) h = "0" + h;
+			s.append(h.toUpperCase());
+			i += Character.charCount(ch);
+		}
+		return s.toString();
+	}
+	
+	private static boolean verifyLines(ArrayList<String> lines, String charset, boolean roundTrip) {
 		TreeMap<String,String> bytesToChars = new TreeMap<String,String>();
 		TreeMap<String,String> charsToBytes = new TreeMap<String,String>();
 		TreeSet<Integer> puaChars = new TreeSet<Integer>();
@@ -69,10 +94,17 @@ public class VerifyTable {
 					ok = false;
 				} else {
 					bytesToChars.put(bm.group(1), bm.group(3));
-					String expected = hexToChars(bm.group(3).substring(1));
-					String actual = new String(hexToBytes(bm.group(1)), charset);
-					if (!actual.equals(expected)) {
+					try {
+						String expected = hexToChars(bm.group(3).substring(1));
+						String actual = new String(hexToBytes(bm.group(1)), charset);
+						if (!actual.equals(expected)) {
+							System.out.println("  " + ERROR + " Decode failed for byte sequence 0x" + bm.group(1));
+							System.out.println("  * " + charsToHex(actual) + " != " + charsToHex(expected));
+							ok = false;
+						}
+					} catch (Throwable t) {
 						System.out.println("  " + ERROR + " Decode failed for byte sequence 0x" + bm.group(1));
+						System.out.println("  * " + t);
 						ok = false;
 					}
 				}
@@ -95,10 +127,17 @@ public class VerifyTable {
 					ok = false;
 				} else {
 					charsToBytes.put(cm.group(1), cm.group(4));
-					byte[] expected = hexToBytes(cm.group(4));
-					byte[] actual = hexToChars(cm.group(1).substring(1)).getBytes(charset);
-					if (!Arrays.equals(actual, expected)) {
+					try {
+						byte[] expected = hexToBytes(cm.group(4));
+						byte[] actual = hexToChars(cm.group(1).substring(1)).getBytes(charset);
+						if (!Arrays.equals(actual, expected)) {
+							System.out.println("  " + ERROR + " Encode failed for character sequence U" + cm.group(1));
+							System.out.println("  * " + bytesToHex(actual) + " != " + bytesToHex(expected));
+							ok = false;
+						}
+					} catch (Throwable t) {
 						System.out.println("  " + ERROR + " Encode failed for character sequence U" + cm.group(1));
+						System.out.println("  * " + t);
 						ok = false;
 					}
 				}
@@ -160,11 +199,8 @@ public class VerifyTable {
 		if (lines.size() == 1 && lines.get(0).startsWith("./") && lines.get(0).endsWith(".txt")) {
 			System.out.println("  -> " + lines.get(0));
 			return verifyFile(new File(file.getParentFile(), lines.get(0).substring(2)), charset, roundTrip);
-		} else try {
+		} else {
 			return verifyLines(lines, charset, roundTrip);
-		} catch (UnsupportedEncodingException e) {
-			System.out.println("  " + ERROR + " Unsupported encoding: " + charset);
-			return false;
 		}
 	}
 	
