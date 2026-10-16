@@ -1,6 +1,7 @@
 # Name: Apple IIe Alternate; logos replaced with emoji
 # Date: 2026-10-08
 # Auth: Rebecca Bettencourt
+# Allow-Emoji: U+1F34E, U+1F34F
 
 0x00	U+0040	# COMMERCIAL AT
 0x01	U+0041	# LATIN CAPITAL LETTER A

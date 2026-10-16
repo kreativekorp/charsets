@@ -12,9 +12,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class VerifyTable {
+	private static final Pattern CODE_POINT = Pattern.compile("\\bU\\+(([1-9A-F]|10)?[0-9A-F]{4})\\b");
 	private static final Pattern BYTES_TO_CHARS = Pattern.compile("^0x(([0-9A-F]{2})+)\\s+U((\\+([1-9A-F]|10)?[0-9A-F]{4})+)$");
 	private static final Pattern CHARS_TO_BYTES = Pattern.compile("^U((\\+([1-9A-F]|10)?[0-9A-F]{4})+)\\s+0x(([0-9A-F]{2})+)$");
 	private static final String ERROR = "\u001B[1;31mERROR:\u001B[0m";
+	private static final String WARN = "\u001B[1;33mWARN:\u001B[0m";
 	private static final String OK = "\u001B[1;32mOK\u001B[0m";
 	private static final String ALL_OK = "\u001B[1;32mALL OK\u001B[0m";
 	
@@ -23,6 +25,36 @@ public class VerifyTable {
 			return a.getName().compareToIgnoreCase(b.getName());
 		}
 	};
+	
+	private static ArrayList<Integer> extractEmoji(String s) {
+		ArrayList<Integer> emoji = new ArrayList<Integer>();
+		int i = 0; int n = s.length();
+		while (i < n) {
+			int cp = s.codePointAt(i);
+			i += Character.charCount(cp);
+			if (EmojiData.EMOJI_WITH_VARIATION_SEQUENCES.contains(cp) && i < n) {
+				if (s.charAt(i) == EmojiData.EMOJI_STYLE) {
+					emoji.add(cp);
+					continue;
+				}
+				if (s.charAt(i) == EmojiData.TEXT_STYLE) {
+					continue;
+				}
+			}
+			if (EmojiData.EMOJI_PRESENTATION.contains(cp)) {
+				emoji.add(cp);
+			}
+		}
+		return emoji;
+	}
+	
+	private static String emojiToText(int cp) {
+		Integer tcp = EmojiData.EMOJI_TO_TEXT_VARIANT.get(cp);
+		if (tcp != null) return String.valueOf(Character.toChars(tcp));
+		boolean wvs = EmojiData.EMOJI_WITH_VARIATION_SEQUENCES.contains(cp);
+		if (wvs) return String.valueOf(Character.toChars(cp)) + EmojiData.TEXT_STYLE;
+		return null;
+	}
 	
 	private static byte[] hexToBytes(String hex) {
 		byte[] b = new byte[hex.length() / 2];
@@ -70,15 +102,35 @@ public class VerifyTable {
 	}
 	
 	private static boolean verifyLines(ArrayList<String> lines, String charset, boolean roundTrip) {
+		TreeSet<Integer> allowedEmoji = new TreeSet<Integer>();
 		TreeMap<String,String> bytesToChars = new TreeMap<String,String>();
 		TreeMap<String,String> charsToBytes = new TreeMap<String,String>();
 		TreeSet<Integer> puaChars = new TreeSet<Integer>();
 		boolean ok = true;
 		for (String line : lines) {
-			line = line.split("#")[0].trim();
+			int o = line.indexOf('#');
+			String comment = (o < 0) ? "" : line.substring(o + 1).trim();
+			line = (o < 0) ? line.trim() : line.substring(0, o).trim();
+			if (comment.startsWith("Allow-Emoji:")) {
+				Matcher m = CODE_POINT.matcher(comment);
+				while (m.find()) allowedEmoji.add(Integer.parseInt(m.group(1), 16));
+			}
 			if (line.length() == 0) continue;
 			Matcher bm = BYTES_TO_CHARS.matcher(line);
 			if (bm.matches()) {
+				if (roundTrip) {
+					for (int emoji : extractEmoji(hexToChars(bm.group(3).substring(1)))) {
+						if (allowedEmoji.contains(emoji)) continue;
+						String h = Integer.toHexString(emoji).toUpperCase();
+						while (h.length() < 4) h = "0" + h;
+						String text = emojiToText(emoji);
+						if (text == null) {
+							System.out.println("  " + WARN + " Mapping 0x" + bm.group(1) + " -> U" + bm.group(3) + " contains emoji U+" + h);
+						} else {
+							System.out.println("  " + WARN + " Mapping 0x" + bm.group(1) + " -> U" + bm.group(3) + " contains emoji U+" + h + "; suggested replacement: U+" + charsToHex(text));
+						}
+					}
+				}
 				for (String cps : bm.group(3).substring(1).split("[+]")) {
 					int cp = Integer.parseInt(cps, 16);
 					if (cp >= 0xD800 && cp <= 0xDFFF) {

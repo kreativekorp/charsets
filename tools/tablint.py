@@ -3,26 +3,65 @@
 import os
 import re
 import sys
+import emojidata
 
+CODE_POINT = r'\bU\+(([1-9A-F]|10)?[0-9A-F]{4})\b'
 BYTES_TO_CHARS = r'^0x(([0-9A-F]{2})+)\s+U((\+([1-9A-F]|10)?[0-9A-F]{4})+)$'
 CHARS_TO_BYTES = r'^U((\+([1-9A-F]|10)?[0-9A-F]{4})+)\s+0x(([0-9A-F]{2})+)$'
 ERROR = '\x1B[1;31mERROR:\x1B[0m'
+WARN = '\x1B[1;33mWARN:\x1B[0m'
 OK = '\x1B[1;32mOK\x1B[0m'
 ALL_OK = '\x1B[1;32mALL OK\x1B[0m'
 
+def extract_emoji(code_points):
+	emoji = []
+	for i in range(len(code_points)):
+		if code_points[i] in emojidata.EMOJI_WITH_VARIATION_SEQUENCES:
+			if i+1 < len(code_points):
+				if code_points[i+1] == emojidata.EMOJI_STYLE:
+					emoji.append(code_points[i])
+					continue
+				if code_points[i+1] == emojidata.TEXT_STYLE:
+					continue
+		if code_points[i] in emojidata.EMOJI_PRESENTATION:
+			emoji.append(code_points[i])
+	return emoji
+
+def emoji_to_text(code_point):
+	if code_point in emojidata.EMOJI_TO_TEXT_VARIANT:
+		return [emojidata.EMOJI_TO_TEXT_VARIANT[code_point]]
+	if code_point in emojidata.EMOJI_WITH_VARIATION_SEQUENCES:
+		return [code_point, emojidata.TEXT_STYLE]
+	return None
+
 def lint_lines(lines, round_trip=True, then_call=None, with_name=None, with_canonical_name=None):
+	allowed_emoji = {}
 	bytes_to_chars = {}
 	chars_to_bytes = {}
 	pua_chars = {}
 	ok = True
 	for line in lines:
-		line = line.split('#')[0].strip()
+		line, _, comment = [p.strip() for p in line.partition('#')]
+		if comment.startswith('Allow-Emoji:'):
+			for emoji, _ in re.findall(CODE_POINT, comment):
+				emoji = int(emoji, 16)
+				allowed_emoji[emoji] = emoji
 		if not line:
 			continue
 		m = re.match(BYTES_TO_CHARS, line)
 		if m:
 			bs = tuple(int(m[1][i:i+2],16) for i in range(0,len(m[1]),2))
 			cps = tuple(int(cp,16) for cp in m[3][1:].split('+'))
+			if round_trip:
+				for emoji in extract_emoji(cps):
+					if emoji in allowed_emoji:
+						continue
+					text = emoji_to_text(emoji)
+					if text is None:
+						print('  %s Mapping 0x%s -> U%s contains emoji U+%04X' % (WARN, m[1], m[3], emoji))
+					else:
+						text = '+'.join('%04X' % ch for ch in text)
+						print('  %s Mapping 0x%s -> U%s contains emoji U+%04X; suggested replacement: U+%s' % (WARN, m[1], m[3], emoji, text))
 			for cp in cps:
 				if 0xD800 <= cp <= 0xDFFF:
 					print('  %s Use of UTF-16 surrogate in character sequence U%s' % (ERROR, m[3]))
