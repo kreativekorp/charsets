@@ -7,14 +7,11 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CoderResult;
 
 public abstract class TableCharsetDecoder extends CharsetDecoder {
-	private final int stackSize;
+	private final int maxin;
 	
-	protected TableCharsetDecoder(
-		Charset cs, float avgcpb, float maxcpb,
-		int stackSize
-	) {
+	protected TableCharsetDecoder(Charset cs, float avgcpb, float maxcpb, int maxin) {
 		super(cs, avgcpb, maxcpb);
-		this.stackSize = stackSize;
+		this.maxin = maxin;
 	}
 	
 	private static final boolean write(CharBuffer out, long output) {
@@ -33,7 +30,7 @@ public abstract class TableCharsetDecoder extends CharsetDecoder {
 	
 	@Override
 	protected CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
-		int[] stack = new int[stackSize << 1];
+		int[] stack = new int[maxin << 1];
 		while (in.hasRemaining()) {
 			int ip = in.position();
 			int sp = 0;
