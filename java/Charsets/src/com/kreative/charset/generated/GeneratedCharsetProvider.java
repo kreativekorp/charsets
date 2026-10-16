@@ -5,6 +5,11 @@ import com.kreative.charset.AbstractCharsetProvider;
 public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 	public GeneratedCharsetProvider() {
 		super(
+			new XAcornAtomCharset(),
+			new XAcornAtomVideoCharset(),
+			new XAcornElectronCharset(),
+			new XAcornMode7Charset(),
+			new XAcornMode7VideoCharset(),
 			new XApple2Charset(),
 			new XApple2eCharset(),
 			new XApple2eEmojiCharset(),
@@ -42,6 +47,9 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XPetscii82AltCharset(),
 			new XPetscii82AltVideoCharset(),
 			new XPetscii82VideoCharset(),
+			new XRiscosCharset(),
+			new XRiscosBfontCharset(),
+			new XRiscosEffCharset(),
 			new XSharpsciiEuCharset(),
 			new XSharpsciiEuAltVideoCharset(),
 			new XSharpsciiEuVideoCharset(),

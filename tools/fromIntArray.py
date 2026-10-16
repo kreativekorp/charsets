@@ -6,7 +6,7 @@ import unicodedata
 
 index = 0
 for line in sys.stdin:
-	for _, cps in re.findall('([Uu][+]|[0][Xx])([0-9A-Fa-f]+)', line):
+	for cps in re.findall('[0-9A-Fa-f]{4,}', line):
 		cp = int(cps, 16)
 		name = unicodedata.name(chr(cp), '')
 		print('0x%02X\tU+%04X\t# %s' % (index, cp, name))
