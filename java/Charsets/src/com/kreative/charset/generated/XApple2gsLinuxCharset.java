@@ -23,7 +23,7 @@ public class XApple2gsLinuxCharset extends Charset {
 
 	private static final class XApple2gsLinuxCharsetDecoder extends TableCharsetDecoder {
 		private XApple2gsLinuxCharsetDecoder(Charset cs) {
-			super(cs, 1.05859f, 2f, 1);
+			super(cs, 1.0625f, 2f, 1);
 		}
 		protected int getNextState(int state, int input) {
 			return 0;
@@ -33,7 +33,7 @@ public class XApple2gsLinuxCharset extends Charset {
 			0x50, 0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59, 0x5A, 0x5B, 0x5C, 0x5D, 0x5E, 0x5F,
 			0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F,
 			0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E, 0x3F,
-			0xF813, 0xF812, 0xDFB0D83E, 0x231B, 0x2713, 0xDFB1D83E, 0xDFB4D83E, 0xDF81D83E, 0x2190, 0x2026, 0x2193, 0x2191, 0x2594, 0x21B2, 0x2589, 0xDFB5D83E,
+			0xF813, 0xF812, 0xDFB0D83E, 0xFE0E231B, 0x2713, 0xDFB1D83E, 0xDFB4D83E, 0xDF81D83E, 0x2190, 0x2026, 0x2193, 0x2191, 0x2594, 0x21B2, 0x2589, 0xDFB5D83E,
 			0xDFB6D83E, 0xDFB7D83E, 0xDFB8D83E, 0x2500, 0xDF7CD83E, 0x2192, 0x2592, 0xDF90D83E, 0xDFB9D83E, 0xDFBAD83E, 0x2595, 0x25C6, 0xDF80D83E, 0xDFBBD83E, 0xDFBCD83E, 0x258F,
 			0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x6A, 0x6B, 0x6C, 0x6D, 0x6E, 0x6F,
 			0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78, 0x79, 0x7A, 0x7B, 0x7C, 0x7D, 0x7E, 0x7F,
@@ -59,13 +59,15 @@ public class XApple2gsLinuxCharset extends Charset {
 
 	private static final class XApple2gsLinuxCharsetEncoder extends TableCharsetEncoder {
 		private XApple2gsLinuxCharsetEncoder(Charset cs) {
-			super(cs, 0.944444f, 1f, new byte[]{-65}, 2);
+			super(cs, 0.930108f, 1f, new byte[]{-65}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {
-			case 0xD83C: return 0x2;
-			case 0xD83E: return 0x3;
-			case 0xF8FF: return 0x1;
+			case 0x231B: return 0x1;
+			case 0xD83C: return 0x3;
+			case 0xD83E: return 0x4;
+			case 0xDBBF: return 0x5;
+			case 0xF8FF: return 0x2;
 			default: return 0;
 			}
 		}
@@ -242,18 +244,25 @@ public class XApple2gsLinuxCharset extends Charset {
 		}
 		private long getOutput1(int input) {
 			switch (input) {
-			case 0xF87F: return 0x41L;
+			case 0xFE0E: return 0x43L;
+			case 0xFE0F: return 0x43L;
 			default: return 0;
 			}
 		}
 		private long getOutput2(int input) {
+			switch (input) {
+			case 0xF87F: return 0x41L;
+			default: return 0;
+			}
+		}
+		private long getOutput3(int input) {
 			switch (input) {
 			case 0xDF4E: return 0x40L;
 			case 0xDF4F: return 0x41L;
 			default: return 0;
 			}
 		}
-		private long getOutput3(int input) {
+		private long getOutput4(int input) {
 			switch (input) {
 			case 0xDF7C: return 0x54L;
 			case 0xDF80: return 0x5CL;
@@ -275,12 +284,23 @@ public class XApple2gsLinuxCharset extends Charset {
 			default: return 0;
 			}
 		}
+		private long getOutput5(int input) {
+			switch (input) {
+			case 0xDC82: return 0x56L;
+			case 0xDC83: return 0x57L;
+			case 0xDCE2: return 0x41L;
+			case 0xDCE3: return 0x40L;
+			default: return 0;
+			}
+		}
 		protected long getOutput(int state, int input) {
 			switch (state) {
 			case 0: return getOutput0(input);
 			case 1: return getOutput1(input);
 			case 2: return getOutput2(input);
 			case 3: return getOutput3(input);
+			case 4: return getOutput4(input);
+			case 5: return getOutput5(input);
 			default: return 0;
 			}
 		}
