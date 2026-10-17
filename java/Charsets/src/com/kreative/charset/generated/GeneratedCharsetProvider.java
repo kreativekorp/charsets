@@ -58,6 +58,8 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XMsxRuCharset(),
 			new XMsxRuVideoCharset(),
 			new XMsxVideoCharset(),
+			new XOsiCharset(),
+			new XOsiVideoCharset(),
 			new XPetscii77Charset(),
 			new XPetscii77AltCharset(),
 			new XPetscii77AltVideoCharset(),
