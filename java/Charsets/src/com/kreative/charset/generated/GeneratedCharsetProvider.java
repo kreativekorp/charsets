@@ -79,6 +79,7 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XRiscosCharset(),
 			new XRiscosBfontCharset(),
 			new XRiscosEffCharset(),
+			new XRobotronCharset(),
 			new XSharpsciiEuCharset(),
 			new XSharpsciiEuAltVideoCharset(),
 			new XSharpsciiEuVideoCharset(),
