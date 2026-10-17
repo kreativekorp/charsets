@@ -95,6 +95,8 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XSharpsciiMz80kEuCharset(),
 			new XSharpsciiMz80kEuVideoCharset(),
 			new XSharpsciiMz80kJpCharset(),
+			new XSharpx1Charset(),
+			new XSharpx1VideoCharset(),
 			new XSinclairqlCharset(),
 			new XSinclairqlVideoCharset(),
 			new XTi994aCharset(),
