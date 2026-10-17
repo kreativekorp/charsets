@@ -30,6 +30,8 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XAtasciiVideoCharset(),
 			new XGemdosCharset(),
 			new XGemdosVideoCharset(),
+			new XKayproCharset(),
+			new XKayproVideoCharset(),
 			new XKkSuper437C0Charset(),
 			new XKkSuper437FullCharset(),
 			new XKkSuperlatinC0Charset(),
