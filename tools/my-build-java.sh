@@ -1,6 +1,9 @@
 #!/usr/bin/bash -e
 REPO_ROOT="$(dirname "$(dirname "$(readlink -fm "$0")")")"
 
+cd "$REPO_ROOT/java/Charsets"
+rm -rf src/com/kreative/charset/generated
+
 cd "$REPO_ROOT/tools"
 python3 gen-java.py
 
