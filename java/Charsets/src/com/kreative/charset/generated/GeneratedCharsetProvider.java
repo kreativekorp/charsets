@@ -106,6 +106,7 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XSmalltalk72Charset(),
 			new XSmalltalk78Charset(),
 			new XTi994aCharset(),
+			new XTomyTutorCharset(),
 			new XTrs80CocoCharset(),
 			new XTrs80CocoSg6VideoCharset(),
 			new XTrs80CocoT1Charset(),
