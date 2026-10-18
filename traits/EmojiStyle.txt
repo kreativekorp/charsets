@@ -1,0 +1,24 @@
+U+262C	kEmojiStyle	U+1FAAF
+U+1CCFA	kEmojiStyle	U+1F40D
+U+1CCFB	kEmojiStyle	U+1F6F8
+U+1CCFC	kEmojiStyle	U+1F443
+U+1CEBA	kEmojiStyle	U+1F377
+U+1CEBB	kEmojiStyle	U+1F3E2
+U+1CEBC	kEmojiStyle	U+1F333
+U+1CEBD	kEmojiStyle	U+1F34E
+U+1CEBE	kEmojiStyle	U+1F352
+U+1CEBF	kEmojiStyle	U+1F353
+U+1FBFA	kEmojiStyle	U+1F514
+
+U+1F333	kTextStyle	U+1CEBC
+U+1F34E	kTextStyle	U+1CEBD
+U+1F34F	kTextStyle	U+1CEBD
+U+1F352	kTextStyle	U+1CEBE
+U+1F353	kTextStyle	U+1CEBF
+U+1F377	kTextStyle	U+1CEBA
+U+1F3E2	kTextStyle	U+1CEBB
+U+1F40D	kTextStyle	U+1CCFA
+U+1F443	kTextStyle	U+1CCFC
+U+1F514	kTextStyle	U+1FBFA
+U+1F6F8	kTextStyle	U+1CCFB
+U+1FAAF	kTextStyle	U+262C
