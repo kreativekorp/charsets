@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XUsAsciiCharset extends Charset {
 	public XUsAsciiCharset() {
-		super("x-us-ascii", new String[]{});
+		super("x-us-ascii", new String[]{"x-ansi-x34-1967", "x-iso-646-irv", "x-iso-646-us"});
 	}
 
 	public boolean contains(Charset cs) {
