@@ -88,7 +88,7 @@ def write_table_method(f, name, key_type, value_type, table, smallest_array=16, 
 			array_cases.append(
 				'if (input >= 0x%X && input <= 0x%X) return %s[input - 0x%X];' %
 				(min_key, max_key, array_name, min_key)
-			);
+			)
 	f.write('\t\tprivate %s %s(%s input) {\n' % (value_type, name, key_type))
 	for array_case in array_cases:
 		f.write('\t\t\t%s\n' % array_case)
