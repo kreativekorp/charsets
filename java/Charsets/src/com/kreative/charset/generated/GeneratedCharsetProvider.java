@@ -145,6 +145,7 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XKkVoynichV101Charset(),
 			new XKoi8RCharset(),
 			new XKoi8UCharset(),
+			new XKps9566Charset(),
 			new XKz1048Charset(),
 			new XLatin9pVideoCharset(),
 			new XMsxCharset(),
