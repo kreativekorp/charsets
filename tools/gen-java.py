@@ -57,34 +57,48 @@ def char_input(cs):
 			raise ValueError(c)
 	return tuple(input)
 
-def write_table_method(f, name, key_type, value_type, table):
-	if not table:
-		f.write('\t\tprivate %s %s(%s input) {\n' % (value_type, name, key_type))
-		f.write('\t\t\treturn 0;\n')
-		f.write('\t\t}\n')
-	elif max(table) > len(table) * 2:
-		f.write('\t\tprivate %s %s(%s input) {\n' % (value_type, name, key_type))
+def write_table_array(f, name, min_key, max_key, table, values_per_line=16):
+	max_value = max(table[k] for k in table if min_key <= k <= max_key)
+	array_type = 'char' if max_value <= 0xFFFF else 'int' if max_value <= 0xFFFFFFFF else 'long'
+	f.write('\t\tprivate static final %s[] %s = {\n' % (array_type, name))
+	for i in range(0, max_key - min_key + 1, values_per_line):
+		f.write('\t\t\t%s,\n' % ', '.join(
+			('0' if k not in table else '0x%XL' % table[k] if array_type == 'long' else '0x%X' % table[k])
+			for k in range(min_key + i, min(min_key + i + values_per_line, max_key + 1))
+		))
+	f.write('\t\t};\n')
+
+def write_table_method(f, name, key_type, value_type, table, smallest_array=16, largest_gap=16):
+	array_cases = []
+	switch_cases = []
+	keys = sorted(table)
+	while keys:
+		min_key = max_key = keys.pop(0)
+		subtable = {max_key: table[max_key]}
+		while keys and keys[0] <= (max_key + 1 + largest_gap):
+			max_key = keys.pop(0)
+			subtable[max_key] = table[max_key]
+		if len(subtable) < smallest_array:
+			for key in sorted(subtable):
+				value = '0x%XL' % table[key] if value_type == 'long' else '0x%X' % table[key]
+				switch_cases.append('case 0x%X: return %s;' % (key, value))
+		else:
+			array_name = '%s_%X' % (name.upper(), min_key)
+			write_table_array(f, array_name, min_key, max_key, subtable)
+			array_cases.append(
+				'if (input >= 0x%X && input <= 0x%X) return %s[input - 0x%X];' %
+				(min_key, max_key, array_name, min_key)
+			);
+	f.write('\t\tprivate %s %s(%s input) {\n' % (value_type, name, key_type))
+	for array_case in array_cases:
+		f.write('\t\t\t%s\n' % array_case)
+	if switch_cases:
 		f.write('\t\t\tswitch (input) {\n')
-		for key in sorted(table):
-			value = '0x%XL' % table[key] if value_type == 'long' else '0x%X' % table[key]
-			f.write('\t\t\tcase 0x%X: return %s;\n' % (key, value))
-		f.write('\t\t\tdefault: return 0;\n')
+		for switch_case in switch_cases:
+			f.write('\t\t\t%s\n' % switch_case)
 		f.write('\t\t\t}\n')
-		f.write('\t\t}\n')
-	else:
-		max_key = max(table)
-		max_value = max(table[k] for k in table)
-		array_type = 'char' if max_value <= 0xFFFF else 'int' if max_value <= 0xFFFFFFFF else 'long'
-		f.write('\t\tprivate static final %s[] %s = {\n' % (array_type, name.upper()))
-		for i in range(0, max_key + 1, 16):
-			f.write('\t\t\t%s,\n' % ', '.join(
-				('0' if k not in table else '0x%XL' % table[k] if array_type == 'long' else '0x%X' % table[k])
-				for k in range(i, min(i + 16, max_key + 1))
-			))
-		f.write('\t\t};\n')
-		f.write('\t\tprivate %s %s(%s input) {\n' % (value_type, name, key_type))
-		f.write('\t\t\treturn (input < 0x%X) ? %s[input] : 0;\n' % (max_key + 1, name.upper()))
-		f.write('\t\t}\n')
+	f.write('\t\t\treturn 0;\n')
+	f.write('\t\t}\n')
 
 def write_state_method(f, name, state_type, key_type, value_type, states):
 	if not states:
