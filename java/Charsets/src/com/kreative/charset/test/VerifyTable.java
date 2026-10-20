@@ -256,7 +256,7 @@ public class VerifyTable {
 		}
 	}
 	
-	private static boolean verify(File file, boolean roundTrip) {
+	private static boolean verify(File file, String charset, boolean roundTrip) {
 		if (file.isDirectory()) {
 			boolean ok = true;
 			File[] children = file.listFiles();
@@ -264,15 +264,19 @@ public class VerifyTable {
 			for (File child : children) {
 				if (child.getName().startsWith(".") || child.getName().endsWith("\r")) continue;
 				if (child.isDirectory() || child.getName().endsWith(".txt")) {
-					if (!verify(child, roundTrip)) {
+					if (!verify(child, charset, roundTrip)) {
 						ok = false;
 					}
 				}
 			}
 			return ok;
 		} else try {
-			System.out.println(file.getName());
-			return verifyFile(file, file.getName().substring(0, file.getName().length() - 4), roundTrip);
+			String name = file.getName();
+			System.out.println(name);
+			if (charset == null) {
+				charset = name.endsWith(".txt") ? name.substring(0, name.length() - 4) : name;
+			}
+			return verifyFile(file, charset, roundTrip);
 		} catch (FileNotFoundException e) {
 			System.out.println("  " + ERROR + " File does not exist: " + file.getName());
 			return false;
@@ -281,12 +285,19 @@ public class VerifyTable {
 	
 	public static void main(String[] args) {
 		boolean parseOpts = true;
+		String charset = null;
 		boolean roundTrip = true;
 		boolean ok = true;
-		for (String arg : args) {
+		int argi = 0;
+		while (argi < args.length) {
+			String arg = args[argi++];
 			if (parseOpts && arg.startsWith("-")) {
 				if (arg.equals("--")) {
 					parseOpts = false;
+				} else if (arg.equals("-c") && argi < args.length) {
+					charset = args[argi++];
+				} else if (arg.equals("-C")) {
+					charset = null;
 				} else if (arg.equals("-t")) {
 					roundTrip = false;
 				} else if (arg.equals("-T")) {
@@ -295,7 +306,7 @@ public class VerifyTable {
 					System.out.println(ERROR + " Unknown option: " + arg);
 					ok = false;
 				}
-			} else if (!verify(new File(arg), roundTrip)) {
+			} else if (!verify(new File(arg), charset, roundTrip)) {
 				ok = false;
 			}
 		}
