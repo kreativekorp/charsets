@@ -28,9 +28,12 @@ public class XBcdHexadecimalCharset extends Charset {
 		protected int getNextState(int state, int input) {
 			return 0;
 		}
-		private static final char[] GETOUTPUT0_0 = {
-			0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46,
-		};
+		private static final char[] GETOUTPUT0_0 = getOutput0_0();
+		private static final char[] getOutput0_0() {
+			return new char[] {
+				0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46,
+			};
+		}
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0xF) return GETOUTPUT0_0[input - 0x0];
 			return 0;
@@ -50,10 +53,13 @@ public class XBcdHexadecimalCharset extends Charset {
 		protected int getNextState(int state, int input) {
 			return 0;
 		}
-		private static final char[] GETOUTPUT0_30 = {
-			0x1, 0x101, 0x201, 0x301, 0x401, 0x501, 0x601, 0x701, 0x8, 0x9, 0, 0, 0, 0, 0, 0,
-			0, 0xA, 0xB, 0xC, 0xD, 0xE, 0xF,
-		};
+		private static final char[] GETOUTPUT0_30 = getOutput0_30();
+		private static final char[] getOutput0_30() {
+			return new char[] {
+				0x1, 0x101, 0x201, 0x301, 0x401, 0x501, 0x601, 0x701, 0x8, 0x9, 0, 0, 0, 0, 0, 0,
+				0, 0xA, 0xB, 0xC, 0xD, 0xE, 0xF,
+			};
+		}
 		private long getOutput0(int input) {
 			if (input >= 0x30 && input <= 0x46) return GETOUTPUT0_30[input - 0x30];
 			switch (input) {

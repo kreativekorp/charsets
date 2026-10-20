@@ -60,22 +60,25 @@ def char_input(cs):
 def write_table_array(f, name, min_key, max_key, table, values_per_line=16):
 	max_value = max(table[k] for k in table if min_key <= k <= max_key)
 	array_type = 'char' if max_value <= 0xFFFF else 'int' if max_value <= 0xFFFFFFFF else 'long'
-	f.write('\t\tprivate static final %s[] %s = {\n' % (array_type, name))
+	f.write('\t\tprivate static final %s[] %s = %s();\n' % (array_type, name.upper(), name))
+	f.write('\t\tprivate static final %s[] %s() {\n' % (array_type, name))
+	f.write('\t\t\treturn new %s[] {\n' % array_type)
 	for i in range(0, max_key - min_key + 1, values_per_line):
-		f.write('\t\t\t%s,\n' % ', '.join(
+		f.write('\t\t\t\t%s,\n' % ', '.join(
 			('0' if k not in table else '0x%XL' % table[k] if array_type == 'long' else '0x%X' % table[k])
 			for k in range(min_key + i, min(min_key + i + values_per_line, max_key + 1))
 		))
-	f.write('\t\t};\n')
+	f.write('\t\t\t};\n')
+	f.write('\t\t}\n')
 
-def write_table_method(f, name, key_type, value_type, table, smallest_array=16, largest_gap=16):
+def write_table_method(f, name, key_type, value_type, table, smallest_array=16, largest_gap=16, largest_array=8192):
 	array_cases = []
 	switch_cases = []
 	keys = sorted(table)
 	while keys:
 		min_key = max_key = keys.pop(0)
 		subtable = {max_key: table[max_key]}
-		while keys and keys[0] <= (max_key + 1 + largest_gap):
+		while keys and keys[0] <= (max_key + 1 + largest_gap) and len(subtable) < largest_array:
 			max_key = keys.pop(0)
 			subtable[max_key] = table[max_key]
 		if len(subtable) < smallest_array:
@@ -83,11 +86,11 @@ def write_table_method(f, name, key_type, value_type, table, smallest_array=16, 
 				value = '0x%XL' % table[key] if value_type == 'long' else '0x%X' % table[key]
 				switch_cases.append('case 0x%X: return %s;' % (key, value))
 		else:
-			array_name = '%s_%X' % (name.upper(), min_key)
+			array_name = '%s_%X' % (name, min_key)
 			write_table_array(f, array_name, min_key, max_key, subtable)
 			array_cases.append(
 				'if (input >= 0x%X && input <= 0x%X) return %s[input - 0x%X];' %
-				(min_key, max_key, array_name, min_key)
+				(min_key, max_key, array_name.upper(), min_key)
 			)
 	f.write('\t\tprivate %s %s(%s input) {\n' % (value_type, name, key_type))
 	for array_case in array_cases:
