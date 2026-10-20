@@ -60,7 +60,7 @@ public class XApple2eCharset extends Charset {
 
 	private static final class XApple2eCharsetEncoder extends TableCharsetEncoder {
 		private XApple2eCharsetEncoder(Charset cs) {
-			super(cs, 0.930108f, 1f, new byte[]{-65}, 2);
+			super(cs, 1f, 1f, new byte[]{-65}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

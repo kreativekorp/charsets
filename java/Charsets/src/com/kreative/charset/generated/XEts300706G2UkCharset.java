@@ -23,7 +23,7 @@ public class XEts300706G2UkCharset extends Charset {
 
 	private static final class XEts300706G2UkCharsetDecoder extends TableCharsetDecoder {
 		private XEts300706G2UkCharsetDecoder(Charset cs) {
-			super(cs, 0.981481f, 2f, 2);
+			super(cs, 1f, 2f, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {
@@ -240,7 +240,7 @@ public class XEts300706G2UkCharset extends Charset {
 
 	private static final class XEts300706G2UkCharsetEncoder extends TableCharsetEncoder {
 		private XEts300706G2UkCharsetEncoder(Charset cs) {
-			super(cs, 1.02461f, 2f, new byte[]{63}, 2);
+			super(cs, 1.02461f, 2f, new byte[]{32}, 2);
 		}
 		private static final char[] GETNEXTSTATE0_404 = {
 			0x1E, 0, 0x1B, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4, 0x5, 0x19, 0xA,

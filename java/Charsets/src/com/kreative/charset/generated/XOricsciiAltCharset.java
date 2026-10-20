@@ -60,7 +60,7 @@ public class XOricsciiAltCharset extends Charset {
 
 	private static final class XOricsciiAltCharsetEncoder extends TableCharsetEncoder {
 		private XOricsciiAltCharsetEncoder(Charset cs) {
-			super(cs, 0.8125f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{-1}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

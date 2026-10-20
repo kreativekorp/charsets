@@ -60,7 +60,7 @@ public class XTrs80m3VideoCharset extends Charset {
 
 	private static final class XTrs80m3VideoCharsetEncoder extends TableCharsetEncoder {
 		private XTrs80m3VideoCharsetEncoder(Charset cs) {
-			super(cs, 0.863095f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

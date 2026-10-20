@@ -60,7 +60,7 @@ public class XSharpsciiMz80aJpCharset extends Charset {
 
 	private static final class XSharpsciiMz80aJpCharsetEncoder extends TableCharsetEncoder {
 		private XSharpsciiMz80aJpCharsetEncoder(Charset cs) {
-			super(cs, 0.953288f, 1f, new byte[]{63}, 3);
+			super(cs, 1f, 1f, new byte[]{63}, 3);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

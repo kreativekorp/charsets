@@ -60,7 +60,7 @@ public class XMsxBrVideoCharset extends Charset {
 
 	private static final class XMsxBrVideoCharsetEncoder extends TableCharsetEncoder {
 		private XMsxBrVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.972549f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

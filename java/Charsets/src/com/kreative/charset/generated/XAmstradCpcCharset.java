@@ -60,7 +60,7 @@ public class XAmstradCpcCharset extends Charset {
 
 	private static final class XAmstradCpcCharsetEncoder extends TableCharsetEncoder {
 		private XAmstradCpcCharsetEncoder(Charset cs) {
-			super(cs, 0.948473f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

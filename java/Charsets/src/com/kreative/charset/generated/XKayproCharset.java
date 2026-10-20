@@ -60,7 +60,7 @@ public class XKayproCharset extends Charset {
 
 	private static final class XKayproCharsetEncoder extends TableCharsetEncoder {
 		private XKayproCharsetEncoder(Charset cs) {
-			super(cs, 0.765625f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

@@ -56,7 +56,7 @@ public class XTrs80m1Charset extends Charset {
 
 	private static final class XTrs80m1CharsetEncoder extends TableCharsetEncoder {
 		private XTrs80m1CharsetEncoder(Charset cs) {
-			super(cs, 0.83871f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

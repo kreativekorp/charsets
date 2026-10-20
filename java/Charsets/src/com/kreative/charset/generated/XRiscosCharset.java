@@ -60,7 +60,7 @@ public class XRiscosCharset extends Charset {
 
 	private static final class XRiscosCharsetEncoder extends TableCharsetEncoder {
 		private XRiscosCharsetEncoder(Charset cs) {
-			super(cs, 0.998047f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

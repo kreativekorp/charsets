@@ -60,7 +60,7 @@ public class XSinclairqlVideoCharset extends Charset {
 
 	private static final class XSinclairqlVideoCharsetEncoder extends TableCharsetEncoder {
 		private XSinclairqlVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.98524f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

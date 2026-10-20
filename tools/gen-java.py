@@ -146,7 +146,16 @@ class JavaTableCharset:
 		self.encoder_replacement = (
 			chars_to_bytes[(0xFFFD,)] if (0xFFFD,) in chars_to_bytes else
 			chars_to_bytes[(0x003F,)] if (0x003F,) in chars_to_bytes else
-			(0x3F,))
+			chars_to_bytes[(0x0020,)] if (0x0020,) in chars_to_bytes else
+			(0xFF,) if (0xFF,) in bytes_to_chars else
+			(0x7F,) if (0x7F,) in bytes_to_chars else
+			(0x3F,) if (0x3F,) in bytes_to_chars else
+			(0x1F,) if (0x1F,) in bytes_to_chars else
+			(0x0F,) if (0x0F,) in bytes_to_chars else
+			(0x07,) if (0x07,) in bytes_to_chars else
+			(0x03,) if (0x03,) in bytes_to_chars else
+			(0x01,) if (0x01,) in bytes_to_chars else
+			(0x00,))
 		self.encoder_state_table = {}
 		self.encoder_output_table = {}
 		self.encoder_max_chars = 0
@@ -210,8 +219,8 @@ class JavaTableCharset:
 			f.write('\tprivate static final class %sDecoder extends TableCharsetDecoder {\n' % self.classname)
 			f.write('\t\tprivate %sDecoder(Charset cs) {\n' % self.classname)
 			f.write('\t\t\tsuper(cs, %gf, %gf, %d);\n' % (
-				self.avg_chars_per_byte,
-				self.max_chars_per_byte,
+				max(self.avg_chars_per_byte, 1),
+				max(self.max_chars_per_byte, 1),
 				self.decoder_max_bytes
 			))
 			f.write('\t\t}\n')
@@ -230,8 +239,8 @@ class JavaTableCharset:
 			f.write('\tprivate static final class %sEncoder extends TableCharsetEncoder {\n' % self.classname)
 			f.write('\t\tprivate %sEncoder(Charset cs) {\n' % self.classname)
 			f.write('\t\t\tsuper(cs, %gf, %gf, new byte[]{%s}, %d);\n' % (
-				self.avg_bytes_per_char,
-				self.max_bytes_per_char,
+				max(self.avg_bytes_per_char, 1),
+				max(self.max_bytes_per_char, 1),
 				','.join(str(b if b < 128 else b - 256) for b in self.encoder_replacement),
 				self.encoder_max_chars
 			))

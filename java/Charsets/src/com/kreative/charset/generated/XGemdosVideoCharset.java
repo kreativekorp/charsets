@@ -60,7 +60,7 @@ public class XGemdosVideoCharset extends Charset {
 
 	private static final class XGemdosVideoCharsetEncoder extends TableCharsetEncoder {
 		private XGemdosVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.980667f, 1f, new byte[]{63}, 3);
+			super(cs, 1f, 1f, new byte[]{63}, 3);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

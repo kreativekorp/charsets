@@ -60,7 +60,7 @@ public class XMsxBrSharpCharset extends Charset {
 
 	private static final class XMsxBrSharpCharsetEncoder extends TableCharsetEncoder {
 		private XMsxBrSharpCharsetEncoder(Charset cs) {
-			super(cs, 0.97451f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

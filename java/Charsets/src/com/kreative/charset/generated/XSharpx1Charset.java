@@ -60,7 +60,7 @@ public class XSharpx1Charset extends Charset {
 
 	private static final class XSharpx1CharsetEncoder extends TableCharsetEncoder {
 		private XSharpx1CharsetEncoder(Charset cs) {
-			super(cs, 0.998792f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

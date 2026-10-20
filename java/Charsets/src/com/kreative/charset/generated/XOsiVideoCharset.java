@@ -60,7 +60,7 @@ public class XOsiVideoCharset extends Charset {
 
 	private static final class XOsiVideoCharsetEncoder extends TableCharsetEncoder {
 		private XOsiVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.851995f, 1f, new byte[]{63}, 3);
+			super(cs, 1f, 1f, new byte[]{63}, 3);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

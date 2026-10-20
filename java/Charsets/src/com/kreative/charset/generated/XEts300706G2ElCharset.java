@@ -23,7 +23,7 @@ public class XEts300706G2ElCharset extends Charset {
 
 	private static final class XEts300706G2ElCharsetDecoder extends TableCharsetDecoder {
 		private XEts300706G2ElCharsetDecoder(Charset cs) {
-			super(cs, 0.976825f, 2f, 2);
+			super(cs, 1f, 2f, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

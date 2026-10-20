@@ -60,7 +60,7 @@ public class XPetscii80AltCharset extends Charset {
 
 	private static final class XPetscii80AltCharsetEncoder extends TableCharsetEncoder {
 		private XPetscii80AltCharsetEncoder(Charset cs) {
-			super(cs, 0.969388f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

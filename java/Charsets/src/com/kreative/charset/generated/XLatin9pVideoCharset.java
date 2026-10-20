@@ -60,7 +60,7 @@ public class XLatin9pVideoCharset extends Charset {
 
 	private static final class XLatin9pVideoCharsetEncoder extends TableCharsetEncoder {
 		private XLatin9pVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.950943f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

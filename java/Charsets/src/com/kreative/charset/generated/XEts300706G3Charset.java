@@ -52,7 +52,7 @@ public class XEts300706G3Charset extends Charset {
 
 	private static final class XEts300706G3CharsetEncoder extends TableCharsetEncoder {
 		private XEts300706G3CharsetEncoder(Charset cs) {
-			super(cs, 0.75f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

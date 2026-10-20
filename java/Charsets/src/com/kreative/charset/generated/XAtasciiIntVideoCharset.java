@@ -60,7 +60,7 @@ public class XAtasciiIntVideoCharset extends Charset {
 
 	private static final class XAtasciiIntVideoCharsetEncoder extends TableCharsetEncoder {
 		private XAtasciiIntVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.996094f, 1f, new byte[]{31}, 2);
+			super(cs, 1f, 1f, new byte[]{31}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

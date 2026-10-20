@@ -52,7 +52,7 @@ public class XSmalltalk78Charset extends Charset {
 
 	private static final class XSmalltalk78CharsetEncoder extends TableCharsetEncoder {
 		private XSmalltalk78CharsetEncoder(Charset cs) {
-			super(cs, 0.971354f, 1f, new byte[]{63}, 3);
+			super(cs, 1f, 1f, new byte[]{63}, 3);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

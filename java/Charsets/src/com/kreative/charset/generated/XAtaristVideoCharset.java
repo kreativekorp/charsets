@@ -60,7 +60,7 @@ public class XAtaristVideoCharset extends Charset {
 
 	private static final class XAtaristVideoCharsetEncoder extends TableCharsetEncoder {
 		private XAtaristVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.953459f, 1f, new byte[]{63}, 3);
+			super(cs, 1f, 1f, new byte[]{63}, 3);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

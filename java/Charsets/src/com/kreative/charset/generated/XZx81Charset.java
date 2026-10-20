@@ -55,7 +55,7 @@ public class XZx81Charset extends Charset {
 
 	private static final class XZx81CharsetEncoder extends TableCharsetEncoder {
 		private XZx81CharsetEncoder(Charset cs) {
-			super(cs, 0.97549f, 1f, new byte[]{15}, 2);
+			super(cs, 1f, 1f, new byte[]{15}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

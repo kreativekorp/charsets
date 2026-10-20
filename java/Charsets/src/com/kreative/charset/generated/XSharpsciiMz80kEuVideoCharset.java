@@ -60,7 +60,7 @@ public class XSharpsciiMz80kEuVideoCharset extends Charset {
 
 	private static final class XSharpsciiMz80kEuVideoCharsetEncoder extends TableCharsetEncoder {
 		private XSharpsciiMz80kEuVideoCharsetEncoder(Charset cs) {
-			super(cs, 0.842644f, 1f, new byte[]{73}, 3);
+			super(cs, 1f, 1f, new byte[]{73}, 3);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

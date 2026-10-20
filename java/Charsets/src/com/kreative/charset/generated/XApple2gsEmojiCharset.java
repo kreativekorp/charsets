@@ -60,7 +60,7 @@ public class XApple2gsEmojiCharset extends Charset {
 
 	private static final class XApple2gsEmojiCharsetEncoder extends TableCharsetEncoder {
 		private XApple2gsEmojiCharsetEncoder(Charset cs) {
-			super(cs, 0.930108f, 1f, new byte[]{-65}, 2);
+			super(cs, 1f, 1f, new byte[]{-65}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

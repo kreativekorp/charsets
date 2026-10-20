@@ -60,7 +60,7 @@ public class XAcornAtomCharset extends Charset {
 
 	private static final class XAcornAtomCharsetEncoder extends TableCharsetEncoder {
 		private XAcornAtomCharsetEncoder(Charset cs) {
-			super(cs, 0.839572f, 1f, new byte[]{63}, 2);
+			super(cs, 1f, 1f, new byte[]{63}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {
