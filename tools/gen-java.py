@@ -19,26 +19,19 @@ def byte_output(bs):
 		output |= len(bs)
 	return output
 
-def char_output(cs):
+def char_output(cs, long_output):
+	cs = char_input(cs)
+	if len(cs) > 4:
+		key = len(long_output)
+		long_output[key] = cs
+		return 0xDC00 | key
 	output = 0
 	for c in reversed(cs):
 		output <<= 16
-		if c < 0:
-			raise ValueError(c)
-		elif c == 0x0000:
+		if c == 0x0000:
 			output |= 0xFFFE
 		elif c <= 0xFFFD:
 			output |= c
-		elif c <= 0xFFFF:
-			raise ValueError(c)
-		elif c <= 0x10FFFF:
-			output |= 0xDC00
-			output |= c & 0x3FF
-			c >>= 10
-			c -= 64
-			output <<= 16
-			output |= 0xD800
-			output |= c & 0x3FF
 		else:
 			raise ValueError(c)
 	return output
@@ -124,10 +117,11 @@ class JavaTableCharset:
 		self.max_chars_per_byte = 0
 		self.decoder_state_table = {}
 		self.decoder_output_table = {}
+		self.decoder_long_output_table = {}
 		self.decoder_max_bytes = 0
 		for bs in bytes_to_chars:
 			cs = char_input(bytes_to_chars[bs])
-			output = char_output(bytes_to_chars[bs])
+			output = char_output(bytes_to_chars[bs], self.decoder_long_output_table)
 			state = 0
 			for b in bs[0:-1]:
 				key = (state, b & 0xFF)
@@ -237,6 +231,18 @@ class JavaTableCharset:
 				table = {k[1]: self.decoder_output_table[k] for k in self.decoder_output_table if k[0] == state}
 				write_table_method(f, 'getOutput%d' % state, 'int', 'long', table)
 			write_state_method(f, 'getOutput', 'int', 'int', 'long', states)
+			if self.decoder_long_output_table:
+				f.write('\t\tprivate static final char[][] GETLONGOUTPUT = getLongOutput();\n')
+				f.write('\t\tprivate static final char[][] getLongOutput() {\n')
+				f.write('\t\t\treturn new char[][] {\n')
+				for key in sorted(self.decoder_long_output_table):
+					value = ','.join('0x%X' % c for c in self.decoder_long_output_table[key])
+					f.write('\t\t\t\t{%s},\n' % value)
+				f.write('\t\t\t};\n')
+				f.write('\t\t}\n')
+				f.write('\t\tprotected char[] getLongOutput(int output) {\n')
+				f.write('\t\t\treturn GETLONGOUTPUT[output];\n')
+				f.write('\t\t}\n')
 			f.write('\t}\n\n')
 			# Encoder
 			f.write('\tprivate static final class %sEncoder extends TableCharsetEncoder {\n' % self.classname)

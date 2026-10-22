@@ -14,19 +14,29 @@ public abstract class TableCharsetDecoder extends CharsetDecoder {
 		this.maxin = maxin;
 	}
 	
-	private static final boolean write(CharBuffer out, long output) {
-		for (;;) {
-			char ch = (char)output;
-			if (ch == (char)0x0000) return true;
-			if (ch == (char)0xFFFF) return true;
-			if (!out.hasRemaining()) return false;
-			if (ch == (char)0xFFFE) ch = (char)0x0000;
-			out.put(ch); output >>= 16;
+	private final boolean write(CharBuffer out, long output) {
+		char ch = (char)output;
+		if (ch >= 0xDC00 && ch <= 0xDFFF) {
+			for (char loch : getLongOutput(ch & 0x3FF)) {
+				if (!out.hasRemaining()) return false;
+				out.put(loch);
+			}
+			return true;
+		} else {
+			for (;;) {
+				if (ch == (char)0x0000) return true;
+				if (ch == (char)0xFFFF) return true;
+				if (!out.hasRemaining()) return false;
+				if (ch == (char)0xFFFE) ch = (char)0x0000;
+				out.put(ch); output >>= 16;
+				ch = (char)output;
+			}
 		}
 	}
 	
 	protected abstract int getNextState(int state, int input);
 	protected abstract long getOutput(int state, int input);
+	protected char[] getLongOutput(int output) { return null; }
 	
 	@Override
 	protected CoderResult decodeLoop(ByteBuffer in, CharBuffer out) {
