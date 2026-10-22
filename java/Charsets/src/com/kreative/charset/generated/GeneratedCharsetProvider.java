@@ -102,6 +102,7 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XColecoAdamOs7VideoCharset(),
 			new XColecoAdamSwCharset(),
 			new XColecoAdamSwVideoCharset(),
+			new XCybikoCharset(),
 			new XDecMultinationalCharset(),
 			new XDecSixbitCharset(),
 			new XEcma1Charset(),
