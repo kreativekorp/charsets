@@ -151,7 +151,7 @@ public class VerifyTable {
 						String actual = new String(hexToBytes(bm.group(1)), charset);
 						if (!actual.equals(expected)) {
 							System.out.println("  " + ERROR + " Decode failed for byte sequence 0x" + bm.group(1));
-							System.out.println("  * " + charsToHex(actual) + " != " + charsToHex(expected));
+							System.out.println("  * Got: " + charsToHex(actual) + " * Want: " + charsToHex(expected));
 							ok = false;
 						}
 					} catch (Throwable t) {
@@ -184,7 +184,7 @@ public class VerifyTable {
 						byte[] actual = hexToChars(cm.group(1).substring(1)).getBytes(charset);
 						if (!Arrays.equals(actual, expected)) {
 							System.out.println("  " + ERROR + " Encode failed for character sequence U" + cm.group(1));
-							System.out.println("  * " + bytesToHex(actual) + " != " + bytesToHex(expected));
+							System.out.println("  * Got: " + bytesToHex(actual) + " * Want: " + bytesToHex(expected));
 							ok = false;
 						}
 					} catch (Throwable t) {

@@ -54,6 +54,7 @@ public abstract class TableCharsetDecoder extends CharsetDecoder {
 				input = in.get() & 0xFF;
 				nextState = getNextState(state, input);
 			}
+			boolean underflow = (nextState != 0 && !in.hasRemaining());
 			for (;;) {
 				long output = getOutput(state, input);
 				if (output != 0) {
@@ -68,6 +69,7 @@ public abstract class TableCharsetDecoder extends CharsetDecoder {
 				}
 				if (sp == 0) {
 					in.position(ip);
+					if (underflow) return CoderResult.UNDERFLOW;
 					return CoderResult.unmappableForLength(1);
 				}
 				input = stack[--sp];

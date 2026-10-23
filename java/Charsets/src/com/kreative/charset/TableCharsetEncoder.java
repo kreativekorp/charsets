@@ -52,6 +52,7 @@ public abstract class TableCharsetEncoder extends CharsetEncoder {
 				input = in.get() & 0xFFFF;
 				nextState = getNextState(state, input);
 			}
+			boolean underflow = (nextState != 0 && !in.hasRemaining());
 			for (;;) {
 				long output = getOutput(state, input);
 				if (output != 0) {
@@ -66,6 +67,7 @@ public abstract class TableCharsetEncoder extends CharsetEncoder {
 				}
 				if (sp == 0) {
 					in.position(ip);
+					if (underflow) return CoderResult.UNDERFLOW;
 					if (Character.isHighSurrogate(in.get())) {
 						if (in.hasRemaining()) {
 							if (Character.isLowSurrogate(in.get())) {
