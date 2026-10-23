@@ -131,6 +131,7 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XEcma1Charset(),
 			new XEcma1Gb1Charset(),
 			new XEcma1Gb2Charset(),
+			new XEnterpriseCharset(),
 			new XEts300706G0CsCharset(),
 			new XEts300706G0DeCharset(),
 			new XEts300706G0ElCharset(),
