@@ -24,6 +24,11 @@ GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacSymbol.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacThai.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacTurkish.txt
 
+# Some of Java's IBM encodings use different mappings as well.
+GLOBIGNORE=$GLOBIGNORE:../../tables/x-IBM856.txt
+GLOBIGNORE=$GLOBIGNORE:../../tables/x-IBM875.txt
+GLOBIGNORE=$GLOBIGNORE:../../tables/x-IBM1006.txt
+
 java -cp charsetskk.jar \
 	com.kreative.charset.test.VerifyTable \
 	../../tables/*.txt -t ../../tests/*.txt
