@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMousedeskEnCharset extends Charset {
 	public XMousedeskEnCharset() {
-		super("x-mousedesk-en", new String[]{});
+		super("x-mousedesk-en", new String[]{"x-mousedesk"});
 	}
 
 	public boolean contains(Charset cs) {
