@@ -4,9 +4,9 @@ import com.kreative.charset.TableCharsetDecoder;
 import com.kreative.charset.TableCharsetEncoder;
 import java.nio.charset.Charset;
 
-public class XIBM1006Charset extends Charset {
-	public XIBM1006Charset() {
-		super("x-IBM1006", new String[]{});
+public class XIBM1006GenericCharset extends Charset {
+	public XIBM1006GenericCharset() {
+		super("x-IBM1006-generic", new String[]{"x-IBM1006"});
 	}
 
 	public boolean contains(Charset cs) {
@@ -14,15 +14,15 @@ public class XIBM1006Charset extends Charset {
 	}
 
 	public TableCharsetDecoder newDecoder() {
-		return new XIBM1006CharsetDecoder(this);
+		return new XIBM1006GenericCharsetDecoder(this);
 	}
 
 	public TableCharsetEncoder newEncoder() {
-		return new XIBM1006CharsetEncoder(this);
+		return new XIBM1006GenericCharsetEncoder(this);
 	}
 
-	private static final class XIBM1006CharsetDecoder extends TableCharsetDecoder {
-		private XIBM1006CharsetDecoder(Charset cs) {
+	private static final class XIBM1006GenericCharsetDecoder extends TableCharsetDecoder {
+		private XIBM1006GenericCharsetDecoder(Charset cs) {
 			super(cs, 1f, 1f, 1);
 		}
 		protected int getNextState(int state, int input) {
@@ -61,8 +61,8 @@ public class XIBM1006Charset extends Charset {
 		}
 	}
 
-	private static final class XIBM1006CharsetEncoder extends TableCharsetEncoder {
-		private XIBM1006CharsetEncoder(Charset cs) {
+	private static final class XIBM1006GenericCharsetEncoder extends TableCharsetEncoder {
+		private XIBM1006GenericCharsetEncoder(Charset cs) {
 			super(cs, 1f, 1f, new byte[]{63}, 1);
 		}
 		protected int getNextState(int state, int input) {
@@ -84,6 +84,15 @@ public class XIBM1006Charset extends Charset {
 				0xA0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xAD,
 			};
 		}
+		private static final char[] GETOUTPUT0_FB7A = getOutput0_FB7A();
+		private static final char[] getOutput0_FB7A() {
+			return new char[] {
+				0xC0, 0, 0xC1, 0, 0, 0, 0, 0, 0, 0, 0xC7, 0, 0, 0, 0xC7, 0,
+				0xCC, 0, 0xCA, 0, 0xE3, 0, 0, 0, 0xE5, 0, 0xE6, 0, 0, 0, 0, 0,
+				0, 0, 0, 0, 0xEC, 0, 0, 0, 0, 0, 0, 0, 0xF1, 0, 0xF2, 0xF3,
+				0xF4, 0, 0, 0, 0xFD, 0, 0xFC,
+			};
+		}
 		private static final char[] GETOUTPUT0_FE7C = getOutput0_FE7C();
 		private static final char[] getOutput0_FE7C() {
 			return new char[] {
@@ -91,7 +100,7 @@ public class XIBM1006Charset extends Charset {
 				0, 0xB0, 0xB1, 0xB3, 0, 0xB4, 0, 0xB7, 0, 0xB8, 0, 0xB9, 0, 0xBC, 0, 0xBD,
 				0, 0xBE, 0, 0xBF, 0, 0xC2, 0, 0xC3, 0, 0xC4, 0, 0xC5, 0, 0xC6, 0, 0xC8,
 				0, 0xC9, 0, 0xCB, 0, 0xCD, 0, 0xCE, 0, 0xCF, 0, 0xD0, 0, 0xD1, 0, 0xD2,
-				0, 0xD3, 0, 0xD4, 0, 0xD5, 0, 0, 0, 0xD6, 0, 0, 0, 0xD7, 0xD8, 0xD9,
+				0, 0xD3, 0, 0xD4, 0, 0xD5, 0, 0xD5, 0, 0xD6, 0, 0xD6, 0, 0xD7, 0xD8, 0xD9,
 				0xDA, 0xDB, 0xDC, 0xDD, 0xDE, 0xDF, 0, 0xE0, 0, 0xE1, 0, 0xE2, 0, 0xE3, 0, 0xE4,
 				0, 0xE7, 0, 0xE8, 0xE9, 0xEA, 0, 0xEB, 0, 0xED, 0, 0xEE, 0, 0, 0, 0,
 				0, 0xF0, 0, 0, 0, 0xF9, 0xFA, 0xFB,
@@ -99,6 +108,7 @@ public class XIBM1006Charset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0xAD) return GETOUTPUT0_0[input - 0x0];
+			if (input >= 0xFB7A && input <= 0xFBB0) return GETOUTPUT0_FB7A[input - 0xFB7A];
 			if (input >= 0xFE7C && input <= 0xFEF3) return GETOUTPUT0_FE7C[input - 0xFE7C];
 			switch (input) {
 			case 0x60C: return 0xABL;
@@ -119,20 +129,9 @@ public class XIBM1006Charset extends Charset {
 			case 0xFB58: return 0xB6L;
 			case 0xFB66: return 0xBAL;
 			case 0xFB68: return 0xBBL;
-			case 0xFB7A: return 0xC0L;
-			case 0xFB7C: return 0xC1L;
-			case 0xFB84: return 0xC7L;
-			case 0xFB8A: return 0xCCL;
-			case 0xFB8C: return 0xCAL;
-			case 0xFB92: return 0xE5L;
-			case 0xFB94: return 0xE6L;
-			case 0xFB9E: return 0xECL;
-			case 0xFBA6: return 0xF1L;
-			case 0xFBA8: return 0xF2L;
-			case 0xFBA9: return 0xF3L;
-			case 0xFBAA: return 0xF4L;
-			case 0xFBAE: return 0xFDL;
-			case 0xFBB0: return 0xFCL;
+			case 0xFBFC: return 0xF9L;
+			case 0xFBFD: return 0xFAL;
+			case 0xFBFE: return 0xFBL;
 			}
 			return 0;
 		}

@@ -4,9 +4,9 @@ import com.kreative.charset.TableCharsetDecoder;
 import com.kreative.charset.TableCharsetEncoder;
 import java.nio.charset.Charset;
 
-public class XIBM500Charset extends Charset {
-	public XIBM500Charset() {
-		super("x-IBM500", new String[]{});
+public class XIBM500GenericCharset extends Charset {
+	public XIBM500GenericCharset() {
+		super("x-IBM500-generic", new String[]{"x-IBM500"});
 	}
 
 	public boolean contains(Charset cs) {
@@ -14,15 +14,15 @@ public class XIBM500Charset extends Charset {
 	}
 
 	public TableCharsetDecoder newDecoder() {
-		return new XIBM500CharsetDecoder(this);
+		return new XIBM500GenericCharsetDecoder(this);
 	}
 
 	public TableCharsetEncoder newEncoder() {
-		return new XIBM500CharsetEncoder(this);
+		return new XIBM500GenericCharsetEncoder(this);
 	}
 
-	private static final class XIBM500CharsetDecoder extends TableCharsetDecoder {
-		private XIBM500CharsetDecoder(Charset cs) {
+	private static final class XIBM500GenericCharsetDecoder extends TableCharsetDecoder {
+		private XIBM500GenericCharsetDecoder(Charset cs) {
 			super(cs, 1f, 1f, 1);
 		}
 		protected int getNextState(int state, int input) {
@@ -61,8 +61,8 @@ public class XIBM500Charset extends Charset {
 		}
 	}
 
-	private static final class XIBM500CharsetEncoder extends TableCharsetEncoder {
-		private XIBM500CharsetEncoder(Charset cs) {
+	private static final class XIBM500GenericCharsetEncoder extends TableCharsetEncoder {
+		private XIBM500GenericCharsetEncoder(Charset cs) {
 			super(cs, 1f, 1f, new byte[]{111}, 1);
 		}
 		protected int getNextState(int state, int input) {

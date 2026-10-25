@@ -4,9 +4,9 @@ import com.kreative.charset.TableCharsetDecoder;
 import com.kreative.charset.TableCharsetEncoder;
 import java.nio.charset.Charset;
 
-public class XIBM875Charset extends Charset {
-	public XIBM875Charset() {
-		super("x-IBM875", new String[]{});
+public class XIBM875GenericCharset extends Charset {
+	public XIBM875GenericCharset() {
+		super("x-IBM875-generic", new String[]{"x-IBM875"});
 	}
 
 	public boolean contains(Charset cs) {
@@ -14,15 +14,15 @@ public class XIBM875Charset extends Charset {
 	}
 
 	public TableCharsetDecoder newDecoder() {
-		return new XIBM875CharsetDecoder(this);
+		return new XIBM875GenericCharsetDecoder(this);
 	}
 
 	public TableCharsetEncoder newEncoder() {
-		return new XIBM875CharsetEncoder(this);
+		return new XIBM875GenericCharsetEncoder(this);
 	}
 
-	private static final class XIBM875CharsetDecoder extends TableCharsetDecoder {
-		private XIBM875CharsetDecoder(Charset cs) {
+	private static final class XIBM875GenericCharsetDecoder extends TableCharsetDecoder {
+		private XIBM875GenericCharsetDecoder(Charset cs) {
 			super(cs, 1f, 1f, 1);
 		}
 		protected int getNextState(int state, int input) {
@@ -61,8 +61,8 @@ public class XIBM875Charset extends Charset {
 		}
 	}
 
-	private static final class XIBM875CharsetEncoder extends TableCharsetEncoder {
-		private XIBM875CharsetEncoder(Charset cs) {
+	private static final class XIBM875GenericCharsetEncoder extends TableCharsetEncoder {
+		private XIBM875GenericCharsetEncoder(Charset cs) {
 			super(cs, 1f, 1f, new byte[]{111}, 1);
 		}
 		protected int getNextState(int state, int input) {
