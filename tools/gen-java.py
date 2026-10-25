@@ -64,7 +64,7 @@ def write_table_array(f, name, min_key, max_key, table, values_per_line=16):
 	f.write('\t\t\t};\n')
 	f.write('\t\t}\n')
 
-def write_table_method(f, name, key_type, value_type, table, smallest_array=16, largest_gap=16, largest_array=8192):
+def write_table_method(f, name, key_type, value_type, table, smallest_array=16, largest_gap=16, largest_array=4096):
 	array_cases = []
 	switch_cases = []
 	keys = sorted(table)
@@ -143,6 +143,8 @@ class JavaTableCharset:
 		self.encoder_replacement = (
 			chars_to_bytes[(0xFFFD,)] if (0xFFFD,) in chars_to_bytes else
 			chars_to_bytes[(0x003F,)] if (0x003F,) in chars_to_bytes else
+			chars_to_bytes[(0xFF1F,)] if (0xFF1F,) in chars_to_bytes else
+			chars_to_bytes[(0x00BF,)] if (0x00BF,) in chars_to_bytes else
 			chars_to_bytes[(0x0020,)] if (0x0020,) in chars_to_bytes else
 			(0xFF,) if (0xFF,) in bytes_to_chars else
 			(0x7F,) if (0x7F,) in bytes_to_chars else

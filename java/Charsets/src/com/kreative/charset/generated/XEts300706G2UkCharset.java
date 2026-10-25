@@ -288,7 +288,7 @@ public class XEts300706G2UkCharset extends Charset {
 
 	private static final class XEts300706G2UkCharsetEncoder extends TableCharsetEncoder {
 		private XEts300706G2UkCharsetEncoder(Charset cs) {
-			super(cs, 1.02461f, 2f, new byte[]{32}, 2);
+			super(cs, 1.02461f, 2f, new byte[]{63}, 2);
 		}
 		private static final char[] GETNEXTSTATE0_404 = getNextState0_404();
 		private static final char[] getNextState0_404() {

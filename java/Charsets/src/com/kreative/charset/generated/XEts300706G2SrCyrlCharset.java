@@ -288,7 +288,7 @@ public class XEts300706G2SrCyrlCharset extends Charset {
 
 	private static final class XEts300706G2SrCyrlCharsetEncoder extends TableCharsetEncoder {
 		private XEts300706G2SrCyrlCharsetEncoder(Charset cs) {
-			super(cs, 1.02315f, 2f, new byte[]{32}, 2);
+			super(cs, 1.02315f, 2f, new byte[]{63}, 2);
 		}
 		private static final char[] GETNEXTSTATE0_402 = getNextState0_402();
 		private static final char[] getNextState0_402() {

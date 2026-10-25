@@ -4,13 +4,13 @@ import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 
 public class Decompile {
 	public static void main(String[] args) {
 		for (String arg : args) {
-			System.out.println("# Name: " + arg);
-			System.out.println();
 			try { decompile(Charset.forName(arg)); }
 			catch (Exception e) { System.out.println("# " + e); }
 			System.out.println();
@@ -18,11 +18,25 @@ public class Decompile {
 	}
 	
 	private static void decompile(Charset cs) {
-		CharsetDecoder decoder = cs.newDecoder();
-		decoder.onMalformedInput(CodingErrorAction.REPLACE);
-		decoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
-		decoder.replaceWith("\uFFFF");
-		decompile(decoder, new byte[256], 0, new char[256]);
+		System.out.println("# Name: " + cs.displayName());
+		System.out.println();
+		try {
+			CharsetDecoder decoder = cs.newDecoder();
+			decoder.onMalformedInput(CodingErrorAction.REPORT);
+			decoder.onUnmappableCharacter(CodingErrorAction.REPORT);
+			decompile(decoder, new byte[256], 0, new char[256]);
+		} catch (Exception e) {
+			System.out.println("# " + e);
+		}
+		System.out.println();
+		try {
+			CharsetEncoder encoder = cs.newEncoder();
+			encoder.onMalformedInput(CodingErrorAction.REPORT);
+			encoder.onUnmappableCharacter(CodingErrorAction.REPORT);
+			decompile(encoder, new char[256], 0, new byte[256]);
+		} catch (Exception e) {
+			System.out.println("# " + e);
+		}
 	}
 	
 	private static void decompile(CharsetDecoder decoder, byte[] in, int pos, char[] out) {
@@ -31,15 +45,38 @@ public class Decompile {
 			ByteBuffer inb = ByteBuffer.wrap(in, 0, pos+1);
 			CharBuffer outb = CharBuffer.wrap(out);
 			decoder.reset();
-			decoder.decode(inb, outb, false);
-			if (outb.position() > 0) {
-				String s = new String(out, 0, outb.position());
-				if (s.contains("\uFFFF")) continue;
-				System.out.println("0x" + bytesToHex(in, 0, pos+1) + "\tU+" + charsToHex(s));
-			} else if (pos+1 < in.length) {
-				decompile(decoder, in, pos+1, out);
-			} else {
-				throw new InputTooLongException();
+			CoderResult res = decoder.decode(inb, outb, false);
+			if (res == CoderResult.UNDERFLOW) {
+				if (outb.position() > 0) {
+					String h = bytesToHex(in, 0, pos+1);
+					String u = charsToHex(new String(out, 0, outb.position()));
+					System.out.println("0x" + h + "\tU+" + u);
+				} else if (pos+1 < in.length) {
+					decompile(decoder, in, pos+1, out);
+				} else {
+					throw new InputTooLongException();
+				}
+			}
+		}
+	}
+	
+	private static void decompile(CharsetEncoder encoder, char[] in, int pos, byte[] out) {
+		for (int ch = 0; ch < 65536; ch++) {
+			in[pos] = (char)ch;
+			CharBuffer inb = CharBuffer.wrap(in, 0, pos+1);
+			ByteBuffer outb = ByteBuffer.wrap(out);
+			encoder.reset();
+			CoderResult res = encoder.encode(inb, outb, false);
+			if (res == CoderResult.UNDERFLOW) {
+				if (outb.position() > 0) {
+					String u = charsToHex(new String(in, 0, pos+1));
+					String h = bytesToHex(out, 0, outb.position());
+					System.out.println("U+" + u + "\t0x" + h);
+				} else if (pos+1 < in.length) {
+					decompile(encoder, in, pos+1, out);
+				} else {
+					throw new InputTooLongException();
+				}
 			}
 		}
 	}
