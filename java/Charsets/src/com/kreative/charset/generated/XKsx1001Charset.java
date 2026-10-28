@@ -25,19 +25,23 @@ public class XKsx1001Charset extends Charset {
 		private XKsx1001CharsetDecoder(Charset cs) {
 			super(cs, 1f, 1f, 2);
 		}
-		private static final char[] GETNEXTSTATE0_21 = getNextState0_21();
-		private static final char[] getNextState0_21() {
-			return new char[] {
-				0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xA, 0xB, 0xC, 0, 0, 0, 0xD,
-				0xE, 0xF, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D,
-				0x1E, 0x1F, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0, 0x26, 0x27, 0x28, 0x29, 0x2A, 0x2B, 0x2C,
-				0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x3A, 0x3B, 0x3C,
-				0x3D, 0x3E, 0x3F, 0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47, 0x48, 0x49, 0x4A, 0x4B, 0x4C,
-				0x4D, 0x4E, 0x4F, 0x50, 0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59,
-			};
-		}
 		private int getNextState0(int input) {
-			if (input >= 0x21 && input <= 0x7D) return GETNEXTSTATE0_21[input - 0x21];
+			if (input >= 0x30 && input <= 0x48) return input - 0x30 + 0xD;
+			if (input >= 0x4A && input <= 0x7D) return input - 0x4A + 0x26;
+			switch (input) {
+			case 0x21: return 0x1;
+			case 0x22: return 0x2;
+			case 0x23: return 0x3;
+			case 0x24: return 0x4;
+			case 0x25: return 0x5;
+			case 0x26: return 0x6;
+			case 0x27: return 0x7;
+			case 0x28: return 0x8;
+			case 0x29: return 0x9;
+			case 0x2A: return 0xA;
+			case 0x2B: return 0xB;
+			case 0x2C: return 0xC;
+			}
 			return 0;
 		}
 		protected int getNextState(int state, int input) {
@@ -48,14 +52,7 @@ public class XKsx1001Charset extends Charset {
 		}
 		private static final char[] GETOUTPUT1_21 = getOutput1_21();
 		private static final char[] getOutput1_21() {
-			return new char[] {
-				0x3000, 0x3001, 0x3002, 0xB7, 0x2025, 0x2026, 0xA8, 0x3003, 0xAD, 0x2015, 0x2225, 0xFF3C, 0x223C, 0x2018, 0x2019, 0x201C,
-				0x201D, 0x3014, 0x3015, 0x3008, 0x3009, 0x300A, 0x300B, 0x300C, 0x300D, 0x300E, 0x300F, 0x3010, 0x3011, 0xB1, 0xD7, 0xF7,
-				0x2260, 0x2264, 0x2265, 0x221E, 0x2234, 0xB0, 0x2032, 0x2033, 0x2103, 0x212B, 0xFFE0, 0xFFE1, 0xFFE5, 0x2642, 0x2640, 0x2220,
-				0x22A5, 0x2312, 0x2202, 0x2207, 0x2261, 0x2252, 0xA7, 0x203B, 0x2606, 0x2605, 0x25CB, 0x25CF, 0x25CE, 0x25C7, 0x25C6, 0x25A1,
-				0x25A0, 0x25B3, 0x25B2, 0x25BD, 0x25BC, 0x2192, 0x2190, 0x2191, 0x2193, 0x2194, 0x3013, 0x226A, 0x226B, 0x221A, 0x223D, 0x221D,
-				0x2235, 0x222B, 0x222C, 0x2208, 0x220B, 0x2286, 0x2287, 0x2282, 0x2283, 0x222A, 0x2229, 0x2227, 0x2228, 0xFFE2,
-			};
+			return "\u3000\u3001\u3002\u00B7\u2025\u2026\u00A8\u3003\u00AD\u2015\u2225\uFF3C\u223C\u2018\u2019\u201C\u201D\u3014\u3015\u3008\u3009\u300A\u300B\u300C\u300D\u300E\u300F\u3010\u3011\u00B1\u00D7\u00F7\u2260\u2264\u2265\u221E\u2234\u00B0\u2032\u2033\u2103\u212B\uFFE0\uFFE1\uFFE5\u2642\u2640\u2220\u22A5\u2312\u2202\u2207\u2261\u2252\u00A7\u203B\u2606\u2605\u25CB\u25CF\u25CE\u25C7\u25C6\u25A1\u25A0\u25B3\u25B2\u25BD\u25BC\u2192\u2190\u2191\u2193\u2194\u3013\u226A\u226B\u221A\u223D\u221D\u2235\u222B\u222C\u2208\u220B\u2286\u2287\u2282\u2283\u222A\u2229\u2227\u2228\uFFE2".toCharArray();
 		}
 		private long getOutput1(int input) {
 			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT1_21[input - 0x21];
@@ -63,1319 +60,418 @@ public class XKsx1001Charset extends Charset {
 		}
 		private static final char[] GETOUTPUT2_21 = getOutput2_21();
 		private static final char[] getOutput2_21() {
-			return new char[] {
-				0x21D2, 0x21D4, 0x2200, 0x2203, 0xB4, 0xFF5E, 0x2C7, 0x2D8, 0x2DD, 0x2DA, 0x2D9, 0xB8, 0x2DB, 0xA1, 0xBF, 0x2D0,
-				0x222E, 0x2211, 0x220F, 0xA4, 0x2109, 0x2030, 0x25C1, 0x25C0, 0x25B7, 0x25B6, 0x2664, 0x2660, 0x2661, 0x2665, 0x2667, 0x2663,
-				0x2299, 0x25C8, 0x25A3, 0x25D0, 0x25D1, 0x2592, 0x25A4, 0x25A5, 0x25A8, 0x25A7, 0x25A6, 0x25A9, 0x2668, 0x260F, 0x260E, 0x261C,
-				0x261E, 0xB6, 0x2020, 0x2021, 0x2195, 0x2197, 0x2199, 0x2196, 0x2198, 0x266D, 0x2669, 0x266A, 0x266C, 0x327F, 0x321C, 0x2116,
-				0x33C7, 0x2122, 0x33C2, 0x33D8, 0x2121,
-			};
+			return "\u21D2\u21D4\u2200\u2203\u00B4\uFF5E\u02C7\u02D8\u02DD\u02DA\u02D9\u00B8\u02DB\u00A1\u00BF\u02D0\u222E\u2211\u220F\u00A4\u2109\u2030\u25C1\u25C0\u25B7\u25B6\u2664\u2660\u2661\u2665\u2667\u2663\u2299\u25C8\u25A3\u25D0\u25D1\u2592\u25A4\u25A5\u25A8\u25A7\u25A6\u25A9\u2668\u260F\u260E\u261C\u261E\u00B6\u2020\u2021\u2195\u2197\u2199\u2196\u2198\u266D\u2669\u266A\u266C\u327F\u321C\u2116\u33C7\u2122\u33C2\u33D8\u2121".toCharArray();
 		}
 		private long getOutput2(int input) {
 			if (input >= 0x21 && input <= 0x65) return GETOUTPUT2_21[input - 0x21];
 			return 0;
 		}
-		private static final char[] GETOUTPUT3_21 = getOutput3_21();
-		private static final char[] getOutput3_21() {
-			return new char[] {
-				0xFF01, 0xFF02, 0xFF03, 0xFF04, 0xFF05, 0xFF06, 0xFF07, 0xFF08, 0xFF09, 0xFF0A, 0xFF0B, 0xFF0C, 0xFF0D, 0xFF0E, 0xFF0F, 0xFF10,
-				0xFF11, 0xFF12, 0xFF13, 0xFF14, 0xFF15, 0xFF16, 0xFF17, 0xFF18, 0xFF19, 0xFF1A, 0xFF1B, 0xFF1C, 0xFF1D, 0xFF1E, 0xFF1F, 0xFF20,
-				0xFF21, 0xFF22, 0xFF23, 0xFF24, 0xFF25, 0xFF26, 0xFF27, 0xFF28, 0xFF29, 0xFF2A, 0xFF2B, 0xFF2C, 0xFF2D, 0xFF2E, 0xFF2F, 0xFF30,
-				0xFF31, 0xFF32, 0xFF33, 0xFF34, 0xFF35, 0xFF36, 0xFF37, 0xFF38, 0xFF39, 0xFF3A, 0xFF3B, 0xFFE6, 0xFF3D, 0xFF3E, 0xFF3F, 0xFF40,
-				0xFF41, 0xFF42, 0xFF43, 0xFF44, 0xFF45, 0xFF46, 0xFF47, 0xFF48, 0xFF49, 0xFF4A, 0xFF4B, 0xFF4C, 0xFF4D, 0xFF4E, 0xFF4F, 0xFF50,
-				0xFF51, 0xFF52, 0xFF53, 0xFF54, 0xFF55, 0xFF56, 0xFF57, 0xFF58, 0xFF59, 0xFF5A, 0xFF5B, 0xFF5C, 0xFF5D, 0xFFE3,
-			};
-		}
 		private long getOutput3(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT3_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x5B) return input - 0x21 + 0xFF01;
+			if (input >= 0x5D && input <= 0x7D) return input - 0x5D + 0xFF3D;
+			switch (input) {
+			case 0x5C: return 0xFFE6L;
+			case 0x7E: return 0xFFE3L;
+			}
 			return 0;
-		}
-		private static final char[] GETOUTPUT4_21 = getOutput4_21();
-		private static final char[] getOutput4_21() {
-			return new char[] {
-				0x3131, 0x3132, 0x3133, 0x3134, 0x3135, 0x3136, 0x3137, 0x3138, 0x3139, 0x313A, 0x313B, 0x313C, 0x313D, 0x313E, 0x313F, 0x3140,
-				0x3141, 0x3142, 0x3143, 0x3144, 0x3145, 0x3146, 0x3147, 0x3148, 0x3149, 0x314A, 0x314B, 0x314C, 0x314D, 0x314E, 0x314F, 0x3150,
-				0x3151, 0x3152, 0x3153, 0x3154, 0x3155, 0x3156, 0x3157, 0x3158, 0x3159, 0x315A, 0x315B, 0x315C, 0x315D, 0x315E, 0x315F, 0x3160,
-				0x3161, 0x3162, 0x3163, 0x3164, 0x3165, 0x3166, 0x3167, 0x3168, 0x3169, 0x316A, 0x316B, 0x316C, 0x316D, 0x316E, 0x316F, 0x3170,
-				0x3171, 0x3172, 0x3173, 0x3174, 0x3175, 0x3176, 0x3177, 0x3178, 0x3179, 0x317A, 0x317B, 0x317C, 0x317D, 0x317E, 0x317F, 0x3180,
-				0x3181, 0x3182, 0x3183, 0x3184, 0x3185, 0x3186, 0x3187, 0x3188, 0x3189, 0x318A, 0x318B, 0x318C, 0x318D, 0x318E,
-			};
 		}
 		private long getOutput4(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT4_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return input - 0x21 + 0x3131;
 			return 0;
-		}
-		private static final char[] GETOUTPUT5_21 = getOutput5_21();
-		private static final char[] getOutput5_21() {
-			return new char[] {
-				0x2170, 0x2171, 0x2172, 0x2173, 0x2174, 0x2175, 0x2176, 0x2177, 0x2178, 0x2179, 0, 0, 0, 0, 0, 0x2160,
-				0x2161, 0x2162, 0x2163, 0x2164, 0x2165, 0x2166, 0x2167, 0x2168, 0x2169, 0, 0, 0, 0, 0, 0, 0,
-				0x391, 0x392, 0x393, 0x394, 0x395, 0x396, 0x397, 0x398, 0x399, 0x39A, 0x39B, 0x39C, 0x39D, 0x39E, 0x39F, 0x3A0,
-				0x3A1, 0x3A3, 0x3A4, 0x3A5, 0x3A6, 0x3A7, 0x3A8, 0x3A9, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x3B1, 0x3B2, 0x3B3, 0x3B4, 0x3B5, 0x3B6, 0x3B7, 0x3B8, 0x3B9, 0x3BA, 0x3BB, 0x3BC, 0x3BD, 0x3BE, 0x3BF, 0x3C0,
-				0x3C1, 0x3C3, 0x3C4, 0x3C5, 0x3C6, 0x3C7, 0x3C8, 0x3C9,
-			};
 		}
 		private long getOutput5(int input) {
-			if (input >= 0x21 && input <= 0x78) return GETOUTPUT5_21[input - 0x21];
+			if (input >= 0x41 && input <= 0x51) return input - 0x41 + 0x391;
+			if (input >= 0x21 && input <= 0x39) return CommonSubtables.COMMON270[input - 0x21];
+			if (input >= 0x61 && input <= 0x71) return input - 0x61 + 0x3B1;
+			switch (input) {
+			case 0x52: return 0x3A3L;
+			case 0x53: return 0x3A4L;
+			case 0x54: return 0x3A5L;
+			case 0x55: return 0x3A6L;
+			case 0x56: return 0x3A7L;
+			case 0x57: return 0x3A8L;
+			case 0x58: return 0x3A9L;
+			case 0x72: return 0x3C3L;
+			case 0x73: return 0x3C4L;
+			case 0x74: return 0x3C5L;
+			case 0x75: return 0x3C6L;
+			case 0x76: return 0x3C7L;
+			case 0x77: return 0x3C8L;
+			case 0x78: return 0x3C9L;
+			}
 			return 0;
-		}
-		private static final char[] GETOUTPUT6_21 = getOutput6_21();
-		private static final char[] getOutput6_21() {
-			return new char[] {
-				0x2500, 0x2502, 0x250C, 0x2510, 0x2518, 0x2514, 0x251C, 0x252C, 0x2524, 0x2534, 0x253C, 0x2501, 0x2503, 0x250F, 0x2513, 0x251B,
-				0x2517, 0x2523, 0x2533, 0x252B, 0x253B, 0x254B, 0x2520, 0x252F, 0x2528, 0x2537, 0x253F, 0x251D, 0x2530, 0x2525, 0x2538, 0x2542,
-				0x2512, 0x2511, 0x251A, 0x2519, 0x2516, 0x2515, 0x250E, 0x250D, 0x251E, 0x251F, 0x2521, 0x2522, 0x2526, 0x2527, 0x2529, 0x252A,
-				0x252D, 0x252E, 0x2531, 0x2532, 0x2535, 0x2536, 0x2539, 0x253A, 0x253D, 0x253E, 0x2540, 0x2541, 0x2543, 0x2544, 0x2545, 0x2546,
-				0x2547, 0x2548, 0x2549, 0x254A,
-			};
 		}
 		private long getOutput6(int input) {
-			if (input >= 0x21 && input <= 0x64) return GETOUTPUT6_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x64) return CommonSubtables.COMMON271[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT7_21 = getOutput7_21();
-		private static final char[] getOutput7_21() {
-			return new char[] {
-				0x3395, 0x3396, 0x3397, 0x2113, 0x3398, 0x33C4, 0x33A3, 0x33A4, 0x33A5, 0x33A6, 0x3399, 0x339A, 0x339B, 0x339C, 0x339D, 0x339E,
-				0x339F, 0x33A0, 0x33A1, 0x33A2, 0x33CA, 0x338D, 0x338E, 0x338F, 0x33CF, 0x3388, 0x3389, 0x33C8, 0x33A7, 0x33A8, 0x33B0, 0x33B1,
-				0x33B2, 0x33B3, 0x33B4, 0x33B5, 0x33B6, 0x33B7, 0x33B8, 0x33B9, 0x3380, 0x3381, 0x3382, 0x3383, 0x3384, 0x33BA, 0x33BB, 0x33BC,
-				0x33BD, 0x33BE, 0x33BF, 0x3390, 0x3391, 0x3392, 0x3393, 0x3394, 0x2126, 0x33C0, 0x33C1, 0x338A, 0x338B, 0x338C, 0x33D6, 0x33C5,
-				0x33AD, 0x33AE, 0x33AF, 0x33DB, 0x33A9, 0x33AA, 0x33AB, 0x33AC, 0x33DD, 0x33D0, 0x33D3, 0x33C3, 0x33C9, 0x33DC, 0x33C6,
-			};
 		}
 		private long getOutput7(int input) {
-			if (input >= 0x21 && input <= 0x6F) return GETOUTPUT7_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x6F) return CommonSubtables.COMMON446[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT8_21 = getOutput8_21();
-		private static final char[] getOutput8_21() {
-			return new char[] {
-				0xC6, 0xD0, 0xAA, 0x126, 0, 0x132, 0, 0x13F, 0x141, 0xD8, 0x152, 0xBA, 0xDE, 0x166, 0x14A, 0,
-				0x3260, 0x3261, 0x3262, 0x3263, 0x3264, 0x3265, 0x3266, 0x3267, 0x3268, 0x3269, 0x326A, 0x326B, 0x326C, 0x326D, 0x326E, 0x326F,
-				0x3270, 0x3271, 0x3272, 0x3273, 0x3274, 0x3275, 0x3276, 0x3277, 0x3278, 0x3279, 0x327A, 0x327B, 0x24D0, 0x24D1, 0x24D2, 0x24D3,
-				0x24D4, 0x24D5, 0x24D6, 0x24D7, 0x24D8, 0x24D9, 0x24DA, 0x24DB, 0x24DC, 0x24DD, 0x24DE, 0x24DF, 0x24E0, 0x24E1, 0x24E2, 0x24E3,
-				0x24E4, 0x24E5, 0x24E6, 0x24E7, 0x24E8, 0x24E9, 0x2460, 0x2461, 0x2462, 0x2463, 0x2464, 0x2465, 0x2466, 0x2467, 0x2468, 0x2469,
-				0x246A, 0x246B, 0x246C, 0x246D, 0x246E, 0xBD, 0x2153, 0x2154, 0xBC, 0xBE, 0x215B, 0x215C, 0x215D, 0x215E,
-			};
 		}
 		private long getOutput8(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT8_21[input - 0x21];
+			if (input >= 0x31 && input <= 0x4C) return input - 0x31 + 0x3260;
+			if (input >= 0x4D && input <= 0x66) return input - 0x4D + 0x24D0;
+			if (input >= 0x67 && input <= 0x7E) return CommonSubtables.COMMON447[input - 0x67];
+			switch (input) {
+			case 0x21: return 0xC6L;
+			case 0x22: return 0xD0L;
+			case 0x23: return 0xAAL;
+			case 0x24: return 0x126L;
+			case 0x26: return 0x132L;
+			case 0x28: return 0x13FL;
+			case 0x29: return 0x141L;
+			case 0x2A: return 0xD8L;
+			case 0x2B: return 0x152L;
+			case 0x2C: return 0xBAL;
+			case 0x2D: return 0xDEL;
+			case 0x2E: return 0x166L;
+			case 0x2F: return 0x14AL;
+			}
 			return 0;
-		}
-		private static final char[] GETOUTPUT9_21 = getOutput9_21();
-		private static final char[] getOutput9_21() {
-			return new char[] {
-				0xE6, 0x111, 0xF0, 0x127, 0x131, 0x133, 0x138, 0x140, 0x142, 0xF8, 0x153, 0xDF, 0xFE, 0x167, 0x14B, 0x149,
-				0x3200, 0x3201, 0x3202, 0x3203, 0x3204, 0x3205, 0x3206, 0x3207, 0x3208, 0x3209, 0x320A, 0x320B, 0x320C, 0x320D, 0x320E, 0x320F,
-				0x3210, 0x3211, 0x3212, 0x3213, 0x3214, 0x3215, 0x3216, 0x3217, 0x3218, 0x3219, 0x321A, 0x321B, 0x249C, 0x249D, 0x249E, 0x249F,
-				0x24A0, 0x24A1, 0x24A2, 0x24A3, 0x24A4, 0x24A5, 0x24A6, 0x24A7, 0x24A8, 0x24A9, 0x24AA, 0x24AB, 0x24AC, 0x24AD, 0x24AE, 0x24AF,
-				0x24B0, 0x24B1, 0x24B2, 0x24B3, 0x24B4, 0x24B5, 0x2474, 0x2475, 0x2476, 0x2477, 0x2478, 0x2479, 0x247A, 0x247B, 0x247C, 0x247D,
-				0x247E, 0x247F, 0x2480, 0x2481, 0x2482, 0xB9, 0xB2, 0xB3, 0x2074, 0x207F, 0x2081, 0x2082, 0x2083, 0x2084,
-			};
 		}
 		private long getOutput9(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT9_21[input - 0x21];
+			if (input >= 0x31 && input <= 0x4C) return input - 0x31 + 0x3200;
+			if (input >= 0x21 && input <= 0x30) return CommonSubtables.COMMON448[input - 0x21];
+			if (input >= 0x4D && input <= 0x66) return input - 0x4D + 0x249C;
+			if (input >= 0x67 && input <= 0x7E) return CommonSubtables.COMMON272[input - 0x67];
 			return 0;
-		}
-		private static final char[] GETOUTPUT10_21 = getOutput10_21();
-		private static final char[] getOutput10_21() {
-			return new char[] {
-				0x3041, 0x3042, 0x3043, 0x3044, 0x3045, 0x3046, 0x3047, 0x3048, 0x3049, 0x304A, 0x304B, 0x304C, 0x304D, 0x304E, 0x304F, 0x3050,
-				0x3051, 0x3052, 0x3053, 0x3054, 0x3055, 0x3056, 0x3057, 0x3058, 0x3059, 0x305A, 0x305B, 0x305C, 0x305D, 0x305E, 0x305F, 0x3060,
-				0x3061, 0x3062, 0x3063, 0x3064, 0x3065, 0x3066, 0x3067, 0x3068, 0x3069, 0x306A, 0x306B, 0x306C, 0x306D, 0x306E, 0x306F, 0x3070,
-				0x3071, 0x3072, 0x3073, 0x3074, 0x3075, 0x3076, 0x3077, 0x3078, 0x3079, 0x307A, 0x307B, 0x307C, 0x307D, 0x307E, 0x307F, 0x3080,
-				0x3081, 0x3082, 0x3083, 0x3084, 0x3085, 0x3086, 0x3087, 0x3088, 0x3089, 0x308A, 0x308B, 0x308C, 0x308D, 0x308E, 0x308F, 0x3090,
-				0x3091, 0x3092, 0x3093,
-			};
 		}
 		private long getOutput10(int input) {
-			if (input >= 0x21 && input <= 0x73) return GETOUTPUT10_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x73) return input - 0x21 + 0x3041;
 			return 0;
-		}
-		private static final char[] GETOUTPUT11_21 = getOutput11_21();
-		private static final char[] getOutput11_21() {
-			return new char[] {
-				0x30A1, 0x30A2, 0x30A3, 0x30A4, 0x30A5, 0x30A6, 0x30A7, 0x30A8, 0x30A9, 0x30AA, 0x30AB, 0x30AC, 0x30AD, 0x30AE, 0x30AF, 0x30B0,
-				0x30B1, 0x30B2, 0x30B3, 0x30B4, 0x30B5, 0x30B6, 0x30B7, 0x30B8, 0x30B9, 0x30BA, 0x30BB, 0x30BC, 0x30BD, 0x30BE, 0x30BF, 0x30C0,
-				0x30C1, 0x30C2, 0x30C3, 0x30C4, 0x30C5, 0x30C6, 0x30C7, 0x30C8, 0x30C9, 0x30CA, 0x30CB, 0x30CC, 0x30CD, 0x30CE, 0x30CF, 0x30D0,
-				0x30D1, 0x30D2, 0x30D3, 0x30D4, 0x30D5, 0x30D6, 0x30D7, 0x30D8, 0x30D9, 0x30DA, 0x30DB, 0x30DC, 0x30DD, 0x30DE, 0x30DF, 0x30E0,
-				0x30E1, 0x30E2, 0x30E3, 0x30E4, 0x30E5, 0x30E6, 0x30E7, 0x30E8, 0x30E9, 0x30EA, 0x30EB, 0x30EC, 0x30ED, 0x30EE, 0x30EF, 0x30F0,
-				0x30F1, 0x30F2, 0x30F3, 0x30F4, 0x30F5, 0x30F6,
-			};
 		}
 		private long getOutput11(int input) {
-			if (input >= 0x21 && input <= 0x76) return GETOUTPUT11_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x76) return input - 0x21 + 0x30A1;
 			return 0;
-		}
-		private static final char[] GETOUTPUT12_21 = getOutput12_21();
-		private static final char[] getOutput12_21() {
-			return new char[] {
-				0x410, 0x411, 0x412, 0x413, 0x414, 0x415, 0x401, 0x416, 0x417, 0x418, 0x419, 0x41A, 0x41B, 0x41C, 0x41D, 0x41E,
-				0x41F, 0x420, 0x421, 0x422, 0x423, 0x424, 0x425, 0x426, 0x427, 0x428, 0x429, 0x42A, 0x42B, 0x42C, 0x42D, 0x42E,
-				0x42F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x430, 0x431, 0x432, 0x433, 0x434, 0x435, 0x451, 0x436, 0x437, 0x438, 0x439, 0x43A, 0x43B, 0x43C, 0x43D, 0x43E,
-				0x43F, 0x440, 0x441, 0x442, 0x443, 0x444, 0x445, 0x446, 0x447, 0x448, 0x449, 0x44A, 0x44B, 0x44C, 0x44D, 0x44E,
-				0x44F,
-			};
 		}
 		private long getOutput12(int input) {
-			if (input >= 0x21 && input <= 0x71) return GETOUTPUT12_21[input - 0x21];
+			if (input >= 0x28 && input <= 0x41) return input - 0x28 + 0x416;
+			if (input >= 0x58 && input <= 0x71) return input - 0x58 + 0x436;
+			switch (input) {
+			case 0x21: return 0x410L;
+			case 0x22: return 0x411L;
+			case 0x23: return 0x412L;
+			case 0x24: return 0x413L;
+			case 0x25: return 0x414L;
+			case 0x26: return 0x415L;
+			case 0x27: return 0x401L;
+			case 0x51: return 0x430L;
+			case 0x52: return 0x431L;
+			case 0x53: return 0x432L;
+			case 0x54: return 0x433L;
+			case 0x55: return 0x434L;
+			case 0x56: return 0x435L;
+			case 0x57: return 0x451L;
+			}
 			return 0;
-		}
-		private static final char[] GETOUTPUT13_21 = getOutput13_21();
-		private static final char[] getOutput13_21() {
-			return new char[] {
-				0xAC00, 0xAC01, 0xAC04, 0xAC07, 0xAC08, 0xAC09, 0xAC0A, 0xAC10, 0xAC11, 0xAC12, 0xAC13, 0xAC14, 0xAC15, 0xAC16, 0xAC17, 0xAC19,
-				0xAC1A, 0xAC1B, 0xAC1C, 0xAC1D, 0xAC20, 0xAC24, 0xAC2C, 0xAC2D, 0xAC2F, 0xAC30, 0xAC31, 0xAC38, 0xAC39, 0xAC3C, 0xAC40, 0xAC4B,
-				0xAC4D, 0xAC54, 0xAC58, 0xAC5C, 0xAC70, 0xAC71, 0xAC74, 0xAC77, 0xAC78, 0xAC7A, 0xAC80, 0xAC81, 0xAC83, 0xAC84, 0xAC85, 0xAC86,
-				0xAC89, 0xAC8A, 0xAC8B, 0xAC8C, 0xAC90, 0xAC94, 0xAC9C, 0xAC9D, 0xAC9F, 0xACA0, 0xACA1, 0xACA8, 0xACA9, 0xACAA, 0xACAC, 0xACAF,
-				0xACB0, 0xACB8, 0xACB9, 0xACBB, 0xACBC, 0xACBD, 0xACC1, 0xACC4, 0xACC8, 0xACCC, 0xACD5, 0xACD7, 0xACE0, 0xACE1, 0xACE4, 0xACE7,
-				0xACE8, 0xACEA, 0xACEC, 0xACEF, 0xACF0, 0xACF1, 0xACF3, 0xACF5, 0xACF6, 0xACFC, 0xACFD, 0xAD00, 0xAD04, 0xAD06,
-			};
 		}
 		private long getOutput13(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT13_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON449[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT14_21 = getOutput14_21();
-		private static final char[] getOutput14_21() {
-			return new char[] {
-				0xAD0C, 0xAD0D, 0xAD0F, 0xAD11, 0xAD18, 0xAD1C, 0xAD20, 0xAD29, 0xAD2C, 0xAD2D, 0xAD34, 0xAD35, 0xAD38, 0xAD3C, 0xAD44, 0xAD45,
-				0xAD47, 0xAD49, 0xAD50, 0xAD54, 0xAD58, 0xAD61, 0xAD63, 0xAD6C, 0xAD6D, 0xAD70, 0xAD73, 0xAD74, 0xAD75, 0xAD76, 0xAD7B, 0xAD7C,
-				0xAD7D, 0xAD7F, 0xAD81, 0xAD82, 0xAD88, 0xAD89, 0xAD8C, 0xAD90, 0xAD9C, 0xAD9D, 0xADA4, 0xADB7, 0xADC0, 0xADC1, 0xADC4, 0xADC8,
-				0xADD0, 0xADD1, 0xADD3, 0xADDC, 0xADE0, 0xADE4, 0xADF8, 0xADF9, 0xADFC, 0xADFF, 0xAE00, 0xAE01, 0xAE08, 0xAE09, 0xAE0B, 0xAE0D,
-				0xAE14, 0xAE30, 0xAE31, 0xAE34, 0xAE37, 0xAE38, 0xAE3A, 0xAE40, 0xAE41, 0xAE43, 0xAE45, 0xAE46, 0xAE4A, 0xAE4C, 0xAE4D, 0xAE4E,
-				0xAE50, 0xAE54, 0xAE56, 0xAE5C, 0xAE5D, 0xAE5F, 0xAE60, 0xAE61, 0xAE65, 0xAE68, 0xAE69, 0xAE6C, 0xAE70, 0xAE78,
-			};
 		}
 		private long getOutput14(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT14_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON450[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT15_21 = getOutput15_21();
-		private static final char[] getOutput15_21() {
-			return new char[] {
-				0xAE79, 0xAE7B, 0xAE7C, 0xAE7D, 0xAE84, 0xAE85, 0xAE8C, 0xAEBC, 0xAEBD, 0xAEBE, 0xAEC0, 0xAEC4, 0xAECC, 0xAECD, 0xAECF, 0xAED0,
-				0xAED1, 0xAED8, 0xAED9, 0xAEDC, 0xAEE8, 0xAEEB, 0xAEED, 0xAEF4, 0xAEF8, 0xAEFC, 0xAF07, 0xAF08, 0xAF0D, 0xAF10, 0xAF2C, 0xAF2D,
-				0xAF30, 0xAF32, 0xAF34, 0xAF3C, 0xAF3D, 0xAF3F, 0xAF41, 0xAF42, 0xAF43, 0xAF48, 0xAF49, 0xAF50, 0xAF5C, 0xAF5D, 0xAF64, 0xAF65,
-				0xAF79, 0xAF80, 0xAF84, 0xAF88, 0xAF90, 0xAF91, 0xAF95, 0xAF9C, 0xAFB8, 0xAFB9, 0xAFBC, 0xAFC0, 0xAFC7, 0xAFC8, 0xAFC9, 0xAFCB,
-				0xAFCD, 0xAFCE, 0xAFD4, 0xAFDC, 0xAFE8, 0xAFE9, 0xAFF0, 0xAFF1, 0xAFF4, 0xAFF8, 0xB000, 0xB001, 0xB004, 0xB00C, 0xB010, 0xB014,
-				0xB01C, 0xB01D, 0xB028, 0xB044, 0xB045, 0xB048, 0xB04A, 0xB04C, 0xB04E, 0xB053, 0xB054, 0xB055, 0xB057, 0xB059,
-			};
 		}
 		private long getOutput15(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT15_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON451[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT16_21 = getOutput16_21();
-		private static final char[] getOutput16_21() {
-			return new char[] {
-				0xB05D, 0xB07C, 0xB07D, 0xB080, 0xB084, 0xB08C, 0xB08D, 0xB08F, 0xB091, 0xB098, 0xB099, 0xB09A, 0xB09C, 0xB09F, 0xB0A0, 0xB0A1,
-				0xB0A2, 0xB0A8, 0xB0A9, 0xB0AB, 0xB0AC, 0xB0AD, 0xB0AE, 0xB0AF, 0xB0B1, 0xB0B3, 0xB0B4, 0xB0B5, 0xB0B8, 0xB0BC, 0xB0C4, 0xB0C5,
-				0xB0C7, 0xB0C8, 0xB0C9, 0xB0D0, 0xB0D1, 0xB0D4, 0xB0D8, 0xB0E0, 0xB0E5, 0xB108, 0xB109, 0xB10B, 0xB10C, 0xB110, 0xB112, 0xB113,
-				0xB118, 0xB119, 0xB11B, 0xB11C, 0xB11D, 0xB123, 0xB124, 0xB125, 0xB128, 0xB12C, 0xB134, 0xB135, 0xB137, 0xB138, 0xB139, 0xB140,
-				0xB141, 0xB144, 0xB148, 0xB150, 0xB151, 0xB154, 0xB155, 0xB158, 0xB15C, 0xB160, 0xB178, 0xB179, 0xB17C, 0xB180, 0xB182, 0xB188,
-				0xB189, 0xB18B, 0xB18D, 0xB192, 0xB193, 0xB194, 0xB198, 0xB19C, 0xB1A8, 0xB1CC, 0xB1D0, 0xB1D4, 0xB1DC, 0xB1DD,
-			};
 		}
 		private long getOutput16(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT16_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON452[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT17_21 = getOutput17_21();
-		private static final char[] getOutput17_21() {
-			return new char[] {
-				0xB1DF, 0xB1E8, 0xB1E9, 0xB1EC, 0xB1F0, 0xB1F9, 0xB1FB, 0xB1FD, 0xB204, 0xB205, 0xB208, 0xB20B, 0xB20C, 0xB214, 0xB215, 0xB217,
-				0xB219, 0xB220, 0xB234, 0xB23C, 0xB258, 0xB25C, 0xB260, 0xB268, 0xB269, 0xB274, 0xB275, 0xB27C, 0xB284, 0xB285, 0xB289, 0xB290,
-				0xB291, 0xB294, 0xB298, 0xB299, 0xB29A, 0xB2A0, 0xB2A1, 0xB2A3, 0xB2A5, 0xB2A6, 0xB2AA, 0xB2AC, 0xB2B0, 0xB2B4, 0xB2C8, 0xB2C9,
-				0xB2CC, 0xB2D0, 0xB2D2, 0xB2D8, 0xB2D9, 0xB2DB, 0xB2DD, 0xB2E2, 0xB2E4, 0xB2E5, 0xB2E6, 0xB2E8, 0xB2EB, 0xB2EC, 0xB2ED, 0xB2EE,
-				0xB2EF, 0xB2F3, 0xB2F4, 0xB2F5, 0xB2F7, 0xB2F8, 0xB2F9, 0xB2FA, 0xB2FB, 0xB2FF, 0xB300, 0xB301, 0xB304, 0xB308, 0xB310, 0xB311,
-				0xB313, 0xB314, 0xB315, 0xB31C, 0xB354, 0xB355, 0xB356, 0xB358, 0xB35B, 0xB35C, 0xB35E, 0xB35F, 0xB364, 0xB365,
-			};
 		}
 		private long getOutput17(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT17_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON453[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT18_21 = getOutput18_21();
-		private static final char[] getOutput18_21() {
-			return new char[] {
-				0xB367, 0xB369, 0xB36B, 0xB36E, 0xB370, 0xB371, 0xB374, 0xB378, 0xB380, 0xB381, 0xB383, 0xB384, 0xB385, 0xB38C, 0xB390, 0xB394,
-				0xB3A0, 0xB3A1, 0xB3A8, 0xB3AC, 0xB3C4, 0xB3C5, 0xB3C8, 0xB3CB, 0xB3CC, 0xB3CE, 0xB3D0, 0xB3D4, 0xB3D5, 0xB3D7, 0xB3D9, 0xB3DB,
-				0xB3DD, 0xB3E0, 0xB3E4, 0xB3E8, 0xB3FC, 0xB410, 0xB418, 0xB41C, 0xB420, 0xB428, 0xB429, 0xB42B, 0xB434, 0xB450, 0xB451, 0xB454,
-				0xB458, 0xB460, 0xB461, 0xB463, 0xB465, 0xB46C, 0xB480, 0xB488, 0xB49D, 0xB4A4, 0xB4A8, 0xB4AC, 0xB4B5, 0xB4B7, 0xB4B9, 0xB4C0,
-				0xB4C4, 0xB4C8, 0xB4D0, 0xB4D5, 0xB4DC, 0xB4DD, 0xB4E0, 0xB4E3, 0xB4E4, 0xB4E6, 0xB4EC, 0xB4ED, 0xB4EF, 0xB4F1, 0xB4F8, 0xB514,
-				0xB515, 0xB518, 0xB51B, 0xB51C, 0xB524, 0xB525, 0xB527, 0xB528, 0xB529, 0xB52A, 0xB530, 0xB531, 0xB534, 0xB538,
-			};
 		}
 		private long getOutput18(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT18_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON454[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT19_21 = getOutput19_21();
-		private static final char[] getOutput19_21() {
-			return new char[] {
-				0xB540, 0xB541, 0xB543, 0xB544, 0xB545, 0xB54B, 0xB54C, 0xB54D, 0xB550, 0xB554, 0xB55C, 0xB55D, 0xB55F, 0xB560, 0xB561, 0xB5A0,
-				0xB5A1, 0xB5A4, 0xB5A8, 0xB5AA, 0xB5AB, 0xB5B0, 0xB5B1, 0xB5B3, 0xB5B4, 0xB5B5, 0xB5BB, 0xB5BC, 0xB5BD, 0xB5C0, 0xB5C4, 0xB5CC,
-				0xB5CD, 0xB5CF, 0xB5D0, 0xB5D1, 0xB5D8, 0xB5EC, 0xB610, 0xB611, 0xB614, 0xB618, 0xB625, 0xB62C, 0xB634, 0xB648, 0xB664, 0xB668,
-				0xB69C, 0xB69D, 0xB6A0, 0xB6A4, 0xB6AB, 0xB6AC, 0xB6B1, 0xB6D4, 0xB6F0, 0xB6F4, 0xB6F8, 0xB700, 0xB701, 0xB705, 0xB728, 0xB729,
-				0xB72C, 0xB72F, 0xB730, 0xB738, 0xB739, 0xB73B, 0xB744, 0xB748, 0xB74C, 0xB754, 0xB755, 0xB760, 0xB764, 0xB768, 0xB770, 0xB771,
-				0xB773, 0xB775, 0xB77C, 0xB77D, 0xB780, 0xB784, 0xB78C, 0xB78D, 0xB78F, 0xB790, 0xB791, 0xB792, 0xB796, 0xB797,
-			};
 		}
 		private long getOutput19(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT19_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON455[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT20_21 = getOutput20_21();
-		private static final char[] getOutput20_21() {
-			return new char[] {
-				0xB798, 0xB799, 0xB79C, 0xB7A0, 0xB7A8, 0xB7A9, 0xB7AB, 0xB7AC, 0xB7AD, 0xB7B4, 0xB7B5, 0xB7B8, 0xB7C7, 0xB7C9, 0xB7EC, 0xB7ED,
-				0xB7F0, 0xB7F4, 0xB7FC, 0xB7FD, 0xB7FF, 0xB800, 0xB801, 0xB807, 0xB808, 0xB809, 0xB80C, 0xB810, 0xB818, 0xB819, 0xB81B, 0xB81D,
-				0xB824, 0xB825, 0xB828, 0xB82C, 0xB834, 0xB835, 0xB837, 0xB838, 0xB839, 0xB840, 0xB844, 0xB851, 0xB853, 0xB85C, 0xB85D, 0xB860,
-				0xB864, 0xB86C, 0xB86D, 0xB86F, 0xB871, 0xB878, 0xB87C, 0xB88D, 0xB8A8, 0xB8B0, 0xB8B4, 0xB8B8, 0xB8C0, 0xB8C1, 0xB8C3, 0xB8C5,
-				0xB8CC, 0xB8D0, 0xB8D4, 0xB8DD, 0xB8DF, 0xB8E1, 0xB8E8, 0xB8E9, 0xB8EC, 0xB8F0, 0xB8F8, 0xB8F9, 0xB8FB, 0xB8FD, 0xB904, 0xB918,
-				0xB920, 0xB93C, 0xB93D, 0xB940, 0xB944, 0xB94C, 0xB94F, 0xB951, 0xB958, 0xB959, 0xB95C, 0xB960, 0xB968, 0xB969,
-			};
 		}
 		private long getOutput20(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT20_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON456[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT21_21 = getOutput21_21();
-		private static final char[] getOutput21_21() {
-			return new char[] {
-				0xB96B, 0xB96D, 0xB974, 0xB975, 0xB978, 0xB97C, 0xB984, 0xB985, 0xB987, 0xB989, 0xB98A, 0xB98D, 0xB98E, 0xB9AC, 0xB9AD, 0xB9B0,
-				0xB9B4, 0xB9BC, 0xB9BD, 0xB9BF, 0xB9C1, 0xB9C8, 0xB9C9, 0xB9CC, 0xB9CE, 0xB9CF, 0xB9D0, 0xB9D1, 0xB9D2, 0xB9D8, 0xB9D9, 0xB9DB,
-				0xB9DD, 0xB9DE, 0xB9E1, 0xB9E3, 0xB9E4, 0xB9E5, 0xB9E8, 0xB9EC, 0xB9F4, 0xB9F5, 0xB9F7, 0xB9F8, 0xB9F9, 0xB9FA, 0xBA00, 0xBA01,
-				0xBA08, 0xBA15, 0xBA38, 0xBA39, 0xBA3C, 0xBA40, 0xBA42, 0xBA48, 0xBA49, 0xBA4B, 0xBA4D, 0xBA4E, 0xBA53, 0xBA54, 0xBA55, 0xBA58,
-				0xBA5C, 0xBA64, 0xBA65, 0xBA67, 0xBA68, 0xBA69, 0xBA70, 0xBA71, 0xBA74, 0xBA78, 0xBA83, 0xBA84, 0xBA85, 0xBA87, 0xBA8C, 0xBAA8,
-				0xBAA9, 0xBAAB, 0xBAAC, 0xBAB0, 0xBAB2, 0xBAB8, 0xBAB9, 0xBABB, 0xBABD, 0xBAC4, 0xBAC8, 0xBAD8, 0xBAD9, 0xBAFC,
-			};
 		}
 		private long getOutput21(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT21_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON457[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT22_21 = getOutput22_21();
-		private static final char[] getOutput22_21() {
-			return new char[] {
-				0xBB00, 0xBB04, 0xBB0D, 0xBB0F, 0xBB11, 0xBB18, 0xBB1C, 0xBB20, 0xBB29, 0xBB2B, 0xBB34, 0xBB35, 0xBB36, 0xBB38, 0xBB3B, 0xBB3C,
-				0xBB3D, 0xBB3E, 0xBB44, 0xBB45, 0xBB47, 0xBB49, 0xBB4D, 0xBB4F, 0xBB50, 0xBB54, 0xBB58, 0xBB61, 0xBB63, 0xBB6C, 0xBB88, 0xBB8C,
-				0xBB90, 0xBBA4, 0xBBA8, 0xBBAC, 0xBBB4, 0xBBB7, 0xBBC0, 0xBBC4, 0xBBC8, 0xBBD0, 0xBBD3, 0xBBF8, 0xBBF9, 0xBBFC, 0xBBFF, 0xBC00,
-				0xBC02, 0xBC08, 0xBC09, 0xBC0B, 0xBC0C, 0xBC0D, 0xBC0F, 0xBC11, 0xBC14, 0xBC15, 0xBC16, 0xBC17, 0xBC18, 0xBC1B, 0xBC1C, 0xBC1D,
-				0xBC1E, 0xBC1F, 0xBC24, 0xBC25, 0xBC27, 0xBC29, 0xBC2D, 0xBC30, 0xBC31, 0xBC34, 0xBC38, 0xBC40, 0xBC41, 0xBC43, 0xBC44, 0xBC45,
-				0xBC49, 0xBC4C, 0xBC4D, 0xBC50, 0xBC5D, 0xBC84, 0xBC85, 0xBC88, 0xBC8B, 0xBC8C, 0xBC8E, 0xBC94, 0xBC95, 0xBC97,
-			};
 		}
 		private long getOutput22(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT22_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON458[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT23_21 = getOutput23_21();
-		private static final char[] getOutput23_21() {
-			return new char[] {
-				0xBC99, 0xBC9A, 0xBCA0, 0xBCA1, 0xBCA4, 0xBCA7, 0xBCA8, 0xBCB0, 0xBCB1, 0xBCB3, 0xBCB4, 0xBCB5, 0xBCBC, 0xBCBD, 0xBCC0, 0xBCC4,
-				0xBCCD, 0xBCCF, 0xBCD0, 0xBCD1, 0xBCD5, 0xBCD8, 0xBCDC, 0xBCF4, 0xBCF5, 0xBCF6, 0xBCF8, 0xBCFC, 0xBD04, 0xBD05, 0xBD07, 0xBD09,
-				0xBD10, 0xBD14, 0xBD24, 0xBD2C, 0xBD40, 0xBD48, 0xBD49, 0xBD4C, 0xBD50, 0xBD58, 0xBD59, 0xBD64, 0xBD68, 0xBD80, 0xBD81, 0xBD84,
-				0xBD87, 0xBD88, 0xBD89, 0xBD8A, 0xBD90, 0xBD91, 0xBD93, 0xBD95, 0xBD99, 0xBD9A, 0xBD9C, 0xBDA4, 0xBDB0, 0xBDB8, 0xBDD4, 0xBDD5,
-				0xBDD8, 0xBDDC, 0xBDE9, 0xBDF0, 0xBDF4, 0xBDF8, 0xBE00, 0xBE03, 0xBE05, 0xBE0C, 0xBE0D, 0xBE10, 0xBE14, 0xBE1C, 0xBE1D, 0xBE1F,
-				0xBE44, 0xBE45, 0xBE48, 0xBE4C, 0xBE4E, 0xBE54, 0xBE55, 0xBE57, 0xBE59, 0xBE5A, 0xBE5B, 0xBE60, 0xBE61, 0xBE64,
-			};
 		}
 		private long getOutput23(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT23_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON459[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT24_21 = getOutput24_21();
-		private static final char[] getOutput24_21() {
-			return new char[] {
-				0xBE68, 0xBE6A, 0xBE70, 0xBE71, 0xBE73, 0xBE74, 0xBE75, 0xBE7B, 0xBE7C, 0xBE7D, 0xBE80, 0xBE84, 0xBE8C, 0xBE8D, 0xBE8F, 0xBE90,
-				0xBE91, 0xBE98, 0xBE99, 0xBEA8, 0xBED0, 0xBED1, 0xBED4, 0xBED7, 0xBED8, 0xBEE0, 0xBEE3, 0xBEE4, 0xBEE5, 0xBEEC, 0xBF01, 0xBF08,
-				0xBF09, 0xBF18, 0xBF19, 0xBF1B, 0xBF1C, 0xBF1D, 0xBF40, 0xBF41, 0xBF44, 0xBF48, 0xBF50, 0xBF51, 0xBF55, 0xBF94, 0xBFB0, 0xBFC5,
-				0xBFCC, 0xBFCD, 0xBFD0, 0xBFD4, 0xBFDC, 0xBFDF, 0xBFE1, 0xC03C, 0xC051, 0xC058, 0xC05C, 0xC060, 0xC068, 0xC069, 0xC090, 0xC091,
-				0xC094, 0xC098, 0xC0A0, 0xC0A1, 0xC0A3, 0xC0A5, 0xC0AC, 0xC0AD, 0xC0AF, 0xC0B0, 0xC0B3, 0xC0B4, 0xC0B5, 0xC0B6, 0xC0BC, 0xC0BD,
-				0xC0BF, 0xC0C0, 0xC0C1, 0xC0C5, 0xC0C8, 0xC0C9, 0xC0CC, 0xC0D0, 0xC0D8, 0xC0D9, 0xC0DB, 0xC0DC, 0xC0DD, 0xC0E4,
-			};
 		}
 		private long getOutput24(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT24_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON460[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT25_21 = getOutput25_21();
-		private static final char[] getOutput25_21() {
-			return new char[] {
-				0xC0E5, 0xC0E8, 0xC0EC, 0xC0F4, 0xC0F5, 0xC0F7, 0xC0F9, 0xC100, 0xC104, 0xC108, 0xC110, 0xC115, 0xC11C, 0xC11D, 0xC11E, 0xC11F,
-				0xC120, 0xC123, 0xC124, 0xC126, 0xC127, 0xC12C, 0xC12D, 0xC12F, 0xC130, 0xC131, 0xC136, 0xC138, 0xC139, 0xC13C, 0xC140, 0xC148,
-				0xC149, 0xC14B, 0xC14C, 0xC14D, 0xC154, 0xC155, 0xC158, 0xC15C, 0xC164, 0xC165, 0xC167, 0xC168, 0xC169, 0xC170, 0xC174, 0xC178,
-				0xC185, 0xC18C, 0xC18D, 0xC18E, 0xC190, 0xC194, 0xC196, 0xC19C, 0xC19D, 0xC19F, 0xC1A1, 0xC1A5, 0xC1A8, 0xC1A9, 0xC1AC, 0xC1B0,
-				0xC1BD, 0xC1C4, 0xC1C8, 0xC1CC, 0xC1D4, 0xC1D7, 0xC1D8, 0xC1E0, 0xC1E4, 0xC1E8, 0xC1F0, 0xC1F1, 0xC1F3, 0xC1FC, 0xC1FD, 0xC200,
-				0xC204, 0xC20C, 0xC20D, 0xC20F, 0xC211, 0xC218, 0xC219, 0xC21C, 0xC21F, 0xC220, 0xC228, 0xC229, 0xC22B, 0xC22D,
-			};
 		}
 		private long getOutput25(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT25_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON461[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT26_21 = getOutput26_21();
-		private static final char[] getOutput26_21() {
-			return new char[] {
-				0xC22F, 0xC231, 0xC232, 0xC234, 0xC248, 0xC250, 0xC251, 0xC254, 0xC258, 0xC260, 0xC265, 0xC26C, 0xC26D, 0xC270, 0xC274, 0xC27C,
-				0xC27D, 0xC27F, 0xC281, 0xC288, 0xC289, 0xC290, 0xC298, 0xC29B, 0xC29D, 0xC2A4, 0xC2A5, 0xC2A8, 0xC2AC, 0xC2AD, 0xC2B4, 0xC2B5,
-				0xC2B7, 0xC2B9, 0xC2DC, 0xC2DD, 0xC2E0, 0xC2E3, 0xC2E4, 0xC2EB, 0xC2EC, 0xC2ED, 0xC2EF, 0xC2F1, 0xC2F6, 0xC2F8, 0xC2F9, 0xC2FB,
-				0xC2FC, 0xC300, 0xC308, 0xC309, 0xC30C, 0xC30D, 0xC313, 0xC314, 0xC315, 0xC318, 0xC31C, 0xC324, 0xC325, 0xC328, 0xC329, 0xC345,
-				0xC368, 0xC369, 0xC36C, 0xC370, 0xC372, 0xC378, 0xC379, 0xC37C, 0xC37D, 0xC384, 0xC388, 0xC38C, 0xC3C0, 0xC3D8, 0xC3D9, 0xC3DC,
-				0xC3DF, 0xC3E0, 0xC3E2, 0xC3E8, 0xC3E9, 0xC3ED, 0xC3F4, 0xC3F5, 0xC3F8, 0xC408, 0xC410, 0xC424, 0xC42C, 0xC430,
-			};
 		}
 		private long getOutput26(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT26_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON462[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT27_21 = getOutput27_21();
-		private static final char[] getOutput27_21() {
-			return new char[] {
-				0xC434, 0xC43C, 0xC43D, 0xC448, 0xC464, 0xC465, 0xC468, 0xC46C, 0xC474, 0xC475, 0xC479, 0xC480, 0xC494, 0xC49C, 0xC4B8, 0xC4BC,
-				0xC4E9, 0xC4F0, 0xC4F1, 0xC4F4, 0xC4F8, 0xC4FA, 0xC4FF, 0xC500, 0xC501, 0xC50C, 0xC510, 0xC514, 0xC51C, 0xC528, 0xC529, 0xC52C,
-				0xC530, 0xC538, 0xC539, 0xC53B, 0xC53D, 0xC544, 0xC545, 0xC548, 0xC549, 0xC54A, 0xC54C, 0xC54D, 0xC54E, 0xC553, 0xC554, 0xC555,
-				0xC557, 0xC558, 0xC559, 0xC55D, 0xC55E, 0xC560, 0xC561, 0xC564, 0xC568, 0xC570, 0xC571, 0xC573, 0xC574, 0xC575, 0xC57C, 0xC57D,
-				0xC580, 0xC584, 0xC587, 0xC58C, 0xC58D, 0xC58F, 0xC591, 0xC595, 0xC597, 0xC598, 0xC59C, 0xC5A0, 0xC5A9, 0xC5B4, 0xC5B5, 0xC5B8,
-				0xC5B9, 0xC5BB, 0xC5BC, 0xC5BD, 0xC5BE, 0xC5C4, 0xC5C5, 0xC5C6, 0xC5C7, 0xC5C8, 0xC5C9, 0xC5CA, 0xC5CC, 0xC5CE,
-			};
 		}
 		private long getOutput27(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT27_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON463[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT28_21 = getOutput28_21();
-		private static final char[] getOutput28_21() {
-			return new char[] {
-				0xC5D0, 0xC5D1, 0xC5D4, 0xC5D8, 0xC5E0, 0xC5E1, 0xC5E3, 0xC5E5, 0xC5EC, 0xC5ED, 0xC5EE, 0xC5F0, 0xC5F4, 0xC5F6, 0xC5F7, 0xC5FC,
-				0xC5FD, 0xC5FE, 0xC5FF, 0xC600, 0xC601, 0xC605, 0xC606, 0xC607, 0xC608, 0xC60C, 0xC610, 0xC618, 0xC619, 0xC61B, 0xC61C, 0xC624,
-				0xC625, 0xC628, 0xC62C, 0xC62D, 0xC62E, 0xC630, 0xC633, 0xC634, 0xC635, 0xC637, 0xC639, 0xC63B, 0xC640, 0xC641, 0xC644, 0xC648,
-				0xC650, 0xC651, 0xC653, 0xC654, 0xC655, 0xC65C, 0xC65D, 0xC660, 0xC66C, 0xC66F, 0xC671, 0xC678, 0xC679, 0xC67C, 0xC680, 0xC688,
-				0xC689, 0xC68B, 0xC68D, 0xC694, 0xC695, 0xC698, 0xC69C, 0xC6A4, 0xC6A5, 0xC6A7, 0xC6A9, 0xC6B0, 0xC6B1, 0xC6B4, 0xC6B8, 0xC6B9,
-				0xC6BA, 0xC6C0, 0xC6C1, 0xC6C3, 0xC6C5, 0xC6CC, 0xC6CD, 0xC6D0, 0xC6D4, 0xC6DC, 0xC6DD, 0xC6E0, 0xC6E1, 0xC6E8,
-			};
 		}
 		private long getOutput28(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT28_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON464[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT29_21 = getOutput29_21();
-		private static final char[] getOutput29_21() {
-			return new char[] {
-				0xC6E9, 0xC6EC, 0xC6F0, 0xC6F8, 0xC6F9, 0xC6FD, 0xC704, 0xC705, 0xC708, 0xC70C, 0xC714, 0xC715, 0xC717, 0xC719, 0xC720, 0xC721,
-				0xC724, 0xC728, 0xC730, 0xC731, 0xC733, 0xC735, 0xC737, 0xC73C, 0xC73D, 0xC740, 0xC744, 0xC74A, 0xC74C, 0xC74D, 0xC74F, 0xC751,
-				0xC752, 0xC753, 0xC754, 0xC755, 0xC756, 0xC757, 0xC758, 0xC75C, 0xC760, 0xC768, 0xC76B, 0xC774, 0xC775, 0xC778, 0xC77C, 0xC77D,
-				0xC77E, 0xC783, 0xC784, 0xC785, 0xC787, 0xC788, 0xC789, 0xC78A, 0xC78E, 0xC790, 0xC791, 0xC794, 0xC796, 0xC797, 0xC798, 0xC79A,
-				0xC7A0, 0xC7A1, 0xC7A3, 0xC7A4, 0xC7A5, 0xC7A6, 0xC7AC, 0xC7AD, 0xC7B0, 0xC7B4, 0xC7BC, 0xC7BD, 0xC7BF, 0xC7C0, 0xC7C1, 0xC7C8,
-				0xC7C9, 0xC7CC, 0xC7CE, 0xC7D0, 0xC7D8, 0xC7DD, 0xC7E4, 0xC7E8, 0xC7EC, 0xC800, 0xC801, 0xC804, 0xC808, 0xC80A,
-			};
 		}
 		private long getOutput29(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT29_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON465[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT30_21 = getOutput30_21();
-		private static final char[] getOutput30_21() {
-			return new char[] {
-				0xC810, 0xC811, 0xC813, 0xC815, 0xC816, 0xC81C, 0xC81D, 0xC820, 0xC824, 0xC82C, 0xC82D, 0xC82F, 0xC831, 0xC838, 0xC83C, 0xC840,
-				0xC848, 0xC849, 0xC84C, 0xC84D, 0xC854, 0xC870, 0xC871, 0xC874, 0xC878, 0xC87A, 0xC880, 0xC881, 0xC883, 0xC885, 0xC886, 0xC887,
-				0xC88B, 0xC88C, 0xC88D, 0xC894, 0xC89D, 0xC89F, 0xC8A1, 0xC8A8, 0xC8BC, 0xC8BD, 0xC8C4, 0xC8C8, 0xC8CC, 0xC8D4, 0xC8D5, 0xC8D7,
-				0xC8D9, 0xC8E0, 0xC8E1, 0xC8E4, 0xC8F5, 0xC8FC, 0xC8FD, 0xC900, 0xC904, 0xC905, 0xC906, 0xC90C, 0xC90D, 0xC90F, 0xC911, 0xC918,
-				0xC92C, 0xC934, 0xC950, 0xC951, 0xC954, 0xC958, 0xC960, 0xC961, 0xC963, 0xC96C, 0xC970, 0xC974, 0xC97C, 0xC988, 0xC989, 0xC98C,
-				0xC990, 0xC998, 0xC999, 0xC99B, 0xC99D, 0xC9C0, 0xC9C1, 0xC9C4, 0xC9C7, 0xC9C8, 0xC9CA, 0xC9D0, 0xC9D1, 0xC9D3,
-			};
 		}
 		private long getOutput30(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT30_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON466[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT31_21 = getOutput31_21();
-		private static final char[] getOutput31_21() {
-			return new char[] {
-				0xC9D5, 0xC9D6, 0xC9D9, 0xC9DA, 0xC9DC, 0xC9DD, 0xC9E0, 0xC9E2, 0xC9E4, 0xC9E7, 0xC9EC, 0xC9ED, 0xC9EF, 0xC9F0, 0xC9F1, 0xC9F8,
-				0xC9F9, 0xC9FC, 0xCA00, 0xCA08, 0xCA09, 0xCA0B, 0xCA0C, 0xCA0D, 0xCA14, 0xCA18, 0xCA29, 0xCA4C, 0xCA4D, 0xCA50, 0xCA54, 0xCA5C,
-				0xCA5D, 0xCA5F, 0xCA60, 0xCA61, 0xCA68, 0xCA7D, 0xCA84, 0xCA98, 0xCABC, 0xCABD, 0xCAC0, 0xCAC4, 0xCACC, 0xCACD, 0xCACF, 0xCAD1,
-				0xCAD3, 0xCAD8, 0xCAD9, 0xCAE0, 0xCAEC, 0xCAF4, 0xCB08, 0xCB10, 0xCB14, 0xCB18, 0xCB20, 0xCB21, 0xCB41, 0xCB48, 0xCB49, 0xCB4C,
-				0xCB50, 0xCB58, 0xCB59, 0xCB5D, 0xCB64, 0xCB78, 0xCB79, 0xCB9C, 0xCBB8, 0xCBD4, 0xCBE4, 0xCBE7, 0xCBE9, 0xCC0C, 0xCC0D, 0xCC10,
-				0xCC14, 0xCC1C, 0xCC1D, 0xCC21, 0xCC22, 0xCC27, 0xCC28, 0xCC29, 0xCC2C, 0xCC2E, 0xCC30, 0xCC38, 0xCC39, 0xCC3B,
-			};
 		}
 		private long getOutput31(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT31_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON467[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT32_21 = getOutput32_21();
-		private static final char[] getOutput32_21() {
-			return new char[] {
-				0xCC3C, 0xCC3D, 0xCC3E, 0xCC44, 0xCC45, 0xCC48, 0xCC4C, 0xCC54, 0xCC55, 0xCC57, 0xCC58, 0xCC59, 0xCC60, 0xCC64, 0xCC66, 0xCC68,
-				0xCC70, 0xCC75, 0xCC98, 0xCC99, 0xCC9C, 0xCCA0, 0xCCA8, 0xCCA9, 0xCCAB, 0xCCAC, 0xCCAD, 0xCCB4, 0xCCB5, 0xCCB8, 0xCCBC, 0xCCC4,
-				0xCCC5, 0xCCC7, 0xCCC9, 0xCCD0, 0xCCD4, 0xCCE4, 0xCCEC, 0xCCF0, 0xCD01, 0xCD08, 0xCD09, 0xCD0C, 0xCD10, 0xCD18, 0xCD19, 0xCD1B,
-				0xCD1D, 0xCD24, 0xCD28, 0xCD2C, 0xCD39, 0xCD5C, 0xCD60, 0xCD64, 0xCD6C, 0xCD6D, 0xCD6F, 0xCD71, 0xCD78, 0xCD88, 0xCD94, 0xCD95,
-				0xCD98, 0xCD9C, 0xCDA4, 0xCDA5, 0xCDA7, 0xCDA9, 0xCDB0, 0xCDC4, 0xCDCC, 0xCDD0, 0xCDE8, 0xCDEC, 0xCDF0, 0xCDF8, 0xCDF9, 0xCDFB,
-				0xCDFD, 0xCE04, 0xCE08, 0xCE0C, 0xCE14, 0xCE19, 0xCE20, 0xCE21, 0xCE24, 0xCE28, 0xCE30, 0xCE31, 0xCE33, 0xCE35,
-			};
 		}
 		private long getOutput32(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT32_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON468[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT33_21 = getOutput33_21();
-		private static final char[] getOutput33_21() {
-			return new char[] {
-				0xCE58, 0xCE59, 0xCE5C, 0xCE5F, 0xCE60, 0xCE61, 0xCE68, 0xCE69, 0xCE6B, 0xCE6D, 0xCE74, 0xCE75, 0xCE78, 0xCE7C, 0xCE84, 0xCE85,
-				0xCE87, 0xCE89, 0xCE90, 0xCE91, 0xCE94, 0xCE98, 0xCEA0, 0xCEA1, 0xCEA3, 0xCEA4, 0xCEA5, 0xCEAC, 0xCEAD, 0xCEC1, 0xCEE4, 0xCEE5,
-				0xCEE8, 0xCEEB, 0xCEEC, 0xCEF4, 0xCEF5, 0xCEF7, 0xCEF8, 0xCEF9, 0xCF00, 0xCF01, 0xCF04, 0xCF08, 0xCF10, 0xCF11, 0xCF13, 0xCF15,
-				0xCF1C, 0xCF20, 0xCF24, 0xCF2C, 0xCF2D, 0xCF2F, 0xCF30, 0xCF31, 0xCF38, 0xCF54, 0xCF55, 0xCF58, 0xCF5C, 0xCF64, 0xCF65, 0xCF67,
-				0xCF69, 0xCF70, 0xCF71, 0xCF74, 0xCF78, 0xCF80, 0xCF85, 0xCF8C, 0xCFA1, 0xCFA8, 0xCFB0, 0xCFC4, 0xCFE0, 0xCFE1, 0xCFE4, 0xCFE8,
-				0xCFF0, 0xCFF1, 0xCFF3, 0xCFF5, 0xCFFC, 0xD000, 0xD004, 0xD011, 0xD018, 0xD02D, 0xD034, 0xD035, 0xD038, 0xD03C,
-			};
 		}
 		private long getOutput33(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT33_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON469[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT34_21 = getOutput34_21();
-		private static final char[] getOutput34_21() {
-			return new char[] {
-				0xD044, 0xD045, 0xD047, 0xD049, 0xD050, 0xD054, 0xD058, 0xD060, 0xD06C, 0xD06D, 0xD070, 0xD074, 0xD07C, 0xD07D, 0xD081, 0xD0A4,
-				0xD0A5, 0xD0A8, 0xD0AC, 0xD0B4, 0xD0B5, 0xD0B7, 0xD0B9, 0xD0C0, 0xD0C1, 0xD0C4, 0xD0C8, 0xD0C9, 0xD0D0, 0xD0D1, 0xD0D3, 0xD0D4,
-				0xD0D5, 0xD0DC, 0xD0DD, 0xD0E0, 0xD0E4, 0xD0EC, 0xD0ED, 0xD0EF, 0xD0F0, 0xD0F1, 0xD0F8, 0xD10D, 0xD130, 0xD131, 0xD134, 0xD138,
-				0xD13A, 0xD140, 0xD141, 0xD143, 0xD144, 0xD145, 0xD14C, 0xD14D, 0xD150, 0xD154, 0xD15C, 0xD15D, 0xD15F, 0xD161, 0xD168, 0xD16C,
-				0xD17C, 0xD184, 0xD188, 0xD1A0, 0xD1A1, 0xD1A4, 0xD1A8, 0xD1B0, 0xD1B1, 0xD1B3, 0xD1B5, 0xD1BA, 0xD1BC, 0xD1C0, 0xD1D8, 0xD1F4,
-				0xD1F8, 0xD207, 0xD209, 0xD210, 0xD22C, 0xD22D, 0xD230, 0xD234, 0xD23C, 0xD23D, 0xD23F, 0xD241, 0xD248, 0xD25C,
-			};
 		}
 		private long getOutput34(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT34_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON470[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT35_21 = getOutput35_21();
-		private static final char[] getOutput35_21() {
-			return new char[] {
-				0xD264, 0xD280, 0xD281, 0xD284, 0xD288, 0xD290, 0xD291, 0xD295, 0xD29C, 0xD2A0, 0xD2A4, 0xD2AC, 0xD2B1, 0xD2B8, 0xD2B9, 0xD2BC,
-				0xD2BF, 0xD2C0, 0xD2C2, 0xD2C8, 0xD2C9, 0xD2CB, 0xD2D4, 0xD2D8, 0xD2DC, 0xD2E4, 0xD2E5, 0xD2F0, 0xD2F1, 0xD2F4, 0xD2F8, 0xD300,
-				0xD301, 0xD303, 0xD305, 0xD30C, 0xD30D, 0xD30E, 0xD310, 0xD314, 0xD316, 0xD31C, 0xD31D, 0xD31F, 0xD320, 0xD321, 0xD325, 0xD328,
-				0xD329, 0xD32C, 0xD330, 0xD338, 0xD339, 0xD33B, 0xD33C, 0xD33D, 0xD344, 0xD345, 0xD37C, 0xD37D, 0xD380, 0xD384, 0xD38C, 0xD38D,
-				0xD38F, 0xD390, 0xD391, 0xD398, 0xD399, 0xD39C, 0xD3A0, 0xD3A8, 0xD3A9, 0xD3AB, 0xD3AD, 0xD3B4, 0xD3B8, 0xD3BC, 0xD3C4, 0xD3C5,
-				0xD3C8, 0xD3C9, 0xD3D0, 0xD3D8, 0xD3E1, 0xD3E3, 0xD3EC, 0xD3ED, 0xD3F0, 0xD3F4, 0xD3FC, 0xD3FD, 0xD3FF, 0xD401,
-			};
 		}
 		private long getOutput35(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT35_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON471[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT36_21 = getOutput36_21();
-		private static final char[] getOutput36_21() {
-			return new char[] {
-				0xD408, 0xD41D, 0xD440, 0xD444, 0xD45C, 0xD460, 0xD464, 0xD46D, 0xD46F, 0xD478, 0xD479, 0xD47C, 0xD47F, 0xD480, 0xD482, 0xD488,
-				0xD489, 0xD48B, 0xD48D, 0xD494, 0xD4A9, 0xD4CC, 0xD4D0, 0xD4D4, 0xD4DC, 0xD4DF, 0xD4E8, 0xD4EC, 0xD4F0, 0xD4F8, 0xD4FB, 0xD4FD,
-				0xD504, 0xD508, 0xD50C, 0xD514, 0xD515, 0xD517, 0xD53C, 0xD53D, 0xD540, 0xD544, 0xD54C, 0xD54D, 0xD54F, 0xD551, 0xD558, 0xD559,
-				0xD55C, 0xD560, 0xD565, 0xD568, 0xD569, 0xD56B, 0xD56D, 0xD574, 0xD575, 0xD578, 0xD57C, 0xD584, 0xD585, 0xD587, 0xD588, 0xD589,
-				0xD590, 0xD5A5, 0xD5C8, 0xD5C9, 0xD5CC, 0xD5D0, 0xD5D2, 0xD5D8, 0xD5D9, 0xD5DB, 0xD5DD, 0xD5E4, 0xD5E5, 0xD5E8, 0xD5EC, 0xD5F4,
-				0xD5F5, 0xD5F7, 0xD5F9, 0xD600, 0xD601, 0xD604, 0xD608, 0xD610, 0xD611, 0xD613, 0xD614, 0xD615, 0xD61C, 0xD620,
-			};
 		}
 		private long getOutput36(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT36_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON472[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT37_21 = getOutput37_21();
-		private static final char[] getOutput37_21() {
-			return new char[] {
-				0xD624, 0xD62D, 0xD638, 0xD639, 0xD63C, 0xD640, 0xD645, 0xD648, 0xD649, 0xD64B, 0xD64D, 0xD651, 0xD654, 0xD655, 0xD658, 0xD65C,
-				0xD667, 0xD669, 0xD670, 0xD671, 0xD674, 0xD683, 0xD685, 0xD68C, 0xD68D, 0xD690, 0xD694, 0xD69D, 0xD69F, 0xD6A1, 0xD6A8, 0xD6AC,
-				0xD6B0, 0xD6B9, 0xD6BB, 0xD6C4, 0xD6C5, 0xD6C8, 0xD6CC, 0xD6D1, 0xD6D4, 0xD6D7, 0xD6D9, 0xD6E0, 0xD6E4, 0xD6E8, 0xD6F0, 0xD6F5,
-				0xD6FC, 0xD6FD, 0xD700, 0xD704, 0xD711, 0xD718, 0xD719, 0xD71C, 0xD720, 0xD728, 0xD729, 0xD72B, 0xD72D, 0xD734, 0xD735, 0xD738,
-				0xD73C, 0xD744, 0xD747, 0xD749, 0xD750, 0xD751, 0xD754, 0xD756, 0xD757, 0xD758, 0xD759, 0xD760, 0xD761, 0xD763, 0xD765, 0xD769,
-				0xD76C, 0xD770, 0xD774, 0xD77C, 0xD77D, 0xD781, 0xD788, 0xD789, 0xD78C, 0xD790, 0xD798, 0xD799, 0xD79B, 0xD79D,
-			};
 		}
 		private long getOutput37(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT37_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON473[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT38_21 = getOutput38_21();
-		private static final char[] getOutput38_21() {
-			return new char[] {
-				0x4F3D, 0x4F73, 0x5047, 0x50F9, 0x52A0, 0x53EF, 0x5475, 0x54E5, 0x5609, 0x5AC1, 0x5BB6, 0x6687, 0x67B6, 0x67B7, 0x67EF, 0x6B4C,
-				0x73C2, 0x75C2, 0x7A3C, 0x82DB, 0x8304, 0x8857, 0x8888, 0x8A36, 0x8CC8, 0x8DCF, 0x8EFB, 0x8FE6, 0x99D5, 0x523B, 0x5374, 0x5404,
-				0x606A, 0x6164, 0x6BBC, 0x73CF, 0x811A, 0x89BA, 0x89D2, 0x95A3, 0x4F83, 0x520A, 0x58BE, 0x5978, 0x59E6, 0x5E72, 0x5E79, 0x61C7,
-				0x63C0, 0x6746, 0x67EC, 0x687F, 0x6F97, 0x764E, 0x770B, 0x78F5, 0x7A08, 0x7AFF, 0x7C21, 0x809D, 0x826E, 0x8271, 0x8AEB, 0x9593,
-				0x4E6B, 0x559D, 0x66F7, 0x6E34, 0x78A3, 0x7AED, 0x845B, 0x8910, 0x874E, 0x97A8, 0x52D8, 0x574E, 0x582A, 0x5D4C, 0x611F, 0x61BE,
-				0x6221, 0x6562, 0x67D1, 0x6A44, 0x6E1B, 0x7518, 0x75B3, 0x76E3, 0x77B0, 0x7D3A, 0x90AF, 0x9451, 0x9452, 0x9F95,
-			};
 		}
 		private long getOutput38(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT38_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON474[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT39_21 = getOutput39_21();
-		private static final char[] getOutput39_21() {
-			return new char[] {
-				0x5323, 0x5CAC, 0x7532, 0x80DB, 0x9240, 0x9598, 0x525B, 0x5808, 0x59DC, 0x5CA1, 0x5D17, 0x5EB7, 0x5F3A, 0x5F4A, 0x6177, 0x6C5F,
-				0x757A, 0x7586, 0x7CE0, 0x7D73, 0x7DB1, 0x7F8C, 0x8154, 0x8221, 0x8591, 0x8941, 0x8B1B, 0x92FC, 0x964D, 0x9C47, 0x4ECB, 0x4EF7,
-				0x500B, 0x51F1, 0x584F, 0x6137, 0x613E, 0x6168, 0x6539, 0x69EA, 0x6F11, 0x75A5, 0x7686, 0x76D6, 0x7B87, 0x82A5, 0x84CB, 0xF900,
-				0x93A7, 0x958B, 0x5580, 0x5BA2, 0x5751, 0xF901, 0x7CB3, 0x7FB9, 0x91B5, 0x5028, 0x53BB, 0x5C45, 0x5DE8, 0x62D2, 0x636E, 0x64DA,
-				0x64E7, 0x6E20, 0x70AC, 0x795B, 0x8DDD, 0x8E1E, 0xF902, 0x907D, 0x9245, 0x92F8, 0x4E7E, 0x4EF6, 0x5065, 0x5DFE, 0x5EFA, 0x6106,
-				0x6957, 0x8171, 0x8654, 0x8E47, 0x9375, 0x9A2B, 0x4E5E, 0x5091, 0x6770, 0x6840, 0x5109, 0x528D, 0x5292, 0x6AA2,
-			};
 		}
 		private long getOutput39(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT39_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON475[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT40_21 = getOutput40_21();
-		private static final char[] getOutput40_21() {
-			return new char[] {
-				0x77BC, 0x9210, 0x9ED4, 0x52AB, 0x602F, 0x8FF2, 0x5048, 0x61A9, 0x63ED, 0x64CA, 0x683C, 0x6A84, 0x6FC0, 0x8188, 0x89A1, 0x9694,
-				0x5805, 0x727D, 0x72AC, 0x7504, 0x7D79, 0x7E6D, 0x80A9, 0x898B, 0x8B74, 0x9063, 0x9D51, 0x6289, 0x6C7A, 0x6F54, 0x7D50, 0x7F3A,
-				0x8A23, 0x517C, 0x614A, 0x7B9D, 0x8B19, 0x9257, 0x938C, 0x4EAC, 0x4FD3, 0x501E, 0x50BE, 0x5106, 0x52C1, 0x52CD, 0x537F, 0x5770,
-				0x5883, 0x5E9A, 0x5F91, 0x6176, 0x61AC, 0x64CE, 0x656C, 0x666F, 0x66BB, 0x66F4, 0x6897, 0x6D87, 0x7085, 0x70F1, 0x749F, 0x74A5,
-				0x74CA, 0x75D9, 0x786C, 0x78EC, 0x7ADF, 0x7AF6, 0x7D45, 0x7D93, 0x8015, 0x803F, 0x811B, 0x8396, 0x8B66, 0x8F15, 0x9015, 0x93E1,
-				0x9803, 0x9838, 0x9A5A, 0x9BE8, 0x4FC2, 0x5553, 0x583A, 0x5951, 0x5B63, 0x5C46, 0x60B8, 0x6212, 0x6842, 0x68B0,
-			};
 		}
 		private long getOutput40(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT40_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON476[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT41_21 = getOutput41_21();
-		private static final char[] getOutput41_21() {
-			return new char[] {
-				0x68E8, 0x6EAA, 0x754C, 0x7678, 0x78CE, 0x7A3D, 0x7CFB, 0x7E6B, 0x7E7C, 0x8A08, 0x8AA1, 0x8C3F, 0x968E, 0x9DC4, 0x53E4, 0x53E9,
-				0x544A, 0x5471, 0x56FA, 0x59D1, 0x5B64, 0x5C3B, 0x5EAB, 0x62F7, 0x6537, 0x6545, 0x6572, 0x66A0, 0x67AF, 0x69C1, 0x6CBD, 0x75FC,
-				0x7690, 0x777E, 0x7A3F, 0x7F94, 0x8003, 0x80A1, 0x818F, 0x82E6, 0x82FD, 0x83F0, 0x85C1, 0x8831, 0x88B4, 0x8AA5, 0xF903, 0x8F9C,
-				0x932E, 0x96C7, 0x9867, 0x9AD8, 0x9F13, 0x54ED, 0x659B, 0x66F2, 0x688F, 0x7A40, 0x8C37, 0x9D60, 0x56F0, 0x5764, 0x5D11, 0x6606,
-				0x68B1, 0x68CD, 0x6EFE, 0x7428, 0x889E, 0x9BE4, 0x6C68, 0xF904, 0x9AA8, 0x4F9B, 0x516C, 0x5171, 0x529F, 0x5B54, 0x5DE5, 0x6050,
-				0x606D, 0x62F1, 0x63A7, 0x653B, 0x73D9, 0x7A7A, 0x86A3, 0x8CA2, 0x978F, 0x4E32, 0x5BE1, 0x6208, 0x679C, 0x74DC,
-			};
 		}
 		private long getOutput41(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT41_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON477[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT42_21 = getOutput42_21();
-		private static final char[] getOutput42_21() {
-			return new char[] {
-				0x79D1, 0x83D3, 0x8A87, 0x8AB2, 0x8DE8, 0x904E, 0x934B, 0x9846, 0x5ED3, 0x69E8, 0x85FF, 0x90ED, 0xF905, 0x51A0, 0x5B98, 0x5BEC,
-				0x6163, 0x68FA, 0x6B3E, 0x704C, 0x742F, 0x74D8, 0x7BA1, 0x7F50, 0x83C5, 0x89C0, 0x8CAB, 0x95DC, 0x9928, 0x522E, 0x605D, 0x62EC,
-				0x9002, 0x4F8A, 0x5149, 0x5321, 0x58D9, 0x5EE3, 0x66E0, 0x6D38, 0x709A, 0x72C2, 0x73D6, 0x7B50, 0x80F1, 0x945B, 0x5366, 0x639B,
-				0x7F6B, 0x4E56, 0x5080, 0x584A, 0x58DE, 0x602A, 0x6127, 0x62D0, 0x69D0, 0x9B41, 0x5B8F, 0x7D18, 0x80B1, 0x8F5F, 0x4EA4, 0x50D1,
-				0x54AC, 0x55AC, 0x5B0C, 0x5DA0, 0x5DE7, 0x652A, 0x654E, 0x6821, 0x6A4B, 0x72E1, 0x768E, 0x77EF, 0x7D5E, 0x7FF9, 0x81A0, 0x854E,
-				0x86DF, 0x8F03, 0x8F4E, 0x90CA, 0x9903, 0x9A55, 0x9BAB, 0x4E18, 0x4E45, 0x4E5D, 0x4EC7, 0x4FF1, 0x5177, 0x52FE,
-			};
 		}
 		private long getOutput42(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT42_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON478[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT43_21 = getOutput43_21();
-		private static final char[] getOutput43_21() {
-			return new char[] {
-				0x5340, 0x53E3, 0x53E5, 0x548E, 0x5614, 0x5775, 0x57A2, 0x5BC7, 0x5D87, 0x5ED0, 0x61FC, 0x62D8, 0x6551, 0x67B8, 0x67E9, 0x69CB,
-				0x6B50, 0x6BC6, 0x6BEC, 0x6C42, 0x6E9D, 0x7078, 0x72D7, 0x7396, 0x7403, 0x77BF, 0x77E9, 0x7A76, 0x7D7F, 0x8009, 0x81FC, 0x8205,
-				0x820A, 0x82DF, 0x8862, 0x8B33, 0x8CFC, 0x8EC0, 0x9011, 0x90B1, 0x9264, 0x92B6, 0x99D2, 0x9A45, 0x9CE9, 0x9DD7, 0x9F9C, 0x570B,
-				0x5C40, 0x83CA, 0x97A0, 0x97AB, 0x9EB4, 0x541B, 0x7A98, 0x7FA4, 0x88D9, 0x8ECD, 0x90E1, 0x5800, 0x5C48, 0x6398, 0x7A9F, 0x5BAE,
-				0x5F13, 0x7A79, 0x7AAE, 0x828E, 0x8EAC, 0x5026, 0x5238, 0x52F8, 0x5377, 0x5708, 0x62F3, 0x6372, 0x6B0A, 0x6DC3, 0x7737, 0x53A5,
-				0x7357, 0x8568, 0x8E76, 0x95D5, 0x673A, 0x6AC3, 0x6F70, 0x8A6D, 0x8ECC, 0x994B, 0xF906, 0x6677, 0x6B78, 0x8CB4,
-			};
 		}
 		private long getOutput43(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT43_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON479[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT44_21 = getOutput44_21();
-		private static final char[] getOutput44_21() {
-			return new char[] {
-				0x9B3C, 0xF907, 0x53EB, 0x572D, 0x594E, 0x63C6, 0x69FB, 0x73EA, 0x7845, 0x7ABA, 0x7AC5, 0x7CFE, 0x8475, 0x898F, 0x8D73, 0x9035,
-				0x95A8, 0x52FB, 0x5747, 0x7547, 0x7B60, 0x83CC, 0x921E, 0xF908, 0x6A58, 0x514B, 0x524B, 0x5287, 0x621F, 0x68D8, 0x6975, 0x9699,
-				0x50C5, 0x52A4, 0x52E4, 0x61C3, 0x65A4, 0x6839, 0x69FF, 0x747E, 0x7B4B, 0x82B9, 0x83EB, 0x89B2, 0x8B39, 0x8FD1, 0x9949, 0xF909,
-				0x4ECA, 0x5997, 0x64D2, 0x6611, 0x6A8E, 0x7434, 0x7981, 0x79BD, 0x82A9, 0x887E, 0x887F, 0x895F, 0xF90A, 0x9326, 0x4F0B, 0x53CA,
-				0x6025, 0x6271, 0x6C72, 0x7D1A, 0x7D66, 0x4E98, 0x5162, 0x77DC, 0x80AF, 0x4F01, 0x4F0E, 0x5176, 0x5180, 0x55DC, 0x5668, 0x573B,
-				0x57FA, 0x57FC, 0x5914, 0x5947, 0x5993, 0x5BC4, 0x5C90, 0x5D0E, 0x5DF1, 0x5E7E, 0x5FCC, 0x6280, 0x65D7, 0x65E3,
-			};
 		}
 		private long getOutput44(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT44_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON480[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT45_21 = getOutput45_21();
-		private static final char[] getOutput45_21() {
-			return new char[] {
-				0x671E, 0x671F, 0x675E, 0x68CB, 0x68C4, 0x6A5F, 0x6B3A, 0x6C23, 0x6C7D, 0x6C82, 0x6DC7, 0x7398, 0x7426, 0x742A, 0x7482, 0x74A3,
-				0x7578, 0x757F, 0x7881, 0x78EF, 0x7941, 0x7947, 0x7948, 0x797A, 0x7B95, 0x7D00, 0x7DBA, 0x7F88, 0x8006, 0x802D, 0x808C, 0x8A18,
-				0x8B4F, 0x8C48, 0x8D77, 0x9321, 0x9324, 0x98E2, 0x9951, 0x9A0E, 0x9A0F, 0x9A65, 0x9E92, 0x7DCA, 0x4F76, 0x5409, 0x62EE, 0x6854,
-				0x91D1, 0x55AB, 0x513A, 0xF90B, 0xF90C, 0x5A1C, 0x61E6, 0xF90D, 0x62CF, 0x62FF, 0xF90E, 0xF90F, 0xF910, 0xF911, 0xF912, 0xF913,
-				0x90A3, 0xF914, 0xF915, 0xF916, 0xF917, 0xF918, 0x8AFE, 0xF919, 0xF91A, 0xF91B, 0xF91C, 0x6696, 0xF91D, 0x7156, 0xF91E, 0xF91F,
-				0x96E3, 0xF920, 0x634F, 0x637A, 0x5357, 0xF921, 0x678F, 0x6960, 0x6E73, 0xF922, 0x7537, 0xF923, 0xF924, 0xF925,
-			};
 		}
 		private long getOutput45(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT45_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON481[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT46_21 = getOutput46_21();
-		private static final char[] getOutput46_21() {
-			return new char[] {
-				0x7D0D, 0xF926, 0xF927, 0x8872, 0x56CA, 0x5A18, 0xF928, 0xF929, 0xF92A, 0xF92B, 0xF92C, 0x4E43, 0xF92D, 0x5167, 0x5948, 0x67F0,
-				0x8010, 0xF92E, 0x5973, 0x5E74, 0x649A, 0x79CA, 0x5FF5, 0x606C, 0x62C8, 0x637B, 0x5BE7, 0x5BD7, 0x52AA, 0xF92F, 0x5974, 0x5F29,
-				0x6012, 0xF930, 0xF931, 0xF932, 0x7459, 0xF933, 0xF934, 0xF935, 0xF936, 0xF937, 0xF938, 0x99D1, 0xF939, 0xF93A, 0xF93B, 0xF93C,
-				0xF93D, 0xF93E, 0xF93F, 0xF940, 0xF941, 0xF942, 0xF943, 0x6FC3, 0xF944, 0xF945, 0x81BF, 0x8FB2, 0x60F1, 0xF946, 0xF947, 0x8166,
-				0xF948, 0xF949, 0x5C3F, 0xF94A, 0xF94B, 0xF94C, 0xF94D, 0xF94E, 0xF94F, 0xF950, 0xF951, 0x5AE9, 0x8A25, 0x677B, 0x7D10, 0xF952,
-				0xF953, 0xF954, 0xF955, 0xF956, 0xF957, 0x80FD, 0xF958, 0xF959, 0x5C3C, 0x6CE5, 0x533F, 0x6EBA, 0x591A, 0x8336,
-			};
 		}
 		private long getOutput46(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT46_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON482[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT47_21 = getOutput47_21();
-		private static final char[] getOutput47_21() {
-			return new char[] {
-				0x4E39, 0x4EB6, 0x4F46, 0x55AE, 0x5718, 0x58C7, 0x5F56, 0x65B7, 0x65E6, 0x6A80, 0x6BB5, 0x6E4D, 0x77ED, 0x7AEF, 0x7C1E, 0x7DDE,
-				0x86CB, 0x8892, 0x9132, 0x935B, 0x64BB, 0x6FBE, 0x737A, 0x75B8, 0x9054, 0x5556, 0x574D, 0x61BA, 0x64D4, 0x66C7, 0x6DE1, 0x6E5B,
-				0x6F6D, 0x6FB9, 0x75F0, 0x8043, 0x81BD, 0x8541, 0x8983, 0x8AC7, 0x8B5A, 0x931F, 0x6C93, 0x7553, 0x7B54, 0x8E0F, 0x905D, 0x5510,
-				0x5802, 0x5858, 0x5E62, 0x6207, 0x649E, 0x68E0, 0x7576, 0x7CD6, 0x87B3, 0x9EE8, 0x4EE3, 0x5788, 0x576E, 0x5927, 0x5C0D, 0x5CB1,
-				0x5E36, 0x5F85, 0x6234, 0x64E1, 0x73B3, 0x81FA, 0x888B, 0x8CB8, 0x968A, 0x9EDB, 0x5B85, 0x5FB7, 0x60B3, 0x5012, 0x5200, 0x5230,
-				0x5716, 0x5835, 0x5857, 0x5C0E, 0x5C60, 0x5CF6, 0x5D8B, 0x5EA6, 0x5F92, 0x60BC, 0x6311, 0x6389, 0x6417, 0x6843,
-			};
 		}
 		private long getOutput47(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT47_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON483[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT48_21 = getOutput48_21();
-		private static final char[] getOutput48_21() {
-			return new char[] {
-				0x68F9, 0x6AC2, 0x6DD8, 0x6E21, 0x6ED4, 0x6FE4, 0x71FE, 0x76DC, 0x7779, 0x79B1, 0x7A3B, 0x8404, 0x89A9, 0x8CED, 0x8DF3, 0x8E48,
-				0x9003, 0x9014, 0x9053, 0x90FD, 0x934D, 0x9676, 0x97DC, 0x6BD2, 0x7006, 0x7258, 0x72A2, 0x7368, 0x7763, 0x79BF, 0x7BE4, 0x7E9B,
-				0x8B80, 0x58A9, 0x60C7, 0x6566, 0x65FD, 0x66BE, 0x6C8C, 0x711E, 0x71C9, 0x8C5A, 0x9813, 0x4E6D, 0x7A81, 0x4EDD, 0x51AC, 0x51CD,
-				0x52D5, 0x540C, 0x61A7, 0x6771, 0x6850, 0x68DF, 0x6D1E, 0x6F7C, 0x75BC, 0x77B3, 0x7AE5, 0x80F4, 0x8463, 0x9285, 0x515C, 0x6597,
-				0x675C, 0x6793, 0x75D8, 0x7AC7, 0x8373, 0xF95A, 0x8C46, 0x9017, 0x982D, 0x5C6F, 0x81C0, 0x829A, 0x9041, 0x906F, 0x920D, 0x5F97,
-				0x5D9D, 0x6A59, 0x71C8, 0x767B, 0x7B49, 0x85E4, 0x8B04, 0x9127, 0x9A30, 0x5587, 0x61F6, 0xF95B, 0x7669, 0x7F85,
-			};
 		}
 		private long getOutput48(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT48_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON484[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT49_21 = getOutput49_21();
-		private static final char[] getOutput49_21() {
-			return new char[] {
-				0x863F, 0x87BA, 0x88F8, 0x908F, 0xF95C, 0x6D1B, 0x70D9, 0x73DE, 0x7D61, 0x843D, 0xF95D, 0x916A, 0x99F1, 0xF95E, 0x4E82, 0x5375,
-				0x6B04, 0x6B12, 0x703E, 0x721B, 0x862D, 0x9E1E, 0x524C, 0x8FA3, 0x5D50, 0x64E5, 0x652C, 0x6B16, 0x6FEB, 0x7C43, 0x7E9C, 0x85CD,
-				0x8964, 0x89BD, 0x62C9, 0x81D8, 0x881F, 0x5ECA, 0x6717, 0x6D6A, 0x72FC, 0x7405, 0x746F, 0x8782, 0x90DE, 0x4F86, 0x5D0D, 0x5FA0,
-				0x840A, 0x51B7, 0x63A0, 0x7565, 0x4EAE, 0x5006, 0x5169, 0x51C9, 0x6881, 0x6A11, 0x7CAE, 0x7CB1, 0x7CE7, 0x826F, 0x8AD2, 0x8F1B,
-				0x91CF, 0x4FB6, 0x5137, 0x52F5, 0x5442, 0x5EEC, 0x616E, 0x623E, 0x65C5, 0x6ADA, 0x6FFE, 0x792A, 0x85DC, 0x8823, 0x95AD, 0x9A62,
-				0x9A6A, 0x9E97, 0x9ECE, 0x529B, 0x66C6, 0x6B77, 0x701D, 0x792B, 0x8F62, 0x9742, 0x6190, 0x6200, 0x6523, 0x6F23,
-			};
 		}
 		private long getOutput49(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT49_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON485[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT50_21 = getOutput50_21();
-		private static final char[] getOutput50_21() {
-			return new char[] {
-				0x7149, 0x7489, 0x7DF4, 0x806F, 0x84EE, 0x8F26, 0x9023, 0x934A, 0x51BD, 0x5217, 0x52A3, 0x6D0C, 0x70C8, 0x88C2, 0x5EC9, 0x6582,
-				0x6BAE, 0x6FC2, 0x7C3E, 0x7375, 0x4EE4, 0x4F36, 0x56F9, 0xF95F, 0x5CBA, 0x5DBA, 0x601C, 0x73B2, 0x7B2D, 0x7F9A, 0x7FCE, 0x8046,
-				0x901E, 0x9234, 0x96F6, 0x9748, 0x9818, 0x9F61, 0x4F8B, 0x6FA7, 0x79AE, 0x91B4, 0x96B7, 0x52DE, 0xF960, 0x6488, 0x64C4, 0x6AD3,
-				0x6F5E, 0x7018, 0x7210, 0x76E7, 0x8001, 0x8606, 0x865C, 0x8DEF, 0x8F05, 0x9732, 0x9B6F, 0x9DFA, 0x9E75, 0x788C, 0x797F, 0x7DA0,
-				0x83C9, 0x9304, 0x9E7F, 0x9E93, 0x8AD6, 0x58DF, 0x5F04, 0x6727, 0x7027, 0x74CF, 0x7C60, 0x807E, 0x5121, 0x7028, 0x7262, 0x78CA,
-				0x8CC2, 0x8CDA, 0x8CF4, 0x96F7, 0x4E86, 0x50DA, 0x5BEE, 0x5ED6, 0x6599, 0x71CE, 0x7642, 0x77AD, 0x804A, 0x84FC,
-			};
 		}
 		private long getOutput50(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT50_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON486[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT51_21 = getOutput51_21();
-		private static final char[] getOutput51_21() {
-			return new char[] {
-				0x907C, 0x9B27, 0x9F8D, 0x58D8, 0x5A41, 0x5C62, 0x6A13, 0x6DDA, 0x6F0F, 0x763B, 0x7D2F, 0x7E37, 0x851E, 0x8938, 0x93E4, 0x964B,
-				0x5289, 0x65D2, 0x67F3, 0x69B4, 0x6D41, 0x6E9C, 0x700F, 0x7409, 0x7460, 0x7559, 0x7624, 0x786B, 0x8B2C, 0x985E, 0x516D, 0x622E,
-				0x9678, 0x4F96, 0x502B, 0x5D19, 0x6DEA, 0x7DB8, 0x8F2A, 0x5F8B, 0x6144, 0x6817, 0xF961, 0x9686, 0x52D2, 0x808B, 0x51DC, 0x51CC,
-				0x695E, 0x7A1C, 0x7DBE, 0x83F1, 0x9675, 0x4FDA, 0x5229, 0x5398, 0x540F, 0x550E, 0x5C65, 0x60A7, 0x674E, 0x68A8, 0x6D6C, 0x7281,
-				0x72F8, 0x7406, 0x7483, 0xF962, 0x75E2, 0x7C6C, 0x7F79, 0x7FB8, 0x8389, 0x88CF, 0x88E1, 0x91CC, 0x91D0, 0x96E2, 0x9BC9, 0x541D,
-				0x6F7E, 0x71D0, 0x7498, 0x85FA, 0x8EAA, 0x96A3, 0x9C57, 0x9E9F, 0x6797, 0x6DCB, 0x7433, 0x81E8, 0x9716, 0x782C,
-			};
 		}
 		private long getOutput51(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT51_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON487[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT52_21 = getOutput52_21();
-		private static final char[] getOutput52_21() {
-			return new char[] {
-				0x7ACB, 0x7B20, 0x7C92, 0x6469, 0x746A, 0x75F2, 0x78BC, 0x78E8, 0x99AC, 0x9B54, 0x9EBB, 0x5BDE, 0x5E55, 0x6F20, 0x819C, 0x83AB,
-				0x9088, 0x4E07, 0x534D, 0x5A29, 0x5DD2, 0x5F4E, 0x6162, 0x633D, 0x6669, 0x66FC, 0x6EFF, 0x6F2B, 0x7063, 0x779E, 0x842C, 0x8513,
-				0x883B, 0x8F13, 0x9945, 0x9C3B, 0x551C, 0x62B9, 0x672B, 0x6CAB, 0x8309, 0x896A, 0x977A, 0x4EA1, 0x5984, 0x5FD8, 0x5FD9, 0x671B,
-				0x7DB2, 0x7F54, 0x8292, 0x832B, 0x83BD, 0x8F1E, 0x9099, 0x57CB, 0x59B9, 0x5A92, 0x5BD0, 0x6627, 0x679A, 0x6885, 0x6BCF, 0x7164,
-				0x7F75, 0x8CB7, 0x8CE3, 0x9081, 0x9B45, 0x8108, 0x8C8A, 0x964C, 0x9A40, 0x9EA5, 0x5B5F, 0x6C13, 0x731B, 0x76F2, 0x76DF, 0x840C,
-				0x51AA, 0x8993, 0x514D, 0x5195, 0x52C9, 0x68C9, 0x6C94, 0x7704, 0x7720, 0x7DBF, 0x7DEC, 0x9762, 0x9EB5, 0x6EC5,
-			};
 		}
 		private long getOutput52(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT52_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON488[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT53_21 = getOutput53_21();
-		private static final char[] getOutput53_21() {
-			return new char[] {
-				0x8511, 0x51A5, 0x540D, 0x547D, 0x660E, 0x669D, 0x6927, 0x6E9F, 0x76BF, 0x7791, 0x8317, 0x84C2, 0x879F, 0x9169, 0x9298, 0x9CF4,
-				0x8882, 0x4FAE, 0x5192, 0x52DF, 0x59C6, 0x5E3D, 0x6155, 0x6478, 0x6479, 0x66AE, 0x67D0, 0x6A21, 0x6BCD, 0x6BDB, 0x725F, 0x7261,
-				0x7441, 0x7738, 0x77DB, 0x8017, 0x82BC, 0x8305, 0x8B00, 0x8B28, 0x8C8C, 0x6728, 0x6C90, 0x7267, 0x76EE, 0x7766, 0x7A46, 0x9DA9,
-				0x6B7F, 0x6C92, 0x5922, 0x6726, 0x8499, 0x536F, 0x5893, 0x5999, 0x5EDF, 0x63CF, 0x6634, 0x6773, 0x6E3A, 0x732B, 0x7AD7, 0x82D7,
-				0x9328, 0x52D9, 0x5DEB, 0x61AE, 0x61CB, 0x620A, 0x62C7, 0x64AB, 0x65E0, 0x6959, 0x6B66, 0x6BCB, 0x7121, 0x73F7, 0x755D, 0x7E46,
-				0x821E, 0x8302, 0x856A, 0x8AA3, 0x8CBF, 0x9727, 0x9D61, 0x58A8, 0x9ED8, 0x5011, 0x520E, 0x543B, 0x554F, 0x6587,
-			};
 		}
 		private long getOutput53(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT53_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON489[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT54_21 = getOutput54_21();
-		private static final char[] getOutput54_21() {
-			return new char[] {
-				0x6C76, 0x7D0A, 0x7D0B, 0x805E, 0x868A, 0x9580, 0x96EF, 0x52FF, 0x6C95, 0x7269, 0x5473, 0x5A9A, 0x5C3E, 0x5D4B, 0x5F4C, 0x5FAE,
-				0x672A, 0x68B6, 0x6963, 0x6E3C, 0x6E44, 0x7709, 0x7C73, 0x7F8E, 0x8587, 0x8B0E, 0x8FF7, 0x9761, 0x9EF4, 0x5CB7, 0x60B6, 0x610D,
-				0x61AB, 0x654F, 0x65FB, 0x65FC, 0x6C11, 0x6CEF, 0x739F, 0x73C9, 0x7DE1, 0x9594, 0x5BC6, 0x871C, 0x8B10, 0x525D, 0x535A, 0x62CD,
-				0x640F, 0x64B2, 0x6734, 0x6A38, 0x6CCA, 0x73C0, 0x749E, 0x7B94, 0x7C95, 0x7E1B, 0x818A, 0x8236, 0x8584, 0x8FEB, 0x96F9, 0x99C1,
-				0x4F34, 0x534A, 0x53CD, 0x53DB, 0x62CC, 0x642C, 0x6500, 0x6591, 0x69C3, 0x6CEE, 0x6F58, 0x73ED, 0x7554, 0x7622, 0x76E4, 0x76FC,
-				0x78D0, 0x78FB, 0x792C, 0x7D46, 0x822C, 0x87E0, 0x8FD4, 0x9812, 0x98EF, 0x52C3, 0x62D4, 0x64A5, 0x6E24, 0x6F51,
-			};
 		}
 		private long getOutput54(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT54_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON490[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT55_21 = getOutput55_21();
-		private static final char[] getOutput55_21() {
-			return new char[] {
-				0x767C, 0x8DCB, 0x91B1, 0x9262, 0x9AEE, 0x9B43, 0x5023, 0x508D, 0x574A, 0x59A8, 0x5C28, 0x5E47, 0x5F77, 0x623F, 0x653E, 0x65B9,
-				0x65C1, 0x6609, 0x678B, 0x699C, 0x6EC2, 0x78C5, 0x7D21, 0x80AA, 0x8180, 0x822B, 0x82B3, 0x84A1, 0x868C, 0x8A2A, 0x8B17, 0x90A6,
-				0x9632, 0x9F90, 0x500D, 0x4FF3, 0xF963, 0x57F9, 0x5F98, 0x62DC, 0x6392, 0x676F, 0x6E43, 0x7119, 0x76C3, 0x80CC, 0x80DA, 0x88F4,
-				0x88F5, 0x8919, 0x8CE0, 0x8F29, 0x914D, 0x966A, 0x4F2F, 0x4F70, 0x5E1B, 0x67CF, 0x6822, 0x767D, 0x767E, 0x9B44, 0x5E61, 0x6A0A,
-				0x7169, 0x71D4, 0x756A, 0xF964, 0x7E41, 0x8543, 0x85E9, 0x98DC, 0x4F10, 0x7B4F, 0x7F70, 0x95A5, 0x51E1, 0x5E06, 0x68B5, 0x6C3E,
-				0x6C4E, 0x6CDB, 0x72AF, 0x7BC4, 0x8303, 0x6CD5, 0x743A, 0x50FB, 0x5288, 0x58C1, 0x64D8, 0x6A97, 0x74A7, 0x7656,
-			};
 		}
 		private long getOutput55(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT55_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON491[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT56_21 = getOutput56_21();
-		private static final char[] getOutput56_21() {
-			return new char[] {
-				0x78A7, 0x8617, 0x95E2, 0x9739, 0xF965, 0x535E, 0x5F01, 0x8B8A, 0x8FA8, 0x8FAF, 0x908A, 0x5225, 0x77A5, 0x9C49, 0x9F08, 0x4E19,
-				0x5002, 0x5175, 0x5C5B, 0x5E77, 0x661E, 0x663A, 0x67C4, 0x68C5, 0x70B3, 0x7501, 0x75C5, 0x79C9, 0x7ADD, 0x8F27, 0x9920, 0x9A08,
-				0x4FDD, 0x5821, 0x5831, 0x5BF6, 0x666E, 0x6B65, 0x6D11, 0x6E7A, 0x6F7D, 0x73E4, 0x752B, 0x83E9, 0x88DC, 0x8913, 0x8B5C, 0x8F14,
-				0x4F0F, 0x50D5, 0x5310, 0x535C, 0x5B93, 0x5FA9, 0x670D, 0x798F, 0x8179, 0x832F, 0x8514, 0x8907, 0x8986, 0x8F39, 0x8F3B, 0x99A5,
-				0x9C12, 0x672C, 0x4E76, 0x4FF8, 0x5949, 0x5C01, 0x5CEF, 0x5CF0, 0x6367, 0x68D2, 0x70FD, 0x71A2, 0x742B, 0x7E2B, 0x84EC, 0x8702,
-				0x9022, 0x92D2, 0x9CF3, 0x4E0D, 0x4ED8, 0x4FEF, 0x5085, 0x5256, 0x526F, 0x5426, 0x5490, 0x57E0, 0x592B, 0x5A66,
-			};
 		}
 		private long getOutput56(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT56_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON492[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT57_21 = getOutput57_21();
-		private static final char[] getOutput57_21() {
-			return new char[] {
-				0x5B5A, 0x5B75, 0x5BCC, 0x5E9C, 0xF966, 0x6276, 0x6577, 0x65A7, 0x6D6E, 0x6EA5, 0x7236, 0x7B26, 0x7C3F, 0x7F36, 0x8150, 0x8151,
-				0x819A, 0x8240, 0x8299, 0x83A9, 0x8A03, 0x8CA0, 0x8CE6, 0x8CFB, 0x8D74, 0x8DBA, 0x90E8, 0x91DC, 0x961C, 0x9644, 0x99D9, 0x9CE7,
-				0x5317, 0x5206, 0x5429, 0x5674, 0x58B3, 0x5954, 0x596E, 0x5FFF, 0x61A4, 0x626E, 0x6610, 0x6C7E, 0x711A, 0x76C6, 0x7C89, 0x7CDE,
-				0x7D1B, 0x82AC, 0x8CC1, 0x96F0, 0xF967, 0x4F5B, 0x5F17, 0x5F7F, 0x62C2, 0x5D29, 0x670B, 0x68DA, 0x787C, 0x7E43, 0x9D6C, 0x4E15,
-				0x5099, 0x5315, 0x532A, 0x5351, 0x5983, 0x5A62, 0x5E87, 0x60B2, 0x618A, 0x6249, 0x6279, 0x6590, 0x6787, 0x69A7, 0x6BD4, 0x6BD6,
-				0x6BD7, 0x6BD8, 0x6CB8, 0xF968, 0x7435, 0x75FA, 0x7812, 0x7891, 0x79D5, 0x79D8, 0x7C83, 0x7DCB, 0x7FE1, 0x80A5,
-			};
 		}
 		private long getOutput57(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT57_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON493[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT58_21 = getOutput58_21();
-		private static final char[] getOutput58_21() {
-			return new char[] {
-				0x813E, 0x81C2, 0x83F2, 0x871A, 0x88E8, 0x8AB9, 0x8B6C, 0x8CBB, 0x9119, 0x975E, 0x98DB, 0x9F3B, 0x56AC, 0x5B2A, 0x5F6C, 0x658C,
-				0x6AB3, 0x6BAF, 0x6D5C, 0x6FF1, 0x7015, 0x725D, 0x73AD, 0x8CA7, 0x8CD3, 0x983B, 0x6191, 0x6C37, 0x8058, 0x9A01, 0x4E4D, 0x4E8B,
-				0x4E9B, 0x4ED5, 0x4F3A, 0x4F3C, 0x4F7F, 0x4FDF, 0x50FF, 0x53F2, 0x53F8, 0x5506, 0x55E3, 0x56DB, 0x58EB, 0x5962, 0x5A11, 0x5BEB,
-				0x5BFA, 0x5C04, 0x5DF3, 0x5E2B, 0x5F99, 0x601D, 0x6368, 0x659C, 0x65AF, 0x67F6, 0x67FB, 0x68AD, 0x6B7B, 0x6C99, 0x6CD7, 0x6E23,
-				0x7009, 0x7345, 0x7802, 0x793E, 0x7940, 0x7960, 0x79C1, 0x7BE9, 0x7D17, 0x7D72, 0x8086, 0x820D, 0x838E, 0x84D1, 0x86C7, 0x88DF,
-				0x8A50, 0x8A5E, 0x8B1D, 0x8CDC, 0x8D66, 0x8FAD, 0x90AA, 0x98FC, 0x99DF, 0x9E9D, 0x524A, 0xF969, 0x6714, 0xF96A,
-			};
 		}
 		private long getOutput58(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT58_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON494[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT59_21 = getOutput59_21();
-		private static final char[] getOutput59_21() {
-			return new char[] {
-				0x5098, 0x522A, 0x5C71, 0x6563, 0x6C55, 0x73CA, 0x7523, 0x759D, 0x7B97, 0x849C, 0x9178, 0x9730, 0x4E77, 0x6492, 0x6BBA, 0x715E,
-				0x85A9, 0x4E09, 0xF96B, 0x6749, 0x68EE, 0x6E17, 0x829F, 0x8518, 0x886B, 0x63F7, 0x6F81, 0x9212, 0x98AF, 0x4E0A, 0x50B7, 0x50CF,
-				0x511F, 0x5546, 0x55AA, 0x5617, 0x5B40, 0x5C19, 0x5CE0, 0x5E38, 0x5E8A, 0x5EA0, 0x5EC2, 0x60F3, 0x6851, 0x6A61, 0x6E58, 0x723D,
-				0x7240, 0x72C0, 0x76F8, 0x7965, 0x7BB1, 0x7FD4, 0x88F3, 0x89F4, 0x8A73, 0x8C61, 0x8CDE, 0x971C, 0x585E, 0x74BD, 0x8CFD, 0x55C7,
-				0xF96C, 0x7A61, 0x7D22, 0x8272, 0x7272, 0x751F, 0x7525, 0xF96D, 0x7B19, 0x5885, 0x58FB, 0x5DBC, 0x5E8F, 0x5EB6, 0x5F90, 0x6055,
-				0x6292, 0x637F, 0x654D, 0x6691, 0x66D9, 0x66F8, 0x6816, 0x68F2, 0x7280, 0x745E, 0x7B6E, 0x7D6E, 0x7DD6, 0x7F72,
-			};
 		}
 		private long getOutput59(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT59_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON495[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT60_21 = getOutput60_21();
-		private static final char[] getOutput60_21() {
-			return new char[] {
-				0x80E5, 0x8212, 0x85AF, 0x897F, 0x8A93, 0x901D, 0x92E4, 0x9ECD, 0x9F20, 0x5915, 0x596D, 0x5E2D, 0x60DC, 0x6614, 0x6673, 0x6790,
-				0x6C50, 0x6DC5, 0x6F5F, 0x77F3, 0x78A9, 0x84C6, 0x91CB, 0x932B, 0x4ED9, 0x50CA, 0x5148, 0x5584, 0x5B0B, 0x5BA3, 0x6247, 0x657E,
-				0x65CB, 0x6E32, 0x717D, 0x7401, 0x7444, 0x7487, 0x74BF, 0x766C, 0x79AA, 0x7DDA, 0x7E55, 0x7FA8, 0x817A, 0x81B3, 0x8239, 0x861A,
-				0x87EC, 0x8A75, 0x8DE3, 0x9078, 0x9291, 0x9425, 0x994D, 0x9BAE, 0x5368, 0x5C51, 0x6954, 0x6CC4, 0x6D29, 0x6E2B, 0x820C, 0x859B,
-				0x893B, 0x8A2D, 0x8AAA, 0x96EA, 0x9F67, 0x5261, 0x66B9, 0x6BB2, 0x7E96, 0x87FE, 0x8D0D, 0x9583, 0x965D, 0x651D, 0x6D89, 0x71EE,
-				0xF96E, 0x57CE, 0x59D3, 0x5BAC, 0x6027, 0x60FA, 0x6210, 0x661F, 0x665F, 0x7329, 0x73F9, 0x76DB, 0x7701, 0x7B6C,
-			};
 		}
 		private long getOutput60(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT60_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON496[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT61_21 = getOutput61_21();
-		private static final char[] getOutput61_21() {
-			return new char[] {
-				0x8056, 0x8072, 0x8165, 0x8AA0, 0x9192, 0x4E16, 0x52E2, 0x6B72, 0x6D17, 0x7A05, 0x7B39, 0x7D30, 0xF96F, 0x8CB0, 0x53EC, 0x562F,
-				0x5851, 0x5BB5, 0x5C0F, 0x5C11, 0x5DE2, 0x6240, 0x6383, 0x6414, 0x662D, 0x68B3, 0x6CBC, 0x6D88, 0x6EAF, 0x701F, 0x70A4, 0x71D2,
-				0x7526, 0x758F, 0x758E, 0x7619, 0x7B11, 0x7BE0, 0x7C2B, 0x7D20, 0x7D39, 0x852C, 0x856D, 0x8607, 0x8A34, 0x900D, 0x9061, 0x90B5,
-				0x92B7, 0x97F6, 0x9A37, 0x4FD7, 0x5C6C, 0x675F, 0x6D91, 0x7C9F, 0x7E8C, 0x8B16, 0x8D16, 0x901F, 0x5B6B, 0x5DFD, 0x640D, 0x84C0,
-				0x905C, 0x98E1, 0x7387, 0x5B8B, 0x609A, 0x677E, 0x6DDE, 0x8A1F, 0x8AA6, 0x9001, 0x980C, 0x5237, 0xF970, 0x7051, 0x788E, 0x9396,
-				0x8870, 0x91D7, 0x4FEE, 0x53D7, 0x55FD, 0x56DA, 0x5782, 0x58FD, 0x5AC2, 0x5B88, 0x5CAB, 0x5CC0, 0x5E25, 0x6101,
-			};
 		}
 		private long getOutput61(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT61_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON497[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT62_21 = getOutput62_21();
-		private static final char[] getOutput62_21() {
-			return new char[] {
-				0x620D, 0x624B, 0x6388, 0x641C, 0x6536, 0x6578, 0x6A39, 0x6B8A, 0x6C34, 0x6D19, 0x6F31, 0x71E7, 0x72E9, 0x7378, 0x7407, 0x74B2,
-				0x7626, 0x7761, 0x79C0, 0x7A57, 0x7AEA, 0x7CB9, 0x7D8F, 0x7DAC, 0x7E61, 0x7F9E, 0x8129, 0x8331, 0x8490, 0x84DA, 0x85EA, 0x8896,
-				0x8AB0, 0x8B90, 0x8F38, 0x9042, 0x9083, 0x916C, 0x9296, 0x92B9, 0x968B, 0x96A7, 0x96A8, 0x96D6, 0x9700, 0x9808, 0x9996, 0x9AD3,
-				0x9B1A, 0x53D4, 0x587E, 0x5919, 0x5B70, 0x5BBF, 0x6DD1, 0x6F5A, 0x719F, 0x7421, 0x74B9, 0x8085, 0x83FD, 0x5DE1, 0x5F87, 0x5FAA,
-				0x6042, 0x65EC, 0x6812, 0x696F, 0x6A53, 0x6B89, 0x6D35, 0x6DF3, 0x73E3, 0x76FE, 0x77AC, 0x7B4D, 0x7D14, 0x8123, 0x821C, 0x8340,
-				0x84F4, 0x8563, 0x8A62, 0x8AC4, 0x9187, 0x931E, 0x9806, 0x99B4, 0x620C, 0x8853, 0x8FF0, 0x9265, 0x5D07, 0x5D27,
-			};
 		}
 		private long getOutput62(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT62_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON498[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT63_21 = getOutput63_21();
-		private static final char[] getOutput63_21() {
-			return new char[] {
-				0x5D69, 0x745F, 0x819D, 0x8768, 0x6FD5, 0x62FE, 0x7FD2, 0x8936, 0x8972, 0x4E1E, 0x4E58, 0x50E7, 0x52DD, 0x5347, 0x627F, 0x6607,
-				0x7E69, 0x8805, 0x965E, 0x4F8D, 0x5319, 0x5636, 0x59CB, 0x5AA4, 0x5C38, 0x5C4E, 0x5C4D, 0x5E02, 0x5F11, 0x6043, 0x65BD, 0x662F,
-				0x6642, 0x67BE, 0x67F4, 0x731C, 0x77E2, 0x793A, 0x7FC5, 0x8494, 0x84CD, 0x8996, 0x8A66, 0x8A69, 0x8AE1, 0x8C55, 0x8C7A, 0x57F4,
-				0x5BD4, 0x5F0F, 0x606F, 0x62ED, 0x690D, 0x6B96, 0x6E5C, 0x7184, 0x7BD2, 0x8755, 0x8B58, 0x8EFE, 0x98DF, 0x98FE, 0x4F38, 0x4F81,
-				0x4FE1, 0x547B, 0x5A20, 0x5BB8, 0x613C, 0x65B0, 0x6668, 0x71FC, 0x7533, 0x795E, 0x7D33, 0x814E, 0x81E3, 0x8398, 0x85AA, 0x85CE,
-				0x8703, 0x8A0A, 0x8EAB, 0x8F9B, 0xF971, 0x8FC5, 0x5931, 0x5BA4, 0x5BE6, 0x6089, 0x5BE9, 0x5C0B, 0x5FC3, 0x6C81,
-			};
 		}
 		private long getOutput63(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT63_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON499[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT64_21 = getOutput64_21();
-		private static final char[] getOutput64_21() {
-			return new char[] {
-				0xF972, 0x6DF1, 0x700B, 0x751A, 0x82AF, 0x8AF6, 0x4EC0, 0x5341, 0xF973, 0x96D9, 0x6C0F, 0x4E9E, 0x4FC4, 0x5152, 0x555E, 0x5A25,
-				0x5CE8, 0x6211, 0x7259, 0x82BD, 0x83AA, 0x86FE, 0x8859, 0x8A1D, 0x963F, 0x96C5, 0x9913, 0x9D09, 0x9D5D, 0x580A, 0x5CB3, 0x5DBD,
-				0x5E44, 0x60E1, 0x6115, 0x63E1, 0x6A02, 0x6E25, 0x9102, 0x9354, 0x984E, 0x9C10, 0x9F77, 0x5B89, 0x5CB8, 0x6309, 0x664F, 0x6848,
-				0x773C, 0x96C1, 0x978D, 0x9854, 0x9B9F, 0x65A1, 0x8B01, 0x8ECB, 0x95BC, 0x5535, 0x5CA9, 0x5DD6, 0x5EB5, 0x6697, 0x764C, 0x83F4,
-				0x95C7, 0x58D3, 0x62BC, 0x72CE, 0x9D28, 0x4EF0, 0x592E, 0x600F, 0x663B, 0x6B83, 0x79E7, 0x9D26, 0x5393, 0x54C0, 0x57C3, 0x5D16,
-				0x611B, 0x66D6, 0x6DAF, 0x788D, 0x827E, 0x9698, 0x9744, 0x5384, 0x627C, 0x6396, 0x6DB2, 0x7E0A, 0x814B, 0x984D,
-			};
 		}
 		private long getOutput64(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT64_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON500[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT65_21 = getOutput65_21();
-		private static final char[] getOutput65_21() {
-			return new char[] {
-				0x6AFB, 0x7F4C, 0x9DAF, 0x9E1A, 0x4E5F, 0x503B, 0x51B6, 0x591C, 0x60F9, 0x63F6, 0x6930, 0x723A, 0x8036, 0xF974, 0x91CE, 0x5F31,
-				0xF975, 0xF976, 0x7D04, 0x82E5, 0x846F, 0x84BB, 0x85E5, 0x8E8D, 0xF977, 0x4F6F, 0xF978, 0xF979, 0x58E4, 0x5B43, 0x6059, 0x63DA,
-				0x6518, 0x656D, 0x6698, 0xF97A, 0x694A, 0x6A23, 0x6D0B, 0x7001, 0x716C, 0x75D2, 0x760D, 0x79B3, 0x7A70, 0xF97B, 0x7F8A, 0xF97C,
-				0x8944, 0xF97D, 0x8B93, 0x91C0, 0x967D, 0xF97E, 0x990A, 0x5704, 0x5FA1, 0x65BC, 0x6F01, 0x7600, 0x79A6, 0x8A9E, 0x99AD, 0x9B5A,
-				0x9F6C, 0x5104, 0x61B6, 0x6291, 0x6A8D, 0x81C6, 0x5043, 0x5830, 0x5F66, 0x7109, 0x8A00, 0x8AFA, 0x5B7C, 0x8616, 0x4FFA, 0x513C,
-				0x56B4, 0x5944, 0x63A9, 0x6DF9, 0x5DAA, 0x696D, 0x5186, 0x4E88, 0x4F59, 0xF97F, 0xF980, 0xF981, 0x5982, 0xF982,
-			};
 		}
 		private long getOutput65(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT65_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON501[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT66_21 = getOutput66_21();
-		private static final char[] getOutput66_21() {
-			return new char[] {
-				0xF983, 0x6B5F, 0x6C5D, 0xF984, 0x74B5, 0x7916, 0xF985, 0x8207, 0x8245, 0x8339, 0x8F3F, 0x8F5D, 0xF986, 0x9918, 0xF987, 0xF988,
-				0xF989, 0x4EA6, 0xF98A, 0x57DF, 0x5F79, 0x6613, 0xF98B, 0xF98C, 0x75AB, 0x7E79, 0x8B6F, 0xF98D, 0x9006, 0x9A5B, 0x56A5, 0x5827,
-				0x59F8, 0x5A1F, 0x5BB4, 0xF98E, 0x5EF6, 0xF98F, 0xF990, 0x6350, 0x633B, 0xF991, 0x693D, 0x6C87, 0x6CBF, 0x6D8E, 0x6D93, 0x6DF5,
-				0x6F14, 0xF992, 0x70DF, 0x7136, 0x7159, 0xF993, 0x71C3, 0x71D5, 0xF994, 0x784F, 0x786F, 0xF995, 0x7B75, 0x7DE3, 0xF996, 0x7E2F,
-				0xF997, 0x884D, 0x8EDF, 0xF998, 0xF999, 0xF99A, 0x925B, 0xF99B, 0x9CF6, 0xF99C, 0xF99D, 0xF99E, 0x6085, 0x6D85, 0xF99F, 0x71B1,
-				0xF9A0, 0xF9A1, 0x95B1, 0x53AD, 0xF9A2, 0xF9A3, 0xF9A4, 0x67D3, 0xF9A5, 0x708E, 0x7130, 0x7430, 0x8276, 0x82D2,
-			};
 		}
 		private long getOutput66(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT66_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON502[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT67_21 = getOutput67_21();
-		private static final char[] getOutput67_21() {
-			return new char[] {
-				0xF9A6, 0x95BB, 0x9AE5, 0x9E7D, 0x66C4, 0xF9A7, 0x71C1, 0x8449, 0xF9A8, 0xF9A9, 0x584B, 0xF9AA, 0xF9AB, 0x5DB8, 0x5F71, 0xF9AC,
-				0x6620, 0x668E, 0x6979, 0x69AE, 0x6C38, 0x6CF3, 0x6E36, 0x6F41, 0x6FDA, 0x701B, 0x702F, 0x7150, 0x71DF, 0x7370, 0xF9AD, 0x745B,
-				0xF9AE, 0x74D4, 0x76C8, 0x7A4E, 0x7E93, 0xF9AF, 0xF9B0, 0x82F1, 0x8A60, 0x8FCE, 0xF9B1, 0x9348, 0xF9B2, 0x9719, 0xF9B3, 0xF9B4,
-				0x4E42, 0x502A, 0xF9B5, 0x5208, 0x53E1, 0x66F3, 0x6C6D, 0x6FCA, 0x730A, 0x777F, 0x7A62, 0x82AE, 0x85DD, 0x8602, 0xF9B6, 0x88D4,
-				0x8A63, 0x8B7D, 0x8C6B, 0xF9B7, 0x92B3, 0xF9B8, 0x9713, 0x9810, 0x4E94, 0x4F0D, 0x4FC9, 0x50B2, 0x5348, 0x543E, 0x5433, 0x55DA,
-				0x5862, 0x58BA, 0x5967, 0x5A1B, 0x5BE4, 0x609F, 0xF9B9, 0x61CA, 0x6556, 0x65FF, 0x6664, 0x68A7, 0x6C5A, 0x6FB3,
-			};
 		}
 		private long getOutput67(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT67_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON503[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT68_21 = getOutput68_21();
-		private static final char[] getOutput68_21() {
-			return new char[] {
-				0x70CF, 0x71AC, 0x7352, 0x7B7D, 0x8708, 0x8AA4, 0x9C32, 0x9F07, 0x5C4B, 0x6C83, 0x7344, 0x7389, 0x923A, 0x6EAB, 0x7465, 0x761F,
-				0x7A69, 0x7E15, 0x860A, 0x5140, 0x58C5, 0x64C1, 0x74EE, 0x7515, 0x7670, 0x7FC1, 0x9095, 0x96CD, 0x9954, 0x6E26, 0x74E6, 0x7AA9,
-				0x7AAA, 0x81E5, 0x86D9, 0x8778, 0x8A1B, 0x5A49, 0x5B8C, 0x5B9B, 0x68A1, 0x6900, 0x6D63, 0x73A9, 0x7413, 0x742C, 0x7897, 0x7DE9,
-				0x7FEB, 0x8118, 0x8155, 0x839E, 0x8C4C, 0x962E, 0x9811, 0x66F0, 0x5F80, 0x65FA, 0x6789, 0x6C6A, 0x738B, 0x502D, 0x5A03, 0x6B6A,
-				0x77EE, 0x5916, 0x5D6C, 0x5DCD, 0x7325, 0x754F, 0xF9BA, 0xF9BB, 0x50E5, 0x51F9, 0x582F, 0x592D, 0x5996, 0x59DA, 0x5BE5, 0xF9BC,
-				0xF9BD, 0x5DA2, 0x62D7, 0x6416, 0x6493, 0x64FE, 0xF9BE, 0x66DC, 0xF9BF, 0x6A48, 0xF9C0, 0x71FF, 0x7464, 0xF9C1,
-			};
 		}
 		private long getOutput68(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT68_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON504[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT69_21 = getOutput69_21();
-		private static final char[] getOutput69_21() {
-			return new char[] {
-				0x7A88, 0x7AAF, 0x7E47, 0x7E5E, 0x8000, 0x8170, 0xF9C2, 0x87EF, 0x8981, 0x8B20, 0x9059, 0xF9C3, 0x9080, 0x9952, 0x617E, 0x6B32,
-				0x6D74, 0x7E1F, 0x8925, 0x8FB1, 0x4FD1, 0x50AD, 0x5197, 0x52C7, 0x57C7, 0x5889, 0x5BB9, 0x5EB8, 0x6142, 0x6995, 0x6D8C, 0x6E67,
-				0x6EB6, 0x7194, 0x7462, 0x7528, 0x752C, 0x8073, 0x8338, 0x84C9, 0x8E0A, 0x9394, 0x93DE, 0xF9C4, 0x4E8E, 0x4F51, 0x5076, 0x512A,
-				0x53C8, 0x53CB, 0x53F3, 0x5B87, 0x5BD3, 0x5C24, 0x611A, 0x6182, 0x65F4, 0x725B, 0x7397, 0x7440, 0x76C2, 0x7950, 0x7991, 0x79B9,
-				0x7D06, 0x7FBD, 0x828B, 0x85D5, 0x865E, 0x8FC2, 0x9047, 0x90F5, 0x91EA, 0x9685, 0x96E8, 0x96E9, 0x52D6, 0x5F67, 0x65ED, 0x6631,
-				0x682F, 0x715C, 0x7A36, 0x90C1, 0x980A, 0x4E91, 0xF9C5, 0x6A52, 0x6B9E, 0x6F90, 0x7189, 0x8018, 0x82B8, 0x8553,
-			};
 		}
 		private long getOutput69(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT69_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON505[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT70_21 = getOutput70_21();
-		private static final char[] getOutput70_21() {
-			return new char[] {
-				0x904B, 0x9695, 0x96F2, 0x97FB, 0x851A, 0x9B31, 0x4E90, 0x718A, 0x96C4, 0x5143, 0x539F, 0x54E1, 0x5713, 0x5712, 0x57A3, 0x5A9B,
-				0x5AC4, 0x5BC3, 0x6028, 0x613F, 0x63F4, 0x6C85, 0x6D39, 0x6E72, 0x6E90, 0x7230, 0x733F, 0x7457, 0x82D1, 0x8881, 0x8F45, 0x9060,
-				0xF9C6, 0x9662, 0x9858, 0x9D1B, 0x6708, 0x8D8A, 0x925E, 0x4F4D, 0x5049, 0x50DE, 0x5371, 0x570D, 0x59D4, 0x5A01, 0x5C09, 0x6170,
-				0x6690, 0x6E2D, 0x7232, 0x744B, 0x7DEF, 0x80C3, 0x840E, 0x8466, 0x853F, 0x875F, 0x885B, 0x8918, 0x8B02, 0x9055, 0x97CB, 0x9B4F,
-				0x4E73, 0x4F91, 0x5112, 0x516A, 0xF9C7, 0x552F, 0x55A9, 0x5B7A, 0x5BA5, 0x5E7C, 0x5E7D, 0x5EBE, 0x60A0, 0x60DF, 0x6108, 0x6109,
-				0x63C4, 0x6538, 0x6709, 0xF9C8, 0x67D4, 0x67DA, 0xF9C9, 0x6961, 0x6962, 0x6CB9, 0x6D27, 0xF9CA, 0x6E38, 0xF9CB,
-			};
 		}
 		private long getOutput70(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT70_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON506[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT71_21 = getOutput71_21();
-		private static final char[] getOutput71_21() {
-			return new char[] {
-				0x6FE1, 0x7336, 0x7337, 0xF9CC, 0x745C, 0x7531, 0xF9CD, 0x7652, 0xF9CE, 0xF9CF, 0x7DAD, 0x81FE, 0x8438, 0x88D5, 0x8A98, 0x8ADB,
-				0x8AED, 0x8E30, 0x8E42, 0x904A, 0x903E, 0x907A, 0x9149, 0x91C9, 0x936E, 0xF9D0, 0xF9D1, 0x5809, 0xF9D2, 0x6BD3, 0x8089, 0x80B2,
-				0xF9D3, 0xF9D4, 0x5141, 0x596B, 0x5C39, 0xF9D5, 0xF9D6, 0x6F64, 0x73A7, 0x80E4, 0x8D07, 0xF9D7, 0x9217, 0x958F, 0xF9D8, 0xF9D9,
-				0xF9DA, 0xF9DB, 0x807F, 0x620E, 0x701C, 0x7D68, 0x878D, 0xF9DC, 0x57A0, 0x6069, 0x6147, 0x6BB7, 0x8ABE, 0x9280, 0x96B1, 0x4E59,
-				0x541F, 0x6DEB, 0x852D, 0x9670, 0x97F3, 0x98EE, 0x63D6, 0x6CE3, 0x9091, 0x51DD, 0x61C9, 0x81BA, 0x9DF9, 0x4F9D, 0x501A, 0x5100,
-				0x5B9C, 0x610F, 0x61FF, 0x64EC, 0x6905, 0x6BC5, 0x7591, 0x77E3, 0x7FA9, 0x8264, 0x858F, 0x87FB, 0x8863, 0x8ABC,
-			};
 		}
 		private long getOutput71(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT71_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON507[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT72_21 = getOutput72_21();
-		private static final char[] getOutput72_21() {
-			return new char[] {
-				0x8B70, 0x91AB, 0x4E8C, 0x4EE5, 0x4F0A, 0xF9DD, 0xF9DE, 0x5937, 0x59E8, 0xF9DF, 0x5DF2, 0x5F1B, 0x5F5B, 0x6021, 0xF9E0, 0xF9E1,
-				0xF9E2, 0xF9E3, 0x723E, 0x73E5, 0xF9E4, 0x7570, 0x75CD, 0xF9E5, 0x79FB, 0xF9E6, 0x800C, 0x8033, 0x8084, 0x82E1, 0x8351, 0xF9E7,
-				0xF9E8, 0x8CBD, 0x8CB3, 0x9087, 0xF9E9, 0xF9EA, 0x98F4, 0x990C, 0xF9EB, 0xF9EC, 0x7037, 0x76CA, 0x7FCA, 0x7FCC, 0x7FFC, 0x8B1A,
-				0x4EBA, 0x4EC1, 0x5203, 0x5370, 0xF9ED, 0x54BD, 0x56E0, 0x59FB, 0x5BC5, 0x5F15, 0x5FCD, 0x6E6E, 0xF9EE, 0xF9EF, 0x7D6A, 0x8335,
-				0xF9F0, 0x8693, 0x8A8D, 0xF9F1, 0x976D, 0x9777, 0xF9F2, 0xF9F3, 0x4E00, 0x4F5A, 0x4F7E, 0x58F9, 0x65E5, 0x6EA2, 0x9038, 0x93B0,
-				0x99B9, 0x4EFB, 0x58EC, 0x598A, 0x59D9, 0x6041, 0xF9F4, 0xF9F5, 0x7A14, 0xF9F6, 0x834F, 0x8CC3, 0x5165, 0x5344,
-			};
 		}
 		private long getOutput72(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT72_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON508[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT73_21 = getOutput73_21();
-		private static final char[] getOutput73_21() {
-			return new char[] {
-				0xF9F7, 0xF9F8, 0xF9F9, 0x4ECD, 0x5269, 0x5B55, 0x82BF, 0x4ED4, 0x523A, 0x54A8, 0x59C9, 0x59FF, 0x5B50, 0x5B57, 0x5B5C, 0x6063,
-				0x6148, 0x6ECB, 0x7099, 0x716E, 0x7386, 0x74F7, 0x75B5, 0x78C1, 0x7D2B, 0x8005, 0x81EA, 0x8328, 0x8517, 0x85C9, 0x8AEE, 0x8CC7,
-				0x96CC, 0x4F5C, 0x52FA, 0x56BC, 0x65AB, 0x6628, 0x707C, 0x70B8, 0x7235, 0x7DBD, 0x828D, 0x914C, 0x96C0, 0x9D72, 0x5B71, 0x68E7,
-				0x6B98, 0x6F7A, 0x76DE, 0x5C91, 0x66AB, 0x6F5B, 0x7BB4, 0x7C2A, 0x8836, 0x96DC, 0x4E08, 0x4ED7, 0x5320, 0x5834, 0x58BB, 0x58EF,
-				0x596C, 0x5C07, 0x5E33, 0x5E84, 0x5F35, 0x638C, 0x66B2, 0x6756, 0x6A1F, 0x6AA3, 0x6B0C, 0x6F3F, 0x7246, 0xF9FA, 0x7350, 0x748B,
-				0x7AE0, 0x7CA7, 0x8178, 0x81DF, 0x81E7, 0x838A, 0x846C, 0x8523, 0x8594, 0x85CF, 0x88DD, 0x8D13, 0x91AC, 0x9577,
-			};
 		}
 		private long getOutput73(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT73_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON509[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT74_21 = getOutput74_21();
-		private static final char[] getOutput74_21() {
-			return new char[] {
-				0x969C, 0x518D, 0x54C9, 0x5728, 0x5BB0, 0x624D, 0x6750, 0x683D, 0x6893, 0x6E3D, 0x6ED3, 0x707D, 0x7E21, 0x88C1, 0x8CA1, 0x8F09,
-				0x9F4B, 0x9F4E, 0x722D, 0x7B8F, 0x8ACD, 0x931A, 0x4F47, 0x4F4E, 0x5132, 0x5480, 0x59D0, 0x5E95, 0x62B5, 0x6775, 0x696E, 0x6A17,
-				0x6CAE, 0x6E1A, 0x72D9, 0x732A, 0x75BD, 0x7BB8, 0x7D35, 0x82E7, 0x83F9, 0x8457, 0x85F7, 0x8A5B, 0x8CAF, 0x8E87, 0x9019, 0x90B8,
-				0x96CE, 0x9F5F, 0x52E3, 0x540A, 0x5AE1, 0x5BC2, 0x6458, 0x6575, 0x6EF4, 0x72C4, 0xF9FB, 0x7684, 0x7A4D, 0x7B1B, 0x7C4D, 0x7E3E,
-				0x7FDF, 0x837B, 0x8B2B, 0x8CCA, 0x8D64, 0x8DE1, 0x8E5F, 0x8FEA, 0x8FF9, 0x9069, 0x93D1, 0x4F43, 0x4F7A, 0x50B3, 0x5168, 0x5178,
-				0x524D, 0x526A, 0x5861, 0x587C, 0x5960, 0x5C08, 0x5C55, 0x5EDB, 0x609B, 0x6230, 0x6813, 0x6BBF, 0x6C08, 0x6FB1,
-			};
 		}
 		private long getOutput74(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT74_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON510[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT75_21 = getOutput75_21();
-		private static final char[] getOutput75_21() {
-			return new char[] {
-				0x714E, 0x7420, 0x7530, 0x7538, 0x7551, 0x7672, 0x7B4C, 0x7B8B, 0x7BAD, 0x7BC6, 0x7E8F, 0x8A6E, 0x8F3E, 0x8F49, 0x923F, 0x9293,
-				0x9322, 0x942B, 0x96FB, 0x985A, 0x986B, 0x991E, 0x5207, 0x622A, 0x6298, 0x6D59, 0x7664, 0x7ACA, 0x7BC0, 0x7D76, 0x5360, 0x5CBE,
-				0x5E97, 0x6F38, 0x70B9, 0x7C98, 0x9711, 0x9B8E, 0x9EDE, 0x63A5, 0x647A, 0x8776, 0x4E01, 0x4E95, 0x4EAD, 0x505C, 0x5075, 0x5448,
-				0x59C3, 0x5B9A, 0x5E40, 0x5EAD, 0x5EF7, 0x5F81, 0x60C5, 0x633A, 0x653F, 0x6574, 0x65CC, 0x6676, 0x6678, 0x67FE, 0x6968, 0x6A89,
-				0x6B63, 0x6C40, 0x6DC0, 0x6DE8, 0x6E1F, 0x6E5E, 0x701E, 0x70A1, 0x738E, 0x73FD, 0x753A, 0x775B, 0x7887, 0x798E, 0x7A0B, 0x7A7D,
-				0x7CBE, 0x7D8E, 0x8247, 0x8A02, 0x8AEA, 0x8C9E, 0x912D, 0x914A, 0x91D8, 0x9266, 0x92CC, 0x9320, 0x9706, 0x9756,
-			};
 		}
 		private long getOutput75(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT75_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON511[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT76_21 = getOutput76_21();
-		private static final char[] getOutput76_21() {
-			return new char[] {
-				0x975C, 0x9802, 0x9F0E, 0x5236, 0x5291, 0x557C, 0x5824, 0x5E1D, 0x5F1F, 0x608C, 0x63D0, 0x68AF, 0x6FDF, 0x796D, 0x7B2C, 0x81CD,
-				0x85BA, 0x88FD, 0x8AF8, 0x8E44, 0x918D, 0x9664, 0x969B, 0x973D, 0x984C, 0x9F4A, 0x4FCE, 0x5146, 0x51CB, 0x52A9, 0x5632, 0x5F14,
-				0x5F6B, 0x63AA, 0x64CD, 0x65E9, 0x6641, 0x66FA, 0x66F9, 0x671D, 0x689D, 0x68D7, 0x69FD, 0x6F15, 0x6F6E, 0x7167, 0x71E5, 0x722A,
-				0x74AA, 0x773A, 0x7956, 0x795A, 0x79DF, 0x7A20, 0x7A95, 0x7C97, 0x7CDF, 0x7D44, 0x7E70, 0x8087, 0x85FB, 0x86A4, 0x8A54, 0x8ABF,
-				0x8D99, 0x8E81, 0x9020, 0x906D, 0x91E3, 0x963B, 0x96D5, 0x9CE5, 0x65CF, 0x7C07, 0x8DB3, 0x93C3, 0x5B58, 0x5C0A, 0x5352, 0x62D9,
-				0x731D, 0x5027, 0x5B97, 0x5F9E, 0x60B0, 0x616B, 0x68D5, 0x6DD9, 0x742E, 0x7A2E, 0x7D42, 0x7D9C, 0x7E31, 0x816B,
-			};
 		}
 		private long getOutput76(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT76_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON512[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT77_21 = getOutput77_21();
-		private static final char[] getOutput77_21() {
-			return new char[] {
-				0x8E2A, 0x8E35, 0x937E, 0x9418, 0x4F50, 0x5750, 0x5DE6, 0x5EA7, 0x632B, 0x7F6A, 0x4E3B, 0x4F4F, 0x4F8F, 0x505A, 0x59DD, 0x80C4,
-				0x546A, 0x5468, 0x55FE, 0x594F, 0x5B99, 0x5DDE, 0x5EDA, 0x665D, 0x6731, 0x67F1, 0x682A, 0x6CE8, 0x6D32, 0x6E4A, 0x6F8D, 0x70B7,
-				0x73E0, 0x7587, 0x7C4C, 0x7D02, 0x7D2C, 0x7DA2, 0x821F, 0x86DB, 0x8A3B, 0x8A85, 0x8D70, 0x8E8A, 0x8F33, 0x9031, 0x914E, 0x9152,
-				0x9444, 0x99D0, 0x7AF9, 0x7CA5, 0x4FCA, 0x5101, 0x51C6, 0x57C8, 0x5BEF, 0x5CFB, 0x6659, 0x6A3D, 0x6D5A, 0x6E96, 0x6FEC, 0x710C,
-				0x756F, 0x7AE3, 0x8822, 0x9021, 0x9075, 0x96CB, 0x99FF, 0x8301, 0x4E2D, 0x4EF2, 0x8846, 0x91CD, 0x537D, 0x6ADB, 0x696B, 0x6C41,
-				0x847A, 0x589E, 0x618E, 0x66FE, 0x62EF, 0x70DD, 0x7511, 0x75C7, 0x7E52, 0x84B8, 0x8B49, 0x8D08, 0x4E4B, 0x53EA,
-			};
 		}
 		private long getOutput77(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT77_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON513[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT78_21 = getOutput78_21();
-		private static final char[] getOutput78_21() {
-			return new char[] {
-				0x54AB, 0x5730, 0x5740, 0x5FD7, 0x6301, 0x6307, 0x646F, 0x652F, 0x65E8, 0x667A, 0x679D, 0x67B3, 0x6B62, 0x6C60, 0x6C9A, 0x6F2C,
-				0x77E5, 0x7825, 0x7949, 0x7957, 0x7D19, 0x80A2, 0x8102, 0x81F3, 0x829D, 0x82B7, 0x8718, 0x8A8C, 0xF9FC, 0x8D04, 0x8DBE, 0x9072,
-				0x76F4, 0x7A19, 0x7A37, 0x7E54, 0x8077, 0x5507, 0x55D4, 0x5875, 0x632F, 0x6422, 0x6649, 0x664B, 0x686D, 0x699B, 0x6B84, 0x6D25,
-				0x6EB1, 0x73CD, 0x7468, 0x74A1, 0x755B, 0x75B9, 0x76E1, 0x771E, 0x778B, 0x79E6, 0x7E09, 0x7E1D, 0x81FB, 0x852F, 0x8897, 0x8A3A,
-				0x8CD1, 0x8EEB, 0x8FB0, 0x9032, 0x93AD, 0x9663, 0x9673, 0x9707, 0x4F84, 0x53F1, 0x59EA, 0x5AC9, 0x5E19, 0x684E, 0x74C6, 0x75BE,
-				0x79E9, 0x7A92, 0x81A3, 0x86ED, 0x8CEA, 0x8DCC, 0x8FED, 0x659F, 0x6715, 0xF9FD, 0x57F7, 0x6F57, 0x7DDD, 0x8F2F,
-			};
 		}
 		private long getOutput78(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT78_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON514[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT79_21 = getOutput79_21();
-		private static final char[] getOutput79_21() {
-			return new char[] {
-				0x93F6, 0x96C6, 0x5FB5, 0x61F2, 0x6F84, 0x4E14, 0x4F98, 0x501F, 0x53C9, 0x55DF, 0x5D6F, 0x5DEE, 0x6B21, 0x6B64, 0x78CB, 0x7B9A,
-				0xF9FE, 0x8E49, 0x8ECA, 0x906E, 0x6349, 0x643E, 0x7740, 0x7A84, 0x932F, 0x947F, 0x9F6A, 0x64B0, 0x6FAF, 0x71E6, 0x74A8, 0x74DA,
-				0x7AC4, 0x7C12, 0x7E82, 0x7CB2, 0x7E98, 0x8B9A, 0x8D0A, 0x947D, 0x9910, 0x994C, 0x5239, 0x5BDF, 0x64E6, 0x672D, 0x7D2E, 0x50ED,
-				0x53C3, 0x5879, 0x6158, 0x6159, 0x61FA, 0x65AC, 0x7AD9, 0x8B92, 0x8B96, 0x5009, 0x5021, 0x5275, 0x5531, 0x5A3C, 0x5EE0, 0x5F70,
-				0x6134, 0x655E, 0x660C, 0x6636, 0x66A2, 0x69CD, 0x6EC4, 0x6F32, 0x7316, 0x7621, 0x7A93, 0x8139, 0x8259, 0x83D6, 0x84BC, 0x50B5,
-				0x57F0, 0x5BC0, 0x5BE8, 0x5F69, 0x63A1, 0x7826, 0x7DB5, 0x83DC, 0x8521, 0x91C7, 0x91F5, 0x518A, 0x67F5, 0x7B56,
-			};
 		}
 		private long getOutput79(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT79_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON515[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT80_21 = getOutput80_21();
-		private static final char[] getOutput80_21() {
-			return new char[] {
-				0x8CAC, 0x51C4, 0x59BB, 0x60BD, 0x8655, 0x501C, 0xF9FF, 0x5254, 0x5C3A, 0x617D, 0x621A, 0x62D3, 0x64F2, 0x65A5, 0x6ECC, 0x7620,
-				0x810A, 0x8E60, 0x965F, 0x96BB, 0x4EDF, 0x5343, 0x5598, 0x5929, 0x5DDD, 0x64C5, 0x6CC9, 0x6DFA, 0x7394, 0x7A7F, 0x821B, 0x85A6,
-				0x8CE4, 0x8E10, 0x9077, 0x91E7, 0x95E1, 0x9621, 0x97C6, 0x51F8, 0x54F2, 0x5586, 0x5FB9, 0x64A4, 0x6F88, 0x7DB4, 0x8F1F, 0x8F4D,
-				0x9435, 0x50C9, 0x5C16, 0x6CBE, 0x6DFB, 0x751B, 0x77BB, 0x7C3D, 0x7C64, 0x8A79, 0x8AC2, 0x581E, 0x59BE, 0x5E16, 0x6377, 0x7252,
-				0x758A, 0x776B, 0x8ADC, 0x8CBC, 0x8F12, 0x5EF3, 0x6674, 0x6DF8, 0x807D, 0x83C1, 0x8ACB, 0x9751, 0x9BD6, 0xFA00, 0x5243, 0x66FF,
-				0x6D95, 0x6EEF, 0x7DE0, 0x8AE6, 0x902E, 0x905E, 0x9AD4, 0x521D, 0x527F, 0x54E8, 0x6194, 0x6284, 0x62DB, 0x68A2,
-			};
 		}
 		private long getOutput80(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT80_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON516[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT81_21 = getOutput81_21();
-		private static final char[] getOutput81_21() {
-			return new char[] {
-				0x6912, 0x695A, 0x6A35, 0x7092, 0x7126, 0x785D, 0x7901, 0x790E, 0x79D2, 0x7A0D, 0x8096, 0x8278, 0x82D5, 0x8349, 0x8549, 0x8C82,
-				0x8D85, 0x9162, 0x918B, 0x91AE, 0x4FC3, 0x56D1, 0x71ED, 0x77D7, 0x8700, 0x89F8, 0x5BF8, 0x5FD6, 0x6751, 0x90A8, 0x53E2, 0x585A,
-				0x5BF5, 0x60A4, 0x6181, 0x6460, 0x7E3D, 0x8070, 0x8525, 0x9283, 0x64AE, 0x50AC, 0x5D14, 0x6700, 0x589C, 0x62BD, 0x63A8, 0x690E,
-				0x6978, 0x6A1E, 0x6E6B, 0x76BA, 0x79CB, 0x82BB, 0x8429, 0x8ACF, 0x8DA8, 0x8FFD, 0x9112, 0x914B, 0x919C, 0x9310, 0x9318, 0x939A,
-				0x96DB, 0x9A36, 0x9C0D, 0x4E11, 0x755C, 0x795D, 0x7AFA, 0x7B51, 0x7BC9, 0x7E2E, 0x84C4, 0x8E59, 0x8E74, 0x8EF8, 0x9010, 0x6625,
-				0x693F, 0x7443, 0x51FA, 0x672E, 0x9EDC, 0x5145, 0x5FE0, 0x6C96, 0x87F2, 0x885D, 0x8877, 0x60B4, 0x81B5, 0x8403,
-			};
 		}
 		private long getOutput81(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT81_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON517[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT82_21 = getOutput82_21();
-		private static final char[] getOutput82_21() {
-			return new char[] {
-				0x8D05, 0x53D6, 0x5439, 0x5634, 0x5A36, 0x5C31, 0x708A, 0x7FE0, 0x805A, 0x8106, 0x81ED, 0x8DA3, 0x9189, 0x9A5F, 0x9DF2, 0x5074,
-				0x4EC4, 0x53A0, 0x60FB, 0x6E2C, 0x5C64, 0x4F88, 0x5024, 0x55E4, 0x5CD9, 0x5E5F, 0x6065, 0x6894, 0x6CBB, 0x6DC4, 0x71BE, 0x75D4,
-				0x75F4, 0x7661, 0x7A1A, 0x7A49, 0x7DC7, 0x7DFB, 0x7F6E, 0x81F4, 0x86A9, 0x8F1C, 0x96C9, 0x99B3, 0x9F52, 0x5247, 0x52C5, 0x98ED,
-				0x89AA, 0x4E03, 0x67D2, 0x6F06, 0x4FB5, 0x5BE2, 0x6795, 0x6C88, 0x6D78, 0x741B, 0x7827, 0x91DD, 0x937C, 0x87C4, 0x79E4, 0x7A31,
-				0x5FEB, 0x4ED6, 0x54A4, 0x553E, 0x58AE, 0x59A5, 0x60F0, 0x6253, 0x62D6, 0x6736, 0x6955, 0x8235, 0x9640, 0x99B1, 0x99DD, 0x502C,
-				0x5353, 0x5544, 0x577C, 0xFA01, 0x6258, 0xFA02, 0x64E2, 0x666B, 0x67DD, 0x6FC1, 0x6FEF, 0x7422, 0x7438, 0x8A17,
-			};
 		}
 		private long getOutput82(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT82_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON518[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT83_21 = getOutput83_21();
-		private static final char[] getOutput83_21() {
-			return new char[] {
-				0x9438, 0x5451, 0x5606, 0x5766, 0x5F48, 0x619A, 0x6B4E, 0x7058, 0x70AD, 0x7DBB, 0x8A95, 0x596A, 0x812B, 0x63A2, 0x7708, 0x803D,
-				0x8CAA, 0x5854, 0x642D, 0x69BB, 0x5B95, 0x5E11, 0x6E6F, 0xFA03, 0x8569, 0x514C, 0x53F0, 0x592A, 0x6020, 0x614B, 0x6B86, 0x6C70,
-				0x6CF0, 0x7B1E, 0x80CE, 0x82D4, 0x8DC6, 0x90B0, 0x98B1, 0xFA04, 0x64C7, 0x6FA4, 0x6491, 0x6504, 0x514E, 0x5410, 0x571F, 0x8A0E,
-				0x615F, 0x6876, 0xFA05, 0x75DB, 0x7B52, 0x7D71, 0x901A, 0x5806, 0x69CC, 0x817F, 0x892A, 0x9000, 0x9839, 0x5078, 0x5957, 0x59AC,
-				0x6295, 0x900F, 0x9B2A, 0x615D, 0x7279, 0x95D6, 0x5761, 0x5A46, 0x5DF4, 0x628A, 0x64AD, 0x64FA, 0x6777, 0x6CE2, 0x6D3E, 0x722C,
-				0x7436, 0x7834, 0x7F77, 0x82AD, 0x8DDB, 0x9817, 0x5224, 0x5742, 0x677F, 0x7248, 0x74E3, 0x8CA9, 0x8FA6, 0x9211,
-			};
 		}
 		private long getOutput83(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT83_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON519[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT84_21 = getOutput84_21();
-		private static final char[] getOutput84_21() {
-			return new char[] {
-				0x962A, 0x516B, 0x53ED, 0x634C, 0x4F69, 0x5504, 0x6096, 0x6557, 0x6C9B, 0x6D7F, 0x724C, 0x72FD, 0x7A17, 0x8987, 0x8C9D, 0x5F6D,
-				0x6F8E, 0x70F9, 0x81A8, 0x610E, 0x4FBF, 0x504F, 0x6241, 0x7247, 0x7BC7, 0x7DE8, 0x7FE9, 0x904D, 0x97AD, 0x9A19, 0x8CB6, 0x576A,
-				0x5E73, 0x67B0, 0x840D, 0x8A55, 0x5420, 0x5B16, 0x5E63, 0x5EE2, 0x5F0A, 0x6583, 0x80BA, 0x853D, 0x9589, 0x965B, 0x4F48, 0x5305,
-				0x530D, 0x530F, 0x5486, 0x54FA, 0x5703, 0x5E03, 0x6016, 0x629B, 0x62B1, 0x6355, 0xFA06, 0x6CE1, 0x6D66, 0x75B1, 0x7832, 0x80DE,
-				0x812F, 0x82DE, 0x8461, 0x84B2, 0x888D, 0x8912, 0x900B, 0x92EA, 0x98FD, 0x9B91, 0x5E45, 0x66B4, 0x66DD, 0x7011, 0x7206, 0xFA07,
-				0x4FF5, 0x527D, 0x5F6A, 0x6153, 0x6753, 0x6A19, 0x6F02, 0x74E2, 0x7968, 0x8868, 0x8C79, 0x98C7, 0x98C4, 0x9A43,
-			};
 		}
 		private long getOutput84(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT84_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON520[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT85_21 = getOutput85_21();
-		private static final char[] getOutput85_21() {
-			return new char[] {
-				0x54C1, 0x7A1F, 0x6953, 0x8AF7, 0x8C4A, 0x98A8, 0x99AE, 0x5F7C, 0x62AB, 0x75B2, 0x76AE, 0x88AB, 0x907F, 0x9642, 0x5339, 0x5F3C,
-				0x5FC5, 0x6CCC, 0x73CC, 0x7562, 0x758B, 0x7B46, 0x82FE, 0x999D, 0x4E4F, 0x903C, 0x4E0B, 0x4F55, 0x53A6, 0x590F, 0x5EC8, 0x6630,
-				0x6CB3, 0x7455, 0x8377, 0x8766, 0x8CC0, 0x9050, 0x971E, 0x9C15, 0x58D1, 0x5B78, 0x8650, 0x8B14, 0x9DB4, 0x5BD2, 0x6068, 0x608D,
-				0x65F1, 0x6C57, 0x6F22, 0x6FA3, 0x701A, 0x7F55, 0x7FF0, 0x9591, 0x9592, 0x9650, 0x97D3, 0x5272, 0x8F44, 0x51FD, 0x542B, 0x54B8,
-				0x5563, 0x558A, 0x6ABB, 0x6DB5, 0x7DD8, 0x8266, 0x929C, 0x9677, 0x9E79, 0x5408, 0x54C8, 0x76D2, 0x86E4, 0x95A4, 0x95D4, 0x965C,
-				0x4EA2, 0x4F09, 0x59EE, 0x5AE6, 0x5DF7, 0x6052, 0x6297, 0x676D, 0x6841, 0x6C86, 0x6E2F, 0x7F38, 0x809B, 0x822A,
-			};
 		}
 		private long getOutput85(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT85_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON521[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT86_21 = getOutput86_21();
-		private static final char[] getOutput86_21() {
-			return new char[] {
-				0xFA08, 0xFA09, 0x9805, 0x4EA5, 0x5055, 0x54B3, 0x5793, 0x595A, 0x5B69, 0x5BB3, 0x61C8, 0x6977, 0x6D77, 0x7023, 0x87F9, 0x89E3,
-				0x8A72, 0x8AE7, 0x9082, 0x99ED, 0x9AB8, 0x52BE, 0x6838, 0x5016, 0x5E78, 0x674F, 0x8347, 0x884C, 0x4EAB, 0x5411, 0x56AE, 0x73E6,
-				0x9115, 0x97FF, 0x9909, 0x9957, 0x9999, 0x5653, 0x589F, 0x865B, 0x8A31, 0x61B2, 0x6AF6, 0x737B, 0x8ED2, 0x6B47, 0x96AA, 0x9A57,
-				0x5955, 0x7200, 0x8D6B, 0x9769, 0x4FD4, 0x5CF4, 0x5F26, 0x61F8, 0x665B, 0x6CEB, 0x70AB, 0x7384, 0x73B9, 0x73FE, 0x7729, 0x774D,
-				0x7D43, 0x7D62, 0x7E23, 0x8237, 0x8852, 0xFA0A, 0x8CE2, 0x9249, 0x986F, 0x5B51, 0x7A74, 0x8840, 0x9801, 0x5ACC, 0x4FE0, 0x5354,
-				0x593E, 0x5CFD, 0x633E, 0x6D79, 0x72F9, 0x8105, 0x8107, 0x83A2, 0x92CF, 0x9830, 0x4EA8, 0x5144, 0x5211, 0x578B,
-			};
 		}
 		private long getOutput86(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT86_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON522[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT87_21 = getOutput87_21();
-		private static final char[] getOutput87_21() {
-			return new char[] {
-				0x5F62, 0x6CC2, 0x6ECE, 0x7005, 0x7050, 0x70AF, 0x7192, 0x73E9, 0x7469, 0x834A, 0x87A2, 0x8861, 0x9008, 0x90A2, 0x93A3, 0x99A8,
-				0x516E, 0x5F57, 0x60E0, 0x6167, 0x66B3, 0x8559, 0x8E4A, 0x91AF, 0x978B, 0x4E4E, 0x4E92, 0x547C, 0x58D5, 0x58FA, 0x597D, 0x5CB5,
-				0x5F27, 0x6236, 0x6248, 0x660A, 0x6667, 0x6BEB, 0x6D69, 0x6DCF, 0x6E56, 0x6EF8, 0x6F94, 0x6FE0, 0x6FE9, 0x705D, 0x72D0, 0x7425,
-				0x745A, 0x74E0, 0x7693, 0x795C, 0x7CCA, 0x7E1E, 0x80E1, 0x82A6, 0x846B, 0x84BF, 0x864E, 0x865F, 0x8774, 0x8B77, 0x8C6A, 0x93AC,
-				0x9800, 0x9865, 0x60D1, 0x6216, 0x9177, 0x5A5A, 0x660F, 0x6DF7, 0x6E3E, 0x743F, 0x9B42, 0x5FFD, 0x60DA, 0x7B0F, 0x54C4, 0x5F18,
-				0x6C5E, 0x6CD3, 0x6D2A, 0x70D8, 0x7D05, 0x8679, 0x8A0C, 0x9D3B, 0x5316, 0x548C, 0x5B05, 0x6A3A, 0x706B, 0x7575,
-			};
 		}
 		private long getOutput87(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT87_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON523[input - 0x21];
 			return 0;
-		}
-		private static final char[] GETOUTPUT88_21 = getOutput88_21();
-		private static final char[] getOutput88_21() {
-			return new char[] {
-				0x798D, 0x79BE, 0x82B1, 0x83EF, 0x8A71, 0x8B41, 0x8CA8, 0x9774, 0xFA0B, 0x64F4, 0x652B, 0x78BA, 0x78BB, 0x7A6B, 0x4E38, 0x559A,
-				0x5950, 0x5BA6, 0x5E7B, 0x60A3, 0x63DB, 0x6B61, 0x6665, 0x6853, 0x6E19, 0x7165, 0x74B0, 0x7D08, 0x9084, 0x9A69, 0x9C25, 0x6D3B,
-				0x6ED1, 0x733E, 0x8C41, 0x95CA, 0x51F0, 0x5E4C, 0x5FA8, 0x604D, 0x60F6, 0x6130, 0x614C, 0x6643, 0x6644, 0x69A5, 0x6CC1, 0x6E5F,
-				0x6EC9, 0x6F62, 0x714C, 0x749C, 0x7687, 0x7BC1, 0x7C27, 0x8352, 0x8757, 0x9051, 0x968D, 0x9EC3, 0x532F, 0x56DE, 0x5EFB, 0x5F8A,
-				0x6062, 0x6094, 0x61F7, 0x6666, 0x6703, 0x6A9C, 0x6DEE, 0x6FAE, 0x7070, 0x736A, 0x7E6A, 0x81BE, 0x8334, 0x86D4, 0x8AA8, 0x8CC4,
-				0x5283, 0x7372, 0x5B96, 0x6A6B, 0x9404, 0x54EE, 0x5686, 0x5B5D, 0x6548, 0x6585, 0x66C9, 0x689F, 0x6D8D, 0x6DC6,
-			};
 		}
 		private long getOutput88(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT88_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON524[input - 0x21];
 			return 0;
 		}
-		private static final char[] GETOUTPUT89_21 = getOutput89_21();
-		private static final char[] getOutput89_21() {
-			return new char[] {
-				0x723B, 0x80B4, 0x9175, 0x9A4D, 0x4FAF, 0x5019, 0x539A, 0x540E, 0x543C, 0x5589, 0x55C5, 0x5E3F, 0x5F8C, 0x673D, 0x7166, 0x73DD,
-				0x9005, 0x52DB, 0x52F3, 0x5864, 0x58CE, 0x7104, 0x718F, 0x71FB, 0x85B0, 0x8A13, 0x6688, 0x85A8, 0x55A7, 0x6684, 0x714A, 0x8431,
-				0x5349, 0x5599, 0x6BC1, 0x5F59, 0x5FBD, 0x63EE, 0x6689, 0x7147, 0x8AF1, 0x8F1D, 0x9EBE, 0x4F11, 0x643A, 0x70CB, 0x7566, 0x8667,
-				0x6064, 0x8B4E, 0x9DF8, 0x5147, 0x51F6, 0x5308, 0x6D36, 0x80F8, 0x9ED1, 0x6615, 0x6B23, 0x7098, 0x75D5, 0x5403, 0x5C79, 0x7D07,
-				0x8A16, 0x6B20, 0x6B3D, 0x6B46, 0x5438, 0x6070, 0x6D3D, 0x7FD5, 0x8208, 0x50D6, 0x51DE, 0x559C, 0x566B, 0x56CD, 0x59EC, 0x5B09,
-				0x5E0C, 0x6199, 0x6198, 0x6231, 0x665E, 0x66E6, 0x7199, 0x71B9, 0x71BA, 0x72A7, 0x79A7, 0x7A00, 0x7FB2, 0x8A70,
-			};
-		}
 		private long getOutput89(int input) {
-			if (input >= 0x21 && input <= 0x7E) return GETOUTPUT89_21[input - 0x21];
+			if (input >= 0x21 && input <= 0x7E) return CommonSubtables.COMMON525[input - 0x21];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -1483,2173 +579,571 @@ public class XKsx1001Charset extends Charset {
 		}
 		private static final char[] GETOUTPUT0_A1 = getOutput0_A1();
 		private static final char[] getOutput0_A1() {
-			return new char[] {
-				0x2E22, 0, 0, 0x3422, 0, 0, 0x5721, 0x2721, 0, 0x2328, 0, 0, 0x2921, 0, 0, 0x4621,
-				0x3E21, 0x7729, 0x7829, 0x2522, 0, 0x5222, 0x2421, 0x2C22, 0x7629, 0x2C28, 0, 0x7928, 0x7628, 0x7A28, 0x2F22, 0,
-				0, 0, 0, 0, 0, 0x2128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2228,
-				0, 0, 0, 0, 0, 0, 0x3F21, 0x2A28, 0, 0, 0, 0, 0, 0x2D28, 0x2C29, 0,
-				0, 0, 0, 0, 0, 0x2129, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2329,
-				0, 0, 0, 0, 0, 0, 0x4021, 0x2A29, 0, 0, 0, 0, 0, 0x2D29,
-			};
+			return "\u2E22\u0000\u0000\u3422\u0000\u0000\u5721\u2721\u0000\u2328\u0000\u0000\u2921\u0000\u0000\u4621\u3E21\u7729\u7829\u2522\u0000\u5222\u2421\u2C22\u7629\u2C28\u0000\u7928\u7628\u7A28\u2F22\u0000\u0000\u0000\u0000\u0000\u0000\u2128\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2228\u0000\u0000\u0000\u0000\u0000\u0000\u3F21\u2A28\u0000\u0000\u0000\u0000\u0000\u2D28\u2C29\u0000\u0000\u0000\u0000\u0000\u0000\u2129\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2329\u0000\u0000\u0000\u0000\u0000\u0000\u4021\u2A29\u0000\u0000\u0000\u0000\u0000\u2D29".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_391 = getOutput0_391();
 		private static final char[] getOutput0_391() {
-			return new char[] {
-				0x4125, 0x4225, 0x4325, 0x4425, 0x4525, 0x4625, 0x4725, 0x4825, 0x4925, 0x4A25, 0x4B25, 0x4C25, 0x4D25, 0x4E25, 0x4F25, 0x5025,
-				0x5125, 0, 0x5225, 0x5325, 0x5425, 0x5525, 0x5625, 0x5725, 0x5825, 0, 0, 0, 0, 0, 0, 0,
-				0x6125, 0x6225, 0x6325, 0x6425, 0x6525, 0x6625, 0x6725, 0x6825, 0x6925, 0x6A25, 0x6B25, 0x6C25, 0x6D25, 0x6E25, 0x6F25, 0x7025,
-				0x7125, 0, 0x7225, 0x7325, 0x7425, 0x7525, 0x7625, 0x7725, 0x7825,
-			};
+			return "\u4125\u4225\u4325\u4425\u4525\u4625\u4725\u4825\u4925\u4A25\u4B25\u4C25\u4D25\u4E25\u4F25\u5025\u5125\u0000\u5225\u5325\u5425\u5525\u5625\u5725\u5825\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6125\u6225\u6325\u6425\u6525\u6625\u6725\u6825\u6925\u6A25\u6B25\u6C25\u6D25\u6E25\u6F25\u7025\u7125\u0000\u7225\u7325\u7425\u7525\u7625\u7725\u7825".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_401 = getOutput0_401();
 		private static final char[] getOutput0_401() {
-			return new char[] {
-				0x272C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x212C,
-				0x222C, 0x232C, 0x242C, 0x252C, 0x262C, 0x282C, 0x292C, 0x2A2C, 0x2B2C, 0x2C2C, 0x2D2C, 0x2E2C, 0x2F2C, 0x302C, 0x312C, 0x322C,
-				0x332C, 0x342C, 0x352C, 0x362C, 0x372C, 0x382C, 0x392C, 0x3A2C, 0x3B2C, 0x3C2C, 0x3D2C, 0x3E2C, 0x3F2C, 0x402C, 0x412C, 0x512C,
-				0x522C, 0x532C, 0x542C, 0x552C, 0x562C, 0x582C, 0x592C, 0x5A2C, 0x5B2C, 0x5C2C, 0x5D2C, 0x5E2C, 0x5F2C, 0x602C, 0x612C, 0x622C,
-				0x632C, 0x642C, 0x652C, 0x662C, 0x672C, 0x682C, 0x692C, 0x6A2C, 0x6B2C, 0x6C2C, 0x6D2C, 0x6E2C, 0x6F2C, 0x702C, 0x712C, 0,
-				0x572C,
-			};
+			return "\u272C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u212C\u222C\u232C\u242C\u252C\u262C\u282C\u292C\u2A2C\u2B2C\u2C2C\u2D2C\u2E2C\u2F2C\u302C\u312C\u322C\u332C\u342C\u352C\u362C\u372C\u382C\u392C\u3A2C\u3B2C\u3C2C\u3D2C\u3E2C\u3F2C\u402C\u412C\u512C\u522C\u532C\u542C\u552C\u562C\u582C\u592C\u5A2C\u5B2C\u5C2C\u5D2C\u5E2C\u5F2C\u602C\u612C\u622C\u632C\u642C\u652C\u662C\u672C\u682C\u692C\u6A2C\u6B2C\u6C2C\u6D2C\u6E2C\u6F2C\u702C\u712C\u0000\u572C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_2153 = getOutput0_2153();
 		private static final char[] getOutput0_2153() {
-			return new char[] {
-				0x7728, 0x7828, 0, 0, 0, 0, 0, 0, 0x7B28, 0x7C28, 0x7D28, 0x7E28, 0, 0x3025, 0x3125, 0x3225,
-				0x3325, 0x3425, 0x3525, 0x3625, 0x3725, 0x3825, 0x3925, 0, 0, 0, 0, 0, 0, 0x2125, 0x2225, 0x2325,
-				0x2425, 0x2525, 0x2625, 0x2725, 0x2825, 0x2925, 0x2A25,
-			};
+			return "\u7728\u7828\u0000\u0000\u0000\u0000\u0000\u0000\u7B28\u7C28\u7D28\u7E28\u0000\u3025\u3125\u3225\u3325\u3425\u3525\u3625\u3725\u3825\u3925\u0000\u0000\u0000\u0000\u0000\u0000\u2125\u2225\u2325\u2425\u2525\u2625\u2725\u2825\u2925\u2A25".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_2200 = getOutput0_2200();
 		private static final char[] getOutput0_2200() {
-			return new char[] {
-				0x2322, 0, 0x5321, 0x2422, 0, 0, 0, 0x5421, 0x7421, 0, 0, 0x7521, 0, 0, 0, 0x3322,
-				0, 0x3222, 0, 0, 0, 0, 0, 0, 0, 0, 0x6E21, 0, 0, 0x7021, 0x4421, 0,
-				0x5021, 0, 0, 0, 0, 0x2B21, 0, 0x7C21, 0x7D21, 0x7B21, 0x7A21, 0x7221, 0x7321, 0, 0x3122, 0,
-				0, 0, 0, 0, 0x4521, 0x7121, 0, 0, 0, 0, 0, 0, 0x2D21, 0x6F21,
-			};
+			return "\u2322\u0000\u5321\u2422\u0000\u0000\u0000\u5421\u7421\u0000\u0000\u7521\u0000\u0000\u0000\u3322\u0000\u3222\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E21\u0000\u0000\u7021\u4421\u0000\u5021\u0000\u0000\u0000\u0000\u2B21\u0000\u7C21\u7D21\u7B21\u7A21\u7221\u7321\u0000\u3122\u0000\u0000\u0000\u0000\u0000\u4521\u7121\u0000\u0000\u0000\u0000\u0000\u0000\u2D21\u6F21".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_2460 = getOutput0_2460();
 		private static final char[] getOutput0_2460() {
-			return new char[] {
-				0x6728, 0x6828, 0x6928, 0x6A28, 0x6B28, 0x6C28, 0x6D28, 0x6E28, 0x6F28, 0x7028, 0x7128, 0x7228, 0x7328, 0x7428, 0x7528, 0,
-				0, 0, 0, 0, 0x6729, 0x6829, 0x6929, 0x6A29, 0x6B29, 0x6C29, 0x6D29, 0x6E29, 0x6F29, 0x7029, 0x7129, 0x7229,
-				0x7329, 0x7429, 0x7529,
-			};
+			return "\u6728\u6828\u6928\u6A28\u6B28\u6C28\u6D28\u6E28\u6F28\u7028\u7128\u7228\u7328\u7428\u7528\u0000\u0000\u0000\u0000\u0000\u6729\u6829\u6929\u6A29\u6B29\u6C29\u6D29\u6E29\u6F29\u7029\u7129\u7229\u7329\u7429\u7529".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_249C = getOutput0_249C();
 		private static final char[] getOutput0_249C() {
-			return new char[] {
-				0x4D29, 0x4E29, 0x4F29, 0x5029, 0x5129, 0x5229, 0x5329, 0x5429, 0x5529, 0x5629, 0x5729, 0x5829, 0x5929, 0x5A29, 0x5B29, 0x5C29,
-				0x5D29, 0x5E29, 0x5F29, 0x6029, 0x6129, 0x6229, 0x6329, 0x6429, 0x6529, 0x6629,
-			};
+			return "\u4D29\u4E29\u4F29\u5029\u5129\u5229\u5329\u5429\u5529\u5629\u5729\u5829\u5929\u5A29\u5B29\u5C29\u5D29\u5E29\u5F29\u6029\u6129\u6229\u6329\u6429\u6529\u6629".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_24D0 = getOutput0_24D0();
 		private static final char[] getOutput0_24D0() {
-			return new char[] {
-				0x4D28, 0x4E28, 0x4F28, 0x5028, 0x5128, 0x5228, 0x5328, 0x5428, 0x5528, 0x5628, 0x5728, 0x5828, 0x5928, 0x5A28, 0x5B28, 0x5C28,
-				0x5D28, 0x5E28, 0x5F28, 0x6028, 0x6128, 0x6228, 0x6328, 0x6428, 0x6528, 0x6628,
-			};
+			return "\u4D28\u4E28\u4F28\u5028\u5128\u5228\u5328\u5428\u5528\u5628\u5728\u5828\u5928\u5A28\u5B28\u5C28\u5D28\u5E28\u5F28\u6028\u6128\u6228\u6328\u6428\u6528\u6628".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_2500 = getOutput0_2500();
 		private static final char[] getOutput0_2500() {
-			return new char[] {
-				0x2126, 0x2C26, 0x2226, 0x2D26, 0, 0, 0, 0, 0, 0, 0, 0, 0x2326, 0x4826, 0x4726, 0x2E26,
-				0x2426, 0x4226, 0x4126, 0x2F26, 0x2626, 0x4626, 0x4526, 0x3126, 0x2526, 0x4426, 0x4326, 0x3026, 0x2726, 0x3C26, 0x4926, 0x4A26,
-				0x3726, 0x4B26, 0x4C26, 0x3226, 0x2926, 0x3E26, 0x4D26, 0x4E26, 0x3926, 0x4F26, 0x5026, 0x3426, 0x2826, 0x5126, 0x5226, 0x3826,
-				0x3D26, 0x5326, 0x5426, 0x3326, 0x2A26, 0x5526, 0x5626, 0x3A26, 0x3F26, 0x5726, 0x5826, 0x3526, 0x2B26, 0x5926, 0x5A26, 0x3B26,
-				0x5B26, 0x5C26, 0x4026, 0x5D26, 0x5E26, 0x5F26, 0x6026, 0x6126, 0x6226, 0x6326, 0x6426, 0x3626,
-			};
+			return "\u2126\u2C26\u2226\u2D26\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2326\u4826\u4726\u2E26\u2426\u4226\u4126\u2F26\u2626\u4626\u4526\u3126\u2526\u4426\u4326\u3026\u2726\u3C26\u4926\u4A26\u3726\u4B26\u4C26\u3226\u2926\u3E26\u4D26\u4E26\u3926\u4F26\u5026\u3426\u2826\u5126\u5226\u3826\u3D26\u5326\u5426\u3326\u2A26\u5526\u5626\u3A26\u3F26\u5726\u5826\u3526\u2B26\u5926\u5A26\u3B26\u5B26\u5C26\u4026\u5D26\u5E26\u5F26\u6026\u6126\u6226\u6326\u6426\u3626".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_2592 = getOutput0_2592();
 		private static final char[] getOutput0_2592() {
-			return new char[] {
-				0x4622, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6121, 0x6021,
-				0, 0x4322, 0x4722, 0x4822, 0x4B22, 0x4A22, 0x4922, 0x4C22, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6321, 0x6221, 0, 0, 0x3A22, 0x3922, 0, 0, 0, 0, 0x6521, 0x6421, 0, 0, 0x3822, 0x3722,
-				0, 0, 0, 0, 0x5F21, 0x5E21, 0x4222, 0, 0, 0x5B21, 0, 0, 0x5D21, 0x5C21, 0x4422, 0x4522,
-			};
+			return "\u4622\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6121\u6021\u0000\u4322\u4722\u4822\u4B22\u4A22\u4922\u4C22\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6321\u6221\u0000\u0000\u3A22\u3922\u0000\u0000\u0000\u0000\u6521\u6421\u0000\u0000\u3822\u3722\u0000\u0000\u0000\u0000\u5F21\u5E21\u4222\u0000\u0000\u5B21\u0000\u0000\u5D21\u5C21\u4422\u4522".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_3000 = getOutput0_3000();
 		private static final char[] getOutput0_3000() {
-			return new char[] {
-				0x2121, 0x2221, 0x2321, 0x2821, 0, 0, 0, 0, 0x3421, 0x3521, 0x3621, 0x3721, 0x3821, 0x3921, 0x3A21, 0x3B21,
-				0x3C21, 0x3D21, 0, 0x6B21, 0x3221, 0x3321,
-			};
+			return "\u2121\u2221\u2321\u2821\u0000\u0000\u0000\u0000\u3421\u3521\u3621\u3721\u3821\u3921\u3A21\u3B21\u3C21\u3D21\u0000\u6B21\u3221\u3321".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_3041 = getOutput0_3041();
 		private static final char[] getOutput0_3041() {
-			return new char[] {
-				0x212A, 0x222A, 0x232A, 0x242A, 0x252A, 0x262A, 0x272A, 0x282A, 0x292A, 0x2A2A, 0x2B2A, 0x2C2A, 0x2D2A, 0x2E2A, 0x2F2A, 0x302A,
-				0x312A, 0x322A, 0x332A, 0x342A, 0x352A, 0x362A, 0x372A, 0x382A, 0x392A, 0x3A2A, 0x3B2A, 0x3C2A, 0x3D2A, 0x3E2A, 0x3F2A, 0x402A,
-				0x412A, 0x422A, 0x432A, 0x442A, 0x452A, 0x462A, 0x472A, 0x482A, 0x492A, 0x4A2A, 0x4B2A, 0x4C2A, 0x4D2A, 0x4E2A, 0x4F2A, 0x502A,
-				0x512A, 0x522A, 0x532A, 0x542A, 0x552A, 0x562A, 0x572A, 0x582A, 0x592A, 0x5A2A, 0x5B2A, 0x5C2A, 0x5D2A, 0x5E2A, 0x5F2A, 0x602A,
-				0x612A, 0x622A, 0x632A, 0x642A, 0x652A, 0x662A, 0x672A, 0x682A, 0x692A, 0x6A2A, 0x6B2A, 0x6C2A, 0x6D2A, 0x6E2A, 0x6F2A, 0x702A,
-				0x712A, 0x722A, 0x732A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x212B, 0x222B, 0x232B, 0x242B, 0x252B, 0x262B, 0x272B, 0x282B, 0x292B, 0x2A2B, 0x2B2B, 0x2C2B, 0x2D2B, 0x2E2B, 0x2F2B, 0x302B,
-				0x312B, 0x322B, 0x332B, 0x342B, 0x352B, 0x362B, 0x372B, 0x382B, 0x392B, 0x3A2B, 0x3B2B, 0x3C2B, 0x3D2B, 0x3E2B, 0x3F2B, 0x402B,
-				0x412B, 0x422B, 0x432B, 0x442B, 0x452B, 0x462B, 0x472B, 0x482B, 0x492B, 0x4A2B, 0x4B2B, 0x4C2B, 0x4D2B, 0x4E2B, 0x4F2B, 0x502B,
-				0x512B, 0x522B, 0x532B, 0x542B, 0x552B, 0x562B, 0x572B, 0x582B, 0x592B, 0x5A2B, 0x5B2B, 0x5C2B, 0x5D2B, 0x5E2B, 0x5F2B, 0x602B,
-				0x612B, 0x622B, 0x632B, 0x642B, 0x652B, 0x662B, 0x672B, 0x682B, 0x692B, 0x6A2B, 0x6B2B, 0x6C2B, 0x6D2B, 0x6E2B, 0x6F2B, 0x702B,
-				0x712B, 0x722B, 0x732B, 0x742B, 0x752B, 0x762B,
-			};
+			return "\u212A\u222A\u232A\u242A\u252A\u262A\u272A\u282A\u292A\u2A2A\u2B2A\u2C2A\u2D2A\u2E2A\u2F2A\u302A\u312A\u322A\u332A\u342A\u352A\u362A\u372A\u382A\u392A\u3A2A\u3B2A\u3C2A\u3D2A\u3E2A\u3F2A\u402A\u412A\u422A\u432A\u442A\u452A\u462A\u472A\u482A\u492A\u4A2A\u4B2A\u4C2A\u4D2A\u4E2A\u4F2A\u502A\u512A\u522A\u532A\u542A\u552A\u562A\u572A\u582A\u592A\u5A2A\u5B2A\u5C2A\u5D2A\u5E2A\u5F2A\u602A\u612A\u622A\u632A\u642A\u652A\u662A\u672A\u682A\u692A\u6A2A\u6B2A\u6C2A\u6D2A\u6E2A\u6F2A\u702A\u712A\u722A\u732A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u212B\u222B\u232B\u242B\u252B\u262B\u272B\u282B\u292B\u2A2B\u2B2B\u2C2B\u2D2B\u2E2B\u2F2B\u302B\u312B\u322B\u332B\u342B\u352B\u362B\u372B\u382B\u392B\u3A2B\u3B2B\u3C2B\u3D2B\u3E2B\u3F2B\u402B\u412B\u422B\u432B\u442B\u452B\u462B\u472B\u482B\u492B\u4A2B\u4B2B\u4C2B\u4D2B\u4E2B\u4F2B\u502B\u512B\u522B\u532B\u542B\u552B\u562B\u572B\u582B\u592B\u5A2B\u5B2B\u5C2B\u5D2B\u5E2B\u5F2B\u602B\u612B\u622B\u632B\u642B\u652B\u662B\u672B\u682B\u692B\u6A2B\u6B2B\u6C2B\u6D2B\u6E2B\u6F2B\u702B\u712B\u722B\u732B\u742B\u752B\u762B".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_3131 = getOutput0_3131();
 		private static final char[] getOutput0_3131() {
-			return new char[] {
-				0x2124, 0x2224, 0x2324, 0x2424, 0x2524, 0x2624, 0x2724, 0x2824, 0x2924, 0x2A24, 0x2B24, 0x2C24, 0x2D24, 0x2E24, 0x2F24, 0x3024,
-				0x3124, 0x3224, 0x3324, 0x3424, 0x3524, 0x3624, 0x3724, 0x3824, 0x3924, 0x3A24, 0x3B24, 0x3C24, 0x3D24, 0x3E24, 0x3F24, 0x4024,
-				0x4124, 0x4224, 0x4324, 0x4424, 0x4524, 0x4624, 0x4724, 0x4824, 0x4924, 0x4A24, 0x4B24, 0x4C24, 0x4D24, 0x4E24, 0x4F24, 0x5024,
-				0x5124, 0x5224, 0x5324, 0x5424, 0x5524, 0x5624, 0x5724, 0x5824, 0x5924, 0x5A24, 0x5B24, 0x5C24, 0x5D24, 0x5E24, 0x5F24, 0x6024,
-				0x6124, 0x6224, 0x6324, 0x6424, 0x6524, 0x6624, 0x6724, 0x6824, 0x6924, 0x6A24, 0x6B24, 0x6C24, 0x6D24, 0x6E24, 0x6F24, 0x7024,
-				0x7124, 0x7224, 0x7324, 0x7424, 0x7524, 0x7624, 0x7724, 0x7824, 0x7924, 0x7A24, 0x7B24, 0x7C24, 0x7D24, 0x7E24,
-			};
+			return "\u2124\u2224\u2324\u2424\u2524\u2624\u2724\u2824\u2924\u2A24\u2B24\u2C24\u2D24\u2E24\u2F24\u3024\u3124\u3224\u3324\u3424\u3524\u3624\u3724\u3824\u3924\u3A24\u3B24\u3C24\u3D24\u3E24\u3F24\u4024\u4124\u4224\u4324\u4424\u4524\u4624\u4724\u4824\u4924\u4A24\u4B24\u4C24\u4D24\u4E24\u4F24\u5024\u5124\u5224\u5324\u5424\u5524\u5624\u5724\u5824\u5924\u5A24\u5B24\u5C24\u5D24\u5E24\u5F24\u6024\u6124\u6224\u6324\u6424\u6524\u6624\u6724\u6824\u6924\u6A24\u6B24\u6C24\u6D24\u6E24\u6F24\u7024\u7124\u7224\u7324\u7424\u7524\u7624\u7724\u7824\u7924\u7A24\u7B24\u7C24\u7D24\u7E24".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_3200 = getOutput0_3200();
 		private static final char[] getOutput0_3200() {
-			return new char[] {
-				0x3129, 0x3229, 0x3329, 0x3429, 0x3529, 0x3629, 0x3729, 0x3829, 0x3929, 0x3A29, 0x3B29, 0x3C29, 0x3D29, 0x3E29, 0x3F29, 0x4029,
-				0x4129, 0x4229, 0x4329, 0x4429, 0x4529, 0x4629, 0x4729, 0x4829, 0x4929, 0x4A29, 0x4B29, 0x4C29, 0x5F22,
-			};
+			return "\u3129\u3229\u3329\u3429\u3529\u3629\u3729\u3829\u3929\u3A29\u3B29\u3C29\u3D29\u3E29\u3F29\u4029\u4129\u4229\u4329\u4429\u4529\u4629\u4729\u4829\u4929\u4A29\u4B29\u4C29\u5F22".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_3260 = getOutput0_3260();
 		private static final char[] getOutput0_3260() {
-			return new char[] {
-				0x3128, 0x3228, 0x3328, 0x3428, 0x3528, 0x3628, 0x3728, 0x3828, 0x3928, 0x3A28, 0x3B28, 0x3C28, 0x3D28, 0x3E28, 0x3F28, 0x4028,
-				0x4128, 0x4228, 0x4328, 0x4428, 0x4528, 0x4628, 0x4728, 0x4828, 0x4928, 0x4A28, 0x4B28, 0x4C28, 0, 0, 0, 0x5E22,
-			};
+			return "\u3128\u3228\u3328\u3428\u3528\u3628\u3728\u3828\u3928\u3A28\u3B28\u3C28\u3D28\u3E28\u3F28\u4028\u4128\u4228\u4328\u4428\u4528\u4628\u4728\u4828\u4928\u4A28\u4B28\u4C28\u0000\u0000\u0000\u5E22".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_3380 = getOutput0_3380();
 		private static final char[] getOutput0_3380() {
-			return new char[] {
-				0x4927, 0x4A27, 0x4B27, 0x4C27, 0x4D27, 0, 0, 0, 0x3A27, 0x3B27, 0x5C27, 0x5D27, 0x5E27, 0x3627, 0x3727, 0x3827,
-				0x5427, 0x5527, 0x5627, 0x5727, 0x5827, 0x2127, 0x2227, 0x2327, 0x2527, 0x2B27, 0x2C27, 0x2D27, 0x2E27, 0x2F27, 0x3027, 0x3127,
-				0x3227, 0x3327, 0x3427, 0x2727, 0x2827, 0x2927, 0x2A27, 0x3D27, 0x3E27, 0x6527, 0x6627, 0x6727, 0x6827, 0x6127, 0x6227, 0x6327,
-				0x3F27, 0x4027, 0x4127, 0x4227, 0x4327, 0x4427, 0x4527, 0x4627, 0x4727, 0x4827, 0x4E27, 0x4F27, 0x5027, 0x5127, 0x5227, 0x5327,
-				0x5A27, 0x5B27, 0x6322, 0x6C27, 0x2627, 0x6027, 0x6F27, 0x6122, 0x3C27, 0x6D27, 0x3527, 0, 0, 0, 0, 0x3927,
-				0x6A27, 0, 0, 0x6B27, 0, 0, 0x5F27, 0, 0x6422, 0, 0, 0x6427, 0x6E27, 0x6927,
-			};
+			return "\u4927\u4A27\u4B27\u4C27\u4D27\u0000\u0000\u0000\u3A27\u3B27\u5C27\u5D27\u5E27\u3627\u3727\u3827\u5427\u5527\u5627\u5727\u5827\u2127\u2227\u2327\u2527\u2B27\u2C27\u2D27\u2E27\u2F27\u3027\u3127\u3227\u3327\u3427\u2727\u2827\u2927\u2A27\u3D27\u3E27\u6527\u6627\u6727\u6827\u6127\u6227\u6327\u3F27\u4027\u4127\u4227\u4327\u4427\u4527\u4627\u4727\u4827\u4E27\u4F27\u5027\u5127\u5227\u5327\u5A27\u5B27\u6322\u6C27\u2627\u6027\u6F27\u6122\u3C27\u6D27\u3527\u0000\u0000\u0000\u0000\u3927\u6A27\u0000\u0000\u6B27\u0000\u0000\u5F27\u0000\u6422\u0000\u0000\u6427\u6E27\u6927".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_4E00 = getOutput0_4E00();
 		private static final char[] getOutput0_4E00() {
-			return new char[] {
-				0x696C, 0x4B6F, 0, 0x5276, 0, 0, 0, 0x3258, 0x5B6D, 0x325F, 0x3E5F, 0x3B79, 0, 0x745C, 0, 0,
-				0, 0x6475, 0, 0, 0x2673, 0x605D, 0x2661, 0, 0x784E, 0x305C, 0, 0, 0, 0, 0x2A63, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6971, 0, 0,
-				0, 0, 0x7A4D, 0, 0, 0, 0, 0, 0x2F7C, 0x2153, 0, 0x2B71, 0, 0, 0, 0,
-				0, 0, 0x5167, 0x2C52, 0, 0x794E, 0, 0, 0, 0, 0, 0x7D71, 0, 0x3F5E, 0x3A7B, 0x3979,
-				0, 0, 0, 0, 0, 0, 0x524E, 0, 0x2B63, 0x606B, 0, 0, 0, 0x7A4E, 0x774B, 0x2565,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x614A, 0, 0x4C54, 0, 0,
-				0, 0, 0, 0x616A, 0, 0, 0x635C, 0x2D5F, 0, 0, 0, 0, 0, 0, 0x6B4B, 0,
-				0, 0, 0x2F55, 0, 0, 0, 0x7556, 0, 0x7865, 0, 0, 0x405E, 0x236C, 0, 0x4D69, 0,
-				0x276A, 0x7669, 0x3B7B, 0, 0x6967, 0x4C6F, 0, 0, 0x6650, 0, 0, 0x415E, 0, 0, 0x2C64, 0,
-				0, 0x4C58, 0x7179, 0, 0x5F4E, 0x247A, 0x3266, 0, 0x7B7A, 0, 0, 0x3D7A, 0x484C, 0x4D6F, 0x5555, 0,
-				0, 0, 0, 0, 0, 0, 0x2253, 0, 0, 0, 0x516C, 0, 0, 0, 0, 0,
-				0x2764, 0x526C, 0, 0, 0x3176, 0, 0, 0x7B4E, 0, 0, 0x5150, 0x3F4B, 0, 0x246D, 0, 0,
-				0, 0, 0, 0, 0x286D, 0x425E, 0x6276, 0x5C6D, 0x755C, 0x3960, 0, 0, 0, 0x4E54, 0, 0x3574,
-				0, 0, 0, 0x5B53, 0x3556, 0x246C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6664, 0, 0x6A71, 0, 0, 0, 0x6C4B, 0x404B, 0, 0, 0, 0x726C, 0, 0, 0, 0,
-				0, 0x6A50, 0, 0, 0, 0, 0, 0, 0, 0x7279, 0x256C, 0x5F50, 0, 0x6A67, 0x6B50, 0x515C,
-				0x695B, 0x4C7D,
-			};
+			return "\u696C\u4B6F\u0000\u5276\u0000\u0000\u0000\u3258\u5B6D\u325F\u3E5F\u3B79\u0000\u745C\u0000\u0000\u0000\u6475\u0000\u0000\u2673\u605D\u2661\u0000\u784E\u305C\u0000\u0000\u0000\u0000\u2A63\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6971\u0000\u0000\u0000\u0000\u7A4D\u0000\u0000\u0000\u0000\u0000\u2F7C\u2153\u0000\u2B71\u0000\u0000\u0000\u0000\u0000\u0000\u5167\u2C52\u0000\u794E\u0000\u0000\u0000\u0000\u0000\u7D71\u0000\u3F5E\u3A7B\u3979\u0000\u0000\u0000\u0000\u0000\u0000\u524E\u0000\u2B63\u606B\u0000\u0000\u0000\u7A4E\u774B\u2565\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u614A\u0000\u4C54\u0000\u0000\u0000\u0000\u0000\u616A\u0000\u0000\u635C\u2D5F\u0000\u0000\u0000\u0000\u0000\u0000\u6B4B\u0000\u0000\u0000\u2F55\u0000\u0000\u0000\u7556\u0000\u7865\u0000\u0000\u405E\u236C\u0000\u4D69\u0000\u276A\u7669\u3B7B\u0000\u6967\u4C6F\u0000\u0000\u6650\u0000\u0000\u415E\u0000\u0000\u2C64\u0000\u0000\u4C58\u7179\u0000\u5F4E\u247A\u3266\u0000\u7B7A\u0000\u0000\u3D7A\u484C\u4D6F\u5555\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2253\u0000\u0000\u0000\u516C\u0000\u0000\u0000\u0000\u0000\u2764\u526C\u0000\u0000\u3176\u0000\u0000\u7B4E\u0000\u0000\u5150\u3F4B\u0000\u246D\u0000\u0000\u0000\u0000\u0000\u0000\u286D\u425E\u6276\u5C6D\u755C\u3960\u0000\u0000\u0000\u4E54\u0000\u3574\u0000\u0000\u0000\u5B53\u3556\u246C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6664\u0000\u6A71\u0000\u0000\u0000\u6C4B\u404B\u0000\u0000\u0000\u726C\u0000\u0000\u0000\u0000\u0000\u6A50\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7279\u256C\u5F50\u0000\u6A67\u6B50\u515C\u695B\u4C7D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_4F2F = getOutput0_4F2F();
 		private static final char[] getOutput0_4F2F() {
-			return new char[] {
-				0x575B, 0, 0, 0, 0, 0x615A, 0, 0x3656, 0, 0x5F63, 0, 0x435E, 0, 0x445E, 0x214A, 0,
-				0, 0, 0, 0, 0x6C6E, 0, 0, 0x2353, 0x376E, 0x4F78, 0, 0, 0, 0, 0x486A, 0x386E,
-				0x2C71, 0x2571, 0x4E69, 0, 0, 0, 0x3C79, 0, 0, 0, 0x7965, 0x6A6C, 0x565D, 0x426D, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2578, 0, 0, 0, 0, 0,
-				0x3A65, 0x585B, 0, 0, 0x224A, 0, 0, 0x4D51, 0, 0, 0, 0x6D6E, 0, 0, 0, 0x6B6C,
-				0x455E, 0, 0x6063, 0, 0x494A, 0x6972, 0, 0x4E55, 0, 0x3676, 0, 0x424E, 0x4756, 0, 0x3463, 0,
-				0x2D71, 0, 0x626A, 0, 0, 0, 0, 0x4257, 0, 0x2773, 0, 0, 0x6A4D, 0, 0x6E6B, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3259,
-				0x257D, 0, 0, 0, 0, 0, 0x5576, 0x6255, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x3578, 0, 0, 0x754C, 0x3575, 0x2D64, 0, 0, 0, 0, 0x6B67, 0x5571, 0, 0, 0, 0x3B70,
-				0, 0, 0x3569, 0, 0x494C, 0x557A, 0, 0, 0x5461, 0, 0, 0x5657, 0, 0, 0x415C, 0,
-				0x465E, 0x6F7A, 0x6163, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7361,
-				0x765C, 0, 0x7C4E, 0, 0x445B, 0, 0x7178, 0, 0, 0x645C, 0, 0x6F65, 0, 0, 0, 0,
-				0, 0, 0, 0x315C, 0, 0, 0, 0x5655, 0, 0, 0x5A73, 0, 0x414B, 0, 0x435B, 0,
-				0, 0, 0x7A59, 0x6E53, 0, 0, 0, 0x387A, 0, 0, 0x267D, 0x6F6B, 0, 0x2674, 0, 0x4A4C,
-				0x2873, 0, 0x5B73, 0, 0x275B, 0x3776, 0, 0x664F, 0x7270, 0x5A4B, 0, 0x5267, 0x4357, 0x7076, 0x5E68, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2665, 0, 0, 0,
-				0, 0, 0, 0, 0x6765, 0, 0, 0, 0x234A, 0x274C, 0x496A, 0, 0, 0, 0, 0,
-				0x3678, 0, 0, 0, 0, 0, 0x257A, 0, 0, 0, 0, 0x2E71, 0, 0x4E6F, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x6D4B, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x3076, 0x4F6F, 0x4F69, 0, 0x5E77, 0, 0, 0, 0, 0, 0,
-				0, 0x534E, 0, 0, 0, 0, 0x775C, 0, 0, 0, 0, 0, 0, 0, 0x285B, 0,
-				0, 0, 0x784B, 0, 0, 0, 0, 0, 0, 0x215F, 0x615D,
-			};
+			return "\u575B\u0000\u0000\u0000\u0000\u615A\u0000\u3656\u0000\u5F63\u0000\u435E\u0000\u445E\u214A\u0000\u0000\u0000\u0000\u0000\u6C6E\u0000\u0000\u2353\u376E\u4F78\u0000\u0000\u0000\u0000\u486A\u386E\u2C71\u2571\u4E69\u0000\u0000\u0000\u3C79\u0000\u0000\u0000\u7965\u6A6C\u565D\u426D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2578\u0000\u0000\u0000\u0000\u0000\u3A65\u585B\u0000\u0000\u224A\u0000\u0000\u4D51\u0000\u0000\u0000\u6D6E\u0000\u0000\u0000\u6B6C\u455E\u0000\u6063\u0000\u494A\u6972\u0000\u4E55\u0000\u3676\u0000\u424E\u4756\u0000\u3463\u0000\u2D71\u0000\u626A\u0000\u0000\u0000\u0000\u4257\u0000\u2773\u0000\u0000\u6A4D\u0000\u6E6B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3259\u257D\u0000\u0000\u0000\u0000\u0000\u5576\u6255\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3578\u0000\u0000\u754C\u3575\u2D64\u0000\u0000\u0000\u0000\u6B67\u5571\u0000\u0000\u0000\u3B70\u0000\u0000\u3569\u0000\u494C\u557A\u0000\u0000\u5461\u0000\u0000\u5657\u0000\u0000\u415C\u0000\u465E\u6F7A\u6163\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7361\u765C\u0000\u7C4E\u0000\u445B\u0000\u7178\u0000\u0000\u645C\u0000\u6F65\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u315C\u0000\u0000\u0000\u5655\u0000\u0000\u5A73\u0000\u414B\u0000\u435B\u0000\u0000\u0000\u7A59\u6E53\u0000\u0000\u0000\u387A\u0000\u0000\u267D\u6F6B\u0000\u2674\u0000\u4A4C\u2873\u0000\u5B73\u0000\u275B\u3776\u0000\u664F\u7270\u5A4B\u0000\u5267\u4357\u7076\u5E68\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2665\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6765\u0000\u0000\u0000\u234A\u274C\u496A\u0000\u0000\u0000\u0000\u0000\u3678\u0000\u0000\u0000\u0000\u0000\u257A\u0000\u0000\u0000\u0000\u2E71\u0000\u4E6F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D4B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3076\u4F6F\u4F69\u0000\u5E77\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u534E\u0000\u0000\u0000\u0000\u775C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u285B\u0000\u0000\u0000\u784B\u0000\u0000\u0000\u0000\u0000\u0000\u215F\u615D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_50AC = getOutput0_50AC();
 		private static final char[] getOutput0_50AC() {
-			return new char[] {
-				0x4A75, 0x3669, 0, 0, 0, 0, 0x6C67, 0x6E6E, 0, 0x7073, 0, 0x3F5F, 0, 0, 0, 0,
-				0, 0, 0x4B4C, 0, 0, 0, 0, 0, 0, 0x4150, 0, 0, 0, 0x5274, 0x3A60, 0,
-				0, 0, 0, 0x405F, 0, 0x604E, 0, 0, 0, 0x525C, 0x6A7D, 0, 0, 0, 0x7656, 0,
-				0, 0, 0x4A6A, 0, 0, 0, 0, 0, 0, 0x6968, 0, 0x2C63, 0, 0, 0, 0,
-				0, 0x5073, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x244A, 0, 0x785B,
-				0, 0, 0, 0x475E, 0x706B, 0x5671, 0, 0, 0x6265, 0, 0x4C4C, 0, 0, 0x7B4B, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x636A, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x415F, 0, 0x6D56, 0, 0, 0, 0, 0, 0, 0, 0, 0x5069, 0,
-				0, 0, 0, 0, 0, 0, 0x396E, 0, 0, 0, 0, 0x6355, 0, 0, 0x5351, 0,
-				0x7065, 0, 0, 0, 0x3468, 0x436B, 0, 0x2A6A, 0x7C7A, 0x7675, 0x3C70, 0x547D, 0x3B60, 0x434E, 0, 0x3A50,
-				0x3A77, 0x7358, 0x4D77, 0, 0, 0, 0x2E64, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x5F54, 0, 0, 0, 0, 0, 0x6750, 0, 0, 0x7D6C, 0, 0x2E52, 0x6F6E, 0x5755, 0x646A, 0x2278,
-				0x6B4D, 0x3F57, 0x317B, 0, 0, 0x6C4D, 0, 0, 0, 0x325C, 0x6C50, 0x7D4E, 0x706E, 0, 0, 0,
-				0x424C, 0, 0, 0, 0x6D50, 0, 0, 0, 0, 0, 0x7765, 0, 0, 0, 0x7C73, 0,
-				0, 0x226E, 0, 0, 0, 0, 0x3359, 0, 0, 0x7458, 0, 0x3769, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x2E4E, 0, 0, 0, 0, 0x2259, 0, 0, 0, 0, 0x7158, 0,
-				0x4F54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2765, 0x5255, 0, 0, 0, 0,
-				0, 0x2956, 0, 0, 0, 0, 0, 0, 0x2274, 0, 0x5771, 0, 0, 0x5855, 0, 0x3D70,
-				0x5057, 0x5054, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x4F57, 0x6A6B, 0x6B7D, 0, 0, 0x6D5B, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x457C, 0x424B, 0, 0, 0, 0, 0x557D, 0, 0x4874, 0x6A68, 0x7375, 0,
-				0, 0x5E79, 0, 0, 0x6F53, 0, 0, 0x536C, 0, 0, 0x425D, 0x376F, 0x5467, 0, 0x4A4A, 0,
-				0, 0, 0x7B59, 0, 0, 0x7D7A, 0, 0, 0, 0, 0, 0x2A56, 0, 0, 0, 0,
-				0, 0x7874, 0, 0, 0, 0, 0, 0, 0x7777, 0x2C5C, 0, 0, 0, 0x5757, 0x225F, 0,
-				0, 0, 0x3E4E, 0, 0x7053, 0, 0, 0, 0, 0, 0x2470, 0x6C61, 0x674F, 0x4B73, 0x296D, 0x3E4A,
-				0, 0, 0, 0, 0, 0, 0, 0x6F74, 0, 0, 0, 0x4E76, 0, 0, 0x7B5E, 0x3B50,
-				0x3755, 0x716E, 0, 0, 0, 0, 0, 0, 0x2874, 0, 0x785C, 0, 0, 0, 0, 0x274B,
-				0, 0x4E5A, 0, 0, 0, 0x6660, 0, 0, 0, 0, 0, 0, 0, 0x256D, 0x726E, 0,
-				0, 0, 0, 0x795C, 0, 0, 0x5C79, 0, 0, 0x5C73, 0, 0, 0, 0, 0, 0,
-				0, 0x7278, 0, 0x7974, 0, 0, 0, 0x717C, 0, 0, 0, 0x3C50, 0x795B, 0x3157, 0, 0,
-				0, 0x7C4B, 0, 0, 0, 0x2570, 0x7D4B, 0, 0, 0, 0, 0, 0, 0, 0, 0x7455,
-				0, 0, 0, 0x6D4D, 0x254A, 0, 0, 0x2B56, 0x4250, 0, 0, 0, 0, 0x3E70, 0x3D52, 0x244C,
-			};
+			return "\u4A75\u3669\u0000\u0000\u0000\u0000\u6C67\u6E6E\u0000\u7073\u0000\u3F5F\u0000\u0000\u0000\u0000\u0000\u0000\u4B4C\u0000\u0000\u0000\u0000\u0000\u0000\u4150\u0000\u0000\u0000\u5274\u3A60\u0000\u0000\u0000\u0000\u405F\u0000\u604E\u0000\u0000\u0000\u525C\u6A7D\u0000\u0000\u0000\u7656\u0000\u0000\u0000\u4A6A\u0000\u0000\u0000\u0000\u0000\u0000\u6968\u0000\u2C63\u0000\u0000\u0000\u0000\u0000\u5073\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u244A\u0000\u785B\u0000\u0000\u0000\u475E\u706B\u5671\u0000\u0000\u6265\u0000\u4C4C\u0000\u0000\u7B4B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u636A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u415F\u0000\u6D56\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5069\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u396E\u0000\u0000\u0000\u0000\u6355\u0000\u0000\u5351\u0000\u7065\u0000\u0000\u0000\u3468\u436B\u0000\u2A6A\u7C7A\u7675\u3C70\u547D\u3B60\u434E\u0000\u3A50\u3A77\u7358\u4D77\u0000\u0000\u0000\u2E64\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F54\u0000\u0000\u0000\u0000\u0000\u6750\u0000\u0000\u7D6C\u0000\u2E52\u6F6E\u5755\u646A\u2278\u6B4D\u3F57\u317B\u0000\u0000\u6C4D\u0000\u0000\u0000\u325C\u6C50\u7D4E\u706E\u0000\u0000\u0000\u424C\u0000\u0000\u0000\u6D50\u0000\u0000\u0000\u0000\u0000\u7765\u0000\u0000\u0000\u7C73\u0000\u0000\u226E\u0000\u0000\u0000\u0000\u3359\u0000\u0000\u7458\u0000\u3769\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2E4E\u0000\u0000\u0000\u0000\u2259\u0000\u0000\u0000\u0000\u7158\u0000\u4F54\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2765\u5255\u0000\u0000\u0000\u0000\u0000\u2956\u0000\u0000\u0000\u0000\u0000\u0000\u2274\u0000\u5771\u0000\u0000\u5855\u0000\u3D70\u5057\u5054\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4F57\u6A6B\u6B7D\u0000\u0000\u6D5B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u457C\u424B\u0000\u0000\u0000\u0000\u557D\u0000\u4874\u6A68\u7375\u0000\u0000\u5E79\u0000\u0000\u6F53\u0000\u0000\u536C\u0000\u0000\u425D\u376F\u5467\u0000\u4A4A\u0000\u0000\u0000\u7B59\u0000\u0000\u7D7A\u0000\u0000\u0000\u0000\u0000\u2A56\u0000\u0000\u0000\u0000\u0000\u7874\u0000\u0000\u0000\u0000\u0000\u0000\u7777\u2C5C\u0000\u0000\u0000\u5757\u225F\u0000\u0000\u0000\u3E4E\u0000\u7053\u0000\u0000\u0000\u0000\u0000\u2470\u6C61\u674F\u4B73\u296D\u3E4A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F74\u0000\u0000\u0000\u4E76\u0000\u0000\u7B5E\u3B50\u3755\u716E\u0000\u0000\u0000\u0000\u0000\u0000\u2874\u0000\u785C\u0000\u0000\u0000\u0000\u274B\u0000\u4E5A\u0000\u0000\u0000\u6660\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u256D\u726E\u0000\u0000\u0000\u0000\u795C\u0000\u0000\u5C79\u0000\u0000\u5C73\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7278\u0000\u7974\u0000\u0000\u0000\u717C\u0000\u0000\u0000\u3C50\u795B\u3157\u0000\u0000\u0000\u7C4B\u0000\u0000\u0000\u2570\u7D4B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7455\u0000\u0000\u0000\u6D4D\u254A\u0000\u0000\u2B56\u4250\u0000\u0000\u0000\u0000\u3E70\u3D52\u244C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_52BE = getOutput0_52BE();
 		private static final char[] getOutput0_52BE() {
-			return new char[] {
-				0x367A, 0, 0, 0x4D4C, 0, 0x7A5A, 0, 0x4F76, 0, 0x3869, 0, 0x7558, 0, 0, 0, 0x4E4C,
-				0, 0, 0, 0, 0x4D57, 0, 0, 0x5154, 0x6D69, 0, 0x6B4A, 0x6259, 0, 0x327D, 0, 0x2D63,
-				0x4C56, 0x3459, 0, 0, 0x2761, 0x536E, 0x4350, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x337D, 0, 0x6455, 0, 0, 0x684F, 0, 0x436D, 0x3250, 0, 0,
-				0x7E4E, 0x285A, 0, 0, 0, 0, 0, 0x5078, 0, 0, 0x567D, 0, 0, 0, 0, 0x5178,
-				0, 0x5278, 0x535C, 0, 0, 0, 0, 0x625D, 0x797B, 0x415D, 0, 0x3563, 0, 0, 0, 0,
-				0, 0, 0x5D6D, 0x444E, 0, 0x214B, 0, 0, 0, 0, 0, 0, 0x635D, 0, 0, 0,
-				0, 0x5D7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2F79, 0, 0, 0, 0,
-				0, 0x7B52, 0x214F, 0x2864, 0, 0x3674, 0x7E6C, 0, 0, 0x2E63, 0x6D67, 0x417D, 0x625A, 0, 0, 0x3358,
-				0, 0, 0, 0x645D, 0x6F70, 0x7176, 0x707A, 0, 0, 0x7551, 0, 0, 0x4F5A, 0, 0x545C, 0,
-				0x265C, 0, 0x3F6F, 0, 0, 0, 0, 0, 0x4F4E, 0, 0x5960, 0, 0, 0, 0, 0,
-				0, 0x5659, 0x546C, 0x4B6A, 0, 0, 0x3F4A, 0x3055, 0, 0x694F, 0, 0, 0, 0, 0, 0x6D71,
-				0, 0x4F4C, 0, 0, 0, 0, 0x7864, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6D64, 0, 0, 0, 0, 0x5857, 0, 0x277D, 0, 0, 0,
-				0, 0x2B6A, 0x3276, 0, 0, 0, 0, 0x704F, 0x3D79, 0, 0, 0, 0, 0, 0, 0x7466,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5B4B, 0, 0,
-				0, 0, 0, 0, 0, 0x5173, 0, 0, 0, 0, 0x5169, 0x2973, 0x6050, 0x5269, 0, 0x635A,
-				0, 0, 0, 0, 0, 0, 0x5262, 0, 0x2276, 0x7461, 0, 0, 0, 0x645A, 0, 0,
-				0, 0, 0, 0x5567, 0x3F75, 0x224F, 0x2F4D, 0x234F, 0, 0, 0, 0x304D, 0x7E71, 0x2350, 0x2F61, 0x2378,
-				0, 0x264A, 0x3B77, 0x6A72, 0x485E, 0x5369, 0, 0, 0, 0, 0x495E, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x5E7D, 0x404A, 0, 0, 0, 0x6A79, 0x4E51, 0x546E, 0, 0x5254, 0x2359,
-				0x287D, 0x5957, 0x4E77, 0x3E7A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x564F, 0, 0x7057,
-				0, 0x616B, 0x4578, 0, 0, 0, 0, 0, 0x7A5C, 0, 0, 0x435D, 0, 0x5F79, 0, 0,
-				0, 0, 0, 0, 0, 0x6F67, 0, 0, 0, 0, 0x657D, 0x2376, 0, 0x7C59, 0x297D, 0,
-				0x6E67, 0, 0, 0, 0x6555, 0, 0, 0, 0, 0, 0x506F, 0, 0x314D, 0, 0, 0,
-				0, 0, 0, 0x2277,
-			};
+			return "\u367A\u0000\u0000\u4D4C\u0000\u7A5A\u0000\u4F76\u0000\u3869\u0000\u7558\u0000\u0000\u0000\u4E4C\u0000\u0000\u0000\u0000\u4D57\u0000\u0000\u5154\u6D69\u0000\u6B4A\u6259\u0000\u327D\u0000\u2D63\u4C56\u3459\u0000\u0000\u2761\u536E\u4350\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u337D\u0000\u6455\u0000\u0000\u684F\u0000\u436D\u3250\u0000\u0000\u7E4E\u285A\u0000\u0000\u0000\u0000\u0000\u5078\u0000\u0000\u567D\u0000\u0000\u0000\u0000\u5178\u0000\u5278\u535C\u0000\u0000\u0000\u0000\u625D\u797B\u415D\u0000\u3563\u0000\u0000\u0000\u0000\u0000\u0000\u5D6D\u444E\u0000\u214B\u0000\u0000\u0000\u0000\u0000\u0000\u635D\u0000\u0000\u0000\u0000\u5D7C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2F79\u0000\u0000\u0000\u0000\u0000\u7B52\u214F\u2864\u0000\u3674\u7E6C\u0000\u0000\u2E63\u6D67\u417D\u625A\u0000\u0000\u3358\u0000\u0000\u0000\u645D\u6F70\u7176\u707A\u0000\u0000\u7551\u0000\u0000\u4F5A\u0000\u545C\u0000\u265C\u0000\u3F6F\u0000\u0000\u0000\u0000\u0000\u4F4E\u0000\u5960\u0000\u0000\u0000\u0000\u0000\u0000\u5659\u546C\u4B6A\u0000\u0000\u3F4A\u3055\u0000\u694F\u0000\u0000\u0000\u0000\u0000\u6D71\u0000\u4F4C\u0000\u0000\u0000\u0000\u7864\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D64\u0000\u0000\u0000\u0000\u5857\u0000\u277D\u0000\u0000\u0000\u0000\u2B6A\u3276\u0000\u0000\u0000\u0000\u704F\u3D79\u0000\u0000\u0000\u0000\u0000\u0000\u7466\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5B4B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5173\u0000\u0000\u0000\u0000\u5169\u2973\u6050\u5269\u0000\u635A\u0000\u0000\u0000\u0000\u0000\u0000\u5262\u0000\u2276\u7461\u0000\u0000\u0000\u645A\u0000\u0000\u0000\u0000\u0000\u5567\u3F75\u224F\u2F4D\u234F\u0000\u0000\u0000\u304D\u7E71\u2350\u2F61\u2378\u0000\u264A\u3B77\u6A72\u485E\u5369\u0000\u0000\u0000\u0000\u495E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5E7D\u404A\u0000\u0000\u0000\u6A79\u4E51\u546E\u0000\u5254\u2359\u287D\u5957\u4E77\u3E7A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u564F\u0000\u7057\u0000\u616B\u4578\u0000\u0000\u0000\u0000\u0000\u7A5C\u0000\u0000\u435D\u0000\u5F79\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F67\u0000\u0000\u0000\u0000\u657D\u2376\u0000\u7C59\u297D\u0000\u6E67\u0000\u0000\u0000\u6555\u0000\u0000\u0000\u0000\u0000\u506F\u0000\u314D\u0000\u0000\u0000\u0000\u0000\u0000\u2277".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_557C = getOutput0_557C();
 		private static final char[] getOutput0_557C() {
-			return new char[] {
-				0x2670, 0, 0, 0, 0x534B, 0, 0, 0, 0x3C60, 0, 0x4A74, 0x7A54, 0, 0x2A7D, 0x6279, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3774, 0x427D, 0x307C, 0,
-				0x6C7D, 0x624A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3D7D, 0, 0x676A, 0x435F, 0x5251,
-				0x624E, 0, 0x2453,
-			};
+			return "\u2670\u0000\u0000\u0000\u534B\u0000\u0000\u0000\u3C60\u0000\u4A74\u7A54\u0000\u2A7D\u6279\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3774\u427D\u307C\u0000\u6C7D\u624A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D7D\u0000\u676A\u435F\u5251\u624E\u0000\u2453".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_56A5 = getOutput0_56A5();
 		private static final char[] getOutput0_56A5() {
-			return new char[] {
-				0x3F66, 0, 0, 0, 0, 0, 0, 0x2D5E, 0, 0x3F7A, 0, 0, 0, 0, 0, 0x7165,
-				0, 0, 0, 0, 0, 0, 0, 0x446D, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x2552, 0, 0, 0x6E7D, 0, 0, 0, 0x3675, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x7661, 0x4C5E, 0, 0, 0x5E7C, 0, 0x576C, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5D4D, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x3756, 0x334D, 0, 0, 0, 0, 0, 0, 0, 0, 0x5578, 0x5865,
-				0, 0, 0, 0x6A4F, 0, 0, 0x504F, 0, 0x4C6A, 0, 0, 0, 0, 0x2E6A, 0x2D6A, 0,
-				0, 0x7153, 0, 0x2553, 0, 0, 0, 0, 0, 0, 0x4F77, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x246E, 0, 0, 0, 0, 0x2450, 0, 0, 0x2272, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x7050, 0, 0, 0, 0, 0x2372, 0, 0x7877, 0, 0,
-				0, 0, 0x3350, 0, 0, 0x295B, 0, 0, 0x3B53, 0x6C4A, 0, 0x2671, 0x554B, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6777, 0, 0, 0x5E4D,
-				0, 0x2477, 0, 0, 0, 0x4078, 0, 0, 0, 0x5D53, 0, 0x504C, 0, 0, 0, 0,
-				0x264F, 0, 0, 0, 0, 0, 0, 0x7376, 0, 0, 0, 0, 0, 0x7761, 0, 0,
-				0, 0, 0, 0x5C53, 0, 0, 0x7E7A, 0, 0, 0, 0, 0, 0, 0, 0x277A, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x596B, 0, 0x274F, 0x2F6A,
-			};
+			return "\u3F66\u0000\u0000\u0000\u0000\u0000\u0000\u2D5E\u0000\u3F7A\u0000\u0000\u0000\u0000\u0000\u7165\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u446D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2552\u0000\u0000\u6E7D\u0000\u0000\u0000\u3675\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7661\u4C5E\u0000\u0000\u5E7C\u0000\u576C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D4D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3756\u334D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5578\u5865\u0000\u0000\u0000\u6A4F\u0000\u0000\u504F\u0000\u4C6A\u0000\u0000\u0000\u0000\u2E6A\u2D6A\u0000\u0000\u7153\u0000\u2553\u0000\u0000\u0000\u0000\u0000\u0000\u4F77\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u246E\u0000\u0000\u0000\u0000\u2450\u0000\u0000\u2272\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7050\u0000\u0000\u0000\u0000\u2372\u0000\u7877\u0000\u0000\u0000\u0000\u3350\u0000\u0000\u295B\u0000\u0000\u3B53\u6C4A\u0000\u2671\u554B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6777\u0000\u0000\u5E4D\u0000\u2477\u0000\u0000\u0000\u4078\u0000\u0000\u0000\u5D53\u0000\u504C\u0000\u0000\u0000\u0000\u264F\u0000\u0000\u0000\u0000\u0000\u0000\u7376\u0000\u0000\u0000\u0000\u0000\u7761\u0000\u0000\u0000\u0000\u0000\u5C53\u0000\u0000\u7E7A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u277A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u596B\u0000\u274F\u2F6A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_57C3 = getOutput0_57C3();
 		private static final char[] getOutput0_57C3() {
-			return new char[] {
-				0x6F64, 0, 0, 0, 0x3969, 0x5871, 0, 0, 0x5858, 0, 0, 0x7260, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3466, 0x7C5C, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7173, 0, 0,
-				0, 0x5063, 0, 0, 0x7B72, 0, 0x465B, 0x7150, 0, 0x7250, 0, 0, 0, 0x5C4F, 0, 0x5153,
-				0, 0, 0x314C, 0x5877, 0, 0x284B, 0x3C6B, 0x3E64,
-			};
+			return "\u6F64\u0000\u0000\u0000\u3969\u5871\u0000\u0000\u5858\u0000\u0000\u7260\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3466\u7C5C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7173\u0000\u0000\u0000\u5063\u0000\u0000\u7B72\u0000\u465B\u7150\u0000\u7250\u0000\u0000\u0000\u5C4F\u0000\u5153\u0000\u0000\u314C\u5877\u0000\u284B\u3C6B\u3E64".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_581E = getOutput0_581E();
 		private static final char[] getOutput0_581E() {
-			return new char[] {
-				0x5C74, 0, 0, 0x425C, 0, 0, 0x2770, 0, 0, 0x4066, 0, 0, 0x6D4A, 0, 0, 0,
-				0, 0x6B68, 0x6865, 0x435C, 0, 0, 0x5E6D, 0x7253, 0, 0, 0, 0, 0x774C, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x544E, 0x2B67, 0, 0,
-				0, 0x434B, 0, 0x3161, 0, 0, 0x3277, 0, 0, 0x7353, 0x5253, 0, 0x4075, 0, 0, 0,
-				0x5D5F, 0, 0, 0x736E, 0x7167, 0, 0x347D, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x4872, 0, 0, 0, 0x5273, 0, 0, 0x746E, 0,
-				0x5362, 0, 0, 0, 0, 0x514C, 0, 0x6A5F, 0, 0, 0, 0x3A69, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x5759, 0, 0, 0, 0, 0, 0, 0, 0, 0x4D75, 0,
-				0x7271, 0x477A, 0, 0, 0, 0, 0, 0, 0, 0, 0x7859, 0x4254, 0, 0, 0, 0,
-				0x6576, 0, 0, 0, 0, 0x455D, 0, 0, 0, 0, 0, 0, 0x7267, 0x5F6D, 0, 0,
-				0x4B4A, 0, 0, 0x7A5B, 0, 0, 0, 0x3568, 0, 0x2653, 0, 0, 0, 0, 0, 0,
-				0x357D, 0, 0, 0x4979, 0, 0x6264, 0, 0x3D7B, 0, 0, 0x2457, 0x454E, 0, 0, 0, 0,
-				0x554E, 0x6656, 0, 0, 0, 0, 0x3D65, 0, 0, 0, 0, 0, 0, 0x4D5E, 0x736C, 0,
-				0, 0x606D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6C6C, 0x3E7B, 0x6B5F, 0, 0x7861,
-			};
+			return "\u5C74\u0000\u0000\u425C\u0000\u0000\u2770\u0000\u0000\u4066\u0000\u0000\u6D4A\u0000\u0000\u0000\u0000\u6B68\u6865\u435C\u0000\u0000\u5E6D\u7253\u0000\u0000\u0000\u0000\u774C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u544E\u2B67\u0000\u0000\u0000\u434B\u0000\u3161\u0000\u0000\u3277\u0000\u0000\u7353\u5253\u0000\u4075\u0000\u0000\u0000\u5D5F\u0000\u0000\u736E\u7167\u0000\u347D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4872\u0000\u0000\u0000\u5273\u0000\u0000\u746E\u0000\u5362\u0000\u0000\u0000\u0000\u514C\u0000\u6A5F\u0000\u0000\u0000\u3A69\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5759\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D75\u0000\u7271\u477A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7859\u4254\u0000\u0000\u0000\u0000\u6576\u0000\u0000\u0000\u0000\u455D\u0000\u0000\u0000\u0000\u0000\u0000\u7267\u5F6D\u0000\u0000\u4B4A\u0000\u0000\u7A5B\u0000\u0000\u0000\u3568\u0000\u2653\u0000\u0000\u0000\u0000\u0000\u0000\u357D\u0000\u0000\u4979\u0000\u6264\u0000\u3D7B\u0000\u0000\u2457\u454E\u0000\u0000\u0000\u0000\u554E\u6656\u0000\u0000\u0000\u0000\u3D65\u0000\u0000\u0000\u0000\u0000\u0000\u4D5E\u736C\u0000\u0000\u606D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C6C\u3E7B\u6B5F\u0000\u7861".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_590F = getOutput0_590F();
 		private static final char[] getOutput0_590F() {
-			return new char[] {
-				0x3E79, 0, 0, 0, 0, 0x7350, 0x2A60, 0x6268, 0, 0, 0x5462, 0x7D52, 0, 0x2865, 0, 0,
-				0, 0, 0, 0x5359, 0, 0, 0, 0, 0x5E53, 0, 0x3874, 0x3C77, 0x7D5C, 0, 0x6C68, 0x6764,
-				0, 0, 0x7763, 0, 0, 0, 0, 0, 0x286C, 0, 0, 0, 0, 0, 0, 0x717A,
-				0, 0, 0, 0, 0, 0x7265, 0, 0, 0x7450, 0x2F52, 0x655C, 0, 0, 0, 0, 0x2550,
-				0x3471, 0x317C, 0x784C, 0, 0, 0x465D, 0x517A, 0, 0x5F77, 0, 0, 0x287A, 0, 0, 0, 0,
-				0, 0x756E, 0, 0x4E5E, 0, 0, 0, 0, 0x7367, 0, 0, 0x2C77, 0x446B, 0x616D, 0x2B60, 0x475D,
-				0, 0, 0, 0, 0x3352, 0x3F52, 0, 0, 0, 0x4C4A, 0, 0, 0, 0, 0x3F7B, 0,
-				0, 0, 0, 0x7D65, 0x655D, 0x4D58, 0, 0, 0, 0, 0, 0x746C, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x7550, 0, 0, 0x6D68, 0x5250, 0, 0x5859, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x6676, 0, 0, 0x2A5B, 0, 0, 0, 0x6077, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5958, 0, 0x2374, 0, 0, 0x5D74,
-				0, 0, 0, 0, 0x516F, 0, 0, 0x3559, 0, 0, 0x2B6D, 0, 0x3763, 0, 0, 0,
-				0, 0x3B6E, 0x344D, 0, 0x7360, 0x4D6A, 0, 0, 0, 0, 0x756C, 0x6E68, 0, 0x294B, 0x2F71, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x4D4A, 0, 0x296C, 0, 0x6B72, 0, 0x6F7D, 0, 0x7379,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4166, 0, 0, 0x586C, 0, 0, 0,
-				0x2C6D, 0, 0x4E6A, 0, 0x5F68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x4F5E, 0, 0, 0, 0, 0, 0, 0x2652, 0, 0, 0x7467, 0x5651, 0, 0,
-				0x4266, 0x6363, 0, 0, 0, 0, 0x3064, 0, 0, 0, 0x3458, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x2576, 0, 0, 0, 0, 0, 0x5E73, 0, 0,
-				0, 0, 0x2557, 0, 0, 0, 0, 0x6877, 0, 0, 0x4668, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x667B, 0, 0, 0, 0,
-				0, 0, 0, 0x665D, 0, 0, 0, 0x7E5C,
-			};
+			return "\u3E79\u0000\u0000\u0000\u0000\u7350\u2A60\u6268\u0000\u0000\u5462\u7D52\u0000\u2865\u0000\u0000\u0000\u0000\u0000\u5359\u0000\u0000\u0000\u0000\u5E53\u0000\u3874\u3C77\u7D5C\u0000\u6C68\u6764\u0000\u0000\u7763\u0000\u0000\u0000\u0000\u0000\u286C\u0000\u0000\u0000\u0000\u0000\u0000\u717A\u0000\u0000\u0000\u0000\u0000\u7265\u0000\u0000\u7450\u2F52\u655C\u0000\u0000\u0000\u0000\u2550\u3471\u317C\u784C\u0000\u0000\u465D\u517A\u0000\u5F77\u0000\u0000\u287A\u0000\u0000\u0000\u0000\u0000\u756E\u0000\u4E5E\u0000\u0000\u0000\u0000\u7367\u0000\u0000\u2C77\u446B\u616D\u2B60\u475D\u0000\u0000\u0000\u0000\u3352\u3F52\u0000\u0000\u0000\u4C4A\u0000\u0000\u0000\u0000\u3F7B\u0000\u0000\u0000\u0000\u7D65\u655D\u4D58\u0000\u0000\u0000\u0000\u0000\u746C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7550\u0000\u0000\u6D68\u5250\u0000\u5859\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6676\u0000\u0000\u2A5B\u0000\u0000\u0000\u6077\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5958\u0000\u2374\u0000\u0000\u5D74\u0000\u0000\u0000\u0000\u516F\u0000\u0000\u3559\u0000\u0000\u2B6D\u0000\u3763\u0000\u0000\u0000\u0000\u3B6E\u344D\u0000\u7360\u4D6A\u0000\u0000\u0000\u0000\u756C\u6E68\u0000\u294B\u2F71\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D4A\u0000\u296C\u0000\u6B72\u0000\u6F7D\u0000\u7379\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4166\u0000\u0000\u586C\u0000\u0000\u0000\u2C6D\u0000\u4E6A\u0000\u5F68\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4F5E\u0000\u0000\u0000\u0000\u0000\u0000\u2652\u0000\u0000\u7467\u5651\u0000\u0000\u4266\u6363\u0000\u0000\u0000\u0000\u3064\u0000\u0000\u0000\u3458\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2576\u0000\u0000\u0000\u0000\u0000\u5E73\u0000\u0000\u0000\u0000\u2557\u0000\u0000\u0000\u0000\u6877\u0000\u0000\u4668\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u667B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u665D\u0000\u0000\u0000\u7E5C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_5B40 = getOutput0_5B40();
 		private static final char[] getOutput0_5B40() {
-			return new char[] {
-				0x455F, 0, 0, 0x3E65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x2D6D, 0x6A7A, 0, 0, 0x6E4D, 0x266D, 0, 0x2E6D, 0x6D70, 0, 0x215D, 0, 0x2F6D, 0x787C, 0, 0x6B58,
-				0, 0, 0, 0x794C, 0x354D, 0, 0, 0, 0, 0x297A, 0, 0x5D61, 0, 0, 0, 0,
-				0x5562, 0x4F6D, 0, 0, 0, 0x225D, 0, 0, 0x4A79, 0, 0x686A, 0, 0x6D65, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6B53, 0, 0x5469, 0x7A61, 0x4C64, 0, 0x6461, 0x4768, 0, 0, 0x5B4E,
-				0, 0, 0, 0x555C, 0, 0x3577, 0x737C, 0x7370, 0x2F4E, 0x3571, 0x526F, 0x4868, 0x716B, 0, 0, 0,
-				0, 0, 0x544B, 0x3E60, 0x7863, 0x696A, 0x327C, 0, 0, 0, 0, 0, 0x7460, 0, 0x604F, 0,
-				0x256E, 0, 0, 0x2A7A, 0x4366, 0x3261, 0x2B4A, 0, 0x6463, 0x3B69, 0, 0, 0, 0, 0, 0x5662,
-				0x7273, 0, 0x566E, 0x326A, 0x7650, 0x596C, 0x4B5A, 0x284F, 0, 0, 0, 0, 0x235D, 0, 0, 0,
-				0x5B58, 0, 0x4E79, 0x5569, 0x5163, 0, 0, 0x3C52, 0, 0, 0, 0, 0, 0, 0x2C58, 0x4C73,
-				0, 0x7B4D, 0x5676, 0, 0x7567, 0x6F68, 0x7963, 0x3B52, 0x7373, 0x7B63, 0, 0x505E, 0x304E, 0, 0x7756, 0x5971,
-				0, 0, 0, 0, 0, 0x4175, 0x445C, 0, 0x3B75, 0, 0x515E, 0, 0, 0, 0, 0,
-				0, 0x665C, 0, 0, 0x525E, 0, 0, 0x626D, 0x766E, 0x4F6A, 0x6E70, 0x7C63, 0, 0x5F53, 0x7453, 0x3361,
-				0, 0x3461, 0, 0, 0, 0, 0x5374, 0, 0, 0x465F, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x5669, 0, 0, 0, 0x2B5B, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x2676, 0, 0, 0, 0, 0, 0, 0x3963, 0x456B, 0x2974, 0x364D, 0x7952, 0, 0x2D5A, 0x6352,
-				0x514F, 0, 0, 0, 0, 0x5C4B, 0x7A4C, 0, 0x5D4F, 0, 0, 0x2968, 0, 0x3B63, 0x3A63, 0,
-				0, 0x5A60, 0, 0, 0, 0x776E, 0, 0, 0, 0, 0, 0x335C, 0, 0, 0, 0,
-				0x7553, 0, 0x2657, 0, 0x3576, 0x5B57, 0, 0, 0, 0, 0, 0, 0x5561, 0, 0, 0x6A54,
-				0, 0x235F, 0, 0, 0, 0, 0, 0, 0, 0x5F7D,
-			};
+			return "\u455F\u0000\u0000\u3E65\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D6D\u6A7A\u0000\u0000\u6E4D\u266D\u0000\u2E6D\u6D70\u0000\u215D\u0000\u2F6D\u787C\u0000\u6B58\u0000\u0000\u0000\u794C\u354D\u0000\u0000\u0000\u0000\u297A\u0000\u5D61\u0000\u0000\u0000\u0000\u5562\u4F6D\u0000\u0000\u0000\u225D\u0000\u0000\u4A79\u0000\u686A\u0000\u6D65\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B53\u0000\u5469\u7A61\u4C64\u0000\u6461\u4768\u0000\u0000\u5B4E\u0000\u0000\u0000\u555C\u0000\u3577\u737C\u7370\u2F4E\u3571\u526F\u4868\u716B\u0000\u0000\u0000\u0000\u0000\u544B\u3E60\u7863\u696A\u327C\u0000\u0000\u0000\u0000\u0000\u7460\u0000\u604F\u0000\u256E\u0000\u0000\u2A7A\u4366\u3261\u2B4A\u0000\u6463\u3B69\u0000\u0000\u0000\u0000\u0000\u5662\u7273\u0000\u566E\u326A\u7650\u596C\u4B5A\u284F\u0000\u0000\u0000\u0000\u235D\u0000\u0000\u0000\u5B58\u0000\u4E79\u5569\u5163\u0000\u0000\u3C52\u0000\u0000\u0000\u0000\u0000\u0000\u2C58\u4C73\u0000\u7B4D\u5676\u0000\u7567\u6F68\u7963\u3B52\u7373\u7B63\u0000\u505E\u304E\u0000\u7756\u5971\u0000\u0000\u0000\u0000\u0000\u4175\u445C\u0000\u3B75\u0000\u515E\u0000\u0000\u0000\u0000\u0000\u0000\u665C\u0000\u0000\u525E\u0000\u0000\u626D\u766E\u4F6A\u6E70\u7C63\u0000\u5F53\u7453\u3361\u0000\u3461\u0000\u0000\u0000\u0000\u5374\u0000\u0000\u465F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5669\u0000\u0000\u0000\u2B5B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2676\u0000\u0000\u0000\u0000\u0000\u0000\u3963\u456B\u2974\u364D\u7952\u0000\u2D5A\u6352\u514F\u0000\u0000\u0000\u0000\u5C4B\u7A4C\u0000\u5D4F\u0000\u0000\u2968\u0000\u3B63\u3A63\u0000\u0000\u5A60\u0000\u0000\u0000\u776E\u0000\u0000\u0000\u0000\u0000\u335C\u0000\u0000\u0000\u0000\u7553\u0000\u2657\u0000\u3576\u5B57\u0000\u0000\u0000\u0000\u0000\u0000\u5561\u0000\u0000\u6A54\u0000\u235F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F7D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_5CD9 = getOutput0_5CD9();
 		private static final char[] getOutput0_5CD9() {
-			return new char[] {
-				0x3976, 0, 0, 0, 0, 0, 0, 0x475F, 0, 0, 0, 0, 0, 0, 0, 0x3164,
-				0, 0, 0, 0, 0, 0, 0x675C, 0x685C, 0, 0, 0, 0x567A, 0, 0x7653, 0, 0,
-				0, 0, 0x5A71, 0, 0x727A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7D62, 0,
-				0, 0, 0, 0, 0x4F55, 0x7850, 0, 0, 0x5F4D, 0, 0, 0x4B75, 0, 0x7064, 0x2B4B, 0,
-				0x4457, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7E62, 0,
-				0x5A5D,
-			};
+			return "\u3976\u0000\u0000\u0000\u0000\u0000\u0000\u475F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3164\u0000\u0000\u0000\u0000\u0000\u0000\u675C\u685C\u0000\u0000\u0000\u567A\u0000\u7653\u0000\u0000\u0000\u0000\u5A71\u0000\u727A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D62\u0000\u0000\u0000\u0000\u0000\u4F55\u7850\u0000\u0000\u5F4D\u0000\u0000\u4B75\u0000\u7064\u2B4B\u0000\u4457\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7E62\u0000\u5A5D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_5D9D = getOutput0_5D9D();
 		private static final char[] getOutput0_5D9D() {
-			return new char[] {
-				0x7154, 0, 0, 0x644E, 0, 0x7268, 0, 0, 0, 0, 0, 0, 0, 0x7565, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2E67, 0, 0x3A56, 0, 0x6C5F,
-				0x4064, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6468, 0, 0, 0, 0, 0x3558, 0, 0, 0, 0x5C64, 0, 0, 0, 0, 0, 0,
-				0x3974, 0x3671, 0, 0, 0x5E62, 0x3561, 0, 0, 0x6F4D, 0x2771, 0x654E, 0x5D4B, 0, 0, 0x6359, 0,
-				0, 0x2C73, 0, 0, 0x7950, 0x2B6C, 0x535E, 0x6977, 0, 0, 0x7579, 0, 0, 0, 0, 0,
-				0x5E61, 0x6E4B, 0, 0, 0, 0x3C63, 0x5678, 0, 0, 0x6E5B, 0, 0, 0, 0, 0, 0x717D,
-				0, 0, 0, 0, 0x3677, 0, 0, 0, 0, 0x5E74, 0, 0, 0x6D72, 0, 0x595B, 0,
-				0x2870, 0, 0, 0, 0, 0, 0, 0, 0x7D61, 0, 0, 0, 0, 0, 0x545E, 0,
-				0x2C60, 0, 0, 0, 0, 0, 0x636D, 0, 0, 0x6153, 0, 0x485F, 0, 0, 0, 0,
-				0x3659, 0, 0x2C7D, 0x536F, 0, 0, 0, 0x4164, 0x6B78, 0, 0x2C5B, 0, 0, 0, 0, 0x467C,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x2D58, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x3A76, 0, 0x5F5B, 0x5353, 0x4778, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x4E4A, 0x4178, 0x3452, 0, 0, 0x345C, 0x397A, 0x4F4A, 0, 0x337C, 0x6A6A,
-				0x6B6A, 0x7A50, 0, 0, 0, 0, 0, 0x646D, 0, 0, 0x675D, 0, 0, 0x495F, 0, 0,
-				0, 0, 0x6D5F, 0, 0, 0, 0, 0, 0x3C6E, 0, 0x416F, 0, 0, 0x524C, 0, 0x245D,
-				0, 0, 0, 0x4A5F, 0, 0, 0, 0, 0, 0x7853, 0x2871, 0, 0, 0, 0x374D, 0,
-				0x546F, 0, 0, 0, 0, 0, 0, 0, 0x5D64, 0x6E5F, 0x2C4B, 0x3C69, 0, 0, 0, 0,
-				0, 0x6C6A, 0, 0, 0, 0x4B5F, 0, 0, 0, 0, 0, 0x3F79, 0x2F56, 0x4655, 0, 0,
-				0, 0, 0, 0x2A4F, 0, 0, 0x294E, 0, 0, 0x7856, 0, 0, 0, 0x3771, 0x786E, 0,
-				0, 0, 0x5959, 0x5F73, 0, 0x4878, 0x464E, 0, 0, 0, 0, 0, 0, 0, 0, 0x6655,
-				0, 0, 0, 0, 0, 0, 0x6674, 0, 0, 0x4566, 0x556F, 0, 0, 0x6F4B, 0x5F7C, 0,
-				0, 0, 0, 0, 0x275C, 0, 0, 0x6756, 0, 0, 0, 0, 0, 0x4978, 0, 0,
-				0, 0, 0x5263, 0, 0x3D63, 0, 0x614F, 0x4070, 0x5A6C, 0, 0x575D, 0x707B, 0, 0, 0x2C6C, 0,
-				0, 0, 0x2970, 0, 0, 0, 0, 0, 0, 0x577A, 0x417B, 0, 0x4052, 0, 0, 0,
-				0, 0, 0, 0, 0x3065, 0, 0, 0, 0x656D, 0, 0, 0, 0, 0x2D4B, 0, 0x3079,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2577, 0, 0x2E4B, 0, 0x2F5A,
-				0, 0x3658, 0, 0, 0, 0, 0, 0, 0, 0x2753, 0x327B, 0, 0x447D, 0, 0x2D6C, 0,
-				0, 0, 0, 0, 0, 0x217B, 0, 0, 0, 0x6965, 0x6E69, 0, 0x7473, 0x7378, 0x4170, 0x2F5E,
-				0x3078, 0, 0, 0x6073, 0x2F67, 0, 0, 0, 0, 0, 0x2D5B, 0, 0x3566, 0, 0, 0x2879,
-				0, 0, 0x585D, 0x5968, 0x566F, 0, 0, 0, 0x6253, 0, 0x5F62, 0, 0, 0x607C, 0x4857, 0x2D7D,
-				0, 0, 0, 0x6F5F, 0x534C, 0x7953, 0, 0, 0, 0, 0x7054, 0x475B, 0x555E, 0, 0, 0,
-				0, 0x7470, 0, 0x5055, 0x5965, 0, 0, 0, 0, 0, 0, 0x477C, 0x565C, 0x6062, 0, 0,
-				0, 0x305A, 0, 0, 0, 0, 0, 0, 0x2373, 0, 0x6C53, 0, 0x4B74, 0, 0, 0,
-				0x457D, 0, 0, 0, 0, 0, 0x7D63, 0, 0x3179, 0, 0, 0, 0, 0, 0, 0x7B50,
-				0x5B6C, 0, 0, 0, 0, 0, 0, 0, 0, 0x3C75, 0x2472, 0x4E58, 0x4F58, 0, 0, 0,
-				0, 0, 0, 0x7775, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6176, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x3752, 0, 0, 0, 0, 0, 0, 0,
-				0x6C7B, 0, 0x485D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x6864, 0, 0, 0x4152, 0, 0, 0, 0x5778, 0, 0, 0, 0, 0, 0x3B56,
-				0x565E, 0, 0, 0x3D77, 0x2E6C, 0, 0, 0, 0x6150, 0, 0x7560, 0x336A, 0, 0x564E, 0, 0,
-				0, 0, 0x254C,
-			};
+			return "\u7154\u0000\u0000\u644E\u0000\u7268\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7565\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2E67\u0000\u3A56\u0000\u6C5F\u4064\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6468\u0000\u0000\u0000\u0000\u3558\u0000\u0000\u0000\u5C64\u0000\u0000\u0000\u0000\u0000\u0000\u3974\u3671\u0000\u0000\u5E62\u3561\u0000\u0000\u6F4D\u2771\u654E\u5D4B\u0000\u0000\u6359\u0000\u0000\u2C73\u0000\u0000\u7950\u2B6C\u535E\u6977\u0000\u0000\u7579\u0000\u0000\u0000\u0000\u0000\u5E61\u6E4B\u0000\u0000\u0000\u3C63\u5678\u0000\u0000\u6E5B\u0000\u0000\u0000\u0000\u0000\u717D\u0000\u0000\u0000\u0000\u3677\u0000\u0000\u0000\u0000\u5E74\u0000\u0000\u6D72\u0000\u595B\u0000\u2870\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D61\u0000\u0000\u0000\u0000\u0000\u545E\u0000\u2C60\u0000\u0000\u0000\u0000\u0000\u636D\u0000\u0000\u6153\u0000\u485F\u0000\u0000\u0000\u0000\u3659\u0000\u2C7D\u536F\u0000\u0000\u0000\u4164\u6B78\u0000\u2C5B\u0000\u0000\u0000\u0000\u467C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3A76\u0000\u5F5B\u5353\u4778\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E4A\u4178\u3452\u0000\u0000\u345C\u397A\u4F4A\u0000\u337C\u6A6A\u6B6A\u7A50\u0000\u0000\u0000\u0000\u0000\u646D\u0000\u0000\u675D\u0000\u0000\u495F\u0000\u0000\u0000\u0000\u6D5F\u0000\u0000\u0000\u0000\u0000\u3C6E\u0000\u416F\u0000\u0000\u524C\u0000\u245D\u0000\u0000\u0000\u4A5F\u0000\u0000\u0000\u0000\u0000\u7853\u2871\u0000\u0000\u0000\u374D\u0000\u546F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D64\u6E5F\u2C4B\u3C69\u0000\u0000\u0000\u0000\u0000\u6C6A\u0000\u0000\u0000\u4B5F\u0000\u0000\u0000\u0000\u0000\u3F79\u2F56\u4655\u0000\u0000\u0000\u0000\u0000\u2A4F\u0000\u0000\u294E\u0000\u0000\u7856\u0000\u0000\u0000\u3771\u786E\u0000\u0000\u0000\u5959\u5F73\u0000\u4878\u464E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6655\u0000\u0000\u0000\u0000\u0000\u0000\u6674\u0000\u0000\u4566\u556F\u0000\u0000\u6F4B\u5F7C\u0000\u0000\u0000\u0000\u0000\u275C\u0000\u0000\u6756\u0000\u0000\u0000\u0000\u0000\u4978\u0000\u0000\u0000\u0000\u5263\u0000\u3D63\u0000\u614F\u4070\u5A6C\u0000\u575D\u707B\u0000\u0000\u2C6C\u0000\u0000\u0000\u2970\u0000\u0000\u0000\u0000\u0000\u0000\u577A\u417B\u0000\u4052\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3065\u0000\u0000\u0000\u656D\u0000\u0000\u0000\u0000\u2D4B\u0000\u3079\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2577\u0000\u2E4B\u0000\u2F5A\u0000\u3658\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2753\u327B\u0000\u447D\u0000\u2D6C\u0000\u0000\u0000\u0000\u0000\u0000\u217B\u0000\u0000\u0000\u6965\u6E69\u0000\u7473\u7378\u4170\u2F5E\u3078\u0000\u0000\u6073\u2F67\u0000\u0000\u0000\u0000\u0000\u2D5B\u0000\u3566\u0000\u0000\u2879\u0000\u0000\u585D\u5968\u566F\u0000\u0000\u0000\u6253\u0000\u5F62\u0000\u0000\u607C\u4857\u2D7D\u0000\u0000\u0000\u6F5F\u534C\u7953\u0000\u0000\u0000\u0000\u7054\u475B\u555E\u0000\u0000\u0000\u0000\u7470\u0000\u5055\u5965\u0000\u0000\u0000\u0000\u0000\u0000\u477C\u565C\u6062\u0000\u0000\u0000\u305A\u0000\u0000\u0000\u0000\u0000\u0000\u2373\u0000\u6C53\u0000\u4B74\u0000\u0000\u0000\u457D\u0000\u0000\u0000\u0000\u0000\u7D63\u0000\u3179\u0000\u0000\u0000\u0000\u0000\u0000\u7B50\u5B6C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C75\u2472\u4E58\u4F58\u0000\u0000\u0000\u0000\u0000\u0000\u7775\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6176\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3752\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C7B\u0000\u485D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6864\u0000\u0000\u4152\u0000\u0000\u0000\u5778\u0000\u0000\u0000\u0000\u0000\u3B56\u565E\u0000\u0000\u3D77\u2E6C\u0000\u0000\u0000\u6150\u0000\u7560\u336A\u0000\u564E\u0000\u0000\u0000\u0000\u254C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6041 = getOutput0_6041();
 		private static final char[] getOutput0_6041() {
-			return new char[] {
-				0x766C, 0x6162, 0x3E63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x487C, 0, 0, 0x704D,
-				0, 0x7679, 0, 0, 0x705F, 0, 0, 0, 0x3F65, 0, 0, 0, 0x3F4E, 0, 0, 0,
-				0, 0x617C, 0x306D, 0x517D, 0x3B76, 0, 0, 0x4F79, 0x5A6B, 0x414A, 0, 0x3852, 0x714D, 0, 0x5363, 0x667D,
-			};
+			return "\u766C\u6162\u3E63\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u487C\u0000\u0000\u704D\u0000\u7679\u0000\u0000\u705F\u0000\u0000\u0000\u3F65\u0000\u0000\u0000\u3F4E\u0000\u0000\u0000\u0000\u617C\u306D\u517D\u3B76\u0000\u0000\u4F79\u5A6B\u414A\u0000\u3852\u714D\u0000\u5363\u667D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6085 = getOutput0_6085();
 		private static final char[] getOutput0_6085() {
-			return new char[] {
-				0x6D66, 0, 0, 0, 0x7A63, 0, 0, 0x2A70, 0x5079, 0, 0, 0, 0, 0, 0, 0x627C,
-				0, 0x2778, 0, 0, 0, 0x6561, 0x796E, 0, 0, 0, 0x7667, 0x6D6A, 0, 0, 0x347C, 0x4275,
-				0, 0, 0x5C57, 0, 0, 0, 0, 0, 0, 0, 0, 0x7570, 0, 0x685D, 0x6D53, 0x7C75,
-				0, 0x3F5A, 0, 0x7B4C, 0, 0, 0, 0x7A53, 0x2474, 0, 0, 0, 0, 0, 0, 0,
-				0x576F, 0, 0x4354, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x637B, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6D7B, 0, 0x2D60, 0, 0, 0x6E6A, 0x337B, 0x4264, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6776, 0x5D52, 0, 0x4C5F, 0,
-				0, 0x497C, 0, 0, 0x2965, 0x7660, 0x3376, 0, 0, 0, 0, 0, 0x7E61, 0, 0, 0,
-				0, 0x704B, 0, 0x6F6A, 0x706A, 0, 0, 0, 0x405A, 0x3478, 0x726B, 0, 0, 0, 0, 0,
-				0x4364, 0, 0, 0, 0, 0x5769, 0x7164, 0, 0, 0, 0x6F4A, 0, 0, 0, 0, 0,
-				0, 0, 0x574E, 0, 0, 0, 0, 0, 0, 0, 0, 0x4A7C, 0, 0, 0, 0x6173,
-				0, 0, 0x444B, 0, 0, 0, 0, 0x6563, 0, 0x454B, 0x346A, 0, 0, 0x3D69, 0, 0x4957,
-				0, 0, 0x5B6B, 0x316D, 0, 0x434C, 0x3E77, 0x4B7C, 0, 0, 0, 0, 0, 0, 0x7478, 0,
-				0x3759, 0, 0, 0x5373, 0x5473, 0, 0, 0, 0x6477, 0, 0x5177, 0, 0, 0x3758, 0x314E, 0x424A,
-				0, 0, 0x347B, 0x464B, 0, 0, 0x7670, 0, 0, 0x6755, 0, 0x506A, 0, 0, 0, 0,
-				0, 0x544C, 0x2F4B, 0, 0, 0, 0, 0, 0x2A74, 0x2F69, 0, 0, 0x4375, 0x5869, 0, 0,
-				0, 0, 0, 0, 0, 0x695D, 0, 0, 0, 0x7371, 0, 0x7B55, 0x3B5E, 0, 0, 0x7B74,
-				0, 0, 0, 0x737D, 0x727D, 0x2677, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x495D,
-				0, 0, 0x5354, 0, 0x284C, 0, 0x415A, 0x554C, 0, 0x6459, 0, 0, 0, 0x4A7A, 0, 0,
-				0, 0x6365, 0, 0, 0, 0x3C53, 0, 0, 0, 0x704A, 0, 0, 0, 0, 0x4450, 0,
-				0, 0, 0x504A, 0x2B7A, 0x6B6B, 0x7867, 0x6559,
-			};
+			return "\u6D66\u0000\u0000\u0000\u7A63\u0000\u0000\u2A70\u5079\u0000\u0000\u0000\u0000\u0000\u0000\u627C\u0000\u2778\u0000\u0000\u0000\u6561\u796E\u0000\u0000\u0000\u7667\u6D6A\u0000\u0000\u347C\u4275\u0000\u0000\u5C57\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7570\u0000\u685D\u6D53\u7C75\u0000\u3F5A\u0000\u7B4C\u0000\u0000\u0000\u7A53\u2474\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u576F\u0000\u4354\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u637B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D7B\u0000\u2D60\u0000\u0000\u6E6A\u337B\u4264\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6776\u5D52\u0000\u4C5F\u0000\u0000\u497C\u0000\u0000\u2965\u7660\u3376\u0000\u0000\u0000\u0000\u0000\u7E61\u0000\u0000\u0000\u0000\u704B\u0000\u6F6A\u706A\u0000\u0000\u0000\u405A\u3478\u726B\u0000\u0000\u0000\u0000\u0000\u4364\u0000\u0000\u0000\u0000\u5769\u7164\u0000\u0000\u0000\u6F4A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u574E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4A7C\u0000\u0000\u0000\u6173\u0000\u0000\u444B\u0000\u0000\u0000\u0000\u6563\u0000\u454B\u346A\u0000\u0000\u3D69\u0000\u4957\u0000\u0000\u5B6B\u316D\u0000\u434C\u3E77\u4B7C\u0000\u0000\u0000\u0000\u0000\u0000\u7478\u0000\u3759\u0000\u0000\u5373\u5473\u0000\u0000\u0000\u6477\u0000\u5177\u0000\u0000\u3758\u314E\u424A\u0000\u0000\u347B\u464B\u0000\u0000\u7670\u0000\u0000\u6755\u0000\u506A\u0000\u0000\u0000\u0000\u0000\u544C\u2F4B\u0000\u0000\u0000\u0000\u0000\u2A74\u2F69\u0000\u0000\u4375\u5869\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u695D\u0000\u0000\u0000\u7371\u0000\u7B55\u3B5E\u0000\u0000\u7B74\u0000\u0000\u0000\u737D\u727D\u2677\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u495D\u0000\u0000\u5354\u0000\u284C\u0000\u415A\u554C\u0000\u6459\u0000\u0000\u0000\u4A7A\u0000\u0000\u0000\u6365\u0000\u0000\u0000\u3C53\u0000\u0000\u0000\u704A\u0000\u0000\u0000\u0000\u4450\u0000\u0000\u0000\u504A\u2B7A\u6B6B\u7867\u6559".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_61E6 = getOutput0_61E6();
 		private static final char[] getOutput0_61E6() {
-			return new char[] {
-				0x5751, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2473, 0, 0, 0,
-				0x7B54, 0x637C, 0x587A, 0, 0x5573, 0, 0x2B4F, 0, 0, 0x736B, 0x7C55, 0, 0, 0, 0, 0,
-				0, 0x5453, 0x7C4D, 0, 0x6659, 0, 0x7962, 0x2162, 0x546B, 0, 0x7760, 0x3264, 0x7C4C, 0, 0, 0,
-				0x647B, 0, 0, 0, 0x2B74, 0, 0, 0, 0, 0x3D50, 0, 0x714A, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x386F, 0, 0, 0, 0x4057, 0, 0x7A6E, 0x747D, 0, 0, 0x6353, 0,
-				0x427B, 0, 0, 0, 0, 0, 0, 0, 0x6855, 0x2E5B, 0x3661, 0x3778, 0, 0, 0, 0,
-				0, 0x3F60, 0x437B, 0x6A5D, 0, 0x2262, 0, 0x266E, 0, 0, 0, 0, 0, 0x6876, 0, 0,
-				0, 0, 0x7576,
-			};
+			return "\u5751\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2473\u0000\u0000\u0000\u7B54\u637C\u587A\u0000\u5573\u0000\u2B4F\u0000\u0000\u736B\u7C55\u0000\u0000\u0000\u0000\u0000\u0000\u5453\u7C4D\u0000\u6659\u0000\u7962\u2162\u546B\u0000\u7760\u3264\u7C4C\u0000\u0000\u0000\u647B\u0000\u0000\u0000\u2B74\u0000\u0000\u0000\u0000\u3D50\u0000\u714A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u386F\u0000\u0000\u0000\u4057\u0000\u7A6E\u747D\u0000\u0000\u6353\u0000\u427B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6855\u2E5B\u3661\u3778\u0000\u0000\u0000\u0000\u0000\u3F60\u437B\u6A5D\u0000\u2262\u0000\u266E\u0000\u0000\u0000\u0000\u0000\u6876\u0000\u0000\u0000\u0000\u7576".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_626E = getOutput0_626E();
 		private static final char[] getOutput0_626E() {
-			return new char[] {
-				0x4A5D, 0, 0, 0x6250, 0, 0, 0, 0, 0x265D, 0, 0, 0x6B5D, 0, 0, 0x7964, 0,
-				0, 0x2F63, 0x7C50, 0, 0, 0, 0x7C74, 0, 0, 0, 0, 0x3C4C, 0x6A77, 0, 0, 0,
-				0, 0, 0, 0x6465, 0x715F, 0, 0, 0x6177, 0, 0x7779, 0x396F, 0, 0, 0x5878, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2979, 0, 0,
-				0, 0, 0, 0x5978, 0, 0, 0, 0x3D6E, 0, 0, 0, 0x4658, 0, 0, 0x6364, 0x4E75,
-				0, 0, 0, 0, 0x595D, 0, 0, 0, 0, 0x6759, 0x3952, 0x4355, 0, 0, 0x655A, 0x505A,
-				0, 0x5951, 0x584E, 0, 0x5E4B, 0x2C74, 0x7B5A, 0, 0x6976, 0x7368, 0x2C4F, 0x7070, 0, 0x7D74, 0x485B, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x404E, 0x5463,
-				0x4F51, 0x7571, 0, 0x724D, 0, 0x6B4F, 0, 0, 0, 0x384D, 0, 0, 0, 0, 0, 0,
-				0x2663, 0x5A51, 0, 0x2572, 0, 0, 0, 0, 0, 0x2672, 0, 0x4E64, 0, 0, 0, 0,
-				0, 0, 0, 0x7B53,
-			};
+			return "\u4A5D\u0000\u0000\u6250\u0000\u0000\u0000\u0000\u265D\u0000\u0000\u6B5D\u0000\u0000\u7964\u0000\u0000\u2F63\u7C50\u0000\u0000\u0000\u7C74\u0000\u0000\u0000\u0000\u3C4C\u6A77\u0000\u0000\u0000\u0000\u0000\u0000\u6465\u715F\u0000\u0000\u6177\u0000\u7779\u396F\u0000\u0000\u5878\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2979\u0000\u0000\u0000\u0000\u0000\u5978\u0000\u0000\u0000\u3D6E\u0000\u0000\u0000\u4658\u0000\u0000\u6364\u4E75\u0000\u0000\u0000\u0000\u595D\u0000\u0000\u0000\u0000\u6759\u3952\u4355\u0000\u0000\u655A\u505A\u0000\u5951\u584E\u0000\u5E4B\u2C74\u7B5A\u0000\u6976\u7368\u2C4F\u7070\u0000\u7D74\u485B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u404E\u5463\u4F51\u7571\u0000\u724D\u0000\u6B4F\u0000\u0000\u0000\u384D\u0000\u0000\u0000\u0000\u0000\u0000\u2663\u5A51\u0000\u2572\u0000\u0000\u0000\u0000\u0000\u2672\u0000\u4E64\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B53".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6367 = getOutput0_6367();
 		private static final char[] getOutput0_6367() {
-			return new char[] {
-				0x695C, 0x575E, 0, 0, 0, 0, 0, 0x5F4B, 0, 0, 0, 0x6C4F, 0, 0, 0, 0,
-				0x5F74, 0, 0, 0x7451, 0x3A52, 0, 0, 0, 0x725F, 0, 0, 0, 0x3761, 0, 0, 0,
-				0, 0x2362, 0x7C53, 0, 0, 0x666D, 0, 0, 0, 0, 0, 0x495B, 0, 0, 0, 0x7A64,
-				0, 0x5E4F, 0, 0, 0x504E, 0, 0, 0, 0, 0x5355, 0x7573, 0x2E77, 0, 0, 0x486F, 0,
-				0x734D, 0x4F75, 0x7365, 0x4270,
-			};
+			return "\u695C\u575E\u0000\u0000\u0000\u0000\u0000\u5F4B\u0000\u0000\u0000\u6C4F\u0000\u0000\u0000\u0000\u5F74\u0000\u0000\u7451\u3A52\u0000\u0000\u0000\u725F\u0000\u0000\u0000\u3761\u0000\u0000\u0000\u0000\u2362\u7C53\u0000\u0000\u666D\u0000\u0000\u0000\u0000\u0000\u495B\u0000\u0000\u0000\u7A64\u0000\u5E4F\u0000\u0000\u504E\u0000\u0000\u0000\u0000\u5355\u7573\u2E77\u0000\u0000\u486F\u0000\u734D\u4F75\u7365\u4270".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6458 = getOutput0_6458();
 		private static final char[] getOutput0_6458() {
-			return new char[] {
-				0x576E, 0, 0, 0, 0, 0, 0, 0, 0x4475, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x2458, 0, 0, 0, 0, 0, 0x2772, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x3859, 0x3959, 0x496F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x4E56, 0, 0, 0, 0, 0, 0, 0, 0, 0x4B77, 0x2E5F, 0x7568, 0, 0, 0, 0,
-				0, 0, 0x3552, 0, 0, 0, 0x5553, 0, 0, 0, 0, 0, 0x4C74, 0x7C5A, 0, 0,
-				0, 0, 0, 0x6859, 0, 0x6B77, 0x4975, 0, 0x3C73, 0, 0x525A, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x3553, 0, 0, 0, 0, 0, 0x3668, 0, 0, 0x4F56, 0x3A74, 0, 0x4977,
-				0, 0, 0x2A4C, 0, 0, 0x4370, 0x564C, 0, 0, 0, 0x5350, 0, 0x3D53, 0, 0, 0,
-				0x7B5B, 0, 0x604B, 0, 0, 0, 0, 0, 0, 0x6453, 0x7776, 0, 0, 0x3A55, 0x4D73, 0x614B,
-				0, 0, 0, 0, 0x746B, 0, 0, 0, 0, 0, 0x2D74, 0, 0x2A7C, 0, 0, 0,
-				0, 0, 0x6C77, 0, 0, 0, 0x7668, 0, 0x675A, 0, 0, 0, 0x4C77,
-			};
+			return "\u576E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4475\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2458\u0000\u0000\u0000\u0000\u0000\u2772\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3859\u3959\u496F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E56\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4B77\u2E5F\u7568\u0000\u0000\u0000\u0000\u0000\u0000\u3552\u0000\u0000\u0000\u5553\u0000\u0000\u0000\u0000\u0000\u4C74\u7C5A\u0000\u0000\u0000\u0000\u0000\u6859\u0000\u6B77\u4975\u0000\u3C73\u0000\u525A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3553\u0000\u0000\u0000\u0000\u0000\u3668\u0000\u0000\u4F56\u3A74\u0000\u4977\u0000\u0000\u2A4C\u0000\u0000\u4370\u564C\u0000\u0000\u0000\u5350\u0000\u3D53\u0000\u0000\u0000\u7B5B\u0000\u604B\u0000\u0000\u0000\u0000\u0000\u0000\u6453\u7776\u0000\u0000\u3A55\u4D73\u614B\u0000\u0000\u0000\u0000\u746B\u0000\u0000\u0000\u0000\u0000\u2D74\u0000\u2A7C\u0000\u0000\u0000\u0000\u0000\u6C77\u0000\u0000\u0000\u7668\u0000\u675A\u0000\u0000\u0000\u4C77".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6518 = getOutput0_6518();
 		private static final char[] getOutput0_6518() {
-			return new char[] {
-				0x4165, 0, 0, 0, 0, 0x6E60, 0, 0, 0, 0, 0, 0x7D55, 0, 0, 0, 0,
-				0, 0, 0x664E, 0x2B7C, 0x3B55, 0, 0, 0x2872, 0, 0, 0, 0, 0, 0, 0x2562, 0x394D,
-				0x726A, 0x474B, 0, 0x744D, 0, 0, 0x2F5B, 0x596F, 0, 0, 0, 0, 0, 0x3A4D, 0, 0,
-				0x797C, 0, 0, 0, 0, 0x735F, 0x674E, 0x425A, 0, 0x2D4F, 0, 0, 0, 0, 0x7967, 0x2878,
-				0, 0, 0, 0, 0, 0, 0x6273, 0, 0, 0, 0x724A, 0x245F, 0, 0, 0x4454, 0,
-				0, 0, 0, 0, 0x574C, 0x4265, 0, 0, 0, 0, 0x3B4D, 0, 0x5A6F, 0x586E, 0, 0x275D,
-				0x2662, 0, 0, 0, 0, 0, 0x4060, 0, 0, 0, 0x3056, 0x4A78, 0, 0x7A7C, 0, 0x7E59,
-				0, 0, 0, 0, 0x305E, 0, 0, 0, 0x6C5D, 0x685A, 0, 0, 0, 0, 0, 0x6054,
-				0, 0x7956, 0, 0x574D, 0x585E, 0, 0, 0x7872, 0, 0x5664, 0, 0, 0x4550, 0x2E74, 0, 0x285D,
-				0, 0, 0, 0x456D, 0x5673, 0, 0, 0x595E, 0x6663, 0, 0, 0, 0, 0, 0, 0x2853,
-				0, 0x305B, 0, 0, 0x5A65, 0x3F63, 0, 0, 0, 0x315B, 0, 0, 0, 0x6955, 0, 0,
-				0, 0, 0, 0x4160, 0x5B6F, 0, 0, 0x6970, 0, 0, 0x3257, 0, 0, 0, 0, 0x7D50,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x6959, 0, 0, 0x7E50, 0, 0x6D6C, 0x2953, 0,
-				0x2972, 0x4470, 0, 0, 0x6262, 0x6F69, 0, 0, 0, 0x5179, 0, 0, 0x5969, 0, 0, 0,
-				0, 0, 0x5A68, 0x435A, 0x445A, 0x4554, 0, 0x7A67, 0, 0, 0, 0, 0, 0, 0x604D, 0x3063,
-				0, 0x325B, 0x447B, 0, 0x6373, 0, 0x2559, 0x677B, 0x4B5D, 0x5450, 0, 0x3666, 0x2E60, 0x5A7D, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x355C, 0x7860, 0x3167, 0, 0, 0, 0, 0x7075, 0, 0x5C58,
-				0x466D, 0, 0, 0, 0, 0x3961, 0, 0x4063, 0x4079, 0x7069, 0, 0, 0x5B59, 0, 0x6473, 0,
-				0, 0, 0x365C, 0x6964, 0, 0, 0, 0, 0, 0x4570, 0x4163, 0x4C7C, 0x4D7C, 0, 0, 0,
-				0, 0x4B72, 0, 0x4C72, 0, 0, 0, 0x4F64, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x5B71, 0, 0x597A, 0, 0x3871, 0x757D, 0x7960, 0, 0, 0, 0, 0x7B67, 0x377C, 0x647C, 0x457B,
-				0x6763, 0x3958, 0, 0x7876, 0, 0, 0x455C, 0x584C, 0, 0, 0, 0x2F60, 0x6774, 0, 0x5C6F, 0x7C4F,
-				0x5D6F, 0, 0x2A72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3E7D, 0, 0, 0x2C4A,
-				0x3B7D, 0x477D, 0, 0, 0, 0, 0x3267, 0, 0x516A, 0x745F, 0, 0, 0, 0, 0x6C51, 0x5E64,
-				0x4365, 0, 0, 0, 0, 0x2659, 0, 0, 0x3C4D, 0, 0x6573, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x556D, 0, 0, 0x3A59, 0, 0, 0, 0x676D, 0x357B, 0x6C78, 0, 0, 0,
-				0, 0x6760, 0, 0x594C, 0, 0, 0x4654, 0, 0, 0, 0, 0, 0x2567, 0, 0x7555, 0x3E53,
-				0, 0x7B7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7264, 0,
-				0, 0x755F, 0, 0, 0x7868, 0x6D78, 0, 0, 0x474E, 0, 0, 0, 0, 0, 0x767D, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x5868, 0, 0x584D, 0x5667, 0x5A4C, 0, 0, 0x634A,
-				0x765F, 0x4770, 0x4670, 0, 0x3A58, 0, 0x7471, 0x7074, 0x4C75, 0, 0, 0x657C, 0, 0, 0, 0,
-				0x456A, 0x736A, 0, 0x5B5D, 0, 0x575C, 0, 0, 0, 0, 0, 0, 0x7D5E, 0x7972, 0, 0x4755,
-				0, 0, 0, 0x5058, 0, 0x4870, 0x2151, 0x2251, 0, 0, 0, 0, 0, 0, 0x5459, 0x6856,
-				0x4A59, 0, 0x315A, 0x4758, 0x625C, 0x4E73, 0x7475, 0, 0, 0x3971, 0, 0, 0x535A, 0, 0x6A76, 0,
-				0, 0, 0x754F, 0, 0, 0x2E7D, 0, 0, 0, 0, 0, 0, 0, 0, 0x524A, 0,
-				0, 0x345F, 0, 0, 0, 0, 0x5D57, 0x3A7A, 0x276E, 0x3D75, 0, 0x7578, 0, 0, 0x686D, 0,
-				0, 0, 0, 0, 0x6154, 0, 0x2351, 0x5661, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x7879, 0, 0x4A5B, 0x794B, 0x5454, 0, 0x5C59, 0, 0x3E6E, 0, 0x6D77,
-				0, 0, 0, 0x6E52, 0, 0, 0x6661, 0x7977, 0, 0, 0, 0, 0, 0, 0, 0x6D5D,
-				0, 0x5B68, 0, 0x335B, 0, 0, 0, 0x7751, 0x3060, 0, 0, 0x6254, 0, 0x5776, 0, 0x7957,
-				0, 0, 0x5D58, 0, 0x7D4D, 0x2B72,
-			};
+			return "\u4165\u0000\u0000\u0000\u0000\u6E60\u0000\u0000\u0000\u0000\u0000\u7D55\u0000\u0000\u0000\u0000\u0000\u0000\u664E\u2B7C\u3B55\u0000\u0000\u2872\u0000\u0000\u0000\u0000\u0000\u0000\u2562\u394D\u726A\u474B\u0000\u744D\u0000\u0000\u2F5B\u596F\u0000\u0000\u0000\u0000\u0000\u3A4D\u0000\u0000\u797C\u0000\u0000\u0000\u0000\u735F\u674E\u425A\u0000\u2D4F\u0000\u0000\u0000\u0000\u7967\u2878\u0000\u0000\u0000\u0000\u0000\u0000\u6273\u0000\u0000\u0000\u724A\u245F\u0000\u0000\u4454\u0000\u0000\u0000\u0000\u0000\u574C\u4265\u0000\u0000\u0000\u0000\u3B4D\u0000\u5A6F\u586E\u0000\u275D\u2662\u0000\u0000\u0000\u0000\u0000\u4060\u0000\u0000\u0000\u3056\u4A78\u0000\u7A7C\u0000\u7E59\u0000\u0000\u0000\u0000\u305E\u0000\u0000\u0000\u6C5D\u685A\u0000\u0000\u0000\u0000\u0000\u6054\u0000\u7956\u0000\u574D\u585E\u0000\u0000\u7872\u0000\u5664\u0000\u0000\u4550\u2E74\u0000\u285D\u0000\u0000\u0000\u456D\u5673\u0000\u0000\u595E\u6663\u0000\u0000\u0000\u0000\u0000\u0000\u2853\u0000\u305B\u0000\u0000\u5A65\u3F63\u0000\u0000\u0000\u315B\u0000\u0000\u0000\u6955\u0000\u0000\u0000\u0000\u0000\u4160\u5B6F\u0000\u0000\u6970\u0000\u0000\u3257\u0000\u0000\u0000\u0000\u7D50\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6959\u0000\u0000\u7E50\u0000\u6D6C\u2953\u0000\u2972\u4470\u0000\u0000\u6262\u6F69\u0000\u0000\u0000\u5179\u0000\u0000\u5969\u0000\u0000\u0000\u0000\u0000\u5A68\u435A\u445A\u4554\u0000\u7A67\u0000\u0000\u0000\u0000\u0000\u0000\u604D\u3063\u0000\u325B\u447B\u0000\u6373\u0000\u2559\u677B\u4B5D\u5450\u0000\u3666\u2E60\u5A7D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u355C\u7860\u3167\u0000\u0000\u0000\u0000\u7075\u0000\u5C58\u466D\u0000\u0000\u0000\u0000\u3961\u0000\u4063\u4079\u7069\u0000\u0000\u5B59\u0000\u6473\u0000\u0000\u0000\u365C\u6964\u0000\u0000\u0000\u0000\u0000\u4570\u4163\u4C7C\u4D7C\u0000\u0000\u0000\u0000\u4B72\u0000\u4C72\u0000\u0000\u0000\u4F64\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5B71\u0000\u597A\u0000\u3871\u757D\u7960\u0000\u0000\u0000\u0000\u7B67\u377C\u647C\u457B\u6763\u3958\u0000\u7876\u0000\u0000\u455C\u584C\u0000\u0000\u0000\u2F60\u6774\u0000\u5C6F\u7C4F\u5D6F\u0000\u2A72\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E7D\u0000\u0000\u2C4A\u3B7D\u477D\u0000\u0000\u0000\u0000\u3267\u0000\u516A\u745F\u0000\u0000\u0000\u0000\u6C51\u5E64\u4365\u0000\u0000\u0000\u0000\u2659\u0000\u0000\u3C4D\u0000\u6573\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u556D\u0000\u0000\u3A59\u0000\u0000\u0000\u676D\u357B\u6C78\u0000\u0000\u0000\u0000\u6760\u0000\u594C\u0000\u0000\u4654\u0000\u0000\u0000\u0000\u0000\u2567\u0000\u7555\u3E53\u0000\u7B7C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7264\u0000\u0000\u755F\u0000\u0000\u7868\u6D78\u0000\u0000\u474E\u0000\u0000\u0000\u0000\u0000\u767D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5868\u0000\u584D\u5667\u5A4C\u0000\u0000\u634A\u765F\u4770\u4670\u0000\u3A58\u0000\u7471\u7074\u4C75\u0000\u0000\u657C\u0000\u0000\u0000\u0000\u456A\u736A\u0000\u5B5D\u0000\u575C\u0000\u0000\u0000\u0000\u0000\u0000\u7D5E\u7972\u0000\u4755\u0000\u0000\u0000\u5058\u0000\u4870\u2151\u2251\u0000\u0000\u0000\u0000\u0000\u0000\u5459\u6856\u4A59\u0000\u315A\u4758\u625C\u4E73\u7475\u0000\u0000\u3971\u0000\u0000\u535A\u0000\u6A76\u0000\u0000\u0000\u754F\u0000\u0000\u2E7D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u524A\u0000\u0000\u345F\u0000\u0000\u0000\u0000\u5D57\u3A7A\u276E\u3D75\u0000\u7578\u0000\u0000\u686D\u0000\u0000\u0000\u0000\u0000\u6154\u0000\u2351\u5661\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7879\u0000\u4A5B\u794B\u5454\u0000\u5C59\u0000\u3E6E\u0000\u6D77\u0000\u0000\u0000\u6E52\u0000\u0000\u6661\u7977\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D5D\u0000\u5B68\u0000\u335B\u0000\u0000\u0000\u7751\u3060\u0000\u0000\u6254\u0000\u5776\u0000\u7957\u0000\u0000\u5D58\u0000\u7D4D\u2B72".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_67AF = getOutput0_67AF();
 		private static final char[] getOutput0_67AF() {
-			return new char[] {
-				0x3D4D, 0x4278, 0, 0, 0x2C72, 0, 0, 0x2D4A, 0x2E4A, 0x2E4F, 0, 0, 0, 0, 0, 0x4263,
-				0, 0, 0, 0, 0, 0x375C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x5A5B, 0x3B59, 0x734A, 0x5376, 0x7866, 0x756A, 0, 0, 0, 0, 0, 0x766A, 0, 0, 0x7976, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2F4F, 0, 0, 0x534A, 0, 0,
-				0x2F4A, 0x3052, 0x3A71, 0, 0x3357, 0x4363, 0x7D73, 0x5A5E, 0, 0, 0, 0, 0x5B5E, 0, 0, 0x5E6F,
-			};
+			return "\u3D4D\u4278\u0000\u0000\u2C72\u0000\u0000\u2D4A\u2E4A\u2E4F\u0000\u0000\u0000\u0000\u0000\u4263\u0000\u0000\u0000\u0000\u0000\u375C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5A5B\u3B59\u734A\u5376\u7866\u756A\u0000\u0000\u0000\u0000\u0000\u766A\u0000\u0000\u7976\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2F4F\u0000\u0000\u534A\u0000\u0000\u2F4A\u3052\u3A71\u0000\u3357\u4363\u7D73\u5A5E\u0000\u0000\u0000\u0000\u5B5E\u0000\u0000\u5E6F".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6812 = getOutput0_6812();
 		private static final char[] getOutput0_6812() {
-			return new char[] {
-				0x6362, 0x7B6E, 0, 0, 0x775F, 0x4A57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x684E,
-				0x5B5B, 0, 0, 0, 0, 0, 0, 0, 0x3B71, 0, 0, 0, 0, 0x7169, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x377A, 0x4650, 0, 0, 0x2B4C, 0x286E, 0, 0, 0x7A4B, 0x7979,
-				0x7D4C, 0x7E53, 0, 0, 0, 0, 0x5064, 0, 0, 0, 0, 0, 0x6E72, 0, 0x5554, 0x4D5F,
-				0, 0x387C, 0x5051,
-			};
+			return "\u6362\u7B6E\u0000\u0000\u775F\u4A57\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u684E\u5B5B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3B71\u0000\u0000\u0000\u0000\u7169\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u377A\u4650\u0000\u0000\u2B4C\u286E\u0000\u0000\u7A4B\u7979\u7D4C\u7E53\u0000\u0000\u0000\u0000\u5064\u0000\u0000\u0000\u0000\u0000\u6E72\u0000\u5554\u4D5F\u0000\u387C\u5051".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_686D = getOutput0_686D();
 		private static final char[] getOutput0_686D() {
-			return new char[] {
-				0x4D72, 0, 0, 0, 0, 0, 0, 0, 0, 0x5277, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x544A, 0, 0x5955, 0, 0, 0, 0x5E58, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x594D, 0, 0, 0, 0x296E, 0x3C76, 0, 0, 0x5B4C, 0, 0, 0, 0, 0,
-				0x4970, 0, 0x7C7C, 0, 0x4968, 0x7E74, 0, 0, 0, 0, 0x7C67, 0x5E57, 0, 0, 0, 0,
-				0x5C5E, 0, 0x2C70, 0x7E4C, 0x614D, 0, 0x3A61, 0, 0x6F5B, 0x325A, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x2551, 0x385C, 0, 0, 0, 0x7658, 0, 0x2451, 0,
-				0x624D, 0, 0, 0, 0, 0x6A5C, 0, 0, 0x7770, 0, 0x4A70, 0x3E50, 0, 0x5C5D, 0, 0,
-				0, 0, 0x5654, 0x5653, 0, 0, 0, 0, 0, 0, 0x506D, 0x214D, 0, 0, 0, 0,
-				0, 0x355F, 0, 0, 0, 0x785F, 0, 0, 0, 0, 0, 0, 0x2154, 0x324E, 0, 0,
-				0, 0, 0, 0x4A68, 0, 0, 0, 0, 0x756B, 0, 0, 0, 0, 0, 0, 0,
-				0x5563, 0x5075, 0, 0, 0, 0x2175,
-			};
+			return "\u4D72\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5277\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u544A\u0000\u5955\u0000\u0000\u0000\u5E58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u594D\u0000\u0000\u0000\u296E\u3C76\u0000\u0000\u5B4C\u0000\u0000\u0000\u0000\u0000\u4970\u0000\u7C7C\u0000\u4968\u7E74\u0000\u0000\u0000\u0000\u7C67\u5E57\u0000\u0000\u0000\u0000\u5C5E\u0000\u2C70\u7E4C\u614D\u0000\u3A61\u0000\u6F5B\u325A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2551\u385C\u0000\u0000\u0000\u7658\u0000\u2451\u0000\u624D\u0000\u0000\u0000\u0000\u6A5C\u0000\u0000\u7770\u0000\u4A70\u3E50\u0000\u5C5D\u0000\u0000\u0000\u0000\u5654\u5653\u0000\u0000\u0000\u0000\u0000\u0000\u506D\u214D\u0000\u0000\u0000\u0000\u0000\u355F\u0000\u0000\u0000\u785F\u0000\u0000\u0000\u0000\u0000\u0000\u2154\u324E\u0000\u0000\u0000\u0000\u0000\u4A68\u0000\u0000\u0000\u0000\u756B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5563\u5075\u0000\u0000\u0000\u2175".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6927 = getOutput0_6927();
 		private static final char[] getOutput0_6927() {
-			return new char[] {
-				0x2759, 0, 0, 0, 0, 0, 0, 0, 0, 0x2B65, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x4B66, 0, 0x7175, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x4565, 0, 0, 0, 0, 0, 0, 0, 0, 0x2379, 0x5B60, 0x6B76, 0,
-				0x714B, 0, 0x6A59, 0x2275, 0, 0, 0, 0x5157, 0, 0x7851, 0x786A, 0x796A, 0x335A, 0, 0, 0,
-				0, 0x5F6F, 0, 0, 0x6F71, 0, 0x7665, 0x3F6E, 0x6462, 0, 0, 0, 0, 0, 0x3F50, 0,
-				0x2C7A, 0x5175, 0x3367,
-			};
+			return "\u2759\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B65\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4B66\u0000\u7175\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4565\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2379\u5B60\u6B76\u0000\u714B\u0000\u6A59\u2275\u0000\u0000\u0000\u5157\u0000\u7851\u786A\u796A\u335A\u0000\u0000\u0000\u0000\u5F6F\u0000\u0000\u6F71\u0000\u7665\u3F6E\u6462\u0000\u0000\u0000\u0000\u0000\u3F50\u0000\u2C7A\u5175\u3367".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6A80 = getOutput0_6A80();
 		private static final char[] getOutput0_6A80() {
-			return new char[] {
-				0x2A53, 0, 0, 0, 0x2C4C, 0, 0, 0, 0, 0x606F, 0, 0, 0, 0x6565, 0x5550, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x7C5B, 0, 0, 0, 0, 0x667C, 0, 0, 0,
-				0, 0, 0x7E4B, 0x6A6D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x315E, 0, 0, 0, 0, 0, 0, 0, 0x6379, 0, 0, 0, 0,
-				0, 0, 0x2254, 0x764F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x5056, 0, 0, 0, 0, 0, 0, 0x6A55, 0x6E71,
-			};
+			return "\u2A53\u0000\u0000\u0000\u2C4C\u0000\u0000\u0000\u0000\u606F\u0000\u0000\u0000\u6565\u5550\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7C5B\u0000\u0000\u0000\u0000\u667C\u0000\u0000\u0000\u0000\u0000\u7E4B\u6A6D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u315E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6379\u0000\u0000\u0000\u0000\u0000\u0000\u2254\u764F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5056\u0000\u0000\u0000\u0000\u0000\u0000\u6A55\u6E71".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6AF6 = getOutput0_6AF6();
 		private static final char[] getOutput0_6AF6() {
-			return new char[] {
-				0x4B7A, 0, 0, 0, 0, 0x2165, 0, 0, 0, 0, 0, 0, 0, 0, 0x3155, 0,
-				0, 0, 0, 0, 0x6D4F, 0, 0x6B6D, 0, 0, 0, 0, 0, 0x3255, 0, 0, 0,
-				0x3C55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x627D, 0x2D73, 0, 0x5B7D, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3069, 0, 0, 0,
-				0, 0, 0, 0, 0x2751, 0, 0, 0x637D, 0x334E, 0, 0, 0, 0, 0, 0, 0,
-				0x647D, 0x4E7A, 0, 0, 0, 0, 0x304A, 0, 0x2777, 0, 0x314F, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2266, 0, 0x367C, 0x2D72, 0x616F, 0x2E73, 0x465C,
-				0x6B59, 0, 0, 0, 0x6068, 0, 0, 0, 0, 0, 0, 0, 0x2861, 0, 0, 0,
-				0, 0x7655, 0x7D4F, 0, 0, 0x5D5E, 0, 0, 0, 0x5159, 0, 0, 0, 0x6A64, 0x4F72, 0,
-				0x3F77, 0, 0, 0x6662, 0x2862, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x5663, 0, 0x516D, 0, 0, 0, 0, 0, 0x7969, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x3156, 0x325E, 0, 0, 0x6860, 0, 0, 0x2B53,
-				0, 0x5C6B, 0, 0, 0x2F5F, 0, 0x434A, 0, 0, 0x7C6E, 0, 0x437D, 0, 0, 0, 0x766B,
-				0x324F, 0, 0, 0, 0, 0x6C59, 0, 0x3D59, 0, 0x5F58, 0, 0, 0x3854, 0x3E6B, 0x6F5D, 0,
-				0x705D, 0x715D, 0x725D, 0, 0, 0x3E59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x467B, 0x334F,
-			};
+			return "\u4B7A\u0000\u0000\u0000\u0000\u2165\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3155\u0000\u0000\u0000\u0000\u0000\u6D4F\u0000\u6B6D\u0000\u0000\u0000\u0000\u0000\u3255\u0000\u0000\u0000\u3C55\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u627D\u2D73\u0000\u5B7D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3069\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2751\u0000\u0000\u637D\u334E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u647D\u4E7A\u0000\u0000\u0000\u0000\u304A\u0000\u2777\u0000\u314F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2266\u0000\u367C\u2D72\u616F\u2E73\u465C\u6B59\u0000\u0000\u0000\u6068\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2861\u0000\u0000\u0000\u0000\u7655\u7D4F\u0000\u0000\u5D5E\u0000\u0000\u0000\u5159\u0000\u0000\u0000\u6A64\u4F72\u0000\u3F77\u0000\u0000\u6662\u2862\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5663\u0000\u516D\u0000\u0000\u0000\u0000\u0000\u7969\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3156\u325E\u0000\u0000\u6860\u0000\u0000\u2B53\u0000\u5C6B\u0000\u0000\u2F5F\u0000\u434A\u0000\u0000\u7C6E\u0000\u437D\u0000\u0000\u0000\u766B\u324F\u0000\u0000\u0000\u0000\u6C59\u0000\u3D59\u0000\u5F58\u0000\u0000\u3854\u3E6B\u6F5D\u0000\u705D\u715D\u725D\u0000\u0000\u3E59\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u467B\u334F".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6C08 = getOutput0_6C08();
 		private static final char[] getOutput0_6C08() {
-			return new char[] {
-				0x7D6E, 0, 0, 0, 0, 0, 0, 0x2B64, 0, 0x455A, 0, 0x6C58, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2851, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2962, 0, 0, 0x3C5E,
-				0x3567, 0, 0, 0, 0, 0, 0x705B, 0, 0x626F, 0x7071, 0x344F, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x715B, 0, 0x3160, 0, 0, 0, 0, 0x255F, 0, 0x5279,
-				0, 0, 0x7D67, 0, 0, 0x2366, 0x717B, 0x304B, 0x2E72, 0, 0, 0, 0, 0, 0, 0,
-				0x674D, 0, 0x5C68, 0, 0, 0x5767, 0, 0, 0x4077, 0, 0x6350, 0, 0, 0, 0x215A, 0,
-				0, 0, 0x3D4C, 0, 0, 0x2951, 0x4C5D, 0, 0, 0x7E63, 0x2A51, 0x2A68, 0, 0x366A, 0x7A79, 0x4C66,
-				0x5876, 0, 0, 0, 0x4754, 0, 0, 0, 0x4B59, 0, 0x5259, 0x4B53, 0x7758, 0x295A, 0x7875, 0,
-				0, 0x5E5E, 0x2F72, 0x2978, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x4858, 0, 0, 0x416E, 0, 0, 0, 0, 0x4179, 0, 0, 0, 0,
-				0x735D, 0x7A6A, 0, 0x3D76, 0x3B61, 0x3F4D, 0x5474, 0x4D66, 0, 0x4F7C, 0x227B, 0, 0x5C60, 0, 0, 0,
-				0, 0x3B74, 0x555A, 0, 0x3279, 0, 0, 0, 0, 0, 0, 0x727B, 0, 0x765B, 0, 0x5F5E,
-				0, 0, 0, 0x725B, 0, 0, 0, 0, 0, 0x5C78, 0x6E77, 0x686B, 0, 0x7A52, 0, 0,
-				0x3C71, 0, 0, 0x5A7A, 0, 0, 0x6A5A, 0x465A, 0x4177, 0, 0, 0x3667,
-			};
+			return "\u7D6E\u0000\u0000\u0000\u0000\u0000\u0000\u2B64\u0000\u455A\u0000\u6C58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2851\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2962\u0000\u0000\u3C5E\u3567\u0000\u0000\u0000\u0000\u0000\u705B\u0000\u626F\u7071\u344F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u715B\u0000\u3160\u0000\u0000\u0000\u0000\u255F\u0000\u5279\u0000\u0000\u7D67\u0000\u0000\u2366\u717B\u304B\u2E72\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u674D\u0000\u5C68\u0000\u0000\u5767\u0000\u0000\u4077\u0000\u6350\u0000\u0000\u0000\u215A\u0000\u0000\u0000\u3D4C\u0000\u0000\u2951\u4C5D\u0000\u0000\u7E63\u2A51\u2A68\u0000\u366A\u7A79\u4C66\u5876\u0000\u0000\u0000\u4754\u0000\u0000\u0000\u4B59\u0000\u5259\u4B53\u7758\u295A\u7875\u0000\u0000\u5E5E\u2F72\u2978\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4858\u0000\u0000\u416E\u0000\u0000\u0000\u0000\u4179\u0000\u0000\u0000\u0000\u735D\u7A6A\u0000\u3D76\u3B61\u3F4D\u5474\u4D66\u0000\u4F7C\u227B\u0000\u5C60\u0000\u0000\u0000\u0000\u3B74\u555A\u0000\u3279\u0000\u0000\u0000\u0000\u0000\u0000\u727B\u0000\u765B\u0000\u5F5E\u0000\u0000\u0000\u725B\u0000\u0000\u0000\u0000\u0000\u5C78\u6E77\u686B\u0000\u7A52\u0000\u0000\u3C71\u0000\u0000\u5A7A\u0000\u0000\u6A5A\u465A\u4177\u0000\u0000\u3667".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6D0B = getOutput0_6D0B();
 		private static final char[] getOutput0_6D0B() {
-			return new char[] {
-				0x4765, 0x2C56, 0, 0, 0, 0, 0x475C, 0, 0, 0, 0, 0, 0x2961, 0, 0x2A62, 0,
-				0x2655, 0, 0, 0x5754, 0, 0, 0, 0, 0, 0, 0x5072, 0, 0x7B6A, 0, 0x5D60, 0x737B,
-				0, 0, 0, 0, 0, 0, 0, 0x3D71, 0, 0, 0x6762, 0x577D, 0, 0x484E, 0x376A, 0,
-				0x407C, 0, 0x677D, 0x6F77, 0, 0, 0x3557,
-			};
+			return "\u4765\u2C56\u0000\u0000\u0000\u0000\u475C\u0000\u0000\u0000\u0000\u0000\u2961\u0000\u2A62\u0000\u2655\u0000\u0000\u5754\u0000\u0000\u0000\u0000\u0000\u0000\u5072\u0000\u7B6A\u0000\u5D60\u737B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D71\u0000\u0000\u6762\u577D\u0000\u484E\u376A\u0000\u407C\u0000\u677D\u6F77\u0000\u0000\u3557".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6D59 = getOutput0_6D59();
 		private static final char[] getOutput0_6D59() {
-			return new char[] {
-				0x3A6F, 0x5D71, 0, 0x335E, 0, 0, 0, 0, 0, 0, 0x4B68, 0, 0, 0x5D78, 0, 0,
-				0x477B, 0x4855, 0, 0x5F57, 0, 0x295D, 0, 0, 0, 0, 0, 0x3169, 0, 0, 0x2D7A, 0x5976,
-				0x747A, 0, 0, 0, 0, 0, 0x2A78, 0, 0, 0, 0, 0, 0x6E66, 0, 0x5C4C, 0x3C61,
-				0x6F60, 0, 0, 0x3F69, 0x7D7C, 0x4E66, 0, 0, 0x5761, 0, 0x4F66, 0, 0x7174,
-			};
+			return "\u3A6F\u5D71\u0000\u335E\u0000\u0000\u0000\u0000\u0000\u0000\u4B68\u0000\u0000\u5D78\u0000\u0000\u477B\u4855\u0000\u5F57\u0000\u295D\u0000\u0000\u0000\u0000\u0000\u3169\u0000\u0000\u2D7A\u5976\u747A\u0000\u0000\u0000\u0000\u0000\u2A78\u0000\u0000\u0000\u0000\u0000\u6E66\u0000\u5C4C\u3C61\u6F60\u0000\u0000\u3F69\u7D7C\u4E66\u0000\u0000\u5761\u0000\u4F66\u0000\u7174".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6DAF = getOutput0_6DAF();
 		private static final char[] getOutput0_6DAF() {
-			return new char[] {
-				0x7364, 0, 0, 0x7B64, 0, 0, 0x6479, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x636F, 0, 0, 0x6E4F, 0x3E76, 0x3260, 0x7E7C, 0x2B51, 0, 0, 0, 0x7A57, 0, 0, 0,
-				0x487B, 0, 0x5762, 0, 0, 0, 0, 0, 0, 0x2354, 0x7870, 0x2857, 0, 0, 0, 0x6761,
-				0, 0, 0x3F53, 0, 0, 0, 0, 0, 0, 0x646F, 0, 0x4557, 0x626B, 0, 0, 0x677C,
-				0, 0, 0x2264, 0, 0x6862, 0, 0x5066, 0, 0x687B, 0x6874, 0x7465, 0x3C74, 0x5574,
-			};
+			return "\u7364\u0000\u0000\u7B64\u0000\u0000\u6479\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u636F\u0000\u0000\u6E4F\u3E76\u3260\u7E7C\u2B51\u0000\u0000\u0000\u7A57\u0000\u0000\u0000\u487B\u0000\u5762\u0000\u0000\u0000\u0000\u0000\u0000\u2354\u7870\u2857\u0000\u0000\u0000\u6761\u0000\u0000\u3F53\u0000\u0000\u0000\u0000\u0000\u0000\u646F\u0000\u4557\u626B\u0000\u0000\u677C\u0000\u0000\u2264\u0000\u6862\u0000\u5066\u0000\u687B\u6874\u7465\u3C74\u5574".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6E17 = getOutput0_6E17();
 		private static final char[] getOutput0_6E17() {
-			return new char[] {
-				0x365F, 0, 0x397C, 0x426E, 0x754A, 0, 0, 0, 0x656F, 0x624B, 0x2454, 0, 0x605E, 0x7D5A, 0x4664, 0x3E68,
-				0, 0, 0, 0, 0x5E60, 0x3476, 0x526A, 0, 0x7B79, 0, 0, 0x4260, 0, 0x644A, 0, 0x3767,
-				0, 0x7D6A, 0, 0x5D59, 0, 0x345A, 0x2A6E, 0x697B, 0, 0, 0, 0, 0x4B5B, 0x355A, 0, 0,
-				0, 0, 0, 0x3E71, 0, 0, 0x2C53, 0, 0, 0, 0, 0, 0, 0, 0, 0x497B,
-				0, 0x4F5F, 0, 0, 0x4053, 0x5763, 0, 0x666F, 0x507C, 0, 0, 0, 0, 0, 0, 0,
-				0x4069, 0, 0, 0, 0x5375, 0, 0, 0x5C6C, 0x3777, 0, 0, 0x386A, 0x7951, 0, 0, 0,
-				0, 0, 0, 0x485C,
-			};
+			return "\u365F\u0000\u397C\u426E\u754A\u0000\u0000\u0000\u656F\u624B\u2454\u0000\u605E\u7D5A\u4664\u3E68\u0000\u0000\u0000\u0000\u5E60\u3476\u526A\u0000\u7B79\u0000\u0000\u4260\u0000\u644A\u0000\u3767\u0000\u7D6A\u0000\u5D59\u0000\u345A\u2A6E\u697B\u0000\u0000\u0000\u0000\u4B5B\u355A\u0000\u0000\u0000\u0000\u0000\u3E71\u0000\u0000\u2C53\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u497B\u0000\u4F5F\u0000\u0000\u4053\u5763\u0000\u666F\u507C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4069\u0000\u0000\u0000\u5375\u0000\u0000\u5C6C\u3777\u0000\u0000\u386A\u7951\u0000\u0000\u0000\u0000\u0000\u0000\u485C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6E90 = getOutput0_6E90();
 		private static final char[] getOutput0_6E90() {
-			return new char[] {
-				0x396A, 0, 0, 0, 0, 0, 0x5E71, 0, 0, 0, 0, 0, 0x3657, 0x354F, 0, 0x2859,
-				0, 0, 0x6E6C, 0, 0, 0x2A5D, 0, 0, 0, 0, 0x224D, 0x2E68, 0, 0, 0, 0x3D61,
-				0, 0x5172, 0, 0, 0, 0, 0x4169, 0, 0, 0, 0x7C52, 0, 0, 0, 0, 0,
-				0, 0, 0x355B, 0, 0x6773, 0x7E58, 0, 0, 0, 0x517C, 0, 0x326D, 0x2F74, 0, 0x237B, 0,
-				0, 0x417C, 0, 0x2B6E, 0x2554,
-			};
+			return "\u396A\u0000\u0000\u0000\u0000\u0000\u5E71\u0000\u0000\u0000\u0000\u0000\u3657\u354F\u0000\u2859\u0000\u0000\u6E6C\u0000\u0000\u2A5D\u0000\u0000\u0000\u0000\u224D\u2E68\u0000\u0000\u0000\u3D61\u0000\u5172\u0000\u0000\u0000\u0000\u4169\u0000\u0000\u0000\u7C52\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u355B\u0000\u6773\u7E58\u0000\u0000\u0000\u517C\u0000\u326D\u2F74\u0000\u237B\u0000\u0000\u417C\u0000\u2B6E\u2554".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_6EEF = getOutput0_6EEF();
 		private static final char[] getOutput0_6EEF() {
-			return new char[] {
-				0x7274, 0, 0, 0, 0, 0x596E, 0, 0, 0, 0x4A7B, 0, 0, 0, 0, 0, 0x634D,
-				0x3B58, 0, 0x5B65, 0x7778, 0, 0, 0, 0x5476, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x2957, 0, 0x494B, 0, 0, 0x5166, 0x4C70, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x2E58, 0, 0x5379, 0x7E55, 0, 0, 0, 0, 0, 0, 0, 0x3C58, 0x3072, 0, 0,
-				0, 0, 0x2B62, 0x6873, 0, 0, 0, 0, 0, 0x426F, 0, 0, 0, 0, 0, 0,
-				0x6C6D, 0, 0x3867, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x7E5A, 0, 0, 0x3E4C, 0, 0, 0x7C72, 0x6B5A, 0, 0x5862, 0x566D, 0, 0, 0x5156,
-				0x3360, 0, 0, 0x527C, 0, 0x486B, 0, 0, 0, 0, 0, 0, 0, 0, 0x4153, 0x4D70,
-				0, 0x774F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x526D, 0, 0x5854, 0x495C, 0x7157,
-				0, 0, 0x3B5F, 0, 0, 0x2573, 0, 0, 0, 0x4D74, 0, 0, 0, 0, 0x3F71, 0x3178,
-				0, 0x7A69, 0, 0, 0, 0x4B7B, 0, 0, 0x554A, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x5479, 0x4A77, 0, 0, 0x4856, 0, 0, 0, 0, 0, 0, 0x687C,
-				0x3D73, 0, 0x7E6E, 0, 0x7E67, 0, 0, 0, 0, 0, 0x4253, 0, 0, 0, 0, 0x3653,
-				0, 0x2D4C, 0x7A76, 0x3256, 0x5852, 0, 0, 0, 0, 0, 0, 0x5867, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x2563, 0, 0, 0, 0, 0x3967, 0, 0, 0, 0,
-				0x2D70, 0x4C7B, 0x216B, 0, 0, 0x2654, 0, 0, 0, 0, 0x4D7B, 0, 0x3D55, 0x5F71, 0, 0,
-				0x7B76, 0, 0x345E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6B55,
-				0, 0, 0x4865, 0, 0, 0, 0x247B, 0x3954, 0, 0, 0x615E, 0, 0x2364, 0, 0, 0,
-				0x3757, 0, 0x6E78, 0, 0, 0, 0x355E, 0, 0, 0x5256, 0, 0x5579, 0x3A67, 0x556B, 0x7755, 0x676F,
-				0x3E61, 0, 0, 0, 0x2E7A, 0, 0, 0, 0x6956, 0x6E56, 0, 0, 0, 0, 0, 0,
-				0x3B67, 0, 0, 0, 0, 0, 0, 0, 0x4B6C, 0, 0, 0, 0, 0, 0, 0x3355,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x344E, 0, 0,
-				0, 0x257B, 0x6E61, 0, 0, 0, 0, 0, 0, 0x2877, 0, 0, 0, 0, 0x4E7B, 0,
-				0, 0, 0, 0, 0x3D58, 0, 0, 0, 0, 0, 0, 0, 0x7D7B, 0, 0, 0,
-				0, 0x697C, 0, 0, 0, 0, 0, 0, 0, 0x364F, 0, 0, 0, 0x476D, 0x2C6E, 0,
-				0, 0, 0, 0, 0, 0, 0x5D4C, 0, 0, 0, 0, 0x2776, 0, 0, 0, 0x7A66,
-				0, 0, 0, 0x2475, 0, 0, 0, 0, 0, 0x5C7D, 0x336D, 0x494E, 0, 0, 0, 0,
-				0, 0, 0x686F, 0, 0, 0x3F61, 0, 0, 0, 0, 0, 0, 0x5B7A, 0x634B, 0x2977, 0,
-				0x267B, 0, 0, 0, 0x395C, 0, 0, 0, 0x4071, 0x486D, 0x436F, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2D56, 0, 0, 0x4E7D, 0, 0, 0,
-				0x2168, 0, 0, 0, 0, 0, 0, 0, 0, 0x747B, 0x2755, 0, 0, 0, 0x7671, 0,
-				0x5366,
-			};
+			return "\u7274\u0000\u0000\u0000\u0000\u596E\u0000\u0000\u0000\u4A7B\u0000\u0000\u0000\u0000\u0000\u634D\u3B58\u0000\u5B65\u7778\u0000\u0000\u0000\u5476\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2957\u0000\u494B\u0000\u0000\u5166\u4C70\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2E58\u0000\u5379\u7E55\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C58\u3072\u0000\u0000\u0000\u0000\u2B62\u6873\u0000\u0000\u0000\u0000\u0000\u426F\u0000\u0000\u0000\u0000\u0000\u0000\u6C6D\u0000\u3867\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7E5A\u0000\u0000\u3E4C\u0000\u0000\u7C72\u6B5A\u0000\u5862\u566D\u0000\u0000\u5156\u3360\u0000\u0000\u527C\u0000\u486B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4153\u4D70\u0000\u774F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u526D\u0000\u5854\u495C\u7157\u0000\u0000\u3B5F\u0000\u0000\u2573\u0000\u0000\u0000\u4D74\u0000\u0000\u0000\u0000\u3F71\u3178\u0000\u7A69\u0000\u0000\u0000\u4B7B\u0000\u0000\u554A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5479\u4A77\u0000\u0000\u4856\u0000\u0000\u0000\u0000\u0000\u0000\u687C\u3D73\u0000\u7E6E\u0000\u7E67\u0000\u0000\u0000\u0000\u0000\u4253\u0000\u0000\u0000\u0000\u3653\u0000\u2D4C\u7A76\u3256\u5852\u0000\u0000\u0000\u0000\u0000\u0000\u5867\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2563\u0000\u0000\u0000\u0000\u3967\u0000\u0000\u0000\u0000\u2D70\u4C7B\u216B\u0000\u0000\u2654\u0000\u0000\u0000\u0000\u4D7B\u0000\u3D55\u5F71\u0000\u0000\u7B76\u0000\u345E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B55\u0000\u0000\u4865\u0000\u0000\u0000\u247B\u3954\u0000\u0000\u615E\u0000\u2364\u0000\u0000\u0000\u3757\u0000\u6E78\u0000\u0000\u0000\u355E\u0000\u0000\u5256\u0000\u5579\u3A67\u556B\u7755\u676F\u3E61\u0000\u0000\u0000\u2E7A\u0000\u0000\u0000\u6956\u6E56\u0000\u0000\u0000\u0000\u0000\u0000\u3B67\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4B6C\u0000\u0000\u0000\u0000\u0000\u0000\u3355\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u344E\u0000\u0000\u0000\u257B\u6E61\u0000\u0000\u0000\u0000\u0000\u0000\u2877\u0000\u0000\u0000\u0000\u4E7B\u0000\u0000\u0000\u0000\u0000\u3D58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D7B\u0000\u0000\u0000\u0000\u697C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u364F\u0000\u0000\u0000\u476D\u2C6E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D4C\u0000\u0000\u0000\u0000\u2776\u0000\u0000\u0000\u7A66\u0000\u0000\u0000\u2475\u0000\u0000\u0000\u0000\u0000\u5C7D\u336D\u494E\u0000\u0000\u0000\u0000\u0000\u0000\u686F\u0000\u0000\u3F61\u0000\u0000\u0000\u0000\u0000\u0000\u5B7A\u634B\u2977\u0000\u267B\u0000\u0000\u0000\u395C\u0000\u0000\u0000\u4071\u486D\u436F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D56\u0000\u0000\u4E7D\u0000\u0000\u0000\u2168\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u747B\u2755\u0000\u0000\u0000\u7671\u0000\u5366".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_70F1 = getOutput0_70F1();
 		private static final char[] getOutput0_70F1() {
-			return new char[] {
-				0x5E4C, 0, 0, 0, 0, 0, 0, 0, 0x3278, 0, 0, 0, 0x6B5C, 0, 0, 0,
-				0, 0, 0, 0x367D, 0, 0, 0, 0, 0x6A65, 0, 0, 0x6071, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x4C5B, 0x4D5D, 0, 0, 0, 0x4854, 0, 0,
-				0x6D59, 0, 0, 0, 0, 0x2575, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7B66,
-				0, 0, 0, 0, 0, 0x5466, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x487D, 0, 0x2156, 0x3F7D, 0, 0x537C, 0, 0x216F, 0, 0x3C67,
-				0, 0, 0, 0, 0, 0x6E51, 0, 0, 0x5566, 0, 0, 0x7269, 0, 0x305F, 0, 0,
-				0, 0, 0, 0x6058, 0x3A7C, 0x2F7D, 0x4E70, 0, 0x615B, 0, 0, 0x4965, 0, 0x346D, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4360, 0, 0, 0,
-				0, 0, 0, 0x5863, 0, 0, 0, 0, 0x7B69, 0x286A, 0, 0, 0, 0, 0x377D, 0,
-				0, 0x277B, 0, 0x4269, 0, 0, 0, 0, 0x777D, 0, 0, 0, 0, 0, 0x5962, 0,
-				0, 0x6C5C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2268, 0, 0, 0, 0,
-				0x7066, 0, 0, 0, 0, 0, 0, 0, 0x787D, 0x797D, 0, 0, 0, 0x3F76, 0, 0,
-				0x2767, 0, 0x5766, 0, 0, 0, 0, 0x7354, 0x4954, 0, 0, 0, 0, 0x7A56, 0, 0x7257,
-				0, 0x4061, 0, 0x625B, 0x5866, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3D67, 0,
-				0, 0, 0, 0, 0x4F70, 0x3E73, 0x2C62, 0, 0, 0, 0, 0, 0x3775, 0x7060, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x387D, 0x6863, 0, 0x2754, 0x7C68, 0x527A,
-				0, 0, 0, 0, 0, 0x6F78, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5356,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3455, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5070, 0, 0x7077, 0x336E, 0, 0, 0x3A6A,
-				0, 0x536A, 0, 0, 0x496D, 0x2B5D, 0, 0, 0, 0x2C65, 0x217D, 0, 0x505F, 0x336C, 0, 0x515F,
-				0, 0, 0, 0, 0, 0x6D6D, 0x3878, 0x7A77, 0, 0, 0, 0x2B78, 0, 0, 0, 0,
-				0, 0x6074, 0, 0, 0, 0, 0, 0x3A54, 0x3364, 0, 0x5A69, 0, 0x365E, 0, 0x3F59, 0,
-				0x4059, 0x6F56, 0, 0, 0, 0, 0x4C59, 0, 0x2A5A, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x655F, 0, 0, 0, 0, 0, 0, 0x6577, 0, 0, 0, 0x324C, 0, 0, 0x795F,
-				0x6057,
-			};
+			return "\u5E4C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3278\u0000\u0000\u0000\u6B5C\u0000\u0000\u0000\u0000\u0000\u0000\u367D\u0000\u0000\u0000\u0000\u6A65\u0000\u0000\u6071\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4C5B\u4D5D\u0000\u0000\u0000\u4854\u0000\u0000\u6D59\u0000\u0000\u0000\u0000\u2575\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B66\u0000\u0000\u0000\u0000\u0000\u5466\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u487D\u0000\u2156\u3F7D\u0000\u537C\u0000\u216F\u0000\u3C67\u0000\u0000\u0000\u0000\u0000\u6E51\u0000\u0000\u5566\u0000\u0000\u7269\u0000\u305F\u0000\u0000\u0000\u0000\u0000\u6058\u3A7C\u2F7D\u4E70\u0000\u615B\u0000\u0000\u4965\u0000\u346D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4360\u0000\u0000\u0000\u0000\u0000\u0000\u5863\u0000\u0000\u0000\u0000\u7B69\u286A\u0000\u0000\u0000\u0000\u377D\u0000\u0000\u277B\u0000\u4269\u0000\u0000\u0000\u0000\u777D\u0000\u0000\u0000\u0000\u0000\u5962\u0000\u0000\u6C5C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2268\u0000\u0000\u0000\u0000\u7066\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u787D\u797D\u0000\u0000\u0000\u3F76\u0000\u0000\u2767\u0000\u5766\u0000\u0000\u0000\u0000\u7354\u4954\u0000\u0000\u0000\u0000\u7A56\u0000\u7257\u0000\u4061\u0000\u625B\u5866\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D67\u0000\u0000\u0000\u0000\u0000\u4F70\u3E73\u2C62\u0000\u0000\u0000\u0000\u0000\u3775\u7060\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u387D\u6863\u0000\u2754\u7C68\u527A\u0000\u0000\u0000\u0000\u0000\u6F78\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5356\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3455\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5070\u0000\u7077\u336E\u0000\u0000\u3A6A\u0000\u536A\u0000\u0000\u496D\u2B5D\u0000\u0000\u0000\u2C65\u217D\u0000\u505F\u336C\u0000\u515F\u0000\u0000\u0000\u0000\u0000\u6D6D\u3878\u7A77\u0000\u0000\u0000\u2B78\u0000\u0000\u0000\u0000\u0000\u6074\u0000\u0000\u0000\u0000\u0000\u3A54\u3364\u0000\u5A69\u0000\u365E\u0000\u3F59\u0000\u4059\u6F56\u0000\u0000\u0000\u0000\u4C59\u0000\u2A5A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u655F\u0000\u0000\u0000\u0000\u0000\u0000\u6577\u0000\u0000\u0000\u324C\u0000\u0000\u795F\u6057".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_72A2 = getOutput0_72A2();
 		private static final char[] getOutput0_72A2() {
-			return new char[] {
-				0x3B54, 0, 0, 0, 0, 0x7A7D, 0, 0, 0, 0, 0x334C, 0, 0, 0x735B, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x525F, 0,
-				0x4A4E, 0, 0x5A6E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6464, 0, 0x4F7B, 0,
-				0, 0, 0, 0, 0, 0x374F, 0, 0x436E, 0, 0, 0, 0, 0, 0, 0, 0x6A4E,
-				0, 0, 0, 0, 0, 0, 0, 0x2D62, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x6157, 0x757A, 0, 0, 0x4955, 0x2C78, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x5967, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x6973, 0, 0, 0, 0, 0x6D58, 0x4463, 0x7170, 0, 0, 0, 0,
-				0, 0, 0, 0x6568, 0, 0, 0, 0x7A60, 0x446E, 0x5E59, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x226B, 0x236B, 0, 0, 0, 0, 0, 0, 0x427C, 0x3B6A, 0, 0,
-				0, 0, 0x2B68, 0x625E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6F6D, 0,
-				0x2368, 0, 0, 0, 0, 0x714F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x3C54, 0, 0x6A7C, 0, 0, 0, 0, 0, 0x3E67, 0,
-				0x727C, 0, 0, 0x3456, 0, 0, 0x2E62, 0, 0x3753, 0x4C7A, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x5C7A, 0, 0x356D, 0x6361, 0, 0x2C68, 0, 0x5D68, 0, 0, 0x696F, 0, 0, 0,
-				0, 0, 0x3D74, 0, 0x384F, 0x5B69, 0x2C51, 0, 0, 0, 0, 0, 0, 0x475A, 0, 0,
-				0, 0, 0, 0, 0, 0x496B, 0, 0x4C68, 0, 0, 0, 0x375E, 0, 0, 0, 0,
-				0x3C56, 0x6553, 0, 0, 0, 0, 0, 0x5D7A, 0, 0, 0, 0, 0, 0, 0x565A, 0,
-				0x314A, 0, 0, 0, 0, 0, 0, 0x485A, 0x265F, 0, 0x3379, 0x5272, 0, 0x444A, 0, 0,
-				0, 0, 0, 0, 0x4B4E, 0, 0, 0x754D, 0, 0, 0, 0x307D, 0x2855, 0, 0x4171, 0,
-				0, 0x6962, 0x4A5C, 0x346C, 0x407A, 0, 0, 0x287B, 0x2850, 0, 0, 0x6C5A, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6E59, 0, 0x7B60, 0, 0, 0, 0x6A6F, 0x5E7A, 0, 0, 0x4460,
-				0, 0x394F, 0, 0x4A55, 0x6257, 0x2F62, 0, 0x3857, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x4D68, 0, 0, 0, 0, 0, 0, 0, 0x5A76, 0, 0, 0, 0, 0x226F, 0x5A62,
-				0x7C76, 0, 0, 0x507B, 0x2D51, 0, 0x644D, 0, 0x2E51, 0x6D5C, 0x4E68, 0, 0x7970, 0x354E, 0x7C66, 0,
-				0, 0x7B57, 0x5650, 0x755D, 0x7177, 0, 0x7D76, 0, 0x775B, 0, 0, 0, 0, 0x6A7B, 0x5C69, 0x4159,
-				0, 0x7275, 0x4560, 0, 0, 0, 0, 0, 0, 0x546A, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x4279, 0, 0x3C6A, 0, 0x4552, 0x517B, 0x4067, 0x256B, 0, 0x7A5F, 0x2263, 0x3957, 0,
-				0x4369, 0, 0x7D68, 0x2F68, 0, 0, 0x5372, 0x297B, 0x2558, 0, 0, 0, 0, 0x4B55, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4850, 0, 0, 0,
-				0x2F51, 0x6357, 0, 0, 0, 0x4660, 0, 0x2256, 0, 0x706D, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x7357, 0, 0, 0, 0x547C, 0, 0x575A, 0x5F4C, 0, 0x5472,
-				0, 0x3051, 0, 0x604C, 0, 0x7D5B, 0x3F73, 0, 0x5170, 0, 0, 0, 0, 0, 0x3B7C, 0,
-				0x3062, 0, 0, 0x2566, 0, 0, 0, 0x5B62, 0, 0, 0, 0x5E5F, 0, 0x4760, 0, 0,
-				0, 0, 0, 0, 0x6F72, 0, 0, 0, 0x614C, 0, 0, 0, 0, 0x6A56, 0, 0,
-				0, 0, 0x4267, 0, 0, 0, 0x364E, 0, 0x4073, 0, 0x7E4D, 0, 0, 0, 0x527B, 0,
-				0x7878, 0x7B77, 0, 0, 0x3F68, 0, 0, 0, 0, 0, 0, 0, 0x3768, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x366D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3A5C,
-				0, 0, 0x344C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7771,
-				0, 0, 0, 0x3868, 0, 0, 0x764A, 0, 0x2464, 0x5674, 0, 0, 0, 0x665F, 0, 0,
-				0, 0x275F, 0, 0x675F, 0x4161, 0, 0x4469, 0, 0, 0x4B5C, 0x4569, 0, 0, 0, 0x236F, 0x266B,
-				0x234B, 0x6963, 0, 0, 0, 0x7B51, 0x246F, 0, 0x6B6F, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x3450, 0, 0, 0, 0, 0x234D, 0, 0, 0x6668, 0, 0x256F,
-				0, 0x4C53, 0x6D5A, 0, 0, 0, 0, 0x3A57, 0, 0x5572, 0x6575, 0x6F59, 0, 0, 0, 0,
-				0x3479, 0, 0, 0x5455, 0x4F7D, 0, 0, 0, 0x635B, 0, 0, 0, 0, 0x6171, 0x366C, 0,
-				0, 0, 0, 0x7E7B, 0x5753, 0, 0x3151, 0, 0x314B, 0, 0, 0, 0, 0x3251, 0, 0,
-				0, 0, 0, 0, 0x324B, 0x4271, 0, 0, 0x6174, 0x3579, 0, 0, 0x4361, 0x4261, 0, 0x776B,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x285F, 0, 0, 0, 0,
-				0, 0, 0, 0x4A4B, 0, 0, 0, 0, 0, 0x3966, 0, 0, 0, 0, 0, 0x5E78,
-				0x2A79, 0x774A, 0, 0x376D, 0, 0, 0x3853, 0x5672, 0, 0, 0x5954, 0x456E, 0x7072, 0, 0, 0,
-				0x324A, 0, 0, 0x3B5C, 0, 0x7871, 0, 0, 0, 0, 0, 0x376C, 0, 0, 0, 0,
-				0x4A65, 0, 0x4076, 0x5D7D, 0, 0, 0x6354, 0x624C, 0, 0x5477, 0, 0, 0, 0, 0, 0,
-				0x6557, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4353, 0,
-				0x2658, 0, 0x4176, 0, 0, 0, 0, 0, 0x765D, 0, 0x404D, 0, 0, 0, 0x5C65, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4B65, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x4461, 0, 0, 0, 0, 0, 0x3068, 0x3074, 0x6A73,
-				0x6E5A, 0, 0x3B57, 0, 0x3162,
-			};
+			return "\u3B54\u0000\u0000\u0000\u0000\u7A7D\u0000\u0000\u0000\u0000\u334C\u0000\u0000\u735B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u525F\u0000\u4A4E\u0000\u5A6E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6464\u0000\u4F7B\u0000\u0000\u0000\u0000\u0000\u0000\u374F\u0000\u436E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6A4E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D62\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6157\u757A\u0000\u0000\u4955\u2C78\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5967\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6973\u0000\u0000\u0000\u0000\u6D58\u4463\u7170\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6568\u0000\u0000\u0000\u7A60\u446E\u5E59\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u226B\u236B\u0000\u0000\u0000\u0000\u0000\u0000\u427C\u3B6A\u0000\u0000\u0000\u0000\u2B68\u625E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F6D\u0000\u2368\u0000\u0000\u0000\u0000\u714F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C54\u0000\u6A7C\u0000\u0000\u0000\u0000\u0000\u3E67\u0000\u727C\u0000\u0000\u3456\u0000\u0000\u2E62\u0000\u3753\u4C7A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5C7A\u0000\u356D\u6361\u0000\u2C68\u0000\u5D68\u0000\u0000\u696F\u0000\u0000\u0000\u0000\u0000\u3D74\u0000\u384F\u5B69\u2C51\u0000\u0000\u0000\u0000\u0000\u0000\u475A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u496B\u0000\u4C68\u0000\u0000\u0000\u375E\u0000\u0000\u0000\u0000\u3C56\u6553\u0000\u0000\u0000\u0000\u0000\u5D7A\u0000\u0000\u0000\u0000\u0000\u0000\u565A\u0000\u314A\u0000\u0000\u0000\u0000\u0000\u0000\u485A\u265F\u0000\u3379\u5272\u0000\u444A\u0000\u0000\u0000\u0000\u0000\u0000\u4B4E\u0000\u0000\u754D\u0000\u0000\u0000\u307D\u2855\u0000\u4171\u0000\u0000\u6962\u4A5C\u346C\u407A\u0000\u0000\u287B\u2850\u0000\u0000\u6C5A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E59\u0000\u7B60\u0000\u0000\u0000\u6A6F\u5E7A\u0000\u0000\u4460\u0000\u394F\u0000\u4A55\u6257\u2F62\u0000\u3857\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D68\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5A76\u0000\u0000\u0000\u0000\u226F\u5A62\u7C76\u0000\u0000\u507B\u2D51\u0000\u644D\u0000\u2E51\u6D5C\u4E68\u0000\u7970\u354E\u7C66\u0000\u0000\u7B57\u5650\u755D\u7177\u0000\u7D76\u0000\u775B\u0000\u0000\u0000\u0000\u6A7B\u5C69\u4159\u0000\u7275\u4560\u0000\u0000\u0000\u0000\u0000\u0000\u546A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4279\u0000\u3C6A\u0000\u4552\u517B\u4067\u256B\u0000\u7A5F\u2263\u3957\u0000\u4369\u0000\u7D68\u2F68\u0000\u0000\u5372\u297B\u2558\u0000\u0000\u0000\u0000\u4B55\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4850\u0000\u0000\u0000\u2F51\u6357\u0000\u0000\u0000\u4660\u0000\u2256\u0000\u706D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7357\u0000\u0000\u0000\u547C\u0000\u575A\u5F4C\u0000\u5472\u0000\u3051\u0000\u604C\u0000\u7D5B\u3F73\u0000\u5170\u0000\u0000\u0000\u0000\u0000\u3B7C\u0000\u3062\u0000\u0000\u2566\u0000\u0000\u0000\u5B62\u0000\u0000\u0000\u5E5F\u0000\u4760\u0000\u0000\u0000\u0000\u0000\u0000\u6F72\u0000\u0000\u0000\u614C\u0000\u0000\u0000\u0000\u6A56\u0000\u0000\u0000\u0000\u4267\u0000\u0000\u0000\u364E\u0000\u4073\u0000\u7E4D\u0000\u0000\u0000\u527B\u0000\u7878\u7B77\u0000\u0000\u3F68\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3768\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u366D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3A5C\u0000\u0000\u344C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7771\u0000\u0000\u0000\u3868\u0000\u0000\u764A\u0000\u2464\u5674\u0000\u0000\u0000\u665F\u0000\u0000\u0000\u275F\u0000\u675F\u4161\u0000\u4469\u0000\u0000\u4B5C\u4569\u0000\u0000\u0000\u236F\u266B\u234B\u6963\u0000\u0000\u0000\u7B51\u246F\u0000\u6B6F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3450\u0000\u0000\u0000\u0000\u234D\u0000\u0000\u6668\u0000\u256F\u0000\u4C53\u6D5A\u0000\u0000\u0000\u0000\u3A57\u0000\u5572\u6575\u6F59\u0000\u0000\u0000\u0000\u3479\u0000\u0000\u5455\u4F7D\u0000\u0000\u0000\u635B\u0000\u0000\u0000\u0000\u6171\u366C\u0000\u0000\u0000\u0000\u7E7B\u5753\u0000\u3151\u0000\u314B\u0000\u0000\u0000\u0000\u3251\u0000\u0000\u0000\u0000\u0000\u0000\u324B\u4271\u0000\u0000\u6174\u3579\u0000\u0000\u4361\u4261\u0000\u776B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u285F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4A4B\u0000\u0000\u0000\u0000\u0000\u3966\u0000\u0000\u0000\u0000\u0000\u5E78\u2A79\u774A\u0000\u376D\u0000\u0000\u3853\u5672\u0000\u0000\u5954\u456E\u7072\u0000\u0000\u0000\u324A\u0000\u0000\u3B5C\u0000\u7871\u0000\u0000\u0000\u0000\u0000\u376C\u0000\u0000\u0000\u0000\u4A65\u0000\u4076\u5D7D\u0000\u0000\u6354\u624C\u0000\u5477\u0000\u0000\u0000\u0000\u0000\u0000\u6557\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4353\u0000\u2658\u0000\u4176\u0000\u0000\u0000\u0000\u0000\u765D\u0000\u404D\u0000\u0000\u0000\u5C65\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4B65\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4461\u0000\u0000\u0000\u0000\u0000\u3068\u3074\u6A73\u6E5A\u0000\u3B57\u0000\u3162".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_763B = getOutput0_763B();
 		private static final char[] getOutput0_763B() {
-			return new char[] {
-				0x2A57, 0, 0, 0, 0, 0, 0, 0x7B56, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x5F64, 0, 0x564A, 0, 0, 0, 0x286B, 0, 0, 0, 0x7E5B, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x4276, 0, 0, 0x3B6F, 0, 0, 0, 0, 0x7D54, 0,
-				0, 0x4860, 0, 0, 0, 0x3968, 0, 0x266F, 0, 0, 0, 0, 0, 0x244D, 0, 0,
-				0x7454, 0x215B, 0x5C5B, 0x5D5B, 0, 0, 0, 0, 0, 0x5C6E, 0, 0x4B4B, 0x557C, 0, 0, 0,
-				0, 0, 0, 0x6B4E, 0, 0x414D, 0, 0, 0x537B,
-			};
+			return "\u2A57\u0000\u0000\u0000\u0000\u0000\u0000\u7B56\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F64\u0000\u564A\u0000\u0000\u0000\u286B\u0000\u0000\u0000\u7E5B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4276\u0000\u0000\u3B6F\u0000\u0000\u0000\u0000\u7D54\u0000\u0000\u4860\u0000\u0000\u0000\u3968\u0000\u266F\u0000\u0000\u0000\u0000\u0000\u244D\u0000\u0000\u7454\u215B\u5C5B\u5D5B\u0000\u0000\u0000\u0000\u0000\u5C6E\u0000\u4B4B\u557C\u0000\u0000\u0000\u0000\u0000\u0000\u6B4E\u0000\u414D\u0000\u0000\u537B".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_76AE = getOutput0_76AE();
 		private static final char[] getOutput0_76AE() {
-			return new char[] {
-				0x2B79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5475, 0, 0, 0,
-				0, 0x2959, 0, 0, 0x5D69, 0x4D5B, 0, 0, 0x4E5D, 0, 0x4367, 0, 0x4C6C, 0, 0, 0,
-				0, 0, 0, 0, 0x6C79, 0, 0, 0, 0x4C4B, 0, 0, 0, 0, 0x7C60, 0x2854, 0,
-				0x536D, 0x6F58, 0, 0x5772, 0, 0x784A, 0x6F5A, 0, 0, 0x5456, 0, 0, 0, 0, 0, 0,
-				0x4D59, 0, 0, 0, 0x6E58, 0, 0x4172, 0, 0, 0, 0x535F, 0, 0, 0, 0x705A, 0,
-				0x6A62, 0, 0, 0x7D60, 0, 0, 0x7858, 0, 0, 0, 0x2F77, 0x365A, 0, 0x574A,
-			};
+			return "\u2B79\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5475\u0000\u0000\u0000\u0000\u2959\u0000\u0000\u5D69\u4D5B\u0000\u0000\u4E5D\u0000\u4367\u0000\u4C6C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C79\u0000\u0000\u0000\u4C4B\u0000\u0000\u0000\u0000\u7C60\u2854\u0000\u536D\u6F58\u0000\u5772\u0000\u784A\u6F5A\u0000\u0000\u5456\u0000\u0000\u0000\u0000\u0000\u0000\u4D59\u0000\u0000\u0000\u6E58\u0000\u4172\u0000\u0000\u0000\u535F\u0000\u0000\u0000\u705A\u0000\u6A62\u0000\u0000\u7D60\u0000\u0000\u7858\u0000\u0000\u0000\u2F77\u365A\u0000\u574A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_771E = getOutput0_771E();
 		private static final char[] getOutput0_771E() {
-			return new char[] {
-				0x5872, 0, 0x7958, 0, 0, 0, 0, 0, 0, 0, 0, 0x5F7A, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6F4F, 0x4259, 0, 0x5270, 0, 0x5164, 0,
-				0, 0, 0x3773, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x607A,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6C6F, 0, 0,
-				0, 0, 0, 0x3262, 0, 0x3D54, 0, 0, 0x4E59, 0, 0, 0, 0, 0x6274, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2954, 0, 0, 0, 0,
-				0x424D, 0x5A67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5972, 0, 0,
-				0, 0, 0, 0x2A59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x3E58, 0, 0, 0, 0, 0, 0, 0x2D5C, 0, 0, 0, 0, 0, 0, 0x6B62, 0x7C56,
-				0, 0, 0x794A, 0, 0, 0x5A54, 0, 0, 0, 0, 0, 0, 0, 0x5774, 0x214C, 0,
-				0, 0x3A4F,
-			};
+			return "\u5872\u0000\u7958\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F7A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F4F\u4259\u0000\u5270\u0000\u5164\u0000\u0000\u0000\u3773\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u607A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C6F\u0000\u0000\u0000\u0000\u0000\u3262\u0000\u3D54\u0000\u0000\u4E59\u0000\u0000\u0000\u0000\u6274\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2954\u0000\u0000\u0000\u0000\u424D\u5A67\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5972\u0000\u0000\u0000\u0000\u0000\u2A59\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E58\u0000\u0000\u0000\u0000\u0000\u0000\u2D5C\u0000\u0000\u0000\u0000\u0000\u0000\u6B62\u7C56\u0000\u0000\u794A\u0000\u0000\u5A54\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5774\u214C\u0000\u0000\u3A4F".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_7825 = getOutput0_7825();
 		private static final char[] getOutput0_7825() {
-			return new char[] {
-				0x3272, 0x7673, 0x5B76, 0, 0, 0, 0, 0x7E57, 0, 0, 0, 0, 0, 0x5F78, 0, 0x7277,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x2950, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5A66, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x2675, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x3C57, 0x634C, 0, 0, 0x5B66, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x5D5D, 0, 0, 0, 0, 0x3351, 0, 0, 0,
-				0, 0, 0x6D6F, 0, 0, 0, 0, 0x5E56, 0x7464, 0x6F61, 0, 0, 0x785D, 0, 0, 0,
-				0, 0, 0x4F68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x654A, 0,
-				0, 0, 0x215C, 0, 0x3560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x2C7C, 0x2D7C, 0x2758, 0, 0, 0, 0, 0x386D, 0, 0, 0,
-				0x365B, 0, 0, 0, 0, 0x7056, 0x2F73, 0, 0, 0x254D, 0, 0x715A,
-			};
+			return "\u3272\u7673\u5B76\u0000\u0000\u0000\u0000\u7E57\u0000\u0000\u0000\u0000\u0000\u5F78\u0000\u7277\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2950\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5A66\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2675\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C57\u634C\u0000\u0000\u5B66\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D5D\u0000\u0000\u0000\u0000\u3351\u0000\u0000\u0000\u0000\u0000\u6D6F\u0000\u0000\u0000\u0000\u5E56\u7464\u6F61\u0000\u0000\u785D\u0000\u0000\u0000\u0000\u0000\u4F68\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u654A\u0000\u0000\u0000\u215C\u0000\u3560\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2C7C\u2D7C\u2758\u0000\u0000\u0000\u0000\u386D\u0000\u0000\u0000\u365B\u0000\u0000\u0000\u0000\u7056\u2F73\u0000\u0000\u254D\u0000\u715A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_792A = getOutput0_792A();
 		private static final char[] getOutput0_792A() {
-			return new char[] {
-				0x6C55, 0x7855, 0x735A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x4663, 0, 0, 0, 0x645E, 0, 0x655E, 0x3551, 0, 0, 0, 0, 0, 0x3651, 0x3751, 0x3372,
-				0, 0, 0, 0, 0, 0, 0x5E69, 0, 0, 0, 0, 0, 0x5370, 0x3472, 0, 0,
-				0x5470, 0x644B, 0x547B, 0x6675, 0x6A63, 0, 0x665E, 0, 0, 0, 0, 0x545F, 0, 0, 0x7978, 0,
-				0, 0, 0, 0x2E70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x3851, 0, 0, 0, 0, 0x5F56, 0, 0x5750, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x217C, 0x6E6F, 0x585C, 0, 0x5F69,
-			};
+			return "\u6C55\u7855\u735A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4663\u0000\u0000\u0000\u645E\u0000\u655E\u3551\u0000\u0000\u0000\u0000\u0000\u3651\u3751\u3372\u0000\u0000\u0000\u0000\u0000\u0000\u5E69\u0000\u0000\u0000\u0000\u0000\u5370\u3472\u0000\u0000\u5470\u644B\u547B\u6675\u6A63\u0000\u665E\u0000\u0000\u0000\u0000\u545F\u0000\u0000\u7978\u0000\u0000\u0000\u0000\u2E70\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3851\u0000\u0000\u0000\u0000\u5F56\u0000\u5750\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u217C\u6E6F\u585C\u0000\u5F69".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_79A6 = getOutput0_79A6();
 		private static final char[] getOutput0_79A6() {
-			return new char[] {
-				0x5D65, 0x7B7D, 0, 0, 0x4960, 0, 0, 0, 0x4956, 0, 0, 0x2A54, 0, 0x4C65, 0, 0,
-				0, 0, 0, 0x6069, 0, 0, 0, 0x5850, 0x227C, 0x3E54, 0x3362, 0x675E, 0, 0, 0, 0,
-				0, 0, 0, 0x3C5C, 0x3652, 0x5575, 0, 0, 0, 0, 0, 0x214E, 0x2975, 0, 0, 0x795D,
-				0, 0, 0x7A5D, 0, 0, 0, 0, 0, 0, 0x5570, 0, 0, 0, 0, 0x5F76, 0,
-				0x5A72, 0x6B64, 0, 0x7172,
-			};
+			return "\u5D65\u7B7D\u0000\u0000\u4960\u0000\u0000\u0000\u4956\u0000\u0000\u2A54\u0000\u4C65\u0000\u0000\u0000\u0000\u0000\u6069\u0000\u0000\u0000\u5850\u227C\u3E54\u3362\u675E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C5C\u3652\u5575\u0000\u0000\u0000\u0000\u0000\u214E\u2975\u0000\u0000\u795D\u0000\u0000\u7A5D\u0000\u0000\u0000\u0000\u0000\u0000\u5570\u0000\u0000\u0000\u0000\u5F76\u0000\u5A72\u6B64\u0000\u7172".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_79FB = getOutput0_79FB();
 		private static final char[] getOutput0_79FB() {
-			return new char[] {
-				0x396C, 0, 0, 0, 0, 0x7C7D, 0, 0, 0, 0, 0x2A61, 0, 0, 0x594A, 0, 0,
-				0x6F6F, 0, 0x2A75, 0, 0, 0, 0, 0, 0, 0x796C, 0, 0, 0x2D78, 0, 0x4272, 0x4376,
-				0, 0x5257, 0, 0, 0x2279, 0x5670, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x7A70, 0, 0, 0x6076, 0, 0, 0, 0, 0x7369, 0x4372, 0, 0, 0,
-				0x2B54, 0x334A, 0x264D, 0, 0x434D, 0x5A4D, 0, 0, 0, 0, 0, 0x4F59, 0, 0, 0x4476, 0,
-				0, 0, 0x5D6E, 0x4467, 0, 0, 0, 0, 0, 0, 0, 0, 0x3462, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x625F, 0x5B67, 0, 0, 0, 0, 0, 0, 0x3168, 0,
-				0x2E7C, 0, 0, 0, 0, 0x4D65, 0, 0, 0, 0x6B7A, 0, 0x3C4F, 0, 0, 0x624F, 0x764D,
-				0, 0, 0x706F, 0, 0x3E74, 0, 0x4D54, 0, 0, 0x3873, 0, 0, 0, 0x2169, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x7272, 0x6B73, 0, 0x5770, 0, 0, 0x574F, 0, 0,
-				0, 0, 0, 0, 0x5F4F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4068, 0x4168,
-				0, 0, 0, 0x634F, 0x2269, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2A50,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4173, 0x2B50, 0, 0x6454, 0, 0, 0x3C6F,
-				0x2158, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5F59, 0, 0x5773, 0,
-				0, 0, 0x3D5C, 0, 0x654C, 0x716D, 0, 0, 0x6271, 0, 0x5B54, 0, 0, 0, 0, 0x3562,
-				0, 0, 0x664A, 0, 0x2E53, 0, 0, 0, 0, 0, 0, 0x664C, 0, 0, 0x5371, 0x6775,
-				0, 0, 0, 0, 0x5A4A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x6E7B, 0, 0x4561, 0, 0, 0, 0, 0, 0, 0, 0x695F, 0,
-				0x5E6E, 0, 0, 0x4277, 0, 0x2258, 0, 0, 0, 0, 0, 0x2C5D, 0, 0, 0, 0,
-				0, 0x2F70, 0x3D56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2B61, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3679, 0, 0, 0x7554, 0,
-				0x4950, 0x276F, 0x6C62, 0, 0x6A5B, 0x4C4E, 0x6875, 0x5577, 0, 0x4D53, 0, 0x7E73, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x3550, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x7E60, 0, 0x7B5F, 0, 0, 0, 0, 0, 0, 0x5D66, 0, 0, 0, 0, 0,
-				0, 0, 0x2468, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4D4B, 0, 0, 0,
-				0x286F, 0, 0, 0, 0x346E, 0, 0, 0, 0, 0x585A, 0x3951, 0, 0x295F, 0, 0, 0x3073,
-				0, 0, 0x444C, 0, 0, 0, 0x374E, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x296F, 0, 0, 0, 0x555F, 0, 0, 0x576D, 0, 0, 0, 0x466E, 0, 0,
-				0, 0, 0, 0, 0, 0x3D6F, 0x567C, 0, 0, 0x745B, 0, 0x2A6F, 0x3978, 0, 0x6975, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x5963, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x4661, 0, 0, 0, 0x3F54, 0, 0, 0, 0, 0x685E,
-			};
+			return "\u396C\u0000\u0000\u0000\u0000\u7C7D\u0000\u0000\u0000\u0000\u2A61\u0000\u0000\u594A\u0000\u0000\u6F6F\u0000\u2A75\u0000\u0000\u0000\u0000\u0000\u0000\u796C\u0000\u0000\u2D78\u0000\u4272\u4376\u0000\u5257\u0000\u0000\u2279\u5670\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7A70\u0000\u0000\u6076\u0000\u0000\u0000\u0000\u7369\u4372\u0000\u0000\u0000\u2B54\u334A\u264D\u0000\u434D\u5A4D\u0000\u0000\u0000\u0000\u0000\u4F59\u0000\u0000\u4476\u0000\u0000\u0000\u5D6E\u4467\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3462\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u625F\u5B67\u0000\u0000\u0000\u0000\u0000\u0000\u3168\u0000\u2E7C\u0000\u0000\u0000\u0000\u4D65\u0000\u0000\u0000\u6B7A\u0000\u3C4F\u0000\u0000\u624F\u764D\u0000\u0000\u706F\u0000\u3E74\u0000\u4D54\u0000\u0000\u3873\u0000\u0000\u0000\u2169\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7272\u6B73\u0000\u5770\u0000\u0000\u574F\u0000\u0000\u0000\u0000\u0000\u0000\u5F4F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4068\u4168\u0000\u0000\u0000\u634F\u2269\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2A50\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4173\u2B50\u0000\u6454\u0000\u0000\u3C6F\u2158\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F59\u0000\u5773\u0000\u0000\u0000\u3D5C\u0000\u654C\u716D\u0000\u0000\u6271\u0000\u5B54\u0000\u0000\u0000\u0000\u3562\u0000\u0000\u664A\u0000\u2E53\u0000\u0000\u0000\u0000\u0000\u0000\u664C\u0000\u0000\u5371\u6775\u0000\u0000\u0000\u0000\u5A4A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E7B\u0000\u4561\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u695F\u0000\u5E6E\u0000\u0000\u4277\u0000\u2258\u0000\u0000\u0000\u0000\u0000\u2C5D\u0000\u0000\u0000\u0000\u0000\u2F70\u3D56\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B61\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3679\u0000\u0000\u7554\u0000\u4950\u276F\u6C62\u0000\u6A5B\u4C4E\u6875\u5577\u0000\u4D53\u0000\u7E73\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3550\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7E60\u0000\u7B5F\u0000\u0000\u0000\u0000\u0000\u0000\u5D66\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2468\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D4B\u0000\u0000\u0000\u286F\u0000\u0000\u0000\u346E\u0000\u0000\u0000\u0000\u585A\u3951\u0000\u295F\u0000\u0000\u3073\u0000\u0000\u444C\u0000\u0000\u0000\u374E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u296F\u0000\u0000\u0000\u555F\u0000\u0000\u576D\u0000\u0000\u0000\u466E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D6F\u567C\u0000\u0000\u745B\u0000\u2A6F\u3978\u0000\u6975\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5963\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4661\u0000\u0000\u0000\u3F54\u0000\u0000\u0000\u0000\u685E".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_7C60 = getOutput0_7C60();
 		private static final char[] getOutput0_7C60() {
-			return new char[] {
-				0x6B56, 0, 0, 0, 0x5974, 0, 0, 0, 0, 0, 0, 0, 0x6657, 0, 0, 0,
-				0, 0, 0, 0x375A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x7B5D, 0, 0, 0, 0, 0, 0x4F5D, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x2358, 0, 0, 0x595A, 0, 0x5870, 0x446F, 0, 0, 0, 0, 0, 0, 0x5861,
-				0, 0, 0, 0, 0, 0x5471, 0, 0x726D, 0, 0, 0, 0, 0, 0, 0x5B55, 0,
-				0, 0x5C55, 0x4473, 0x574B, 0, 0, 0, 0, 0, 0x3662, 0, 0, 0, 0, 0x716F, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x557B, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x5853, 0, 0, 0, 0, 0, 0, 0, 0x505D, 0x5970,
-				0x334B, 0, 0, 0, 0, 0, 0, 0x5D55,
-			};
+			return "\u6B56\u0000\u0000\u0000\u5974\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6657\u0000\u0000\u0000\u0000\u0000\u0000\u375A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B5D\u0000\u0000\u0000\u0000\u0000\u4F5D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2358\u0000\u0000\u595A\u0000\u5870\u446F\u0000\u0000\u0000\u0000\u0000\u0000\u5861\u0000\u0000\u0000\u0000\u0000\u5471\u0000\u726D\u0000\u0000\u0000\u0000\u0000\u0000\u5B55\u0000\u0000\u5C55\u4473\u574B\u0000\u0000\u0000\u0000\u0000\u3662\u0000\u0000\u0000\u0000\u716F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u557B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5853\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u505D\u5970\u334B\u0000\u0000\u0000\u0000\u0000\u0000\u5D55".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_7CFB = getOutput0_7CFB();
 		private static final char[] getOutput0_7CFB() {
-			return new char[] {
-				0x274D, 0, 0, 0x2C50, 0, 0x3A51, 0, 0x4471, 0, 0x3365, 0x757B, 0x6169, 0x607D, 0x3C7C, 0, 0x225A,
-				0x235A, 0, 0x2152, 0, 0, 0x6F52, 0, 0, 0, 0x6D62, 0, 0, 0x695E, 0x5C4E, 0x3572, 0x6450,
-				0x515D, 0, 0, 0, 0, 0x4861, 0x375B, 0x635F, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x396D, 0x4571, 0, 0x4F73, 0x2B57, 0x2C61, 0, 0, 0x6B63, 0, 0x476E, 0, 0, 0, 0x4961, 0x7A4A,
-				0, 0, 0, 0, 0, 0, 0, 0x7B70, 0x617A, 0x5A70, 0x674C, 0x745A, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x3F4C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x6D4E, 0, 0, 0x2955, 0x627A, 0, 0, 0, 0x6550, 0, 0x566B, 0, 0x5F6C,
-				0, 0, 0, 0x7C5F, 0, 0, 0x5677, 0x6A5E, 0x344B, 0, 0, 0x3E6F, 0, 0, 0x354C, 0,
-				0, 0, 0, 0, 0x3D4F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x726F, 0x3762, 0, 0, 0, 0x684C, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x7C70, 0, 0, 0, 0x6056, 0, 0x4671, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x3862, 0x2B6B, 0, 0, 0, 0x354B, 0x5158, 0, 0x4E74, 0x7773, 0, 0, 0x4657, 0, 0x3B51,
-				0x2A77, 0, 0x4A6D, 0x5357, 0x7A58, 0, 0, 0, 0, 0, 0, 0, 0x4576, 0, 0, 0x4C51,
-				0x7C5D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7D5F, 0, 0x6579, 0, 0x4A60,
-				0, 0, 0x7D72, 0x3053, 0, 0x7374, 0x495A, 0, 0x5E66, 0, 0, 0, 0, 0x3A78, 0x5068, 0,
-				0, 0x7B58, 0, 0, 0x556A, 0, 0, 0, 0, 0x2356, 0, 0, 0, 0, 0, 0,
-				0x4676, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5B72, 0x7C64,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3268, 0, 0, 0, 0, 0,
-				0x5A5A, 0, 0x5C72, 0x567B, 0x3269, 0, 0x2D6E, 0, 0x637A, 0, 0, 0, 0, 0, 0, 0,
-				0x6E5C, 0, 0, 0x6A75, 0x6066, 0, 0x7D70, 0, 0, 0, 0, 0, 0x2C57, 0, 0, 0,
-				0, 0, 0x4575, 0x606E, 0, 0, 0x655B, 0, 0x5E5D, 0, 0, 0x7059, 0x2369, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x7971, 0, 0x4472, 0x4B60, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x2469, 0, 0, 0x3962, 0, 0, 0, 0, 0, 0, 0, 0x3163, 0x6B7C,
-				0x284D, 0, 0x364C, 0, 0, 0x5B70, 0, 0, 0, 0, 0, 0, 0, 0, 0x3A66, 0,
-				0, 0x294D, 0, 0, 0, 0, 0, 0x4373, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x5961, 0, 0, 0x2B6F, 0, 0, 0, 0x4567, 0, 0, 0x6960, 0, 0x4573, 0, 0,
-				0x4054, 0x3F55,
-			};
+			return "\u274D\u0000\u0000\u2C50\u0000\u3A51\u0000\u4471\u0000\u3365\u757B\u6169\u607D\u3C7C\u0000\u225A\u235A\u0000\u2152\u0000\u0000\u6F52\u0000\u0000\u0000\u6D62\u0000\u0000\u695E\u5C4E\u3572\u6450\u515D\u0000\u0000\u0000\u0000\u4861\u375B\u635F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u396D\u4571\u0000\u4F73\u2B57\u2C61\u0000\u0000\u6B63\u0000\u476E\u0000\u0000\u0000\u4961\u7A4A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B70\u617A\u5A70\u674C\u745A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3F4C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D4E\u0000\u0000\u2955\u627A\u0000\u0000\u0000\u6550\u0000\u566B\u0000\u5F6C\u0000\u0000\u0000\u7C5F\u0000\u0000\u5677\u6A5E\u344B\u0000\u0000\u3E6F\u0000\u0000\u354C\u0000\u0000\u0000\u0000\u0000\u3D4F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u726F\u3762\u0000\u0000\u0000\u684C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7C70\u0000\u0000\u0000\u6056\u0000\u4671\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3862\u2B6B\u0000\u0000\u0000\u354B\u5158\u0000\u4E74\u7773\u0000\u0000\u4657\u0000\u3B51\u2A77\u0000\u4A6D\u5357\u7A58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4576\u0000\u0000\u4C51\u7C5D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D5F\u0000\u6579\u0000\u4A60\u0000\u0000\u7D72\u3053\u0000\u7374\u495A\u0000\u5E66\u0000\u0000\u0000\u0000\u3A78\u5068\u0000\u0000\u7B58\u0000\u0000\u556A\u0000\u0000\u0000\u0000\u2356\u0000\u0000\u0000\u0000\u0000\u0000\u4676\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5B72\u7C64\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3268\u0000\u0000\u0000\u0000\u0000\u5A5A\u0000\u5C72\u567B\u3269\u0000\u2D6E\u0000\u637A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E5C\u0000\u0000\u6A75\u6066\u0000\u7D70\u0000\u0000\u0000\u0000\u0000\u2C57\u0000\u0000\u0000\u0000\u0000\u4575\u606E\u0000\u0000\u655B\u0000\u5E5D\u0000\u0000\u7059\u2369\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7971\u0000\u4472\u4B60\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2469\u0000\u0000\u3962\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3163\u6B7C\u284D\u0000\u364C\u0000\u0000\u5B70\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3A66\u0000\u0000\u294D\u0000\u0000\u0000\u0000\u0000\u4373\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5961\u0000\u0000\u2B6F\u0000\u0000\u0000\u4567\u0000\u0000\u6960\u0000\u4573\u0000\u0000\u4054\u3F55".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_7F6A = getOutput0_7F6A();
 		private static final char[] getOutput0_7F6A() {
-			return new char[] {
-				0x2A71, 0x514E, 0, 0, 0x4776, 0, 0x6B5B, 0, 0x7E5F, 0, 0, 0x6158, 0, 0x7377, 0, 0x6757,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7E54, 0, 0, 0x3C51, 0,
-				0x4F65, 0, 0x364B, 0, 0x385A, 0, 0, 0, 0, 0, 0x444D, 0, 0, 0, 0, 0,
-				0x3E56, 0, 0, 0, 0x3A62, 0, 0, 0, 0, 0, 0x584F, 0, 0, 0, 0x4C60, 0x796B,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x7D7D, 0, 0, 0, 0, 0, 0x6857, 0x584B,
-				0, 0, 0, 0x6269, 0, 0, 0, 0x3A68, 0, 0, 0, 0x4763, 0, 0, 0, 0,
-				0x4D6C, 0, 0x4E6C, 0, 0x3F56, 0, 0, 0, 0x2763, 0, 0x565F, 0x687D, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x616E, 0x2876, 0x7D5D, 0, 0, 0, 0, 0, 0, 0, 0x3B78,
-				0, 0x5168, 0, 0, 0, 0, 0x5779, 0, 0, 0, 0, 0, 0, 0, 0, 0x6E4E,
-				0, 0, 0x4F6C, 0, 0, 0, 0x2569, 0x5556, 0, 0x454D, 0, 0x3A6D, 0x3D51, 0, 0, 0x3E4F,
-				0, 0, 0x3B6C, 0, 0, 0, 0x3152, 0, 0, 0, 0, 0x694C, 0, 0x4459, 0x7C69,
-			};
+			return "\u2A71\u514E\u0000\u0000\u4776\u0000\u6B5B\u0000\u7E5F\u0000\u0000\u6158\u0000\u7377\u0000\u6757\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7E54\u0000\u0000\u3C51\u0000\u4F65\u0000\u364B\u0000\u385A\u0000\u0000\u0000\u0000\u0000\u444D\u0000\u0000\u0000\u0000\u0000\u3E56\u0000\u0000\u0000\u3A62\u0000\u0000\u0000\u0000\u0000\u584F\u0000\u0000\u0000\u4C60\u796B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D7D\u0000\u0000\u0000\u0000\u0000\u6857\u584B\u0000\u0000\u0000\u6269\u0000\u0000\u0000\u3A68\u0000\u0000\u0000\u4763\u0000\u0000\u0000\u0000\u4D6C\u0000\u4E6C\u0000\u3F56\u0000\u0000\u0000\u2763\u0000\u565F\u687D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u616E\u2876\u7D5D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3B78\u0000\u5168\u0000\u0000\u0000\u0000\u5779\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E4E\u0000\u0000\u4F6C\u0000\u0000\u0000\u2569\u5556\u0000\u454D\u0000\u3A6D\u3D51\u0000\u0000\u3E4F\u0000\u0000\u3B6C\u0000\u0000\u0000\u3152\u0000\u0000\u0000\u0000\u694C\u0000\u4459\u7C69".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_802D = getOutput0_802D();
 		private static final char[] getOutput0_802D() {
-			return new char[] {
-				0x3E51, 0, 0, 0, 0, 0, 0x3C6C, 0, 0, 0x2D65, 0, 0, 0, 0, 0, 0,
-				0x3077, 0, 0x6A4C, 0, 0, 0, 0x4453, 0, 0, 0x4056, 0, 0, 0, 0x7D56, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2161, 0, 0x3D5E, 0, 0x2976, 0, 0,
-				0, 0x245A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x2456, 0x4675, 0, 0x2261, 0x4669, 0, 0, 0, 0x4572, 0, 0, 0, 0, 0,
-				0x6974, 0x6C56, 0x536B, 0, 0, 0, 0, 0x3D6C, 0x5C62, 0x6B5E, 0x5C70, 0, 0x3F6B, 0, 0x4E57, 0x3F51,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2B75, 0, 0, 0, 0, 0x7D79, 0,
-				0x5C4A, 0, 0, 0, 0x464D, 0x3672, 0, 0, 0x7E5D, 0, 0, 0, 0x374C, 0x385B, 0, 0,
-				0, 0, 0x6950, 0, 0x5D4E, 0x406B, 0, 0x227D, 0, 0, 0, 0, 0, 0x4B78, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x566A, 0x3071, 0, 0, 0, 0, 0, 0, 0, 0x4E5B,
-				0, 0x4377, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4F5B, 0x244B, 0,
-				0, 0x6078, 0, 0, 0x577B, 0, 0, 0x4A6B, 0x2160, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x4D4E, 0, 0, 0x5C54, 0, 0, 0, 0x587D, 0, 0, 0, 0,
-				0x7652, 0, 0, 0, 0, 0x3772, 0, 0, 0x767A, 0x2A76, 0x777A, 0x6658, 0, 0x3174, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5268, 0, 0x454A, 0x6B4C, 0,
-				0, 0, 0, 0, 0, 0, 0x6E62, 0, 0, 0, 0, 0, 0x3B62, 0, 0x2D77, 0,
-				0, 0, 0x6178, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6C73, 0, 0, 0,
-				0, 0x215E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7D64, 0,
-				0, 0x6C63, 0, 0x2F5D, 0x305D, 0, 0, 0x374B, 0x5368, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x2361, 0x6052, 0, 0, 0, 0, 0x7E70, 0,
-				0, 0, 0, 0x2669, 0x724B, 0, 0, 0, 0, 0, 0, 0x736D, 0x595C, 0x4D60, 0, 0,
-				0, 0, 0x5A77, 0x395B, 0, 0, 0, 0, 0, 0, 0, 0x2E4C, 0, 0x5B5A, 0, 0,
-				0, 0, 0x474D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x315D, 0, 0x2F58,
-				0x2363, 0, 0, 0x6F4E, 0, 0, 0x7372, 0, 0, 0, 0, 0x3378, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x4E60, 0, 0x7D75, 0, 0, 0, 0, 0x6C6B, 0, 0,
-				0x4553, 0x6C7C, 0x5B52, 0x6B54, 0, 0x225E, 0, 0, 0, 0x6665, 0, 0, 0, 0, 0, 0,
-				0x3070, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4455, 0, 0, 0, 0,
-				0, 0, 0x746D, 0, 0, 0, 0x6D63, 0, 0x4268, 0, 0x756D, 0x7C57, 0, 0x3B6D, 0, 0,
-				0x2B76, 0, 0, 0, 0, 0, 0x3872, 0x4876, 0, 0, 0, 0, 0, 0x6653, 0x5D72, 0x3F4F,
-				0, 0x2C6B, 0, 0, 0, 0, 0, 0, 0x404F, 0, 0x2866, 0x697D, 0, 0x414F, 0, 0x5F60,
-				0x6C5E, 0, 0, 0, 0, 0x2260, 0, 0, 0, 0, 0, 0, 0, 0, 0x3F74, 0x6F62,
-				0, 0x7159, 0x4771, 0, 0x384B, 0, 0, 0, 0, 0, 0, 0, 0, 0x7E79, 0x3A5B, 0x755A,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x6C76, 0x5C5A, 0x647A, 0, 0x4F60, 0, 0, 0,
-				0, 0, 0, 0x325D, 0, 0, 0, 0, 0x2966, 0, 0x736F,
-			};
+			return "\u3E51\u0000\u0000\u0000\u0000\u0000\u3C6C\u0000\u0000\u2D65\u0000\u0000\u0000\u0000\u0000\u0000\u3077\u0000\u6A4C\u0000\u0000\u0000\u4453\u0000\u0000\u4056\u0000\u0000\u0000\u7D56\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2161\u0000\u3D5E\u0000\u2976\u0000\u0000\u0000\u245A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2456\u4675\u0000\u2261\u4669\u0000\u0000\u0000\u4572\u0000\u0000\u0000\u0000\u0000\u6974\u6C56\u536B\u0000\u0000\u0000\u0000\u3D6C\u5C62\u6B5E\u5C70\u0000\u3F6B\u0000\u4E57\u3F51\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B75\u0000\u0000\u0000\u0000\u7D79\u0000\u5C4A\u0000\u0000\u0000\u464D\u3672\u0000\u0000\u7E5D\u0000\u0000\u0000\u374C\u385B\u0000\u0000\u0000\u0000\u6950\u0000\u5D4E\u406B\u0000\u227D\u0000\u0000\u0000\u0000\u0000\u4B78\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u566A\u3071\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E5B\u0000\u4377\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4F5B\u244B\u0000\u0000\u6078\u0000\u0000\u577B\u0000\u0000\u4A6B\u2160\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D4E\u0000\u0000\u5C54\u0000\u0000\u0000\u587D\u0000\u0000\u0000\u0000\u7652\u0000\u0000\u0000\u0000\u3772\u0000\u0000\u767A\u2A76\u777A\u6658\u0000\u3174\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5268\u0000\u454A\u6B4C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E62\u0000\u0000\u0000\u0000\u0000\u3B62\u0000\u2D77\u0000\u0000\u0000\u6178\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C73\u0000\u0000\u0000\u0000\u215E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D64\u0000\u0000\u6C63\u0000\u2F5D\u305D\u0000\u0000\u374B\u5368\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2361\u6052\u0000\u0000\u0000\u0000\u7E70\u0000\u0000\u0000\u0000\u2669\u724B\u0000\u0000\u0000\u0000\u0000\u0000\u736D\u595C\u4D60\u0000\u0000\u0000\u0000\u5A77\u395B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2E4C\u0000\u5B5A\u0000\u0000\u0000\u0000\u474D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u315D\u0000\u2F58\u2363\u0000\u0000\u6F4E\u0000\u0000\u7372\u0000\u0000\u0000\u0000\u3378\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E60\u0000\u7D75\u0000\u0000\u0000\u0000\u6C6B\u0000\u0000\u4553\u6C7C\u5B52\u6B54\u0000\u225E\u0000\u0000\u0000\u6665\u0000\u0000\u0000\u0000\u0000\u0000\u3070\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4455\u0000\u0000\u0000\u0000\u0000\u0000\u746D\u0000\u0000\u0000\u6D63\u0000\u4268\u0000\u756D\u7C57\u0000\u3B6D\u0000\u0000\u2B76\u0000\u0000\u0000\u0000\u0000\u3872\u4876\u0000\u0000\u0000\u0000\u0000\u6653\u5D72\u3F4F\u0000\u2C6B\u0000\u0000\u0000\u0000\u0000\u0000\u404F\u0000\u2866\u697D\u0000\u414F\u0000\u5F60\u6C5E\u0000\u0000\u0000\u0000\u2260\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3F74\u6F62\u0000\u7159\u4771\u0000\u384B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7E79\u3A5B\u755A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C76\u5C5A\u647A\u0000\u4F60\u0000\u0000\u0000\u0000\u0000\u0000\u325D\u0000\u0000\u0000\u0000\u2966\u0000\u736F".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8259 = getOutput0_8259();
 		private static final char[] getOutput0_8259() {
-			return new char[] {
-				0x6D73, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7A6B, 0, 0x6679, 0, 0,
-				0, 0, 0, 0, 0, 0x5D4A, 0x5E55, 0, 0x5E4A, 0x645F, 0, 0, 0, 0x7D66, 0, 0x2C75,
-				0, 0, 0, 0, 0, 0x7564, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x6369, 0, 0x4B6D, 0x644F, 0, 0, 0, 0x5358, 0, 0, 0, 0, 0, 0,
-				0x335D, 0x6C54, 0, 0, 0x3972, 0, 0x375F, 0, 0, 0, 0, 0, 0x4E4B, 0x587B, 0, 0,
-				0x5950, 0, 0, 0x525D, 0x7477, 0x5C67, 0x2564, 0, 0x237C, 0, 0x3B5B, 0, 0, 0, 0x3A72, 0x7D69,
-				0x4A50, 0, 0x5675, 0x4559, 0x3464, 0, 0x276D,
-			};
+			return "\u6D73\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7A6B\u0000\u6679\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D4A\u5E55\u0000\u5E4A\u645F\u0000\u0000\u0000\u7D66\u0000\u2C75\u0000\u0000\u0000\u0000\u0000\u7564\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6369\u0000\u4B6D\u644F\u0000\u0000\u0000\u5358\u0000\u0000\u0000\u0000\u0000\u0000\u335D\u6C54\u0000\u0000\u3972\u0000\u375F\u0000\u0000\u0000\u0000\u0000\u4E4B\u587B\u0000\u0000\u5950\u0000\u0000\u525D\u7477\u5C67\u2564\u0000\u237C\u0000\u3B5B\u0000\u0000\u0000\u3A72\u7D69\u4A50\u0000\u5675\u4559\u3464\u0000\u276D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_82D1 = getOutput0_82D1();
 		private static final char[] getOutput0_82D1() {
-			return new char[] {
-				0x3D6A, 0x7E66, 0, 0x4477, 0x2D75, 0, 0x6059, 0, 0, 0, 0x344A, 0, 0, 0x6278, 0x424F, 0,
-				0x3E6C, 0, 0, 0, 0x3465, 0x484D, 0x486E, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x4867, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x494D, 0x3779, 0, 0,
-				0x6871, 0x7259, 0x755B, 0x354A, 0x4659, 0, 0, 0, 0x4958, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x2B59, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x3C6D, 0, 0, 0x5458, 0, 0, 0, 0x5A5C, 0,
-				0x3C62, 0, 0, 0x6D7C, 0x606C, 0x7E52, 0, 0x4769, 0x2A66, 0, 0, 0, 0, 0, 0, 0x7062,
-				0, 0, 0, 0, 0, 0, 0x3B7A, 0, 0x2E75, 0x2A7B, 0, 0, 0, 0, 0x7B6C, 0,
-				0x3F6C, 0x587C,
-			};
+			return "\u3D6A\u7E66\u0000\u4477\u2D75\u0000\u6059\u0000\u0000\u0000\u344A\u0000\u0000\u6278\u424F\u0000\u3E6C\u0000\u0000\u0000\u3465\u484D\u486E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4867\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u494D\u3779\u0000\u0000\u6871\u7259\u755B\u354A\u4659\u0000\u0000\u0000\u4958\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B59\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C6D\u0000\u0000\u5458\u0000\u0000\u0000\u5A5C\u0000\u3C62\u0000\u0000\u6D7C\u606C\u7E52\u0000\u4769\u2A66\u0000\u0000\u0000\u0000\u0000\u0000\u7062\u0000\u0000\u0000\u0000\u0000\u0000\u3B7A\u0000\u2E75\u2A7B\u0000\u0000\u0000\u0000\u7B6C\u0000\u3F6C\u587C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_83BD = getOutput0_83BD();
 		private static final char[] getOutput0_83BD() {
-			return new char[] {
-				0x5558, 0, 0, 0, 0x6A74, 0, 0, 0, 0x394E, 0, 0, 0, 0x6156, 0x524F, 0, 0x3650,
-				0, 0, 0, 0, 0, 0, 0x224E, 0, 0, 0x6E73, 0, 0, 0, 0, 0, 0x7873,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4C5C, 0, 0x4B50, 0,
-				0, 0, 0x247C, 0x4A4D, 0x5457, 0x235E, 0, 0x6064, 0, 0, 0, 0, 0x496E, 0, 0, 0,
-				0x5D62, 0, 0, 0, 0, 0, 0x7E75, 0x2C54, 0, 0, 0, 0, 0, 0x5155, 0, 0x7058,
-				0x4378, 0x576A,
-			};
+			return "\u5558\u0000\u0000\u0000\u6A74\u0000\u0000\u0000\u394E\u0000\u0000\u0000\u6156\u524F\u0000\u3650\u0000\u0000\u0000\u0000\u0000\u0000\u224E\u0000\u0000\u6E73\u0000\u0000\u0000\u0000\u0000\u7873\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4C5C\u0000\u4B50\u0000\u0000\u0000\u247C\u4A4D\u5457\u235E\u0000\u6064\u0000\u0000\u0000\u0000\u496E\u0000\u0000\u0000\u5D62\u0000\u0000\u0000\u0000\u0000\u7E75\u2C54\u0000\u0000\u0000\u0000\u0000\u5155\u0000\u7058\u4378\u576A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8429 = getOutput0_8429();
 		private static final char[] getOutput0_8429() {
-			return new char[] {
-				0x5775, 0, 0, 0x3F58, 0, 0, 0, 0, 0x407D, 0, 0, 0, 0, 0, 0, 0x2D6B,
-				0, 0, 0, 0, 0x2A55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x2867, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4A6E, 0,
-				0, 0, 0x674A, 0, 0, 0, 0, 0, 0x6378, 0, 0x5D54, 0, 0, 0x586A, 0, 0,
-				0, 0, 0x597B, 0x776D, 0, 0, 0x3565, 0, 0, 0, 0, 0, 0x2D50, 0, 0, 0,
-				0, 0x7171,
-			};
+			return "\u5775\u0000\u0000\u3F58\u0000\u0000\u0000\u0000\u407D\u0000\u0000\u0000\u0000\u0000\u0000\u2D6B\u0000\u0000\u0000\u0000\u2A55\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2867\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4A6E\u0000\u0000\u0000\u674A\u0000\u0000\u0000\u0000\u0000\u6378\u0000\u5D54\u0000\u0000\u586A\u0000\u0000\u0000\u0000\u597B\u776D\u0000\u0000\u3565\u0000\u0000\u0000\u0000\u0000\u2D50\u0000\u0000\u0000\u0000\u7171".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8490 = getOutput0_8490();
 		private static final char[] getOutput0_8490() {
-			return new char[] {
-				0x3D62, 0, 0, 0, 0x4863, 0, 0, 0, 0, 0x5559, 0, 0, 0x2A5F, 0, 0, 0,
-				0, 0x3C5B, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x6478, 0, 0, 0, 0, 0, 0x7A71, 0, 0, 0x3665, 0x6F73, 0, 0, 0x5A7B,
-				0x6061, 0, 0x2C59, 0, 0x6B75, 0, 0x3660, 0, 0, 0x4869, 0, 0x4F4B, 0, 0x4963, 0, 0,
-				0, 0x6E5E, 0, 0, 0, 0, 0, 0, 0, 0, 0x3E62,
-			};
+			return "\u3D62\u0000\u0000\u0000\u4863\u0000\u0000\u0000\u0000\u5559\u0000\u0000\u2A5F\u0000\u0000\u0000\u0000\u3C5B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6478\u0000\u0000\u0000\u0000\u0000\u7A71\u0000\u0000\u3665\u6F73\u0000\u0000\u5A7B\u6061\u0000\u2C59\u0000\u6B75\u0000\u3660\u0000\u0000\u4869\u0000\u4F4B\u0000\u4963\u0000\u0000\u0000\u6E5E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E62".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8511 = getOutput0_8511();
 		private static final char[] getOutput0_8511() {
-			return new char[] {
-				0x2159, 0, 0x4058, 0x5B5C, 0, 0, 0x3D6D, 0x385F, 0, 0x256A, 0, 0, 0, 0x2D57, 0, 0,
-				0x7973, 0, 0x786D, 0, 0x4775, 0, 0, 0, 0, 0, 0, 0x4A61, 0x636B, 0, 0x5E72, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4C78, 0, 0x596A, 0,
-				0x4653, 0, 0x665B, 0, 0, 0, 0, 0, 0x2F75, 0, 0, 0, 0, 0x704E, 0, 0,
-				0, 0, 0x7E69, 0, 0, 0, 0, 0, 0x367B, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x7262, 0, 0, 0, 0, 0x724F, 0x3977, 0x7359, 0, 0, 0x4B61,
-			};
+			return "\u2159\u0000\u4058\u5B5C\u0000\u0000\u3D6D\u385F\u0000\u256A\u0000\u0000\u0000\u2D57\u0000\u0000\u7973\u0000\u786D\u0000\u4775\u0000\u0000\u0000\u0000\u0000\u0000\u4A61\u636B\u0000\u5E72\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4C78\u0000\u596A\u0000\u4653\u0000\u665B\u0000\u0000\u0000\u0000\u0000\u2F75\u0000\u0000\u0000\u0000\u704E\u0000\u0000\u0000\u0000\u7E69\u0000\u0000\u0000\u0000\u0000\u367B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7262\u0000\u0000\u0000\u0000\u724F\u3977\u7359\u0000\u0000\u4B61".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8584 = getOutput0_8584();
 		private static final char[] getOutput0_8584() {
-			return new char[] {
-				0x5D5A, 0, 0, 0x395A, 0, 0, 0, 0, 0, 0, 0, 0x7B6B, 0, 0x394B, 0, 0,
-				0x796D, 0, 0, 0, 0, 0, 0, 0x6060, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x4074, 0, 0x3C7D, 0x315F, 0x6F63, 0, 0, 0, 0, 0x2360, 0x397D, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x3170, 0, 0, 0, 0, 0, 0, 0x4B4D, 0, 0,
-				0, 0, 0, 0, 0, 0x3E6D, 0, 0, 0, 0x4055, 0x7063, 0x7A6D, 0, 0, 0, 0,
-				0, 0x6469, 0, 0, 0, 0, 0, 0, 0x6D55, 0x5D67, 0, 0, 0, 0, 0, 0,
-				0x7654, 0x3765, 0, 0, 0, 0x675B, 0x3F62, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x4B6E, 0, 0, 0x7457, 0x5D70, 0, 0, 0, 0x2B4E, 0, 0, 0x5E67, 0,
-				0, 0, 0x5656, 0x4C61, 0, 0, 0x3368, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x6E65, 0x225C, 0, 0, 0x5060,
-			};
+			return "\u5D5A\u0000\u0000\u395A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B6B\u0000\u394B\u0000\u0000\u796D\u0000\u0000\u0000\u0000\u0000\u0000\u6060\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4074\u0000\u3C7D\u315F\u6F63\u0000\u0000\u0000\u0000\u2360\u397D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3170\u0000\u0000\u0000\u0000\u0000\u0000\u4B4D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E6D\u0000\u0000\u0000\u4055\u7063\u7A6D\u0000\u0000\u0000\u0000\u0000\u6469\u0000\u0000\u0000\u0000\u0000\u0000\u6D55\u5D67\u0000\u0000\u0000\u0000\u0000\u0000\u7654\u3765\u0000\u0000\u0000\u675B\u3F62\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4B6E\u0000\u0000\u7457\u5D70\u0000\u0000\u0000\u2B4E\u0000\u0000\u5E67\u0000\u0000\u0000\u5656\u4C61\u0000\u0000\u3368\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E65\u225C\u0000\u0000\u5060".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_86C7 = getOutput0_86C7();
 		private static final char[] getOutput0_86C7() {
-			return new char[] {
-				0x6F5E, 0, 0, 0, 0x3153, 0, 0, 0, 0, 0, 0, 0, 0, 0x6E7C, 0, 0,
-				0, 0, 0x4368, 0, 0x4871, 0, 0, 0, 0x714E, 0, 0, 0, 0, 0x6D79, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x7472, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x3664, 0, 0x3975, 0, 0x705C, 0x7163, 0, 0, 0,
-				0, 0x2568, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x3B72, 0, 0x245E, 0, 0x4C5A,
-			};
+			return "\u6F5E\u0000\u0000\u0000\u3153\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E7C\u0000\u0000\u0000\u0000\u4368\u0000\u4871\u0000\u0000\u0000\u714E\u0000\u0000\u0000\u0000\u6D79\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7472\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3664\u0000\u3975\u0000\u705C\u7163\u0000\u0000\u0000\u0000\u2568\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3B72\u0000\u245E\u0000\u4C5A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_881F = getOutput0_881F();
 		private static final char[] getOutput0_881F() {
-			return new char[] {
-				0x4555, 0, 0, 0x6371, 0x6E55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x4C4D, 0, 0, 0, 0, 0x596D, 0, 0, 0, 0, 0x4158, 0, 0, 0,
-				0, 0x6C7A, 0, 0, 0, 0, 0, 0x6B71, 0, 0, 0, 0, 0, 0x3C7A, 0x6266, 0,
-				0, 0, 0, 0x657A, 0x7A62, 0, 0, 0, 0x364A, 0, 0x3764, 0, 0x5B6A, 0, 0x7A75, 0,
-				0, 0, 0x2C7B, 0x434F, 0x7D6B, 0, 0, 0, 0, 0x7A78, 0, 0, 0x395F, 0, 0, 0,
-				0, 0x7161, 0, 0x2452, 0, 0, 0, 0, 0x7B75, 0, 0, 0, 0, 0, 0, 0x5A50,
-				0x5B50, 0, 0x3E6A, 0x3159, 0, 0, 0, 0, 0, 0x374A, 0, 0, 0x6753, 0, 0x6578, 0,
-				0, 0, 0, 0x3253, 0, 0, 0, 0x4062, 0x5F72, 0, 0, 0, 0, 0, 0, 0x654D,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2C79, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x4D4D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x2E6E, 0x2E56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6A57, 0, 0, 0, 0, 0x6067, 0x2E6B, 0, 0, 0, 0x594F, 0, 0, 0x4D5C, 0x7B6D, 0,
-				0x705E, 0, 0x6B57, 0, 0, 0, 0, 0, 0, 0x255E, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x575F, 0x505B, 0x515B, 0, 0, 0x2355, 0, 0, 0, 0, 0x3270, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x5C5C, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x684A, 0, 0x6678, 0x4E5C, 0, 0, 0, 0, 0x5C6A, 0x525B, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x3369, 0, 0, 0, 0, 0x5B77, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x2863, 0, 0x2E57, 0, 0, 0x6160, 0, 0, 0,
-				0, 0, 0x3A4B, 0, 0, 0x5165,
-			};
+			return "\u4555\u0000\u0000\u6371\u6E55\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4C4D\u0000\u0000\u0000\u0000\u596D\u0000\u0000\u0000\u0000\u4158\u0000\u0000\u0000\u0000\u6C7A\u0000\u0000\u0000\u0000\u0000\u6B71\u0000\u0000\u0000\u0000\u0000\u3C7A\u6266\u0000\u0000\u0000\u0000\u657A\u7A62\u0000\u0000\u0000\u364A\u0000\u3764\u0000\u5B6A\u0000\u7A75\u0000\u0000\u0000\u2C7B\u434F\u7D6B\u0000\u0000\u0000\u0000\u7A78\u0000\u0000\u395F\u0000\u0000\u0000\u0000\u7161\u0000\u2452\u0000\u0000\u0000\u0000\u7B75\u0000\u0000\u0000\u0000\u0000\u0000\u5A50\u5B50\u0000\u3E6A\u3159\u0000\u0000\u0000\u0000\u0000\u374A\u0000\u0000\u6753\u0000\u6578\u0000\u0000\u0000\u0000\u3253\u0000\u0000\u0000\u4062\u5F72\u0000\u0000\u0000\u0000\u0000\u0000\u654D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2C79\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D4D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2E6E\u2E56\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6A57\u0000\u0000\u0000\u0000\u6067\u2E6B\u0000\u0000\u0000\u594F\u0000\u0000\u4D5C\u7B6D\u0000\u705E\u0000\u6B57\u0000\u0000\u0000\u0000\u0000\u0000\u255E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u575F\u505B\u515B\u0000\u0000\u2355\u0000\u0000\u0000\u0000\u3270\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5C5C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u684A\u0000\u6678\u4E5C\u0000\u0000\u0000\u0000\u5C6A\u525B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3369\u0000\u0000\u0000\u0000\u5B77\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2863\u0000\u2E57\u0000\u0000\u6160\u0000\u0000\u0000\u0000\u0000\u3A4B\u0000\u0000\u5165".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_895F = getOutput0_895F();
 		private static final char[] getOutput0_895F() {
-			return new char[] {
-				0x5C50, 0, 0, 0, 0, 0x4155, 0, 0, 0, 0, 0, 0x4A58, 0, 0, 0, 0,
-				0, 0, 0, 0x2963, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x2460, 0, 0x2969, 0, 0x4753, 0, 0, 0x5D5C, 0x2E78, 0, 0, 0, 0x384C, 0, 0, 0,
-				0x2E50, 0, 0, 0, 0x7258, 0, 0, 0x4A63, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x2F4C, 0, 0, 0, 0, 0, 0, 0, 0x2D54, 0x5176, 0, 0, 0, 0,
-				0, 0, 0, 0x4C50, 0, 0, 0, 0, 0, 0, 0, 0x464A, 0, 0, 0x4255, 0,
-				0, 0x3A4E,
-			};
+			return "\u5C50\u0000\u0000\u0000\u0000\u4155\u0000\u0000\u0000\u0000\u0000\u4A58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2963\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2460\u0000\u2969\u0000\u4753\u0000\u0000\u5D5C\u2E78\u0000\u0000\u0000\u384C\u0000\u0000\u0000\u2E50\u0000\u0000\u0000\u7258\u0000\u0000\u4A63\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2F4C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D54\u5176\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4C50\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u464A\u0000\u0000\u4255\u0000\u0000\u3A4E".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_89D2 = getOutput0_89D2();
 		private static final char[] getOutput0_89D2() {
-			return new char[] {
-				0x474A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x307A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x585F, 0, 0, 0, 0x3A75, 0, 0, 0, 0, 0, 0, 0, 0x6B65, 0,
-				0x746F, 0x355D, 0, 0, 0, 0, 0x2A4D, 0, 0x7263, 0, 0x777B, 0, 0x5077, 0, 0, 0,
-				0, 0x3A7D, 0, 0, 0x617D, 0x7E76, 0x4051, 0, 0, 0x4568, 0, 0x3864, 0, 0x6861, 0, 0,
-				0, 0x414C, 0, 0x6D52, 0, 0, 0, 0, 0x3E5B, 0, 0, 0x6260, 0, 0, 0, 0x497A,
-				0, 0, 0x4D61, 0, 0x384A, 0, 0, 0, 0x6072, 0x4971,
-			};
+			return "\u474A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u307A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u585F\u0000\u0000\u0000\u3A75\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B65\u0000\u746F\u355D\u0000\u0000\u0000\u0000\u2A4D\u0000\u7263\u0000\u777B\u0000\u5077\u0000\u0000\u0000\u0000\u3A7D\u0000\u0000\u617D\u7E76\u4051\u0000\u0000\u4568\u0000\u3864\u0000\u6861\u0000\u0000\u0000\u414C\u0000\u6D52\u0000\u0000\u0000\u0000\u3E5B\u0000\u0000\u6260\u0000\u0000\u0000\u497A\u0000\u0000\u4D61\u0000\u384A\u0000\u0000\u0000\u6072\u4971".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8A50 = getOutput0_8A50();
 		private static final char[] getOutput0_8A50() {
-			return new char[] {
-				0x715E, 0, 0, 0, 0x5F70, 0x4478, 0, 0, 0, 0, 0, 0x4C6E, 0, 0, 0x725E, 0,
-				0x4967, 0, 0x7362, 0x6167, 0, 0, 0x4B63, 0, 0, 0x4C63, 0, 0, 0, 0x784F, 0x2C6F, 0,
-				0x7E7D, 0x257C, 0x317A, 0x595F, 0, 0x5260, 0, 0, 0, 0x5A74, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x4A71, 0, 0x234E, 0, 0, 0, 0, 0x3C72, 0x636C, 0, 0,
-				0, 0, 0, 0x2560, 0, 0x2B77, 0, 0, 0x2F6B, 0, 0, 0, 0, 0, 0x5E65, 0,
-				0x2461, 0x2B4D, 0, 0x7459, 0x2668, 0x4E4D, 0x6961, 0, 0x6F7C, 0, 0x6360, 0, 0, 0, 0, 0,
-				0x4162, 0, 0x244E, 0, 0, 0, 0, 0, 0, 0x265E, 0, 0, 0x7E6B, 0, 0x5D6B, 0x6070,
-				0, 0, 0x5B74, 0, 0x7462, 0, 0, 0x4853, 0, 0, 0, 0x6B74, 0, 0x356E, 0, 0x5875,
-				0, 0, 0x5F55, 0, 0, 0, 0x6556, 0, 0, 0, 0, 0x306B, 0x6374, 0, 0, 0,
-				0, 0x4D63, 0, 0, 0, 0, 0x7474, 0x327A, 0, 0, 0x756F, 0x5F4A, 0, 0x316B, 0x3F6D, 0,
-				0, 0x497D, 0, 0, 0, 0, 0x2664, 0x2479, 0x3370, 0, 0x6C65, 0, 0, 0, 0x6751, 0,
-				0x4759, 0x5764, 0x5D6A, 0, 0x7754, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3A5A, 0,
-				0x4D5A, 0, 0, 0, 0x4C79, 0, 0x5A61, 0x3F5B, 0, 0x454C, 0x506C, 0x3B4B, 0, 0x735E, 0, 0,
-				0x2A69, 0, 0, 0, 0, 0, 0, 0, 0x4859, 0, 0, 0x636E, 0x3D57, 0, 0, 0,
-				0, 0, 0, 0x444F, 0, 0, 0, 0, 0, 0x4D50, 0, 0, 0, 0, 0, 0,
-				0, 0x267C, 0, 0, 0, 0, 0, 0, 0, 0x7B71, 0, 0, 0, 0, 0x527D, 0x4151,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x5B63, 0, 0x4953, 0, 0x4F5C, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x6D4C, 0, 0, 0, 0, 0, 0x275E, 0, 0, 0x3B66,
-				0x216C, 0, 0, 0, 0x394C, 0, 0, 0x5E7B, 0, 0, 0, 0, 0, 0x6267, 0, 0,
-				0x4154, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x285C, 0, 0, 0, 0, 0,
-				0x4262, 0, 0x5873, 0x5365, 0, 0, 0x5973, 0, 0, 0, 0x4673,
-			};
+			return "\u715E\u0000\u0000\u0000\u5F70\u4478\u0000\u0000\u0000\u0000\u0000\u4C6E\u0000\u0000\u725E\u0000\u4967\u0000\u7362\u6167\u0000\u0000\u4B63\u0000\u0000\u4C63\u0000\u0000\u0000\u784F\u2C6F\u0000\u7E7D\u257C\u317A\u595F\u0000\u5260\u0000\u0000\u0000\u5A74\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4A71\u0000\u234E\u0000\u0000\u0000\u0000\u3C72\u636C\u0000\u0000\u0000\u0000\u0000\u2560\u0000\u2B77\u0000\u0000\u2F6B\u0000\u0000\u0000\u0000\u0000\u5E65\u0000\u2461\u2B4D\u0000\u7459\u2668\u4E4D\u6961\u0000\u6F7C\u0000\u6360\u0000\u0000\u0000\u0000\u0000\u4162\u0000\u244E\u0000\u0000\u0000\u0000\u0000\u0000\u265E\u0000\u0000\u7E6B\u0000\u5D6B\u6070\u0000\u0000\u5B74\u0000\u7462\u0000\u0000\u4853\u0000\u0000\u0000\u6B74\u0000\u356E\u0000\u5875\u0000\u0000\u5F55\u0000\u0000\u0000\u6556\u0000\u0000\u0000\u0000\u306B\u6374\u0000\u0000\u0000\u0000\u4D63\u0000\u0000\u0000\u0000\u7474\u327A\u0000\u0000\u756F\u5F4A\u0000\u316B\u3F6D\u0000\u0000\u497D\u0000\u0000\u0000\u0000\u2664\u2479\u3370\u0000\u6C65\u0000\u0000\u0000\u6751\u0000\u4759\u5764\u5D6A\u0000\u7754\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3A5A\u0000\u4D5A\u0000\u0000\u0000\u4C79\u0000\u5A61\u3F5B\u0000\u454C\u506C\u3B4B\u0000\u735E\u0000\u0000\u2A69\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4859\u0000\u0000\u636E\u3D57\u0000\u0000\u0000\u0000\u0000\u0000\u444F\u0000\u0000\u0000\u0000\u0000\u4D50\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u267C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B71\u0000\u0000\u0000\u0000\u527D\u4151\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5B63\u0000\u4953\u0000\u4F5C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D4C\u0000\u0000\u0000\u0000\u0000\u275E\u0000\u0000\u3B66\u216C\u0000\u0000\u0000\u394C\u0000\u0000\u5E7B\u0000\u0000\u0000\u0000\u0000\u6267\u0000\u0000\u4154\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u285C\u0000\u0000\u0000\u0000\u0000\u4262\u0000\u5873\u5365\u0000\u0000\u5973\u0000\u0000\u0000\u4673".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8C37 = getOutput0_8C37();
 		private static final char[] getOutput0_8C37() {
-			return new char[] {
-				0x5B4D, 0, 0, 0, 0, 0, 0, 0, 0x2C4D, 0, 0x437C, 0, 0, 0, 0, 0x6754,
-				0, 0x4251, 0, 0x2579, 0, 0x5568, 0, 0, 0, 0, 0, 0, 0, 0, 0x4E63, 0,
-				0, 0, 0, 0x4A54, 0, 0, 0, 0, 0, 0, 0x5A5F, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x5F7B, 0x6367, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x7B78, 0x4F63, 0, 0, 0, 0, 0, 0, 0, 0x3075, 0, 0, 0, 0,
-				0, 0, 0, 0x6758, 0, 0x4959, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x2F78, 0x766F, 0, 0x365D, 0x2F6E, 0x784D, 0, 0, 0, 0,
-				0x385E, 0x277C, 0x7C77, 0x3177, 0x3B4E, 0x2174, 0, 0, 0x4D6E, 0x2E61, 0, 0, 0x436C, 0x7E4F, 0, 0x3F78,
-				0x6258, 0x6853, 0, 0, 0x285E, 0x6474, 0x426C, 0, 0x7559, 0x4579, 0x535D, 0x7156, 0x7C6C, 0x707C, 0, 0,
-				0x406D, 0x394A, 0, 0x646E, 0, 0, 0, 0, 0, 0, 0x6172, 0, 0x395E, 0, 0, 0,
-				0, 0, 0, 0x7256, 0, 0x745E, 0, 0x5B5F, 0, 0x535B, 0, 0x677A, 0x6358, 0x4174, 0, 0x375D,
-				0, 0, 0, 0x7572, 0, 0, 0x2E54, 0, 0, 0, 0, 0, 0, 0x7356, 0, 0,
-				0, 0, 0, 0, 0x385D, 0x454F, 0x5F5F, 0, 0, 0, 0, 0, 0, 0x3E72, 0x2176, 0,
-				0x4B6B, 0x7C71, 0, 0x4773, 0, 0, 0x6B60, 0, 0, 0, 0, 0, 0x7C6D, 0, 0, 0x5B61,
-			};
+			return "\u5B4D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2C4D\u0000\u437C\u0000\u0000\u0000\u0000\u6754\u0000\u4251\u0000\u2579\u0000\u5568\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E63\u0000\u0000\u0000\u0000\u4A54\u0000\u0000\u0000\u0000\u0000\u0000\u5A5F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F7B\u6367\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B78\u4F63\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3075\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6758\u0000\u4959\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2F78\u766F\u0000\u365D\u2F6E\u784D\u0000\u0000\u0000\u0000\u385E\u277C\u7C77\u3177\u3B4E\u2174\u0000\u0000\u4D6E\u2E61\u0000\u0000\u436C\u7E4F\u0000\u3F78\u6258\u6853\u0000\u0000\u285E\u6474\u426C\u0000\u7559\u4579\u535D\u7156\u7C6C\u707C\u0000\u0000\u406D\u394A\u0000\u646E\u0000\u0000\u0000\u0000\u0000\u0000\u6172\u0000\u395E\u0000\u0000\u0000\u0000\u0000\u0000\u7256\u0000\u745E\u0000\u5B5F\u0000\u535B\u0000\u677A\u6358\u4174\u0000\u375D\u0000\u0000\u0000\u7572\u0000\u0000\u2E54\u0000\u0000\u0000\u0000\u0000\u0000\u7356\u0000\u0000\u0000\u0000\u0000\u0000\u385D\u454F\u5F5F\u0000\u0000\u0000\u0000\u0000\u0000\u3E72\u2176\u0000\u4B6B\u7C71\u0000\u4773\u0000\u0000\u6B60\u0000\u0000\u0000\u0000\u0000\u7C6D\u0000\u0000\u5B61".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8D64 = getOutput0_8D64();
 		private static final char[] getOutput0_8D64() {
-			return new char[] {
-				0x656E, 0, 0x755E, 0, 0, 0, 0, 0x537A, 0, 0, 0, 0, 0x4B71, 0, 0, 0x2F50,
-				0x395D, 0, 0, 0x4351, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x3175, 0, 0, 0, 0, 0x466A, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6170, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2C76,
-				0, 0, 0, 0, 0x5975, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6B70,
-				0, 0, 0, 0, 0, 0, 0x3A5D, 0, 0, 0, 0x3F72, 0, 0, 0, 0, 0,
-				0, 0, 0x4577, 0, 0, 0, 0, 0x225B, 0x7672, 0, 0, 0x3A4A, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x7577, 0, 0x654B, 0, 0, 0, 0x666E, 0, 0x5360,
-				0, 0, 0, 0, 0x254E, 0, 0, 0, 0, 0, 0, 0x5856, 0, 0, 0, 0x2F54,
-			};
+			return "\u656E\u0000\u755E\u0000\u0000\u0000\u0000\u537A\u0000\u0000\u0000\u0000\u4B71\u0000\u0000\u2F50\u395D\u0000\u0000\u4351\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3175\u0000\u0000\u0000\u0000\u466A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6170\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2C76\u0000\u0000\u0000\u0000\u5975\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B70\u0000\u0000\u0000\u0000\u0000\u0000\u3A5D\u0000\u0000\u0000\u3F72\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4577\u0000\u0000\u0000\u0000\u225B\u7672\u0000\u0000\u3A4A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7577\u0000\u654B\u0000\u0000\u0000\u666E\u0000\u5360\u0000\u0000\u0000\u0000\u254E\u0000\u0000\u0000\u0000\u0000\u0000\u5856\u0000\u0000\u0000\u2F54".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8E0A = getOutput0_8E0A();
 		private static final char[] getOutput0_8E0A() {
-			return new char[] {
-				0x4969, 0, 0, 0, 0, 0x4E53, 0x4274, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x664B, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x2171, 0, 0, 0, 0, 0, 0x326B, 0, 0, 0, 0, 0x2271, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x336B, 0, 0x3470, 0, 0, 0x744B, 0x3054, 0x3273,
-				0x377B, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6C75,
-				0, 0, 0, 0, 0, 0x676E, 0x3274,
-			};
+			return "\u4969\u0000\u0000\u0000\u0000\u4E53\u4274\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u664B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2171\u0000\u0000\u0000\u0000\u0000\u326B\u0000\u0000\u0000\u0000\u2271\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u336B\u0000\u3470\u0000\u0000\u744B\u3054\u3273\u377B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C75\u0000\u0000\u0000\u0000\u0000\u676E\u3274".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8EC0 = getOutput0_8EC0();
 		private static final char[] getOutput0_8EC0() {
-			return new char[] {
-				0x464F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3373, 0x5864, 0x794F, 0x5A4F, 0, 0,
-				0, 0, 0x4D7A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6366,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6272, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x6E75, 0, 0, 0x3B4A, 0, 0, 0x5C63, 0,
-				0, 0, 0, 0x724E, 0, 0x5956, 0, 0, 0, 0x306E, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x6574, 0x4258, 0x505C, 0x6E4C, 0, 0, 0, 0, 0, 0x6055, 0x4A76, 0x4A7D, 0x5658, 0x4F74,
-				0, 0, 0, 0, 0, 0, 0x2656, 0x3E5C, 0, 0x545B, 0x4757, 0, 0, 0, 0, 0x7E72,
-				0, 0, 0, 0x4D71, 0, 0, 0, 0, 0x4362, 0x5E5C, 0, 0x5F5C, 0, 0, 0x2D6F, 0x2B66,
-				0, 0, 0, 0, 0x5D79, 0x3F6A, 0, 0, 0, 0x2E6F, 0, 0, 0, 0x5074, 0x734E, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2C66, 0, 0x5E4E,
-				0, 0, 0x7955,
-			};
+			return "\u464F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3373\u5864\u794F\u5A4F\u0000\u0000\u0000\u0000\u4D7A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6366\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6272\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E75\u0000\u0000\u3B4A\u0000\u0000\u5C63\u0000\u0000\u0000\u0000\u724E\u0000\u5956\u0000\u0000\u0000\u306E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6574\u4258\u505C\u6E4C\u0000\u0000\u0000\u0000\u0000\u6055\u4A76\u4A7D\u5658\u4F74\u0000\u0000\u0000\u0000\u0000\u0000\u2656\u3E5C\u0000\u545B\u4757\u0000\u0000\u0000\u0000\u7E72\u0000\u0000\u0000\u4D71\u0000\u0000\u0000\u0000\u4362\u5E5C\u0000\u5F5C\u0000\u0000\u2D6F\u2B66\u0000\u0000\u0000\u0000\u5D79\u3F6A\u0000\u0000\u0000\u2E6F\u0000\u0000\u0000\u5074\u734E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2C66\u0000\u5E4E\u0000\u0000\u7955".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_8FE6 = getOutput0_8FE6();
 		private static final char[] getOutput0_8FE6() {
-			return new char[] {
-				0x3C4A, 0, 0, 0, 0x686E, 0x5E5A, 0, 0x7772, 0, 0, 0x7B62, 0, 0x264C, 0, 0, 0,
-				0, 0x3B5A, 0, 0x696E, 0, 0, 0, 0x5A75, 0, 0, 0x5C77, 0x6A61, 0x414E, 0x3154, 0, 0x317D,
-				0x3D66, 0, 0x2D7B, 0, 0, 0x6778, 0, 0x4E61, 0, 0x6277, 0x6F75, 0x474F, 0, 0, 0x3254, 0x6F4C,
-				0, 0x6854, 0, 0x4F6E, 0x5777, 0, 0, 0x2660, 0x4156, 0x5C61, 0x6370, 0x6471, 0x715C, 0x2756, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x7574, 0, 0, 0x4E71, 0x6472, 0, 0, 0x3050,
-				0, 0, 0x6F6C, 0, 0, 0, 0x3A79, 0, 0x356B, 0, 0, 0x6D54, 0x4462, 0, 0, 0,
-				0, 0x6769, 0, 0, 0x346B, 0x216A, 0, 0x3C78, 0x264E, 0, 0x4679, 0x5A7C, 0, 0x3354, 0x3953, 0x5E6A,
-				0, 0, 0, 0x2B69, 0, 0, 0x6161, 0x4F53, 0x7674, 0, 0x406A, 0x4F61, 0, 0x3A4C, 0, 0,
-				0, 0, 0, 0x6A6E, 0, 0, 0, 0x6470, 0x3473, 0x6E54, 0, 0, 0x4072, 0, 0, 0x6571,
-				0, 0x4374, 0x5460, 0, 0x366B, 0, 0x2157, 0x684B, 0, 0x2D79, 0x2D69, 0x6458, 0x337A, 0x4562, 0x3D7C, 0,
-				0, 0x446C, 0x3158, 0, 0x2B5C, 0, 0, 0, 0, 0x2455, 0, 0x696B, 0, 0, 0, 0x3B68,
-				0, 0, 0, 0x5758, 0, 0, 0, 0, 0, 0, 0, 0, 0x2E7B, 0x6151, 0, 0,
-				0x405B, 0, 0x3E75, 0, 0x775E, 0, 0, 0, 0, 0x7B4A, 0x4677, 0x484F, 0, 0, 0, 0x5061,
-				0, 0, 0x506E, 0, 0, 0, 0, 0, 0, 0, 0, 0x7469, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x744E,
-			};
+			return "\u3C4A\u0000\u0000\u0000\u686E\u5E5A\u0000\u7772\u0000\u0000\u7B62\u0000\u264C\u0000\u0000\u0000\u0000\u3B5A\u0000\u696E\u0000\u0000\u0000\u5A75\u0000\u0000\u5C77\u6A61\u414E\u3154\u0000\u317D\u3D66\u0000\u2D7B\u0000\u0000\u6778\u0000\u4E61\u0000\u6277\u6F75\u474F\u0000\u0000\u3254\u6F4C\u0000\u6854\u0000\u4F6E\u5777\u0000\u0000\u2660\u4156\u5C61\u6370\u6471\u715C\u2756\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7574\u0000\u0000\u4E71\u6472\u0000\u0000\u3050\u0000\u0000\u6F6C\u0000\u0000\u0000\u3A79\u0000\u356B\u0000\u0000\u6D54\u4462\u0000\u0000\u0000\u0000\u6769\u0000\u0000\u346B\u216A\u0000\u3C78\u264E\u0000\u4679\u5A7C\u0000\u3354\u3953\u5E6A\u0000\u0000\u0000\u2B69\u0000\u0000\u6161\u4F53\u7674\u0000\u406A\u4F61\u0000\u3A4C\u0000\u0000\u0000\u0000\u0000\u6A6E\u0000\u0000\u0000\u6470\u3473\u6E54\u0000\u0000\u4072\u0000\u0000\u6571\u0000\u4374\u5460\u0000\u366B\u0000\u2157\u684B\u0000\u2D79\u2D69\u6458\u337A\u4562\u3D7C\u0000\u0000\u446C\u3158\u0000\u2B5C\u0000\u0000\u0000\u0000\u2455\u0000\u696B\u0000\u0000\u0000\u3B68\u0000\u0000\u0000\u5758\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2E7B\u6151\u0000\u0000\u405B\u0000\u3E75\u0000\u775E\u0000\u0000\u0000\u0000\u7B4A\u4677\u484F\u0000\u0000\u0000\u5061\u0000\u0000\u506E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7469\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u744E".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_9149 = getOutput0_9149();
 		private static final char[] getOutput0_9149() {
-			return new char[] {
-				0x376B, 0x786F, 0x5C75, 0x4C6D, 0x555B, 0x4F71, 0, 0, 0, 0x5071, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3275, 0, 0, 0, 0, 0, 0,
-				0x2E59, 0x2C55, 0, 0x4662, 0, 0, 0, 0, 0, 0, 0, 0, 0x237D, 0, 0x657B, 0x2B5F,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7562, 0,
-				0x2D76, 0, 0x3375, 0, 0x3570, 0, 0, 0, 0, 0x2561, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x5D75, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x226C, 0x7D6D, 0, 0x3475, 0x387B, 0, 0x235B, 0, 0, 0x4A56, 0x594B, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x5465, 0, 0, 0, 0, 0, 0, 0x7A73, 0,
-				0x386B, 0, 0x3760, 0x6C57, 0x6C71, 0x2F65, 0x6155, 0x6D57, 0x5151, 0, 0, 0, 0, 0, 0x7261, 0x796F,
-				0, 0, 0, 0x3C5D, 0x5C76, 0, 0, 0, 0, 0, 0x6570, 0, 0, 0, 0x4474, 0,
-				0, 0x6969, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7B73,
-			};
+			return "\u376B\u786F\u5C75\u4C6D\u555B\u4F71\u0000\u0000\u0000\u5071\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3275\u0000\u0000\u0000\u0000\u0000\u0000\u2E59\u2C55\u0000\u4662\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u237D\u0000\u657B\u2B5F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7562\u0000\u2D76\u0000\u3375\u0000\u3570\u0000\u0000\u0000\u0000\u2561\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D75\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u226C\u7D6D\u0000\u3475\u387B\u0000\u235B\u0000\u0000\u4A56\u594B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5465\u0000\u0000\u0000\u0000\u0000\u0000\u7A73\u0000\u386B\u0000\u3760\u6C57\u6C71\u2F65\u6155\u6D57\u5151\u0000\u0000\u0000\u0000\u0000\u7261\u796F\u0000\u0000\u0000\u3C5D\u5C76\u0000\u0000\u0000\u0000\u0000\u6570\u0000\u0000\u0000\u4474\u0000\u0000\u6969\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B73".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_92E4 = getOutput0_92E4();
 		private static final char[] getOutput0_92E4() {
-			return new char[] {
-				0x2760, 0, 0, 0, 0, 0, 0x6878, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x6A4B, 0, 0, 0, 0x3C4B, 0, 0, 0, 0, 0, 0, 0,
-				0x6256, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5E75, 0, 0, 0,
-				0, 0, 0, 0, 0x5F75, 0, 0x366E, 0, 0, 0, 0x7662, 0x4A53, 0x7C6F, 0x4451, 0x316F, 0,
-				0x4551, 0, 0x5E50, 0, 0x6159, 0, 0, 0x3860, 0, 0, 0x514D, 0x3973,
-			};
+			return "\u2760\u0000\u0000\u0000\u0000\u0000\u6878\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6A4B\u0000\u0000\u0000\u3C4B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6256\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5E75\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F75\u0000\u366E\u0000\u0000\u0000\u7662\u4A53\u7C6F\u4451\u316F\u0000\u4551\u0000\u5E50\u0000\u6159\u0000\u0000\u3860\u0000\u0000\u514D\u3973".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_9577 = getOutput0_9577();
 		private static final char[] getOutput0_9577() {
-			return new char[] {
-				0x7E6D, 0, 0, 0, 0, 0, 0, 0, 0, 0x265A, 0, 0, 0x6C60, 0, 0, 0,
-				0, 0, 0x4D78, 0, 0x524B, 0, 0, 0, 0x4E6B, 0, 0x5879, 0x5979, 0x604A, 0x4A5A, 0, 0,
-				0, 0x264B, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x484A, 0x6E79, 0x6C5B, 0,
-				0, 0x3150, 0, 0, 0, 0, 0x6F55, 0, 0, 0, 0x7366, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x2267, 0x5964, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6164, 0, 0, 0x447C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6F79, 0x744F, 0x6677,
-				0, 0, 0, 0, 0, 0x3C4E, 0, 0, 0, 0, 0x4574, 0x235C,
-			};
+			return "\u7E6D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u265A\u0000\u0000\u6C60\u0000\u0000\u0000\u0000\u0000\u4D78\u0000\u524B\u0000\u0000\u0000\u4E6B\u0000\u5879\u5979\u604A\u4A5A\u0000\u0000\u0000\u264B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u484A\u6E79\u6C5B\u0000\u0000\u3150\u0000\u0000\u0000\u0000\u6F55\u0000\u0000\u0000\u7366\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2267\u5964\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6164\u0000\u0000\u447C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F79\u744F\u6677\u0000\u0000\u0000\u0000\u0000\u3C4E\u0000\u0000\u0000\u0000\u4574\u235C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_961C = getOutput0_961C();
 		private static final char[] getOutput0_961C() {
-			return new char[] {
-				0x3D5D, 0, 0, 0, 0, 0x4674, 0, 0, 0, 0, 0, 0, 0, 0, 0x2178, 0,
-				0, 0, 0x5668, 0, 0, 0, 0x415B, 0, 0, 0, 0, 0, 0, 0, 0, 0x6670,
-				0, 0, 0, 0x3964, 0x6D76, 0, 0x2E79, 0, 0x3E5D, 0, 0, 0, 0, 0, 0, 0x3057,
-				0x6858, 0x3D4B, 0, 0, 0x5A79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4E78,
-				0x7079, 0x6D60, 0x3363, 0x3374, 0, 0, 0x426A, 0x6672, 0x3670, 0, 0, 0, 0, 0, 0x565B, 0,
-				0, 0, 0, 0, 0x646B, 0, 0, 0x6772, 0, 0x5557, 0x3654, 0x6879, 0x4157, 0, 0, 0,
-				0, 0x5565, 0, 0, 0, 0, 0, 0, 0, 0x6A69, 0x4C57, 0, 0, 0, 0x6953, 0x4962,
-				0, 0x5B7C, 0x2D4D, 0, 0, 0, 0, 0, 0x304C, 0x226A, 0, 0, 0x7664, 0x4050, 0, 0x3770,
-				0x216E, 0, 0, 0, 0, 0, 0, 0x7657, 0, 0, 0, 0x4A62, 0x4B62, 0, 0x4F7A, 0,
-				0, 0, 0, 0, 0, 0x5F6B, 0, 0, 0, 0, 0, 0x4B56, 0, 0, 0, 0x3474,
-				0, 0, 0, 0, 0x4D6D, 0x5264, 0, 0, 0x296A, 0x3A64, 0x2273, 0x524D, 0, 0x4B76, 0, 0x6671,
-				0x416D, 0x3C68, 0x516E, 0, 0, 0, 0, 0, 0, 0x6770, 0x4C62, 0, 0, 0x2A64, 0, 0x6175,
-				0x5A6D, 0, 0, 0, 0, 0, 0x6E57, 0x7151, 0, 0, 0, 0, 0x6B69, 0x6C69, 0x6460, 0,
-				0, 0, 0, 0x275A, 0x545D, 0, 0x236A, 0, 0, 0, 0x4356, 0x7456, 0, 0x5F5A, 0, 0x336F,
-				0, 0, 0, 0, 0x4D62, 0, 0, 0, 0, 0, 0x7D6F, 0x6872, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x456F, 0, 0x6767, 0, 0, 0x7D57, 0, 0, 0x4E67, 0, 0,
-				0x5C5F, 0, 0x4779, 0, 0, 0, 0, 0, 0, 0, 0, 0x7659, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x2C5F, 0, 0x5A56, 0, 0, 0, 0, 0, 0, 0x245C, 0, 0,
-				0, 0x3870, 0, 0, 0, 0, 0x7A55, 0, 0x7764, 0, 0, 0, 0x4456, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6C74, 0, 0, 0, 0, 0x7E6F, 0, 0, 0, 0, 0,
-				0x2170, 0, 0x2A5E, 0, 0, 0x3C5A, 0x7C58, 0, 0, 0, 0, 0, 0, 0x547A, 0, 0,
-				0, 0x656C, 0, 0, 0, 0, 0, 0, 0x287C, 0, 0, 0x666C, 0, 0, 0x4B58, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x397B,
-				0, 0x5364, 0, 0x794D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x534F, 0, 0, 0, 0, 0, 0, 0, 0x6A4A, 0, 0, 0x544F,
-				0, 0x3D78,
-			};
+			return "\u3D5D\u0000\u0000\u0000\u0000\u4674\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2178\u0000\u0000\u0000\u5668\u0000\u0000\u0000\u415B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6670\u0000\u0000\u0000\u3964\u6D76\u0000\u2E79\u0000\u3E5D\u0000\u0000\u0000\u0000\u0000\u0000\u3057\u6858\u3D4B\u0000\u0000\u5A79\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E78\u7079\u6D60\u3363\u3374\u0000\u0000\u426A\u6672\u3670\u0000\u0000\u0000\u0000\u0000\u565B\u0000\u0000\u0000\u0000\u0000\u646B\u0000\u0000\u6772\u0000\u5557\u3654\u6879\u4157\u0000\u0000\u0000\u0000\u5565\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6A69\u4C57\u0000\u0000\u0000\u6953\u4962\u0000\u5B7C\u2D4D\u0000\u0000\u0000\u0000\u0000\u304C\u226A\u0000\u0000\u7664\u4050\u0000\u3770\u216E\u0000\u0000\u0000\u0000\u0000\u0000\u7657\u0000\u0000\u0000\u4A62\u4B62\u0000\u4F7A\u0000\u0000\u0000\u0000\u0000\u0000\u5F6B\u0000\u0000\u0000\u0000\u0000\u4B56\u0000\u0000\u0000\u3474\u0000\u0000\u0000\u0000\u4D6D\u5264\u0000\u0000\u296A\u3A64\u2273\u524D\u0000\u4B76\u0000\u6671\u416D\u3C68\u516E\u0000\u0000\u0000\u0000\u0000\u0000\u6770\u4C62\u0000\u0000\u2A64\u0000\u6175\u5A6D\u0000\u0000\u0000\u0000\u0000\u6E57\u7151\u0000\u0000\u0000\u0000\u6B69\u6C69\u6460\u0000\u0000\u0000\u0000\u275A\u545D\u0000\u236A\u0000\u0000\u0000\u4356\u7456\u0000\u5F5A\u0000\u336F\u0000\u0000\u0000\u0000\u4D62\u0000\u0000\u0000\u0000\u0000\u7D6F\u6872\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u456F\u0000\u6767\u0000\u0000\u7D57\u0000\u0000\u4E67\u0000\u0000\u5C5F\u0000\u4779\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7659\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2C5F\u0000\u5A56\u0000\u0000\u0000\u0000\u0000\u0000\u245C\u0000\u0000\u0000\u3870\u0000\u0000\u0000\u0000\u7A55\u0000\u7764\u0000\u0000\u0000\u4456\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C74\u0000\u0000\u0000\u0000\u7E6F\u0000\u0000\u0000\u0000\u0000\u2170\u0000\u2A5E\u0000\u0000\u3C5A\u7C58\u0000\u0000\u0000\u0000\u0000\u0000\u547A\u0000\u0000\u0000\u656C\u0000\u0000\u0000\u0000\u0000\u0000\u287C\u0000\u0000\u666C\u0000\u0000\u4B58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u397B\u0000\u5364\u0000\u794D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u534F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6A4A\u0000\u0000\u544F\u0000\u3D78".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_97F3 = getOutput0_97F3();
 		private static final char[] getOutput0_97F3() {
-			return new char[] {
-				0x656B, 0, 0, 0x5261, 0, 0, 0, 0, 0x246A, 0, 0, 0, 0x427A, 0x617B, 0x6D7A, 0x2270,
-				0x714C, 0, 0x237A, 0x7762, 0, 0x4E62, 0, 0x7569, 0, 0x6B61, 0, 0, 0, 0x6867, 0x5768, 0x785A,
-				0x4B54, 0, 0, 0, 0x7677, 0x4556,
-			};
+			return "\u656B\u0000\u0000\u5261\u0000\u0000\u0000\u0000\u246A\u0000\u0000\u0000\u427A\u617B\u6D7A\u2270\u714C\u0000\u237A\u7762\u0000\u4E62\u0000\u7569\u0000\u6B61\u0000\u0000\u0000\u6867\u5768\u785A\u4B54\u0000\u0000\u0000\u7677\u4556".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_982D = getOutput0_982D();
 		private static final char[] getOutput0_982D() {
-			return new char[] {
-				0x6954, 0, 0, 0x7A7A, 0, 0, 0, 0, 0, 0, 0, 0x724C, 0x5D77, 0, 0x3A5E, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x284E, 0, 0, 0, 0, 0, 0x3970,
-				0x7E64, 0x4964, 0, 0, 0, 0, 0, 0x5464, 0, 0, 0, 0x436A, 0, 0x346F, 0, 0,
-				0, 0x3E57, 0, 0, 0, 0, 0, 0, 0x627B, 0, 0x534D, 0, 0, 0, 0x356F, 0,
-				0, 0, 0x697A,
-			};
+			return "\u6954\u0000\u0000\u7A7A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u724C\u5D77\u0000\u3A5E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u284E\u0000\u0000\u0000\u0000\u0000\u3970\u7E64\u4964\u0000\u0000\u0000\u0000\u0000\u5464\u0000\u0000\u0000\u436A\u0000\u346F\u0000\u0000\u0000\u3E57\u0000\u0000\u0000\u0000\u0000\u0000\u627B\u0000\u534D\u0000\u0000\u0000\u356F\u0000\u0000\u0000\u697A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_98DB = getOutput0_98DB();
 		private static final char[] getOutput0_98DB() {
-			return new char[] {
-				0x2B5E, 0x685B, 0, 0, 0x5D63, 0, 0x6261, 0x4651, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x5076, 0x666B, 0x795A, 0, 0, 0, 0, 0x476C, 0, 0, 0, 0, 0, 0,
-				0, 0x785E, 0x6978, 0x5E63, 0, 0, 0, 0, 0x754E, 0, 0, 0, 0, 0, 0x437A, 0x5765,
-				0, 0x486C, 0, 0, 0, 0x4973, 0, 0, 0x3B64, 0, 0, 0, 0, 0x2E66, 0, 0,
-				0, 0, 0, 0x366F, 0, 0x3F5C, 0, 0, 0, 0, 0, 0, 0, 0x3D4E,
-			};
+			return "\u2B5E\u685B\u0000\u0000\u5D63\u0000\u6261\u4651\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5076\u666B\u795A\u0000\u0000\u0000\u0000\u476C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u785E\u6978\u5E63\u0000\u0000\u0000\u0000\u754E\u0000\u0000\u0000\u0000\u0000\u437A\u5765\u0000\u486C\u0000\u0000\u0000\u4973\u0000\u0000\u3B64\u0000\u0000\u0000\u0000\u2E66\u0000\u0000\u0000\u0000\u0000\u366F\u0000\u3F5C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D4E".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_9996 = getOutput0_9996();
 		private static final char[] getOutput0_9996() {
-			return new char[] {
-				0x4F62, 0, 0, 0x457A, 0, 0, 0, 0x3879, 0, 0, 0, 0, 0, 0, 0, 0x605C,
-				0, 0, 0x307B, 0, 0, 0, 0x2958, 0x5F65, 0x2779, 0, 0, 0x6E76, 0, 0x4C76, 0x7862, 0,
-				0, 0, 0, 0x716C, 0, 0, 0, 0, 0, 0, 0, 0x605A, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5271, 0x4C52, 0x4B4F, 0, 0, 0x3D4A,
-				0, 0, 0, 0x3F5D, 0, 0, 0, 0x6F76, 0, 0x795E, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0x347A, 0, 0, 0, 0x2D55, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6771, 0, 0x3E5E, 0, 0, 0, 0,
-				0, 0, 0x405C, 0, 0, 0, 0, 0, 0x4851, 0x4951, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x3E78,
-			};
+			return "\u4F62\u0000\u0000\u457A\u0000\u0000\u0000\u3879\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u605C\u0000\u0000\u307B\u0000\u0000\u0000\u2958\u5F65\u2779\u0000\u0000\u6E76\u0000\u4C76\u7862\u0000\u0000\u0000\u0000\u716C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u605A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5271\u4C52\u4B4F\u0000\u0000\u3D4A\u0000\u0000\u0000\u3F5D\u0000\u0000\u0000\u6F76\u0000\u795E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u347A\u0000\u0000\u0000\u2D55\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6771\u0000\u3E5E\u0000\u0000\u0000\u0000\u0000\u0000\u405C\u0000\u0000\u0000\u0000\u0000\u4851\u4951\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E78".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_9A2B = getOutput0_9A2B();
 		private static final char[] getOutput0_9A2B() {
-			return new char[] {
-				0x764B, 0, 0, 0, 0, 0x7954, 0, 0, 0, 0, 0, 0x6275, 0x5361, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6958, 0, 0, 0x7E78, 0, 0x4C4F, 0, 0, 0, 0, 0,
-				0, 0, 0x247D, 0, 0, 0, 0, 0, 0, 0, 0x764E, 0, 0x507A, 0, 0, 0x734C,
-				0x3E66, 0, 0, 0, 0x2E76, 0, 0, 0x7055, 0, 0, 0x4A51, 0, 0, 0, 0x3E7C, 0x7155,
-			};
+			return "\u764B\u0000\u0000\u0000\u0000\u7954\u0000\u0000\u0000\u0000\u0000\u6275\u5361\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6958\u0000\u0000\u7E78\u0000\u4C4F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u247D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u764E\u0000\u507A\u0000\u0000\u734C\u3E66\u0000\u0000\u0000\u2E76\u0000\u0000\u7055\u0000\u0000\u4A51\u0000\u0000\u0000\u3E7C\u7155".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_9E92 = getOutput0_9E92();
 		private static final char[] getOutput0_9E92() {
-			return new char[] {
-				0x4B51, 0x6456, 0, 0, 0, 0x7255, 0, 0, 0, 0, 0, 0x7A5E, 0, 0x7857, 0, 0,
-				0, 0, 0, 0x6A58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x554F, 0x7D58, 0, 0, 0, 0, 0, 0x2B58, 0, 0, 0x4B7D, 0, 0, 0,
-				0, 0x5C7C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2860, 0x7355, 0, 0, 0x597D,
-				0, 0, 0x234C, 0, 0, 0, 0x7959, 0, 0, 0x6A53, 0x7575, 0, 0x476F, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x5A53, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0x3D5A,
-			};
+			return "\u4B51\u6456\u0000\u0000\u0000\u7255\u0000\u0000\u0000\u0000\u0000\u7A5E\u0000\u7857\u0000\u0000\u0000\u0000\u0000\u6A58\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u554F\u7D58\u0000\u0000\u0000\u0000\u0000\u2B58\u0000\u0000\u4B7D\u0000\u0000\u0000\u0000\u5C7C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2860\u7355\u0000\u0000\u597D\u0000\u0000\u234C\u0000\u0000\u0000\u7959\u0000\u0000\u6A53\u7575\u0000\u476F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5A53\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D5A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_AC00 = getOutput0_AC00();
 		private static final char[] getOutput0_AC00() {
-			return new char[] {
-				0x2130, 0x2230, 0, 0, 0x2330, 0, 0, 0x2430, 0x2530, 0x2630, 0x2730, 0, 0, 0, 0, 0,
-				0x2830, 0x2930, 0x2A30, 0x2B30, 0x2C30, 0x2D30, 0x2E30, 0x2F30, 0, 0x3030, 0x3130, 0x3230, 0x3330, 0x3430, 0, 0,
-				0x3530, 0, 0, 0, 0x3630, 0, 0, 0, 0, 0, 0, 0, 0x3730, 0x3830, 0, 0x3930,
-				0x3A30, 0x3B30, 0, 0, 0, 0, 0, 0, 0x3C30, 0x3D30, 0, 0, 0x3E30, 0, 0, 0,
-				0x3F30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4030, 0, 0x4130, 0, 0,
-				0, 0, 0, 0, 0x4230, 0, 0, 0, 0x4330, 0, 0, 0, 0x4430,
-			};
+			return "\u2130\u2230\u0000\u0000\u2330\u0000\u0000\u2430\u2530\u2630\u2730\u0000\u0000\u0000\u0000\u0000\u2830\u2930\u2A30\u2B30\u2C30\u2D30\u2E30\u2F30\u0000\u3030\u3130\u3230\u3330\u3430\u0000\u0000\u3530\u0000\u0000\u0000\u3630\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3730\u3830\u0000\u3930\u3A30\u3B30\u0000\u0000\u0000\u0000\u0000\u0000\u3C30\u3D30\u0000\u0000\u3E30\u0000\u0000\u0000\u3F30\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4030\u0000\u4130\u0000\u0000\u0000\u0000\u0000\u0000\u4230\u0000\u0000\u0000\u4330\u0000\u0000\u0000\u4430".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_AC70 = getOutput0_AC70();
 		private static final char[] getOutput0_AC70() {
-			return new char[] {
-				0x4530, 0x4630, 0, 0, 0x4730, 0, 0, 0x4830, 0x4930, 0, 0x4A30, 0, 0, 0, 0, 0,
-				0x4B30, 0x4C30, 0, 0x4D30, 0x4E30, 0x4F30, 0x5030, 0, 0, 0x5130, 0x5230, 0x5330, 0x5430, 0, 0, 0,
-				0x5530, 0, 0, 0, 0x5630, 0, 0, 0, 0, 0, 0, 0, 0x5730, 0x5830, 0, 0x5930,
-				0x5A30, 0x5B30, 0, 0, 0, 0, 0, 0, 0x5C30, 0x5D30, 0x5E30, 0, 0x5F30, 0, 0, 0x6030,
-				0x6130, 0, 0, 0, 0, 0, 0, 0, 0x6230, 0x6330, 0, 0x6430, 0x6530, 0x6630, 0, 0,
-				0, 0x6730, 0, 0, 0x6830, 0, 0, 0, 0x6930, 0, 0, 0, 0x6A30, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6B30, 0, 0x6C30, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6D30, 0x6E30, 0, 0, 0x6F30, 0, 0, 0x7030, 0x7130, 0, 0x7230, 0, 0x7330, 0, 0, 0x7430,
-				0x7530, 0x7630, 0, 0x7730, 0, 0x7830, 0x7930, 0, 0, 0, 0, 0, 0x7A30, 0x7B30, 0, 0,
-				0x7C30, 0, 0, 0, 0x7D30, 0, 0x7E30, 0, 0, 0, 0, 0, 0x2131, 0x2231, 0, 0x2331,
-				0, 0x2431, 0, 0, 0, 0, 0, 0, 0x2531, 0, 0, 0, 0x2631, 0, 0, 0,
-				0x2731, 0, 0, 0, 0, 0, 0, 0, 0, 0x2831, 0, 0, 0x2931, 0x2A31, 0, 0,
-				0, 0, 0, 0, 0x2B31, 0x2C31, 0, 0, 0x2D31, 0, 0, 0, 0x2E31, 0, 0, 0,
-				0, 0, 0, 0, 0x2F31, 0x3031, 0, 0x3131, 0, 0x3231, 0, 0, 0, 0, 0, 0,
-				0x3331, 0, 0, 0, 0x3431, 0, 0, 0, 0x3531, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x3631, 0, 0x3731, 0, 0, 0, 0, 0, 0, 0, 0, 0x3831, 0x3931, 0, 0,
-				0x3A31, 0, 0, 0x3B31, 0x3C31, 0x3D31, 0x3E31, 0, 0, 0, 0, 0x3F31, 0x4031, 0x4131, 0, 0x4231,
-				0, 0x4331, 0x4431, 0, 0, 0, 0, 0, 0x4531, 0x4631, 0, 0, 0x4731, 0, 0, 0,
-				0x4831, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4931, 0x4A31, 0, 0,
-				0, 0, 0, 0, 0x4B31,
-			};
+			return "\u4530\u4630\u0000\u0000\u4730\u0000\u0000\u4830\u4930\u0000\u4A30\u0000\u0000\u0000\u0000\u0000\u4B30\u4C30\u0000\u4D30\u4E30\u4F30\u5030\u0000\u0000\u5130\u5230\u5330\u5430\u0000\u0000\u0000\u5530\u0000\u0000\u0000\u5630\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5730\u5830\u0000\u5930\u5A30\u5B30\u0000\u0000\u0000\u0000\u0000\u0000\u5C30\u5D30\u5E30\u0000\u5F30\u0000\u0000\u6030\u6130\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6230\u6330\u0000\u6430\u6530\u6630\u0000\u0000\u0000\u6730\u0000\u0000\u6830\u0000\u0000\u0000\u6930\u0000\u0000\u0000\u6A30\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B30\u0000\u6C30\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D30\u6E30\u0000\u0000\u6F30\u0000\u0000\u7030\u7130\u0000\u7230\u0000\u7330\u0000\u0000\u7430\u7530\u7630\u0000\u7730\u0000\u7830\u7930\u0000\u0000\u0000\u0000\u0000\u7A30\u7B30\u0000\u0000\u7C30\u0000\u0000\u0000\u7D30\u0000\u7E30\u0000\u0000\u0000\u0000\u0000\u2131\u2231\u0000\u2331\u0000\u2431\u0000\u0000\u0000\u0000\u0000\u0000\u2531\u0000\u0000\u0000\u2631\u0000\u0000\u0000\u2731\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2831\u0000\u0000\u2931\u2A31\u0000\u0000\u0000\u0000\u0000\u0000\u2B31\u2C31\u0000\u0000\u2D31\u0000\u0000\u0000\u2E31\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2F31\u3031\u0000\u3131\u0000\u3231\u0000\u0000\u0000\u0000\u0000\u0000\u3331\u0000\u0000\u0000\u3431\u0000\u0000\u0000\u3531\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3631\u0000\u3731\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3831\u3931\u0000\u0000\u3A31\u0000\u0000\u3B31\u3C31\u3D31\u3E31\u0000\u0000\u0000\u0000\u3F31\u4031\u4131\u0000\u4231\u0000\u4331\u4431\u0000\u0000\u0000\u0000\u0000\u4531\u4631\u0000\u0000\u4731\u0000\u0000\u0000\u4831\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4931\u4A31\u0000\u0000\u0000\u0000\u0000\u0000\u4B31".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_AE30 = getOutput0_AE30();
 		private static final char[] getOutput0_AE30() {
-			return new char[] {
-				0x6231, 0x6331, 0, 0, 0x6431, 0, 0, 0x6531, 0x6631, 0, 0x6731, 0, 0, 0, 0, 0,
-				0x6831, 0x6931, 0, 0x6A31, 0, 0x6B31, 0x6C31, 0, 0, 0, 0x6D31, 0, 0x6E31, 0x6F31, 0x7031, 0,
-				0x7131, 0, 0, 0, 0x7231, 0, 0x7331, 0, 0, 0, 0, 0, 0x7431, 0x7531, 0, 0x7631,
-				0x7731, 0x7831, 0, 0, 0, 0x7931, 0, 0, 0x7A31, 0x7B31, 0, 0, 0x7C31, 0, 0, 0,
-				0x7D31, 0, 0, 0, 0, 0, 0, 0, 0x7E31, 0x2132, 0, 0x2232, 0x2332, 0x2432, 0, 0,
-				0, 0, 0, 0, 0x2532, 0x2632, 0, 0, 0, 0, 0, 0, 0x2732,
-			};
+			return "\u6231\u6331\u0000\u0000\u6431\u0000\u0000\u6531\u6631\u0000\u6731\u0000\u0000\u0000\u0000\u0000\u6831\u6931\u0000\u6A31\u0000\u6B31\u6C31\u0000\u0000\u0000\u6D31\u0000\u6E31\u6F31\u7031\u0000\u7131\u0000\u0000\u0000\u7231\u0000\u7331\u0000\u0000\u0000\u0000\u0000\u7431\u7531\u0000\u7631\u7731\u7831\u0000\u0000\u0000\u7931\u0000\u0000\u7A31\u7B31\u0000\u0000\u7C31\u0000\u0000\u0000\u7D31\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7E31\u2132\u0000\u2232\u2332\u2432\u0000\u0000\u0000\u0000\u0000\u0000\u2532\u2632\u0000\u0000\u0000\u0000\u0000\u0000\u2732".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_AEBC = getOutput0_AEBC();
 		private static final char[] getOutput0_AEBC() {
-			return new char[] {
-				0x2832, 0x2932, 0x2A32, 0, 0x2B32, 0, 0, 0, 0x2C32, 0, 0, 0, 0, 0, 0, 0,
-				0x2D32, 0x2E32, 0, 0x2F32, 0x3032, 0x3132, 0, 0, 0, 0, 0, 0, 0x3232, 0x3332, 0, 0,
-				0x3432, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3532, 0, 0, 0x3632,
-				0, 0x3732, 0, 0, 0, 0, 0, 0, 0x3832, 0, 0, 0, 0x3932, 0, 0, 0,
-				0x3A32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3B32, 0x3C32, 0, 0, 0,
-				0, 0x3D32, 0, 0, 0x3E32,
-			};
+			return "\u2832\u2932\u2A32\u0000\u2B32\u0000\u0000\u0000\u2C32\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D32\u2E32\u0000\u2F32\u3032\u3132\u0000\u0000\u0000\u0000\u0000\u0000\u3232\u3332\u0000\u0000\u3432\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3532\u0000\u0000\u3632\u0000\u3732\u0000\u0000\u0000\u0000\u0000\u0000\u3832\u0000\u0000\u0000\u3932\u0000\u0000\u0000\u3A32\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3B32\u3C32\u0000\u0000\u0000\u0000\u3D32\u0000\u0000\u3E32".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_AF2C = getOutput0_AF2C();
 		private static final char[] getOutput0_AF2C() {
-			return new char[] {
-				0x3F32, 0x4032, 0, 0, 0x4132, 0, 0x4232, 0, 0x4332, 0, 0, 0, 0, 0, 0, 0,
-				0x4432, 0x4532, 0, 0x4632, 0, 0x4732, 0x4832, 0x4932, 0, 0, 0, 0, 0x4A32, 0x4B32, 0, 0,
-				0, 0, 0, 0, 0x4C32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x4D32, 0x4E32, 0, 0, 0, 0, 0, 0, 0x4F32, 0x5032,
-			};
+			return "\u3F32\u4032\u0000\u0000\u4132\u0000\u4232\u0000\u4332\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4432\u4532\u0000\u4632\u0000\u4732\u4832\u4932\u0000\u0000\u0000\u0000\u4A32\u4B32\u0000\u0000\u0000\u0000\u0000\u0000\u4C32\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D32\u4E32\u0000\u0000\u0000\u0000\u0000\u0000\u4F32\u5032".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_AFB8 = getOutput0_AFB8();
 		private static final char[] getOutput0_AFB8() {
-			return new char[] {
-				0x5932, 0x5A32, 0, 0, 0x5B32, 0, 0, 0, 0x5C32, 0, 0, 0, 0, 0, 0, 0x5D32,
-				0x5E32, 0x5F32, 0, 0x6032, 0, 0x6132, 0x6232, 0, 0, 0, 0, 0, 0x6332, 0, 0, 0,
-				0, 0, 0, 0, 0x6432, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6532, 0x6632, 0, 0, 0, 0, 0, 0, 0x6732, 0x6832, 0, 0, 0x6932, 0, 0, 0,
-				0x6A32, 0, 0, 0, 0, 0, 0, 0, 0x6B32, 0x6C32, 0, 0, 0x6D32, 0, 0, 0,
-				0, 0, 0, 0, 0x6E32, 0, 0, 0, 0x6F32, 0, 0, 0, 0x7032, 0, 0, 0,
-				0, 0, 0, 0, 0x7132, 0x7232, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x7332,
-			};
+			return "\u5932\u5A32\u0000\u0000\u5B32\u0000\u0000\u0000\u5C32\u0000\u0000\u0000\u0000\u0000\u0000\u5D32\u5E32\u5F32\u0000\u6032\u0000\u6132\u6232\u0000\u0000\u0000\u0000\u0000\u6332\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6432\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6532\u6632\u0000\u0000\u0000\u0000\u0000\u0000\u6732\u6832\u0000\u0000\u6932\u0000\u0000\u0000\u6A32\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B32\u6C32\u0000\u0000\u6D32\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E32\u0000\u0000\u0000\u6F32\u0000\u0000\u0000\u7032\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7132\u7232\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7332".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B07C = getOutput0_B07C();
 		private static final char[] getOutput0_B07C() {
-			return new char[] {
-				0x2233, 0x2333, 0, 0, 0x2433, 0, 0, 0, 0x2533, 0, 0, 0, 0, 0, 0, 0,
-				0x2633, 0x2733, 0, 0x2833, 0, 0x2933, 0, 0, 0, 0, 0, 0, 0x2A33, 0x2B33, 0x2C33, 0,
-				0x2D33, 0, 0, 0x2E33, 0x2F33, 0x3033, 0x3133, 0, 0, 0, 0, 0, 0x3233, 0x3333, 0, 0x3433,
-				0x3533, 0x3633, 0x3733, 0x3833, 0, 0x3933, 0, 0x3A33, 0x3B33, 0x3C33, 0, 0, 0x3D33, 0, 0, 0,
-				0x3E33, 0, 0, 0, 0, 0, 0, 0, 0x3F33, 0x4033, 0, 0x4133, 0x4233, 0x4333, 0, 0,
-				0, 0, 0, 0, 0x4433, 0x4533, 0, 0, 0x4633, 0, 0, 0, 0x4733, 0, 0, 0,
-				0, 0, 0, 0, 0x4833, 0, 0, 0, 0, 0x4933,
-			};
+			return "\u2233\u2333\u0000\u0000\u2433\u0000\u0000\u0000\u2533\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2633\u2733\u0000\u2833\u0000\u2933\u0000\u0000\u0000\u0000\u0000\u0000\u2A33\u2B33\u2C33\u0000\u2D33\u0000\u0000\u2E33\u2F33\u3033\u3133\u0000\u0000\u0000\u0000\u0000\u3233\u3333\u0000\u3433\u3533\u3633\u3733\u3833\u0000\u3933\u0000\u3A33\u3B33\u3C33\u0000\u0000\u3D33\u0000\u0000\u0000\u3E33\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3F33\u4033\u0000\u4133\u4233\u4333\u0000\u0000\u0000\u0000\u0000\u0000\u4433\u4533\u0000\u0000\u4633\u0000\u0000\u0000\u4733\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4833\u0000\u0000\u0000\u0000\u4933".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B108 = getOutput0_B108();
 		private static final char[] getOutput0_B108() {
-			return new char[] {
-				0x4A33, 0x4B33, 0, 0x4C33, 0x4D33, 0, 0, 0, 0x4E33, 0, 0x4F33, 0x5033, 0, 0, 0, 0,
-				0x5133, 0x5233, 0, 0x5333, 0x5433, 0x5533, 0, 0, 0, 0, 0, 0x5633, 0x5733, 0x5833, 0, 0,
-				0x5933, 0, 0, 0, 0x5A33, 0, 0, 0, 0, 0, 0, 0, 0x5B33, 0x5C33, 0, 0x5D33,
-				0x5E33, 0x5F33, 0, 0, 0, 0, 0, 0, 0x6033, 0x6133, 0, 0, 0x6233, 0, 0, 0,
-				0x6333, 0, 0, 0, 0, 0, 0, 0, 0x6433, 0x6533, 0, 0, 0x6633, 0x6733, 0, 0,
-				0x6833, 0, 0, 0, 0x6933, 0, 0, 0, 0x6A33,
-			};
+			return "\u4A33\u4B33\u0000\u4C33\u4D33\u0000\u0000\u0000\u4E33\u0000\u4F33\u5033\u0000\u0000\u0000\u0000\u5133\u5233\u0000\u5333\u5433\u5533\u0000\u0000\u0000\u0000\u0000\u5633\u5733\u5833\u0000\u0000\u5933\u0000\u0000\u0000\u5A33\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5B33\u5C33\u0000\u5D33\u5E33\u5F33\u0000\u0000\u0000\u0000\u0000\u0000\u6033\u6133\u0000\u0000\u6233\u0000\u0000\u0000\u6333\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6433\u6533\u0000\u0000\u6633\u6733\u0000\u0000\u6833\u0000\u0000\u0000\u6933\u0000\u0000\u0000\u6A33".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B1CC = getOutput0_B1CC();
 		private static final char[] getOutput0_B1CC() {
-			return new char[] {
-				0x7A33, 0, 0, 0, 0x7B33, 0, 0, 0, 0x7C33, 0, 0, 0, 0, 0, 0, 0,
-				0x7D33, 0x7E33, 0, 0x2134, 0, 0, 0, 0, 0, 0, 0, 0, 0x2234, 0x2334, 0, 0,
-				0x2434, 0, 0, 0, 0x2534, 0, 0, 0, 0, 0, 0, 0, 0, 0x2634, 0, 0x2734,
-				0, 0x2834, 0, 0, 0, 0, 0, 0, 0x2934, 0x2A34, 0, 0, 0x2B34, 0, 0, 0x2C34,
-				0x2D34, 0, 0, 0, 0, 0, 0, 0, 0x2E34, 0x2F34, 0, 0x3034, 0, 0x3134, 0, 0,
-				0, 0, 0, 0, 0x3234,
-			};
+			return "\u7A33\u0000\u0000\u0000\u7B33\u0000\u0000\u0000\u7C33\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D33\u7E33\u0000\u2134\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2234\u2334\u0000\u0000\u2434\u0000\u0000\u0000\u2534\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2634\u0000\u2734\u0000\u2834\u0000\u0000\u0000\u0000\u0000\u0000\u2934\u2A34\u0000\u0000\u2B34\u0000\u0000\u2C34\u2D34\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2E34\u2F34\u0000\u3034\u0000\u3134\u0000\u0000\u0000\u0000\u0000\u0000\u3234".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B258 = getOutput0_B258();
 		private static final char[] getOutput0_B258() {
-			return new char[] {
-				0x3534, 0, 0, 0, 0x3634, 0, 0, 0, 0x3734, 0, 0, 0, 0, 0, 0, 0,
-				0x3834, 0x3934, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3A34, 0x3B34, 0, 0,
-				0, 0, 0, 0, 0x3C34, 0, 0, 0, 0, 0, 0, 0, 0x3D34, 0x3E34, 0, 0,
-				0, 0x3F34, 0, 0, 0, 0, 0, 0, 0x4034, 0x4134, 0, 0, 0x4234, 0, 0, 0,
-				0x4334, 0x4434, 0x4534, 0, 0, 0, 0, 0, 0x4634, 0x4734, 0, 0x4834, 0, 0x4934, 0x4A34, 0,
-				0, 0, 0x4B34, 0, 0x4C34, 0, 0, 0, 0x4D34, 0, 0, 0, 0x4E34,
-			};
+			return "\u3534\u0000\u0000\u0000\u3634\u0000\u0000\u0000\u3734\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3834\u3934\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3A34\u3B34\u0000\u0000\u0000\u0000\u0000\u0000\u3C34\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D34\u3E34\u0000\u0000\u0000\u3F34\u0000\u0000\u0000\u0000\u0000\u0000\u4034\u4134\u0000\u0000\u4234\u0000\u0000\u0000\u4334\u4434\u4534\u0000\u0000\u0000\u0000\u0000\u4634\u4734\u0000\u4834\u0000\u4934\u4A34\u0000\u0000\u0000\u4B34\u0000\u4C34\u0000\u0000\u0000\u4D34\u0000\u0000\u0000\u4E34".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B2C8 = getOutput0_B2C8();
 		private static final char[] getOutput0_B2C8() {
-			return new char[] {
-				0x4F34, 0x5034, 0, 0, 0x5134, 0, 0, 0, 0x5234, 0, 0x5334, 0, 0, 0, 0, 0,
-				0x5434, 0x5534, 0, 0x5634, 0, 0x5734, 0, 0, 0, 0, 0x5834, 0, 0x5934, 0x5A34, 0x5B34, 0,
-				0x5C34, 0, 0, 0x5D34, 0x5E34, 0x5F34, 0x6034, 0x6134, 0, 0, 0, 0x6234, 0x6334, 0x6434, 0, 0x6534,
-				0x6634, 0x6734, 0x6834, 0x6934, 0, 0, 0, 0x6A34, 0x6B34, 0x6C34, 0, 0, 0x6D34, 0, 0, 0,
-				0x6E34, 0, 0, 0, 0, 0, 0, 0, 0x6F34, 0x7034, 0, 0x7134, 0x7234, 0x7334, 0, 0,
-				0, 0, 0, 0, 0x7434,
-			};
+			return "\u4F34\u5034\u0000\u0000\u5134\u0000\u0000\u0000\u5234\u0000\u5334\u0000\u0000\u0000\u0000\u0000\u5434\u5534\u0000\u5634\u0000\u5734\u0000\u0000\u0000\u0000\u5834\u0000\u5934\u5A34\u5B34\u0000\u5C34\u0000\u0000\u5D34\u5E34\u5F34\u6034\u6134\u0000\u0000\u0000\u6234\u6334\u6434\u0000\u6534\u6634\u6734\u6834\u6934\u0000\u0000\u0000\u6A34\u6B34\u6C34\u0000\u0000\u6D34\u0000\u0000\u0000\u6E34\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F34\u7034\u0000\u7134\u7234\u7334\u0000\u0000\u0000\u0000\u0000\u0000\u7434".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B354 = getOutput0_B354();
 		private static final char[] getOutput0_B354() {
-			return new char[] {
-				0x7534, 0x7634, 0x7734, 0, 0x7834, 0, 0, 0x7934, 0x7A34, 0, 0x7B34, 0x7C34, 0, 0, 0, 0,
-				0x7D34, 0x7E34, 0, 0x2135, 0, 0x2235, 0, 0x2335, 0, 0, 0x2435, 0, 0x2535, 0x2635, 0, 0,
-				0x2735, 0, 0, 0, 0x2835, 0, 0, 0, 0, 0, 0, 0, 0x2935, 0x2A35, 0, 0x2B35,
-				0x2C35, 0x2D35, 0, 0, 0, 0, 0, 0, 0x2E35, 0, 0, 0, 0x2F35, 0, 0, 0,
-				0x3035, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3135, 0x3235, 0, 0,
-				0, 0, 0, 0, 0x3335, 0, 0, 0, 0x3435,
-			};
+			return "\u7534\u7634\u7734\u0000\u7834\u0000\u0000\u7934\u7A34\u0000\u7B34\u7C34\u0000\u0000\u0000\u0000\u7D34\u7E34\u0000\u2135\u0000\u2235\u0000\u2335\u0000\u0000\u2435\u0000\u2535\u2635\u0000\u0000\u2735\u0000\u0000\u0000\u2835\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2935\u2A35\u0000\u2B35\u2C35\u2D35\u0000\u0000\u0000\u0000\u0000\u0000\u2E35\u0000\u0000\u0000\u2F35\u0000\u0000\u0000\u3035\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3135\u3235\u0000\u0000\u0000\u0000\u0000\u0000\u3335\u0000\u0000\u0000\u3435".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B3C4 = getOutput0_B3C4();
 		private static final char[] getOutput0_B3C4() {
-			return new char[] {
-				0x3535, 0x3635, 0, 0, 0x3735, 0, 0, 0x3835, 0x3935, 0, 0x3A35, 0, 0x3B35, 0, 0, 0,
-				0x3C35, 0x3D35, 0, 0x3E35, 0, 0x3F35, 0, 0x4035, 0, 0x4135, 0, 0, 0x4235, 0, 0, 0,
-				0x4335, 0, 0, 0, 0x4435,
-			};
+			return "\u3535\u3635\u0000\u0000\u3735\u0000\u0000\u3835\u3935\u0000\u3A35\u0000\u3B35\u0000\u0000\u0000\u3C35\u3D35\u0000\u3E35\u0000\u3F35\u0000\u4035\u0000\u4135\u0000\u0000\u4235\u0000\u0000\u0000\u4335\u0000\u0000\u0000\u4435".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B49D = getOutput0_B49D();
 		private static final char[] getOutput0_B49D() {
-			return new char[] {
-				0x5935, 0, 0, 0, 0, 0, 0, 0x5A35, 0, 0, 0, 0x5B35, 0, 0, 0, 0x5C35,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x5D35, 0, 0x5E35, 0, 0x5F35, 0, 0, 0,
-				0, 0, 0, 0x6035, 0, 0, 0, 0x6135, 0, 0, 0, 0x6235, 0, 0, 0, 0,
-				0, 0, 0, 0x6335, 0, 0, 0, 0, 0x6435, 0, 0, 0, 0, 0, 0, 0x6535,
-				0x6635, 0, 0, 0x6735, 0, 0, 0x6835, 0x6935, 0, 0x6A35, 0, 0, 0, 0, 0, 0x6B35,
-				0x6C35, 0, 0x6D35, 0, 0x6E35, 0, 0, 0, 0, 0, 0, 0x6F35,
-			};
+			return "\u5935\u0000\u0000\u0000\u0000\u0000\u0000\u5A35\u0000\u0000\u0000\u5B35\u0000\u0000\u0000\u5C35\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D35\u0000\u5E35\u0000\u5F35\u0000\u0000\u0000\u0000\u0000\u0000\u6035\u0000\u0000\u0000\u6135\u0000\u0000\u0000\u6235\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6335\u0000\u0000\u0000\u0000\u6435\u0000\u0000\u0000\u0000\u0000\u0000\u6535\u6635\u0000\u0000\u6735\u0000\u0000\u6835\u6935\u0000\u6A35\u0000\u0000\u0000\u0000\u0000\u6B35\u6C35\u0000\u6D35\u0000\u6E35\u0000\u0000\u0000\u0000\u0000\u0000\u6F35".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B514 = getOutput0_B514();
 		private static final char[] getOutput0_B514() {
-			return new char[] {
-				0x7035, 0x7135, 0, 0, 0x7235, 0, 0, 0x7335, 0x7435, 0, 0, 0, 0, 0, 0, 0,
-				0x7535, 0x7635, 0, 0x7735, 0x7835, 0x7935, 0x7A35, 0, 0, 0, 0, 0, 0x7B35, 0x7C35, 0, 0,
-				0x7D35, 0, 0, 0, 0x7E35, 0, 0, 0, 0, 0, 0, 0, 0x2136, 0x2236, 0, 0x2336,
-				0x2436, 0x2536, 0, 0, 0, 0, 0, 0x2636, 0x2736, 0x2836, 0, 0, 0x2936, 0, 0, 0,
-				0x2A36, 0, 0, 0, 0, 0, 0, 0, 0x2B36, 0x2C36, 0, 0x2D36, 0x2E36, 0x2F36,
-			};
+			return "\u7035\u7135\u0000\u0000\u7235\u0000\u0000\u7335\u7435\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7535\u7635\u0000\u7735\u7835\u7935\u7A35\u0000\u0000\u0000\u0000\u0000\u7B35\u7C35\u0000\u0000\u7D35\u0000\u0000\u0000\u7E35\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2136\u2236\u0000\u2336\u2436\u2536\u0000\u0000\u0000\u0000\u0000\u2636\u2736\u2836\u0000\u0000\u2936\u0000\u0000\u0000\u2A36\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B36\u2C36\u0000\u2D36\u2E36\u2F36".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B5A0 = getOutput0_B5A0();
 		private static final char[] getOutput0_B5A0() {
-			return new char[] {
-				0x3036, 0x3136, 0, 0, 0x3236, 0, 0, 0, 0x3336, 0, 0x3436, 0x3536, 0, 0, 0, 0,
-				0x3636, 0x3736, 0, 0x3836, 0x3936, 0x3A36, 0, 0, 0, 0, 0, 0x3B36, 0x3C36, 0x3D36, 0, 0,
-				0x3E36, 0, 0, 0, 0x3F36, 0, 0, 0, 0, 0, 0, 0, 0x4036, 0x4136, 0, 0x4236,
-				0x4336, 0x4436, 0, 0, 0, 0, 0, 0, 0x4536,
-			};
+			return "\u3036\u3136\u0000\u0000\u3236\u0000\u0000\u0000\u3336\u0000\u3436\u3536\u0000\u0000\u0000\u0000\u3636\u3736\u0000\u3836\u3936\u3A36\u0000\u0000\u0000\u0000\u0000\u3B36\u3C36\u3D36\u0000\u0000\u3E36\u0000\u0000\u0000\u3F36\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4036\u4136\u0000\u4236\u4336\u4436\u0000\u0000\u0000\u0000\u0000\u0000\u4536".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B728 = getOutput0_B728();
 		private static final char[] getOutput0_B728() {
-			return new char[] {
-				0x5F36, 0x6036, 0, 0, 0x6136, 0, 0, 0x6236, 0x6336, 0, 0, 0, 0, 0, 0, 0,
-				0x6436, 0x6536, 0, 0x6636, 0, 0, 0, 0, 0, 0, 0, 0, 0x6736, 0, 0, 0,
-				0x6836, 0, 0, 0, 0x6936, 0, 0, 0, 0, 0, 0, 0, 0x6A36, 0x6B36, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x6C36, 0, 0, 0, 0x6D36, 0, 0, 0,
-				0x6E36, 0, 0, 0, 0, 0, 0, 0, 0x6F36, 0x7036, 0, 0x7136, 0, 0x7236, 0, 0,
-				0, 0, 0, 0, 0x7336, 0x7436, 0, 0, 0x7536, 0, 0, 0, 0x7636, 0, 0, 0,
-				0, 0, 0, 0, 0x7736, 0x7836, 0, 0x7936, 0x7A36, 0x7B36, 0x7C36, 0, 0, 0, 0x7D36, 0x7E36,
-				0x2137, 0x2237, 0, 0, 0x2337, 0, 0, 0, 0x2437, 0, 0, 0, 0, 0, 0, 0,
-				0x2537, 0x2637, 0, 0x2737, 0x2837, 0x2937, 0, 0, 0, 0, 0, 0, 0x2A37, 0x2B37, 0, 0,
-				0x2C37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2D37,
-				0, 0x2E37,
-			};
+			return "\u5F36\u6036\u0000\u0000\u6136\u0000\u0000\u6236\u6336\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6436\u6536\u0000\u6636\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6736\u0000\u0000\u0000\u6836\u0000\u0000\u0000\u6936\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6A36\u6B36\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C36\u0000\u0000\u0000\u6D36\u0000\u0000\u0000\u6E36\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F36\u7036\u0000\u7136\u0000\u7236\u0000\u0000\u0000\u0000\u0000\u0000\u7336\u7436\u0000\u0000\u7536\u0000\u0000\u0000\u7636\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7736\u7836\u0000\u7936\u7A36\u7B36\u7C36\u0000\u0000\u0000\u7D36\u7E36\u2137\u2237\u0000\u0000\u2337\u0000\u0000\u0000\u2437\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2537\u2637\u0000\u2737\u2837\u2937\u0000\u0000\u0000\u0000\u0000\u0000\u2A37\u2B37\u0000\u0000\u2C37\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D37\u0000\u2E37".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B7EC = getOutput0_B7EC();
 		private static final char[] getOutput0_B7EC() {
-			return new char[] {
-				0x2F37, 0x3037, 0, 0, 0x3137, 0, 0, 0, 0x3237, 0, 0, 0, 0, 0, 0, 0,
-				0x3337, 0x3437, 0, 0x3537, 0x3637, 0x3737, 0, 0, 0, 0, 0, 0x3837, 0x3937, 0x3A37, 0, 0,
-				0x3B37, 0, 0, 0, 0x3C37, 0, 0, 0, 0, 0, 0, 0, 0x3D37, 0x3E37, 0, 0x3F37,
-				0, 0x4037, 0, 0, 0, 0, 0, 0, 0x4137, 0x4237, 0, 0, 0x4337, 0, 0, 0,
-				0x4437, 0, 0, 0, 0, 0, 0, 0, 0x4537, 0x4637, 0, 0x4737, 0x4837, 0x4937, 0, 0,
-				0, 0, 0, 0, 0x4A37, 0, 0, 0, 0x4B37, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x4C37, 0, 0x4D37, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x4E37, 0x4F37, 0, 0, 0x5037, 0, 0, 0, 0x5137, 0, 0, 0, 0, 0, 0, 0,
-				0x5237, 0x5337, 0, 0x5437, 0, 0x5537, 0, 0, 0, 0, 0, 0, 0x5637, 0, 0, 0,
-				0x5737, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x5837,
-			};
+			return "\u2F37\u3037\u0000\u0000\u3137\u0000\u0000\u0000\u3237\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3337\u3437\u0000\u3537\u3637\u3737\u0000\u0000\u0000\u0000\u0000\u3837\u3937\u3A37\u0000\u0000\u3B37\u0000\u0000\u0000\u3C37\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D37\u3E37\u0000\u3F37\u0000\u4037\u0000\u0000\u0000\u0000\u0000\u0000\u4137\u4237\u0000\u0000\u4337\u0000\u0000\u0000\u4437\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4537\u4637\u0000\u4737\u4837\u4937\u0000\u0000\u0000\u0000\u0000\u0000\u4A37\u0000\u0000\u0000\u4B37\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4C37\u0000\u4D37\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E37\u4F37\u0000\u0000\u5037\u0000\u0000\u0000\u5137\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5237\u5337\u0000\u5437\u0000\u5537\u0000\u0000\u0000\u0000\u0000\u0000\u5637\u0000\u0000\u0000\u5737\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5837".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B8A8 = getOutput0_B8A8();
 		private static final char[] getOutput0_B8A8() {
-			return new char[] {
-				0x5937, 0, 0, 0, 0, 0, 0, 0, 0x5A37, 0, 0, 0, 0x5B37, 0, 0, 0,
-				0x5C37, 0, 0, 0, 0, 0, 0, 0, 0x5D37, 0x5E37, 0, 0x5F37, 0, 0x6037, 0, 0,
-				0, 0, 0, 0, 0x6137, 0, 0, 0, 0x6237, 0, 0, 0, 0x6337, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x6437, 0, 0x6537, 0, 0x6637, 0, 0, 0, 0, 0, 0,
-				0x6737, 0x6837, 0, 0, 0x6937, 0, 0, 0, 0x6A37, 0, 0, 0, 0, 0, 0, 0,
-				0x6B37, 0x6C37, 0, 0x6D37, 0, 0x6E37, 0, 0, 0, 0, 0, 0, 0x6F37,
-			};
+			return "\u5937\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5A37\u0000\u0000\u0000\u5B37\u0000\u0000\u0000\u5C37\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D37\u5E37\u0000\u5F37\u0000\u6037\u0000\u0000\u0000\u0000\u0000\u0000\u6137\u0000\u0000\u0000\u6237\u0000\u0000\u0000\u6337\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6437\u0000\u6537\u0000\u6637\u0000\u0000\u0000\u0000\u0000\u0000\u6737\u6837\u0000\u0000\u6937\u0000\u0000\u0000\u6A37\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B37\u6C37\u0000\u6D37\u0000\u6E37\u0000\u0000\u0000\u0000\u0000\u0000\u6F37".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B93C = getOutput0_B93C();
 		private static final char[] getOutput0_B93C() {
-			return new char[] {
-				0x7237, 0x7337, 0, 0, 0x7437, 0, 0, 0, 0x7537, 0, 0, 0, 0, 0, 0, 0,
-				0x7637, 0, 0, 0x7737, 0, 0x7837, 0, 0, 0, 0, 0, 0, 0x7937, 0x7A37, 0, 0,
-				0x7B37, 0, 0, 0, 0x7C37, 0, 0, 0, 0, 0, 0, 0, 0x7D37, 0x7E37, 0, 0x2138,
-				0, 0x2238, 0, 0, 0, 0, 0, 0, 0x2338, 0x2438, 0, 0, 0x2538, 0, 0, 0,
-				0x2638, 0, 0, 0, 0, 0, 0, 0, 0x2738, 0x2838, 0, 0x2938, 0, 0x2A38, 0x2B38, 0,
-				0, 0x2C38, 0x2D38,
-			};
+			return "\u7237\u7337\u0000\u0000\u7437\u0000\u0000\u0000\u7537\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7637\u0000\u0000\u7737\u0000\u7837\u0000\u0000\u0000\u0000\u0000\u0000\u7937\u7A37\u0000\u0000\u7B37\u0000\u0000\u0000\u7C37\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7D37\u7E37\u0000\u2138\u0000\u2238\u0000\u0000\u0000\u0000\u0000\u0000\u2338\u2438\u0000\u0000\u2538\u0000\u0000\u0000\u2638\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2738\u2838\u0000\u2938\u0000\u2A38\u2B38\u0000\u0000\u2C38\u2D38".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_B9AC = getOutput0_B9AC();
 		private static final char[] getOutput0_B9AC() {
-			return new char[] {
-				0x2E38, 0x2F38, 0, 0, 0x3038, 0, 0, 0, 0x3138, 0, 0, 0, 0, 0, 0, 0,
-				0x3238, 0x3338, 0, 0x3438, 0, 0x3538, 0, 0, 0, 0, 0, 0, 0x3638, 0x3738, 0, 0,
-				0x3838, 0, 0x3938, 0x3A38, 0x3B38, 0x3C38, 0x3D38, 0, 0, 0, 0, 0, 0x3E38, 0x3F38, 0, 0x4038,
-				0, 0x4138, 0x4238, 0, 0, 0x4338, 0, 0x4438, 0x4538, 0x4638, 0, 0, 0x4738, 0, 0, 0,
-				0x4838, 0, 0, 0, 0, 0, 0, 0, 0x4938, 0x4A38, 0, 0x4B38, 0x4C38, 0x4D38, 0x4E38, 0,
-				0, 0, 0, 0, 0x4F38, 0x5038, 0, 0, 0, 0, 0, 0, 0x5138, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5238,
-			};
+			return "\u2E38\u2F38\u0000\u0000\u3038\u0000\u0000\u0000\u3138\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3238\u3338\u0000\u3438\u0000\u3538\u0000\u0000\u0000\u0000\u0000\u0000\u3638\u3738\u0000\u0000\u3838\u0000\u3938\u3A38\u3B38\u3C38\u3D38\u0000\u0000\u0000\u0000\u0000\u3E38\u3F38\u0000\u4038\u0000\u4138\u4238\u0000\u0000\u4338\u0000\u4438\u4538\u4638\u0000\u0000\u4738\u0000\u0000\u0000\u4838\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4938\u4A38\u0000\u4B38\u4C38\u4D38\u4E38\u0000\u0000\u0000\u0000\u0000\u4F38\u5038\u0000\u0000\u0000\u0000\u0000\u0000\u5138\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5238".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_BA38 = getOutput0_BA38();
 		private static final char[] getOutput0_BA38() {
-			return new char[] {
-				0x5338, 0x5438, 0, 0, 0x5538, 0, 0, 0, 0x5638, 0, 0x5738, 0, 0, 0, 0, 0,
-				0x5838, 0x5938, 0, 0x5A38, 0, 0x5B38, 0x5C38, 0, 0, 0, 0, 0x5D38, 0x5E38, 0x5F38, 0, 0,
-				0x6038, 0, 0, 0, 0x6138, 0, 0, 0, 0, 0, 0, 0, 0x6238, 0x6338, 0, 0x6438,
-				0x6538, 0x6638, 0, 0, 0, 0, 0, 0, 0x6738, 0x6838, 0, 0, 0x6938, 0, 0, 0,
-				0x6A38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6B38, 0x6C38, 0x6D38, 0, 0x6E38,
-				0, 0, 0, 0, 0x6F38,
-			};
+			return "\u5338\u5438\u0000\u0000\u5538\u0000\u0000\u0000\u5638\u0000\u5738\u0000\u0000\u0000\u0000\u0000\u5838\u5938\u0000\u5A38\u0000\u5B38\u5C38\u0000\u0000\u0000\u0000\u5D38\u5E38\u5F38\u0000\u0000\u6038\u0000\u0000\u0000\u6138\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6238\u6338\u0000\u6438\u6538\u6638\u0000\u0000\u0000\u0000\u0000\u0000\u6738\u6838\u0000\u0000\u6938\u0000\u0000\u0000\u6A38\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B38\u6C38\u6D38\u0000\u6E38\u0000\u0000\u0000\u0000\u6F38".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_BAFC = getOutput0_BAFC();
 		private static final char[] getOutput0_BAFC() {
-			return new char[] {
-				0x7E38, 0, 0, 0, 0x2139, 0, 0, 0, 0x2239, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x2339, 0, 0x2439, 0, 0x2539, 0, 0, 0, 0, 0, 0, 0x2639, 0, 0, 0,
-				0x2739, 0, 0, 0, 0x2839, 0, 0, 0, 0, 0, 0, 0, 0, 0x2939, 0, 0x2A39,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x2B39, 0x2C39, 0x2D39, 0, 0x2E39, 0, 0, 0x2F39,
-				0x3039, 0x3139, 0x3239, 0, 0, 0, 0, 0, 0x3339, 0x3439, 0, 0x3539, 0, 0x3639, 0, 0,
-				0, 0x3739, 0, 0x3839, 0x3939, 0, 0, 0, 0x3A39, 0, 0, 0, 0x3B39, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x3C39, 0, 0x3D39, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x3E39,
-			};
+			return "\u7E38\u0000\u0000\u0000\u2139\u0000\u0000\u0000\u2239\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2339\u0000\u2439\u0000\u2539\u0000\u0000\u0000\u0000\u0000\u0000\u2639\u0000\u0000\u0000\u2739\u0000\u0000\u0000\u2839\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2939\u0000\u2A39\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B39\u2C39\u2D39\u0000\u2E39\u0000\u0000\u2F39\u3039\u3139\u3239\u0000\u0000\u0000\u0000\u0000\u3339\u3439\u0000\u3539\u0000\u3639\u0000\u0000\u0000\u3739\u0000\u3839\u3939\u0000\u0000\u0000\u3A39\u0000\u0000\u0000\u3B39\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C39\u0000\u3D39\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E39".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_BBF8 = getOutput0_BBF8();
 		private static final char[] getOutput0_BBF8() {
-			return new char[] {
-				0x4C39, 0x4D39, 0, 0, 0x4E39, 0, 0, 0x4F39, 0x5039, 0, 0x5139, 0, 0, 0, 0, 0,
-				0x5239, 0x5339, 0, 0x5439, 0x5539, 0x5639, 0, 0x5739, 0, 0x5839, 0, 0, 0x5939, 0x5A39, 0x5B39, 0x5C39,
-				0x5D39, 0, 0, 0x5E39, 0x5F39, 0x6039, 0x6139, 0x6239, 0, 0, 0, 0, 0x6339, 0x6439, 0, 0x6539,
-				0, 0x6639, 0, 0, 0, 0x6739, 0, 0, 0x6839, 0x6939, 0, 0, 0x6A39, 0, 0, 0,
-				0x6B39, 0, 0, 0, 0, 0, 0, 0, 0x6C39, 0x6D39, 0, 0x6E39, 0x6F39, 0x7039, 0, 0,
-				0, 0x7139, 0, 0, 0x7239, 0x7339, 0, 0, 0x7439, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x7539,
-			};
+			return "\u4C39\u4D39\u0000\u0000\u4E39\u0000\u0000\u4F39\u5039\u0000\u5139\u0000\u0000\u0000\u0000\u0000\u5239\u5339\u0000\u5439\u5539\u5639\u0000\u5739\u0000\u5839\u0000\u0000\u5939\u5A39\u5B39\u5C39\u5D39\u0000\u0000\u5E39\u5F39\u6039\u6139\u6239\u0000\u0000\u0000\u0000\u6339\u6439\u0000\u6539\u0000\u6639\u0000\u0000\u0000\u6739\u0000\u0000\u6839\u6939\u0000\u0000\u6A39\u0000\u0000\u0000\u6B39\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6C39\u6D39\u0000\u6E39\u6F39\u7039\u0000\u0000\u0000\u7139\u0000\u0000\u7239\u7339\u0000\u0000\u7439\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7539".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_BC84 = getOutput0_BC84();
 		private static final char[] getOutput0_BC84() {
-			return new char[] {
-				0x7639, 0x7739, 0, 0, 0x7839, 0, 0, 0x7939, 0x7A39, 0, 0x7B39, 0, 0, 0, 0, 0,
-				0x7C39, 0x7D39, 0, 0x7E39, 0, 0x213A, 0x223A, 0, 0, 0, 0, 0, 0x233A, 0x243A, 0, 0,
-				0x253A, 0, 0, 0x263A, 0x273A, 0, 0, 0, 0, 0, 0, 0, 0x283A, 0x293A, 0, 0x2A3A,
-				0x2B3A, 0x2C3A, 0, 0, 0, 0, 0, 0, 0x2D3A, 0x2E3A, 0, 0, 0x2F3A, 0, 0, 0,
-				0x303A, 0, 0, 0, 0, 0, 0, 0, 0, 0x313A, 0, 0x323A, 0x333A, 0x343A, 0, 0,
-				0, 0x353A, 0, 0, 0x363A, 0, 0, 0, 0x373A,
-			};
+			return "\u7639\u7739\u0000\u0000\u7839\u0000\u0000\u7939\u7A39\u0000\u7B39\u0000\u0000\u0000\u0000\u0000\u7C39\u7D39\u0000\u7E39\u0000\u213A\u223A\u0000\u0000\u0000\u0000\u0000\u233A\u243A\u0000\u0000\u253A\u0000\u0000\u263A\u273A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u283A\u293A\u0000\u2A3A\u2B3A\u2C3A\u0000\u0000\u0000\u0000\u0000\u0000\u2D3A\u2E3A\u0000\u0000\u2F3A\u0000\u0000\u0000\u303A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u313A\u0000\u323A\u333A\u343A\u0000\u0000\u0000\u353A\u0000\u0000\u363A\u0000\u0000\u0000\u373A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_BD80 = getOutput0_BD80();
 		private static final char[] getOutput0_BD80() {
-			return new char[] {
-				0x4E3A, 0x4F3A, 0, 0, 0x503A, 0, 0, 0x513A, 0x523A, 0x533A, 0x543A, 0, 0, 0, 0, 0,
-				0x553A, 0x563A, 0, 0x573A, 0, 0x583A, 0, 0, 0, 0x593A, 0x5A3A, 0, 0x5B3A, 0, 0, 0,
-				0, 0, 0, 0, 0x5C3A, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x5D3A, 0, 0, 0, 0, 0, 0, 0, 0x5E3A,
-			};
+			return "\u4E3A\u4F3A\u0000\u0000\u503A\u0000\u0000\u513A\u523A\u533A\u543A\u0000\u0000\u0000\u0000\u0000\u553A\u563A\u0000\u573A\u0000\u583A\u0000\u0000\u0000\u593A\u5A3A\u0000\u5B3A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5C3A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5D3A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5E3A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_BDD4 = getOutput0_BDD4();
 		private static final char[] getOutput0_BDD4() {
-			return new char[] {
-				0x5F3A, 0x603A, 0, 0, 0x613A, 0, 0, 0, 0x623A, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x633A, 0, 0, 0, 0, 0, 0, 0x643A, 0, 0, 0,
-				0x653A, 0, 0, 0, 0x663A, 0, 0, 0, 0, 0, 0, 0, 0x673A, 0, 0, 0x683A,
-				0, 0x693A, 0, 0, 0, 0, 0, 0, 0x6A3A, 0x6B3A, 0, 0, 0x6C3A, 0, 0, 0,
-				0x6D3A, 0, 0, 0, 0, 0, 0, 0, 0x6E3A, 0x6F3A, 0, 0x703A,
-			};
+			return "\u5F3A\u603A\u0000\u0000\u613A\u0000\u0000\u0000\u623A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u633A\u0000\u0000\u0000\u0000\u0000\u0000\u643A\u0000\u0000\u0000\u653A\u0000\u0000\u0000\u663A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u673A\u0000\u0000\u683A\u0000\u693A\u0000\u0000\u0000\u0000\u0000\u0000\u6A3A\u6B3A\u0000\u0000\u6C3A\u0000\u0000\u0000\u6D3A\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E3A\u6F3A\u0000\u703A".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_BE44 = getOutput0_BE44();
 		private static final char[] getOutput0_BE44() {
-			return new char[] {
-				0x713A, 0x723A, 0, 0, 0x733A, 0, 0, 0, 0x743A, 0, 0x753A, 0, 0, 0, 0, 0,
-				0x763A, 0x773A, 0, 0x783A, 0, 0x793A, 0x7A3A, 0x7B3A, 0, 0, 0, 0, 0x7C3A, 0x7D3A, 0, 0,
-				0x7E3A, 0, 0, 0, 0x213B, 0, 0x223B, 0, 0, 0, 0, 0, 0x233B, 0x243B, 0, 0x253B,
-				0x263B, 0x273B, 0, 0, 0, 0, 0, 0x283B, 0x293B, 0x2A3B, 0, 0, 0x2B3B, 0, 0, 0,
-				0x2C3B, 0, 0, 0, 0, 0, 0, 0, 0x2D3B, 0x2E3B, 0, 0x2F3B, 0x303B, 0x313B, 0, 0,
-				0, 0, 0, 0, 0x323B, 0x333B, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x343B,
-			};
+			return "\u713A\u723A\u0000\u0000\u733A\u0000\u0000\u0000\u743A\u0000\u753A\u0000\u0000\u0000\u0000\u0000\u763A\u773A\u0000\u783A\u0000\u793A\u7A3A\u7B3A\u0000\u0000\u0000\u0000\u7C3A\u7D3A\u0000\u0000\u7E3A\u0000\u0000\u0000\u213B\u0000\u223B\u0000\u0000\u0000\u0000\u0000\u233B\u243B\u0000\u253B\u263B\u273B\u0000\u0000\u0000\u0000\u0000\u283B\u293B\u2A3B\u0000\u0000\u2B3B\u0000\u0000\u0000\u2C3B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D3B\u2E3B\u0000\u2F3B\u303B\u313B\u0000\u0000\u0000\u0000\u0000\u0000\u323B\u333B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u343B".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C090 = getOutput0_C090();
 		private static final char[] getOutput0_C090() {
-			return new char[] {
-				0x5F3B, 0x603B, 0, 0, 0x613B, 0, 0, 0, 0x623B, 0, 0, 0, 0, 0, 0, 0,
-				0x633B, 0x643B, 0, 0x653B, 0, 0x663B, 0, 0, 0, 0, 0, 0, 0x673B, 0x683B, 0, 0x693B,
-				0x6A3B, 0, 0, 0x6B3B, 0x6C3B, 0x6D3B, 0x6E3B, 0, 0, 0, 0, 0, 0x6F3B, 0x703B, 0, 0x713B,
-				0x723B, 0x733B, 0, 0, 0, 0x743B, 0, 0, 0x753B, 0x763B, 0, 0, 0x773B, 0, 0, 0,
-				0x783B, 0, 0, 0, 0, 0, 0, 0, 0x793B, 0x7A3B, 0, 0x7B3B, 0x7C3B, 0x7D3B, 0, 0,
-				0, 0, 0, 0, 0x7E3B, 0x213C, 0, 0, 0x223C, 0, 0, 0, 0x233C, 0, 0, 0,
-				0, 0, 0, 0, 0x243C, 0x253C, 0, 0x263C, 0, 0x273C, 0, 0, 0, 0, 0, 0,
-				0x283C, 0, 0, 0, 0x293C, 0, 0, 0, 0x2A3C, 0, 0, 0, 0, 0, 0, 0,
-				0x2B3C, 0, 0, 0, 0, 0x2C3C, 0, 0, 0, 0, 0, 0, 0x2D3C, 0x2E3C, 0x2F3C, 0x303C,
-				0x313C, 0, 0, 0x323C, 0x333C, 0, 0x343C, 0x353C, 0, 0, 0, 0, 0x363C, 0x373C, 0, 0x383C,
-				0x393C, 0x3A3C, 0, 0, 0, 0, 0x3B3C, 0, 0x3C3C, 0x3D3C, 0, 0, 0x3E3C, 0, 0, 0,
-				0x3F3C, 0, 0, 0, 0, 0, 0, 0, 0x403C, 0x413C, 0, 0x423C, 0x433C, 0x443C, 0, 0,
-				0, 0, 0, 0, 0x453C, 0x463C, 0, 0, 0x473C, 0, 0, 0, 0x483C, 0, 0, 0,
-				0, 0, 0, 0, 0x493C, 0x4A3C, 0, 0x4B3C, 0x4C3C, 0x4D3C, 0, 0, 0, 0, 0, 0,
-				0x4E3C, 0, 0, 0, 0x4F3C, 0, 0, 0, 0x503C, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x513C, 0, 0, 0, 0, 0, 0, 0x523C, 0x533C, 0x543C, 0,
-				0x553C, 0, 0, 0, 0x563C, 0, 0x573C, 0, 0, 0, 0, 0, 0x583C, 0x593C, 0, 0x5A3C,
-				0, 0x5B3C, 0, 0, 0, 0x5C3C, 0, 0, 0x5D3C, 0x5E3C, 0, 0, 0x5F3C, 0, 0, 0,
-				0x603C, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x613C, 0, 0,
-				0, 0, 0, 0, 0x623C, 0, 0, 0, 0x633C, 0, 0, 0, 0x643C, 0, 0, 0,
-				0, 0, 0, 0, 0x653C, 0, 0, 0x663C, 0x673C, 0, 0, 0, 0, 0, 0, 0,
-				0x683C, 0, 0, 0, 0x693C, 0, 0, 0, 0x6A3C, 0, 0, 0, 0, 0, 0, 0,
-				0x6B3C, 0x6C3C, 0, 0x6D3C, 0, 0, 0, 0, 0, 0, 0, 0, 0x6E3C, 0x6F3C, 0, 0,
-				0x703C, 0, 0, 0, 0x713C, 0, 0, 0, 0, 0, 0, 0, 0x723C, 0x733C, 0, 0x743C,
-				0, 0x753C, 0, 0, 0, 0, 0, 0, 0x763C, 0x773C, 0, 0, 0x783C, 0, 0, 0x793C,
-				0x7A3C, 0, 0, 0, 0, 0, 0, 0, 0x7B3C, 0x7C3C, 0, 0x7D3C, 0, 0x7E3C, 0, 0x213D,
-				0, 0x223D, 0x233D, 0, 0x243D,
-			};
+			return "\u5F3B\u603B\u0000\u0000\u613B\u0000\u0000\u0000\u623B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u633B\u643B\u0000\u653B\u0000\u663B\u0000\u0000\u0000\u0000\u0000\u0000\u673B\u683B\u0000\u693B\u6A3B\u0000\u0000\u6B3B\u6C3B\u6D3B\u6E3B\u0000\u0000\u0000\u0000\u0000\u6F3B\u703B\u0000\u713B\u723B\u733B\u0000\u0000\u0000\u743B\u0000\u0000\u753B\u763B\u0000\u0000\u773B\u0000\u0000\u0000\u783B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u793B\u7A3B\u0000\u7B3B\u7C3B\u7D3B\u0000\u0000\u0000\u0000\u0000\u0000\u7E3B\u213C\u0000\u0000\u223C\u0000\u0000\u0000\u233C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u243C\u253C\u0000\u263C\u0000\u273C\u0000\u0000\u0000\u0000\u0000\u0000\u283C\u0000\u0000\u0000\u293C\u0000\u0000\u0000\u2A3C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B3C\u0000\u0000\u0000\u0000\u2C3C\u0000\u0000\u0000\u0000\u0000\u0000\u2D3C\u2E3C\u2F3C\u303C\u313C\u0000\u0000\u323C\u333C\u0000\u343C\u353C\u0000\u0000\u0000\u0000\u363C\u373C\u0000\u383C\u393C\u3A3C\u0000\u0000\u0000\u0000\u3B3C\u0000\u3C3C\u3D3C\u0000\u0000\u3E3C\u0000\u0000\u0000\u3F3C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u403C\u413C\u0000\u423C\u433C\u443C\u0000\u0000\u0000\u0000\u0000\u0000\u453C\u463C\u0000\u0000\u473C\u0000\u0000\u0000\u483C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u493C\u4A3C\u0000\u4B3C\u4C3C\u4D3C\u0000\u0000\u0000\u0000\u0000\u0000\u4E3C\u0000\u0000\u0000\u4F3C\u0000\u0000\u0000\u503C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u513C\u0000\u0000\u0000\u0000\u0000\u0000\u523C\u533C\u543C\u0000\u553C\u0000\u0000\u0000\u563C\u0000\u573C\u0000\u0000\u0000\u0000\u0000\u583C\u593C\u0000\u5A3C\u0000\u5B3C\u0000\u0000\u0000\u5C3C\u0000\u0000\u5D3C\u5E3C\u0000\u0000\u5F3C\u0000\u0000\u0000\u603C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u613C\u0000\u0000\u0000\u0000\u0000\u0000\u623C\u0000\u0000\u0000\u633C\u0000\u0000\u0000\u643C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u653C\u0000\u0000\u663C\u673C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u683C\u0000\u0000\u0000\u693C\u0000\u0000\u0000\u6A3C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B3C\u6C3C\u0000\u6D3C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E3C\u6F3C\u0000\u0000\u703C\u0000\u0000\u0000\u713C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u723C\u733C\u0000\u743C\u0000\u753C\u0000\u0000\u0000\u0000\u0000\u0000\u763C\u773C\u0000\u0000\u783C\u0000\u0000\u793C\u7A3C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B3C\u7C3C\u0000\u7D3C\u0000\u7E3C\u0000\u213D\u0000\u223D\u233D\u0000\u243D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C248 = getOutput0_C248();
 		private static final char[] getOutput0_C248() {
-			return new char[] {
-				0x253D, 0, 0, 0, 0, 0, 0, 0, 0x263D, 0x273D, 0, 0, 0x283D, 0, 0, 0,
-				0x293D, 0, 0, 0, 0, 0, 0, 0, 0x2A3D, 0, 0, 0, 0, 0x2B3D, 0, 0,
-				0, 0, 0, 0, 0x2C3D, 0x2D3D, 0, 0, 0x2E3D, 0, 0, 0, 0x2F3D, 0, 0, 0,
-				0, 0, 0, 0, 0x303D, 0x313D, 0, 0x323D, 0, 0x333D, 0, 0, 0, 0, 0, 0,
-				0x343D, 0x353D, 0, 0, 0, 0, 0, 0, 0x363D, 0, 0, 0, 0, 0, 0, 0,
-				0x373D, 0, 0, 0x383D, 0, 0x393D, 0, 0, 0, 0, 0, 0, 0x3A3D, 0x3B3D, 0, 0,
-				0x3C3D, 0, 0, 0, 0x3D3D, 0x3E3D, 0, 0, 0, 0, 0, 0, 0x3F3D, 0x403D, 0, 0x413D,
-				0, 0x423D,
-			};
+			return "\u253D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u263D\u273D\u0000\u0000\u283D\u0000\u0000\u0000\u293D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2A3D\u0000\u0000\u0000\u0000\u2B3D\u0000\u0000\u0000\u0000\u0000\u0000\u2C3D\u2D3D\u0000\u0000\u2E3D\u0000\u0000\u0000\u2F3D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u303D\u313D\u0000\u323D\u0000\u333D\u0000\u0000\u0000\u0000\u0000\u0000\u343D\u353D\u0000\u0000\u0000\u0000\u0000\u0000\u363D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u373D\u0000\u0000\u383D\u0000\u393D\u0000\u0000\u0000\u0000\u0000\u0000\u3A3D\u3B3D\u0000\u0000\u3C3D\u0000\u0000\u0000\u3D3D\u3E3D\u0000\u0000\u0000\u0000\u0000\u0000\u3F3D\u403D\u0000\u413D\u0000\u423D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C2DC = getOutput0_C2DC();
 		private static final char[] getOutput0_C2DC() {
-			return new char[] {
-				0x433D, 0x443D, 0, 0, 0x453D, 0, 0, 0x463D, 0x473D, 0, 0, 0, 0, 0, 0, 0x483D,
-				0x493D, 0x4A3D, 0, 0x4B3D, 0, 0x4C3D, 0, 0, 0, 0, 0x4D3D, 0, 0x4E3D, 0x4F3D, 0, 0x503D,
-				0x513D, 0, 0, 0, 0x523D, 0, 0, 0, 0, 0, 0, 0, 0x533D, 0x543D, 0, 0,
-				0x553D, 0x563D, 0, 0, 0, 0, 0, 0x573D, 0x583D, 0x593D, 0, 0, 0x5A3D, 0, 0, 0,
-				0x5B3D, 0, 0, 0, 0, 0, 0, 0, 0x5C3D, 0x5D3D, 0, 0, 0x5E3D, 0x5F3D,
-			};
+			return "\u433D\u443D\u0000\u0000\u453D\u0000\u0000\u463D\u473D\u0000\u0000\u0000\u0000\u0000\u0000\u483D\u493D\u4A3D\u0000\u4B3D\u0000\u4C3D\u0000\u0000\u0000\u0000\u4D3D\u0000\u4E3D\u4F3D\u0000\u503D\u513D\u0000\u0000\u0000\u523D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u533D\u543D\u0000\u0000\u553D\u563D\u0000\u0000\u0000\u0000\u0000\u573D\u583D\u593D\u0000\u0000\u5A3D\u0000\u0000\u0000\u5B3D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5C3D\u5D3D\u0000\u0000\u5E3D\u5F3D".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C4E9 = getOutput0_C4E9();
 		private static final char[] getOutput0_C4E9() {
-			return new char[] {
-				0x313E, 0, 0, 0, 0, 0, 0, 0x323E, 0x333E, 0, 0, 0x343E, 0, 0, 0, 0x353E,
-				0, 0x363E, 0, 0, 0, 0, 0x373E, 0x383E, 0x393E, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x3A3E, 0, 0, 0, 0x3B3E, 0, 0, 0, 0x3C3E, 0, 0, 0, 0,
-				0, 0, 0, 0x3D3E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3E3E,
-				0x3F3E, 0, 0, 0x403E, 0, 0, 0, 0x413E, 0, 0, 0, 0, 0, 0, 0, 0x423E,
-				0x433E, 0, 0x443E, 0, 0x453E, 0, 0, 0, 0, 0, 0, 0x463E, 0x473E, 0, 0, 0x483E,
-				0x493E, 0x4A3E, 0, 0x4B3E, 0x4C3E, 0x4D3E, 0, 0, 0, 0, 0x4E3E, 0x4F3E, 0x503E, 0, 0x513E, 0x523E,
-				0x533E, 0, 0, 0, 0x543E, 0x553E, 0, 0x563E, 0x573E, 0, 0, 0x583E, 0, 0, 0, 0x593E,
-				0, 0, 0, 0, 0, 0, 0, 0x5A3E, 0x5B3E, 0, 0x5C3E, 0x5D3E, 0x5E3E, 0, 0, 0,
-				0, 0, 0, 0x5F3E, 0x603E, 0, 0, 0x613E, 0, 0, 0, 0x623E, 0, 0, 0x633E, 0,
-				0, 0, 0, 0x643E, 0x653E, 0, 0x663E, 0, 0x673E, 0, 0, 0, 0x683E, 0, 0x693E, 0x6A3E,
-				0, 0, 0, 0x6B3E, 0, 0, 0, 0x6C3E, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x6D3E, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6E3E, 0x6F3E, 0, 0, 0x703E,
-				0x713E, 0, 0x723E, 0x733E, 0x743E, 0x753E, 0, 0, 0, 0, 0, 0x763E, 0x773E, 0x783E, 0x793E, 0x7A3E,
-				0x7B3E, 0x7C3E, 0, 0x7D3E, 0, 0x7E3E, 0, 0x213F, 0x223F, 0, 0, 0x233F, 0, 0, 0, 0x243F,
-				0, 0, 0, 0, 0, 0, 0, 0x253F, 0x263F, 0, 0x273F, 0, 0x283F, 0, 0, 0,
-				0, 0, 0, 0x293F, 0x2A3F, 0x2B3F, 0, 0x2C3F, 0, 0, 0, 0x2D3F, 0, 0x2E3F, 0x2F3F, 0,
-				0, 0, 0, 0x303F, 0x313F, 0x323F, 0x333F, 0x343F, 0x353F, 0, 0, 0, 0x363F, 0x373F, 0x383F, 0x393F,
-				0, 0, 0, 0x3A3F, 0, 0, 0, 0x3B3F, 0, 0, 0, 0, 0, 0, 0, 0x3C3F,
-				0x3D3F, 0, 0x3E3F, 0x3F3F, 0, 0, 0, 0, 0, 0, 0, 0x403F, 0x413F, 0, 0, 0x423F,
-				0, 0, 0, 0x433F, 0x443F, 0x453F, 0, 0x463F, 0, 0, 0x473F, 0x483F, 0x493F, 0, 0x4A3F, 0,
-				0x4B3F, 0, 0x4C3F, 0, 0, 0, 0, 0x4D3F, 0x4E3F, 0, 0, 0x4F3F, 0, 0, 0, 0x503F,
-				0, 0, 0, 0, 0, 0, 0, 0x513F, 0x523F, 0, 0x533F, 0x543F, 0x553F, 0, 0, 0,
-				0, 0, 0, 0x563F, 0x573F, 0, 0, 0x583F, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x593F, 0, 0, 0x5A3F, 0, 0x5B3F, 0, 0, 0, 0, 0, 0, 0x5C3F,
-				0x5D3F, 0, 0, 0x5E3F, 0, 0, 0, 0x5F3F, 0, 0, 0, 0, 0, 0, 0, 0x603F,
-				0x613F, 0, 0x623F, 0, 0x633F, 0, 0, 0, 0, 0, 0, 0x643F, 0x653F, 0, 0, 0x663F,
-				0, 0, 0, 0x673F, 0, 0, 0, 0, 0, 0, 0, 0x683F, 0x693F, 0, 0x6A3F, 0,
-				0x6B3F, 0, 0, 0, 0, 0, 0, 0x6C3F, 0x6D3F, 0, 0, 0x6E3F, 0, 0, 0, 0x6F3F,
-				0x703F, 0x713F, 0, 0, 0, 0, 0, 0x723F, 0x733F, 0, 0x743F, 0, 0x753F, 0, 0, 0,
-				0, 0, 0, 0x763F, 0x773F, 0, 0, 0x783F, 0, 0, 0, 0x793F, 0, 0, 0, 0,
-				0, 0, 0, 0x7A3F, 0x7B3F, 0, 0, 0x7C3F, 0x7D3F, 0, 0, 0, 0, 0, 0, 0x7E3F,
-				0x2140, 0, 0, 0x2240, 0, 0, 0, 0x2340, 0, 0, 0, 0, 0, 0, 0, 0x2440,
-				0x2540, 0, 0, 0, 0x2640, 0, 0, 0, 0, 0, 0, 0x2740, 0x2840, 0, 0, 0x2940,
-				0, 0, 0, 0x2A40, 0, 0, 0, 0, 0, 0, 0, 0x2B40, 0x2C40, 0, 0x2D40, 0,
-				0x2E40, 0, 0, 0, 0, 0, 0, 0x2F40, 0x3040, 0, 0, 0x3140, 0, 0, 0, 0x3240,
-				0, 0, 0, 0, 0, 0, 0, 0x3340, 0x3440, 0, 0x3540, 0, 0x3640, 0, 0x3740, 0,
-				0, 0, 0, 0x3840, 0x3940, 0, 0, 0x3A40, 0, 0, 0, 0x3B40, 0, 0, 0, 0,
-				0, 0x3C40, 0, 0x3D40, 0x3E40, 0, 0x3F40, 0, 0x4040, 0x4140, 0x4240, 0x4340, 0x4440, 0x4540, 0x4640, 0x4740,
-				0, 0, 0, 0x4840, 0, 0, 0, 0x4940, 0, 0, 0, 0, 0, 0, 0, 0x4A40,
-				0, 0, 0x4B40, 0, 0, 0, 0, 0, 0, 0, 0, 0x4C40, 0x4D40, 0, 0, 0x4E40,
-				0, 0, 0, 0x4F40, 0x5040, 0x5140, 0, 0, 0, 0, 0x5240, 0x5340, 0x5440, 0, 0x5540, 0x5640,
-				0x5740, 0x5840, 0, 0, 0, 0x5940, 0, 0x5A40, 0x5B40, 0, 0, 0x5C40, 0, 0x5D40, 0x5E40, 0x5F40,
-				0, 0x6040, 0, 0, 0, 0, 0, 0x6140, 0x6240, 0, 0x6340, 0x6440, 0x6540, 0x6640, 0, 0,
-				0, 0, 0, 0x6740, 0x6840, 0, 0, 0x6940, 0, 0, 0, 0x6A40, 0, 0, 0, 0,
-				0, 0, 0, 0x6B40, 0x6C40, 0, 0x6D40, 0x6E40, 0x6F40, 0, 0, 0, 0, 0, 0, 0x7040,
-				0x7140, 0, 0, 0x7240, 0, 0x7340, 0, 0x7440, 0, 0, 0, 0, 0, 0, 0, 0x7540,
-				0, 0, 0, 0, 0x7640, 0, 0, 0, 0, 0, 0, 0x7740, 0, 0, 0, 0x7840,
-				0, 0, 0, 0x7940,
-			};
+			return "\u313E\u0000\u0000\u0000\u0000\u0000\u0000\u323E\u333E\u0000\u0000\u343E\u0000\u0000\u0000\u353E\u0000\u363E\u0000\u0000\u0000\u0000\u373E\u383E\u393E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3A3E\u0000\u0000\u0000\u3B3E\u0000\u0000\u0000\u3C3E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3D3E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E3E\u3F3E\u0000\u0000\u403E\u0000\u0000\u0000\u413E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u423E\u433E\u0000\u443E\u0000\u453E\u0000\u0000\u0000\u0000\u0000\u0000\u463E\u473E\u0000\u0000\u483E\u493E\u4A3E\u0000\u4B3E\u4C3E\u4D3E\u0000\u0000\u0000\u0000\u4E3E\u4F3E\u503E\u0000\u513E\u523E\u533E\u0000\u0000\u0000\u543E\u553E\u0000\u563E\u573E\u0000\u0000\u583E\u0000\u0000\u0000\u593E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5A3E\u5B3E\u0000\u5C3E\u5D3E\u5E3E\u0000\u0000\u0000\u0000\u0000\u0000\u5F3E\u603E\u0000\u0000\u613E\u0000\u0000\u0000\u623E\u0000\u0000\u633E\u0000\u0000\u0000\u0000\u643E\u653E\u0000\u663E\u0000\u673E\u0000\u0000\u0000\u683E\u0000\u693E\u6A3E\u0000\u0000\u0000\u6B3E\u0000\u0000\u0000\u6C3E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D3E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E3E\u6F3E\u0000\u0000\u703E\u713E\u0000\u723E\u733E\u743E\u753E\u0000\u0000\u0000\u0000\u0000\u763E\u773E\u783E\u793E\u7A3E\u7B3E\u7C3E\u0000\u7D3E\u0000\u7E3E\u0000\u213F\u223F\u0000\u0000\u233F\u0000\u0000\u0000\u243F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u253F\u263F\u0000\u273F\u0000\u283F\u0000\u0000\u0000\u0000\u0000\u0000\u293F\u2A3F\u2B3F\u0000\u2C3F\u0000\u0000\u0000\u2D3F\u0000\u2E3F\u2F3F\u0000\u0000\u0000\u0000\u303F\u313F\u323F\u333F\u343F\u353F\u0000\u0000\u0000\u363F\u373F\u383F\u393F\u0000\u0000\u0000\u3A3F\u0000\u0000\u0000\u3B3F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C3F\u3D3F\u0000\u3E3F\u3F3F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u403F\u413F\u0000\u0000\u423F\u0000\u0000\u0000\u433F\u443F\u453F\u0000\u463F\u0000\u0000\u473F\u483F\u493F\u0000\u4A3F\u0000\u4B3F\u0000\u4C3F\u0000\u0000\u0000\u0000\u4D3F\u4E3F\u0000\u0000\u4F3F\u0000\u0000\u0000\u503F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u513F\u523F\u0000\u533F\u543F\u553F\u0000\u0000\u0000\u0000\u0000\u0000\u563F\u573F\u0000\u0000\u583F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u593F\u0000\u0000\u5A3F\u0000\u5B3F\u0000\u0000\u0000\u0000\u0000\u0000\u5C3F\u5D3F\u0000\u0000\u5E3F\u0000\u0000\u0000\u5F3F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u603F\u613F\u0000\u623F\u0000\u633F\u0000\u0000\u0000\u0000\u0000\u0000\u643F\u653F\u0000\u0000\u663F\u0000\u0000\u0000\u673F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u683F\u693F\u0000\u6A3F\u0000\u6B3F\u0000\u0000\u0000\u0000\u0000\u0000\u6C3F\u6D3F\u0000\u0000\u6E3F\u0000\u0000\u0000\u6F3F\u703F\u713F\u0000\u0000\u0000\u0000\u0000\u723F\u733F\u0000\u743F\u0000\u753F\u0000\u0000\u0000\u0000\u0000\u0000\u763F\u773F\u0000\u0000\u783F\u0000\u0000\u0000\u793F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7A3F\u7B3F\u0000\u0000\u7C3F\u7D3F\u0000\u0000\u0000\u0000\u0000\u0000\u7E3F\u2140\u0000\u0000\u2240\u0000\u0000\u0000\u2340\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2440\u2540\u0000\u0000\u0000\u2640\u0000\u0000\u0000\u0000\u0000\u0000\u2740\u2840\u0000\u0000\u2940\u0000\u0000\u0000\u2A40\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2B40\u2C40\u0000\u2D40\u0000\u2E40\u0000\u0000\u0000\u0000\u0000\u0000\u2F40\u3040\u0000\u0000\u3140\u0000\u0000\u0000\u3240\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3340\u3440\u0000\u3540\u0000\u3640\u0000\u3740\u0000\u0000\u0000\u0000\u3840\u3940\u0000\u0000\u3A40\u0000\u0000\u0000\u3B40\u0000\u0000\u0000\u0000\u0000\u3C40\u0000\u3D40\u3E40\u0000\u3F40\u0000\u4040\u4140\u4240\u4340\u4440\u4540\u4640\u4740\u0000\u0000\u0000\u4840\u0000\u0000\u0000\u4940\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4A40\u0000\u0000\u4B40\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4C40\u4D40\u0000\u0000\u4E40\u0000\u0000\u0000\u4F40\u5040\u5140\u0000\u0000\u0000\u0000\u5240\u5340\u5440\u0000\u5540\u5640\u5740\u5840\u0000\u0000\u0000\u5940\u0000\u5A40\u5B40\u0000\u0000\u5C40\u0000\u5D40\u5E40\u5F40\u0000\u6040\u0000\u0000\u0000\u0000\u0000\u6140\u6240\u0000\u6340\u6440\u6540\u6640\u0000\u0000\u0000\u0000\u0000\u6740\u6840\u0000\u0000\u6940\u0000\u0000\u0000\u6A40\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6B40\u6C40\u0000\u6D40\u6E40\u6F40\u0000\u0000\u0000\u0000\u0000\u0000\u7040\u7140\u0000\u0000\u7240\u0000\u7340\u0000\u7440\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7540\u0000\u0000\u0000\u0000\u7640\u0000\u0000\u0000\u0000\u0000\u0000\u7740\u0000\u0000\u0000\u7840\u0000\u0000\u0000\u7940".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C800 = getOutput0_C800();
 		private static final char[] getOutput0_C800() {
-			return new char[] {
-				0x7A40, 0x7B40, 0, 0, 0x7C40, 0, 0, 0, 0x7D40, 0, 0x7E40, 0, 0, 0, 0, 0,
-				0x2141, 0x2241, 0, 0x2341, 0, 0x2441, 0x2541, 0, 0, 0, 0, 0, 0x2641, 0x2741, 0, 0,
-				0x2841, 0, 0, 0, 0x2941, 0, 0, 0, 0, 0, 0, 0, 0x2A41, 0x2B41, 0, 0x2C41,
-				0, 0x2D41, 0, 0, 0, 0, 0, 0, 0x2E41, 0, 0, 0, 0x2F41, 0, 0, 0,
-				0x3041, 0, 0, 0, 0, 0, 0, 0, 0x3141, 0x3241, 0, 0, 0x3341, 0x3441, 0, 0,
-				0, 0, 0, 0, 0x3541,
-			};
+			return "\u7A40\u7B40\u0000\u0000\u7C40\u0000\u0000\u0000\u7D40\u0000\u7E40\u0000\u0000\u0000\u0000\u0000\u2141\u2241\u0000\u2341\u0000\u2441\u2541\u0000\u0000\u0000\u0000\u0000\u2641\u2741\u0000\u0000\u2841\u0000\u0000\u0000\u2941\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2A41\u2B41\u0000\u2C41\u0000\u2D41\u0000\u0000\u0000\u0000\u0000\u0000\u2E41\u0000\u0000\u0000\u2F41\u0000\u0000\u0000\u3041\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3141\u3241\u0000\u0000\u3341\u3441\u0000\u0000\u0000\u0000\u0000\u0000\u3541".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C870 = getOutput0_C870();
 		private static final char[] getOutput0_C870() {
-			return new char[] {
-				0x3641, 0x3741, 0, 0, 0x3841, 0, 0, 0, 0x3941, 0, 0x3A41, 0, 0, 0, 0, 0,
-				0x3B41, 0x3C41, 0, 0x3D41, 0, 0x3E41, 0x3F41, 0x4041, 0, 0, 0, 0x4141, 0x4241, 0x4341, 0, 0,
-				0, 0, 0, 0, 0x4441, 0, 0, 0, 0, 0, 0, 0, 0, 0x4541, 0, 0x4641,
-				0, 0x4741, 0, 0, 0, 0, 0, 0, 0x4841,
-			};
+			return "\u3641\u3741\u0000\u0000\u3841\u0000\u0000\u0000\u3941\u0000\u3A41\u0000\u0000\u0000\u0000\u0000\u3B41\u3C41\u0000\u3D41\u0000\u3E41\u3F41\u4041\u0000\u0000\u0000\u4141\u4241\u4341\u0000\u0000\u0000\u0000\u0000\u0000\u4441\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4541\u0000\u4641\u0000\u4741\u0000\u0000\u0000\u0000\u0000\u0000\u4841".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C8BC = getOutput0_C8BC();
 		private static final char[] getOutput0_C8BC() {
-			return new char[] {
-				0x4941, 0x4A41, 0, 0, 0, 0, 0, 0, 0x4B41, 0, 0, 0, 0x4C41, 0, 0, 0,
-				0x4D41, 0, 0, 0, 0, 0, 0, 0, 0x4E41, 0x4F41, 0, 0x5041, 0, 0x5141, 0, 0,
-				0, 0, 0, 0, 0x5241, 0x5341, 0, 0, 0x5441, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5541, 0, 0, 0, 0, 0, 0,
-				0x5641, 0x5741, 0, 0, 0x5841, 0, 0, 0, 0x5941, 0x5A41, 0x5B41, 0, 0, 0, 0, 0,
-				0x5C41, 0x5D41, 0, 0x5E41, 0, 0x5F41, 0, 0, 0, 0, 0, 0, 0x6041,
-			};
+			return "\u4941\u4A41\u0000\u0000\u0000\u0000\u0000\u0000\u4B41\u0000\u0000\u0000\u4C41\u0000\u0000\u0000\u4D41\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E41\u4F41\u0000\u5041\u0000\u5141\u0000\u0000\u0000\u0000\u0000\u0000\u5241\u5341\u0000\u0000\u5441\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5541\u0000\u0000\u0000\u0000\u0000\u0000\u5641\u5741\u0000\u0000\u5841\u0000\u0000\u0000\u5941\u5A41\u5B41\u0000\u0000\u0000\u0000\u0000\u5C41\u5D41\u0000\u5E41\u0000\u5F41\u0000\u0000\u0000\u0000\u0000\u0000\u6041".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C950 = getOutput0_C950();
 		private static final char[] getOutput0_C950() {
-			return new char[] {
-				0x6341, 0x6441, 0, 0, 0x6541, 0, 0, 0, 0x6641, 0, 0, 0, 0, 0, 0, 0,
-				0x6741, 0x6841, 0, 0x6941, 0, 0, 0, 0, 0, 0, 0, 0, 0x6A41, 0, 0, 0,
-				0x6B41, 0, 0, 0, 0x6C41, 0, 0, 0, 0, 0, 0, 0, 0x6D41, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x6E41, 0x6F41, 0, 0, 0x7041, 0, 0, 0,
-				0x7141, 0, 0, 0, 0, 0, 0, 0, 0x7241, 0x7341, 0, 0x7441, 0, 0x7541,
-			};
+			return "\u6341\u6441\u0000\u0000\u6541\u0000\u0000\u0000\u6641\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6741\u6841\u0000\u6941\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6A41\u0000\u0000\u0000\u6B41\u0000\u0000\u0000\u6C41\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6D41\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E41\u6F41\u0000\u0000\u7041\u0000\u0000\u0000\u7141\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7241\u7341\u0000\u7441\u0000\u7541".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_C9C0 = getOutput0_C9C0();
 		private static final char[] getOutput0_C9C0() {
-			return new char[] {
-				0x7641, 0x7741, 0, 0, 0x7841, 0, 0, 0x7941, 0x7A41, 0, 0x7B41, 0, 0, 0, 0, 0,
-				0x7C41, 0x7D41, 0, 0x7E41, 0, 0x2142, 0x2242, 0, 0, 0x2342, 0x2442, 0, 0x2542, 0x2642, 0, 0,
-				0x2742, 0, 0x2842, 0, 0x2942, 0, 0, 0x2A42, 0, 0, 0, 0, 0x2B42, 0x2C42, 0, 0x2D42,
-				0x2E42, 0x2F42, 0, 0, 0, 0, 0, 0, 0x3042, 0x3142, 0, 0, 0x3242, 0, 0, 0,
-				0x3342, 0, 0, 0, 0, 0, 0, 0, 0x3442, 0x3542, 0, 0x3642, 0x3742, 0x3842, 0, 0,
-				0, 0, 0, 0, 0x3942, 0, 0, 0, 0x3A42, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3B42,
-			};
+			return "\u7641\u7741\u0000\u0000\u7841\u0000\u0000\u7941\u7A41\u0000\u7B41\u0000\u0000\u0000\u0000\u0000\u7C41\u7D41\u0000\u7E41\u0000\u2142\u2242\u0000\u0000\u2342\u2442\u0000\u2542\u2642\u0000\u0000\u2742\u0000\u2842\u0000\u2942\u0000\u0000\u2A42\u0000\u0000\u0000\u0000\u2B42\u2C42\u0000\u2D42\u2E42\u2F42\u0000\u0000\u0000\u0000\u0000\u0000\u3042\u3142\u0000\u0000\u3242\u0000\u0000\u0000\u3342\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3442\u3542\u0000\u3642\u3742\u3842\u0000\u0000\u0000\u0000\u0000\u0000\u3942\u0000\u0000\u0000\u3A42\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3B42".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_CC0C = getOutput0_CC0C();
 		private static final char[] getOutput0_CC0C() {
-			return new char[] {
-				0x6E42, 0x6F42, 0, 0, 0x7042, 0, 0, 0, 0x7142, 0, 0, 0, 0, 0, 0, 0,
-				0x7242, 0x7342, 0, 0, 0, 0x7442, 0x7542, 0, 0, 0, 0, 0x7642, 0x7742, 0x7842, 0, 0,
-				0x7942, 0, 0x7A42, 0, 0x7B42, 0, 0, 0, 0, 0, 0, 0, 0x7C42, 0x7D42, 0, 0x7E42,
-				0x2143, 0x2243, 0x2343, 0, 0, 0, 0, 0, 0x2443, 0x2543, 0, 0, 0x2643, 0, 0, 0,
-				0x2743, 0, 0, 0, 0, 0, 0, 0, 0x2843, 0x2943, 0, 0x2A43, 0x2B43, 0x2C43, 0, 0,
-				0, 0, 0, 0, 0x2D43, 0, 0, 0, 0x2E43, 0, 0x2F43, 0, 0x3043, 0, 0, 0,
-				0, 0, 0, 0, 0x3143, 0, 0, 0, 0, 0x3243,
-			};
+			return "\u6E42\u6F42\u0000\u0000\u7042\u0000\u0000\u0000\u7142\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7242\u7342\u0000\u0000\u0000\u7442\u7542\u0000\u0000\u0000\u0000\u7642\u7742\u7842\u0000\u0000\u7942\u0000\u7A42\u0000\u7B42\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7C42\u7D42\u0000\u7E42\u2143\u2243\u2343\u0000\u0000\u0000\u0000\u0000\u2443\u2543\u0000\u0000\u2643\u0000\u0000\u0000\u2743\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2843\u2943\u0000\u2A43\u2B43\u2C43\u0000\u0000\u0000\u0000\u0000\u0000\u2D43\u0000\u0000\u0000\u2E43\u0000\u2F43\u0000\u3043\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3143\u0000\u0000\u0000\u0000\u3243".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_CC98 = getOutput0_CC98();
 		private static final char[] getOutput0_CC98() {
-			return new char[] {
-				0x3343, 0x3443, 0, 0, 0x3543, 0, 0, 0, 0x3643, 0, 0, 0, 0, 0, 0, 0,
-				0x3743, 0x3843, 0, 0x3943, 0x3A43, 0x3B43, 0, 0, 0, 0, 0, 0, 0x3C43, 0x3D43, 0, 0,
-				0x3E43, 0, 0, 0, 0x3F43, 0, 0, 0, 0, 0, 0, 0, 0x4043, 0x4143, 0, 0x4243,
-				0, 0x4343, 0, 0, 0, 0, 0, 0, 0x4443, 0, 0, 0, 0x4543, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4643, 0, 0, 0,
-				0, 0, 0, 0, 0x4743, 0, 0, 0, 0x4843, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4943, 0, 0, 0, 0, 0, 0,
-				0x4A43, 0x4B43, 0, 0, 0x4C43, 0, 0, 0, 0x4D43, 0, 0, 0, 0, 0, 0, 0,
-				0x4E43, 0x4F43, 0, 0x5043, 0, 0x5143, 0, 0, 0, 0, 0, 0, 0x5243, 0, 0, 0,
-				0x5343, 0, 0, 0, 0x5443, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x5543,
-			};
+			return "\u3343\u3443\u0000\u0000\u3543\u0000\u0000\u0000\u3643\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3743\u3843\u0000\u3943\u3A43\u3B43\u0000\u0000\u0000\u0000\u0000\u0000\u3C43\u3D43\u0000\u0000\u3E43\u0000\u0000\u0000\u3F43\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4043\u4143\u0000\u4243\u0000\u4343\u0000\u0000\u0000\u0000\u0000\u0000\u4443\u0000\u0000\u0000\u4543\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4643\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4743\u0000\u0000\u0000\u4843\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4943\u0000\u0000\u0000\u0000\u0000\u0000\u4A43\u4B43\u0000\u0000\u4C43\u0000\u0000\u0000\u4D43\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4E43\u4F43\u0000\u5043\u0000\u5143\u0000\u0000\u0000\u0000\u0000\u0000\u5243\u0000\u0000\u0000\u5343\u0000\u0000\u0000\u5443\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5543".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_CD5C = getOutput0_CD5C();
 		private static final char[] getOutput0_CD5C() {
-			return new char[] {
-				0x5643, 0, 0, 0, 0x5743, 0, 0, 0, 0x5843, 0, 0, 0, 0, 0, 0, 0,
-				0x5943, 0x5A43, 0, 0x5B43, 0, 0x5C43, 0, 0, 0, 0, 0, 0, 0x5D43, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5E43, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0x5F43, 0x6043, 0, 0, 0x6143, 0, 0, 0,
-				0x6243, 0, 0, 0, 0, 0, 0, 0, 0x6343, 0x6443, 0, 0x6543, 0, 0x6643, 0, 0,
-				0, 0, 0, 0, 0x6743,
-			};
+			return "\u5643\u0000\u0000\u0000\u5743\u0000\u0000\u0000\u5843\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5943\u5A43\u0000\u5B43\u0000\u5C43\u0000\u0000\u0000\u0000\u0000\u0000\u5D43\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5E43\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F43\u6043\u0000\u0000\u6143\u0000\u0000\u0000\u6243\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6343\u6443\u0000\u6543\u0000\u6643\u0000\u0000\u0000\u0000\u0000\u0000\u6743".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_CDE8 = getOutput0_CDE8();
 		private static final char[] getOutput0_CDE8() {
-			return new char[] {
-				0x6B43, 0, 0, 0, 0x6C43, 0, 0, 0, 0x6D43, 0, 0, 0, 0, 0, 0, 0,
-				0x6E43, 0x6F43, 0, 0x7043, 0, 0x7143, 0, 0, 0, 0, 0, 0, 0x7243, 0, 0, 0,
-				0x7343, 0, 0, 0, 0x7443, 0, 0, 0, 0, 0, 0, 0, 0x7543, 0, 0, 0,
-				0, 0x7643, 0, 0, 0, 0, 0, 0, 0x7743, 0x7843, 0, 0, 0x7943, 0, 0, 0,
-				0x7A43, 0, 0, 0, 0, 0, 0, 0, 0x7B43, 0x7C43, 0, 0x7D43, 0, 0x7E43,
-			};
+			return "\u6B43\u0000\u0000\u0000\u6C43\u0000\u0000\u0000\u6D43\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6E43\u6F43\u0000\u7043\u0000\u7143\u0000\u0000\u0000\u0000\u0000\u0000\u7243\u0000\u0000\u0000\u7343\u0000\u0000\u0000\u7443\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7543\u0000\u0000\u0000\u0000\u7643\u0000\u0000\u0000\u0000\u0000\u0000\u7743\u7843\u0000\u0000\u7943\u0000\u0000\u0000\u7A43\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B43\u7C43\u0000\u7D43\u0000\u7E43".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_CE58 = getOutput0_CE58();
 		private static final char[] getOutput0_CE58() {
-			return new char[] {
-				0x2144, 0x2244, 0, 0, 0x2344, 0, 0, 0x2444, 0x2544, 0x2644, 0, 0, 0, 0, 0, 0,
-				0x2744, 0x2844, 0, 0x2944, 0, 0x2A44, 0, 0, 0, 0, 0, 0, 0x2B44, 0x2C44, 0, 0,
-				0x2D44, 0, 0, 0, 0x2E44, 0, 0, 0, 0, 0, 0, 0, 0x2F44, 0x3044, 0, 0x3144,
-				0, 0x3244, 0, 0, 0, 0, 0, 0, 0x3344, 0x3444, 0, 0, 0x3544, 0, 0, 0,
-				0x3644, 0, 0, 0, 0, 0, 0, 0, 0x3744, 0x3844, 0, 0x3944, 0x3A44, 0x3B44, 0, 0,
-				0, 0, 0, 0, 0x3C44, 0x3D44,
-			};
+			return "\u2144\u2244\u0000\u0000\u2344\u0000\u0000\u2444\u2544\u2644\u0000\u0000\u0000\u0000\u0000\u0000\u2744\u2844\u0000\u2944\u0000\u2A44\u0000\u0000\u0000\u0000\u0000\u0000\u2B44\u2C44\u0000\u0000\u2D44\u0000\u0000\u0000\u2E44\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2F44\u3044\u0000\u3144\u0000\u3244\u0000\u0000\u0000\u0000\u0000\u0000\u3344\u3444\u0000\u0000\u3544\u0000\u0000\u0000\u3644\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3744\u3844\u0000\u3944\u3A44\u3B44\u0000\u0000\u0000\u0000\u0000\u0000\u3C44\u3D44".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_CEE4 = getOutput0_CEE4();
 		private static final char[] getOutput0_CEE4() {
-			return new char[] {
-				0x3F44, 0x4044, 0, 0, 0x4144, 0, 0, 0x4244, 0x4344, 0, 0, 0, 0, 0, 0, 0,
-				0x4444, 0x4544, 0, 0x4644, 0x4744, 0x4844, 0, 0, 0, 0, 0, 0, 0x4944, 0x4A44, 0, 0,
-				0x4B44, 0, 0, 0, 0x4C44, 0, 0, 0, 0, 0, 0, 0, 0x4D44, 0x4E44, 0, 0x4F44,
-				0, 0x5044, 0, 0, 0, 0, 0, 0, 0x5144, 0, 0, 0, 0x5244, 0, 0, 0,
-				0x5344, 0, 0, 0, 0, 0, 0, 0, 0x5444, 0x5544, 0, 0x5644, 0x5744, 0x5844, 0, 0,
-				0, 0, 0, 0, 0x5944,
-			};
+			return "\u3F44\u4044\u0000\u0000\u4144\u0000\u0000\u4244\u4344\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4444\u4544\u0000\u4644\u4744\u4844\u0000\u0000\u0000\u0000\u0000\u0000\u4944\u4A44\u0000\u0000\u4B44\u0000\u0000\u0000\u4C44\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4D44\u4E44\u0000\u4F44\u0000\u5044\u0000\u0000\u0000\u0000\u0000\u0000\u5144\u0000\u0000\u0000\u5244\u0000\u0000\u0000\u5344\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5444\u5544\u0000\u5644\u5744\u5844\u0000\u0000\u0000\u0000\u0000\u0000\u5944".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D02D = getOutput0_D02D();
 		private static final char[] getOutput0_D02D() {
-			return new char[] {
-				0x7A44, 0, 0, 0, 0, 0, 0, 0x7B44, 0x7C44, 0, 0, 0x7D44, 0, 0, 0, 0x7E44,
-				0, 0, 0, 0, 0, 0, 0, 0x2145, 0x2245, 0, 0x2345, 0, 0x2445, 0, 0, 0,
-				0, 0, 0, 0x2545, 0, 0, 0, 0x2645, 0, 0, 0, 0x2745, 0, 0, 0, 0,
-				0, 0, 0, 0x2845, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2945,
-				0x2A45, 0, 0, 0x2B45, 0, 0, 0, 0x2C45, 0, 0, 0, 0, 0, 0, 0, 0x2D45,
-				0x2E45, 0, 0, 0, 0x2F45,
-			};
+			return "\u7A44\u0000\u0000\u0000\u0000\u0000\u0000\u7B44\u7C44\u0000\u0000\u7D44\u0000\u0000\u0000\u7E44\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2145\u2245\u0000\u2345\u0000\u2445\u0000\u0000\u0000\u0000\u0000\u0000\u2545\u0000\u0000\u0000\u2645\u0000\u0000\u0000\u2745\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2845\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2945\u2A45\u0000\u0000\u2B45\u0000\u0000\u0000\u2C45\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2D45\u2E45\u0000\u0000\u0000\u2F45".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D0A4 = getOutput0_D0A4();
 		private static final char[] getOutput0_D0A4() {
-			return new char[] {
-				0x3045, 0x3145, 0, 0, 0x3245, 0, 0, 0, 0x3345, 0, 0, 0, 0, 0, 0, 0,
-				0x3445, 0x3545, 0, 0x3645, 0, 0x3745, 0, 0, 0, 0, 0, 0, 0x3845, 0x3945, 0, 0,
-				0x3A45, 0, 0, 0, 0x3B45, 0x3C45, 0, 0, 0, 0, 0, 0, 0x3D45, 0x3E45, 0, 0x3F45,
-				0x4045, 0x4145, 0, 0, 0, 0, 0, 0, 0x4245, 0x4345, 0, 0, 0x4445, 0, 0, 0,
-				0x4545, 0, 0, 0, 0, 0, 0, 0, 0x4645, 0x4745, 0, 0x4845, 0x4945, 0x4A45, 0, 0,
-				0, 0, 0, 0, 0x4B45,
-			};
+			return "\u3045\u3145\u0000\u0000\u3245\u0000\u0000\u0000\u3345\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3445\u3545\u0000\u3645\u0000\u3745\u0000\u0000\u0000\u0000\u0000\u0000\u3845\u3945\u0000\u0000\u3A45\u0000\u0000\u0000\u3B45\u3C45\u0000\u0000\u0000\u0000\u0000\u0000\u3D45\u3E45\u0000\u3F45\u4045\u4145\u0000\u0000\u0000\u0000\u0000\u0000\u4245\u4345\u0000\u0000\u4445\u0000\u0000\u0000\u4545\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4645\u4745\u0000\u4845\u4945\u4A45\u0000\u0000\u0000\u0000\u0000\u0000\u4B45".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D130 = getOutput0_D130();
 		private static final char[] getOutput0_D130() {
-			return new char[] {
-				0x4D45, 0x4E45, 0, 0, 0x4F45, 0, 0, 0, 0x5045, 0, 0x5145, 0, 0, 0, 0, 0,
-				0x5245, 0x5345, 0, 0x5445, 0x5545, 0x5645, 0, 0, 0, 0, 0, 0, 0x5745, 0x5845, 0, 0,
-				0x5945, 0, 0, 0, 0x5A45, 0, 0, 0, 0, 0, 0, 0, 0x5B45, 0x5C45, 0, 0x5D45,
-				0, 0x5E45, 0, 0, 0, 0, 0, 0, 0x5F45, 0, 0, 0, 0x6045, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6145, 0, 0, 0,
-				0, 0, 0, 0, 0x6245, 0, 0, 0, 0x6345,
-			};
+			return "\u4D45\u4E45\u0000\u0000\u4F45\u0000\u0000\u0000\u5045\u0000\u5145\u0000\u0000\u0000\u0000\u0000\u5245\u5345\u0000\u5445\u5545\u5645\u0000\u0000\u0000\u0000\u0000\u0000\u5745\u5845\u0000\u0000\u5945\u0000\u0000\u0000\u5A45\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5B45\u5C45\u0000\u5D45\u0000\u5E45\u0000\u0000\u0000\u0000\u0000\u0000\u5F45\u0000\u0000\u0000\u6045\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6145\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6245\u0000\u0000\u0000\u6345".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D280 = getOutput0_D280();
 		private static final char[] getOutput0_D280() {
-			return new char[] {
-				0x2246, 0x2346, 0, 0, 0x2446, 0, 0, 0, 0x2546, 0, 0, 0, 0, 0, 0, 0,
-				0x2646, 0x2746, 0, 0, 0, 0x2846, 0, 0, 0, 0, 0, 0, 0x2946, 0, 0, 0,
-				0x2A46, 0, 0, 0, 0x2B46, 0, 0, 0, 0, 0, 0, 0, 0x2C46, 0, 0, 0,
-				0, 0x2D46, 0, 0, 0, 0, 0, 0, 0x2E46, 0x2F46, 0, 0, 0x3046, 0, 0, 0x3146,
-				0x3246, 0, 0x3346, 0, 0, 0, 0, 0, 0x3446, 0x3546, 0, 0x3646, 0, 0, 0, 0,
-				0, 0, 0, 0, 0x3746, 0, 0, 0, 0x3846, 0, 0, 0, 0x3946, 0, 0, 0,
-				0, 0, 0, 0, 0x3A46, 0x3B46, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x3C46, 0x3D46, 0, 0, 0x3E46, 0, 0, 0, 0x3F46, 0, 0, 0, 0, 0, 0, 0,
-				0x4046, 0x4146, 0, 0x4246, 0, 0x4346, 0, 0, 0, 0, 0, 0, 0x4446, 0x4546, 0x4646, 0,
-				0x4746, 0, 0, 0, 0x4846, 0, 0x4946, 0, 0, 0, 0, 0, 0x4A46, 0x4B46, 0, 0x4C46,
-				0x4D46, 0x4E46, 0, 0, 0, 0x4F46, 0, 0, 0x5046, 0x5146, 0, 0, 0x5246, 0, 0, 0,
-				0x5346, 0, 0, 0, 0, 0, 0, 0, 0x5446, 0x5546, 0, 0x5646, 0x5746, 0x5846, 0, 0,
-				0, 0, 0, 0, 0x5946, 0x5A46,
-			};
+			return "\u2246\u2346\u0000\u0000\u2446\u0000\u0000\u0000\u2546\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2646\u2746\u0000\u0000\u0000\u2846\u0000\u0000\u0000\u0000\u0000\u0000\u2946\u0000\u0000\u0000\u2A46\u0000\u0000\u0000\u2B46\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2C46\u0000\u0000\u0000\u0000\u2D46\u0000\u0000\u0000\u0000\u0000\u0000\u2E46\u2F46\u0000\u0000\u3046\u0000\u0000\u3146\u3246\u0000\u3346\u0000\u0000\u0000\u0000\u0000\u3446\u3546\u0000\u3646\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3746\u0000\u0000\u0000\u3846\u0000\u0000\u0000\u3946\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3A46\u3B46\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C46\u3D46\u0000\u0000\u3E46\u0000\u0000\u0000\u3F46\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4046\u4146\u0000\u4246\u0000\u4346\u0000\u0000\u0000\u0000\u0000\u0000\u4446\u4546\u4646\u0000\u4746\u0000\u0000\u0000\u4846\u0000\u4946\u0000\u0000\u0000\u0000\u0000\u4A46\u4B46\u0000\u4C46\u4D46\u4E46\u0000\u0000\u0000\u4F46\u0000\u0000\u5046\u5146\u0000\u0000\u5246\u0000\u0000\u0000\u5346\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5446\u5546\u0000\u5646\u5746\u5846\u0000\u0000\u0000\u0000\u0000\u0000\u5946\u5A46".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D37C = getOutput0_D37C();
 		private static final char[] getOutput0_D37C() {
-			return new char[] {
-				0x5B46, 0x5C46, 0, 0, 0x5D46, 0, 0, 0, 0x5E46, 0, 0, 0, 0, 0, 0, 0,
-				0x5F46, 0x6046, 0, 0x6146, 0x6246, 0x6346, 0, 0, 0, 0, 0, 0, 0x6446, 0x6546, 0, 0,
-				0x6646, 0, 0, 0, 0x6746, 0, 0, 0, 0, 0, 0, 0, 0x6846, 0x6946, 0, 0x6A46,
-				0, 0x6B46, 0, 0, 0, 0, 0, 0, 0x6C46, 0, 0, 0, 0x6D46, 0, 0, 0,
-				0x6E46, 0, 0, 0, 0, 0, 0, 0, 0x6F46, 0x7046, 0, 0, 0x7146, 0x7246, 0, 0,
-				0, 0, 0, 0, 0x7346, 0, 0, 0, 0, 0, 0, 0, 0x7446, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x7546, 0, 0x7646, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x7746, 0x7846, 0, 0, 0x7946, 0, 0, 0, 0x7A46, 0, 0, 0, 0, 0, 0, 0,
-				0x7B46, 0x7C46, 0, 0x7D46, 0, 0x7E46, 0, 0, 0, 0, 0, 0, 0x2147,
-			};
+			return "\u5B46\u5C46\u0000\u0000\u5D46\u0000\u0000\u0000\u5E46\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5F46\u6046\u0000\u6146\u6246\u6346\u0000\u0000\u0000\u0000\u0000\u0000\u6446\u6546\u0000\u0000\u6646\u0000\u0000\u0000\u6746\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6846\u6946\u0000\u6A46\u0000\u6B46\u0000\u0000\u0000\u0000\u0000\u0000\u6C46\u0000\u0000\u0000\u6D46\u0000\u0000\u0000\u6E46\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6F46\u7046\u0000\u0000\u7146\u7246\u0000\u0000\u0000\u0000\u0000\u0000\u7346\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7446\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7546\u0000\u7646\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7746\u7846\u0000\u0000\u7946\u0000\u0000\u0000\u7A46\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B46\u7C46\u0000\u7D46\u0000\u7E46\u0000\u0000\u0000\u0000\u0000\u0000\u2147".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D45C = getOutput0_D45C();
 		private static final char[] getOutput0_D45C() {
-			return new char[] {
-				0x2547, 0, 0, 0, 0x2647, 0, 0, 0, 0x2747, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x2847, 0, 0x2947, 0, 0, 0, 0, 0, 0, 0, 0, 0x2A47, 0x2B47, 0, 0,
-				0x2C47, 0, 0, 0x2D47, 0x2E47, 0, 0x2F47, 0, 0, 0, 0, 0, 0x3047, 0x3147, 0, 0x3247,
-				0, 0x3347, 0, 0, 0, 0, 0, 0, 0x3447,
-			};
+			return "\u2547\u0000\u0000\u0000\u2647\u0000\u0000\u0000\u2747\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2847\u0000\u2947\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2A47\u2B47\u0000\u0000\u2C47\u0000\u0000\u2D47\u2E47\u0000\u2F47\u0000\u0000\u0000\u0000\u0000\u3047\u3147\u0000\u3247\u0000\u3347\u0000\u0000\u0000\u0000\u0000\u0000\u3447".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D4CC = getOutput0_D4CC();
 		private static final char[] getOutput0_D4CC() {
-			return new char[] {
-				0x3647, 0, 0, 0, 0x3747, 0, 0, 0, 0x3847, 0, 0, 0, 0, 0, 0, 0,
-				0x3947, 0, 0, 0x3A47, 0, 0, 0, 0, 0, 0, 0, 0, 0x3B47, 0, 0, 0,
-				0x3C47, 0, 0, 0, 0x3D47, 0, 0, 0, 0, 0, 0, 0, 0x3E47, 0, 0, 0x3F47,
-				0, 0x4047, 0, 0, 0, 0, 0, 0, 0x4147, 0, 0, 0, 0x4247, 0, 0, 0,
-				0x4347, 0, 0, 0, 0, 0, 0, 0, 0x4447, 0x4547, 0, 0x4647,
-			};
+			return "\u3647\u0000\u0000\u0000\u3747\u0000\u0000\u0000\u3847\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3947\u0000\u0000\u3A47\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3B47\u0000\u0000\u0000\u3C47\u0000\u0000\u0000\u3D47\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3E47\u0000\u0000\u3F47\u0000\u4047\u0000\u0000\u0000\u0000\u0000\u0000\u4147\u0000\u0000\u0000\u4247\u0000\u0000\u0000\u4347\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4447\u4547\u0000\u4647".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D53C = getOutput0_D53C();
 		private static final char[] getOutput0_D53C() {
-			return new char[] {
-				0x4747, 0x4847, 0, 0, 0x4947, 0, 0, 0, 0x4A47, 0, 0, 0, 0, 0, 0, 0,
-				0x4B47, 0x4C47, 0, 0x4D47, 0, 0x4E47, 0, 0, 0, 0, 0, 0, 0x4F47, 0x5047, 0, 0,
-				0x5147, 0, 0, 0, 0x5247, 0, 0, 0, 0, 0x5347, 0, 0, 0x5447, 0x5547, 0, 0x5647,
-				0, 0x5747, 0, 0, 0, 0, 0, 0, 0x5847, 0x5947, 0, 0, 0x5A47, 0, 0, 0,
-				0x5B47, 0, 0, 0, 0, 0, 0, 0, 0x5C47, 0x5D47, 0, 0x5E47, 0x5F47, 0x6047, 0, 0,
-				0, 0, 0, 0, 0x6147,
-			};
+			return "\u4747\u4847\u0000\u0000\u4947\u0000\u0000\u0000\u4A47\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4B47\u4C47\u0000\u4D47\u0000\u4E47\u0000\u0000\u0000\u0000\u0000\u0000\u4F47\u5047\u0000\u0000\u5147\u0000\u0000\u0000\u5247\u0000\u0000\u0000\u0000\u5347\u0000\u0000\u5447\u5547\u0000\u5647\u0000\u5747\u0000\u0000\u0000\u0000\u0000\u0000\u5847\u5947\u0000\u0000\u5A47\u0000\u0000\u0000\u5B47\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5C47\u5D47\u0000\u5E47\u5F47\u6047\u0000\u0000\u0000\u0000\u0000\u0000\u6147".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_D5C8 = getOutput0_D5C8();
 		private static final char[] getOutput0_D5C8() {
-			return new char[] {
-				0x6347, 0x6447, 0, 0, 0x6547, 0, 0, 0, 0x6647, 0, 0x6747, 0, 0, 0, 0, 0,
-				0x6847, 0x6947, 0, 0x6A47, 0, 0x6B47, 0, 0, 0, 0, 0, 0, 0x6C47, 0x6D47, 0, 0,
-				0x6E47, 0, 0, 0, 0x6F47, 0, 0, 0, 0, 0, 0, 0, 0x7047, 0x7147, 0, 0x7247,
-				0, 0x7347, 0, 0, 0, 0, 0, 0, 0x7447, 0x7547, 0, 0, 0x7647, 0, 0, 0,
-				0x7747, 0, 0, 0, 0, 0, 0, 0, 0x7847, 0x7947, 0, 0x7A47, 0x7B47, 0x7C47, 0, 0,
-				0, 0, 0, 0, 0x7D47, 0, 0, 0, 0x7E47, 0, 0, 0, 0x2148, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x2248, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x2348, 0x2448, 0, 0, 0x2548, 0, 0, 0, 0x2648, 0, 0, 0, 0, 0x2748, 0, 0,
-				0x2848, 0x2948, 0, 0x2A48, 0, 0x2B48, 0, 0, 0, 0x2C48, 0, 0, 0x2D48, 0x2E48, 0, 0,
-				0x2F48, 0, 0, 0, 0x3048, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3148,
-				0, 0x3248, 0, 0, 0, 0, 0, 0, 0x3348, 0x3448, 0, 0, 0x3548, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3648, 0, 0x3748, 0, 0,
-				0, 0, 0, 0, 0x3848, 0x3948, 0, 0, 0x3A48, 0, 0, 0, 0x3B48, 0, 0, 0,
-				0, 0, 0, 0, 0, 0x3C48, 0, 0x3D48, 0, 0x3E48, 0, 0, 0, 0, 0, 0,
-				0x3F48, 0, 0, 0, 0x4048, 0, 0, 0, 0x4148, 0, 0, 0, 0, 0, 0, 0,
-				0, 0x4248, 0, 0x4348, 0, 0, 0, 0, 0, 0, 0, 0, 0x4448, 0x4548, 0, 0,
-				0x4648, 0, 0, 0, 0x4748, 0, 0, 0, 0, 0x4848, 0, 0, 0x4948, 0, 0, 0x4A48,
-				0, 0x4B48, 0, 0, 0, 0, 0, 0, 0x4C48, 0, 0, 0, 0x4D48, 0, 0, 0,
-				0x4E48, 0, 0, 0, 0, 0, 0, 0, 0x4F48, 0, 0, 0, 0, 0x5048, 0, 0,
-				0, 0, 0, 0, 0x5148, 0x5248, 0, 0, 0x5348, 0, 0, 0, 0x5448, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5548, 0, 0, 0, 0, 0, 0,
-				0x5648, 0x5748, 0, 0, 0x5848, 0, 0, 0, 0x5948, 0, 0, 0, 0, 0, 0, 0,
-				0x5A48, 0x5B48, 0, 0x5C48, 0, 0x5D48, 0, 0, 0, 0, 0, 0, 0x5E48, 0x5F48, 0, 0,
-				0x6048, 0, 0, 0, 0x6148, 0, 0, 0, 0, 0, 0, 0, 0x6248, 0, 0, 0x6348,
-				0, 0x6448, 0, 0, 0, 0, 0, 0, 0x6548, 0x6648, 0, 0, 0x6748, 0, 0x6848, 0x6948,
-				0x6A48, 0x6B48, 0, 0, 0, 0, 0, 0, 0x6C48, 0x6D48, 0, 0x6E48, 0, 0x6F48, 0, 0,
-				0, 0x7048, 0, 0, 0x7148, 0, 0, 0, 0x7248, 0, 0, 0, 0x7348, 0, 0, 0,
-				0, 0, 0, 0, 0x7448, 0x7548, 0, 0, 0, 0x7648, 0, 0, 0, 0, 0, 0,
-				0x7748, 0x7848, 0, 0, 0x7948, 0, 0, 0, 0x7A48, 0, 0, 0, 0, 0, 0, 0,
-				0x7B48, 0x7C48, 0, 0x7D48, 0, 0x7E48,
-			};
+			return "\u6347\u6447\u0000\u0000\u6547\u0000\u0000\u0000\u6647\u0000\u6747\u0000\u0000\u0000\u0000\u0000\u6847\u6947\u0000\u6A47\u0000\u6B47\u0000\u0000\u0000\u0000\u0000\u0000\u6C47\u6D47\u0000\u0000\u6E47\u0000\u0000\u0000\u6F47\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7047\u7147\u0000\u7247\u0000\u7347\u0000\u0000\u0000\u0000\u0000\u0000\u7447\u7547\u0000\u0000\u7647\u0000\u0000\u0000\u7747\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7847\u7947\u0000\u7A47\u7B47\u7C47\u0000\u0000\u0000\u0000\u0000\u0000\u7D47\u0000\u0000\u0000\u7E47\u0000\u0000\u0000\u2148\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2248\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2348\u2448\u0000\u0000\u2548\u0000\u0000\u0000\u2648\u0000\u0000\u0000\u0000\u2748\u0000\u0000\u2848\u2948\u0000\u2A48\u0000\u2B48\u0000\u0000\u0000\u2C48\u0000\u0000\u2D48\u2E48\u0000\u0000\u2F48\u0000\u0000\u0000\u3048\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3148\u0000\u3248\u0000\u0000\u0000\u0000\u0000\u0000\u3348\u3448\u0000\u0000\u3548\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3648\u0000\u3748\u0000\u0000\u0000\u0000\u0000\u0000\u3848\u3948\u0000\u0000\u3A48\u0000\u0000\u0000\u3B48\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u3C48\u0000\u3D48\u0000\u3E48\u0000\u0000\u0000\u0000\u0000\u0000\u3F48\u0000\u0000\u0000\u4048\u0000\u0000\u0000\u4148\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4248\u0000\u4348\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4448\u4548\u0000\u0000\u4648\u0000\u0000\u0000\u4748\u0000\u0000\u0000\u0000\u4848\u0000\u0000\u4948\u0000\u0000\u4A48\u0000\u4B48\u0000\u0000\u0000\u0000\u0000\u0000\u4C48\u0000\u0000\u0000\u4D48\u0000\u0000\u0000\u4E48\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4F48\u0000\u0000\u0000\u0000\u5048\u0000\u0000\u0000\u0000\u0000\u0000\u5148\u5248\u0000\u0000\u5348\u0000\u0000\u0000\u5448\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5548\u0000\u0000\u0000\u0000\u0000\u0000\u5648\u5748\u0000\u0000\u5848\u0000\u0000\u0000\u5948\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u5A48\u5B48\u0000\u5C48\u0000\u5D48\u0000\u0000\u0000\u0000\u0000\u0000\u5E48\u5F48\u0000\u0000\u6048\u0000\u0000\u0000\u6148\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u6248\u0000\u0000\u6348\u0000\u6448\u0000\u0000\u0000\u0000\u0000\u0000\u6548\u6648\u0000\u0000\u6748\u0000\u6848\u6948\u6A48\u6B48\u0000\u0000\u0000\u0000\u0000\u0000\u6C48\u6D48\u0000\u6E48\u0000\u6F48\u0000\u0000\u0000\u7048\u0000\u0000\u7148\u0000\u0000\u0000\u7248\u0000\u0000\u0000\u7348\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7448\u7548\u0000\u0000\u0000\u7648\u0000\u0000\u0000\u0000\u0000\u0000\u7748\u7848\u0000\u0000\u7948\u0000\u0000\u0000\u7A48\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u7B48\u7C48\u0000\u7D48\u0000\u7E48".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_F900 = getOutput0_F900();
 		private static final char[] getOutput0_F900() {
-			return new char[] {
-				0x504B, 0x564B, 0x674B, 0x4F4D, 0x684D, 0x2D4E, 0x7B4F, 0x2250, 0x3850, 0x5050, 0x5D50, 0x5451, 0x5551, 0x5851, 0x5B51, 0x5C51,
-				0x5D51, 0x5E51, 0x5F51, 0x6051, 0x6251, 0x6351, 0x6451, 0x6551, 0x6651, 0x6851, 0x6951, 0x6A51, 0x6B51, 0x6D51, 0x6F51, 0x7051,
-				0x7251, 0x7651, 0x7A51, 0x7C51, 0x7D51, 0x7E51, 0x2252, 0x2352, 0x2752, 0x2852, 0x2952, 0x2A52, 0x2B52, 0x2D52, 0x3252, 0x3E52,
-				0x4252, 0x4352, 0x4452, 0x4652, 0x4752, 0x4852, 0x4952, 0x4A52, 0x4B52, 0x4D52, 0x4E52, 0x4F52, 0x5052, 0x5152, 0x5252, 0x5352,
-				0x5452, 0x5552, 0x5652, 0x5752, 0x5952, 0x5A52, 0x5E52, 0x5F52, 0x6152, 0x6252, 0x6452, 0x6552, 0x6652, 0x6752, 0x6852, 0x6952,
-				0x6A52, 0x6B52, 0x7052, 0x7152, 0x7252, 0x7352, 0x7452, 0x7552, 0x7752, 0x7852, 0x6654, 0x7C54, 0x2555, 0x2B55, 0x2E55, 0x3856,
-				0x4D56, 0x4B57, 0x6457, 0x455B, 0x645B, 0x255C, 0x255D, 0x555D, 0x745D, 0x7C5E, 0x7E5E, 0x335F, 0x615F, 0x685F, 0x7160, 0x2D61,
-				0x6D61, 0x7563, 0x2164, 0x2964, 0x2E65, 0x3165, 0x3265, 0x3965, 0x3B65, 0x3C65, 0x4465, 0x4E65, 0x5065, 0x5265, 0x5665, 0x7A65,
-				0x7B65, 0x7C65, 0x7E65, 0x2166, 0x2466, 0x2766, 0x2D66, 0x2F66, 0x3066, 0x3166, 0x3366, 0x3766, 0x3866, 0x3C66, 0x4466, 0x4666,
-				0x4766, 0x4A66, 0x5266, 0x5666, 0x5966, 0x5C66, 0x5F66, 0x6166, 0x6466, 0x6566, 0x6666, 0x6866, 0x6A66, 0x6B66, 0x6C66, 0x6F66,
-				0x7166, 0x7266, 0x7566, 0x7666, 0x7766, 0x7966, 0x2167, 0x2667, 0x2967, 0x2A67, 0x2C67, 0x2D67, 0x3067, 0x3F67, 0x4167, 0x4667,
-				0x4767, 0x4B67, 0x4D67, 0x4F67, 0x5067, 0x5367, 0x5F67, 0x6467, 0x6667, 0x7767, 0x6768, 0x6868, 0x7068, 0x7168, 0x7768, 0x7968,
-				0x7B68, 0x7E68, 0x2769, 0x2C69, 0x4C69, 0x7769, 0x416A, 0x656A, 0x746A, 0x776A, 0x7C6A, 0x7E6A, 0x246B, 0x276B, 0x296B, 0x2A6B,
-				0x3A6B, 0x3B6B, 0x3D6B, 0x416B, 0x426B, 0x466B, 0x476B, 0x4C6B, 0x4F6B, 0x506B, 0x516B, 0x526B, 0x586B, 0x266C, 0x276C, 0x2A6C,
-				0x2F6C, 0x306C, 0x316C, 0x326C, 0x356C, 0x386C, 0x3A6C, 0x406C, 0x416C, 0x456C, 0x466C, 0x496C, 0x4A6C, 0x556C, 0x5D6C, 0x5E6C,
-				0x616C, 0x646C, 0x676C, 0x686C, 0x776C, 0x786C, 0x7A6C, 0x216D, 0x226D, 0x236D, 0x6E6D, 0x5B6E, 0x3D72, 0x7A72, 0x3173, 0x2774,
-				0x6E74, 0x7476, 0x7676, 0x3877, 0x4877, 0x5377, 0x5B78, 0x7078, 0x217A, 0x227A, 0x667A, 0x297C,
-			};
+			return "\u504B\u564B\u674B\u4F4D\u684D\u2D4E\u7B4F\u2250\u3850\u5050\u5D50\u5451\u5551\u5851\u5B51\u5C51\u5D51\u5E51\u5F51\u6051\u6251\u6351\u6451\u6551\u6651\u6851\u6951\u6A51\u6B51\u6D51\u6F51\u7051\u7251\u7651\u7A51\u7C51\u7D51\u7E51\u2252\u2352\u2752\u2852\u2952\u2A52\u2B52\u2D52\u3252\u3E52\u4252\u4352\u4452\u4652\u4752\u4852\u4952\u4A52\u4B52\u4D52\u4E52\u4F52\u5052\u5152\u5252\u5352\u5452\u5552\u5652\u5752\u5952\u5A52\u5E52\u5F52\u6152\u6252\u6452\u6552\u6652\u6752\u6852\u6952\u6A52\u6B52\u7052\u7152\u7252\u7352\u7452\u7552\u7752\u7852\u6654\u7C54\u2555\u2B55\u2E55\u3856\u4D56\u4B57\u6457\u455B\u645B\u255C\u255D\u555D\u745D\u7C5E\u7E5E\u335F\u615F\u685F\u7160\u2D61\u6D61\u7563\u2164\u2964\u2E65\u3165\u3265\u3965\u3B65\u3C65\u4465\u4E65\u5065\u5265\u5665\u7A65\u7B65\u7C65\u7E65\u2166\u2466\u2766\u2D66\u2F66\u3066\u3166\u3366\u3766\u3866\u3C66\u4466\u4666\u4766\u4A66\u5266\u5666\u5966\u5C66\u5F66\u6166\u6466\u6566\u6666\u6866\u6A66\u6B66\u6C66\u6F66\u7166\u7266\u7566\u7666\u7766\u7966\u2167\u2667\u2967\u2A67\u2C67\u2D67\u3067\u3F67\u4167\u4667\u4767\u4B67\u4D67\u4F67\u5067\u5367\u5F67\u6467\u6667\u7767\u6768\u6868\u7068\u7168\u7768\u7968\u7B68\u7E68\u2769\u2C69\u4C69\u7769\u416A\u656A\u746A\u776A\u7C6A\u7E6A\u246B\u276B\u296B\u2A6B\u3A6B\u3B6B\u3D6B\u416B\u426B\u466B\u476B\u4C6B\u4F6B\u506B\u516B\u526B\u586B\u266C\u276C\u2A6C\u2F6C\u306C\u316C\u326C\u356C\u386C\u3A6C\u406C\u416C\u456C\u466C\u496C\u4A6C\u556C\u5D6C\u5E6C\u616C\u646C\u676C\u686C\u776C\u786C\u7A6C\u216D\u226D\u236D\u6E6D\u5B6E\u3D72\u7A72\u3173\u2774\u6E74\u7476\u7676\u3877\u4877\u5377\u5B78\u7078\u217A\u227A\u667A\u297C".toCharArray();
 		}
 		private static final char[] GETOUTPUT0_FF01 = getOutput0_FF01();
 		private static final char[] getOutput0_FF01() {
-			return new char[] {
-				0x2123, 0x2223, 0x2323, 0x2423, 0x2523, 0x2623, 0x2723, 0x2823, 0x2923, 0x2A23, 0x2B23, 0x2C23, 0x2D23, 0x2E23, 0x2F23, 0x3023,
-				0x3123, 0x3223, 0x3323, 0x3423, 0x3523, 0x3623, 0x3723, 0x3823, 0x3923, 0x3A23, 0x3B23, 0x3C23, 0x3D23, 0x3E23, 0x3F23, 0x4023,
-				0x4123, 0x4223, 0x4323, 0x4423, 0x4523, 0x4623, 0x4723, 0x4823, 0x4923, 0x4A23, 0x4B23, 0x4C23, 0x4D23, 0x4E23, 0x4F23, 0x5023,
-				0x5123, 0x5223, 0x5323, 0x5423, 0x5523, 0x5623, 0x5723, 0x5823, 0x5923, 0x5A23, 0x5B23, 0x2C21, 0x5D23, 0x5E23, 0x5F23, 0x6023,
-				0x6123, 0x6223, 0x6323, 0x6423, 0x6523, 0x6623, 0x6723, 0x6823, 0x6923, 0x6A23, 0x6B23, 0x6C23, 0x6D23, 0x6E23, 0x6F23, 0x7023,
-				0x7123, 0x7223, 0x7323, 0x7423, 0x7523, 0x7623, 0x7723, 0x7823, 0x7923, 0x7A23, 0x7B23, 0x7C23, 0x7D23, 0x2622,
-			};
+			return "\u2123\u2223\u2323\u2423\u2523\u2623\u2723\u2823\u2923\u2A23\u2B23\u2C23\u2D23\u2E23\u2F23\u3023\u3123\u3223\u3323\u3423\u3523\u3623\u3723\u3823\u3923\u3A23\u3B23\u3C23\u3D23\u3E23\u3F23\u4023\u4123\u4223\u4323\u4423\u4523\u4623\u4723\u4823\u4923\u4A23\u4B23\u4C23\u4D23\u4E23\u4F23\u5023\u5123\u5223\u5323\u5423\u5523\u5623\u5723\u5823\u5923\u5A23\u5B23\u2C21\u5D23\u5E23\u5F23\u6023\u6123\u6223\u6323\u6423\u6523\u6623\u6723\u6823\u6923\u6A23\u6B23\u6C23\u6D23\u6E23\u6F23\u7023\u7123\u7223\u7323\u7423\u7523\u7623\u7723\u7823\u7923\u7A23\u7B23\u7C23\u7D23\u2622".toCharArray();
 		}
 		private long getOutput0(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return GETOUTPUT0_A1[input - 0xA1];

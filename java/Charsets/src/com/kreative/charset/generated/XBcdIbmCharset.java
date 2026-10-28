@@ -30,9 +30,7 @@ public class XBcdIbmCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT0_0 = getOutput0_0();
 		private static final char[] getOutput0_0() {
-			return new char[] {
-				0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x2B, 0x2D, 0x2B, 0x2D, 0x2B, 0x20,
-			};
+			return "0123456789+-+-+ ".toCharArray();
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0xF) return GETOUTPUT0_0[input - 0x0];

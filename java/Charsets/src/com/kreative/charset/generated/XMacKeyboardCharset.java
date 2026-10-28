@@ -30,13 +30,7 @@ public class XMacKeyboardCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT0_0 = getOutput0_0();
 		private static final char[] getOutput0_0() {
-			return new char[] {
-				0xFFFE, 0, 0x21E5, 0x21E4, 0x2324, 0x21E7, 0x2303, 0x2325, 0x8, 0x2423, 0x2326, 0x21A9, 0x21AA, 0xD, 0, 0xF802,
-				0x21E3, 0x2318, 0x2713, 0x25C6, 0xF8FF, 0, 0, 0x232B, 0x21E0, 0x21E1, 0x21E2, 0x238B, 0x2327, 0, 0, 0,
-				0x20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0x46,
-			};
+			return "\uFFFE\u0000\u21E5\u21E4\u2324\u21E7\u2303\u2325\b\u2423\u2326\u21A9\u21AA\r\u0000\uF802\u21E3\u2318\u2713\u25C6\uF8FF\u0000\u0000\u232B\u21E0\u21E1\u21E2\u238B\u2327\u0000\u0000\u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00000123456789\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000F".toCharArray();
 		}
 		private static final long[] GETOUTPUT0_61 = getOutput0_61();
 		private static final long[] getOutput0_61() {

@@ -67,14 +67,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETNEXTSTATE0_20 = getNextState0_20();
 		private static final char[] getNextState0_20() {
-			return new char[] {
-				0x1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2, 0, 0,
-				0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xA, 0xB, 0xC, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xD, 0, 0xE, 0, 0, 0, 0, 0, 0, 0xF, 0, 0, 0,
-				0, 0, 0x10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x11, 0, 0x12, 0, 0, 0, 0, 0, 0, 0x13, 0, 0, 0,
-				0, 0, 0x14,
-			};
+			return "\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0003\u0004\u0005\u0006\u0007\b\t\n\u000B\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\r\u0000\u000E\u0000\u0000\u0000\u0000\u0000\u0000\u000F\u0000\u0000\u0000\u0000\u0000\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0011\u0000\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0014".toCharArray();
 		}
 		private int getNextState0(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETNEXTSTATE0_20[input - 0x20];
@@ -88,14 +81,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT1_20 = getOutput1_20();
 		private static final char[] getOutput1_20() {
-			return new char[] {
-				0xFF01, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xFA, 0, 0,
-				0xF0, 0xF1, 0xF2, 0xF3, 0xF4, 0xF5, 0xF6, 0xF7, 0xF8, 0xF9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xFC, 0, 0xFE, 0, 0, 0, 0, 0, 0, 0xFB, 0, 0, 0,
-				0, 0, 0xFD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xFC, 0, 0xFE, 0, 0, 0, 0, 0, 0, 0xFB, 0, 0, 0,
-				0, 0, 0xFD,
-			};
+			return "\uFF01\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00FA\u0000\u0000\u00F0\u00F1\u00F2\u00F3\u00F4\u00F5\u00F6\u00F7\u00F8\u00F9\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00FC\u0000\u00FE\u0000\u0000\u0000\u0000\u0000\u0000\u00FB\u0000\u0000\u0000\u0000\u0000\u00FD\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00FC\u0000\u00FE\u0000\u0000\u0000\u0000\u0000\u0000\u00FB\u0000\u0000\u0000\u0000\u0000\u00FD".toCharArray();
 		}
 		private long getOutput1(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT1_20[input - 0x20];
@@ -103,44 +89,19 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT2_20 = getOutput2_20();
 		private static final char[] getOutput2_20() {
-			return new char[] {
-				0xAF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xAA, 0, 0,
-				0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xAC, 0, 0xAE, 0, 0, 0, 0, 0, 0, 0xAB, 0, 0, 0,
-				0, 0, 0xAD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xAC, 0, 0xAE, 0, 0, 0, 0, 0, 0, 0xAB, 0, 0, 0,
-				0, 0, 0xAD,
-			};
+			return "\u00AF\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00AA\u0000\u0000\u00A0\u00A1\u00A2\u00A3\u00A4\u00A5\u00A6\u00A7\u00A8\u00A9\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00AC\u0000\u00AE\u0000\u0000\u0000\u0000\u0000\u0000\u00AB\u0000\u0000\u0000\u0000\u0000\u00AD\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00AC\u0000\u00AE\u0000\u0000\u0000\u0000\u0000\u0000\u00AB\u0000\u0000\u0000\u0000\u0000\u00AD".toCharArray();
 		}
 		private long getOutput2(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT2_20[input - 0x20];
 			return 0;
 		}
-		private static final char[] GETOUTPUT3_20 = getOutput3_20();
-		private static final char[] getOutput3_20() {
-			return new char[] {
-				0xF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xA, 0, 0,
-				0x1, 0x101, 0x201, 0x301, 0x401, 0x501, 0x601, 0x701, 0x8, 0x9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xC, 0, 0xE, 0, 0, 0, 0, 0, 0, 0xB, 0, 0, 0,
-				0, 0, 0xD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xC, 0, 0xE, 0, 0, 0, 0, 0, 0, 0xB, 0, 0, 0,
-				0, 0, 0xD,
-			};
-		}
 		private long getOutput3(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT3_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1214[input - 0x20];
 			return 0;
 		}
 		private static final char[] GETOUTPUT4_20 = getOutput4_20();
 		private static final char[] getOutput4_20() {
-			return new char[] {
-				0x1F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x1A, 0, 0,
-				0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x1C, 0, 0x1E, 0, 0, 0, 0, 0, 0, 0x1B, 0, 0, 0,
-				0, 0, 0x1D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x1C, 0, 0x1E, 0, 0, 0, 0, 0, 0, 0x1B, 0, 0, 0,
-				0, 0, 0x1D,
-			};
+			return "\u001F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001A\u0000\u0000\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001C\u0000\u001E\u0000\u0000\u0000\u0000\u0000\u0000\u001B\u0000\u0000\u0000\u0000\u0000\u001D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001C\u0000\u001E\u0000\u0000\u0000\u0000\u0000\u0000\u001B\u0000\u0000\u0000\u0000\u0000\u001D".toCharArray();
 		}
 		private long getOutput4(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT4_20[input - 0x20];
@@ -148,14 +109,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT5_20 = getOutput5_20();
 		private static final char[] getOutput5_20() {
-			return new char[] {
-				0x2F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2A, 0, 0,
-				0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x2C, 0, 0x2E, 0, 0, 0, 0, 0, 0, 0x2B, 0, 0, 0,
-				0, 0, 0x2D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x2C, 0, 0x2E, 0, 0, 0, 0, 0, 0, 0x2B, 0, 0, 0,
-				0, 0, 0x2D,
-			};
+			return "/\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000*\u0000\u0000 !\"#$%&\'()\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000,\u0000.\u0000\u0000\u0000\u0000\u0000\u0000+\u0000\u0000\u0000\u0000\u0000-\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000,\u0000.\u0000\u0000\u0000\u0000\u0000\u0000+\u0000\u0000\u0000\u0000\u0000-".toCharArray();
 		}
 		private long getOutput5(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT5_20[input - 0x20];
@@ -163,14 +117,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT6_20 = getOutput6_20();
 		private static final char[] getOutput6_20() {
-			return new char[] {
-				0x3F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x3A, 0, 0,
-				0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x3C, 0, 0x3E, 0, 0, 0, 0, 0, 0, 0x3B, 0, 0, 0,
-				0, 0, 0x3D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x3C, 0, 0x3E, 0, 0, 0, 0, 0, 0, 0x3B, 0, 0, 0,
-				0, 0, 0x3D,
-			};
+			return "?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000:\u0000\u00000123456789\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000<\u0000>\u0000\u0000\u0000\u0000\u0000\u0000;\u0000\u0000\u0000\u0000\u0000=\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000<\u0000>\u0000\u0000\u0000\u0000\u0000\u0000;\u0000\u0000\u0000\u0000\u0000=".toCharArray();
 		}
 		private long getOutput6(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT6_20[input - 0x20];
@@ -178,14 +125,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT7_20 = getOutput7_20();
 		private static final char[] getOutput7_20() {
-			return new char[] {
-				0x4F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x4A, 0, 0,
-				0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47, 0x48, 0x49, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x4C, 0, 0x4E, 0, 0, 0, 0, 0, 0, 0x4B, 0, 0, 0,
-				0, 0, 0x4D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x4C, 0, 0x4E, 0, 0, 0, 0, 0, 0, 0x4B, 0, 0, 0,
-				0, 0, 0x4D,
-			};
+			return "O\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000J\u0000\u0000@ABCDEFGHI\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000L\u0000N\u0000\u0000\u0000\u0000\u0000\u0000K\u0000\u0000\u0000\u0000\u0000M\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000L\u0000N\u0000\u0000\u0000\u0000\u0000\u0000K\u0000\u0000\u0000\u0000\u0000M".toCharArray();
 		}
 		private long getOutput7(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT7_20[input - 0x20];
@@ -193,14 +133,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT8_20 = getOutput8_20();
 		private static final char[] getOutput8_20() {
-			return new char[] {
-				0x5F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x5A, 0, 0,
-				0x50, 0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x57, 0x58, 0x59, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x5C, 0, 0x5E, 0, 0, 0, 0, 0, 0, 0x5B, 0, 0, 0,
-				0, 0, 0x5D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x5C, 0, 0x5E, 0, 0, 0, 0, 0, 0, 0x5B, 0, 0, 0,
-				0, 0, 0x5D,
-			};
+			return "_\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000Z\u0000\u0000PQRSTUVWXY\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\\\u0000^\u0000\u0000\u0000\u0000\u0000\u0000[\u0000\u0000\u0000\u0000\u0000]\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\\\u0000^\u0000\u0000\u0000\u0000\u0000\u0000[\u0000\u0000\u0000\u0000\u0000]".toCharArray();
 		}
 		private long getOutput8(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT8_20[input - 0x20];
@@ -208,14 +141,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT9_20 = getOutput9_20();
 		private static final char[] getOutput9_20() {
-			return new char[] {
-				0x6F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x6A, 0, 0,
-				0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x6C, 0, 0x6E, 0, 0, 0, 0, 0, 0, 0x6B, 0, 0, 0,
-				0, 0, 0x6D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x6C, 0, 0x6E, 0, 0, 0, 0, 0, 0, 0x6B, 0, 0, 0,
-				0, 0, 0x6D,
-			};
+			return "o\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000j\u0000\u0000`abcdefghi\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000l\u0000n\u0000\u0000\u0000\u0000\u0000\u0000k\u0000\u0000\u0000\u0000\u0000m\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000l\u0000n\u0000\u0000\u0000\u0000\u0000\u0000k\u0000\u0000\u0000\u0000\u0000m".toCharArray();
 		}
 		private long getOutput9(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT9_20[input - 0x20];
@@ -223,14 +149,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT10_20 = getOutput10_20();
 		private static final char[] getOutput10_20() {
-			return new char[] {
-				0x7F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x7A, 0, 0,
-				0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78, 0x79, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x7C, 0, 0x7E, 0, 0, 0, 0, 0, 0, 0x7B, 0, 0, 0,
-				0, 0, 0x7D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x7C, 0, 0x7E, 0, 0, 0, 0, 0, 0, 0x7B, 0, 0, 0,
-				0, 0, 0x7D,
-			};
+			return "\u007F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000z\u0000\u0000pqrstuvwxy\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000|\u0000~\u0000\u0000\u0000\u0000\u0000\u0000{\u0000\u0000\u0000\u0000\u0000}\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000|\u0000~\u0000\u0000\u0000\u0000\u0000\u0000{\u0000\u0000\u0000\u0000\u0000}".toCharArray();
 		}
 		private long getOutput10(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT10_20[input - 0x20];
@@ -238,14 +157,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT11_20 = getOutput11_20();
 		private static final char[] getOutput11_20() {
-			return new char[] {
-				0x8F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x8A, 0, 0,
-				0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x8C, 0, 0x8E, 0, 0, 0, 0, 0, 0, 0x8B, 0, 0, 0,
-				0, 0, 0x8D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x8C, 0, 0x8E, 0, 0, 0, 0, 0, 0, 0x8B, 0, 0, 0,
-				0, 0, 0x8D,
-			};
+			return "\u008F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008A\u0000\u0000\u0080\u0081\u0082\u0083\u0084\u0085\u0086\u0087\u0088\u0089\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008C\u0000\u008E\u0000\u0000\u0000\u0000\u0000\u0000\u008B\u0000\u0000\u0000\u0000\u0000\u008D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008C\u0000\u008E\u0000\u0000\u0000\u0000\u0000\u0000\u008B\u0000\u0000\u0000\u0000\u0000\u008D".toCharArray();
 		}
 		private long getOutput11(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT11_20[input - 0x20];
@@ -253,137 +165,42 @@ public class XBcdElectronikaFullCharset extends Charset {
 		}
 		private static final char[] GETOUTPUT12_20 = getOutput12_20();
 		private static final char[] getOutput12_20() {
-			return new char[] {
-				0x9F, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x9A, 0, 0,
-				0x90, 0x91, 0x92, 0x93, 0x94, 0x95, 0x96, 0x97, 0x98, 0x99, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x9C, 0, 0x9E, 0, 0, 0, 0, 0, 0, 0x9B, 0, 0, 0,
-				0, 0, 0x9D, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0x9C, 0, 0x9E, 0, 0, 0, 0, 0, 0, 0x9B, 0, 0, 0,
-				0, 0, 0x9D,
-			};
+			return "\u009F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u009A\u0000\u0000\u0090\u0091\u0092\u0093\u0094\u0095\u0096\u0097\u0098\u0099\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u009C\u0000\u009E\u0000\u0000\u0000\u0000\u0000\u0000\u009B\u0000\u0000\u0000\u0000\u0000\u009D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u009C\u0000\u009E\u0000\u0000\u0000\u0000\u0000\u0000\u009B\u0000\u0000\u0000\u0000\u0000\u009D".toCharArray();
 		}
 		private long getOutput12(int input) {
 			if (input >= 0x20 && input <= 0x72) return GETOUTPUT12_20[input - 0x20];
 			return 0;
 		}
-		private static final char[] GETOUTPUT13_20 = getOutput13_20();
-		private static final char[] getOutput13_20() {
-			return new char[] {
-				0xCF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xCA, 0, 0,
-				0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xCC, 0, 0xCE, 0, 0, 0, 0, 0, 0, 0xCB, 0, 0, 0,
-				0, 0, 0xCD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xCC, 0, 0xCE, 0, 0, 0, 0, 0, 0, 0xCB, 0, 0, 0,
-				0, 0, 0xCD,
-			};
-		}
 		private long getOutput13(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT13_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1215[input - 0x20];
 			return 0;
-		}
-		private static final char[] GETOUTPUT14_20 = getOutput14_20();
-		private static final char[] getOutput14_20() {
-			return new char[] {
-				0xEF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xEA, 0, 0,
-				0xE0, 0xE1, 0xE2, 0xE3, 0xE4, 0xE5, 0xE6, 0xE7, 0xE8, 0xE9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xEC, 0, 0xEE, 0, 0, 0, 0, 0, 0, 0xEB, 0, 0, 0,
-				0, 0, 0xED, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xEC, 0, 0xEE, 0, 0, 0, 0, 0, 0, 0xEB, 0, 0, 0,
-				0, 0, 0xED,
-			};
 		}
 		private long getOutput14(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT14_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1216[input - 0x20];
 			return 0;
-		}
-		private static final char[] GETOUTPUT15_20 = getOutput15_20();
-		private static final char[] getOutput15_20() {
-			return new char[] {
-				0xBF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xBA, 0, 0,
-				0xB0, 0xB1, 0xB2, 0xB3, 0xB4, 0xB5, 0xB6, 0xB7, 0xB8, 0xB9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xBC, 0, 0xBE, 0, 0, 0, 0, 0, 0, 0xBB, 0, 0, 0,
-				0, 0, 0xBD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xBC, 0, 0xBE, 0, 0, 0, 0, 0, 0, 0xBB, 0, 0, 0,
-				0, 0, 0xBD,
-			};
 		}
 		private long getOutput15(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT15_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1217[input - 0x20];
 			return 0;
-		}
-		private static final char[] GETOUTPUT16_20 = getOutput16_20();
-		private static final char[] getOutput16_20() {
-			return new char[] {
-				0xDF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xDA, 0, 0,
-				0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0xD5, 0xD6, 0xD7, 0xD8, 0xD9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xDC, 0, 0xDE, 0, 0, 0, 0, 0, 0, 0xDB, 0, 0, 0,
-				0, 0, 0xDD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xDC, 0, 0xDE, 0, 0, 0, 0, 0, 0, 0xDB, 0, 0, 0,
-				0, 0, 0xDD,
-			};
 		}
 		private long getOutput16(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT16_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1218[input - 0x20];
 			return 0;
-		}
-		private static final char[] GETOUTPUT17_20 = getOutput17_20();
-		private static final char[] getOutput17_20() {
-			return new char[] {
-				0xCF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xCA, 0, 0,
-				0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xCC, 0, 0xCE, 0, 0, 0, 0, 0, 0, 0xCB, 0, 0, 0,
-				0, 0, 0xCD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xCC, 0, 0xCE, 0, 0, 0, 0, 0, 0, 0xCB, 0, 0, 0,
-				0, 0, 0xCD,
-			};
 		}
 		private long getOutput17(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT17_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1215[input - 0x20];
 			return 0;
-		}
-		private static final char[] GETOUTPUT18_20 = getOutput18_20();
-		private static final char[] getOutput18_20() {
-			return new char[] {
-				0xEF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xEA, 0, 0,
-				0xE0, 0xE1, 0xE2, 0xE3, 0xE4, 0xE5, 0xE6, 0xE7, 0xE8, 0xE9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xEC, 0, 0xEE, 0, 0, 0, 0, 0, 0, 0xEB, 0, 0, 0,
-				0, 0, 0xED, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xEC, 0, 0xEE, 0, 0, 0, 0, 0, 0, 0xEB, 0, 0, 0,
-				0, 0, 0xED,
-			};
 		}
 		private long getOutput18(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT18_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1216[input - 0x20];
 			return 0;
-		}
-		private static final char[] GETOUTPUT19_20 = getOutput19_20();
-		private static final char[] getOutput19_20() {
-			return new char[] {
-				0xBF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xBA, 0, 0,
-				0xB0, 0xB1, 0xB2, 0xB3, 0xB4, 0xB5, 0xB6, 0xB7, 0xB8, 0xB9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xBC, 0, 0xBE, 0, 0, 0, 0, 0, 0, 0xBB, 0, 0, 0,
-				0, 0, 0xBD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xBC, 0, 0xBE, 0, 0, 0, 0, 0, 0, 0xBB, 0, 0, 0,
-				0, 0, 0xBD,
-			};
 		}
 		private long getOutput19(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT19_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1217[input - 0x20];
 			return 0;
 		}
-		private static final char[] GETOUTPUT20_20 = getOutput20_20();
-		private static final char[] getOutput20_20() {
-			return new char[] {
-				0xDF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xDA, 0, 0,
-				0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0xD5, 0xD6, 0xD7, 0xD8, 0xD9, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xDC, 0, 0xDE, 0, 0, 0, 0, 0, 0, 0xDB, 0, 0, 0,
-				0, 0, 0xDD, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0xDC, 0, 0xDE, 0, 0, 0, 0, 0, 0, 0xDB, 0, 0, 0,
-				0, 0, 0xDD,
-			};
-		}
 		private long getOutput20(int input) {
-			if (input >= 0x20 && input <= 0x72) return GETOUTPUT20_20[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1218[input - 0x20];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
