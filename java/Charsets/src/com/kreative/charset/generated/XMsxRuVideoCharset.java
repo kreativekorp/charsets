@@ -43,7 +43,7 @@ public class XMsxRuVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1683[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1691[input - 0x0];
 			if (input >= 0x7F && input <= 0xFE) return GETOUTPUT0_7F[input - 0x7F];
 			return 0;
 		}
@@ -77,7 +77,7 @@ public class XMsxRuVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0x410 && input <= 0x44F) return CommonSubtables.COMMON1691[input - 0x410];
+			if (input >= 0x410 && input <= 0x44F) return CommonSubtables.COMMON1699[input - 0x410];
 			if (input >= 0x2571 && input <= 0x25AC) return GETOUTPUT0_2571[input - 0x2571];
 			switch (input) {
 			case 0x0: return 0x1L;

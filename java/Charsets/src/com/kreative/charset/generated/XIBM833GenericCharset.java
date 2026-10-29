@@ -30,7 +30,7 @@ public class XIBM833GenericCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x3F) return CommonSubtables.DECODE_EBCDIC_GENERIC[input - 0x0];
-			if (input >= 0x40 && input <= 0xFF) return CommonSubtables.COMMON266[input - 0x40];
+			if (input >= 0x40 && input <= 0xFF) return CommonSubtables.COMMON272[input - 0x40];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -51,9 +51,9 @@ public class XIBM833GenericCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_EBCDIC_C0_GENERIC[input - 0x0];
 			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_EBCDIC_C1[input - 0x80];
-			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON267[input - 0x20];
-			if (input >= 0xFF01 && input <= 0xFF5E) return CommonSubtables.COMMON268[input - 0xFF01];
-			if (input >= 0xFFA0 && input <= 0xFFDC) return CommonSubtables.COMMON269[input - 0xFFA0];
+			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON273[input - 0x20];
+			if (input >= 0xFF01 && input <= 0xFF5E) return CommonSubtables.COMMON274[input - 0xFF01];
+			if (input >= 0xFFA0 && input <= 0xFFDC) return CommonSubtables.COMMON275[input - 0xFFA0];
 			switch (input) {
 			case 0xA2: return 0x4AL;
 			case 0xA6: return 0x6AL;

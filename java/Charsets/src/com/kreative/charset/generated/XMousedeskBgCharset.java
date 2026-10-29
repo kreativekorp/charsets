@@ -28,14 +28,10 @@ public class XMousedeskBgCharset extends Charset {
 		protected int getNextState(int state, int input) {
 			return 0;
 		}
-		private static final char[] GETOUTPUT0_60 = getOutput0_60();
-		private static final char[] getOutput0_60() {
-			return "\u042E\u0410\u0411\u0426\u0414\u0415\u0424\u0413\u0425\u0418\u0419\u041A\u041B\u041C\u041D\u041E\u041F\u042F\u0420\u0421\u0422\u0423\u0416\u0412\u042C\u042A\u0417\u0428\u042D\u0429\u0427\u007F".toCharArray();
-		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1681[input - 0x0];
-			if (input >= 0x60 && input <= 0x7F) return GETOUTPUT0_60[input - 0x60];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1689[input - 0x0];
+			if (input >= 0x60 && input <= 0x7F) return CommonSubtables.COMMON1569[input - 0x60];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

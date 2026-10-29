@@ -62,7 +62,7 @@ public class XEcma1Gb1Charset extends Charset {
 
 	private static final class XEcma1Gb1CharsetEncoder extends TableCharsetEncoder {
 		private XEcma1Gb1CharsetEncoder(Charset cs) {
-			super(cs, 1f, 1f, new byte[]{0}, 1);
+			super(cs, 1f, 1f, new byte[]{10}, 1);
 		}
 		protected int getNextState(int state, int input) {
 			return 0;

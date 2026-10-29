@@ -100,12 +100,12 @@ public class XSharpsciiJpAltVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x48 && input <= 0x5A) return input - 0x48 + 0x8;
-			if (input >= 0x20 && input <= 0x47) return CommonSubtables.COMMON1711[input - 0x20];
+			if (input >= 0x20 && input <= 0x47) return CommonSubtables.COMMON1719[input - 0x20];
 			if (input >= 0x68 && input <= 0x7A) return input - 0x68 + 0x8;
 			if (input >= 0x256D && input <= 0x259E) return GETOUTPUT0_256D[input - 0x256D];
 			if (input >= 0x3041 && input <= 0x309C) return GETOUTPUT0_3041[input - 0x3041];
 			if (input >= 0xFF28 && input <= 0xFF3A) return input - 0xFF28 + 0x8;
-			if (input >= 0xFF01 && input <= 0xFF27) return CommonSubtables.COMMON1713[input - 0xFF01];
+			if (input >= 0xFF01 && input <= 0xFF27) return CommonSubtables.COMMON1721[input - 0xFF01];
 			if (input >= 0xFF48 && input <= 0xFF5A) return input - 0xFF48 + 0x8;
 			switch (input) {
 			case 0x5B: return 0x52L;
@@ -232,7 +232,7 @@ public class XSharpsciiJpAltVideoCharset extends Charset {
 			return 0;
 		}
 		private long getOutput5(int input) {
-			if (input >= 0xDF70 && input <= 0xDF90) return CommonSubtables.COMMON1718[input - 0xDF70];
+			if (input >= 0xDF70 && input <= 0xDF90) return CommonSubtables.COMMON1726[input - 0xDF70];
 			switch (input) {
 			case 0xDCB3: return 0xC0L;
 			case 0xDCB4: return 0xC4L;

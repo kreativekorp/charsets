@@ -56,8 +56,8 @@ public class XIBM424JavaCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_EBCDIC_C0_UNIX[input - 0x0];
 			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_EBCDIC_C1[input - 0x80];
 			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON1[input - 0x20];
-			if (input >= 0xA0 && input <= 0xBE) return CommonSubtables.COMMON261[input - 0xA0];
-			if (input >= 0x5D0 && input <= 0x5EA) return CommonSubtables.COMMON262[input - 0x5D0];
+			if (input >= 0xA0 && input <= 0xBE) return CommonSubtables.COMMON57[input - 0xA0];
+			if (input >= 0x5D0 && input <= 0x5EA) return CommonSubtables.COMMON58[input - 0x5D0];
 			switch (input) {
 			case 0xD7: return 0xBFL;
 			case 0xF7: return 0xE1L;

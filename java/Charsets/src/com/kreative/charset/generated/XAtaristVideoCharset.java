@@ -80,8 +80,8 @@ public class XAtaristVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1205[input - 0xA1];
-			if (input >= 0x5D0 && input <= 0x5EA) return CommonSubtables.COMMON1206[input - 0x5D0];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1211[input - 0xA1];
+			if (input >= 0x5D0 && input <= 0x5EA) return CommonSubtables.COMMON1212[input - 0x5D0];
 			switch (input) {
 			case 0x0: return 0x1L;
 			case 0x132: return 0xC1L;

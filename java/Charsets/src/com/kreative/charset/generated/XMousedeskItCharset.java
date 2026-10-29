@@ -30,7 +30,7 @@ public class XMousedeskItCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x24 && input <= 0x3F) return input - 0x24 + 0x24;
-			if (input >= 0x0 && input <= 0x23) return CommonSubtables.COMMON1682[input - 0x0];
+			if (input >= 0x0 && input <= 0x23) return CommonSubtables.COMMON1690[input - 0x0];
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x41;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x61;
 			switch (input) {

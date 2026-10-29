@@ -36,7 +36,7 @@ public class XKkSupermultinationalFullCharset extends Charset {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x0 && input <= 0x1F) return GETOUTPUT0_0[input - 0x0];
 			if (input >= 0x87 && input <= 0x96) return input - 0x87 + 0xC7;
-			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1561[input - 0x80];
+			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1568[input - 0x80];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

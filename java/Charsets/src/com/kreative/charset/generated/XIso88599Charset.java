@@ -32,7 +32,7 @@ public class XIso88599Charset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0xCF) return input - 0x20 + 0x20;
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;
-			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.COMMON1235[input - 0xF0];
+			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.COMMON1242[input - 0xF0];
 			switch (input) {
 			case 0xD0: return 0x11EL;
 			case 0xD1: return 0xD1L;

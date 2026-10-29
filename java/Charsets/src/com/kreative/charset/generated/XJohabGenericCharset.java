@@ -5293,14 +5293,14 @@ public class XJohabGenericCharset extends Charset {
 			return 0;
 		}
 		private long getOutput81(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1405[input - 0x31];
-			if (input >= 0x91 && input <= 0xE5) return CommonSubtables.COMMON1406[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1412[input - 0x31];
+			if (input >= 0x91 && input <= 0xE5) return CommonSubtables.COMMON1413[input - 0x91];
 			return 0;
 		}
 		private long getOutput82(int input) {
 			if (input >= 0x31 && input <= 0x6B) return input - 0x31 + 0xFF01;
 			if (input >= 0x6D && input <= 0x7E) return input - 0x6D + 0xFF3D;
-			if (input >= 0x91 && input <= 0xA0) return CommonSubtables.COMMON1407[input - 0x91];
+			if (input >= 0x91 && input <= 0xA0) return CommonSubtables.COMMON1414[input - 0x91];
 			if (input >= 0xD4 && input <= 0xFE) return input - 0xD4 + 0x3164;
 			switch (input) {
 			case 0x6C: return 0xFFE6L;
@@ -5309,16 +5309,16 @@ public class XJohabGenericCharset extends Charset {
 		}
 		private long getOutput83(int input) {
 			if (input >= 0x51 && input <= 0x61) return input - 0x51 + 0x391;
-			if (input >= 0x31 && input <= 0x49) return CommonSubtables.COMMON270[input - 0x31];
-			if (input >= 0x62 && input <= 0x7E) return CommonSubtables.COMMON1408[input - 0x62];
-			if (input >= 0x91 && input <= 0xE4) return CommonSubtables.COMMON1409[input - 0x91];
+			if (input >= 0x31 && input <= 0x49) return CommonSubtables.COMMON276[input - 0x31];
+			if (input >= 0x62 && input <= 0x7E) return CommonSubtables.COMMON1415[input - 0x62];
+			if (input >= 0x91 && input <= 0xE4) return CommonSubtables.COMMON1416[input - 0x91];
 			return 0;
 		}
 		private long getOutput84(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1410[input - 0x31];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1417[input - 0x31];
 			if (input >= 0xB1 && input <= 0xCC) return input - 0xB1 + 0x3260;
 			if (input >= 0xCD && input <= 0xE6) return input - 0xCD + 0x24D0;
-			if (input >= 0xE7 && input <= 0xFE) return CommonSubtables.COMMON447[input - 0xE7];
+			if (input >= 0xE7 && input <= 0xFE) return CommonSubtables.COMMON453[input - 0xE7];
 			switch (input) {
 			case 0x91: return 0x33C6L;
 			case 0xA1: return 0xC6L;
@@ -5339,10 +5339,10 @@ public class XJohabGenericCharset extends Charset {
 		}
 		private long getOutput85(int input) {
 			if (input >= 0x41 && input <= 0x5C) return input - 0x41 + 0x3200;
-			if (input >= 0x31 && input <= 0x40) return CommonSubtables.COMMON448[input - 0x31];
+			if (input >= 0x31 && input <= 0x40) return CommonSubtables.COMMON454[input - 0x31];
 			if (input >= 0x5D && input <= 0x76) return input - 0x5D + 0x249C;
 			if (input >= 0xA1 && input <= 0xF3) return input - 0xA1 + 0x3041;
-			if (input >= 0x91 && input <= 0xA0) return CommonSubtables.COMMON1411[input - 0x91];
+			if (input >= 0x91 && input <= 0xA0) return CommonSubtables.COMMON1418[input - 0x91];
 			switch (input) {
 			case 0x77: return 0x2474L;
 			case 0x78: return 0x2475L;
@@ -5386,133 +5386,133 @@ public class XJohabGenericCharset extends Charset {
 			return 0;
 		}
 		private long getOutput87(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1412[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1413[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1419[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1420[input - 0x91];
 			return 0;
 		}
 		private long getOutput88(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1414[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1415[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1421[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1422[input - 0x91];
 			return 0;
 		}
 		private long getOutput89(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1416[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1417[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1423[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1424[input - 0x91];
 			return 0;
 		}
 		private long getOutput90(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1418[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1419[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1425[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1426[input - 0x91];
 			return 0;
 		}
 		private long getOutput91(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1420[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1421[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1427[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1428[input - 0x91];
 			return 0;
 		}
 		private long getOutput92(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1422[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1423[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1429[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1430[input - 0x91];
 			return 0;
 		}
 		private long getOutput93(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1424[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1425[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1431[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1432[input - 0x91];
 			return 0;
 		}
 		private long getOutput94(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1426[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1427[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1433[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1434[input - 0x91];
 			return 0;
 		}
 		private long getOutput95(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1428[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1429[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1435[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1436[input - 0x91];
 			return 0;
 		}
 		private long getOutput96(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1430[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1431[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1437[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1438[input - 0x91];
 			return 0;
 		}
 		private long getOutput97(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1432[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1433[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1439[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1440[input - 0x91];
 			return 0;
 		}
 		private long getOutput98(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1434[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1435[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1441[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1442[input - 0x91];
 			return 0;
 		}
 		private long getOutput99(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1436[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1437[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1443[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1444[input - 0x91];
 			return 0;
 		}
 		private long getOutput100(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1438[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1439[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1445[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1446[input - 0x91];
 			return 0;
 		}
 		private long getOutput101(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1440[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1441[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1447[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1448[input - 0x91];
 			return 0;
 		}
 		private long getOutput102(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1442[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1443[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1449[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1450[input - 0x91];
 			return 0;
 		}
 		private long getOutput103(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1444[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1445[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1451[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1452[input - 0x91];
 			return 0;
 		}
 		private long getOutput104(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1446[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1447[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1453[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1454[input - 0x91];
 			return 0;
 		}
 		private long getOutput105(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1448[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1449[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1455[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1456[input - 0x91];
 			return 0;
 		}
 		private long getOutput106(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1450[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1451[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1457[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1458[input - 0x91];
 			return 0;
 		}
 		private long getOutput107(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1452[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1453[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1459[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1460[input - 0x91];
 			return 0;
 		}
 		private long getOutput108(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1454[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1455[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1461[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1462[input - 0x91];
 			return 0;
 		}
 		private long getOutput109(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1456[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1457[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1463[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1464[input - 0x91];
 			return 0;
 		}
 		private long getOutput110(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1458[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1459[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1465[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1466[input - 0x91];
 			return 0;
 		}
 		private long getOutput111(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1460[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1461[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1467[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1468[input - 0x91];
 			return 0;
 		}
 		private long getOutput112(int input) {
-			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1462[input - 0x31];
-			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1463[input - 0x91];
+			if (input >= 0x31 && input <= 0x7E) return CommonSubtables.COMMON1469[input - 0x31];
+			if (input >= 0x91 && input <= 0xFE) return CommonSubtables.COMMON1470[input - 0x91];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -5646,99 +5646,99 @@ public class XJohabGenericCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x5D && input <= 0x7E) return input - 0x5D + 0x5D;
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1464[input - 0xA1];
-			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON1465[input - 0x391];
-			if (input >= 0x401 && input <= 0x451) return CommonSubtables.COMMON1466[input - 0x401];
-			if (input >= 0x2153 && input <= 0x2179) return CommonSubtables.COMMON1467[input - 0x2153];
-			if (input >= 0x2200 && input <= 0x223D) return CommonSubtables.COMMON1468[input - 0x2200];
-			if (input >= 0x2460 && input <= 0x2482) return CommonSubtables.COMMON1469[input - 0x2460];
-			if (input >= 0x249C && input <= 0x24B5) return CommonSubtables.COMMON1470[input - 0x249C];
-			if (input >= 0x24D0 && input <= 0x24E9) return CommonSubtables.COMMON1471[input - 0x24D0];
-			if (input >= 0x2500 && input <= 0x254B) return CommonSubtables.COMMON1472[input - 0x2500];
-			if (input >= 0x2592 && input <= 0x25D1) return CommonSubtables.COMMON1473[input - 0x2592];
-			if (input >= 0x3000 && input <= 0x3015) return CommonSubtables.COMMON1474[input - 0x3000];
-			if (input >= 0x3041 && input <= 0x30F6) return CommonSubtables.COMMON1475[input - 0x3041];
-			if (input >= 0x3131 && input <= 0x318E) return CommonSubtables.COMMON1476[input - 0x3131];
-			if (input >= 0x3200 && input <= 0x321C) return CommonSubtables.COMMON1477[input - 0x3200];
-			if (input >= 0x3260 && input <= 0x327F) return CommonSubtables.COMMON1478[input - 0x3260];
-			if (input >= 0x3380 && input <= 0x33DD) return CommonSubtables.COMMON1479[input - 0x3380];
-			if (input >= 0x4E00 && input <= 0x4F11) return CommonSubtables.COMMON1480[input - 0x4E00];
-			if (input >= 0x4F2F && input <= 0x5099) return CommonSubtables.COMMON1481[input - 0x4F2F];
-			if (input >= 0x50AC && input <= 0x52AB) return CommonSubtables.COMMON1482[input - 0x50AC];
-			if (input >= 0x52BE && input <= 0x5451) return CommonSubtables.COMMON1483[input - 0x52BE];
-			if (input >= 0x557C && input <= 0x55AE) return CommonSubtables.COMMON1484[input - 0x557C];
-			if (input >= 0x56A5 && input <= 0x57A3) return CommonSubtables.COMMON1485[input - 0x56A5];
-			if (input >= 0x57C3 && input <= 0x580A) return CommonSubtables.COMMON1486[input - 0x57C3];
-			if (input >= 0x581E && input <= 0x58FD) return CommonSubtables.COMMON1487[input - 0x581E];
-			if (input >= 0x590F && input <= 0x5A66) return CommonSubtables.COMMON1488[input - 0x590F];
-			if (input >= 0x5B40 && input <= 0x5C79) return CommonSubtables.COMMON1489[input - 0x5B40];
-			if (input >= 0x5CD9 && input <= 0x5D29) return CommonSubtables.COMMON1490[input - 0x5CD9];
-			if (input >= 0x5D9D && input <= 0x602F) return CommonSubtables.COMMON1491[input - 0x5D9D];
-			if (input >= 0x6041 && input <= 0x6070) return CommonSubtables.COMMON1492[input - 0x6041];
-			if (input >= 0x6085 && input <= 0x61CB) return CommonSubtables.COMMON1493[input - 0x6085];
-			if (input >= 0x61E6 && input <= 0x6258) return CommonSubtables.COMMON1494[input - 0x61E6];
-			if (input >= 0x626E && input <= 0x6311) return CommonSubtables.COMMON1495[input - 0x626E];
-			if (input >= 0x6367 && input <= 0x63AA) return CommonSubtables.COMMON1496[input - 0x6367];
-			if (input >= 0x6458 && input <= 0x6504) return CommonSubtables.COMMON1497[input - 0x6458];
-			if (input >= 0x6518 && input <= 0x679D) return CommonSubtables.COMMON1498[input - 0x6518];
-			if (input >= 0x67AF && input <= 0x67FE) return CommonSubtables.COMMON1499[input - 0x67AF];
-			if (input >= 0x6812 && input <= 0x6854) return CommonSubtables.COMMON1500[input - 0x6812];
-			if (input >= 0x686D && input <= 0x6912) return CommonSubtables.COMMON1501[input - 0x686D];
-			if (input >= 0x6927 && input <= 0x6979) return CommonSubtables.COMMON1502[input - 0x6927];
-			if (input >= 0x6A80 && input <= 0x6ADB) return CommonSubtables.COMMON1503[input - 0x6A80];
-			if (input >= 0x6AF6 && input <= 0x6BEC) return CommonSubtables.COMMON1504[input - 0x6AF6];
-			if (input >= 0x6C08 && input <= 0x6CF3) return CommonSubtables.COMMON1505[input - 0x6C08];
-			if (input >= 0x6D0B && input <= 0x6D41) return CommonSubtables.COMMON1506[input - 0x6D0B];
-			if (input >= 0x6D59 && input <= 0x6D95) return CommonSubtables.COMMON1507[input - 0x6D59];
-			if (input >= 0x6DAF && input <= 0x6DFB) return CommonSubtables.COMMON1508[input - 0x6DAF];
-			if (input >= 0x6E17 && input <= 0x6E7A) return CommonSubtables.COMMON1509[input - 0x6E17];
-			if (input >= 0x6E90 && input <= 0x6ED4) return CommonSubtables.COMMON1510[input - 0x6E90];
-			if (input >= 0x6EEF && input <= 0x70DF) return CommonSubtables.COMMON1511[input - 0x6EEF];
-			if (input >= 0x70F1 && input <= 0x7281) return CommonSubtables.COMMON1512[input - 0x70F1];
-			if (input >= 0x72A2 && input <= 0x7626) return CommonSubtables.COMMON1513[input - 0x72A2];
-			if (input >= 0x763B && input <= 0x7693) return CommonSubtables.COMMON1514[input - 0x763B];
-			if (input >= 0x76AE && input <= 0x770B) return CommonSubtables.COMMON1515[input - 0x76AE];
-			if (input >= 0x771E && input <= 0x77BF) return CommonSubtables.COMMON1516[input - 0x771E];
-			if (input >= 0x7825 && input <= 0x78D0) return CommonSubtables.COMMON1517[input - 0x7825];
-			if (input >= 0x792A && input <= 0x7991) return CommonSubtables.COMMON1518[input - 0x792A];
-			if (input >= 0x79A6 && input <= 0x79E9) return CommonSubtables.COMMON1519[input - 0x79A6];
-			if (input >= 0x79FB && input <= 0x7BE9) return CommonSubtables.COMMON1520[input - 0x79FB];
-			if (input >= 0x7C60 && input <= 0x7CE7) return CommonSubtables.COMMON1521[input - 0x7C60];
-			if (input >= 0x7CFB && input <= 0x7E9C) return CommonSubtables.COMMON1522[input - 0x7CFB];
-			if (input >= 0x7F6A && input <= 0x8018) return CommonSubtables.COMMON1523[input - 0x7F6A];
-			if (input >= 0x802D && input <= 0x8247) return CommonSubtables.COMMON1524[input - 0x802D];
-			if (input >= 0x8259 && input <= 0x82BF) return CommonSubtables.COMMON1525[input - 0x8259];
-			if (input >= 0x82D1 && input <= 0x8352) return CommonSubtables.COMMON1526[input - 0x82D1];
-			if (input >= 0x83BD && input <= 0x840E) return CommonSubtables.COMMON1527[input - 0x83BD];
-			if (input >= 0x8429 && input <= 0x847A) return CommonSubtables.COMMON1528[input - 0x8429];
-			if (input >= 0x8490 && input <= 0x84DA) return CommonSubtables.COMMON1529[input - 0x8490];
-			if (input >= 0x8511 && input <= 0x856D) return CommonSubtables.COMMON1530[input - 0x8511];
-			if (input >= 0x8584 && input <= 0x861A) return CommonSubtables.COMMON1531[input - 0x8584];
-			if (input >= 0x86C7 && input <= 0x871C) return CommonSubtables.COMMON1532[input - 0x86C7];
-			if (input >= 0x881F && input <= 0x8944) return CommonSubtables.COMMON1533[input - 0x881F];
-			if (input >= 0x895F && input <= 0x89C0) return CommonSubtables.COMMON1534[input - 0x895F];
-			if (input >= 0x89D2 && input <= 0x8A3B) return CommonSubtables.COMMON1535[input - 0x89D2];
-			if (input >= 0x8A50 && input <= 0x8B9A) return CommonSubtables.COMMON1536[input - 0x8A50];
-			if (input >= 0x8C37 && input <= 0x8D16) return CommonSubtables.COMMON1537[input - 0x8C37];
-			if (input >= 0x8D64 && input <= 0x8DF3) return CommonSubtables.COMMON1538[input - 0x8D64];
-			if (input >= 0x8E0A && input <= 0x8E60) return CommonSubtables.COMMON1539[input - 0x8E0A];
-			if (input >= 0x8EC0 && input <= 0x8F62) return CommonSubtables.COMMON1540[input - 0x8EC0];
-			if (input >= 0x8FE6 && input <= 0x90CA) return CommonSubtables.COMMON1541[input - 0x8FE6];
-			if (input >= 0x9149 && input <= 0x91F5) return CommonSubtables.COMMON1542[input - 0x9149];
-			if (input >= 0x92E4 && input <= 0x932F) return CommonSubtables.COMMON1543[input - 0x92E4];
-			if (input >= 0x9577 && input <= 0x95E2) return CommonSubtables.COMMON1544[input - 0x9577];
-			if (input >= 0x961C && input <= 0x97AD) return CommonSubtables.COMMON1545[input - 0x961C];
-			if (input >= 0x97F3 && input <= 0x9818) return CommonSubtables.COMMON1546[input - 0x97F3];
-			if (input >= 0x982D && input <= 0x986F) return CommonSubtables.COMMON1547[input - 0x982D];
-			if (input >= 0x98DB && input <= 0x9928) return CommonSubtables.COMMON1548[input - 0x98DB];
-			if (input >= 0x9996 && input <= 0x9A19) return CommonSubtables.COMMON1549[input - 0x9996];
-			if (input >= 0x9A2B && input <= 0x9A6A) return CommonSubtables.COMMON1550[input - 0x9A2B];
-			if (input >= 0x9E92 && input <= 0x9EF4) return CommonSubtables.COMMON1551[input - 0x9E92];
-			if (input >= 0xAC00 && input <= 0xBBFF) return CommonSubtables.COMMON1552[input - 0xAC00];
-			if (input >= 0xBC00 && input <= 0xCBFF) return CommonSubtables.COMMON1553[input - 0xBC00];
-			if (input >= 0xCC00 && input <= 0xD7A3) return CommonSubtables.COMMON1554[input - 0xCC00];
-			if (input >= 0xF900 && input <= 0xFA0B) return CommonSubtables.COMMON1555[input - 0xF900];
-			if (input >= 0xFF01 && input <= 0xFF5E) return CommonSubtables.COMMON1556[input - 0xFF01];
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1471[input - 0xA1];
+			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON1472[input - 0x391];
+			if (input >= 0x401 && input <= 0x451) return CommonSubtables.COMMON1473[input - 0x401];
+			if (input >= 0x2153 && input <= 0x2179) return CommonSubtables.COMMON1474[input - 0x2153];
+			if (input >= 0x2200 && input <= 0x223D) return CommonSubtables.COMMON1475[input - 0x2200];
+			if (input >= 0x2460 && input <= 0x2482) return CommonSubtables.COMMON1476[input - 0x2460];
+			if (input >= 0x249C && input <= 0x24B5) return CommonSubtables.COMMON1477[input - 0x249C];
+			if (input >= 0x24D0 && input <= 0x24E9) return CommonSubtables.COMMON1478[input - 0x24D0];
+			if (input >= 0x2500 && input <= 0x254B) return CommonSubtables.COMMON1479[input - 0x2500];
+			if (input >= 0x2592 && input <= 0x25D1) return CommonSubtables.COMMON1480[input - 0x2592];
+			if (input >= 0x3000 && input <= 0x3015) return CommonSubtables.COMMON1481[input - 0x3000];
+			if (input >= 0x3041 && input <= 0x30F6) return CommonSubtables.COMMON1482[input - 0x3041];
+			if (input >= 0x3131 && input <= 0x318E) return CommonSubtables.COMMON1483[input - 0x3131];
+			if (input >= 0x3200 && input <= 0x321C) return CommonSubtables.COMMON1484[input - 0x3200];
+			if (input >= 0x3260 && input <= 0x327F) return CommonSubtables.COMMON1485[input - 0x3260];
+			if (input >= 0x3380 && input <= 0x33DD) return CommonSubtables.COMMON1486[input - 0x3380];
+			if (input >= 0x4E00 && input <= 0x4F11) return CommonSubtables.COMMON1487[input - 0x4E00];
+			if (input >= 0x4F2F && input <= 0x5099) return CommonSubtables.COMMON1488[input - 0x4F2F];
+			if (input >= 0x50AC && input <= 0x52AB) return CommonSubtables.COMMON1489[input - 0x50AC];
+			if (input >= 0x52BE && input <= 0x5451) return CommonSubtables.COMMON1490[input - 0x52BE];
+			if (input >= 0x557C && input <= 0x55AE) return CommonSubtables.COMMON1491[input - 0x557C];
+			if (input >= 0x56A5 && input <= 0x57A3) return CommonSubtables.COMMON1492[input - 0x56A5];
+			if (input >= 0x57C3 && input <= 0x580A) return CommonSubtables.COMMON1493[input - 0x57C3];
+			if (input >= 0x581E && input <= 0x58FD) return CommonSubtables.COMMON1494[input - 0x581E];
+			if (input >= 0x590F && input <= 0x5A66) return CommonSubtables.COMMON1495[input - 0x590F];
+			if (input >= 0x5B40 && input <= 0x5C79) return CommonSubtables.COMMON1496[input - 0x5B40];
+			if (input >= 0x5CD9 && input <= 0x5D29) return CommonSubtables.COMMON1497[input - 0x5CD9];
+			if (input >= 0x5D9D && input <= 0x602F) return CommonSubtables.COMMON1498[input - 0x5D9D];
+			if (input >= 0x6041 && input <= 0x6070) return CommonSubtables.COMMON1499[input - 0x6041];
+			if (input >= 0x6085 && input <= 0x61CB) return CommonSubtables.COMMON1500[input - 0x6085];
+			if (input >= 0x61E6 && input <= 0x6258) return CommonSubtables.COMMON1501[input - 0x61E6];
+			if (input >= 0x626E && input <= 0x6311) return CommonSubtables.COMMON1502[input - 0x626E];
+			if (input >= 0x6367 && input <= 0x63AA) return CommonSubtables.COMMON1503[input - 0x6367];
+			if (input >= 0x6458 && input <= 0x6504) return CommonSubtables.COMMON1504[input - 0x6458];
+			if (input >= 0x6518 && input <= 0x679D) return CommonSubtables.COMMON1505[input - 0x6518];
+			if (input >= 0x67AF && input <= 0x67FE) return CommonSubtables.COMMON1506[input - 0x67AF];
+			if (input >= 0x6812 && input <= 0x6854) return CommonSubtables.COMMON1507[input - 0x6812];
+			if (input >= 0x686D && input <= 0x6912) return CommonSubtables.COMMON1508[input - 0x686D];
+			if (input >= 0x6927 && input <= 0x6979) return CommonSubtables.COMMON1509[input - 0x6927];
+			if (input >= 0x6A80 && input <= 0x6ADB) return CommonSubtables.COMMON1510[input - 0x6A80];
+			if (input >= 0x6AF6 && input <= 0x6BEC) return CommonSubtables.COMMON1511[input - 0x6AF6];
+			if (input >= 0x6C08 && input <= 0x6CF3) return CommonSubtables.COMMON1512[input - 0x6C08];
+			if (input >= 0x6D0B && input <= 0x6D41) return CommonSubtables.COMMON1513[input - 0x6D0B];
+			if (input >= 0x6D59 && input <= 0x6D95) return CommonSubtables.COMMON1514[input - 0x6D59];
+			if (input >= 0x6DAF && input <= 0x6DFB) return CommonSubtables.COMMON1515[input - 0x6DAF];
+			if (input >= 0x6E17 && input <= 0x6E7A) return CommonSubtables.COMMON1516[input - 0x6E17];
+			if (input >= 0x6E90 && input <= 0x6ED4) return CommonSubtables.COMMON1517[input - 0x6E90];
+			if (input >= 0x6EEF && input <= 0x70DF) return CommonSubtables.COMMON1518[input - 0x6EEF];
+			if (input >= 0x70F1 && input <= 0x7281) return CommonSubtables.COMMON1519[input - 0x70F1];
+			if (input >= 0x72A2 && input <= 0x7626) return CommonSubtables.COMMON1520[input - 0x72A2];
+			if (input >= 0x763B && input <= 0x7693) return CommonSubtables.COMMON1521[input - 0x763B];
+			if (input >= 0x76AE && input <= 0x770B) return CommonSubtables.COMMON1522[input - 0x76AE];
+			if (input >= 0x771E && input <= 0x77BF) return CommonSubtables.COMMON1523[input - 0x771E];
+			if (input >= 0x7825 && input <= 0x78D0) return CommonSubtables.COMMON1524[input - 0x7825];
+			if (input >= 0x792A && input <= 0x7991) return CommonSubtables.COMMON1525[input - 0x792A];
+			if (input >= 0x79A6 && input <= 0x79E9) return CommonSubtables.COMMON1526[input - 0x79A6];
+			if (input >= 0x79FB && input <= 0x7BE9) return CommonSubtables.COMMON1527[input - 0x79FB];
+			if (input >= 0x7C60 && input <= 0x7CE7) return CommonSubtables.COMMON1528[input - 0x7C60];
+			if (input >= 0x7CFB && input <= 0x7E9C) return CommonSubtables.COMMON1529[input - 0x7CFB];
+			if (input >= 0x7F6A && input <= 0x8018) return CommonSubtables.COMMON1530[input - 0x7F6A];
+			if (input >= 0x802D && input <= 0x8247) return CommonSubtables.COMMON1531[input - 0x802D];
+			if (input >= 0x8259 && input <= 0x82BF) return CommonSubtables.COMMON1532[input - 0x8259];
+			if (input >= 0x82D1 && input <= 0x8352) return CommonSubtables.COMMON1533[input - 0x82D1];
+			if (input >= 0x83BD && input <= 0x840E) return CommonSubtables.COMMON1534[input - 0x83BD];
+			if (input >= 0x8429 && input <= 0x847A) return CommonSubtables.COMMON1535[input - 0x8429];
+			if (input >= 0x8490 && input <= 0x84DA) return CommonSubtables.COMMON1536[input - 0x8490];
+			if (input >= 0x8511 && input <= 0x856D) return CommonSubtables.COMMON1537[input - 0x8511];
+			if (input >= 0x8584 && input <= 0x861A) return CommonSubtables.COMMON1538[input - 0x8584];
+			if (input >= 0x86C7 && input <= 0x871C) return CommonSubtables.COMMON1539[input - 0x86C7];
+			if (input >= 0x881F && input <= 0x8944) return CommonSubtables.COMMON1540[input - 0x881F];
+			if (input >= 0x895F && input <= 0x89C0) return CommonSubtables.COMMON1541[input - 0x895F];
+			if (input >= 0x89D2 && input <= 0x8A3B) return CommonSubtables.COMMON1542[input - 0x89D2];
+			if (input >= 0x8A50 && input <= 0x8B9A) return CommonSubtables.COMMON1543[input - 0x8A50];
+			if (input >= 0x8C37 && input <= 0x8D16) return CommonSubtables.COMMON1544[input - 0x8C37];
+			if (input >= 0x8D64 && input <= 0x8DF3) return CommonSubtables.COMMON1545[input - 0x8D64];
+			if (input >= 0x8E0A && input <= 0x8E60) return CommonSubtables.COMMON1546[input - 0x8E0A];
+			if (input >= 0x8EC0 && input <= 0x8F62) return CommonSubtables.COMMON1547[input - 0x8EC0];
+			if (input >= 0x8FE6 && input <= 0x90CA) return CommonSubtables.COMMON1548[input - 0x8FE6];
+			if (input >= 0x9149 && input <= 0x91F5) return CommonSubtables.COMMON1549[input - 0x9149];
+			if (input >= 0x92E4 && input <= 0x932F) return CommonSubtables.COMMON1550[input - 0x92E4];
+			if (input >= 0x9577 && input <= 0x95E2) return CommonSubtables.COMMON1551[input - 0x9577];
+			if (input >= 0x961C && input <= 0x97AD) return CommonSubtables.COMMON1552[input - 0x961C];
+			if (input >= 0x97F3 && input <= 0x9818) return CommonSubtables.COMMON1553[input - 0x97F3];
+			if (input >= 0x982D && input <= 0x986F) return CommonSubtables.COMMON1554[input - 0x982D];
+			if (input >= 0x98DB && input <= 0x9928) return CommonSubtables.COMMON1555[input - 0x98DB];
+			if (input >= 0x9996 && input <= 0x9A19) return CommonSubtables.COMMON1556[input - 0x9996];
+			if (input >= 0x9A2B && input <= 0x9A6A) return CommonSubtables.COMMON1557[input - 0x9A2B];
+			if (input >= 0x9E92 && input <= 0x9EF4) return CommonSubtables.COMMON1558[input - 0x9E92];
+			if (input >= 0xAC00 && input <= 0xBBFF) return CommonSubtables.COMMON1559[input - 0xAC00];
+			if (input >= 0xBC00 && input <= 0xCBFF) return CommonSubtables.COMMON1560[input - 0xBC00];
+			if (input >= 0xCC00 && input <= 0xD7A3) return CommonSubtables.COMMON1561[input - 0xCC00];
+			if (input >= 0xF900 && input <= 0xFA0B) return CommonSubtables.COMMON1562[input - 0xF900];
+			if (input >= 0xFF01 && input <= 0xFF5E) return CommonSubtables.COMMON1563[input - 0xFF01];
 			switch (input) {
 			case 0x111: return 0x32DDL;
 			case 0x126: return 0xA4DCL;

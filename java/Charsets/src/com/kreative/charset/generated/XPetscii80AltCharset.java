@@ -35,8 +35,8 @@ public class XPetscii80AltCharset extends Charset {
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
 			if (input >= 0x80 && input <= 0xA0) return input - 0x80 + 0x80;
 			if (input >= 0xC1 && input <= 0xDA) return input - 0xC1 + 0x41;
-			if (input >= 0xA1 && input <= 0xC0) return CommonSubtables.COMMON1699[input - 0xA1];
-			if (input >= 0xDB && input <= 0xFF) return CommonSubtables.COMMON1709[input - 0xDB];
+			if (input >= 0xA1 && input <= 0xC0) return CommonSubtables.COMMON1707[input - 0xA1];
+			if (input >= 0xDB && input <= 0xFF) return CommonSubtables.COMMON1717[input - 0xDB];
 			switch (input) {
 			case 0x5B: return 0x5BL;
 			case 0x5C: return 0xA3L;
@@ -82,7 +82,7 @@ public class XPetscii80AltCharset extends Charset {
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0xC1;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
 			if (input >= 0x80 && input <= 0xA0) return input - 0x80 + 0x80;
-			if (input >= 0x2581 && input <= 0x259D) return CommonSubtables.COMMON1700[input - 0x2581];
+			if (input >= 0x2581 && input <= 0x259D) return CommonSubtables.COMMON1708[input - 0x2581];
 			switch (input) {
 			case 0x5B: return 0x5BL;
 			case 0x5C: return 0x5CL;

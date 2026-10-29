@@ -44,7 +44,7 @@ public class XTrs80m3AltVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1733[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1746[input - 0x0];
 			if (input >= 0x7F && input <= 0xFF) return GETOUTPUT0_7F[input - 0x7F];
 			return 0;
 		}

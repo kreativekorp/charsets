@@ -34,7 +34,7 @@ public class XMousedeskEpoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1681[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1689[input - 0x0];
 			if (input >= 0x41 && input <= 0x50) return input - 0x41 + 0x41;
 			if (input >= 0x61 && input <= 0x70) return input - 0x61 + 0x61;
 			if (input >= 0x40 && input <= 0x7F) return GETOUTPUT0_40[input - 0x40];

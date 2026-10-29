@@ -46,13 +46,13 @@ public class XBcdTelephonyCharset extends Charset {
 
 	private static final class XBcdTelephonyCharsetEncoder extends TableCharsetEncoder {
 		private XBcdTelephonyCharsetEncoder(Charset cs) {
-			super(cs, 1f, 1f, new byte[]{15}, 1);
+			super(cs, 1f, 1f, new byte[]{10}, 1);
 		}
 		protected int getNextState(int state, int input) {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1226[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1232[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xCL;
 			case 0x62: return 0xDL;

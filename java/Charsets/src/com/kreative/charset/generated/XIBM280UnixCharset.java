@@ -30,7 +30,7 @@ public class XIBM280UnixCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x3F) return CommonSubtables.DECODE_EBCDIC_UNIX[input - 0x0];
-			if (input >= 0x40 && input <= 0xFF) return CommonSubtables.COMMON176[input - 0x40];
+			if (input >= 0x40 && input <= 0xFF) return CommonSubtables.COMMON181[input - 0x40];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -52,7 +52,7 @@ public class XIBM280UnixCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_EBCDIC_C0_UNIX[input - 0x0];
 			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_EBCDIC_C1[input - 0x80];
 			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON35[input - 0x20];
-			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.COMMON177[input - 0xA0];
+			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.COMMON182[input - 0xA0];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

@@ -37,7 +37,7 @@ public class XMsxKrVideoCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1C) return GETOUTPUT0_0[input - 0x0];
 			if (input >= 0x5D && input <= 0x7E) return input - 0x5D + 0x5D;
 			if (input >= 0x8F && input <= 0xA1) return input - 0x8F + 0x3145;
-			if (input >= 0xA2 && input <= 0xFB) return CommonSubtables.COMMON1690[input - 0xA2];
+			if (input >= 0xA2 && input <= 0xFB) return CommonSubtables.COMMON1698[input - 0xA2];
 			switch (input) {
 			case 0x5C: return 0x20A9L;
 			case 0x80: return 0x2660L;

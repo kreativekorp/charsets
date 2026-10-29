@@ -79,7 +79,7 @@ public class XGemdosVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1233[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1240[input - 0xA1];
 			switch (input) {
 			case 0x0: return 0x1L;
 			case 0x152: return 0xB5L;

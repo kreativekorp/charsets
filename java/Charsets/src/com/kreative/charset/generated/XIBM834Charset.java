@@ -91,7 +91,7 @@ public class XIBM834Charset extends Charset {
 		}
 		private long getOutput7(int input) {
 			if (input >= 0x61 && input <= 0x71) return input - 0x61 + 0x391;
-			if (input >= 0x41 && input <= 0x59) return CommonSubtables.COMMON270[input - 0x41];
+			if (input >= 0x41 && input <= 0x59) return CommonSubtables.COMMON276[input - 0x41];
 			if (input >= 0x81 && input <= 0x91) return input - 0x81 + 0x3B1;
 			switch (input) {
 			case 0x72: return 0x3A3L;
@@ -112,7 +112,7 @@ public class XIBM834Charset extends Charset {
 			return 0;
 		}
 		private long getOutput8(int input) {
-			if (input >= 0x41 && input <= 0x84) return CommonSubtables.COMMON271[input - 0x41];
+			if (input >= 0x41 && input <= 0x84) return CommonSubtables.COMMON277[input - 0x41];
 			return 0;
 		}
 		private static final char[] GETOUTPUT9_41 = getOutput9_41();
@@ -156,7 +156,7 @@ public class XIBM834Charset extends Charset {
 			if (input >= 0xB0 && input <= 0xCB) return input - 0xB0 + 0x3200;
 			if (input >= 0x87 && input <= 0xAF) return GETOUTPUT12_87[input - 0x87];
 			if (input >= 0xCC && input <= 0xE5) return input - 0xCC + 0x249C;
-			if (input >= 0xE6 && input <= 0xFD) return CommonSubtables.COMMON272[input - 0xE6];
+			if (input >= 0xE6 && input <= 0xFD) return CommonSubtables.COMMON278[input - 0xE6];
 			switch (input) {
 			case 0x41: return 0xC6L;
 			case 0x42: return 0xD0L;

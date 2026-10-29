@@ -32,7 +32,7 @@ public class XTrs80CocoVideoCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1D) return input - 0x0 + 0x40;
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x60 && input <= 0x7F) return input - 0x60 + 0x20;
-			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1732[input - 0x80];
+			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1745[input - 0x80];
 			switch (input) {
 			case 0x1E: return 0x2191L;
 			case 0x1F: return 0x2190L;

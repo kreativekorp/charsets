@@ -88,8 +88,8 @@ public class XKayproCharset extends Charset {
 			return 0;
 		}
 		private long getOutput1(int input) {
-			if (input >= 0xDD00 && input <= 0xDD35) return CommonSubtables.COMMON1557[input - 0xDD00];
-			if (input >= 0xDD71 && input <= 0xDDAB) return CommonSubtables.COMMON1558[input - 0xDD71];
+			if (input >= 0xDD00 && input <= 0xDD35) return CommonSubtables.COMMON1564[input - 0xDD00];
+			if (input >= 0xDD71 && input <= 0xDDAB) return CommonSubtables.COMMON1565[input - 0xDD71];
 			switch (input) {
 			case 0xDEA0: return 0xC0L;
 			case 0xDEA8: return 0x82L;

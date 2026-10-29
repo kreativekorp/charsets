@@ -84,331 +84,331 @@ public class XIBM964Charset extends Charset {
 			return 0;
 		}
 		private long getOutput3(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON840[input - 0xA1];
-			return 0;
-		}
-		private long getOutput4(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON841[input - 0xA1];
-			return 0;
-		}
-		private long getOutput5(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON842[input - 0xA1];
-			return 0;
-		}
-		private long getOutput6(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON843[input - 0xA1];
-			return 0;
-		}
-		private long getOutput7(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON748[input - 0xA1];
-			return 0;
-		}
-		private long getOutput8(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON844[input - 0xA1];
-			return 0;
-		}
-		private long getOutput9(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON845[input - 0xA1];
-			return 0;
-		}
-		private long getOutput10(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON846[input - 0xA1];
 			return 0;
 		}
-		private long getOutput11(int input) {
+		private long getOutput4(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON847[input - 0xA1];
 			return 0;
 		}
-		private long getOutput12(int input) {
+		private long getOutput5(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON848[input - 0xA1];
 			return 0;
 		}
-		private long getOutput13(int input) {
+		private long getOutput6(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON849[input - 0xA1];
 			return 0;
 		}
-		private long getOutput14(int input) {
+		private long getOutput7(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON754[input - 0xA1];
+			return 0;
+		}
+		private long getOutput8(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON850[input - 0xA1];
 			return 0;
 		}
-		private long getOutput15(int input) {
+		private long getOutput9(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON851[input - 0xA1];
 			return 0;
 		}
-		private long getOutput16(int input) {
+		private long getOutput10(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON852[input - 0xA1];
 			return 0;
 		}
-		private long getOutput17(int input) {
+		private long getOutput11(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON853[input - 0xA1];
 			return 0;
 		}
-		private long getOutput18(int input) {
+		private long getOutput12(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON854[input - 0xA1];
 			return 0;
 		}
-		private long getOutput19(int input) {
+		private long getOutput13(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON855[input - 0xA1];
 			return 0;
 		}
-		private long getOutput20(int input) {
+		private long getOutput14(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON856[input - 0xA1];
 			return 0;
 		}
-		private long getOutput21(int input) {
+		private long getOutput15(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON857[input - 0xA1];
 			return 0;
 		}
-		private long getOutput22(int input) {
+		private long getOutput16(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON858[input - 0xA1];
 			return 0;
 		}
-		private long getOutput23(int input) {
+		private long getOutput17(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON859[input - 0xA1];
 			return 0;
 		}
-		private long getOutput24(int input) {
+		private long getOutput18(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON860[input - 0xA1];
 			return 0;
 		}
-		private long getOutput25(int input) {
+		private long getOutput19(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON861[input - 0xA1];
 			return 0;
 		}
-		private long getOutput26(int input) {
+		private long getOutput20(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON862[input - 0xA1];
 			return 0;
 		}
-		private long getOutput27(int input) {
+		private long getOutput21(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON863[input - 0xA1];
 			return 0;
 		}
-		private long getOutput28(int input) {
+		private long getOutput22(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON864[input - 0xA1];
 			return 0;
 		}
-		private long getOutput29(int input) {
+		private long getOutput23(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON865[input - 0xA1];
 			return 0;
 		}
-		private long getOutput30(int input) {
+		private long getOutput24(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON866[input - 0xA1];
 			return 0;
 		}
-		private long getOutput31(int input) {
+		private long getOutput25(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON867[input - 0xA1];
 			return 0;
 		}
-		private long getOutput32(int input) {
+		private long getOutput26(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON868[input - 0xA1];
 			return 0;
 		}
-		private long getOutput33(int input) {
+		private long getOutput27(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON869[input - 0xA1];
 			return 0;
 		}
-		private long getOutput34(int input) {
+		private long getOutput28(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON870[input - 0xA1];
 			return 0;
 		}
-		private long getOutput35(int input) {
+		private long getOutput29(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON871[input - 0xA1];
 			return 0;
 		}
-		private long getOutput36(int input) {
+		private long getOutput30(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON872[input - 0xA1];
 			return 0;
 		}
-		private long getOutput37(int input) {
+		private long getOutput31(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON873[input - 0xA1];
 			return 0;
 		}
-		private long getOutput38(int input) {
+		private long getOutput32(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON874[input - 0xA1];
 			return 0;
 		}
-		private long getOutput39(int input) {
+		private long getOutput33(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON875[input - 0xA1];
 			return 0;
 		}
-		private long getOutput40(int input) {
+		private long getOutput34(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON876[input - 0xA1];
 			return 0;
 		}
-		private long getOutput41(int input) {
+		private long getOutput35(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON877[input - 0xA1];
 			return 0;
 		}
-		private long getOutput42(int input) {
+		private long getOutput36(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON878[input - 0xA1];
 			return 0;
 		}
-		private long getOutput43(int input) {
+		private long getOutput37(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON879[input - 0xA1];
 			return 0;
 		}
-		private long getOutput44(int input) {
+		private long getOutput38(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON880[input - 0xA1];
 			return 0;
 		}
-		private long getOutput45(int input) {
+		private long getOutput39(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON881[input - 0xA1];
 			return 0;
 		}
-		private long getOutput46(int input) {
+		private long getOutput40(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON882[input - 0xA1];
 			return 0;
 		}
-		private long getOutput47(int input) {
+		private long getOutput41(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON883[input - 0xA1];
 			return 0;
 		}
-		private long getOutput48(int input) {
+		private long getOutput42(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON884[input - 0xA1];
 			return 0;
 		}
-		private long getOutput49(int input) {
+		private long getOutput43(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON885[input - 0xA1];
 			return 0;
 		}
-		private long getOutput50(int input) {
+		private long getOutput44(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON886[input - 0xA1];
 			return 0;
 		}
-		private long getOutput51(int input) {
+		private long getOutput45(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON887[input - 0xA1];
 			return 0;
 		}
-		private long getOutput52(int input) {
+		private long getOutput46(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON888[input - 0xA1];
 			return 0;
 		}
-		private long getOutput53(int input) {
+		private long getOutput47(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON889[input - 0xA1];
 			return 0;
 		}
-		private long getOutput54(int input) {
+		private long getOutput48(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON890[input - 0xA1];
 			return 0;
 		}
-		private long getOutput55(int input) {
+		private long getOutput49(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON891[input - 0xA1];
 			return 0;
 		}
-		private long getOutput56(int input) {
+		private long getOutput50(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON892[input - 0xA1];
 			return 0;
 		}
-		private long getOutput57(int input) {
+		private long getOutput51(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON893[input - 0xA1];
 			return 0;
 		}
-		private long getOutput58(int input) {
+		private long getOutput52(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON894[input - 0xA1];
 			return 0;
 		}
-		private long getOutput59(int input) {
+		private long getOutput53(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON895[input - 0xA1];
 			return 0;
 		}
-		private long getOutput60(int input) {
+		private long getOutput54(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON896[input - 0xA1];
 			return 0;
 		}
-		private long getOutput61(int input) {
+		private long getOutput55(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON897[input - 0xA1];
 			return 0;
 		}
-		private long getOutput62(int input) {
+		private long getOutput56(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON898[input - 0xA1];
 			return 0;
 		}
-		private long getOutput63(int input) {
+		private long getOutput57(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON899[input - 0xA1];
 			return 0;
 		}
-		private long getOutput64(int input) {
+		private long getOutput58(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON900[input - 0xA1];
 			return 0;
 		}
-		private long getOutput65(int input) {
+		private long getOutput59(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON901[input - 0xA1];
 			return 0;
 		}
-		private long getOutput66(int input) {
+		private long getOutput60(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON902[input - 0xA1];
 			return 0;
 		}
-		private long getOutput67(int input) {
+		private long getOutput61(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON903[input - 0xA1];
 			return 0;
 		}
-		private long getOutput68(int input) {
+		private long getOutput62(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON904[input - 0xA1];
 			return 0;
 		}
-		private long getOutput69(int input) {
+		private long getOutput63(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON905[input - 0xA1];
 			return 0;
 		}
-		private long getOutput70(int input) {
+		private long getOutput64(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON906[input - 0xA1];
 			return 0;
 		}
-		private long getOutput71(int input) {
+		private long getOutput65(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON907[input - 0xA1];
 			return 0;
 		}
-		private long getOutput72(int input) {
+		private long getOutput66(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON908[input - 0xA1];
 			return 0;
 		}
-		private long getOutput73(int input) {
+		private long getOutput67(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON909[input - 0xA1];
 			return 0;
 		}
-		private long getOutput74(int input) {
+		private long getOutput68(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON910[input - 0xA1];
 			return 0;
 		}
-		private long getOutput75(int input) {
+		private long getOutput69(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON911[input - 0xA1];
 			return 0;
 		}
-		private long getOutput76(int input) {
+		private long getOutput70(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON912[input - 0xA1];
 			return 0;
 		}
-		private long getOutput77(int input) {
+		private long getOutput71(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON913[input - 0xA1];
 			return 0;
 		}
-		private long getOutput78(int input) {
+		private long getOutput72(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON914[input - 0xA1];
 			return 0;
 		}
-		private long getOutput79(int input) {
+		private long getOutput73(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON915[input - 0xA1];
 			return 0;
 		}
-		private long getOutput80(int input) {
+		private long getOutput74(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON916[input - 0xA1];
 			return 0;
 		}
-		private long getOutput81(int input) {
+		private long getOutput75(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON917[input - 0xA1];
 			return 0;
 		}
-		private long getOutput82(int input) {
+		private long getOutput76(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON918[input - 0xA1];
 			return 0;
 		}
-		private long getOutput83(int input) {
+		private long getOutput77(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON919[input - 0xA1];
 			return 0;
 		}
+		private long getOutput78(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON920[input - 0xA1];
+			return 0;
+		}
+		private long getOutput79(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON921[input - 0xA1];
+			return 0;
+		}
+		private long getOutput80(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON922[input - 0xA1];
+			return 0;
+		}
+		private long getOutput81(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON923[input - 0xA1];
+			return 0;
+		}
+		private long getOutput82(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON924[input - 0xA1];
+			return 0;
+		}
+		private long getOutput83(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON925[input - 0xA1];
+			return 0;
+		}
 		private long getOutput84(int input) {
-			if (input >= 0xA1 && input <= 0xC4) return CommonSubtables.COMMON920[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xC4) return CommonSubtables.COMMON926[input - 0xA1];
 			return 0;
 		}
 		private long getOutput86(int input) {
@@ -730,7 +730,7 @@ public class XIBM964Charset extends Charset {
 			return 0;
 		}
 		private long getOutput159(int input) {
-			if (input >= 0xA1 && input <= 0xCE) return CommonSubtables.COMMON921[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xCE) return CommonSubtables.COMMON927[input - 0xA1];
 			return 0;
 		}
 		private static final char[] GETOUTPUT160_A1 = getOutput160_A1();
@@ -789,7 +789,7 @@ public class XIBM964Charset extends Charset {
 			return 0;
 		}
 		private long getOutput162(int input) {
-			if (input >= 0xA1 && input <= 0xBE) return CommonSubtables.COMMON922[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xBE) return CommonSubtables.COMMON928[input - 0xA1];
 			return 0;
 		}
 		private static final char[] GETOUTPUT163_A1 = getOutput163_A1();
@@ -809,7 +809,7 @@ public class XIBM964Charset extends Charset {
 			return 0;
 		}
 		private long getOutput165(int input) {
-			if (input >= 0xA1 && input <= 0xB9) return CommonSubtables.COMMON436[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xB9) return CommonSubtables.COMMON442[input - 0xA1];
 			return 0;
 		}
 		private long getOutput166(int input) {
@@ -820,235 +820,235 @@ public class XIBM964Charset extends Charset {
 			return 0;
 		}
 		private long getOutput167(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON923[input - 0xA1];
-			return 0;
-		}
-		private long getOutput168(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON924[input - 0xA1];
-			return 0;
-		}
-		private long getOutput169(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON925[input - 0xA1];
-			return 0;
-		}
-		private long getOutput170(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON926[input - 0xA1];
-			return 0;
-		}
-		private long getOutput171(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON927[input - 0xA1];
-			return 0;
-		}
-		private long getOutput172(int input) {
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON928[input - 0xA1];
-			return 0;
-		}
-		private long getOutput173(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON929[input - 0xA1];
 			return 0;
 		}
-		private long getOutput174(int input) {
+		private long getOutput168(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON930[input - 0xA1];
 			return 0;
 		}
-		private long getOutput175(int input) {
+		private long getOutput169(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON931[input - 0xA1];
 			return 0;
 		}
-		private long getOutput176(int input) {
+		private long getOutput170(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON932[input - 0xA1];
 			return 0;
 		}
-		private long getOutput177(int input) {
+		private long getOutput171(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON933[input - 0xA1];
 			return 0;
 		}
-		private long getOutput178(int input) {
+		private long getOutput172(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON934[input - 0xA1];
 			return 0;
 		}
-		private long getOutput179(int input) {
+		private long getOutput173(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON935[input - 0xA1];
 			return 0;
 		}
-		private long getOutput180(int input) {
+		private long getOutput174(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON936[input - 0xA1];
 			return 0;
 		}
-		private long getOutput181(int input) {
+		private long getOutput175(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON937[input - 0xA1];
 			return 0;
 		}
-		private long getOutput182(int input) {
+		private long getOutput176(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON938[input - 0xA1];
 			return 0;
 		}
-		private long getOutput183(int input) {
+		private long getOutput177(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON939[input - 0xA1];
 			return 0;
 		}
-		private long getOutput184(int input) {
+		private long getOutput178(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON940[input - 0xA1];
 			return 0;
 		}
-		private long getOutput185(int input) {
+		private long getOutput179(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON941[input - 0xA1];
 			return 0;
 		}
-		private long getOutput186(int input) {
+		private long getOutput180(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON942[input - 0xA1];
 			return 0;
 		}
-		private long getOutput187(int input) {
+		private long getOutput181(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON943[input - 0xA1];
 			return 0;
 		}
-		private long getOutput188(int input) {
+		private long getOutput182(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON944[input - 0xA1];
 			return 0;
 		}
-		private long getOutput189(int input) {
+		private long getOutput183(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON945[input - 0xA1];
 			return 0;
 		}
-		private long getOutput190(int input) {
+		private long getOutput184(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON946[input - 0xA1];
 			return 0;
 		}
-		private long getOutput191(int input) {
+		private long getOutput185(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON947[input - 0xA1];
 			return 0;
 		}
-		private long getOutput192(int input) {
+		private long getOutput186(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON948[input - 0xA1];
 			return 0;
 		}
-		private long getOutput193(int input) {
+		private long getOutput187(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON949[input - 0xA1];
 			return 0;
 		}
-		private long getOutput194(int input) {
+		private long getOutput188(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON950[input - 0xA1];
 			return 0;
 		}
-		private long getOutput195(int input) {
+		private long getOutput189(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON951[input - 0xA1];
 			return 0;
 		}
-		private long getOutput196(int input) {
+		private long getOutput190(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON952[input - 0xA1];
 			return 0;
 		}
-		private long getOutput197(int input) {
+		private long getOutput191(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON953[input - 0xA1];
 			return 0;
 		}
-		private long getOutput198(int input) {
+		private long getOutput192(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON954[input - 0xA1];
 			return 0;
 		}
-		private long getOutput199(int input) {
+		private long getOutput193(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON955[input - 0xA1];
 			return 0;
 		}
-		private long getOutput200(int input) {
+		private long getOutput194(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON956[input - 0xA1];
 			return 0;
 		}
-		private long getOutput201(int input) {
+		private long getOutput195(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON957[input - 0xA1];
 			return 0;
 		}
-		private long getOutput202(int input) {
+		private long getOutput196(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON958[input - 0xA1];
 			return 0;
 		}
-		private long getOutput203(int input) {
+		private long getOutput197(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON959[input - 0xA1];
 			return 0;
 		}
-		private long getOutput204(int input) {
+		private long getOutput198(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON960[input - 0xA1];
 			return 0;
 		}
-		private long getOutput205(int input) {
+		private long getOutput199(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON961[input - 0xA1];
 			return 0;
 		}
-		private long getOutput206(int input) {
+		private long getOutput200(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON962[input - 0xA1];
 			return 0;
 		}
-		private long getOutput207(int input) {
+		private long getOutput201(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON963[input - 0xA1];
 			return 0;
 		}
-		private long getOutput208(int input) {
+		private long getOutput202(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON964[input - 0xA1];
 			return 0;
 		}
-		private long getOutput209(int input) {
+		private long getOutput203(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON965[input - 0xA1];
 			return 0;
 		}
-		private long getOutput210(int input) {
+		private long getOutput204(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON966[input - 0xA1];
 			return 0;
 		}
-		private long getOutput211(int input) {
+		private long getOutput205(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON967[input - 0xA1];
 			return 0;
 		}
-		private long getOutput212(int input) {
+		private long getOutput206(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON968[input - 0xA1];
 			return 0;
 		}
-		private long getOutput213(int input) {
+		private long getOutput207(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON969[input - 0xA1];
 			return 0;
 		}
-		private long getOutput214(int input) {
+		private long getOutput208(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON970[input - 0xA1];
 			return 0;
 		}
-		private long getOutput215(int input) {
+		private long getOutput209(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON971[input - 0xA1];
 			return 0;
 		}
-		private long getOutput216(int input) {
+		private long getOutput210(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON972[input - 0xA1];
 			return 0;
 		}
-		private long getOutput217(int input) {
+		private long getOutput211(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON973[input - 0xA1];
 			return 0;
 		}
-		private long getOutput218(int input) {
+		private long getOutput212(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON974[input - 0xA1];
 			return 0;
 		}
-		private long getOutput219(int input) {
+		private long getOutput213(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON975[input - 0xA1];
 			return 0;
 		}
-		private long getOutput220(int input) {
+		private long getOutput214(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON976[input - 0xA1];
 			return 0;
 		}
-		private long getOutput221(int input) {
+		private long getOutput215(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON977[input - 0xA1];
 			return 0;
 		}
-		private long getOutput222(int input) {
+		private long getOutput216(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON978[input - 0xA1];
 			return 0;
 		}
-		private long getOutput223(int input) {
+		private long getOutput217(int input) {
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON979[input - 0xA1];
 			return 0;
 		}
+		private long getOutput218(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON980[input - 0xA1];
+			return 0;
+		}
+		private long getOutput219(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON981[input - 0xA1];
+			return 0;
+		}
+		private long getOutput220(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON982[input - 0xA1];
+			return 0;
+		}
+		private long getOutput221(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON983[input - 0xA1];
+			return 0;
+		}
+		private long getOutput222(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON984[input - 0xA1];
+			return 0;
+		}
+		private long getOutput223(int input) {
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON985[input - 0xA1];
+			return 0;
+		}
 		private long getOutput224(int input) {
-			if (input >= 0xA1 && input <= 0xCB) return CommonSubtables.COMMON980[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xCB) return CommonSubtables.COMMON986[input - 0xA1];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

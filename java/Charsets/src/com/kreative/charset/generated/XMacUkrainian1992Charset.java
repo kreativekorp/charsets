@@ -33,7 +33,7 @@ public class XMacUkrainian1992Charset extends Charset {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0x9F) return input - 0x80 + 0x410;
 			if (input >= 0xE0 && input <= 0xFE) return input - 0xE0 + 0x430;
-			if (input >= 0xA0 && input <= 0xDF) return CommonSubtables.COMMON1123[input - 0xA0];
+			if (input >= 0xA0 && input <= 0xDF) return CommonSubtables.COMMON1129[input - 0xA0];
 			switch (input) {
 			case 0xFF: return 0xA4L;
 			}

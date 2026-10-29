@@ -2111,7 +2111,7 @@ public class XKps9566Charset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA1 && input <= 0xFF) return GETOUTPUT0_A1[input - 0xA1];
-			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON128[input - 0x391];
+			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON133[input - 0x391];
 			if (input >= 0x401 && input <= 0x451) return GETOUTPUT0_401[input - 0x401];
 			if (input >= 0x2010 && input <= 0x203B) return GETOUTPUT0_2010[input - 0x2010];
 			if (input >= 0x2070 && input <= 0x2089) return GETOUTPUT0_2070[input - 0x2070];

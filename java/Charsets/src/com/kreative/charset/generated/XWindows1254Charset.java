@@ -38,7 +38,7 @@ public class XWindows1254Charset extends Charset {
 			if (input >= 0xA0 && input <= 0xCF) return input - 0xA0 + 0xA0;
 			if (input >= 0x80 && input <= 0x9F) return GETOUTPUT0_80[input - 0x80];
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;
-			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.COMMON1235[input - 0xF0];
+			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.COMMON1242[input - 0xF0];
 			switch (input) {
 			case 0xD0: return 0x11EL;
 			case 0xD1: return 0xD1L;

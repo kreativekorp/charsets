@@ -63,7 +63,7 @@ public class XIBM862Charset extends Charset {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xBF) return GETOUTPUT0_A0[input - 0xA0];
 			if (input >= 0x5D0 && input <= 0x5EA) return input - 0x5D0 + 0x80;
-			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON263[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON266[input - 0x2550];
 			switch (input) {
 			case 0xD1: return 0xA5L;
 			case 0xDF: return 0xE1L;

@@ -31,7 +31,7 @@ public class XIso885913Charset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA0) return input - 0x20 + 0x20;
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON286[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON292[input - 0xA1];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -52,7 +52,7 @@ public class XIso885913Charset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA0) return input - 0x20 + 0x20;
-			if (input >= 0xA2 && input <= 0x17E) return CommonSubtables.COMMON287[input - 0xA2];
+			if (input >= 0xA2 && input <= 0x17E) return CommonSubtables.COMMON293[input - 0xA2];
 			switch (input) {
 			case 0x2019: return 0xFF01L;
 			case 0x201C: return 0xB4L;

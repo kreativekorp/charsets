@@ -31,10 +31,10 @@ public class XOricsciiAltVideoCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x20) return input - 0x0 + 0x80;
 			if (input >= 0x60 && input <= 0x7F) return input - 0x60 + 0xF060;
-			if (input >= 0x21 && input <= 0x5F) return CommonSubtables.COMMON1693[input - 0x21];
+			if (input >= 0x21 && input <= 0x5F) return CommonSubtables.COMMON1701[input - 0x21];
 			if (input >= 0x80 && input <= 0xA0) return input - 0x80 + 0x80;
 			if (input >= 0xE0 && input <= 0xFF) return input - 0xE0 + 0xF060;
-			if (input >= 0xA1 && input <= 0xDF) return CommonSubtables.COMMON1693[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xDF) return CommonSubtables.COMMON1701[input - 0xA1];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -47,7 +47,7 @@ public class XOricsciiAltVideoCharset extends Charset {
 
 	private static final class XOricsciiAltVideoCharsetEncoder extends TableCharsetEncoder {
 		private XOricsciiAltVideoCharsetEncoder(Charset cs) {
-			super(cs, 1f, 1f, new byte[]{-1}, 2);
+			super(cs, 1f, 1f, new byte[]{32}, 2);
 		}
 		private int getNextState0(int input) {
 			switch (input) {

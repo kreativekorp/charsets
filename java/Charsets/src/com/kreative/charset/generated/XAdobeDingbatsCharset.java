@@ -32,9 +32,9 @@ public class XAdobeDingbatsCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
 			if (input >= 0x2C && input <= 0x47) return input - 0x2C + 0x270C;
 			if (input >= 0x49 && input <= 0x6B) return input - 0x49 + 0x2729;
-			if (input >= 0x6C && input <= 0x8D) return CommonSubtables.COMMON1124[input - 0x6C];
+			if (input >= 0x6C && input <= 0x8D) return CommonSubtables.COMMON1130[input - 0x6C];
 			if (input >= 0xB6 && input <= 0xD4) return input - 0xB6 + 0x2776;
-			if (input >= 0xA1 && input <= 0xB5) return CommonSubtables.COMMON1125[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xB5) return CommonSubtables.COMMON1131[input - 0xA1];
 			if (input >= 0xD8 && input <= 0xEF) return input - 0xD8 + 0x2798;
 			switch (input) {
 			case 0x20: return 0x20L;
@@ -80,7 +80,7 @@ public class XAdobeDingbatsCharset extends Charset {
 
 	private static final class XAdobeDingbatsCharsetEncoder extends TableCharsetEncoder {
 		private XAdobeDingbatsCharsetEncoder(Charset cs) {
-			super(cs, 1f, 1f, new byte[]{32}, 1);
+			super(cs, 1f, 1f, new byte[]{81}, 1);
 		}
 		protected int getNextState(int state, int input) {
 			return 0;
@@ -90,7 +90,7 @@ public class XAdobeDingbatsCharset extends Charset {
 			if (input >= 0x270C && input <= 0x2727) return input - 0x270C + 0x2C;
 			if (input >= 0x2729 && input <= 0x274B) return input - 0x2729 + 0x49;
 			if (input >= 0x2776 && input <= 0x2794) return input - 0x2776 + 0xB6;
-			if (input >= 0x274D && input <= 0x2767) return CommonSubtables.COMMON1126[input - 0x274D];
+			if (input >= 0x274D && input <= 0x2767) return CommonSubtables.COMMON1132[input - 0x274D];
 			if (input >= 0x2798 && input <= 0x27AF) return input - 0x2798 + 0xD8;
 			switch (input) {
 			case 0x20: return 0x20L;

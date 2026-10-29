@@ -156,7 +156,7 @@ public class XIBM948Charset extends Charset {
 			return 0;
 		}
 		private long getOutput7(int input) {
-			if (input >= 0x40 && input <= 0x58) return CommonSubtables.COMMON436[input - 0x40];
+			if (input >= 0x40 && input <= 0x58) return CommonSubtables.COMMON442[input - 0x40];
 			return 0;
 		}
 		private static final char[] GETOUTPUT8_40 = getOutput8_40();
@@ -1173,8 +1173,8 @@ public class XIBM948Charset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON328[input - 0x391];
-			if (input >= 0x401 && input <= 0x451) return CommonSubtables.COMMON329[input - 0x401];
+			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON334[input - 0x391];
+			if (input >= 0x401 && input <= 0x451) return CommonSubtables.COMMON335[input - 0x401];
 			if (input >= 0x2010 && input <= 0x203E) return GETOUTPUT0_2010[input - 0x2010];
 			if (input >= 0x2160 && input <= 0x2179) return GETOUTPUT0_2160[input - 0x2160];
 			if (input >= 0x2200 && input <= 0x223D) return GETOUTPUT0_2200[input - 0x2200];

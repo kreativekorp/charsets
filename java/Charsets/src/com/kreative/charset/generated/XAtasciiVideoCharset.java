@@ -31,10 +31,10 @@ public class XAtasciiVideoCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x3F) return input - 0x0 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x61;
-			if (input >= 0x40 && input <= 0x60) return CommonSubtables.COMMON1208[input - 0x40];
+			if (input >= 0x40 && input <= 0x60) return CommonSubtables.COMMON1214[input - 0x40];
 			if (input >= 0x80 && input <= 0xBF) return input - 0x80 + 0x20;
 			if (input >= 0xE1 && input <= 0xFA) return input - 0xE1 + 0x61;
-			if (input >= 0xC0 && input <= 0xE0) return CommonSubtables.COMMON1208[input - 0xC0];
+			if (input >= 0xC0 && input <= 0xE0) return CommonSubtables.COMMON1214[input - 0xC0];
 			switch (input) {
 			case 0x7B: return 0x2660L;
 			case 0x7C: return 0x2502L;

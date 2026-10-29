@@ -69,7 +69,7 @@ public class XIBM737Charset extends Charset {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x391 && input <= 0x3A1) return input - 0x391 + 0x80;
 			if (input >= 0x3B1 && input <= 0x3C1) return input - 0x3B1 + 0x98;
-			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON263[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON266[input - 0x2550];
 			switch (input) {
 			case 0xA0: return 0xFF01L;
 			case 0xB0: return 0xF8L;

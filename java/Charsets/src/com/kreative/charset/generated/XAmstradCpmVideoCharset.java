@@ -74,7 +74,7 @@ public class XAmstradCpmVideoCharset extends Charset {
 			if (input >= 0x5F && input <= 0x7E) return input - 0x5F + 0x5F;
 			if (input >= 0xA1 && input <= 0xFF) return GETOUTPUT0_A1[input - 0xA1];
 			if (input >= 0x393 && input <= 0x3C7) return GETOUTPUT0_393[input - 0x393];
-			if (input >= 0x2550 && input <= 0x2577) return CommonSubtables.COMMON1200[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x2577) return CommonSubtables.COMMON1206[input - 0x2550];
 			switch (input) {
 			case 0x5E: return 0xB4L;
 			case 0x178: return 0xCFL;

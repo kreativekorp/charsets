@@ -37,7 +37,7 @@ public class XMacThai1992Charset extends Charset {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA1 && input <= 0xDA) return input - 0xA1 + 0xE01;
 			if (input >= 0x80 && input <= 0xA0) return GETOUTPUT0_80[input - 0x80];
-			if (input >= 0xDB && input <= 0xFB) return CommonSubtables.COMMON1193[input - 0xDB];
+			if (input >= 0xDB && input <= 0xFB) return CommonSubtables.COMMON1199[input - 0xDB];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -79,8 +79,8 @@ public class XMacThai1992Charset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xE01 && input <= 0xE3A) return input - 0xE01 + 0xA1;
-			if (input >= 0xE3F && input <= 0xE59) return CommonSubtables.COMMON1194[input - 0xE3F];
-			if (input >= 0xF884 && input <= 0xF899) return CommonSubtables.COMMON1195[input - 0xF884];
+			if (input >= 0xE3F && input <= 0xE59) return CommonSubtables.COMMON1200[input - 0xE3F];
+			if (input >= 0xF884 && input <= 0xF899) return CommonSubtables.COMMON1201[input - 0xF884];
 			switch (input) {
 			case 0xA0: return 0xA0L;
 			case 0xA9: return 0xFBL;

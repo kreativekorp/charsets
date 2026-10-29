@@ -44,7 +44,7 @@ public class XPetscii80AltVideoCharset extends Charset {
 			if (input >= 0x5B && input <= 0x80) return GETOUTPUT0_5B[input - 0x5B];
 			if (input >= 0xA0 && input <= 0xBF) return input - 0xA0 + 0x20;
 			if (input >= 0xC1 && input <= 0xDA) return input - 0xC1 + 0x41;
-			if (input >= 0xDB && input <= 0xFF) return CommonSubtables.COMMON1708[input - 0xDB];
+			if (input >= 0xDB && input <= 0xFF) return CommonSubtables.COMMON1716[input - 0xDB];
 			switch (input) {
 			case 0x0: return 0x40L;
 			case 0x1B: return 0x5BL;
@@ -90,7 +90,7 @@ public class XPetscii80AltVideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x41;
 			if (input >= 0x68 && input <= 0x7A) return input - 0x68 + 0x8;
-			if (input >= 0x2581 && input <= 0x259D) return CommonSubtables.COMMON1698[input - 0x2581];
+			if (input >= 0x2581 && input <= 0x259D) return CommonSubtables.COMMON1706[input - 0x2581];
 			switch (input) {
 			case 0x40: return 0x1L;
 			case 0x5B: return 0x1BL;

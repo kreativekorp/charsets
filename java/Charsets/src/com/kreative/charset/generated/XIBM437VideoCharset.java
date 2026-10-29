@@ -68,7 +68,7 @@ public class XIBM437VideoCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFF) return GETOUTPUT0_A0[input - 0xA0];
-			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON263[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON266[input - 0x2550];
 			if (input >= 0x2580 && input <= 0x25D9) return GETOUTPUT0_2580[input - 0x2580];
 			switch (input) {
 			case 0x0: return 0x1L;

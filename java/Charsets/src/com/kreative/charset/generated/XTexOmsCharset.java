@@ -1,0 +1,149 @@
+package com.kreative.charset.generated;
+
+import com.kreative.charset.TableCharsetDecoder;
+import com.kreative.charset.TableCharsetEncoder;
+import java.nio.charset.Charset;
+
+public class XTexOmsCharset extends Charset {
+	public XTexOmsCharset() {
+		super("x-tex-oms", new String[]{});
+	}
+
+	public boolean contains(Charset cs) {
+		return false;
+	}
+
+	public TableCharsetDecoder newDecoder() {
+		return new XTexOmsCharsetDecoder(this);
+	}
+
+	public TableCharsetEncoder newEncoder() {
+		return new XTexOmsCharsetEncoder(this);
+	}
+
+	private static final class XTexOmsCharsetDecoder extends TableCharsetDecoder {
+		private XTexOmsCharsetDecoder(Charset cs) {
+			super(cs, 1.14062f, 2f, 1);
+		}
+		protected int getNextState(int state, int input) {
+			return 0;
+		}
+		private static final int[] GETOUTPUT0_0 = getOutput0_0();
+		private static final int[] getOutput0_0() {
+			return new int[] {
+				0x2212, 0x22C5, 0xD7, 0x2217, 0xF7, 0x22C4, 0xB1, 0x2213, 0x2295, 0x2296, 0x2297, 0x2298, 0x2299, 0x25CB, 0x2218, 0x2219,
+				0x224D, 0x2261, 0x2286, 0x2287, 0x2264, 0x2265, 0x227C, 0x227D, 0x223C, 0x2248, 0x2282, 0x2283, 0x226A, 0x226B, 0x227A, 0x227B,
+				0x2190, 0x2192, 0x2191, 0x2193, 0x2194, 0x2197, 0x2198, 0x2243, 0x21D0, 0x21D2, 0x21D1, 0x21D3, 0x21D4, 0x2196, 0x2199, 0x221D,
+				0x2032, 0x221E, 0x2208, 0x220B, 0x25B3, 0x25BD, 0x338, 0x30D, 0x2200, 0x2203, 0xAC, 0x2205, 0x211C, 0x2111, 0x22A4, 0x22A5,
+				0x2135, 0xDC9CD835, 0x212C, 0xDC9ED835, 0xDC9FD835, 0x2130, 0x2131, 0xDCA2D835, 0x210B, 0x2110, 0xDCA5D835, 0xDCA6D835, 0x2112, 0x2133, 0xDCA9D835, 0xDCAAD835,
+				0xDCABD835, 0xDCACD835, 0x211B, 0xDCAED835, 0xDCAFD835, 0xDCB0D835, 0xDCB1D835, 0xDCB2D835, 0xDCB3D835, 0xDCB4D835, 0xDCB5D835, 0x222A, 0x2229, 0x228E, 0x2227, 0x2228,
+				0x22A2, 0x22A3, 0x230A, 0x230B, 0x2308, 0x2309, 0x7B, 0x7D, 0x27E8, 0x27E9, 0x2223, 0x2225, 0x2195, 0x21D5, 0x2216, 0x2240,
+				0x221A, 0x2A3F, 0x2207, 0x222B, 0x2294, 0x2293, 0x2291, 0x2292, 0xA7, 0x2020, 0x2021, 0xB6, 0x2663, 0x2662, 0x2661, 0x2660,
+			};
+		}
+		private long getOutput0(int input) {
+			if (input >= 0x0 && input <= 0x7F) return GETOUTPUT0_0[input - 0x0];
+			return 0;
+		}
+		protected long getOutput(int state, int input) {
+			switch (state) {
+			case 0: return getOutput0(input);
+			default: return 0;
+			}
+		}
+	}
+
+	private static final class XTexOmsCharsetEncoder extends TableCharsetEncoder {
+		private XTexOmsCharsetEncoder(Charset cs) {
+			super(cs, 1f, 1f, new byte[]{3}, 2);
+		}
+		private int getNextState0(int input) {
+			switch (input) {
+			case 0xD835: return 0x1;
+			}
+			return 0;
+		}
+		protected int getNextState(int state, int input) {
+			switch (state) {
+			case 0: return getNextState0(input);
+			default: return 0;
+			}
+		}
+		private long getOutput0(int input) {
+			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x41;
+			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
+			if (input >= 0x2200 && input <= 0x224D) return CommonSubtables.COMMON1742[input - 0x2200];
+			if (input >= 0x2261 && input <= 0x22A5) return CommonSubtables.COMMON1743[input - 0x2261];
+			switch (input) {
+			case 0x7B: return 0x66L;
+			case 0x7D: return 0x67L;
+			case 0xA7: return 0x78L;
+			case 0xAC: return 0x3AL;
+			case 0xB1: return 0x601L;
+			case 0xB6: return 0x7BL;
+			case 0xD7: return 0x201L;
+			case 0xF7: return 0x401L;
+			case 0x30D: return 0x37L;
+			case 0x338: return 0x36L;
+			case 0x2020: return 0x79L;
+			case 0x2021: return 0x7AL;
+			case 0x2032: return 0x30L;
+			case 0x210B: return 0x48L;
+			case 0x2110: return 0x49L;
+			case 0x2111: return 0x3DL;
+			case 0x2112: return 0x4CL;
+			case 0x211B: return 0x52L;
+			case 0x211C: return 0x3CL;
+			case 0x212C: return 0x42L;
+			case 0x2130: return 0x45L;
+			case 0x2131: return 0x46L;
+			case 0x2133: return 0x4DL;
+			case 0x2135: return 0x40L;
+			case 0x2190: return 0x20L;
+			case 0x2191: return 0x22L;
+			case 0x2192: return 0x21L;
+			case 0x2193: return 0x23L;
+			case 0x2194: return 0x24L;
+			case 0x2195: return 0x6CL;
+			case 0x2196: return 0x2DL;
+			case 0x2197: return 0x25L;
+			case 0x2198: return 0x26L;
+			case 0x2199: return 0x2EL;
+			case 0x21D0: return 0x28L;
+			case 0x21D1: return 0x2AL;
+			case 0x21D2: return 0x29L;
+			case 0x21D3: return 0x2BL;
+			case 0x21D4: return 0x2CL;
+			case 0x21D5: return 0x6DL;
+			case 0x22C4: return 0x501L;
+			case 0x22C5: return 0x101L;
+			case 0x2308: return 0x64L;
+			case 0x2309: return 0x65L;
+			case 0x230A: return 0x62L;
+			case 0x230B: return 0x63L;
+			case 0x25B3: return 0x34L;
+			case 0x25BD: return 0x35L;
+			case 0x25CB: return 0xDL;
+			case 0x2660: return 0x7FL;
+			case 0x2661: return 0x7EL;
+			case 0x2662: return 0x7DL;
+			case 0x2663: return 0x7CL;
+			case 0x27E8: return 0x68L;
+			case 0x27E9: return 0x69L;
+			case 0x2A3F: return 0x71L;
+			}
+			return 0;
+		}
+		private long getOutput1(int input) {
+			if (input >= 0xDC9C && input <= 0xDCB5) return CommonSubtables.COMMON1744[input - 0xDC9C];
+			return 0;
+		}
+		protected long getOutput(int state, int input) {
+			switch (state) {
+			case 0: return getOutput0(input);
+			case 1: return getOutput1(input);
+			default: return 0;
+			}
+		}
+	}
+}

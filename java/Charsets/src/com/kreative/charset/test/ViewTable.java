@@ -184,7 +184,12 @@ public class ViewTable {
 			for (Map.Entry<String,TablePanel> e : panels.entrySet()) {
 				tables.add(e.getValue(), e.getKey());
 			}
-			add(tables, BorderLayout.CENTER);
+			JScrollPane pane2 = new JScrollPane(
+				tables,
+				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER
+			);
+			add(pane2, BorderLayout.CENTER);
 			
 			list.addListSelectionListener(new ListSelectionListener() {
 				public void valueChanged(ListSelectionEvent e) {

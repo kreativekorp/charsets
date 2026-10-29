@@ -52,7 +52,7 @@ public class XBcdElectronikaCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1214[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1220[input - 0x20];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
