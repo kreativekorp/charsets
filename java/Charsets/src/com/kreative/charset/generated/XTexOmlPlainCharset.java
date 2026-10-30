@@ -78,7 +78,7 @@ public class XTexOmlPlainCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x41;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x61;
-			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.COMMON1740[input - 0x391];
+			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.COMMON1745[input - 0x391];
 			switch (input) {
 			case 0x2C: return 0x3BL;
 			case 0x2E: return 0x3AL;
@@ -125,7 +125,7 @@ public class XTexOmlPlainCharset extends Charset {
 		private long getOutput1(int input) {
 			if (input >= 0xDC34 && input <= 0xDC4D) return input - 0xDC34 + 0x41;
 			if (input >= 0xDC56 && input <= 0xDC67) return input - 0xDC56 + 0x69;
-			if (input >= 0xDEE2 && input <= 0xDF1B) return CommonSubtables.COMMON1741[input - 0xDEE2];
+			if (input >= 0xDEE2 && input <= 0xDF1B) return CommonSubtables.COMMON1746[input - 0xDEE2];
 			switch (input) {
 			case 0xDC4E: return 0x61L;
 			case 0xDC4F: return 0x62L;

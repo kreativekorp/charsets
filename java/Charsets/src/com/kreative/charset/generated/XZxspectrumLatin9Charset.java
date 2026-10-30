@@ -34,7 +34,7 @@ public class XZxspectrumLatin9Charset extends Charset {
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0x80 && input <= 0xA3) return input - 0x80 + 0x80;
 			if (input >= 0xBF && input <= 0xFF) return input - 0xBF + 0xBF;
-			if (input >= 0xA4 && input <= 0xBE) return CommonSubtables.COMMON1241[input - 0xA4];
+			if (input >= 0xA4 && input <= 0xBE) return CommonSubtables.COMMON1246[input - 0xA4];
 			switch (input) {
 			case 0x5E: return 0x2191L;
 			case 0x5F: return 0x5FL;

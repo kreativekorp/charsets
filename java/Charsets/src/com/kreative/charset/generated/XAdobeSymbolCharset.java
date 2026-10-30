@@ -36,7 +36,7 @@ public class XAdobeSymbolCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
 			if (input >= 0x2E && input <= 0x3F) return input - 0x2E + 0x2E;
 			if (input >= 0x7F && input <= 0x9F) return input - 0x7F + 0x7F;
-			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1204[input - 0x40];
+			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1209[input - 0x40];
 			if (input >= 0xA0 && input <= 0xFE) return GETOUTPUT0_A0[input - 0xA0];
 			switch (input) {
 			case 0x20: return 0x20L;
@@ -79,8 +79,8 @@ public class XAdobeSymbolCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x2E && input <= 0x3F) return input - 0x2E + 0x2E;
 			if (input >= 0x7F && input <= 0x9F) return input - 0x7F + 0x7F;
-			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.COMMON1195[input - 0x391];
-			if (input >= 0x2200 && input <= 0x2248) return CommonSubtables.COMMON1205[input - 0x2200];
+			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.COMMON1200[input - 0x391];
+			if (input >= 0x2200 && input <= 0x2248) return CommonSubtables.COMMON1210[input - 0x2200];
 			if (input >= 0xF8E5 && input <= 0xF8FE) return GETOUTPUT0_F8E5[input - 0xF8E5];
 			switch (input) {
 			case 0x20: return 0x20L;

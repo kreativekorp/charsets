@@ -481,7 +481,7 @@ public class XWindows932Charset extends Charset {
 			if (input >= 0x4E00 && input <= 0x4F1D) return CommonSubtables.COMMON342[input - 0x4E00];
 			if (input >= 0x4F2F && input <= 0x509A) return GETOUTPUT0_4F2F[input - 0x4F2F];
 			if (input >= 0x50AC && input <= 0x5516) return GETOUTPUT0_50AC[input - 0x50AC];
-			if (input >= 0x552E && input <= 0x5563) return CommonSubtables.COMMON1145[input - 0x552E];
+			if (input >= 0x552E && input <= 0x5563) return CommonSubtables.COMMON1150[input - 0x552E];
 			if (input >= 0x557B && input <= 0x55E4) return CommonSubtables.COMMON345[input - 0x557B];
 			if (input >= 0x55F7 && input <= 0x576A) return GETOUTPUT0_55F7[input - 0x55F7];
 			if (input >= 0x577F && input <= 0x5A6C) return GETOUTPUT0_577F[input - 0x577F];

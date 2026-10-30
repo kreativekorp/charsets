@@ -36,7 +36,7 @@ public class XOsborne1VideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
 			if (input >= 0x0 && input <= 0x1F) return GETOUTPUT0_0[input - 0x0];
 			if (input >= 0xA0 && input <= 0xFE) return input - 0xA0 + 0x20;
-			if (input >= 0x7F && input <= 0x9F) return CommonSubtables.COMMON1702[input - 0x7F];
+			if (input >= 0x7F && input <= 0x9F) return CommonSubtables.COMMON1707[input - 0x7F];
 			switch (input) {
 			case 0xFF: return 0x2428L;
 			}

@@ -114,7 +114,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput3(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1215[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1220[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xBL;
 			case 0x68: return 0xCL;
@@ -250,7 +250,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput13(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1216[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1221[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xBBL;
 			case 0x68: return 0xBCL;
@@ -260,7 +260,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput14(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1217[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1222[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xCBL;
 			case 0x68: return 0xCCL;
@@ -270,7 +270,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput15(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1218[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1223[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xDBL;
 			case 0x68: return 0xDCL;
@@ -280,7 +280,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput16(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1219[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1224[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xEBL;
 			case 0x68: return 0xECL;
@@ -290,7 +290,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput17(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1216[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1221[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xBBL;
 			case 0x68: return 0xBCL;
@@ -300,7 +300,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput18(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1217[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1222[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xCBL;
 			case 0x68: return 0xCCL;
@@ -310,7 +310,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput19(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1218[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1223[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xDBL;
 			case 0x68: return 0xDCL;
@@ -320,7 +320,7 @@ public class XBcdCodeBFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput20(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1219[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1224[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xEBL;
 			case 0x68: return 0xECL;

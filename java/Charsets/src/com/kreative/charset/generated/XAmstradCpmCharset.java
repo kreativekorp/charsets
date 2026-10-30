@@ -66,7 +66,7 @@ public class XAmstradCpmCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x5F && input <= 0x7F) return input - 0x5F + 0x5F;
 			if (input >= 0xA1 && input <= 0xFF) return GETOUTPUT0_A1[input - 0xA1];
-			if (input >= 0x2550 && input <= 0x2577) return CommonSubtables.COMMON1206[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x2577) return CommonSubtables.COMMON1211[input - 0x2550];
 			switch (input) {
 			case 0x5E: return 0xB4L;
 			case 0x178: return 0xCFL;

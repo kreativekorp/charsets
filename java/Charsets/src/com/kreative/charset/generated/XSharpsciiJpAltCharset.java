@@ -88,8 +88,8 @@ public class XSharpsciiJpAltCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
-			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1727[input - 0x256D];
-			if (input >= 0x3041 && input <= 0x309C) return CommonSubtables.COMMON1728[input - 0x3041];
+			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1732[input - 0x256D];
+			if (input >= 0x3041 && input <= 0x309C) return CommonSubtables.COMMON1733[input - 0x3041];
 			if (input >= 0xFF01 && input <= 0xFF3D) return input - 0xFF01 + 0x21;
 			if (input >= 0xFF41 && input <= 0xFF5A) return input - 0xFF41 + 0x41;
 			switch (input) {
@@ -197,7 +197,7 @@ public class XSharpsciiJpAltCharset extends Charset {
 			return 0;
 		}
 		private long getOutput4(int input) {
-			if (input >= 0xDF70 && input <= 0xDF8C) return CommonSubtables.COMMON1729[input - 0xDF70];
+			if (input >= 0xDF70 && input <= 0xDF8C) return CommonSubtables.COMMON1734[input - 0xDF70];
 			switch (input) {
 			case 0xDCB3: return 0x7FL;
 			case 0xDFC5: return 0x63L;

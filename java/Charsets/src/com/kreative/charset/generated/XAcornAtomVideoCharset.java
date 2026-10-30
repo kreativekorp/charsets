@@ -32,9 +32,9 @@ public class XAcornAtomVideoCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1D) return input - 0x0 + 0x40;
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0x9D) return input - 0x80 + 0x40;
-			if (input >= 0x40 && input <= 0x7F) return CommonSubtables.COMMON1203[input - 0x40];
+			if (input >= 0x40 && input <= 0x7F) return CommonSubtables.COMMON1208[input - 0x40];
 			if (input >= 0xA0 && input <= 0xBF) return input - 0xA0 + 0x20;
-			if (input >= 0xC0 && input <= 0xFF) return CommonSubtables.COMMON1203[input - 0xC0];
+			if (input >= 0xC0 && input <= 0xFF) return CommonSubtables.COMMON1208[input - 0xC0];
 			switch (input) {
 			case 0x1E: return 0x2191L;
 			case 0x1F: return 0x2190L;

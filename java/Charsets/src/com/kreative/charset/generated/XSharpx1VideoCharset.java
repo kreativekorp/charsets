@@ -32,7 +32,7 @@ public class XSharpx1VideoCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1B) return input - 0x0 + 0x2400;
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x5D && input <= 0x7D) return input - 0x5D + 0x5D;
-			if (input >= 0x7E && input <= 0xFF) return CommonSubtables.COMMON1734[input - 0x7E];
+			if (input >= 0x7E && input <= 0xFF) return CommonSubtables.COMMON1739[input - 0x7E];
 			switch (input) {
 			case 0x1C: return 0x2192L;
 			case 0x1D: return 0x2190L;
@@ -70,8 +70,8 @@ public class XSharpx1VideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x5D && input <= 0x7D) return input - 0x5D + 0x5D;
 			if (input >= 0x2408 && input <= 0x241B) return input - 0x2408 + 0x8;
-			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1735[input - 0x256D];
-			if (input >= 0x309B && input <= 0x30FC) return CommonSubtables.COMMON1736[input - 0x309B];
+			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1740[input - 0x256D];
+			if (input >= 0x309B && input <= 0x30FC) return CommonSubtables.COMMON1741[input - 0x309B];
 			if (input >= 0xFF01 && input <= 0xFF3B) return input - 0xFF01 + 0x21;
 			if (input >= 0xFF3D && input <= 0xFF5D) return input - 0xFF3D + 0x5D;
 			if (input >= 0xFF61 && input <= 0xFF9D) return input - 0xFF61 + 0xA1;

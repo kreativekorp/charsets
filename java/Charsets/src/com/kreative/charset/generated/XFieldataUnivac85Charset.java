@@ -78,7 +78,7 @@ public class XFieldataUnivac85Charset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x43 && input <= 0x5A) return input - 0x43 + 0x8;
-			if (input >= 0x20 && input <= 0x42) return CommonSubtables.COMMON1239[input - 0x20];
+			if (input >= 0x20 && input <= 0x42) return CommonSubtables.COMMON1244[input - 0x20];
 			if (input >= 0x63 && input <= 0x7A) return input - 0x63 + 0x8;
 			switch (input) {
 			case 0x0: return 0x3FL;

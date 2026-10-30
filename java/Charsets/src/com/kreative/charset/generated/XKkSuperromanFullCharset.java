@@ -35,7 +35,7 @@ public class XKkSuperromanFullCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x0 && input <= 0x1F) return GETOUTPUT0_0[input - 0x0];
-			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1190[input - 0x80];
+			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1195[input - 0x80];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -60,7 +60,7 @@ public class XKkSuperromanFullCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFF) return GETOUTPUT0_A0[input - 0xA0];
-			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.COMMON1189[input - 0x2013];
+			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.COMMON1194[input - 0x2013];
 			switch (input) {
 			case 0x0: return 0x1L;
 			case 0x8: return 0x8L;

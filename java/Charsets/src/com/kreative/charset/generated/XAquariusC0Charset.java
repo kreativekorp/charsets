@@ -132,7 +132,7 @@ public class XAquariusC0Charset extends Charset {
 		private long getOutput3(int input) {
 			if (input >= 0xDF00 && input <= 0xDF13) return input - 0xDF00 + 0xA1;
 			if (input >= 0xDF28 && input <= 0xDF3B) return input - 0xDF28 + 0xEB;
-			if (input >= 0xDF14 && input <= 0xDF27) return CommonSubtables.COMMON1207[input - 0xDF14];
+			if (input >= 0xDF14 && input <= 0xDF27) return CommonSubtables.COMMON1212[input - 0xDF14];
 			switch (input) {
 			case 0xDF8C: return 0x85L;
 			case 0xDF8D: return 0x95L;

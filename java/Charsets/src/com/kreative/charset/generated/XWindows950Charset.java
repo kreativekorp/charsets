@@ -238,7 +238,7 @@ public class XWindows950Charset extends Charset {
 			return 0;
 		}
 		private long getOutput34(int input) {
-			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1103[input - 0x40];
+			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1107[input - 0x40];
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON741[input - 0xA1];
 			return 0;
 		}
@@ -467,38 +467,38 @@ public class XWindows950Charset extends Charset {
 			return 0;
 		}
 		private long getOutput80(int input) {
-			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1104[input - 0x40];
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1105[input - 0xA1];
-			return 0;
-		}
-		private long getOutput81(int input) {
-			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1106[input - 0x40];
-			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1107[input - 0xA1];
-			return 0;
-		}
-		private long getOutput82(int input) {
 			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1108[input - 0x40];
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1109[input - 0xA1];
 			return 0;
 		}
-		private long getOutput83(int input) {
+		private long getOutput81(int input) {
 			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1110[input - 0x40];
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1111[input - 0xA1];
 			return 0;
 		}
-		private long getOutput84(int input) {
+		private long getOutput82(int input) {
 			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1112[input - 0x40];
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1113[input - 0xA1];
 			return 0;
 		}
-		private long getOutput85(int input) {
+		private long getOutput83(int input) {
 			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1114[input - 0x40];
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1115[input - 0xA1];
 			return 0;
 		}
-		private long getOutput86(int input) {
+		private long getOutput84(int input) {
 			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1116[input - 0x40];
 			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1117[input - 0xA1];
+			return 0;
+		}
+		private long getOutput85(int input) {
+			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1118[input - 0x40];
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1119[input - 0xA1];
+			return 0;
+		}
+		private long getOutput86(int input) {
+			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1120[input - 0x40];
+			if (input >= 0xA1 && input <= 0xFE) return CommonSubtables.COMMON1121[input - 0xA1];
 			return 0;
 		}
 		private static final char[] GETOUTPUT87_A1 = getOutput87_A1();
@@ -506,7 +506,7 @@ public class XWindows950Charset extends Charset {
 			return "\u9FA4\u7068\u7065\u7CF7\u866A\u883E\u883D\u883F\u8B9E\u8C9C\u8EA9\u8EC9\u974B\u9873\u9874\u98CC\u9961\u99AB\u9A64\u9A66\u9A67\u9B24\u9E15\u9E17\u9F48\u6207\u6B1E\u7227\u864C\u8EA8\u9482\u9480\u9481\u9A69\u9A68\u9B2E\u9E19\u7229\u864B\u8B9F\u9483\u9C79\u9EB7\u7675\u9A6B\u9C7A\u9E1D\u7069\u706A\u9EA4\u9F7E\u9F49\u9F98\u7881\u92B9\u88CF\u58BB\u6052\u7CA7\u5AFA\u2554\u2566\u2557\u2560\u256C\u2563\u255A\u2569\u255D\u2552\u2564\u2555\u255E\u256A\u2561\u2558\u2567\u255B\u2553\u2565\u2556\u255F\u256B\u2562\u2559\u2568\u255C\u2551\u2550\u256D\u256E\u2570\u256F\u2593".toCharArray();
 		}
 		private long getOutput87(int input) {
-			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1118[input - 0x40];
+			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1122[input - 0x40];
 			if (input >= 0xA1 && input <= 0xFE) return GETOUTPUT87_A1[input - 0xA1];
 			return 0;
 		}
@@ -645,12 +645,12 @@ public class XWindows950Charset extends Charset {
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON831[input - 0x391];
 			if (input >= 0x2550 && input <= 0x25CF) return GETOUTPUT0_2550[input - 0x2550];
-			if (input >= 0x3000 && input <= 0x3029) return CommonSubtables.COMMON1120[input - 0x3000];
-			if (input >= 0x3105 && input <= 0x3129) return CommonSubtables.COMMON1121[input - 0x3105];
+			if (input >= 0x3000 && input <= 0x3029) return CommonSubtables.COMMON1124[input - 0x3000];
+			if (input >= 0x3105 && input <= 0x3129) return CommonSubtables.COMMON1125[input - 0x3105];
 			if (input >= 0x4E00 && input <= 0x6316) return GETOUTPUT0_4E00[input - 0x4E00];
-			if (input >= 0x6328 && input <= 0x67FF) return CommonSubtables.COMMON1123[input - 0x6328];
+			if (input >= 0x6328 && input <= 0x67FF) return CommonSubtables.COMMON1127[input - 0x6328];
 			if (input >= 0x6812 && input <= 0x6854) return CommonSubtables.COMMON832[input - 0x6812];
-			if (input >= 0x686B && input <= 0x6D42) return CommonSubtables.COMMON1124[input - 0x686B];
+			if (input >= 0x686B && input <= 0x6D42) return CommonSubtables.COMMON1128[input - 0x686B];
 			if (input >= 0x6D58 && input <= 0x6D98) return CommonSubtables.COMMON833[input - 0x6D58];
 			if (input >= 0x6DAA && input <= 0x6E05) return CommonSubtables.COMMON834[input - 0x6DAA];
 			if (input >= 0x6E19 && input <= 0x7E9C) return GETOUTPUT0_6E19[input - 0x6E19];
@@ -661,7 +661,7 @@ public class XWindows950Charset extends Charset {
 			if (input >= 0x8D64 && input <= 0x8F64) return CommonSubtables.COMMON839[input - 0x8D64];
 			if (input >= 0x8F9B && input <= 0x9483) return GETOUTPUT0_8F9B[input - 0x8F9B];
 			if (input >= 0x9577 && input <= 0x95E5) return CommonSubtables.COMMON840[input - 0x9577];
-			if (input >= 0x961C && input <= 0x9874) return CommonSubtables.COMMON1127[input - 0x961C];
+			if (input >= 0x961C && input <= 0x9874) return CommonSubtables.COMMON1131[input - 0x961C];
 			if (input >= 0x98A8 && input <= 0x9961) return CommonSubtables.COMMON841[input - 0x98A8];
 			if (input >= 0x9996 && input <= 0x9A6B) return CommonSubtables.COMMON842[input - 0x9996];
 			if (input >= 0x9AA8 && input <= 0x9C7A) return CommonSubtables.COMMON843[input - 0x9AA8];

@@ -98,7 +98,7 @@ public class XPetscii82AltVideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x41;
 			if (input >= 0x68 && input <= 0x7A) return input - 0x68 + 0x8;
-			if (input >= 0x2581 && input <= 0x259D) return CommonSubtables.COMMON1706[input - 0x2581];
+			if (input >= 0x2581 && input <= 0x259D) return CommonSubtables.COMMON1711[input - 0x2581];
 			switch (input) {
 			case 0x40: return 0x1L;
 			case 0x5B: return 0x1BL;

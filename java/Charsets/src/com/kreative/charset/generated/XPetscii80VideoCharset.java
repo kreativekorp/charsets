@@ -32,9 +32,9 @@ public class XPetscii80VideoCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1B) return input - 0x0 + 0x40;
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0x9B) return input - 0x80 + 0x40;
-			if (input >= 0x40 && input <= 0x7F) return CommonSubtables.COMMON1709[input - 0x40];
+			if (input >= 0x40 && input <= 0x7F) return CommonSubtables.COMMON1714[input - 0x40];
 			if (input >= 0xA0 && input <= 0xBF) return input - 0xA0 + 0x20;
-			if (input >= 0xC0 && input <= 0xFF) return CommonSubtables.COMMON1709[input - 0xC0];
+			if (input >= 0xC0 && input <= 0xFF) return CommonSubtables.COMMON1714[input - 0xC0];
 			switch (input) {
 			case 0x1C: return 0xA3L;
 			case 0x1D: return 0x5DL;
@@ -75,7 +75,7 @@ public class XPetscii80VideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
 			if (input >= 0x48 && input <= 0x5D) return input - 0x48 + 0x8;
 			if (input >= 0x68 && input <= 0x7A) return input - 0x68 + 0x8;
-			if (input >= 0x256D && input <= 0x259D) return CommonSubtables.COMMON1710[input - 0x256D];
+			if (input >= 0x256D && input <= 0x259D) return CommonSubtables.COMMON1715[input - 0x256D];
 			switch (input) {
 			case 0x40: return 0x1L;
 			case 0x41: return 0x101L;
@@ -122,7 +122,7 @@ public class XPetscii80VideoCharset extends Charset {
 			return 0;
 		}
 		private long getOutput1(int input) {
-			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.COMMON1711[input - 0xDF70];
+			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.COMMON1716[input - 0xDF70];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

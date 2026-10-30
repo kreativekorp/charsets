@@ -39,7 +39,7 @@ public class XSinclairqlVideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x0 && input <= 0x1F) return GETOUTPUT0_0[input - 0x0];
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
-			if (input >= 0x7F && input <= 0xFF) return CommonSubtables.COMMON1738[input - 0x7F];
+			if (input >= 0x7F && input <= 0xFF) return CommonSubtables.COMMON1743[input - 0x7F];
 			switch (input) {
 			case 0x60: return 0xA3L;
 			}
@@ -78,7 +78,7 @@ public class XSinclairqlVideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0xA1 && input <= 0xFC) return GETOUTPUT0_A1[input - 0xA1];
-			if (input >= 0x393 && input <= 0x3D5) return CommonSubtables.COMMON1739[input - 0x393];
+			if (input >= 0x393 && input <= 0x3D5) return CommonSubtables.COMMON1744[input - 0x393];
 			switch (input) {
 			case 0x0: return 0x1L;
 			case 0xA: return 0xAL;

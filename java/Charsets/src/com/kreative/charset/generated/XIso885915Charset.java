@@ -32,7 +32,7 @@ public class XIso885915Charset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA3) return input - 0x20 + 0x20;
 			if (input >= 0xBF && input <= 0xFF) return input - 0xBF + 0xBF;
-			if (input >= 0xA4 && input <= 0xBE) return CommonSubtables.COMMON1241[input - 0xA4];
+			if (input >= 0xA4 && input <= 0xBE) return CommonSubtables.COMMON1246[input - 0xA4];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

@@ -30,7 +30,7 @@ public class XMousedeskQmkCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x5A) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1689[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1694[input - 0x0];
 			if (input >= 0x5E && input <= 0x7A) return input - 0x5E + 0x5E;
 			switch (input) {
 			case 0x5B: return 0xD6L;

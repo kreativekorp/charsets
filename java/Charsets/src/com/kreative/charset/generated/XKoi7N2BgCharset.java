@@ -31,7 +31,7 @@ public class XKoi7N2BgCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
-			if (input >= 0x60 && input <= 0x7F) return CommonSubtables.COMMON1569[input - 0x60];
+			if (input >= 0x60 && input <= 0x7F) return CommonSubtables.COMMON1574[input - 0x60];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

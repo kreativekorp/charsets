@@ -52,7 +52,7 @@ public class XBcdTelephonyCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1232[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1237[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xCL;
 			case 0x62: return 0xDL;

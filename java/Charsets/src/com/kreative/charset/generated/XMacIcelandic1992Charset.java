@@ -56,7 +56,7 @@ public class XMacIcelandic1992Charset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.COMMON1139[input - 0xA0];
+			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.COMMON1144[input - 0xA0];
 			switch (input) {
 			case 0x131: return 0xF5L;
 			case 0x152: return 0xCEL;

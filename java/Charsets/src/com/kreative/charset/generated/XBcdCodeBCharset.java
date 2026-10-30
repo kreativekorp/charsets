@@ -52,7 +52,7 @@ public class XBcdCodeBCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1215[input - 0x20];
+			if (input >= 0x20 && input <= 0x50) return CommonSubtables.COMMON1220[input - 0x20];
 			switch (input) {
 			case 0x65: return 0xBL;
 			case 0x68: return 0xCL;

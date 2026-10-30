@@ -61,7 +61,7 @@ public class XMacGreek2002Charset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFC) return GETOUTPUT0_A0[input - 0xA0];
-			if (input >= 0x384 && input <= 0x3CE) return CommonSubtables.COMMON1138[input - 0x384];
+			if (input >= 0x384 && input <= 0x3CE) return CommonSubtables.COMMON1142[input - 0x384];
 			switch (input) {
 			case 0x153: return 0xCFL;
 			case 0x2013: return 0xD0L;

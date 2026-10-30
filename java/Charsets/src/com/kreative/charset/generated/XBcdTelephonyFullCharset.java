@@ -124,7 +124,7 @@ public class XBcdTelephonyFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput4(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1232[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1237[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xCL;
 			case 0x62: return 0xDL;
@@ -250,7 +250,7 @@ public class XBcdTelephonyFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput14(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1233[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1238[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xCCL;
 			case 0x62: return 0xCDL;
@@ -259,7 +259,7 @@ public class XBcdTelephonyFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput15(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1234[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1239[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xDCL;
 			case 0x62: return 0xDDL;
@@ -268,7 +268,7 @@ public class XBcdTelephonyFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput16(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1235[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1240[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xECL;
 			case 0x62: return 0xEDL;
@@ -277,7 +277,7 @@ public class XBcdTelephonyFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput17(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1233[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1238[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xCCL;
 			case 0x62: return 0xCDL;
@@ -286,7 +286,7 @@ public class XBcdTelephonyFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput18(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1234[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1239[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xDCL;
 			case 0x62: return 0xDDL;
@@ -295,7 +295,7 @@ public class XBcdTelephonyFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput19(int input) {
-			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1235[input - 0x20];
+			if (input >= 0x20 && input <= 0x43) return CommonSubtables.COMMON1240[input - 0x20];
 			switch (input) {
 			case 0x61: return 0xECL;
 			case 0x62: return 0xEDL;

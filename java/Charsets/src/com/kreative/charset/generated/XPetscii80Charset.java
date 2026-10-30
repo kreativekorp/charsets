@@ -32,8 +32,8 @@ public class XPetscii80Charset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xA0) return input - 0x80 + 0x80;
-			if (input >= 0x5C && input <= 0x7F) return CommonSubtables.COMMON1712[input - 0x5C];
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1713[input - 0xA1];
+			if (input >= 0x5C && input <= 0x7F) return CommonSubtables.COMMON1717[input - 0x5C];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1718[input - 0xA1];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -65,7 +65,7 @@ public class XPetscii80Charset extends Charset {
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
 			if (input >= 0x80 && input <= 0xA0) return input - 0x80 + 0x80;
-			if (input >= 0x256D && input <= 0x259D) return CommonSubtables.COMMON1714[input - 0x256D];
+			if (input >= 0x256D && input <= 0x259D) return CommonSubtables.COMMON1719[input - 0x256D];
 			switch (input) {
 			case 0xA3: return 0x5CL;
 			case 0x3C0: return 0xDEL;
@@ -96,7 +96,7 @@ public class XPetscii80Charset extends Charset {
 			return 0;
 		}
 		private long getOutput1(int input) {
-			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.COMMON1715[input - 0xDF70];
+			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.COMMON1720[input - 0xDF70];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

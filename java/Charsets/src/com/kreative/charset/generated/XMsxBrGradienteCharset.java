@@ -80,8 +80,8 @@ public class XMsxBrGradienteCharset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7D) return input - 0x61 + 0x61;
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1692[input - 0xA1];
-			if (input >= 0x2580 && input <= 0x25AC) return CommonSubtables.COMMON1694[input - 0x2580];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1697[input - 0xA1];
+			if (input >= 0x2580 && input <= 0x25AC) return CommonSubtables.COMMON1699[input - 0x2580];
 			switch (input) {
 			case 0x60: return 0x87L;
 			case 0x7E: return 0x80L;

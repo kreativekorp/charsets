@@ -2135,7 +2135,7 @@ public class XMacKoreanCharset extends Charset {
 			if (input >= 0x67AF && input <= 0x67FE) return CommonSubtables.COMMON1009[input - 0x67AF];
 			if (input >= 0x6812 && input <= 0x6854) return CommonSubtables.COMMON1010[input - 0x6812];
 			if (input >= 0x686D && input <= 0x6912) return CommonSubtables.COMMON1011[input - 0x686D];
-			if (input >= 0x6927 && input <= 0x6979) return CommonSubtables.COMMON1188[input - 0x6927];
+			if (input >= 0x6927 && input <= 0x6979) return CommonSubtables.COMMON1193[input - 0x6927];
 			if (input >= 0x6A80 && input <= 0x6ADB) return CommonSubtables.COMMON1012[input - 0x6A80];
 			if (input >= 0x6AF6 && input <= 0x6BEC) return CommonSubtables.COMMON1013[input - 0x6AF6];
 			if (input >= 0x6C08 && input <= 0x6CF3) return CommonSubtables.COMMON1014[input - 0x6C08];
