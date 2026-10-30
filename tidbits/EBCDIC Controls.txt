@@ -1,0 +1,135 @@
+EBCDIC Order
+
+00	00	NUL	Null
+01	01	SOH	Start of Heading
+02	02	STX	Start of Text
+03	03	ETX	End of Text
+04	9C	SEL	Select
+05	09	HT	Horizontal Tabulation
+06	86	RNL	Required New Line
+07	7F	DEL	Delete
+08	97	GE	Graphic Escape
+09	8D	SPS	Superscript
+0A	8E	RPT	Repeat
+0B	0B	VT	Vertical Tabulation
+0C	0C	FF	Form Feed
+0D	0D	CR	Carriage Return
+0E	0E	SO	Shift Out
+0F	0F	SI	Shift In
+10	10	DLE	Data Link Escape
+11	11	DC1	Device Control One
+12	12	DC2	Device Control Two
+13	13	DC3	Device Control Three
+14	9D	RES/ENP	Restore/Enable Presentation
+15	85	NL	New Line
+16	08	BS	Backspace
+17	87	POC	Program Operator Communication
+18	18	CAN	Cancel
+19	19	EM	End of Medium
+1A	92	UBS	Unit Backspace
+1B	8F	CU1	Customer Use One
+1C	1C	IFS	Interchange File Separator
+1D	1D	IGS	Interchange Group Separator
+1E	1E	IRS	Interchange Record Separator
+1F	1F	IUS	Interchange Unit Separator
+20	80	DS	Digit Select
+21	81	SOS	Start of Significance
+22	82	FS	Field Separator
+23	83	WUS	Word Underscore
+24	84	BYP/INP	Bypass/Inhibit Presentation
+25	0A	LF	Line Feed
+26	17	ETB	End of Transmission Block
+27	1B	ESC	Escape
+28	88	SA	Set Attribute
+29	89	SFE	Start Field Extended
+2A	8A	SM/SW	Set Mode/Switch
+2B	8B	CSP	Control Sequence Prefix
+2C	8C	MFA	Modify Field Attribute
+2D	05	ENQ	Enquiry
+2E	06	ACK	Acknowledge
+2F	07	BEL	Bell
+30	90	XXX
+31	91	XXX
+32	16	SYN	Synchronous Idle
+33	93	IR	Index Return
+34	94	PP	Presentation Position
+35	95	TRN	Transparent
+36	96	NBS	Numeric Backspace
+37	04	EOT	End of Transmission
+38	98	SBS	Subscript
+39	99	IT	Indent Tab
+3A	9A	RFF	Required Form Feed
+3B	9B	CU3	Customer Use Three
+3C	14	DC4	Device Control Four
+3D	15	NAK	Negative Acknowledge
+3E	9E	XXX
+3F	1A	SUB	Substitute
+FF	9F	EO	Eight Ones
+
+ASCII Order
+
+00	00	NUL	Null
+01	01	SOH	Start of Heading
+02	02	STX	Start of Text
+03	03	ETX	End of Text
+37	04	EOT	End of Transmission
+2D	05	ENQ	Enquiry
+2E	06	ACK	Acknowledge
+2F	07	BEL	Bell
+16	08	BS	Backspace
+05	09	HT	Horizontal Tabulation
+25	0A	LF	Line Feed
+0B	0B	VT	Vertical Tabulation
+0C	0C	FF	Form Feed
+0D	0D	CR	Carriage Return
+0E	0E	SO	Shift Out
+0F	0F	SI	Shift In
+10	10	DLE	Data Link Escape
+11	11	DC1	Device Control One
+12	12	DC2	Device Control Two
+13	13	DC3	Device Control Three
+3C	14	DC4	Device Control Four
+3D	15	NAK	Negative Acknowledge
+32	16	SYN	Synchronous Idle
+26	17	ETB	End of Transmission Block
+18	18	CAN	Cancel
+19	19	EM	End of Medium
+3F	1A	SUB	Substitute
+27	1B	ESC	Escape
+1C	1C	IFS	Interchange File Separator
+1D	1D	IGS	Interchange Group Separator
+1E	1E	IRS	Interchange Record Separator
+1F	1F	IUS	Interchange Unit Separator
+07	7F	DEL	Delete
+20	80	DS	Digit Select
+21	81	SOS	Start of Significance
+22	82	FS	Field Separator
+23	83	WUS	Word Underscore
+24	84	BYP/INP	Bypass/Inhibit Presentation
+15	85	NL	New Line
+06	86	RNL	Required New Line
+17	87	POC	Program Operator Communication
+28	88	SA	Set Attribute
+29	89	SFE	Start Field Extended
+2A	8A	SM/SW	Set Mode/Switch
+2B	8B	CSP	Control Sequence Prefix
+2C	8C	MFA	Modify Field Attribute
+09	8D	SPS	Superscript
+0A	8E	RPT	Repeat
+1B	8F	CU1	Customer Use One
+30	90	XXX
+31	91	XXX
+1A	92	UBS	Unit Backspace
+33	93	IR	Index Return
+34	94	PP	Presentation Position
+35	95	TRN	Transparent
+36	96	NBS	Numeric Backspace
+08	97	GE	Graphic Escape
+38	98	SBS	Subscript
+39	99	IT	Indent Tab
+3A	9A	RFF	Required Form Feed
+3B	9B	CU3	Customer Use Three
+04	9C	SEL	Select
+14	9D	RES/ENP	Restore/Enable Presentation
+3E	9E	XXX
+FF	9F	EO	Eight Ones
