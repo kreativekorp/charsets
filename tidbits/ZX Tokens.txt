@@ -1,3 +1,4 @@
+# ZX80 BASIC Tokens
 0xD4	kZX80Token	"
 0xD5	kZX80Token	THEN
 0xD6	kZX80Token	TO
@@ -39,6 +40,7 @@
 0xFD	kZX80Token	CLEAR
 0xFE	kZX80Token	REM
 
+# ZX81 BASIC Tokens
 0x40	kZX81Token	RND
 0x41	kZX81Token	INKEY$
 0x42	kZX81Token	PI
@@ -106,6 +108,7 @@
 0xFE	kZX81Token	RETURN
 0xFF	kZX81Token	COPY
 
+# ZX Spectrum BASIC Tokens
 0xA3	kZXSpectrumToken	SPECTRUM
 0xA4	kZXSpectrumToken	PLAY
 0xA5	kZXSpectrumToken	RND
