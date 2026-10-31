@@ -86,10 +86,10 @@ public class XSharpsciiMz80kEuCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x21 && input <= 0x5D) return input - 0x21 + 0x21;
-			if (input >= 0x61 && input <= 0x7A) return CommonSubtables.COMMON1738[input - 0x61];
-			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1729[input - 0x256D];
+			if (input >= 0x61 && input <= 0x7A) return CommonSubtables.COMMON1743[input - 0x61];
+			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1734[input - 0x256D];
 			if (input >= 0xFF01 && input <= 0xFF3D) return input - 0xFF01 + 0x21;
-			if (input >= 0xFF41 && input <= 0xFF5A) return CommonSubtables.COMMON1738[input - 0xFF41];
+			if (input >= 0xFF41 && input <= 0xFF5A) return CommonSubtables.COMMON1743[input - 0xFF41];
 			switch (input) {
 			case 0x20: return 0xC0L;
 			case 0xA3: return 0xFBL;
@@ -144,7 +144,7 @@ public class XSharpsciiMz80kEuCharset extends Charset {
 			return 0;
 		}
 		private long getOutput1(int input) {
-			if (input >= 0xDC30 && input <= 0xDC43) return CommonSubtables.COMMON1730[input - 0xDC30];
+			if (input >= 0xDC30 && input <= 0xDC43) return CommonSubtables.COMMON1735[input - 0xDC30];
 			switch (input) {
 			case 0xDC00: return 0x62L;
 			case 0xDC01: return 0x61L;

@@ -44,7 +44,7 @@ public class XMsxBrGradienteVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1696[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1701[input - 0x0];
 			if (input >= 0x61 && input <= 0x7D) return input - 0x61 + 0x61;
 			if (input >= 0x7E && input <= 0xFE) return GETOUTPUT0_7E[input - 0x7E];
 			switch (input) {
@@ -79,8 +79,8 @@ public class XMsxBrGradienteVideoCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7D) return input - 0x61 + 0x61;
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1697[input - 0xA1];
-			if (input >= 0x2571 && input <= 0x25AC) return CommonSubtables.COMMON1698[input - 0x2571];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1702[input - 0xA1];
+			if (input >= 0x2571 && input <= 0x25AC) return CommonSubtables.COMMON1703[input - 0x2571];
 			switch (input) {
 			case 0x0: return 0x1L;
 			case 0x60: return 0x87L;

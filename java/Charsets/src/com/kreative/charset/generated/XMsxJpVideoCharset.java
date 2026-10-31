@@ -36,7 +36,7 @@ public class XMsxJpVideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x0 && input <= 0x1F) return GETOUTPUT0_0[input - 0x0];
 			if (input >= 0x5D && input <= 0x7E) return input - 0x5D + 0x5D;
-			if (input >= 0x80 && input <= 0xFD) return CommonSubtables.COMMON1701[input - 0x80];
+			if (input >= 0x80 && input <= 0xFD) return CommonSubtables.COMMON1706[input - 0x80];
 			switch (input) {
 			case 0x5C: return 0xA5L;
 			}
@@ -60,7 +60,7 @@ public class XMsxJpVideoCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x5D && input <= 0x7E) return input - 0x5D + 0x5D;
-			if (input >= 0x3041 && input <= 0x30FC) return CommonSubtables.COMMON1702[input - 0x3041];
+			if (input >= 0x3041 && input <= 0x30FC) return CommonSubtables.COMMON1707[input - 0x3041];
 			if (input >= 0xFF01 && input <= 0xFF3B) return input - 0xFF01 + 0x21;
 			if (input >= 0xFF3D && input <= 0xFF5E) return input - 0xFF3D + 0x5D;
 			if (input >= 0xFF61 && input <= 0xFF9F) return input - 0xFF61 + 0xA1;

@@ -39,7 +39,7 @@ public class XOsiVideoCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x0 && input <= 0x1F) return GETOUTPUT0_0[input - 0x0];
 			if (input >= 0x61 && input <= 0x7B) return input - 0x61 + 0x61;
-			if (input >= 0x7C && input <= 0xFF) return CommonSubtables.COMMON1708[input - 0x7C];
+			if (input >= 0x7C && input <= 0xFF) return CommonSubtables.COMMON1713[input - 0x7C];
 			switch (input) {
 			case 0x5E: return 0x2191L;
 			case 0x5F: return 0x5FL;
@@ -191,8 +191,8 @@ public class XOsiVideoCharset extends Charset {
 			return 0;
 		}
 		private long getOutput5(int input) {
-			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.COMMON1709[input - 0xDF70];
-			if (input >= 0xDFD0 && input <= 0xDFE7) return CommonSubtables.COMMON1710[input - 0xDFD0];
+			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.COMMON1714[input - 0xDF70];
+			if (input >= 0xDFD0 && input <= 0xDFE7) return CommonSubtables.COMMON1715[input - 0xDFD0];
 			switch (input) {
 			case 0xDCB8: return 0x17L;
 			case 0xDCB9: return 0x11L;

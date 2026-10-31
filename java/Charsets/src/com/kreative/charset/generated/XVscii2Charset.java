@@ -60,7 +60,7 @@ public class XVscii2Charset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA0) return input - 0x20 + 0x20;
-			if (input >= 0xC2 && input <= 0x111) return CommonSubtables.COMMON1755[input - 0xC2];
+			if (input >= 0xC2 && input <= 0x111) return CommonSubtables.COMMON1760[input - 0xC2];
 			if (input >= 0x1EA1 && input <= 0x1EF9) return GETOUTPUT0_1EA1[input - 0x1EA1];
 			switch (input) {
 			case 0x129: return 0xDCL;

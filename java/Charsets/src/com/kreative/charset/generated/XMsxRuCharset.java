@@ -78,7 +78,7 @@ public class XMsxRuCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0x410 && input <= 0x44F) return CommonSubtables.COMMON1704[input - 0x410];
+			if (input >= 0x410 && input <= 0x44F) return CommonSubtables.COMMON1709[input - 0x410];
 			if (input >= 0x2580 && input <= 0x25AC) return GETOUTPUT0_2580[input - 0x2580];
 			switch (input) {
 			case 0xA4: return 0xBFL;

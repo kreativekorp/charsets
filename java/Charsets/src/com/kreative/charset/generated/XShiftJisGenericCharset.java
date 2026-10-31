@@ -353,7 +353,7 @@ public class XShiftJisGenericCharset extends Charset {
 			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON334[input - 0x391];
 			if (input >= 0x401 && input <= 0x451) return CommonSubtables.COMMON335[input - 0x401];
 			if (input >= 0x2010 && input <= 0x203E) return GETOUTPUT0_2010[input - 0x2010];
-			if (input >= 0x2200 && input <= 0x223D) return CommonSubtables.COMMON1742[input - 0x2200];
+			if (input >= 0x2200 && input <= 0x223D) return CommonSubtables.COMMON1747[input - 0x2200];
 			if (input >= 0x2500 && input <= 0x254B) return CommonSubtables.COMMON339[input - 0x2500];
 			if (input >= 0x3000 && input <= 0x301C) return CommonSubtables.COMMON340[input - 0x3000];
 			if (input >= 0x3041 && input <= 0x30FE) return CommonSubtables.COMMON341[input - 0x3041];

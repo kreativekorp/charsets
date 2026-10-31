@@ -104,9 +104,9 @@ public class XSharpsciiMz80kEuVideoCharset extends Charset {
 			if (input >= 0x48 && input <= 0x5A) return input - 0x48 + 0x8;
 			if (input >= 0x20 && input <= 0x47) return GETOUTPUT0_20[input - 0x20];
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x81;
-			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1725[input - 0x256D];
+			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1730[input - 0x256D];
 			if (input >= 0xFF28 && input <= 0xFF3A) return input - 0xFF28 + 0x8;
-			if (input >= 0xFF01 && input <= 0xFF27) return CommonSubtables.COMMON1726[input - 0xFF01];
+			if (input >= 0xFF01 && input <= 0xFF27) return CommonSubtables.COMMON1731[input - 0xFF01];
 			if (input >= 0xFF41 && input <= 0xFF5A) return input - 0xFF41 + 0x81;
 			switch (input) {
 			case 0x5B: return 0x52L;

@@ -30,10 +30,10 @@ public class XTrs80m3VideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1751[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1756[input - 0x0];
 			if (input >= 0xC8 && input <= 0xD8) return input - 0xC8 + 0x3B1;
-			if (input >= 0x7F && input <= 0xC7) return CommonSubtables.COMMON1752[input - 0x7F];
-			if (input >= 0xD9 && input <= 0xFF) return CommonSubtables.COMMON1753[input - 0xD9];
+			if (input >= 0x7F && input <= 0xC7) return CommonSubtables.COMMON1757[input - 0x7F];
+			if (input >= 0xD9 && input <= 0xFF) return CommonSubtables.COMMON1758[input - 0xD9];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

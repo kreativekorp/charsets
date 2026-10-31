@@ -33,7 +33,7 @@ public class XMsxKrCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x5D && input <= 0x7F) return input - 0x5D + 0x5D;
 			if (input >= 0x8F && input <= 0xA1) return input - 0x8F + 0x3145;
-			if (input >= 0xA2 && input <= 0xFB) return CommonSubtables.COMMON1703[input - 0xA2];
+			if (input >= 0xA2 && input <= 0xFB) return CommonSubtables.COMMON1708[input - 0xA2];
 			switch (input) {
 			case 0x5C: return 0x20A9L;
 			case 0x80: return 0x2660L;

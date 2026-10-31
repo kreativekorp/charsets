@@ -43,7 +43,7 @@ public class XOricsciiAltCharset extends Charset {
 			if (input >= 0x20 && input <= 0x5F) return GETOUTPUT0_20[input - 0x20];
 			if (input >= 0x80 && input <= 0xA0) return input - 0x80 + 0x80;
 			if (input >= 0xE0 && input <= 0xFF) return input - 0xE0 + 0xF060;
-			if (input >= 0xA1 && input <= 0xDF) return CommonSubtables.COMMON1706[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xDF) return CommonSubtables.COMMON1711[input - 0xA1];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

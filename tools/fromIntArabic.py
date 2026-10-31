@@ -367,9 +367,15 @@ ARABIC_PRESENTATION_FORMS = {
 
 index = 0
 for line in sys.stdin:
-	for cps, forms in re.findall('([0-9A-Fa-f]{4,})([\U000FFEE1-\U000FFEEF]?)', line):
+	for cps, forms in re.findall('([0-9A-Fa-f]{4,})([\u2190\u2192\U000FFEE1-\U000FFEEF]?)', line):
 		cp = int(cps, 16)
-		if forms and (cp,) in ARABIC_PRESENTATION_FORMS:
+		if forms == '\u2190':
+			name = unicodedata.name(chr(cp), '')
+			print('0x%02X\tU+202E+%04X+202C\t# %s, right-left' % (index, cp, name))
+		elif forms == '\u2192':
+			name = unicodedata.name(chr(cp), '')
+			print('0x%02X\tU+202D+%04X+202C\t# %s, left-right' % (index, cp, name))
+		elif forms and (cp,) in ARABIC_PRESENTATION_FORMS:
 			forms = ord(forms)
 			for comp in ARABIC_PRESENTATION_FORMS[(cp,)]:
 				if forms & 1:

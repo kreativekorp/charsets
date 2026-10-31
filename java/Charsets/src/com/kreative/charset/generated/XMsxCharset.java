@@ -74,8 +74,8 @@ public class XMsxCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1705[input - 0xA1];
-			if (input >= 0x2580 && input <= 0x25AC) return CommonSubtables.COMMON1699[input - 0x2580];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1710[input - 0xA1];
+			if (input >= 0x2580 && input <= 0x25AC) return CommonSubtables.COMMON1704[input - 0x2580];
 			switch (input) {
 			case 0x128: return 0xB2L;
 			case 0x129: return 0xB3L;
