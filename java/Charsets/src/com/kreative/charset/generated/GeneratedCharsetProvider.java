@@ -464,6 +464,8 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XSixbitEbcdicCharset(),
 			new XSmalltalk72Charset(),
 			new XSmalltalk78Charset(),
+			new XSpectravideoCharset(),
+			new XSpectravideoVideoCharset(),
 			new XTexOmlCharset(),
 			new XTexOmlPlainCharset(),
 			new XTexOmsCharset(),
