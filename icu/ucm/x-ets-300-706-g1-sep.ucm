@@ -1,0 +1,107 @@
+<code_set_name>	"x-ets-300-706-g1-sep"
+<char_name_mask>	"AXXXX"
+<mb_cur_min>	1
+<mb_cur_max>	1
+<uconv_class>	"SBCS"
+<subchar>	\x20
+<icu:state>	0-20, 21-3f.p, 40-5f.u, 60-7f.p, 80-ff.u
+<icu:charsetFamily>	"ASCII"
+
+CHARMAP
+<U0080>	\x00	|0
+<U0081>	\x01	|0
+<U0082>	\x02	|0
+<U0083>	\x03	|0
+<U0084>	\x04	|0
+<U0085>	\x05	|0
+<U0086>	\x06	|0
+<U0087>	\x07	|0
+<U0088>	\x08	|0
+<U0089>	\x09	|0
+<U008A>	\x0A	|0
+<U008B>	\x0B	|0
+<U008C>	\x0C	|0
+<U008D>	\x0D	|0
+<U008E>	\x0E	|0
+<U008F>	\x0F	|0
+<U0090>	\x10	|0
+<U0091>	\x11	|0
+<U0092>	\x12	|0
+<U0093>	\x13	|0
+<U0094>	\x14	|0
+<U0095>	\x15	|0
+<U0096>	\x16	|0
+<U0097>	\x17	|0
+<U0098>	\x18	|0
+<U0099>	\x19	|0
+<U009A>	\x1A	|0
+<U009B>	\x1B	|0
+<U009C>	\x1C	|0
+<U009D>	\x1D	|0
+<U009E>	\x1E	|0
+<U009F>	\x1F	|0
+<U00A0>	\x20	|0
+<U1CE51>	\x21	|0
+<U1CE52>	\x22	|0
+<U1CE53>	\x23	|0
+<U1CE54>	\x24	|0
+<U1CE55>	\x25	|0
+<U1CE56>	\x26	|0
+<U1CE57>	\x27	|0
+<U1CE58>	\x28	|0
+<U1CE59>	\x29	|0
+<U1CE5A>	\x2A	|0
+<U1CE5B>	\x2B	|0
+<U1CE5C>	\x2C	|0
+<U1CE5D>	\x2D	|0
+<U1CE5E>	\x2E	|0
+<U1CE5F>	\x2F	|0
+<U1CE60>	\x30	|0
+<U1CE61>	\x31	|0
+<U1CE62>	\x32	|0
+<U1CE63>	\x33	|0
+<U1CE64>	\x34	|0
+<U1CE65>	\x35	|0
+<U1CE66>	\x36	|0
+<U1CE67>	\x37	|0
+<U1CE68>	\x38	|0
+<U1CE69>	\x39	|0
+<U1CE6A>	\x3A	|0
+<U1CE6B>	\x3B	|0
+<U1CE6C>	\x3C	|0
+<U1CE6D>	\x3D	|0
+<U1CE6E>	\x3E	|0
+<U1CE6F>	\x3F	|0
+<U1CE70>	\x60	|0
+<U1CE71>	\x61	|0
+<U1CE72>	\x62	|0
+<U1CE73>	\x63	|0
+<U1CE74>	\x64	|0
+<U1CE75>	\x65	|0
+<U1CE76>	\x66	|0
+<U1CE77>	\x67	|0
+<U1CE78>	\x68	|0
+<U1CE79>	\x69	|0
+<U1CE7A>	\x6A	|0
+<U1CE7B>	\x6B	|0
+<U1CE7C>	\x6C	|0
+<U1CE7D>	\x6D	|0
+<U1CE7E>	\x6E	|0
+<U1CE7F>	\x6F	|0
+<U1CE80>	\x70	|0
+<U1CE81>	\x71	|0
+<U1CE82>	\x72	|0
+<U1CE83>	\x73	|0
+<U1CE84>	\x74	|0
+<U1CE85>	\x75	|0
+<U1CE86>	\x76	|0
+<U1CE87>	\x77	|0
+<U1CE88>	\x78	|0
+<U1CE89>	\x79	|0
+<U1CE8A>	\x7A	|0
+<U1CE8B>	\x7B	|0
+<U1CE8C>	\x7C	|0
+<U1CE8D>	\x7D	|0
+<U1CE8E>	\x7E	|0
+<U1CE8F>	\x7F	|0
+END CHARMAP

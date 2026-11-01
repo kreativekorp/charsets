@@ -1,0 +1,108 @@
+<code_set_name>	"x-ets-300-706-g1-con"
+<char_name_mask>	"AXXXX"
+<mb_cur_min>	1
+<mb_cur_max>	1
+<uconv_class>	"SBCS"
+<subchar>	\x20
+<icu:state>	0-20, 21-34.p, 35, 36-3f.p, 40-5f.u, 60-69.p, 6a, 6b-7e.p, 7f, 80-ff.u
+<icu:charsetFamily>	"ASCII"
+<icu:alias>	"x-ets-300-706-g1"
+
+CHARMAP
+<U0080>	\x00	|0
+<U0081>	\x01	|0
+<U0082>	\x02	|0
+<U0083>	\x03	|0
+<U0084>	\x04	|0
+<U0085>	\x05	|0
+<U0086>	\x06	|0
+<U0087>	\x07	|0
+<U0088>	\x08	|0
+<U0089>	\x09	|0
+<U008A>	\x0A	|0
+<U008B>	\x0B	|0
+<U008C>	\x0C	|0
+<U008D>	\x0D	|0
+<U008E>	\x0E	|0
+<U008F>	\x0F	|0
+<U0090>	\x10	|0
+<U0091>	\x11	|0
+<U0092>	\x12	|0
+<U0093>	\x13	|0
+<U0094>	\x14	|0
+<U0095>	\x15	|0
+<U0096>	\x16	|0
+<U0097>	\x17	|0
+<U0098>	\x18	|0
+<U0099>	\x19	|0
+<U009A>	\x1A	|0
+<U009B>	\x1B	|0
+<U009C>	\x1C	|0
+<U009D>	\x1D	|0
+<U009E>	\x1E	|0
+<U009F>	\x1F	|0
+<U00A0>	\x20	|0
+<U2588>	\x7F	|0
+<U258C>	\x35	|0
+<U2590>	\x6A	|0
+<U1FB00>	\x21	|0
+<U1FB01>	\x22	|0
+<U1FB02>	\x23	|0
+<U1FB03>	\x24	|0
+<U1FB04>	\x25	|0
+<U1FB05>	\x26	|0
+<U1FB06>	\x27	|0
+<U1FB07>	\x28	|0
+<U1FB08>	\x29	|0
+<U1FB09>	\x2A	|0
+<U1FB0A>	\x2B	|0
+<U1FB0B>	\x2C	|0
+<U1FB0C>	\x2D	|0
+<U1FB0D>	\x2E	|0
+<U1FB0E>	\x2F	|0
+<U1FB0F>	\x30	|0
+<U1FB10>	\x31	|0
+<U1FB11>	\x32	|0
+<U1FB12>	\x33	|0
+<U1FB13>	\x34	|0
+<U1FB14>	\x36	|0
+<U1FB15>	\x37	|0
+<U1FB16>	\x38	|0
+<U1FB17>	\x39	|0
+<U1FB18>	\x3A	|0
+<U1FB19>	\x3B	|0
+<U1FB1A>	\x3C	|0
+<U1FB1B>	\x3D	|0
+<U1FB1C>	\x3E	|0
+<U1FB1D>	\x3F	|0
+<U1FB1E>	\x60	|0
+<U1FB1F>	\x61	|0
+<U1FB20>	\x62	|0
+<U1FB21>	\x63	|0
+<U1FB22>	\x64	|0
+<U1FB23>	\x65	|0
+<U1FB24>	\x66	|0
+<U1FB25>	\x67	|0
+<U1FB26>	\x68	|0
+<U1FB27>	\x69	|0
+<U1FB28>	\x6B	|0
+<U1FB29>	\x6C	|0
+<U1FB2A>	\x6D	|0
+<U1FB2B>	\x6E	|0
+<U1FB2C>	\x6F	|0
+<U1FB2D>	\x70	|0
+<U1FB2E>	\x71	|0
+<U1FB2F>	\x72	|0
+<U1FB30>	\x73	|0
+<U1FB31>	\x74	|0
+<U1FB32>	\x75	|0
+<U1FB33>	\x76	|0
+<U1FB34>	\x77	|0
+<U1FB35>	\x78	|0
+<U1FB36>	\x79	|0
+<U1FB37>	\x7A	|0
+<U1FB38>	\x7B	|0
+<U1FB39>	\x7C	|0
+<U1FB3A>	\x7D	|0
+<U1FB3B>	\x7E	|0
+END CHARMAP

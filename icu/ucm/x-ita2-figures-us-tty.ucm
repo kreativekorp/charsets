@@ -1,0 +1,43 @@
+<code_set_name>	"x-ita2-figures-us-tty"
+<char_name_mask>	"AXXXX"
+<mb_cur_min>	1
+<mb_cur_max>	1
+<uconv_class>	"SBCS"
+<subchar>	\x19
+<icu:state>	0-1f, 20-ff.u
+<icu:charsetFamily>	"ITA2"
+
+CHARMAP
+<U0000>	\x00	|0
+<U0007>	\x05	|0
+<U000A>	\x02	|0
+<U000D>	\x08	|0
+<U000E>	\x1B	|0
+<U000F>	\x1F	|0
+<U0020>	\x04	|0
+<U0021>	\x0D	|0
+<U0022>	\x11	|0
+<U0023>	\x14	|0
+<U0024>	\x09	|0
+<U0026>	\x1A	|0
+<U0027>	\x0B	|0
+<U0028>	\x0F	|0
+<U0029>	\x12	|0
+<U002C>	\x0C	|0
+<U002D>	\x03	|0
+<U002E>	\x1C	|0
+<U002F>	\x1D	|0
+<U0030>	\x16	|0
+<U0031>	\x17	|0
+<U0032>	\x13	|0
+<U0033>	\x01	|0
+<U0034>	\x0A	|0
+<U0035>	\x10	|0
+<U0036>	\x15	|0
+<U0037>	\x07	|0
+<U0038>	\x06	|0
+<U0039>	\x18	|0
+<U003A>	\x0E	|0
+<U003B>	\x1E	|0
+<U003F>	\x19	|0
+END CHARMAP
