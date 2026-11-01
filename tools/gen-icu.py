@@ -215,10 +215,6 @@ class IcuGenerator:
 			if set.intersection(set(cs.decoder_state_table), set(cs.decoder_output_table)):
 				print('%s Cannot create character map for %s because ICU cannot handle valid byte sequences starting with other valid byte sequences.' % (tablint.WARN, cs.name))
 				continue
-			extension_table_entries = [(c,b) for c,b in cs.charmap if len(c) > 1]
-			if len(extension_table_entries) > 255:
-				print('%s Cannot create character map for %s because ICU cannot handle more than 255 extension table entries and %s contains %d extension table entries.' % (tablint.WARN, cs.name, cs.name, len(extension_table_entries)))
-				#continue
 			out_file = os.path.join(out_dir, '%s.ucm' % cs.name)
 			cs.write_ucm(out_file)
 

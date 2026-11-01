@@ -119,10 +119,11 @@ def lint_lines(lines, round_trip=True, then_call=None, with_name=None, with_cano
 				ok = False
 	if pua_chars:
 		print('  PUA %s' % ' '.join('%04X' % cp for cp in sorted(pua_chars)))
+	if ok and then_call:
+		if then_call(with_name, with_canonical_name, bytes_to_chars, chars_to_bytes) is False:
+			ok = False
 	if ok:
 		print('  %s %d %d' % (OK, len(bytes_to_chars), len(chars_to_bytes)))
-		if then_call:
-			then_call(with_name, with_canonical_name, bytes_to_chars, chars_to_bytes)
 	return ok
 
 def lint_file(file, round_trip=True, then_call=None, with_name=None):
