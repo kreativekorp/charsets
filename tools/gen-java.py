@@ -317,6 +317,7 @@ class JavaTableCharset:
 		self.decoder_state_table = {}
 		self.decoder_output_table = {}
 		self.decoder_long_output_table = {}
+		self.decoder_max_state = 0
 		self.decoder_max_bytes = 0
 		for bs in bytes_to_chars:
 			cs = char_input(bytes_to_chars[bs])
@@ -327,7 +328,8 @@ class JavaTableCharset:
 				if key in self.decoder_state_table:
 					state = self.decoder_state_table[key]
 				else:
-					state = len(self.decoder_state_table) + 1
+					state = self.decoder_max_state + 1
+					self.decoder_max_state = state
 					self.decoder_state_table[key] = state
 			key = (state, bs[-1] & 0xFF)
 			self.decoder_output_table[key] = output
@@ -342,6 +344,7 @@ class JavaTableCharset:
 		self.encoder_replacement = find_encoder_replacement(bytes_to_chars, chars_to_bytes)
 		self.encoder_state_table = {}
 		self.encoder_output_table = {}
+		self.encoder_max_state = 0
 		self.encoder_max_chars = 0
 		for cs in chars_to_bytes:
 			bs = chars_to_bytes[cs]
@@ -353,7 +356,8 @@ class JavaTableCharset:
 				if key in self.encoder_state_table:
 					state = self.encoder_state_table[key]
 				else:
-					state = len(self.encoder_state_table) + 1
+					state = self.encoder_max_state + 1
+					self.encoder_max_state = state
 					self.encoder_state_table[key] = state
 			key = (state, cs[-1] & 0xFFFF)
 			self.encoder_output_table[key] = output
