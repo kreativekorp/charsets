@@ -6,8 +6,8 @@
 <subchar>	\x3F
 <icu:state>	0-80, 81-94.p, 95, 96-a9.p, aa, ab-be.p, bf, c0-ff.u
 <icu:charsetFamily>	"ASCII"
-<icu:alias>	"x-trs80m4"
 <icu:alias>	"x-trs80m4a"
+<icu:alias>	"x-trs80m4"
 
 CHARMAP
 <U0000>	\x00	|0

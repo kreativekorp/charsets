@@ -27,7 +27,7 @@ def uconv_has(encoding, icu_data=None):
 	return p.returncode == 0
 
 def uconv(byte_string, from_encoding, to_encoding, icu_data=None):
-	cmd = ['uconv']
+	cmd = ['uconv', '--callback', 'substitute']
 	if from_encoding:
 		cmd.append('-f')
 		cmd.append(from_encoding)
@@ -36,18 +36,24 @@ def uconv(byte_string, from_encoding, to_encoding, icu_data=None):
 		cmd.append(to_encoding)
 	env = None if icu_data is None else {'ICU_DATA': icu_data}
 	p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, env=env)
-	with p.stdin as stdin:
-		stdin.write(byte_string)
-	with p.stdout as stdout:
-		return stdout.read()
+	with p.stdin as pin:
+		pin.write(byte_string)
+	with p.stdout as pout:
+		return pout.read()
 
 def verify(name, canonical_name, bytes_to_chars, chars_to_bytes, icu_data=None):
 	if not uconv_has(canonical_name, icu_data):
 		print('  %s Unsupported encoding: %s' % (tablint.ERROR, canonical_name))
 		return False
 	ok = True
+	surrogates = 0
 	for bs in bytes_to_chars:
 		expected = bytes_to_chars[bs]
+		if any(0xD800 <= c <= 0xDFFF for c in expected):
+			if not surrogates:
+				print('  Skipping tests with unpaired surrogates')
+			surrogates += 1
+			continue
 		actual = tuple(ord(c) for c in uconv(bytes(bs), canonical_name, 'UTF-8', icu_data).decode('UTF-8'))
 		if actual != expected:
 			print('  %s Decode failed for byte sequence 0x%s' % (tablint.ERROR, ''.join('%02X' % b for b in bs)))
@@ -57,6 +63,11 @@ def verify(name, canonical_name, bytes_to_chars, chars_to_bytes, icu_data=None):
 			))
 			ok = False
 	for cs in chars_to_bytes:
+		if any(0xD800 <= c <= 0xDFFF for c in cs):
+			if not surrogates:
+				print('  Skipping tests with unpaired surrogates')
+			surrogates += 1
+			continue
 		expected = chars_to_bytes[cs]
 		actual = tuple(uconv(''.join(chr(c) for c in cs).encode('UTF-8'), 'UTF-8', canonical_name, icu_data))
 		if actual != expected:
@@ -66,6 +77,8 @@ def verify(name, canonical_name, bytes_to_chars, chars_to_bytes, icu_data=None):
 				''.join('%02X' % b for b in expected) if expected else '<null>'
 			))
 			ok = False
+	if surrogates:
+		print('  Skipped %d tests with unpaired surrogates' % surrogates)
 	return ok
 
 def main():

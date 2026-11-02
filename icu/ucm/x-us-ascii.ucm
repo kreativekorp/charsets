@@ -7,8 +7,6 @@
 <icu:state>	0-7f, 80-ff.u
 <icu:charsetFamily>	"ASCII"
 <icu:alias>	"x-ansi-x34-1967"
-<icu:alias>	"x-iso-646-irv"
-<icu:alias>	"x-iso-646-us"
 
 CHARMAP
 <U0000>	\x00	|0
