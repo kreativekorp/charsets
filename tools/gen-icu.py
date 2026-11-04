@@ -5,46 +5,6 @@ import os
 import sys
 import tablint
 
-REPLACEMENT_CHAR_CANDIDATES = [
-	0xFFFD, # REPLACEMENT CHARACTER
-	0x003F, # QUESTION MARK
-	0xFF1F, # FULLWIDTH QUESTION MARK
-	0x00BF, # INVERTED QUESTION MARK
-	0x061F, # ARABIC QUESTION MARK
-	0x2E2E, # REVERSED QUESTION MARK
-	0x2753, # BLACK QUESTION MARK ORNAMENT
-	0x2754, # WHITE QUESTION MARK ORNAMENT
-	0x002A, # ASTERISK
-	0xFF0A, # FULLWIDTH ASTERISK
-	0x2217, # ASTERISK OPERATOR
-	0x2731, # HEAVY ASTERISK
-	0x0058, # LATIN CAPITAL LETTER X
-	0xFF38, # FULLWIDTH LATIN CAPITAL LETTER X
-	0x00A0, # NO-BREAK SPACE
-	0x0020, # SPACE
-]
-
-REPLACEMENT_BYTE_CANDIDATES = [
-	0xFF, 0x7F, 0x3F, 0xBF, 0x00, 0x80, 0x40, 0xC0,
-	0x1F, 0x5F, 0x9F, 0xDF, 0x20, 0x60, 0xA0, 0xE0,
-	0x0F, 0x2F, 0x4F, 0x6F, 0x8F, 0xAF, 0xCF, 0xEF,
-	0x10, 0x30, 0x50, 0x70, 0x90, 0xB0, 0xD0, 0xF0,
-]
-
-def find_subchar(bytes_to_chars, chars_to_bytes):
-	for rcc in REPLACEMENT_CHAR_CANDIDATES:
-		if (rcc,) in chars_to_bytes:
-			return chars_to_bytes[(rcc,)]
-		if (rcc,rcc) in chars_to_bytes:
-			return chars_to_bytes[(rcc,rcc)]
-	for rbc in REPLACEMENT_BYTE_CANDIDATES:
-		if (rbc,) in bytes_to_chars:
-			return (rbc,)
-		if (rbc,rbc) in bytes_to_chars:
-			return (rbc,rbc)
-	for i in reversed(sorted(bytes_to_chars)):
-		return i
-
 def get_multi(dictionary, default, *keys):
 	for key in keys:
 		if key in dictionary:
@@ -116,7 +76,7 @@ class IcuTableCharset:
 		for alias in aliases:
 			self.add_name(alias)
 		# Header Data
-		self.subchar = find_subchar(bytes_to_chars, chars_to_bytes)
+		self.subchar = tablint.find_encoder_replacement(bytes_to_chars, chars_to_bytes)
 		self.family_fingerprint = family_fingerprint(chars_to_bytes)
 		self.family = self.get_family()
 
