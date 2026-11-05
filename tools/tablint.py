@@ -103,7 +103,7 @@ def lint_lines(lines, round_trip=True, then_call=None, with_name=None, with_cano
 						text = '+'.join('%04X' % ch for ch in text)
 						print('  %s Mapping 0x%s -> U%s contains emoji U+%04X; suggested replacement: U+%s' % (WARN, m[1], m[3], emoji, text))
 			for cp in cps:
-				if 0xD800 <= cp <= 0xDFFF:
+				if round_trip and 0xD800 <= cp <= 0xDFFF:
 					print('  %s Use of UTF-16 surrogate in character sequence U%s' % (ERROR, m[3]))
 					ok = False
 				if 0xE000 <= cp <= 0xF8FF or cp >= 0xF0000:
