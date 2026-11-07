@@ -1,0 +1,164 @@
+# Mac OS encodings begin at 0x000
+kCFStringEncodingMacRoman                       0               x-MacRoman
+kCFStringEncodingMacJapanese                    1               x-MacJapanese
+kCFStringEncodingMacChineseTrad                 2               x-MacChineseTraditional
+kCFStringEncodingMacKorean                      3               x-MacKorean
+kCFStringEncodingMacArabic                      4               x-MacArabic-dir
+kCFStringEncodingMacHebrew                      5               x-MacHebrew-dir
+kCFStringEncodingMacGreek                       6               x-MacGreek
+kCFStringEncodingMacCyrillic                    7               x-MacCyrillic
+kCFStringEncodingMacDevanagari                  9               x-MacDevanagari
+kCFStringEncodingMacGurmukhi                    10              x-MacGurmukhi
+kCFStringEncodingMacGujarati                    11              x-MacGujarati
+# kCFStringEncodingMacOriya                     12              x-MacOriya
+# kCFStringEncodingMacBengali                   13              x-MacBengali
+# kCFStringEncodingMacTamil                     14              x-MacTamil
+# kCFStringEncodingMacTelugu                    15              x-MacTelugu
+# kCFStringEncodingMacKannada                   16              x-MacKannada
+# kCFStringEncodingMacMalayalam                 17              x-MacMalayalam
+# kCFStringEncodingMacSinhalese                 18              x-MacSinhalese
+# kCFStringEncodingMacBurmese                   19              x-MacBurmese
+# kCFStringEncodingMacKhmer                     20              x-MacKhmer
+kCFStringEncodingMacThai                        21              x-MacThai
+# kCFStringEncodingMacLaotian                   22              x-MacLaotian
+# kCFStringEncodingMacGeorgian                  23              x-MacGeorgian
+# kCFStringEncodingMacArmenian                  24              x-MacArmenian
+kCFStringEncodingMacChineseSimp                 25              x-MacChineseSimplified
+# kCFStringEncodingMacTibetan                   26              x-MacTibetan
+# kCFStringEncodingMacMongolian                 27              x-MacMongolian
+# kCFStringEncodingMacEthiopic                  28              x-MacEthiopic
+kCFStringEncodingMacCentralEurRoman             29              x-MacCentralEuropean
+# kCFStringEncodingMacVietnamese                30              x-MacVietnamese
+# kCFStringEncodingMacExtArabic                 31              x-MacExtArabic-dir
+kCFStringEncodingMacSymbol                      33              x-MacSymbol
+kCFStringEncodingMacDingbats                    34              x-MacDingbats
+kCFStringEncodingMacTurkish                     35              x-MacTurkish
+kCFStringEncodingMacCroatian                    36              x-MacCroatian
+kCFStringEncodingMacIcelandic                   37              x-MacIcelandic
+kCFStringEncodingMacRomanian                    38              x-MacRomanian
+kCFStringEncodingMacCeltic                      39              x-MacCeltic
+kCFStringEncodingMacGaelic                      40              x-MacGaelic
+kCFStringEncodingMacFarsi                       140             x-MacFarsi-dir
+kCFStringEncodingMacUkrainian                   152             x-MacUkrainian
+kCFStringEncodingMacInuit                       236             x-MacInuit
+kCFStringEncodingMacVT100                       252             x-MacVT100
+# kCFStringEncodingMacHFS                       255             x-MacHFS
+
+# Unicode & ISO UCS encodings begin at 0x100
+kCFStringEncodingUnicode                        256             UTF-16
+kCFStringEncodingUTF16                          256             UTF-16
+kCFStringEncodingUTF7                           67109120        UTF-7
+kCFStringEncodingUTF8                           134217984       UTF-8
+kCFStringEncodingUTF16BE                        201326848       UTF-32
+kCFStringEncodingUTF16LE                        268435712       UTF-16BE
+kCFStringEncodingUTF32                          335544576       UTF-16LE
+kCFStringEncodingUTF32BE                        402653440       UTF-32BE
+kCFStringEncodingUTF32LE                        469762304       UTF-32LE
+
+# ISO 8-bit and 7-bit encodings begin at 0x200
+kCFStringEncodingISOLatin1                      513             x-iso-8859-1
+kCFStringEncodingISOLatin2                      514             x-iso-8859-2
+kCFStringEncodingISOLatin3                      515             x-iso-8859-3
+kCFStringEncodingISOLatin4                      516             x-iso-8859-4
+kCFStringEncodingISOLatinCyrillic               517             x-iso-8859-5
+kCFStringEncodingISOLatinArabic                 518             x-iso-8859-6
+kCFStringEncodingISOLatinGreek                  519             x-iso-8859-7
+kCFStringEncodingISOLatinHebrew                 520             x-iso-8859-8
+kCFStringEncodingISOLatin5                      521             x-iso-8859-9
+kCFStringEncodingISOLatin6                      522             x-iso-8859-10
+kCFStringEncodingISOLatinThai                   523             x-iso-8859-11
+kCFStringEncodingISOLatin7                      525             x-iso-8859-13
+kCFStringEncodingISOLatin8                      526             x-iso-8859-14
+kCFStringEncodingISOLatin9                      527             x-iso-8859-15
+kCFStringEncodingISOLatin10                     528             x-iso-8859-16
+
+# MS-DOS encodings begin at 0x400
+kCFStringEncodingDOSLatinUS                     1024            x-IBM437
+kCFStringEncodingDOSGreek                       1029            x-IBM737
+kCFStringEncodingDOSBalticRim                   1030            x-IBM775
+kCFStringEncodingDOSLatin1                      1040            x-IBM850
+kCFStringEncodingDOSGreek1                      1041            x-IBM851
+kCFStringEncodingDOSLatin2                      1042            x-IBM852
+kCFStringEncodingDOSCyrillic                    1043            x-IBM855
+kCFStringEncodingDOSTurkish                     1044            x-IBM857
+kCFStringEncodingDOSPortuguese                  1045            x-IBM860
+kCFStringEncodingDOSIcelandic                   1046            x-IBM861
+kCFStringEncodingDOSHebrew                      1047            x-IBM862
+kCFStringEncodingDOSCanadianFrench              1048            x-IBM863
+kCFStringEncodingDOSArabic                      1049            x-IBM864
+kCFStringEncodingDOSNordic                      1050            x-IBM865
+kCFStringEncodingDOSRussian                     1051            x-IBM866
+kCFStringEncodingDOSGreek2                      1052            x-IBM869
+kCFStringEncodingDOSThai                        1053            x-windows-874
+kCFStringEncodingDOSJapanese                    1056            x-windows-932
+kCFStringEncodingDOSChineseSimplif              1057            x-windows-936
+kCFStringEncodingDOSKorean                      1058            x-windows-949
+kCFStringEncodingDOSChineseTrad                 1059            x-windows-950
+
+# Windows encodings begin at 0x500
+kCFStringEncodingWindowsLatin1                  1280            x-windows-1252
+kCFStringEncodingWindowsLatin2                  1281            x-windows-1250
+kCFStringEncodingWindowsCyrillic                1282            x-windows-1251
+kCFStringEncodingWindowsGreek                   1283            x-windows-1253
+kCFStringEncodingWindowsLatin5                  1284            x-windows-1254
+kCFStringEncodingWindowsHebrew                  1285            x-windows-1255
+kCFStringEncodingWindowsArabic                  1286            x-windows-1256
+kCFStringEncodingWindowsBalticRim               1287            x-windows-1257
+kCFStringEncodingWindowsVietnamese              1288            x-windows-1258
+# kCFStringEncodingWindowsKoreanJohab           1296            x-windows-1361
+
+# Various national standards begin at 0x600
+kCFStringEncodingASCII                          1536            x-us-ascii
+# kCFStringEncodingANSEL                        1537            x-ansel
+kCFStringEncodingJIS_X0201_76                   1568            x-jis-x-0201-generic
+# kCFStringEncodingJIS_X0208_83                 1569            x-jis-x-0208-83-generic
+# kCFStringEncodingJIS_X0208_90                 1570            x-jis-x-0208-90-generic
+kCFStringEncodingJIS_X0212_90                   1571            x-jis-x-0212-generic
+# kCFStringEncodingJIS_C6226_78                 1572            x-jis-c-6226-generic
+# kCFStringEncodingShiftJIS_X0213               1576            x-jis-x-0213-generic
+# kCFStringEncodingShiftJIS_X0213_00            1576            x-jis-x-0213-generic
+# kCFStringEncodingShiftJIS_X0213_MenKuTen      1577            x-jis-x-0213-menkuten-generic
+kCFStringEncodingGB_2312_80                     1578            GB2312
+kCFStringEncodingGBK_95                         1579            GBK
+kCFStringEncodingGB_18030_2000                  1580            GB18030
+kCFStringEncodingKSC_5601_87                    1600            x-ksc-5601
+kCFStringEncodingKSC_5601_92_Johab              1601            x-johab-generic
+# kCFStringEncodingCNS_11643_92_P1              1617            x-cns-11643-p1
+# kCFStringEncodingCNS_11643_92_P2              1618            x-cns-11643-p2
+# kCFStringEncodingCNS_11643_92_P3              1619            x-cns-11643-p3
+
+# ISO 2022 collections begin at 0x800
+kCFStringEncodingISO_2022_JP                    2080            ISO-2022-JP
+kCFStringEncodingISO_2022_JP_2                  2081            ISO-2022-JP-2
+kCFStringEncodingISO_2022_JP_1                  2082            ISO-2022-JP-1
+kCFStringEncodingISO_2022_JP_3                  2083            ISO-2022-JP-3
+kCFStringEncodingISO_2022_CN                    2096            ISO-2022-CN
+kCFStringEncodingISO_2022_CN_EXT                2097            ISO-2022-CN-EXT
+kCFStringEncodingISO_2022_KR                    2112            ISO-2022-KR
+
+# EUC collections begin at 0x900
+kCFStringEncodingEUC_JP                         2336            EUC-JP
+kCFStringEncodingEUC_CN                         2352            EUC-CN
+kCFStringEncodingEUC_TW                         2353            EUC-TW
+kCFStringEncodingEUC_KR                         2368            EUC-KR
+
+# Misc standards begin at 0xA00
+kCFStringEncodingShiftJIS                       2561            x-shift-jis-generic
+kCFStringEncodingKOI8_R                         2562            x-koi8-r
+kCFStringEncodingBig5                           2563            x-big5
+# kCFStringEncodingMacRomanLatin1               2564            x-MacRomanLatin1
+# kCFStringEncodingHZ_GB_2312                   2565            x-hz-gb2312
+# kCFStringEncodingBig5_HKSCS_1999              2566            x-big5-hkscs
+kCFStringEncodingVISCII                         2567            x-viscii
+kCFStringEncodingKOI8_U                         2568            x-koi8-u
+# kCFStringEncodingBig5_E                       2569            x-big5e
+# kCFStringEncodingUTF7_IMAP                    2570            UTF-7-IMAP
+
+# Other platform encodings begin at 0xB00
+kCFStringEncodingNextStepLatin                  2817            x-nextstep
+# kCFStringEncodingNextStepJapanese             2818            x-nextstep-jp
+# kCFStringEncodingNonLossyASCII                3071            x-us-ascii-non-lossy
+
+# EBCDIC & IBM host encodings begin at 0xC00
+# kCFStringEncodingEBCDIC_US                    3073            x-ebcdic-us
+kCFStringEncodingEBCDIC_CP037                   3074            x-IBM037

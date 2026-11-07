@@ -1,0 +1,651 @@
+x-acorn-atom	Acorn|Acorn Atom
+x-acorn-atom-video	Acorn|Acorn Atom (Video)
+x-acorn-electron	Acorn|Acorn Electron
+x-acorn-mode7	Acorn|BBC Micro Mode 7
+x-acorn-mode7-video	Acorn|BBC Micro Mode 7 (Video)
+x-adobe-dingbats	Adobe|Zapf Dingbats
+x-adobe-dingbats-2002	Adobe|Zapf Dingbats (Unicode 3.2)
+x-adobe-latin1	Adobe|Adobe Latin-1
+x-adobe-standard	Adobe|Adobe Standard
+x-adobe-symbol	Adobe|Adobe Symbol
+x-adobe-symbol-2002	Adobe|Adobe Symbol (Unicode 3.2)
+x-amstrad-cpc	Amstrad|Amstrad CPC
+x-amstrad-cpm	Amstrad|Amstrad CP/M Plus
+x-amstrad-cpm-video	Amstrad|Amstrad CP/M Plus (Video)
+x-ansi-x34-1963	ASCII|ANSI X3.4-1963
+x-ansi-x34-1965	ASCII|ANSI X3.4-1965
+x-ansi-x34-1967	ASCII|ANSI X3.4-1967
+x-apple2	Apple II|Apple II
+x-apple2c	Apple II|Apple IIc (Apple)
+x-apple2c-emoji	Apple II|Apple IIc (Emoji)
+x-apple2c-linux	Apple II|Apple IIc (Linux)
+x-apple2c-mod	Apple II|Apple IIc (Modern)
+x-apple2e	Apple II|Apple IIe (Apple)
+x-apple2e-emoji	Apple II|Apple IIe (Emoji)
+x-apple2e-linux	Apple II|Apple IIe (Linux)
+x-apple2e-mod	Apple II|Apple IIe (Modern)
+x-apple2gs	Apple II|Apple IIgs (Apple)
+x-apple2gs-emoji	Apple II|Apple IIgs (Emoji)
+x-apple2gs-linux	Apple II|Apple IIgs (Linux)
+x-apple2gs-mod	Apple II|Apple IIgs (Modern)
+x-aquarius	Mattel|Mattel Aquarius
+x-aquarius-c0	Mattel|Mattel Aquarius (ASCII Controls)
+x-aquarius-video	Mattel|Mattel Aquarius (Video)
+x-atarist	Atari|Atari ST
+x-atarist-video	Atari|Atari ST (Video)
+x-atascii	Atari|ATASCII Graphics
+x-atascii-video	Atari|ATASCII Graphics (Video)
+x-atascii-int	Atari|ATASCII International
+x-atascii-int-video	Atari|ATASCII International (Video)
+x-bbc-master	Acorn|BBC Master
+x-bbc-micro	Acorn|BBC Micro
+x-bbc-mode7	Acorn|BBC Micro Mode 7
+x-bbc-mode7-video	Acorn|BBC Micro Mode 7 (Video)
+x-bcd	BCD|BCD Standard
+x-bcd-full	BCD|BCD Standard (Full)
+x-bcd-code-b	BCD|BCD Code-B
+x-bcd-code-b-full	BCD|BCD Code-B (Full)
+x-bcd-electronika	BCD|BCD Electronika
+x-bcd-electronika-full	BCD|BCD Electronika (Full)
+x-bcd-hexadecimal	BCD|BCD Hexadecimal
+x-bcd-hexadecimal-full	BCD|BCD Hexadecimal (Full)
+x-bcd-ibm	BCD|BCD IBM
+x-bcd-ibm-full	BCD|BCD IBM (Full)
+x-bcd-telephony	BCD|BCD Telephony
+x-bcd-telephony-full	BCD|BCD Telephony (Full)
+x-big5	CJK|Big5
+x-cns-11643	CJK|CNS-11643
+x-coleco-adam-os7	Coleco|Coleco Adam OS7
+x-coleco-adam-os7-video	Coleco|Coleco Adam OS7 (Video)
+x-coleco-adam-sw	Coleco|Coleco Adam SmartWRITER
+x-coleco-adam-sw-video	Coleco|Coleco Adam SmartWRITER (Video)
+x-cybiko	Miscellaneous|Cybiko
+x-dec-multinational	Miscellaneous|DEC Multinational
+x-dec-sixbit	ASCII|DEC SIXBIT
+x-ecma1	ASCII|ECMA-1
+x-ecma1-gb1	ASCII|ECMA-1 GB1
+x-ecma1-gb2	ASCII|ECMA-1 GB2
+x-enterprise	Miscellaneous|Enterprise 64/128
+x-ets-300-706-g0-irv	ETS 300 706|Latin G0 Primary Set
+x-ets-300-706-g0-cs	ETS 300 706|Latin G0 Primary Set, Czech Option
+x-ets-300-706-g0-de	ETS 300 706|Latin G0 Primary Set, German Option
+x-ets-300-706-g0-en	ETS 300 706|Latin G0 Primary Set, English Option
+x-ets-300-706-g0-es	ETS 300 706|Latin G0 Primary Set, Spanish Option
+x-ets-300-706-g0-et	ETS 300 706|Latin G0 Primary Set, Estonian Option
+x-ets-300-706-g0-fi	ETS 300 706|Latin G0 Primary Set, Finnish Option
+x-ets-300-706-g0-fr	ETS 300 706|Latin G0 Primary Set, French Option
+x-ets-300-706-g0-hr	ETS 300 706|Latin G0 Primary Set, Croatian Option
+x-ets-300-706-g0-hu	ETS 300 706|Latin G0 Primary Set, Hungarian Option
+x-ets-300-706-g0-it	ETS 300 706|Latin G0 Primary Set, Italian Option
+x-ets-300-706-g0-lt	ETS 300 706|Latin G0 Primary Set, Lithuanian Option
+x-ets-300-706-g0-lv	ETS 300 706|Latin G0 Primary Set, Latvian Option
+x-ets-300-706-g0-pl	ETS 300 706|Latin G0 Primary Set, Polish Option
+x-ets-300-706-g0-pt	ETS 300 706|Latin G0 Primary Set, Portuguese Option
+x-ets-300-706-g0-ro	ETS 300 706|Latin G0 Primary Set, Romanian Option
+x-ets-300-706-g0-sk	ETS 300 706|Latin G0 Primary Set, Slovak Option
+x-ets-300-706-g0-sl	ETS 300 706|Latin G0 Primary Set, Slovenian Option
+x-ets-300-706-g0-sr	ETS 300 706|Latin G0 Primary Set, Serbian Option
+x-ets-300-706-g0-sv	ETS 300 706|Latin G0 Primary Set, Swedish Option
+x-ets-300-706-g0-tr	ETS 300 706|Latin G0 Primary Set, Turkish Option
+x-ets-300-706-g0-el	ETS 300 706|Greek G0 Primary Set
+x-ets-300-706-g0-bg	ETS 300 706|Cyrillic G0 Primary Set, Bulgarian Option
+x-ets-300-706-g0-hr-cyrl	ETS 300 706|Cyrillic G0 Primary Set, Croatian Option
+x-ets-300-706-g0-ru	ETS 300 706|Cyrillic G0 Primary Set, Russian Option
+x-ets-300-706-g0-sr-cyrl	ETS 300 706|Cyrillic G0 Primary Set, Serbian Option
+x-ets-300-706-g0-uk	ETS 300 706|Cyrillic G0 Primary Set, Ukrainian Option
+x-ets-300-706-g0-ar	ETS 300 706|Arabic G0 Primary Set
+x-ets-300-706-g0-he	ETS 300 706|Hebrew G0 Primary Set
+x-ets-300-706-g1-con	ETS 300 706|G1 Block Mosaics Set, Contiguous Form
+x-ets-300-706-g1-sep	ETS 300 706|G1 Block Mosaics Set, Separated Form
+x-ets-300-706-g2-cs	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-de	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-en	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-es	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-et	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-fi	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-fr	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-hr	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-hu	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-irv	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-it	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-lt	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-lv	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-pl	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-pt	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-ro	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-sk	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-sl	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-sr	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-sv	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-tr	ETS 300 706|Latin G2 Supplementary Set
+x-ets-300-706-g2-el	ETS 300 706|Greek G2 Supplementary Set
+x-ets-300-706-g2-bg	ETS 300 706|Cyrillic G2 Supplementary Set, Bulgarian Option
+x-ets-300-706-g2-hr-cyrl	ETS 300 706|Cyrillic G2 Supplementary Set, Croatian Option
+x-ets-300-706-g2-ru	ETS 300 706|Cyrillic G2 Supplementary Set, Russian Option
+x-ets-300-706-g2-sr-cyrl	ETS 300 706|Cyrillic G2 Supplementary Set, Serbian Option
+x-ets-300-706-g2-uk	ETS 300 706|Cyrillic G2 Supplementary Set, Ukrainian Option
+x-ets-300-706-g2-ar	ETS 300 706|Arabic G2 Supplementary Set
+x-ets-300-706-g3	ETS 300 706|G3 Smooth Mosaics and Line Drawing Set
+x-fieldata	FIELDATA|FIELDATA (MIL-STD-188)
+x-fieldata-univac-62	FIELDATA|FIELDATA (UNIVAC 1107/1108)
+x-fieldata-univac-69	FIELDATA|FIELDATA (UNIVAC 1100)
+x-fieldata-univac-85	FIELDATA|FIELDATA (Unisys 2200)
+x-gemdos	Digital Research|GEMDOS
+x-gemdos-video	Digital Research|GEMDOS (Video)
+x-gsm0338	Miscellaneous|GSM 03.38
+x-hp-48	Hewlett Packard|HP-48
+x-hp-1816-0641	Hewlett Packard|HP 2640 Series Line Drawing Set
+x-hp-1816-0642	Hewlett Packard|HP 2640 Series Math Set
+x-hp-1816-1417	Hewlett Packard|HP 2640 Series Line Drawing Set
+x-hp-1816-1425	Hewlett Packard|HP 2640 Series Large Type Set
+x-hp-roman-8	Hewlett Packard|HP Roman-8
+x-hp-roman-9	Hewlett Packard|HP Roman-9
+x-hp-roman-extension	Hewlett Packard|HP Roman Extension
+x-IBM037	IBM|IBM CP037 (EBCDIC US/Canada)
+x-IBM037-generic	IBM|IBM CP037 (EBCDIC US/Canada) (Generic)
+x-IBM037-unix	IBM|IBM CP037 (EBCDIC US/Canada) (Unix)
+x-IBM273	IBM|IBM CP273 (EBCDIC Austria/Germany)
+x-IBM273-generic	IBM|IBM CP273 (EBCDIC Austria/Germany) (Generic)
+x-IBM273-unix	IBM|IBM CP273 (EBCDIC Austria/Germany) (Unix)
+x-IBM277	IBM|IBM CP277 (EBCDIC Denmark/Norway)
+x-IBM277-generic	IBM|IBM CP277 (EBCDIC Denmark/Norway) (Generic)
+x-IBM277-unix	IBM|IBM CP277 (EBCDIC Denmark/Norway) (Unix)
+x-IBM278	IBM|IBM CP278 (EBCDIC Finland/Sweden)
+x-IBM278-generic	IBM|IBM CP278 (EBCDIC Finland/Sweden) (Generic)
+x-IBM278-unix	IBM|IBM CP278 (EBCDIC Finland/Sweden) (Unix)
+x-IBM280	IBM|IBM CP280 (EBCDIC Italy)
+x-IBM280-generic	IBM|IBM CP280 (EBCDIC Italy) (Generic)
+x-IBM280-unix	IBM|IBM CP280 (EBCDIC Italy) (Unix)
+x-IBM284	IBM|IBM CP284 (EBCDIC Spain/Latin America)
+x-IBM284-generic	IBM|IBM CP284 (EBCDIC Spain/Latin America) (Generic)
+x-IBM284-unix	IBM|IBM CP284 (EBCDIC Spain/Latin America) (Unix)
+x-IBM285	IBM|IBM CP285 (EBCDIC UK)
+x-IBM285-generic	IBM|IBM CP285 (EBCDIC UK) (Generic)
+x-IBM285-unix	IBM|IBM CP285 (EBCDIC UK) (Unix)
+x-IBM290	IBM|IBM CP290 (EBCDIC Japan SBCS)
+x-IBM290-generic	IBM|IBM CP290 (EBCDIC Japan SBCS) (Generic)
+x-IBM290-unix	IBM|IBM CP290 (EBCDIC Japan SBCS) (Unix)
+x-IBM297	IBM|IBM CP297 (EBCDIC France)
+x-IBM297-generic	IBM|IBM CP297 (EBCDIC France) (Generic)
+x-IBM297-unix	IBM|IBM CP297 (EBCDIC France) (Unix)
+x-IBM300	IBM|IBM CP300 (EBCDIC Japan DBCS)
+x-IBM420	IBM|IBM CP420 (EBCDIC Arabic)
+x-IBM420-generic	IBM|IBM CP420 (EBCDIC Arabic) (Generic)
+x-IBM420-unix	IBM|IBM CP420 (EBCDIC Arabic) (Unix)
+x-IBM424	IBM|IBM CP424 (EBCDIC Hebrew)
+x-IBM424-generic	IBM|IBM CP424 (EBCDIC Hebrew) (Generic)
+x-IBM424-java	IBM|IBM CP424 (EBCDIC Hebrew) (Java)
+x-IBM424-unix	IBM|IBM CP424 (EBCDIC Hebrew) (Unix)
+x-IBM437	IBM|IBM CP437 (MS-DOS US)
+x-IBM437-video	IBM|IBM CP437 (MS-DOS US) (Video)
+x-IBM500	IBM|IBM CP500 (EBCDIC International)
+x-IBM500-generic	IBM|IBM CP500 (EBCDIC International) (Generic)
+x-IBM500-unix	IBM|IBM CP500 (EBCDIC International) (Unix)
+x-IBM720	IBM|IBM CP720 (MS-DOS Arabic)
+x-IBM737	IBM|IBM CP737 (MS-DOS Greek)
+x-IBM775	IBM|IBM CP775 (MS-DOS Baltic)
+x-IBM833	IBM|IBM CP833 (EBCDIC Korea SBCS)
+x-IBM833-generic	IBM|IBM CP833 (EBCDIC Korea SBCS) (Generic)
+x-IBM833-unix	IBM|IBM CP833 (EBCDIC Korea SBCS) (Unix)
+x-IBM834	IBM|IBM CP834 (EBCDIC Korea DBCS)
+x-IBM850	IBM|IBM CP850 (MS-DOS Latin-1)
+x-IBM851	IBM|IBM CP851 (MS-DOS Greek)
+x-IBM852	IBM|IBM CP852 (MS-DOS Latin-2)
+x-IBM853	IBM|IBM CP853 (MS-DOS Latin-3)
+x-IBM855	IBM|IBM CP855 (MS-DOS Cyrillic)
+x-IBM856	IBM|IBM CP856 (MS-DOS Hebrew)
+x-IBM856-generic	IBM|IBM CP856 (MS-DOS Hebrew) (Generic)
+x-IBM856-java	IBM|IBM CP856 (MS-DOS Hebrew) (Java)
+x-IBM857	IBM|IBM CP857 (MS-DOS Turkey Latin-5)
+x-IBM858	IBM|IBM CP858 (MS-DOS Latin-1 with Euro)
+x-IBM860	IBM|IBM CP860 (MS-DOS Portugal)
+x-IBM861	IBM|IBM CP861 (MS-DOS Iceland)
+x-IBM862	IBM|IBM CP862 (MS-DOS Hebrew)
+x-IBM863	IBM|IBM CP863 (MS-DOS Canada)
+x-IBM864	IBM|IBM CP864 (MS-DOS Arabic)
+x-IBM865	IBM|IBM CP865 (MS-DOS Nordic)
+x-IBM866	IBM|IBM CP866 (MS-DOS Cyrillic Russian)
+x-IBM868	IBM|IBM CP868 (MS-DOS Urdu)
+x-IBM869	IBM|IBM CP869 (MS-DOS Greek-2)
+x-IBM870	IBM|IBM CP870 (EBCDIC Latin-2)
+x-IBM870-generic	IBM|IBM CP870 (EBCDIC Latin-2) (Generic)
+x-IBM870-unix	IBM|IBM CP870 (EBCDIC Latin-2) (Unix)
+x-IBM871	IBM|IBM CP871 (EBCDIC Iceland)
+x-IBM871-generic	IBM|IBM CP871 (EBCDIC Iceland) (Generic)
+x-IBM871-unix	IBM|IBM CP871 (EBCDIC Iceland) (Unix)
+x-IBM874	IBM|IBM CP874 (MS-DOS Thai)
+x-IBM875	IBM|IBM CP875 (EBCDIC Greek)
+x-IBM875-generic	IBM|IBM CP875 (EBCDIC Greek) (Generic)
+x-IBM875-unix	IBM|IBM CP875 (EBCDIC Greek) (Unix)
+x-IBM918	IBM|IBM CP918 (EBCDIC Urdu)
+x-IBM918-generic	IBM|IBM CP918 (EBCDIC Urdu) (Generic)
+x-IBM918-unix	IBM|IBM CP918 (EBCDIC Urdu) (Unix)
+x-IBM921	IBM|IBM CP921 (Baltic)
+x-IBM922	IBM|IBM CP922 (Estonia)
+x-IBM942	IBM|IBM CP942
+x-IBM942C	IBM|IBM CP942C
+x-IBM943	IBM|IBM CP943
+x-IBM943C	IBM|IBM CP943C
+x-IBM948	IBM|IBM CP948
+x-IBM949	IBM|IBM CP949
+x-IBM949C	IBM|IBM CP949C
+x-IBM950	IBM|IBM CP950
+x-IBM964	IBM|IBM CP964
+x-IBM970	IBM|IBM CP970
+x-IBM1006	IBM|IBM CP1006 (Urdu)
+x-IBM1006-generic	IBM|IBM CP1006 (Urdu) (Generic)
+x-IBM1006-java	IBM|IBM CP1006 (Urdu) (Unix)
+x-IBM1025	IBM|IBM CP1025 (EBCDIC Cyrillic)
+x-IBM1025-generic	IBM|IBM CP1025 (EBCDIC Cyrillic) (Generic)
+x-IBM1025-unix	IBM|IBM CP1025 (EBCDIC Cyrillic) (Unix)
+x-IBM1026	IBM|IBM CP1026 (EBCDIC Turkey Latin-5)
+x-IBM1026-generic	IBM|IBM CP1026 (EBCDIC Turkey Latin-5) (Generic)
+x-IBM1026-unix	IBM|IBM CP1026 (EBCDIC Turkey Latin-5) (Unix)
+x-IBM1046	IBM|IBM CP1046 (Arabic Extended)
+x-IBM1047	IBM|IBM CP1047 (EBCDIC Latin-1)
+x-IBM1047-generic	IBM|IBM CP1047 (EBCDIC Latin-1) (Generic)
+x-IBM1047-java	IBM|IBM CP1047 (EBCDIC Latin-1) (Java)
+x-IBM1047-unix	IBM|IBM CP1047 (EBCDIC Latin-1) (Unix)
+x-IBM1097	IBM|IBM CP1097 (EBCDIC Farsi)
+x-IBM1097-generic	IBM|IBM CP1097 (EBCDIC Farsi) (Generic)
+x-IBM1097-unix	IBM|IBM CP1097 (EBCDIC Farsi) (Unix)
+x-IBM1098	IBM|IBM CP1098 (MS-DOS Farsi)
+x-IBM1112	IBM|IBM CP1112 (EBCDIC Baltic)
+x-IBM1112-generic	IBM|IBM CP1112 (EBCDIC Baltic) (Generic)
+x-IBM1112-unix	IBM|IBM CP1112 (EBCDIC Baltic) (Unix)
+x-IBM1122	IBM|IBM CP1122 (EBCDIC Estonia)
+x-IBM1122-generic	IBM|IBM CP1122 (EBCDIC Estonia) (Generic)
+x-IBM1122-unix	IBM|IBM CP1122 (EBCDIC Estonia) (Unix)
+x-IBM1123	IBM|IBM CP1123 (EBCDIC Cyrillic Ukraine)
+x-IBM1123-generic	IBM|IBM CP1123 (EBCDIC Cyrillic Ukraine) (Generic)
+x-IBM1123-unix	IBM|IBM CP1123 (EBCDIC Cyrillic Ukraine) (Unix)
+x-IBM1124	IBM|IBM CP1124 (Cyrillic Ukraine)
+x-IBM1133	IBM|IBM CP1133 (Lao)
+x-IBM1140	IBM|IBM CP1140 (EBCDIC US/Canada with Euro)
+x-IBM1140-generic	IBM|IBM CP1140 (EBCDIC US/Canada with Euro) (Generic)
+x-IBM1140-unix	IBM|IBM CP1140 (EBCDIC US/Canada with Euro) (Unix)
+x-IBM1141	IBM|IBM CP1141 (EBCDIC Austria/Germany with Euro)
+x-IBM1141-generic	IBM|IBM CP1141 (EBCDIC Austria/Germany with Euro) (Generic)
+x-IBM1141-unix	IBM|IBM CP1141 (EBCDIC Austria/Germany with Euro) (Unix)
+x-IBM1142	IBM|IBM CP1142 (EBCDIC Denmark/Norway with Euro)
+x-IBM1142-generic	IBM|IBM CP1142 (EBCDIC Denmark/Norway with Euro) (Generic)
+x-IBM1142-unix	IBM|IBM CP1142 (EBCDIC Denmark/Norway with Euro) (Unix)
+x-IBM1143	IBM|IBM CP1143 (EBCDIC Finland/Sweden with Euro)
+x-IBM1143-generic	IBM|IBM CP1143 (EBCDIC Finland/Sweden with Euro) (Generic)
+x-IBM1143-unix	IBM|IBM CP1143 (EBCDIC Finland/Sweden with Euro) (Unix)
+x-IBM1144	IBM|IBM CP1144 (EBCDIC Italy with Euro)
+x-IBM1144-generic	IBM|IBM CP1144 (EBCDIC Italy with Euro) (Generic)
+x-IBM1144-unix	IBM|IBM CP1144 (EBCDIC Italy with Euro) (Unix)
+x-IBM1145	IBM|IBM CP1145 (EBCDIC Spain/Latin America with Euro)
+x-IBM1145-generic	IBM|IBM CP1145 (EBCDIC Spain/Latin America with Euro) (Generic)
+x-IBM1145-unix	IBM|IBM CP1145 (EBCDIC Spain/Latin America with Euro) (Unix)
+x-IBM1146	IBM|IBM CP1146 (EBCDIC UK with Euro)
+x-IBM1146-generic	IBM|IBM CP1146 (EBCDIC UK with Euro) (Generic)
+x-IBM1146-unix	IBM|IBM CP1146 (EBCDIC UK with Euro) (Unix)
+x-IBM1147	IBM|IBM CP1147 (EBCDIC France with Euro)
+x-IBM1147-generic	IBM|IBM CP1147 (EBCDIC France with Euro) (Generic)
+x-IBM1147-unix	IBM|IBM CP1147 (EBCDIC France with Euro) (Unix)
+x-IBM1148	IBM|IBM CP1148 (EBCDIC International with Euro)
+x-IBM1148-generic	IBM|IBM CP1148 (EBCDIC International with Euro) (Generic)
+x-IBM1148-unix	IBM|IBM CP1148 (EBCDIC International with Euro) (Unix)
+x-IBM1149	IBM|IBM CP1149 (EBCDIC Iceland with Euro)
+x-IBM1149-generic	IBM|IBM CP1149 (EBCDIC Iceland with Euro) (Generic)
+x-IBM1149-unix	IBM|IBM CP1149 (EBCDIC Iceland with Euro) (Unix)
+x-IBM1155	IBM|IBM CP1155 (EBCDIC Turkey Latin-5 with Euro)
+x-IBM1155-generic	IBM|IBM CP1155 (EBCDIC Turkey Latin-5 with Euro) (Generic)
+x-IBM1155-unix	IBM|IBM CP1155 (EBCDIC Turkey Latin-5 with Euro) (Unix)
+x-IBM1166	IBM|IBM CP1166 (EBCDIC Cyrillic with Euro)
+x-IBM1166-generic	IBM|IBM CP1166 (EBCDIC Cyrillic with Euro) (Generic)
+x-IBM1166-unix	IBM|IBM CP1166 (EBCDIC Cyrillic with Euro) (Unix)
+x-IBM1381	IBM|IBM CP1381
+x-IBM1383	IBM|IBM CP1383
+x-IBM4971	IBM|IBM CP4971 (EBCDIC Greek with Euro)
+x-IBM4971-generic	IBM|IBM CP4971 (EBCDIC Greek with Euro) (Generic)
+x-IBM4971-unix	IBM|IBM CP4971 (EBCDIC Greek with Euro) (Unix)
+x-IBM9067	IBM|IBM CP9067 (EBCDIC Greek with Euro and Drachma)
+x-IBM9067-generic	IBM|IBM CP9067 (EBCDIC Greek with Euro and Drachma) (Generic)
+x-IBM9067-unix	IBM|IBM CP9067 (EBCDIC Greek with Euro and Drachma) (Unix)
+x-IBM12712	IBM|IBM CP12712 (EBCDIC Hebrew with Euro and Sheqel)
+x-IBM12712-generic	IBM|IBM CP12712 (EBCDIC Hebrew with Euro and Sheqel) (Generic)
+x-IBM12712-unix	IBM|IBM CP12712 (EBCDIC Hebrew with Euro and Sheqel) (Unix)
+x-IBM33722	IBM|IBM CP33722
+x-iso-646-ca	ISO 646|ISO 646-CA (Canada)
+x-iso-646-ca2	ISO 646|ISO 646-CA2 (Canada-2)
+x-iso-646-ch	ISO 646|ISO 646-CH (Switzerland)
+x-iso-646-cn	ISO 646|ISO 646-CN (China)
+x-iso-646-cu	ISO 646|ISO 646-CU (Cuba)
+x-iso-646-de	ISO 646|ISO 646-DE (Germany)
+x-iso-646-dk	ISO 646|ISO 646-DK (Denmark)
+x-iso-646-es	ISO 646|ISO 646-ES (Spain)
+x-iso-646-es2	ISO 646|ISO 646-ES2 (Spain-2)
+x-iso-646-fi	ISO 646|ISO 646-FI (Finland)
+x-iso-646-fr	ISO 646|ISO 646-FR (France)
+x-iso-646-fr1	ISO 646|ISO 646-FR1 (France-1)
+x-iso-646-gb	ISO 646|ISO 646-GB (UK)
+x-iso-646-hu	ISO 646|ISO 646-HU (Hungary)
+x-iso-646-ie	ISO 646|ISO 646-IE (Ireland)
+x-iso-646-irv	ISO 646|ISO 646-IRV
+x-iso-646-irv-1973	ISO 646|ISO 646-IRV-1973
+x-iso-646-irv-1983	ISO 646|ISO 646-IRV-1983
+x-iso-646-is	ISO 646|ISO 646-IS (Iceland)
+x-iso-646-it	ISO 646|ISO 646-IT (Italy)
+x-iso-646-jp	ISO 646|ISO 646-JP (Japan)
+x-iso-646-jp-ocr-b	ISO 646|ISO 646-JP-OCR-B (Japan OCR-B)
+x-iso-646-kr	ISO 646|ISO 646-KR (Korea)
+x-iso-646-mt	ISO 646|ISO 646-MT (Malta)
+x-iso-646-nl	ISO 646|ISO 646-NL (Netherlands)
+x-iso-646-no	ISO 646|ISO 646-NO (Norway)
+x-iso-646-no2	ISO 646|ISO 646-NO2 (Norway-2)
+x-iso-646-pl	ISO 646|ISO 646-PL (Poland)
+x-iso-646-pl-2002	ISO 646|ISO 646-PL-2002 (Poland-2002)
+x-iso-646-pl-zu0	ISO 646|ISO 646-PL-ZU0 (Poland-ZU0)
+x-iso-646-pl-zu2	ISO 646|ISO 646-PL-ZU2 (Poland-ZU2)
+x-iso-646-pt	ISO 646|ISO 646-PT (Portugal)
+x-iso-646-pt2	ISO 646|ISO 646-PT2 (Portugal-2)
+x-iso-646-se	ISO 646|ISO 646-SE (Sweden)
+x-iso-646-se2	ISO 646|ISO 646-SE2 (Sweden-2)
+x-iso-646-tw	ISO 646|ISO 646-TW (Taiwan)
+x-iso-646-us	ISO 646|ISO 646-US (US)
+x-iso-646-yu	ISO 646|ISO 646-YU (Yugoslavia)
+x-iso-6937	Miscellaneous|ISO 6937
+x-iso-8859-1	ISO 8859|ISO 8859-1 (Latin-1)
+x-iso-8859-2	ISO 8859|ISO 8859-2 (Latin-2)
+x-iso-8859-3	ISO 8859|ISO 8859-3 (Latin-3)
+x-iso-8859-4	ISO 8859|ISO 8859-4 (Latin-4)
+x-iso-8859-5	ISO 8859|ISO 8859-5 (Cyrillic)
+x-iso-8859-6	ISO 8859|ISO 8859-6 (Arabic)
+x-iso-8859-7	ISO 8859|ISO 8859-7 (Greek)
+x-iso-8859-8	ISO 8859|ISO 8859-8 (Hebrew)
+x-iso-8859-9	ISO 8859|ISO 8859-9 (Latin-5)
+x-iso-8859-10	ISO 8859|ISO 8859-10 (Latin-6)
+x-iso-8859-11	ISO 8859|ISO 8859-11 (Thai)
+x-iso-8859-13	ISO 8859|ISO 8859-13 (Latin-7)
+x-iso-8859-14	ISO 8859|ISO 8859-14 (Latin-8)
+x-iso-8859-15	ISO 8859|ISO 8859-15 (Latin-9)
+x-iso-8859-16	ISO 8859|ISO 8859-16 (Latin-10)
+x-iso-ir-68	Miscellaneous|ISO IR-68
+x-ita2	CCITT/ITA|ITA2
+x-ita2-us-tty	CCITT/ITA|ITA2 (US TTY)
+x-ita2-figures	CCITT/ITA|ITA2 Figures
+x-ita2-figures-us-tty	CCITT/ITA|ITA2 Figures (US TTY)
+x-ita2-letters	CCITT/ITA|ITA2 Letters
+x-jis-x-0201-generic	CJK|JIS X 0201 (Generic)
+x-jis-x-0201-java	CJK|JIS X 0201 (Java)
+x-jis-x-0208-generic	CJK|JIS X 0208 (Generic)
+x-jis-x-0208-java	CJK|JIS X 0208 (Java)
+x-jis-x-0212-generic	CJK|JIS X 0212 (Generic)
+x-jis-x-0212-java	CJK|JIS X 0212 (Java)
+x-johab-generic	CJK|Johab (Generic)
+x-johab-java	CJK|Johab (Java)
+x-kamenicky	Miscellaneous|Kamenicky (CP895)
+x-kaypro	Kaypro|Kaypro II
+x-kaypro-video	Kaypro|Kaypro II (Video)
+x-kk-super437	Kreative Software|Kreative Super437
+x-kk-super437-c0	Kreative Software|Kreative Super437 (ASCII Controls)
+x-kk-super437-full	Kreative Software|Kreative Super437 (Full)
+x-kk-superlatin	Kreative Software|Kreative SuperLatin
+x-kk-superlatin-c0	Kreative Software|Kreative SuperLatin (ASCII Controls)
+x-kk-superlatin-full	Kreative Software|Kreative SuperLatin (Full)
+x-kk-supermultinational	Kreative Software|Kreative SuperMultinational
+x-kk-supermultinational-c0	Kreative Software|Kreative SuperMultinational (ASCII Controls)
+x-kk-supermultinational-full	Kreative Software|Kreative SuperMultinational (Full)
+x-kk-superroman	Kreative Software|Kreative SuperRoman
+x-kk-superroman-c0	Kreative Software|Kreative SuperRoman (ASCII Controls)
+x-kk-superroman-full	Kreative Software|Kreative SuperRoman (Full)
+x-kk-voynich-eva	Kreative Software|Kreative Voynich EVA
+x-kk-voynich-v101	Kreative Software|Kreative Voynich V101
+x-koi7	Cyrillic|KOI7
+x-koi7-n1	Cyrillic|KOI7 N1
+x-koi7-n1-bg	Cyrillic|KOI7 N1 Bulgarian
+x-koi7-n2	Cyrillic|KOI7 N2
+x-koi7-n2-bg	Cyrillic|KOI7 N2 Bulgarian
+x-koi8-r	Cyrillic|KOI8-R
+x-koi8-u	Cyrillic|KOI8-U
+x-kps-9566	CJK|KPS-9566
+x-ksc-5601	CJK|KS C 5601
+x-ksx-1001	CJK|KS X 1001
+x-ksx-1003	CJK|KS X 1003
+x-kz-1048	Cyrillic|KZ-1048
+x-latin9p-video	Commodore|Latin-9P (Video)
+x-MacArabic-dir	Mac OS Classic|Mac OS Arabic (Directional)
+x-MacArabic-java	Mac OS Classic|Mac OS Arabic (Java)
+x-MacArabic-nondir	Mac OS Classic|Mac OS Arabic (Nondirectional)
+x-MacCeltic	Mac OS Classic|Mac OS Celtic
+x-MacCeltic-1992	Mac OS Classic|Mac OS Celtic (1992)
+x-MacCeltic-1999	Mac OS Classic|Mac OS Celtic (1999)
+x-MacCeltic-2005	Mac OS Classic|Mac OS Celtic (2005)
+x-MacCentralEuropean	Mac OS Classic|Mac OS Central European
+x-MacChineseSimplified	Mac OS Classic|Mac OS Chinese Simplified
+x-MacChineseTraditional	Mac OS Classic|Mac OS Chinese Traditional
+x-MacCroatian	Mac OS Classic|Mac OS Croatian
+x-MacCroatian-1992	Mac OS Classic|Mac OS Croatian (1992)
+x-MacCroatian-1997	Mac OS Classic|Mac OS Croatian (1997)
+x-MacCroatian-1999	Mac OS Classic|Mac OS Croatian (1999)
+x-MacCyrillic	Mac OS Classic|Mac OS Cyrillic
+x-MacCyrillic-1992	Mac OS Classic|Mac OS Cyrillic (1992)
+x-MacCyrillic-1999	Mac OS Classic|Mac OS Cyrillic (1999)
+x-MacDevanagari	Mac OS Classic|Mac OS Devanagari
+x-MacDingbats	Mac OS Classic|Mac OS Dingbats
+x-MacDingbats-1992	Mac OS Classic|Mac OS Dingbats (1992)
+x-MacDingbats-2002	Mac OS Classic|Mac OS Dingbats (2002)
+x-MacFarsi-dir	Mac OS Classic|Mac OS Farsi (Directional)
+x-MacFarsi-java	Mac OS Classic|Mac OS Farsi (Java)
+x-MacFarsi-nondir	Mac OS Classic|Mac OS Farsi (Nondirectional)
+x-MacGaelic	Mac OS Classic|Mac OS Gaelic
+x-MacGaelic-1992	Mac OS Classic|Mac OS Gaelic (1992)
+x-MacGaelic-1998	Mac OS Classic|Mac OS Gaelic (1998)
+x-MacGaelic-1999	Mac OS Classic|Mac OS Gaelic (1999)
+x-MacGaelic-2005	Mac OS Classic|Mac OS Gaelic (2005)
+x-MacGreek	Mac OS Classic|Mac OS Greek
+x-MacGreek-1992	Mac OS Classic|Mac OS Greek (1992)
+x-MacGreek-1998	Mac OS Classic|Mac OS Greek (1998)
+x-MacGreek-2002	Mac OS Classic|Mac OS Greek (2002)
+x-MacGujarati	Mac OS Classic|Mac OS Gujarati
+x-MacGurmukhi	Mac OS Classic|Mac OS Gurmukhi
+x-MacHebrew-dir	Mac OS Classic|Mac OS Hebrew (Directional)
+x-MacHebrew-java	Mac OS Classic|Mac OS Hebrew (Java)
+x-MacHebrew-nondir	Mac OS Classic|Mac OS Hebrew (Nondirectional)
+x-MacIcelandic	Mac OS Classic|Mac OS Icelandic
+x-MacIcelandic-1992	Mac OS Classic|Mac OS Icelandic (1992)
+x-MacIcelandic-1997	Mac OS Classic|Mac OS Icelandic (1997)
+x-MacIcelandic-1999	Mac OS Classic|Mac OS Icelandic (1999)
+x-MacInuit	Mac OS Classic|Mac OS Inuit
+x-MacJapanese	Mac OS Classic|Mac OS Japanese
+x-MacKeyboard	Mac OS Classic|Mac OS Keyboard
+x-MacKorean	Mac OS Classic|Mac OS Korean
+x-MacRoman	Mac OS Classic|Mac OS Roman
+x-MacRoman-1984	Mac OS Classic|Mac OS Roman (1984)
+x-MacRoman-1992	Mac OS Classic|Mac OS Roman (1992)
+x-MacRoman-1999	Mac OS Classic|Mac OS Roman (1999)
+x-MacRomanian	Mac OS Classic|Mac OS Romanian
+x-MacRomanian-1992	Mac OS Classic|Mac OS Romanian (1992)
+x-MacRomanian-1997	Mac OS Classic|Mac OS Romanian (1997)
+x-MacRomanian-1999	Mac OS Classic|Mac OS Romanian (1999)
+x-MacRomanian-2002	Mac OS Classic|Mac OS Romanian (2002)
+x-MacSymbol	Mac OS Classic|Mac OS Symbol
+x-MacSymbol-1992	Mac OS Classic|Mac OS Symbol (1992)
+x-MacSymbol-1998	Mac OS Classic|Mac OS Symbol (1998)
+x-MacSymbol-1999	Mac OS Classic|Mac OS Symbol (1999)
+x-MacSymbol-2002	Mac OS Classic|Mac OS Symbol (2002)
+x-MacSymbol-2005	Mac OS Classic|Mac OS Symbol (2005)
+x-MacThai	Mac OS Classic|Mac OS Thai
+x-MacThai-1992	Mac OS Classic|Mac OS Thai (1992)
+x-MacThai-1998	Mac OS Classic|Mac OS Thai (1998)
+x-MacThai-2002	Mac OS Classic|Mac OS Thai (2002)
+x-MacTurkish	Mac OS Classic|Mac OS Turkish
+x-MacTurkish-1992	Mac OS Classic|Mac OS Turkish (1992)
+x-MacTurkish-1997	Mac OS Classic|Mac OS Turkish (1997)
+x-MacUkrainian	Mac OS Classic|Mac OS Ukrainian
+x-MacUkrainian-1992	Mac OS Classic|Mac OS Ukrainian (1992)
+x-MacUkrainian-1999	Mac OS Classic|Mac OS Ukrainian (1999)
+x-MacVT100	Mac OS Classic|Mac OS VT100
+x-mousedesk	Apple II|MouseGraphics (MGTK)
+x-mousedesk-bg	Apple II|MouseGraphics (MGTK) Bulgarian
+x-mousedesk-da	Apple II|MouseGraphics (MGTK) Danish
+x-mousedesk-de	Apple II|MouseGraphics (MGTK) German
+x-mousedesk-en	Apple II|MouseGraphics (MGTK) English
+x-mousedesk-epo	Apple II|MouseGraphics (MGTK) Esperanto
+x-mousedesk-es	Apple II|MouseGraphics (MGTK) Spanish
+x-mousedesk-fr	Apple II|MouseGraphics (MGTK) French
+x-mousedesk-he	Apple II|MouseGraphics (MGTK) Hebrew
+x-mousedesk-it	Apple II|MouseGraphics (MGTK) Italian
+x-mousedesk-nl	Apple II|MouseGraphics (MGTK) Dutch
+x-mousedesk-pt	Apple II|MouseGraphics (MGTK) Portuguese
+x-mousedesk-qmk	Apple II|MouseGraphics (MGTK) Mikiana
+x-mousedesk-sv	Apple II|MouseGraphics (MGTK) Swedish
+x-msx	MSX|MSX International
+x-msx-video	MSX|MSX International (Video)
+x-msx-ar-dir	MSX|MSX Arabic (Directional)
+x-msx-ar-nondir	MSX|MSX Arabic (Nondirectional)
+x-msx-ar-video-dir	MSX|MSX Arabic (Video) (Directional)
+x-msx-ar-video-nondir	MSX|MSX Arabic (Video) (Nondirectional)
+x-msx-ar-eu-dir	MSX|MSX Arabic/European (Directional)
+x-msx-ar-eu-nondir	MSX|MSX Arabic/European (Nondirectional)
+x-msx-ar-eu-video-dir	MSX|MSX Arabic/European (Video) (Directional)
+x-msx-ar-eu-video-nondir	MSX|MSX Arabic/European (Video) (Nondirectional)
+x-msx-br	MSX|MSX Brazilian
+x-msx-br-video	MSX|MSX Brazilian (Video)
+x-msx-br-gradiente	MSX|MSX Brazilian (Gradiente)
+x-msx-br-gradiente-video	MSX|MSX Brazilian (Gradiente) (Video)
+x-msx-br-sharp	MSX|MSX Brazilian (Sharp)
+x-msx-br-sharp-video	MSX|MSX Brazilian (Sharp) (Video)
+x-msx-jp	MSX|MSX Japanese
+x-msx-jp-video	MSX|MSX Japanese (Video)
+x-msx-kr	MSX|MSX Korean
+x-msx-kr-video	MSX|MSX Korean (Video)
+x-msx-ru	MSX|MSX Russian
+x-msx-ru-video	MSX|MSX Russian (Video)
+x-nextstep	Miscellaneous|NeXTSTEP Multinational
+x-oricscii	Tangerine|OricSCII
+x-oricscii-video	Tangerine|OricSCII (Video)
+x-oricscii-alt	Tangerine|OricSCII Alternate
+x-oricscii-alt-video	Tangerine|OricSCII Alternate (Video)
+x-osborne1	Osborne|Osborne-1
+x-osborne1-video	Osborne|Osborne-1 (Video)
+x-osborne1-alt	Osborne|Osborne-1 Alternate
+x-osi	Ohio Scientific|Ohio Scientific
+x-osi-video	Ohio Scientific|Ohio Scientific (Video)
+x-petscii	Commodore|PETSCII
+x-petscii-video	Commodore|PETSCII (Video)
+x-petscii-alt	Commodore|PETSCII Shifted
+x-petscii-alt-video	Commodore|PETSCII Shifted (Video)
+x-petscii77	Commodore|PETSCII-77 (PET)
+x-petscii77-video	Commodore|PETSCII-77 (PET) (Video)
+x-petscii77-alt	Commodore|PETSCII-77 (PET) Shifted
+x-petscii77-alt-video	Commodore|PETSCII-77 (PET) Shifted (Video)
+x-petscii80	Commodore|PETSCII-80 (VIC-20)
+x-petscii80-video	Commodore|PETSCII-80 (VIC-20) (Video)
+x-petscii80-alt	Commodore|PETSCII-80 (VIC-20) Shifted
+x-petscii80-alt-video	Commodore|PETSCII-80 (VIC-20) Shifted (Video)
+x-petscii82	Commodore|PETSCII-82 (64/128)
+x-petscii82-video	Commodore|PETSCII-82 (64/128) (Video)
+x-petscii82-alt	Commodore|PETSCII-82 (64/128) Shifted
+x-petscii82-alt-video	Commodore|PETSCII-82 (64/128) Shifted (Video)
+x-petscii8	Commodore|PETSCII-8
+x-riscos	Acorn|RISC OS
+x-riscos-bfont	Acorn|RISC OS (BFont)
+x-riscos-eff	Acorn|RISC OS (EFF)
+x-robotron	Miscellaneous|Robotron
+x-sharpscii-eu	Sharp|SharpSCII European
+x-sharpscii-eu-video	Sharp|SharpSCII European (Video)
+x-sharpscii-eu-alt-video	Sharp|SharpSCII European Alternate (Video)
+x-sharpscii-jp	Sharp|SharpSCII Japanese
+x-sharpscii-jp-video	Sharp|SharpSCII Japanese (Video)
+x-sharpscii-jp-alt	Sharp|SharpSCII Japanese Alternate
+x-sharpscii-jp-alt-video	Sharp|SharpSCII Japanese Alternate (Video)
+x-sharpscii-mz80a-eu	Sharp|Sharp MZ-80A European
+x-sharpscii-mz80a-eu-video	Sharp|Sharp MZ-80A European (Video)
+x-sharpscii-mz80a-jp	Sharp|Sharp MZ-80A Japanese
+x-sharpscii-mz80a-jp-video	Sharp|Sharp MZ-80A Japanese (Video)
+x-sharpscii-mz80k-eu	Sharp|Sharp MZ-80K European
+x-sharpscii-mz80k-eu-video	Sharp|Sharp MZ-80K European (Video)
+x-sharpscii-mz80k-jp	Sharp|Sharp MZ-80K Japanese
+x-sharpscii-mz80k-jp-video	Sharp|Sharp MZ-80K Japanese (Video)
+x-sharpscii-mz700-eu	Sharp|Sharp MZ-700 European
+x-sharpscii-mz700-eu-video	Sharp|Sharp MZ-700 European (Video)
+x-sharpscii-mz700-eu-alt-video	Sharp|Sharp MZ-700 European Alternate (Video)
+x-sharpscii-mz700-jp	Sharp|Sharp MZ-700 Japanese
+x-sharpscii-mz700-jp-video	Sharp|Sharp MZ-700 Japanese (Video)
+x-sharpscii-mz700-jp-alt	Sharp|Sharp MZ-700 Japanese Alternate
+x-sharpscii-mz700-jp-alt-video	Sharp|Sharp MZ-700 Japanese Alternate (Video)
+x-sharpscii-mz800-eu	Sharp|Sharp MZ-800 European
+x-sharpscii-mz800-eu-video	Sharp|Sharp MZ-800 European (Video)
+x-sharpscii-mz800-eu-alt-video	Sharp|Sharp MZ-800 European Alternate (Video)
+x-sharpscii-mz800-jp	Sharp|Sharp MZ-800 Japanese
+x-sharpscii-mz800-jp-video	Sharp|Sharp MZ-800 Japanese (Video)
+x-sharpscii-mz800-jp-alt	Sharp|Sharp MZ-800 Japanese Alternate
+x-sharpscii-mz800-jp-alt-video	Sharp|Sharp MZ-800 Japanese Alternate (Video)
+x-sharpscii-mz1500-jp	Sharp|Sharp MZ-1500
+x-sharpscii-mz1500-jp-video	Sharp|Sharp MZ-1500 (Video)
+x-sharpscii-mz1500-jp-alt	Sharp|Sharp MZ-1500 Alternate
+x-sharpscii-mz1500-jp-alt-video	Sharp|Sharp MZ-1500 Alternate (Video)
+x-sharpx1	Sharp|Sharp X1
+x-sharpx1-video	Sharp|Sharp X1 (Video)
+x-shift-jis-generic	CJK|Shift-JIS (Generic)
+x-shift-jis-java	CJK|Shift-JIS (Java)
+x-sinclairql	Sinclair|Sinclair QL
+x-sinclairql-video	Sinclair|Sinclair QL (Video)
+x-sixbit-ascii	ASCII|SIXBIT ASCII
+x-sixbit-ebcdic	IBM|SIXBIT EBCDIC
+x-smalltalk72	Smalltalk|Smalltalk-72
+x-smalltalk78	Smalltalk|Smalltalk-78
+x-spectravideo	Spectravideo|Spectravideo 318/328
+x-spectravideo-video	Spectravideo|Spectravideo 318/328 (Video)
+x-tex-oml	TeX|TeX OML
+x-tex-oml-plain	TeX|TeX OML (Plain)
+x-tex-oms	TeX|TeX OMS
+x-tex-oms-plain	TeX|TeX OMS (Plain)
+x-tex-ot1	TeX|TeX OT1
+x-tex-t1	TeX|TeX T1
+x-tex-t1-c0	TeX|TeX T1 (ASCII Controls)
+x-ti89	Texas Instruments|TI-89
+x-ti994a	Texas Instruments|TI-99/4a
+x-tomy-tutor	Texas Instruments|Tomy Tutor
+x-trs80-coco	Tandy|TRS-80 Color Computer (MC6847)
+x-trs80-coco-video	Tandy|TRS-80 Color Computer (MC6847) (Video)
+x-trs80-coco-t1	Tandy|TRS-80 Color Computer (MC6847T1)
+x-trs80-coco-t1-video	Tandy|TRS-80 Color Computer (MC6847T1) (Video)
+x-trs80-coco-sg6-video	Tandy|TRS-80 Color Computer (Semigraphics-6)
+x-trs80m1	Tandy|TRS-80 Model I
+x-trs80m1-video	Tandy|TRS-80 Model I (Video)
+x-trs80m1-revised	Tandy|TRS-80 Model I Revised
+x-trs80m1-revised-video	Tandy|TRS-80 Model I Revised (Video)
+x-trs80m3	Tandy|TRS-80 Model III
+x-trs80m3-video	Tandy|TRS-80 Model III (Video)
+x-trs80m3-alt-video	Tandy|TRS-80 Model III Alternate (Video)
+x-trs80m4	Tandy|TRS-80 Model 4
+x-trs80m4-video	Tandy|TRS-80 Model 4 (Video)
+x-trs80m4-alt-video	Tandy|TRS-80 Model 4 Alternate (Video)
+x-trs80m4a	Tandy|TRS-80 Model 4a
+x-trs80m4a-video	Tandy|TRS-80 Model 4a (Video)
+x-trs80m4a-alt-video	Tandy|TRS-80 Model 4a Alternate (Video)
+x-us-ascii	ASCII|US-ASCII
+x-us-ascii-quotes	ASCII|US-ASCII-Quotes
+x-viscii	Vietnamese|VISCII
+x-vscii1	Vietnamese|VSCII-1
+x-vscii2	Vietnamese|VSCII-2
+x-vscii3	Vietnamese|VSCII-3
+x-windows-874	Microsoft|Windows-874 (Thai)
+x-windows-932	Microsoft|Windows-932 (Japanese)
+x-windows-936	Microsoft|Windows-936 (Simplified Chinese)
+x-windows-949	Microsoft|Windows-949 (Korean)
+x-windows-950	Microsoft|Windows-950 (Big5)
+x-windows-1250	Microsoft|Windows-1250 (Latin Eastern)
+x-windows-1251	Microsoft|Windows-1251 (Cyrillic)
+x-windows-1252	Microsoft|Windows-1252 (Latin Western)
+x-windows-1253	Microsoft|Windows-1253 (Greek)
+x-windows-1254	Microsoft|Windows-1254 (Turkish)
+x-windows-1255	Microsoft|Windows-1255 (Hebrew)
+x-windows-1256	Microsoft|Windows-1256 (Arabic)
+x-windows-1257	Microsoft|Windows-1257 (Baltic)
+x-windows-1258	Microsoft|Windows-1258 (Vietnamese)
+x-zx80	Sinclair|Sinclair ZX80
+x-zx81	Sinclair|Sinclair ZX81
+x-zxspectrum	Sinclair|Sinclair ZX Spectrum
+x-zxspectrum-desktop	Sinclair|Sinclair ZX Spectrum (Desktop)
+x-zxspectrum-cp1252	Sinclair|FZX Windows-1252
+x-zxspectrum-koi8	Sinclair|FZX KOI8
+x-zxspectrum-latin1	Sinclair|FZX Latin-1
+x-zxspectrum-latin5	Sinclair|FZX Latin-5
+x-zxspectrum-latin9	Sinclair|FZX Latin-9
+x-zxspectrum-pua	Sinclair|FZX Private Use

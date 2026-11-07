@@ -1,0 +1,23 @@
+NSASCIIStringEncoding                   1               x-us-ascii
+NSNEXTSTEPStringEncoding                2               x-nextstep
+NSJapaneseEUCStringEncoding             3               EUC-JP
+NSUTF8StringEncoding                    4               UTF-8
+NSISOLatin1StringEncoding               5               x-iso-8859-1
+NSSymbolStringEncoding                  6               x-adobe-symbol
+# NSNonLossyASCIIStringEncoding         7               x-us-ascii-non-lossy
+NSShiftJISStringEncoding                8               x-shift-jis-generic
+NSISOLatin2StringEncoding               9               x-iso-8859-2
+NSUnicodeStringEncoding                 10              UTF-16
+NSUTF16StringEncoding                   10              UTF-16
+NSWindowsCP1251StringEncoding           11              x-windows-1251
+NSWindowsCP1252StringEncoding           12              x-windows-1252
+NSWindowsCP1253StringEncoding           13              x-windows-1253
+NSWindowsCP1254StringEncoding           14              x-windows-1254
+NSWindowsCP1250StringEncoding           15              x-windows-1250
+NSISO2022JPStringEncoding               21              ISO-2022-JP
+NSMacOSRomanStringEncoding              30              x-MacRoman
+NSUTF32StringEncoding                   2348810496      UTF-32
+NSUTF16BigEndianStringEncoding          2415919360      UTF-16BE
+NSUTF16LittleEndianStringEncoding       2483028224      UTF-16LE
+NSUTF32BigEndianStringEncoding          2550137088      UTF-32BE
+NSUTF32LittleEndianStringEncoding       2617245952      UTF-32LE
