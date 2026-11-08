@@ -9,6 +9,10 @@ class CommonSubtables {
 	private static final char[] decode_ebcdic_unix() {
 		return "\uFFFE\u0001\u0002\u0003\u009C\t\u0086\u007F\u0097\u008D\u008E\u000B\f\r\u000E\u000F\u0010\u0011\u0012\u0013\u009D\n\b\u0087\u0018\u0019\u0092\u008F\u001C\u001D\u001E\u001F\u0080\u0081\u0082\u0083\u0084\n\u0017\u001B\u0088\u0089\u008A\u008B\u008C\u0005\u0006\u0007\u0090\u0091\u0016\u0093\u0094\u0095\u0096\u0004\u0098\u0099\u009A\u009B\u0014\u0015\u009E\u001A".toCharArray();
 	}
+	static final char[] DECODE_EBCDIC_SWAPLFNL = decode_ebcdic_swaplfnl();
+	private static final char[] decode_ebcdic_swaplfnl() {
+		return "\uFFFE\u0001\u0002\u0003\u009C\t\u0086\u007F\u0097\u008D\u008E\u000B\f\r\u000E\u000F\u0010\u0011\u0012\u0013\u009D\n\b\u0087\u0018\u0019\u0092\u008F\u001C\u001D\u001E\u001F\u0080\u0081\u0082\u0083\u0084\u0085\u0017\u001B\u0088\u0089\u008A\u008B\u008C\u0005\u0006\u0007\u0090\u0091\u0016\u0093\u0094\u0095\u0096\u0004\u0098\u0099\u009A\u009B\u0014\u0015\u009E\u001A".toCharArray();
+	}
 	static final char[] DECODE_ASCII_C0 = decode_ascii_c0();
 	private static final char[] decode_ascii_c0() {
 		return "\uFFFE\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000B\f\r\u000E\u000F\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001A\u001B\u001C\u001D\u001E\u001F".toCharArray();
@@ -21,13 +25,17 @@ class CommonSubtables {
 	private static final char[] encode_ebcdic_c0_generic() {
 		return "\u0001\u0101\u0201\u03017-./\u0016\u0501%\u000B\f\r\u000E\u000F\u0010\u0011\u0012\u0013<=2&\u0018\u0019?\'\u001C\u001D\u001E\u001F".toCharArray();
 	}
-	static final char[] ENCODE_EBCDIC_C0_UNIX = encode_ebcdic_c0_unix();
-	private static final char[] encode_ebcdic_c0_unix() {
+	static final char[] ENCODE_EBCDIC_C0_SWAPLFNL = encode_ebcdic_c0_swaplfnl();
+	private static final char[] encode_ebcdic_c0_swaplfnl() {
 		return "\u0001\u0101\u0201\u03017-./\u0016\u0501\u0015\u000B\f\r\u000E\u000F\u0010\u0011\u0012\u0013<=2&\u0018\u0019?\'\u001C\u001D\u001E\u001F".toCharArray();
 	}
-	static final char[] ENCODE_EBCDIC_C1 = encode_ebcdic_c1();
-	private static final char[] encode_ebcdic_c1() {
+	static final char[] ENCODE_EBCDIC_C1_GENERIC = encode_ebcdic_c1_generic();
+	private static final char[] encode_ebcdic_c1_generic() {
 		return " !\"#$\u0015\u0601\u0017()*+,\t\n\u001B01\u001A3456\b89:;\u0401\u0014>\uFF01".toCharArray();
+	}
+	static final char[] ENCODE_EBCDIC_C1_SWAPLFNL = encode_ebcdic_c1_swaplfnl();
+	private static final char[] encode_ebcdic_c1_swaplfnl() {
+		return " !\"#$%\u0601\u0017()*+,\t\n\u001B01\u001A3456\b89:;\u0401\u0014>\uFF01".toCharArray();
 	}
 	static final char[] COMMON0 = common0();
 	private static final char[] common0() {

@@ -50,7 +50,7 @@ public class XIBM1025GenericCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_EBCDIC_C0_GENERIC[input - 0x0];
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_EBCDIC_C1[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_EBCDIC_C1_GENERIC[input - 0x80];
 			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON6[input - 0x20];
 			if (input >= 0x401 && input <= 0x45F) return CommonSubtables.COMMON7[input - 0x401];
 			switch (input) {

@@ -1,0 +1,71 @@
+package com.kreative.charset.generated;
+
+import com.kreative.charset.TableCharsetDecoder;
+import com.kreative.charset.TableCharsetEncoder;
+import java.nio.charset.Charset;
+
+public class XIBM1112SwaplfnlCharset extends Charset {
+	public XIBM1112SwaplfnlCharset() {
+		super("x-IBM1112-swaplfnl", new String[]{});
+	}
+
+	public boolean contains(Charset cs) {
+		return false;
+	}
+
+	public TableCharsetDecoder newDecoder() {
+		return new XIBM1112SwaplfnlCharsetDecoder(this);
+	}
+
+	public TableCharsetEncoder newEncoder() {
+		return new XIBM1112SwaplfnlCharsetEncoder(this);
+	}
+
+	private static final class XIBM1112SwaplfnlCharsetDecoder extends TableCharsetDecoder {
+		private XIBM1112SwaplfnlCharsetDecoder(Charset cs) {
+			super(cs, 1f, 1f, 1);
+		}
+		protected int getNextState(int state, int input) {
+			return 0;
+		}
+		private long getOutput0(int input) {
+			if (input >= 0x0 && input <= 0x3F) return CommonSubtables.DECODE_EBCDIC_SWAPLFNL[input - 0x0];
+			if (input >= 0x40 && input <= 0xFF) return CommonSubtables.COMMON17[input - 0x40];
+			return 0;
+		}
+		protected long getOutput(int state, int input) {
+			switch (state) {
+			case 0: return getOutput0(input);
+			default: return 0;
+			}
+		}
+	}
+
+	private static final class XIBM1112SwaplfnlCharsetEncoder extends TableCharsetEncoder {
+		private XIBM1112SwaplfnlCharsetEncoder(Charset cs) {
+			super(cs, 1f, 1f, new byte[]{111}, 1);
+		}
+		protected int getNextState(int state, int input) {
+			return 0;
+		}
+		private long getOutput0(int input) {
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_EBCDIC_C0_SWAPLFNL[input - 0x0];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_EBCDIC_C1_SWAPLFNL[input - 0x80];
+			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON1[input - 0x20];
+			if (input >= 0xA0 && input <= 0x17E) return CommonSubtables.COMMON18[input - 0xA0];
+			switch (input) {
+			case 0x2019: return 0xDFL;
+			case 0x201C: return 0x57L;
+			case 0x201D: return 0xAAL;
+			case 0x201E: return 0x56L;
+			}
+			return 0;
+		}
+		protected long getOutput(int state, int input) {
+			switch (state) {
+			case 0: return getOutput0(input);
+			default: return 0;
+			}
+		}
+	}
+}

@@ -5,12 +5,12 @@ import sys
 import tablint
 import unicodedata
 
-def bcd_expand(file):
+def expand_bcd(file):
 	bytes_to_chars = {}
 	chars_to_bytes = {}
 	with open(file, 'r') as f:
 		for line in f:
-			line, _, _ = [p.strip() for p in line.partition('#')]
+			line = line.partition('#')[0].strip()
 			m = re.match(tablint.BYTES_TO_CHARS, line)
 			if m:
 				bs = tuple(int(m[1][i:i+2],16) for i in range(0,len(m[1]),2))
@@ -47,7 +47,7 @@ def bcd_expand(file):
 def main():
 	args = sys.argv[1:]
 	for arg in args:
-		bcd_expand(arg)
+		expand_bcd(arg)
 
 if __name__ == '__main__':
 	main()
