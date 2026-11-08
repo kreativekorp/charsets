@@ -18,7 +18,6 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XIBM1026UnixCharset(),
 			new XIBM1046Charset(),
 			new XIBM1047GenericCharset(),
-			new XIBM1047JavaCharset(),
 			new XIBM1047SwaplfnlCharset(),
 			new XIBM1047UnixCharset(),
 			new XIBM1097GenericCharset(),

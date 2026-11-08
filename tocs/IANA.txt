@@ -9,7 +9,7 @@ ISO-8859-7 ISO_8859-7:1987 iso-ir-126 ISO_8859-7 ELOT_928 ECMA-118 greek greek8 
 ISO-8859-8 ISO_8859-8:1988 iso-ir-138 ISO_8859-8 hebrew csISOLatinHebrew                            11      x-iso-8859-8
 ISO-8859-9 ISO_8859-9:1989 iso-ir-148 ISO_8859-9 latin5 l5 csISOLatin5                              12      x-iso-8859-9
 ISO-8859-10 iso-ir-157 l6 ISO_8859-10:1992 csISOLatin6 latin6                                       13      x-iso-8859-10
-ISO_6937-2-add iso-ri-142 csISOTextComm                                                             14      x-iso-6937
+ISO_6937-2-add iso-ir-142 csISOTextComm                                                             14      x-iso-6937
 JIS_X0201 X0201 csHalfWidthKatakana                                                                 15      x-jis-x-0201-generic
 # JIS_Encoding csJISEncoding                                                                        16      x-jis-x-0202-generic
 Shift_JIS MS_Kanji csShiftJIS                                                                       17      x-shift-jis-generic

@@ -256,6 +256,7 @@ def expand_EBCDIC(file):
 	with open(dstfile, 'w') as f:
 		f.write(srcfile)
 	print('  Wrote %s' % dstfile)
+	return True
 
 def main():
 	args = sys.argv[1:]
