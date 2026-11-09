@@ -41,7 +41,7 @@ public class XMsxArVideoDirCharset extends Charset {
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x41;
 			if (input >= 0x10 && input <= 0x40) return GETOUTPUT0_10[input - 0x10];
 			if (input >= 0x60 && input <= 0x7A) return input - 0x60 + 0x60;
-			if (input >= 0x7B && input <= 0xFE) return CommonSubtables.COMMON1700[input - 0x7B];
+			if (input >= 0x7B && input <= 0xFE) return CommonSubtables.COMMON1710[input - 0x7B];
 			switch (input) {
 			case 0x5B: return 0x202C005B202DL;
 			case 0x5C: return 0x202C005C202DL;
@@ -71,7 +71,7 @@ public class XMsxArVideoDirCharset extends Charset {
 			return 0;
 		}
 		private int getNextState1(int input) {
-			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1696[input - 0x20];
+			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1706[input - 0x20];
 			switch (input) {
 			case 0x5B: return 0x15;
 			case 0x5C: return 0x16;
@@ -86,7 +86,7 @@ public class XMsxArVideoDirCharset extends Charset {
 			return 0;
 		}
 		private int getNextState30(int input) {
-			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1697[input - 0x20];
+			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1707[input - 0x20];
 			switch (input) {
 			case 0x5B: return 0x32;
 			case 0x5C: return 0x33;
@@ -110,7 +110,7 @@ public class XMsxArVideoDirCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.COMMON1698[input - 0xFE70];
+			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.COMMON1708[input - 0xFE70];
 			switch (input) {
 			case 0x3C0: return 0x10L;
 			case 0x60C: return 0x8CL;

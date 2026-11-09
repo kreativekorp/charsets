@@ -85,7 +85,7 @@ public class XMsxArDirCharset extends Charset {
 			return 0;
 		}
 		private int getNextState1(int input) {
-			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1696[input - 0x20];
+			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1706[input - 0x20];
 			switch (input) {
 			case 0x5B: return 0x15;
 			case 0x5C: return 0x16;
@@ -100,7 +100,7 @@ public class XMsxArDirCharset extends Charset {
 			return 0;
 		}
 		private int getNextState30(int input) {
-			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1697[input - 0x20];
+			if (input >= 0x20 && input <= 0x40) return CommonSubtables.COMMON1707[input - 0x20];
 			switch (input) {
 			case 0x5B: return 0x32;
 			case 0x5C: return 0x33;
@@ -125,7 +125,7 @@ public class XMsxArDirCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.COMMON1698[input - 0xFE70];
+			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.COMMON1708[input - 0xFE70];
 			switch (input) {
 			case 0x60C: return 0x8CL;
 			case 0x61B: return 0x9BL;

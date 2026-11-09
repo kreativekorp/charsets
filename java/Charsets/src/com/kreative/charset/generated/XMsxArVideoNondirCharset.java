@@ -30,7 +30,7 @@ public class XMsxArVideoNondirCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0x80 && input <= 0xFE) return CommonSubtables.COMMON1699[input - 0x80];
+			if (input >= 0x80 && input <= 0xFE) return CommonSubtables.COMMON1709[input - 0x80];
 			switch (input) {
 			case 0x10: return 0x3C0L;
 			case 0x11: return 0x2534L;
@@ -65,7 +65,7 @@ public class XMsxArVideoNondirCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.COMMON1698[input - 0xFE70];
+			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.COMMON1708[input - 0xFE70];
 			switch (input) {
 			case 0x3C0: return 0x10L;
 			case 0x60C: return 0x8CL;

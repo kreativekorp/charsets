@@ -459,6 +459,11 @@ x-MacCroatian	Mac OS Classic|Mac OS Croatian
 x-MacCroatian-1992	Mac OS Classic|Mac OS Croatian (1992)
 x-MacCroatian-1997	Mac OS Classic|Mac OS Croatian (1997)
 x-MacCroatian-1999	Mac OS Classic|Mac OS Croatian (1999)
+x-MacCroatianLatin1	Mac OS Classic|Mac OS Croatian Latin-1 (Mac Mail)
+x-MacCroatianLatin1-1992	Mac OS Classic|Mac OS Croatian Latin-1 (1992)
+x-MacCroatianLatin1-1997	Mac OS Classic|Mac OS Croatian Latin-1 (1997)
+x-MacCroatianLatin1-1999-actual	Mac OS Classic|Mac OS Croatian Latin-1 (1999) (Actual)
+x-MacCroatianLatin1-1999-fixed	Mac OS Classic|Mac OS Croatian Latin-1 (1999) (Fixed)
 x-MacCyrillic	Mac OS Classic|Mac OS Cyrillic
 x-MacCyrillic-1992	Mac OS Classic|Mac OS Cyrillic (1992)
 x-MacCyrillic-1999	Mac OS Classic|Mac OS Cyrillic (1999)
@@ -487,6 +492,11 @@ x-MacIcelandic	Mac OS Classic|Mac OS Icelandic
 x-MacIcelandic-1992	Mac OS Classic|Mac OS Icelandic (1992)
 x-MacIcelandic-1997	Mac OS Classic|Mac OS Icelandic (1997)
 x-MacIcelandic-1999	Mac OS Classic|Mac OS Icelandic (1999)
+x-MacIcelandicLatin1	Mac OS Classic|Mac OS Icelandic Latin-1 (Mac Mail)
+x-MacIcelandicLatin1-1992	Mac OS Classic|Mac OS Icelandic Latin-1 (1992)
+x-MacIcelandicLatin1-1997	Mac OS Classic|Mac OS Icelandic Latin-1 (1997)
+x-MacIcelandicLatin1-1999-actual	Mac OS Classic|Mac OS Icelandic Latin-1 (1999) (Actual)
+x-MacIcelandicLatin1-1999-fixed	Mac OS Classic|Mac OS Icelandic Latin-1 (1999) (Fixed)
 x-MacInuit	Mac OS Classic|Mac OS Inuit
 x-MacJapanese	Mac OS Classic|Mac OS Japanese
 x-MacKeyboard	Mac OS Classic|Mac OS Keyboard
@@ -495,11 +505,21 @@ x-MacRoman	Mac OS Classic|Mac OS Roman
 x-MacRoman-1984	Mac OS Classic|Mac OS Roman (1984)
 x-MacRoman-1992	Mac OS Classic|Mac OS Roman (1992)
 x-MacRoman-1999	Mac OS Classic|Mac OS Roman (1999)
+x-MacRomanLatin1	Mac OS Classic|Mac OS Roman Latin-1 (Mac Mail)
+x-MacRomanLatin1-1992	Mac OS Classic|Mac OS Roman Latin-1 (1992)
+x-MacRomanLatin1-1999-actual	Mac OS Classic|Mac OS Roman Latin-1 (1999) (Actual)
+x-MacRomanLatin1-1999-fixed	Mac OS Classic|Mac OS Roman Latin-1 (1999) (Fixed)
 x-MacRomanian	Mac OS Classic|Mac OS Romanian
 x-MacRomanian-1992	Mac OS Classic|Mac OS Romanian (1992)
 x-MacRomanian-1997	Mac OS Classic|Mac OS Romanian (1997)
 x-MacRomanian-1999	Mac OS Classic|Mac OS Romanian (1999)
 x-MacRomanian-2002	Mac OS Classic|Mac OS Romanian (2002)
+x-MacRomanianLatin1	Mac OS Classic|Mac OS Romanian Latin-1 (Mac Mail)
+x-MacRomanianLatin1-1992	Mac OS Classic|Mac OS Romanian Latin-1 (1992)
+x-MacRomanianLatin1-1997	Mac OS Classic|Mac OS Romanian Latin-1 (1997)
+x-MacRomanianLatin1-1999-actual	Mac OS Classic|Mac OS Romanian Latin-1 (1999) (Actual)
+x-MacRomanianLatin1-1999-fixed	Mac OS Classic|Mac OS Romanian Latin-1 (1999) (Fixed)
+x-MacRomanianLatin1-2002	Mac OS Classic|Mac OS Romanian Latin-1 (2002)
 x-MacSymbol	Mac OS Classic|Mac OS Symbol
 x-MacSymbol-1992	Mac OS Classic|Mac OS Symbol (1992)
 x-MacSymbol-1998	Mac OS Classic|Mac OS Symbol (1998)
@@ -513,6 +533,9 @@ x-MacThai-2002	Mac OS Classic|Mac OS Thai (2002)
 x-MacTurkish	Mac OS Classic|Mac OS Turkish
 x-MacTurkish-1992	Mac OS Classic|Mac OS Turkish (1992)
 x-MacTurkish-1997	Mac OS Classic|Mac OS Turkish (1997)
+x-MacTurkishLatin1	Mac OS Classic|Mac OS Turkish Latin-1 (Mac Mail)
+x-MacTurkishLatin1-1992	Mac OS Classic|Mac OS Turkish Latin-1 (1992)
+x-MacTurkishLatin1-1997	Mac OS Classic|Mac OS Turkish Latin-1 (1997)
 x-MacUkrainian	Mac OS Classic|Mac OS Ukrainian
 x-MacUkrainian-1992	Mac OS Classic|Mac OS Ukrainian (1992)
 x-MacUkrainian-1999	Mac OS Classic|Mac OS Ukrainian (1999)
