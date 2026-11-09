@@ -36,7 +36,7 @@ public class XKps9566Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			return 0;
 		}
@@ -2108,10 +2108,10 @@ public class XKps9566Charset extends Charset {
 			return "\uAAA1\u0000\uD7A2\uA8A8\uACA8\uD8A2\u0000\uCAA1\uCBA1\uD9A2\uA1A2\uA4A1\uA2A2\uA5A1\uB3A1\uB0A3\uB1A3\uB2A3\uB3A3\uB4A3\uB5A3\uB6A3\uB7A3\uB8A3\uB9A3\uA7A1\uA8A1\uA8A2\uA6A2\uA9A2\uA9A1\uDAA2\uC1A3\uC2A3\uC3A3\uC4A3\uC5A3\uC6A3\uC7A3\uC8A3\uC9A3\uCAA3\uCBA3\uCCA3\uCDA3\uCEA3\uCFA3\uD0A3\uD1A3\uD2A3\uD3A3\uD4A3\uD5A3\uD6A3\uD7A3\uD8A3\uD9A3\uDAA3\uCEA1\uB4A1\uCFA1\uBEA1\uB1A1\uBCA1\uE1A3\uE2A3\uE3A3\uE4A3\uE5A3\uE6A3\uE7A3\uE8A3\uE9A3\uEAA3\uEBA3\uECA3\uEDA3\uEEA3\uEFA3\uF0A3\uF1A3\uF2A3\uF3A3\uF4A3\uF5A3\uF6A3\uF7A3\uF8A3\uF9A3\uFAA3\uD0A1\uB5A1\uD1A1\uADA1".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA1 && input <= 0xFF) return GETOUTPUT0_A1[input - 0xA1];
-			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON133[input - 0x391];
+			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.C1373211[input - 0x391];
 			if (input >= 0x401 && input <= 0x451) return GETOUTPUT0_401[input - 0x401];
 			if (input >= 0x2010 && input <= 0x203B) return GETOUTPUT0_2010[input - 0x2010];
 			if (input >= 0x2070 && input <= 0x2089) return GETOUTPUT0_2070[input - 0x2070];

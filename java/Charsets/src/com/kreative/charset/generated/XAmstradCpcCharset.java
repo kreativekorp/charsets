@@ -43,7 +43,7 @@ public class XAmstradCpcCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x28 && input <= 0x5D) return input - 0x28 + 0x28;
 			if (input >= 0x5F && input <= 0x7E) return input - 0x5F + 0x5F;
 			if (input >= 0x7F && input <= 0xFF) return GETOUTPUT0_7F[input - 0x7F];
@@ -94,7 +94,7 @@ public class XAmstradCpcCharset extends Charset {
 			return "\u00CC\u00CD\u00CB\u0098\u0091\u0092\u0094\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0083\u00D2\u0000\u0000\u008C\u0000\u0000\u0000\u008F\u0000\u0000\u0000\u0085\u0000\u0000\u00D3\u008A\u0000\u00CF\u0000\u00D0\u00D1\u0084\u0088\u0081\u008D\u0089\u0087\u008B\u0082\u0086\u008E\u00E9\u00E8\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00F4\u0000\u0000\u0000\u00F6\u0000\u0000\u0000\u0000\u0000\u00F5\u0000\u0000\u0000\u00F7\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00E6\u0000\u0000\u0000\u00E7".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x5F && input <= 0x7F) return input - 0x5F + 0x5F;
 			if (input >= 0x3A3 && input <= 0x3C9) return GETOUTPUT0_3A3[input - 0x3A3];

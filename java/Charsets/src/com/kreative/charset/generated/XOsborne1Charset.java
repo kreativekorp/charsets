@@ -29,10 +29,10 @@ public class XOsborne1Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFE) return input - 0xA0 + 0x20;
-			if (input >= 0x7F && input <= 0x9F) return CommonSubtables.COMMON1722[input - 0x7F];
+			if (input >= 0x7F && input <= 0x9F) return CommonSubtables.C3789462[input - 0x7F];
 			switch (input) {
 			case 0xFF: return 0x2428L;
 			}
@@ -54,7 +54,7 @@ public class XOsborne1Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
 			switch (input) {
 			case 0xBC: return 0x93L;

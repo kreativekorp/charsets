@@ -33,7 +33,7 @@ public class XMacRomanianLatin11992Charset extends Charset {
 			return "\u2022\u2122\u2260\u221E\u2265\u2211\u222B\u2126\u221A\u2248\u2026\u2014\u2018\u0178\u2044\u2202\u2206\u0152\u201A\u201E\u2030\uF8FF\u02C6\u02DC\u02D8\u02D9\u02DA\u02DD\u02DB\u02C7\u0131\u0192\u00A0\u00A1\u00A2\u00A3\u00A4\u00A5\u0153\u00A7\u00A8\u00A9\u00AA\u00AB\u00AC\u2013\u00AE\u00AF\u00B0\u00B1\u201D\u201C\u00B4\u00B5\u00B6\u00B7\u00B8\u2019\u00BA\u00BB\u03C0\u220F\u2264\u00BF\u00C0\u00C1\u00C2\u00C3\u00C4\u00C5\u0102\u00C7\u00C8\u00C9\u00CA\u00CB\u00CC\u00CD\u00CE\u00CF\u2039\u00D1\u00D2\u00D3\u00D4\u00D5\u00D6\u25CA\u015E\u00D9\u00DA\u00DB\u00DC\u2020\u0162\u00DF\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u0103\u00E7\u00E8\u00E9\u00EA\u00EB\u00EC\u00ED\u00EE\u00EF\u203A\u00F1\u00F2\u00F3\u00F4\u00F5\u00F6\u00F7\u015F\u00F9\u00FA\u00FB\u00FC\u2021\u0163\u00FF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -66,10 +66,10 @@ public class XMacRomanianLatin11992Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA0 && input <= 0x103) return CommonSubtables.COMMON1206[input - 0xA0];
-			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.COMMON1203[input - 0x2013];
+			if (input >= 0xA0 && input <= 0x103) return CommonSubtables.C295233[input - 0xA0];
+			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.C5480636[input - 0x2013];
 			switch (input) {
 			case 0x131: return 0x9EL;
 			case 0x152: return 0x91L;

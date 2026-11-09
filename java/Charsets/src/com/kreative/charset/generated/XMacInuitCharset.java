@@ -33,7 +33,7 @@ public class XMacInuitCharset extends Charset {
 			return "\u1403\u1404\u1405\u1406\u140A\u140B\u1431\u1432\u1433\u1434\u1438\u1439\u1449\u144E\u144F\u1450\u1451\u1455\u1456\u1466\u146D\u146E\u146F\u1470\u1472\u1473\u1483\u148B\u148C\u148D\u148E\u1490\u1491\u00B0\u14A1\u14A5\u14A6\u2022\u00B6\u14A7\u00AE\u00A9\u2122\u14A8\u14AA\u14AB\u14BB\u14C2\u14C3\u14C4\u14C5\u14C7\u14C8\u14D0\u14EF\u14F0\u14F1\u14F2\u14F4\u14F5\u1505\u14D5\u14D6\u14D7\u14D8\u14DA\u14DB\u14EA\u1528\u1529\u152A\u152B\u152D\u2026\u00A0\u152E\u153E\u1555\u1556\u1557\u2013\u2014\u201C\u201D\u2018\u2019\u1558\u1559\u155A\u155D\u1546\u1547\u1548\u1549\u154B\u154C\u1550\u157F\u1580\u1581\u1582\u1583\u1584\u1585\u158F\u1590\u1591\u1592\u1593\u1594\u1595\u1671\u1672\u1673\u1674\u1675\u1676\u1596\u15A0\u15A1\u15A2\u15A3\u15A4\u15A5\u15A6\u157C\u0141\u0142".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -66,7 +66,7 @@ public class XMacInuitCharset extends Charset {
 			return "\u00FD\u0000\u0000\u00E1\u00E2\u00E3\u00E4\u00E5\u00E6\u00E7\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00E8\u00E9\u00EA\u00EB\u00EC\u00ED\u00EE\u00F5\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00F6\u00F7\u00F8\u00F9\u00FA\u00FB\u00FC".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x1431 && input <= 0x1505) return GETOUTPUT0_1431[input - 0x1431];
 			if (input >= 0x1528 && input <= 0x155D) return GETOUTPUT0_1528[input - 0x1528];

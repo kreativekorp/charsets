@@ -55,7 +55,7 @@ public class XTi994aCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xF07F && input <= 0xF09F) return input - 0xF07F + 0x7F;
 			switch (input) {

@@ -73,7 +73,7 @@ public class XEts300706G3Charset extends Charset {
 			return "Q\u0000P\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0000\u0000\u0000S\u0000\u0000\u0000T\u0000\u0000\u0000U\u0000\u0000\u0000VB\u0000\u0000\u0000\u0000\u0000\u0000WC\u0000\u0000\u0000\u0000\u0000\u0000X\u0000\u0000A\u0000\u0000\u0000\u0000Y\u0000\u0000@\u0000\u0000\u0000\u0000Z\u0000\u0000L".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.EAC0[input - 0x80];
 			if (input >= 0x2500 && input <= 0x253F) return GETOUTPUT0_2500[input - 0x2500];
 			switch (input) {
 			case 0xA0: return 0x5FL;

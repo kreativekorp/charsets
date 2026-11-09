@@ -30,8 +30,8 @@ public class XMousedeskBgCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1704[input - 0x0];
-			if (input >= 0x60 && input <= 0x7F) return CommonSubtables.COMMON1584[input - 0x60];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.C6732570[input - 0x0];
+			if (input >= 0x60 && input <= 0x7F) return CommonSubtables.C3107150[input - 0x60];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

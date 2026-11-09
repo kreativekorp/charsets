@@ -32,7 +32,7 @@ public class XApple2Charset extends Charset {
 			if (input >= 0x0 && input <= 0x1F) return input - 0x0 + 0x40;
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x60 && input <= 0x7F) return input - 0x60 + 0x20;
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.DECODE_ASCII_C0[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.DAC0[input - 0x80];
 			if (input >= 0xA0 && input <= 0xFE) return input - 0xA0 + 0x20;
 			switch (input) {
 			case 0xFF: return 0x2427L;

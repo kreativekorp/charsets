@@ -68,7 +68,7 @@ public class XEts300706G0RuCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x27 && input <= 0x3F) return input - 0x27 + 0x27;
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.EAC0[input - 0x80];
 			if (input >= 0x410 && input <= 0x44F) return GETOUTPUT0_410[input - 0x410];
 			switch (input) {
 			case 0x20: return 0x20L;

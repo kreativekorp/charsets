@@ -37,7 +37,7 @@ public class XWindows1258Charset extends Charset {
 			return "\u0102\u00C4\u00C5\u00C6\u00C7\u00C8\u00C9\u00CA\u00CB\u0300\u00CD\u00CE\u00CF\u0110\u00D1\u0309\u00D3\u00D4\u01A0\u00D6\u00D7\u00D8\u00D9\u00DA\u00DB\u00DC\u01AF\u0303\u00DF\u00E0\u00E1\u00E2\u0103\u00E4\u00E5\u00E6\u00E7\u00E8\u00E9\u00EA\u00EB\u0301\u00ED\u00EE\u00EF\u0111\u00F1\u0323\u00F3\u00F4\u01A1\u00F6\u00F7\u00F8\u00F9\u00FA\u00FB\u00FC\u01B0\u20AB\u00FF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xC2) return input - 0xA0 + 0xA0;
 			if (input >= 0x80 && input <= 0x9F) return GETOUTPUT0_80[input - 0x80];
@@ -64,7 +64,7 @@ public class XWindows1258Charset extends Charset {
 			return "\u00C4\u00C5\u00C6\u00C7\u00C8\u00C9\u00CA\u00CB\u0000\u00CD\u00CE\u00CF\u0000\u00D1\u0000\u00D3\u00D4\u0000\u00D6\u00D7\u00D8\u00D9\u00DA\u00DB\u00DC\u0000\u0000\u00DF\u00E0\u00E1\u00E2\u0000\u00E4\u00E5\u00E6\u00E7\u00E8\u00E9\u00EA\u00EB\u0000\u00ED\u00EE\u00EF\u0000\u00F1\u0000\u00F3\u00F4\u0000\u00F6\u00F7\u00F8\u00F9\u00FA\u00FB\u00FC\u0000\u0000\uFF01\u0000\u0000\u00C3\u00E3\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00D0\u00F0".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xC2) return input - 0xA0 + 0xA0;
 			if (input >= 0xC4 && input <= 0x111) return GETOUTPUT0_C4[input - 0xC4];

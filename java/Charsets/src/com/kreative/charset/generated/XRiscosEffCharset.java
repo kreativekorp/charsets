@@ -33,7 +33,7 @@ public class XRiscosEffCharset extends Charset {
 			return "\u0174\u0176\u1E82\u0130\u0175\u0177\u1E83\u2026\u20AC\u2074\u2122\u0131\u2044\u0192\u2030\u2022\u2018\u2019\u2039\u203A\u201C\u201D\u201E\u2013\u2014\u2212\u0152\u0153\u2020\u2021\uFB01\uFB02".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFF) return input - 0xA0 + 0xA0;
 			if (input >= 0x80 && input <= 0x9F) return GETOUTPUT0_80[input - 0x80];
@@ -55,7 +55,7 @@ public class XRiscosEffCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFE) return input - 0xA0 + 0xA0;
 			switch (input) {

@@ -33,7 +33,7 @@ public class XMacCroatianLatin11999ActualCharset extends Charset {
 			return "\u2022\u2122\u2260\u221E\u2265\u2211\u222B\u03A9\u221A\u2248\u2026\u2014\u2018\u00A9\u2044\u2202\u0106\u0152\u201A\u201E\u2030\u0111\u02C6\u02DC\u03C0\u00CB\u02DA\u00CA\u00E6\u02C7\u0131\u0192\u00A0\u00A1\u00A2\u00A3\u00A4\u2206\u0153\u00A7\u00A8\u0160\u00AA\u00AB\u00AC\u0110\u00AE\u00AF\u00B0\u00B1\u201D\u201C\u00B4\u00B5\u00B6\u00B7\u00B8\u2019\u00BA\u010C\u0161\u220F\u2264\u00BF\u00C0\u00C1\u00C2\u00C3\u00C4\u00C5\u017D\u00C7\u00C8\u00C9\u0107\u010D\u00CC\u00CD\u00CE\u00CF\u2039\u00D1\u00D2\u00D3\u00D4\u00D5\u00D6\u25CA\u00D8\u00D9\u00DA\u20AC\u00DC\u2020\u00C6\u00DF\u00E0\u00E1\u00E2\u00E3\u00E4\u00E5\u017E\u00E7\u00E8\u00E9\u00EA\u00EB\u00EC\u00ED\u00EE\u00EF\u203A\u00F1\u00F2\u00F3\u00F4\u00F5\u00F6\u00F7\u00F8\u00F9\u00FA\u00FB\u00FC\u2013\u00BB\uF8FF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -54,9 +54,9 @@ public class XMacCroatianLatin11999ActualCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA0 && input <= 0x111) return CommonSubtables.COMMON1133[input - 0xA0];
+			if (input >= 0xA0 && input <= 0x111) return CommonSubtables.C5907882[input - 0xA0];
 			switch (input) {
 			case 0x131: return 0x9EL;
 			case 0x152: return 0x91L;

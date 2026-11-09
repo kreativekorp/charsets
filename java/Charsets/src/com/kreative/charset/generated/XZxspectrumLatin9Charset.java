@@ -29,12 +29,12 @@ public class XZxspectrumLatin9Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0x80 && input <= 0xA3) return input - 0x80 + 0x80;
 			if (input >= 0xBF && input <= 0xFF) return input - 0xBF + 0xBF;
-			if (input >= 0xA4 && input <= 0xBE) return CommonSubtables.COMMON1256[input - 0xA4];
+			if (input >= 0xA4 && input <= 0xBE) return CommonSubtables.C4548063[input - 0xA4];
 			switch (input) {
 			case 0x5E: return 0x2191L;
 			case 0x5F: return 0x5FL;
@@ -63,7 +63,7 @@ public class XZxspectrumLatin9Charset extends Charset {
 			return "`\u0000\u00A5\u0000\u00A7\u0000\u007F\u00AA\u00AB\u00AC\u00AD\u00AE\u00AF\u00B0\u00B1\u00B2\u00B3\u0000\u00B5\u00B6\u00B7\u0000\u00B9\u00BA\u00BB".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0x80 && input <= 0xA2) return input - 0x80 + 0x80;

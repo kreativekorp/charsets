@@ -72,8 +72,8 @@ public class XTexOmsCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x41;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
-			if (input >= 0x2200 && input <= 0x224D) return CommonSubtables.COMMON1762[input - 0x2200];
-			if (input >= 0x2261 && input <= 0x22A5) return CommonSubtables.COMMON1763[input - 0x2261];
+			if (input >= 0x2200 && input <= 0x224D) return CommonSubtables.C4707649[input - 0x2200];
+			if (input >= 0x2261 && input <= 0x22A5) return CommonSubtables.C2794217[input - 0x2261];
 			switch (input) {
 			case 0x7B: return 0x66L;
 			case 0x7D: return 0x67L;
@@ -135,7 +135,7 @@ public class XTexOmsCharset extends Charset {
 			return 0;
 		}
 		private long getOutput1(int input) {
-			if (input >= 0xDC9C && input <= 0xDCB5) return CommonSubtables.COMMON1764[input - 0xDC9C];
+			if (input >= 0xDC9C && input <= 0xDCB5) return CommonSubtables.C3852871[input - 0xDC9C];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

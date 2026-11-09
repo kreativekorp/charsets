@@ -79,7 +79,7 @@ public class XSpectravideoVideoCharset extends Charset {
 			return "\u00EE\u00E2\u00E4\u00E3\u00DC\u00DE\u00DD\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00C1\u00CB\u0000\u0000\u00D3\u0000\u0000\u0000\u00E9\u0000\u0000\u0000\u00C7\u0000\u0000\u00E5\u00C5\u0000\u00F2\u0000\u00CE\u00E8\u00D8\u00D1\u00CD\u0000\u00C6\u0000\u0000\u00D5\u00E0\u0000\u0000\u00CF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x20 && input <= 0x3F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x20];
+			if (input >= 0x20 && input <= 0x3F) return CommonSubtables.EAC0[input - 0x20];
 			if (input >= 0x40 && input <= 0x7E) return input - 0x40 + 0x20;
 			if (input >= 0x256D && input <= 0x25A1) return GETOUTPUT0_256D[input - 0x256D];
 			switch (input) {

@@ -33,7 +33,7 @@ public class XAmstradCpmCharset extends Charset {
 			return "\u25A0\u2567\u255F\u255A\u2564\u2551\u2554\u2560\u2562\u255D\u2550\u2569\u2557\u2563\u2566\u256C\u00B7\u2575\u2576\u2514\u2577\u2502\u250C\u251C\u2574\u2518\u2500\u2534\u2510\u2524\u252C\u253C\u00AA\u00BA\u00B0\u00A3\u00A9\u00B6\u00A7\u2020\u00BC\u00BD\u00BE\u00AB\u00BB\u20A7\u00BF\u00A1\u0192\u00A2\u00A8\u00B4\u02C6\u2030\u215B\u215C\u215D\u215E\u00DF\u25E6\u2022\u00A5\u00AE\u2122\u00C1\u00C9\u00CD\u00D3\u00DA\u00C2\u00CA\u00CE\u00D4\u00DB\u00C0\u00C8\u00CC\u00D2\u00D9\u0178\u00C4\u00CB\u00CF\u00D6\u00DC\u00C7\u00C6\u00C5\u00D8\u00D1\u00C3\u00D5\u2265\u2264\u2260\u2243\u00E1\u00E9\u00ED\u00F3\u00FA\u00E2\u00EA\u00EE\u00F4\u00FB\u00E0\u00E8\u00EC\u00F2\u00F9\u00FF\u00E4\u00EB\u00EF\u00F6\u00FC\u00E7\u00E6\u00E5\u00F8\u00F1\u00E3\u00F5\u21D2\u21D0\u21D4\u2261".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x5F && input <= 0x7F) return input - 0x5F + 0x5F;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
@@ -62,11 +62,11 @@ public class XAmstradCpmCharset extends Charset {
 			return "\u00AF\u00B1\u00A3\u0000\u00BD\u0000\u00A6\u00B2\u00A4\u00A0\u00AB\u0000\u0000\u00BE\u0000\u00A2\u0000\u0000\u0000\u00B3\u0000\u00A5\u0090\u0000\u0000\u00A1\u00AC\u00A8\u00A9\u00AA\u00AE\u00CA\u00C0\u00C5\u00DA\u00D0\u00D7\u00D6\u00D5\u00CB\u00C1\u00C6\u00D1\u00CC\u00C2\u00C7\u00D2\u0000\u00D9\u00CD\u00C3\u00C8\u00DB\u00D3\u0000\u00D8\u00CE\u00C4\u00C9\u00D4\u0000\u0000\u00BA\u00EA\u00E0\u00E5\u00FA\u00F0\u00F7\u00F6\u00F5\u00EB\u00E1\u00E6\u00F1\u00EC\u00E2\u00E7\u00F2\u0000\u00F9\u00ED\u00E3\u00E8\u00FB\u00F3\u0000\u00F8\u00EE\u00E4\u00E9\u00F4\u0000\u0000\u00EF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x5F && input <= 0x7F) return input - 0x5F + 0x5F;
 			if (input >= 0xA1 && input <= 0xFF) return GETOUTPUT0_A1[input - 0xA1];
-			if (input >= 0x2550 && input <= 0x2577) return CommonSubtables.COMMON1221[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x2577) return CommonSubtables.C2701029[input - 0x2550];
 			switch (input) {
 			case 0x5E: return 0xB4L;
 			case 0x178: return 0xCFL;

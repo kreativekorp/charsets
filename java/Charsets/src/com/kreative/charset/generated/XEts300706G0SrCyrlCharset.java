@@ -59,7 +59,7 @@ public class XEts300706G0SrCyrlCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.EAC0[input - 0x80];
 			if (input >= 0x402 && input <= 0x45C) return GETOUTPUT0_402[input - 0x402];
 			switch (input) {
 			case 0x25A0: return 0x7FL;

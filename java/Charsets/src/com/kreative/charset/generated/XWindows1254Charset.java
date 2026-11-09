@@ -33,12 +33,12 @@ public class XWindows1254Charset extends Charset {
 			return "\u20AC\u0000\u201A\u0192\u201E\u2026\u2020\u2021\u02C6\u2030\u0160\u2039\u0152\u0000\u0000\u0000\u0000\u2018\u2019\u201C\u201D\u2022\u2013\u2014\u02DC\u2122\u0161\u203A\u0153\u0000\u0000\u0178".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xCF) return input - 0xA0 + 0xA0;
 			if (input >= 0x80 && input <= 0x9F) return GETOUTPUT0_80[input - 0x80];
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;
-			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.COMMON1257[input - 0xF0];
+			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.C4782928[input - 0xF0];
 			switch (input) {
 			case 0xD0: return 0x11EL;
 			case 0xD1: return 0xD1L;
@@ -74,7 +74,7 @@ public class XWindows1254Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xCF) return input - 0xA0 + 0xA0;
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;

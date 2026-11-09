@@ -29,10 +29,10 @@ public class XOsiCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7B) return input - 0x61 + 0x61;
-			if (input >= 0x7C && input <= 0xFF) return CommonSubtables.COMMON1723[input - 0x7C];
+			if (input >= 0x7C && input <= 0xFF) return CommonSubtables.C2645798[input - 0x7C];
 			switch (input) {
 			case 0x5E: return 0x2191L;
 			case 0x5F: return 0x5FL;
@@ -71,7 +71,7 @@ public class XOsiCharset extends Charset {
 			return "\u00DD\u00DE\u00DF\u00DC\u00BD\u00BE\u00BC\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u009B\u0080\u0090\u0096\u009A\u009E\u009F\u00A0\u00A1\u0000\u0000\u0000\u009C\u0098\u0092\u0088\u009D\u0000\u00BB\u0000\u0087\u008F\u00A7\u00A5\u00A8\u0000\u00A9\u0000\u0000\u00A6\u00AA".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7B) return input - 0x61 + 0x61;
 			if (input >= 0x256D && input <= 0x259E) return GETOUTPUT0_256D[input - 0x256D];
@@ -150,8 +150,8 @@ public class XOsiCharset extends Charset {
 			return 0;
 		}
 		private long getOutput3(int input) {
-			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.COMMON1724[input - 0xDF70];
-			if (input >= 0xDFD0 && input <= 0xDFE7) return CommonSubtables.COMMON1725[input - 0xDFD0];
+			if (input >= 0xDF70 && input <= 0xDF8F) return CommonSubtables.C5313755[input - 0xDF70];
+			if (input >= 0xDFD0 && input <= 0xDFE7) return CommonSubtables.C7047250[input - 0xDFD0];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

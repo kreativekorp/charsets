@@ -29,11 +29,11 @@ public class XMacThai1998Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA1 && input <= 0xDA) return input - 0xA1 + 0xE01;
-			if (input >= 0x80 && input <= 0xA0) return CommonSubtables.COMMON1216[input - 0x80];
-			if (input >= 0xDB && input <= 0xFB) return CommonSubtables.COMMON1213[input - 0xDB];
+			if (input >= 0x80 && input <= 0xA0) return CommonSubtables.C2534194[input - 0x80];
+			if (input >= 0xDB && input <= 0xFB) return CommonSubtables.C816126[input - 0xDB];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -72,11 +72,11 @@ public class XMacThai1998Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xE01 && input <= 0xE3A) return input - 0xE01 + 0xA1;
-			if (input >= 0xE3F && input <= 0xE59) return CommonSubtables.COMMON1214[input - 0xE3F];
-			if (input >= 0xF884 && input <= 0xF899) return CommonSubtables.COMMON1215[input - 0xF884];
+			if (input >= 0xE3F && input <= 0xE59) return CommonSubtables.C4998875[input - 0xE3F];
+			if (input >= 0xF884 && input <= 0xF899) return CommonSubtables.C7578963[input - 0xF884];
 			switch (input) {
 			case 0xA0: return 0xA0L;
 			case 0xA9: return 0xFBL;

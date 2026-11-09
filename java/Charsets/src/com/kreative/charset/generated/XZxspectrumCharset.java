@@ -33,7 +33,7 @@ public class XZxspectrumCharset extends Charset {
 			return "\u00A9\u00A0\u259D\u2598\u2580\u2597\u2590\u259A\u259C\u2596\u259E\u258C\u259B\u2584\u259F\u2599\u2588".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0x90 && input <= 0xA4) return input - 0x90 + 0xF041;
@@ -61,7 +61,7 @@ public class XZxspectrumCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0xF041 && input <= 0xF055) return input - 0xF041 + 0x90;

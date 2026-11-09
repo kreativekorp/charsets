@@ -40,9 +40,9 @@ public class XMacSymbol1999Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x2E && input <= 0x3F) return input - 0x2E + 0x2E;
-			if (input >= 0x40 && input <= 0x7F) return CommonSubtables.COMMON1208[input - 0x40];
+			if (input >= 0x40 && input <= 0x7F) return CommonSubtables.C3101004[input - 0x40];
 			if (input >= 0xA0 && input <= 0xFE) return GETOUTPUT0_A0[input - 0xA0];
 			switch (input) {
 			case 0x20: return 0x20L;
@@ -96,12 +96,12 @@ public class XMacSymbol1999Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x2E && input <= 0x3F) return input - 0x2E + 0x2E;
-			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.COMMON1209[input - 0x391];
-			if (input >= 0x2200 && input <= 0x2248) return CommonSubtables.COMMON1210[input - 0x2200];
-			if (input >= 0x239B && input <= 0x23AF) return CommonSubtables.COMMON1211[input - 0x239B];
-			if (input >= 0xF8E5 && input <= 0xF8FF) return CommonSubtables.COMMON1212[input - 0xF8E5];
+			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.C5066134[input - 0x391];
+			if (input >= 0x2200 && input <= 0x2248) return CommonSubtables.C2458168[input - 0x2200];
+			if (input >= 0x239B && input <= 0x23AF) return CommonSubtables.C5547885[input - 0x239B];
+			if (input >= 0xF8E5 && input <= 0xF8FF) return CommonSubtables.C5728758[input - 0xF8E5];
 			switch (input) {
 			case 0x20: return 0x20L;
 			case 0x21: return 0x21L;

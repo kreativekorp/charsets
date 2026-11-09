@@ -44,7 +44,7 @@ public class XMacHebrewNondirCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xAA && input <= 0xBF) return input - 0xAA + 0x2A;
 			if (input >= 0x80 && input <= 0xA9) return GETOUTPUT0_80[input - 0x80];
@@ -93,9 +93,9 @@ public class XMacHebrewNondirCharset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xC4 && input <= 0xFC) return CommonSubtables.COMMON1144[input - 0xC4];
+			if (input >= 0xC4 && input <= 0xFC) return CommonSubtables.C2986436[input - 0xC4];
 			if (input >= 0x5D0 && input <= 0x5EA) return input - 0x5D0 + 0xE0;
 			switch (input) {
 			case 0xA0: return 0xCAL;

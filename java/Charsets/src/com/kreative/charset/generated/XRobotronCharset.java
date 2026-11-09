@@ -43,7 +43,7 @@ public class XRobotronCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
 			if (input >= 0x7F && input <= 0xFF) return GETOUTPUT0_7F[input - 0x7F];
 			return 0;
@@ -78,7 +78,7 @@ public class XRobotronCharset extends Charset {
 			return "\u0086\u0087\u0084\u0085\u0090\u0091\u00AF\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00B6\u00F8\u00F9\u00FA\u00B7\u00FC\u00FD\u00FE\uFF01\u0000\u0000\u0000\u00B4\u0000\u00E8\u009F\u00B5\u0000\u0000\u0000\u009E\u00C0\u00B3\u00B2\u00B0\u00BB\u00B8\u00BC\u00BD\u00B1\u00B9\u00BA".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
 			if (input >= 0x256D && input <= 0x259F) return GETOUTPUT0_256D[input - 0x256D];
 			switch (input) {

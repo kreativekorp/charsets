@@ -29,9 +29,9 @@ public class XMsxArNondirCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0x80 && input <= 0xFE) return CommonSubtables.COMMON1709[input - 0x80];
+			if (input >= 0x80 && input <= 0xFE) return CommonSubtables.C2645415[input - 0x80];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -50,9 +50,9 @@ public class XMsxArNondirCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.COMMON1708[input - 0xFE70];
+			if (input >= 0xFE70 && input <= 0xFEFB) return CommonSubtables.C7483052[input - 0xFE70];
 			switch (input) {
 			case 0x60C: return 0x8CL;
 			case 0x61B: return 0x9BL;

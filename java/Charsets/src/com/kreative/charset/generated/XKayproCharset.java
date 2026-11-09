@@ -42,7 +42,7 @@ public class XKayproCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -73,7 +73,7 @@ public class XKayproCharset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			switch (input) {
 			case 0xA0: return 0x80L;
@@ -88,8 +88,8 @@ public class XKayproCharset extends Charset {
 			return 0;
 		}
 		private long getOutput1(int input) {
-			if (input >= 0xDD00 && input <= 0xDD35) return CommonSubtables.COMMON1579[input - 0xDD00];
-			if (input >= 0xDD71 && input <= 0xDDAB) return CommonSubtables.COMMON1580[input - 0xDD71];
+			if (input >= 0xDD00 && input <= 0xDD35) return CommonSubtables.C3040166[input - 0xDD00];
+			if (input >= 0xDD71 && input <= 0xDDAB) return CommonSubtables.C2872446[input - 0xDD71];
 			switch (input) {
 			case 0xDEA0: return 0xC0L;
 			case 0xDEA8: return 0x82L;

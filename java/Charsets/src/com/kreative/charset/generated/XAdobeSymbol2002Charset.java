@@ -33,10 +33,10 @@ public class XAdobeSymbol2002Charset extends Charset {
 			return "\u20AC\u03D2\u2032\u2264\u2044\u221E\u0192\u2663\u2666\u2665\u2660\u2194\u2190\u2191\u2192\u2193\u00B0\u00B1\u2033\u2265\u00D7\u221D\u2202\u2022\u00F7\u2260\u2261\u2248\u2026\u23D0\u23AF\u21B5\u2135\u2111\u211C\u2118\u2297\u2295\u2205\u2229\u222A\u2283\u2287\u2284\u2282\u2286\u2208\u2209\u2220\u2207\uF6DA\uF6D9\uF6DB\u220F\u221A\u22C5\u00AC\u2227\u2228\u21D4\u21D0\u21D1\u21D2\u21D3\u25CA\u2329\uF8E8\uF8E9\uF8EA\u2211\u239B\u239C\u239D\u23A1\u23A2\u23A3\u23A7\u23A8\u23A9\u23AA\u0000\u232A\u222B\u2320\u23AE\u2321\u239E\u239F\u23A0\u23A4\u23A5\u23A6\u23AB\u23AC\u23AD".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x2E && input <= 0x3F) return input - 0x2E + 0x2E;
 			if (input >= 0x7F && input <= 0x9F) return input - 0x7F + 0x7F;
-			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.COMMON1219[input - 0x40];
+			if (input >= 0x40 && input <= 0x7E) return CommonSubtables.C4326238[input - 0x40];
 			if (input >= 0xA0 && input <= 0xFE) return GETOUTPUT0_A0[input - 0xA0];
 			switch (input) {
 			case 0x20: return 0x20L;
@@ -72,12 +72,12 @@ public class XAdobeSymbol2002Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x2E && input <= 0x3F) return input - 0x2E + 0x2E;
 			if (input >= 0x7F && input <= 0x9F) return input - 0x7F + 0x7F;
-			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.COMMON1209[input - 0x391];
-			if (input >= 0x2200 && input <= 0x2248) return CommonSubtables.COMMON1220[input - 0x2200];
-			if (input >= 0x239B && input <= 0x23AF) return CommonSubtables.COMMON1211[input - 0x239B];
+			if (input >= 0x391 && input <= 0x3D6) return CommonSubtables.C5066134[input - 0x391];
+			if (input >= 0x2200 && input <= 0x2248) return CommonSubtables.C7011800[input - 0x2200];
+			if (input >= 0x239B && input <= 0x23AF) return CommonSubtables.C5547885[input - 0x239B];
 			switch (input) {
 			case 0x20: return 0x20L;
 			case 0x21: return 0x21L;

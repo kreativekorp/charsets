@@ -33,7 +33,7 @@ public class XKz1048Charset extends Charset {
 			return "\u0402\u0403\u201A\u0453\u201E\u2026\u2020\u2021\u20AC\u2030\u0409\u2039\u040A\u049A\u04BA\u040F\u0452\u2018\u2019\u201C\u201D\u2022\u2013\u2014\u0000\u2122\u0459\u203A\u045A\u049B\u04BB\u045F\u00A0\u04B0\u04B1\u04D8\u00A4\u04E8\u00A6\u00A7\u0401\u00A9\u0492\u00AB\u00AC\u00AD\u00AE\u04AE\u00B0\u00B1\u0406\u0456\u04E9\u00B5\u00B6\u00B7\u0451\u2116\u0493\u00BB\u04D9\u04A2\u04A3\u04AF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xC0 && input <= 0xFF) return input - 0xC0 + 0x410;
 			if (input >= 0x80 && input <= 0xBF) return GETOUTPUT0_80[input - 0x80];
@@ -55,7 +55,7 @@ public class XKz1048Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x410 && input <= 0x44E) return input - 0x410 + 0xC0;
 			switch (input) {

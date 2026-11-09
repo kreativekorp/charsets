@@ -29,7 +29,7 @@ public class XIBM874Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA1 && input <= 0xDA) return input - 0xA1 + 0xE01;
 			if (input >= 0xDF && input <= 0xFB) return input - 0xDF + 0xE3F;
@@ -63,7 +63,7 @@ public class XIBM874Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xE01 && input <= 0xE3A) return input - 0xE01 + 0xA1;
 			if (input >= 0xE3F && input <= 0xE5B) return input - 0xE3F + 0xDF;

@@ -29,8 +29,8 @@ public class XIBM1149GenericCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x3F) return CommonSubtables.DECODE_EBCDIC_GENERIC[input - 0x0];
-			if (input >= 0x40 && input <= 0xFF) return CommonSubtables.COMMON49[input - 0x40];
+			if (input >= 0x0 && input <= 0x3F) return CommonSubtables.DEG[input - 0x0];
+			if (input >= 0x40 && input <= 0xFF) return CommonSubtables.C1576433[input - 0x40];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -49,10 +49,10 @@ public class XIBM1149GenericCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_EBCDIC_C0_GENERIC[input - 0x0];
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_EBCDIC_C1_GENERIC[input - 0x80];
-			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON50[input - 0x20];
-			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.COMMON51[input - 0xA0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EEC0G[input - 0x0];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.EEC1G[input - 0x80];
+			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.C373314[input - 0x20];
+			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.C4171715[input - 0xA0];
 			switch (input) {
 			case 0x20AC: return 0x9FL;
 			}

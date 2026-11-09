@@ -334,7 +334,7 @@ public class XEts300706G2ElCharset extends Charset {
 			return "\u6146\u6145\u0000\u0000\u0000\u0000\u0000\u0000\u4146\u4145\u4141\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4541\u0000\u4741\u0000\u0000\u0000\u0000\u0000\u6946\u6945\u0000\u0000\u0000\u0000\u0000\u0000\u4946\u4945\u4941\u0000\u0000\u0000\u0000\u0000\u7546\u7545\u0000\u0000\u0000\u0000\u0000\u0000\u5546\u5545\u5541\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4F41\u0000\u5941".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.EAC0[input - 0x80];
 			if (input >= 0x3F && input <= 0x7A) return GETOUTPUT0_3F[input - 0x3F];
 			if (input >= 0xA0 && input <= 0xBE) return GETOUTPUT0_A0[input - 0xA0];
 			if (input >= 0x1FB0 && input <= 0x1FFA) return GETOUTPUT0_1FB0[input - 0x1FB0];

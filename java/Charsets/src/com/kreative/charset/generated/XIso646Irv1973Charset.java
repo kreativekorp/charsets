@@ -29,7 +29,7 @@ public class XIso646Irv1973Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x25 && input <= 0x7D) return input - 0x25 + 0x25;
 			switch (input) {
 			case 0x20: return 0x20L;
@@ -58,7 +58,7 @@ public class XIso646Irv1973Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x25 && input <= 0x7D) return input - 0x25 + 0x25;
 			switch (input) {
 			case 0x20: return 0x20L;

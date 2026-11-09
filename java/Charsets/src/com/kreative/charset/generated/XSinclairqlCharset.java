@@ -29,10 +29,10 @@ public class XSinclairqlCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
-			if (input >= 0x7F && input <= 0xFF) return CommonSubtables.COMMON1758[input - 0x7F];
+			if (input >= 0x7F && input <= 0xFF) return CommonSubtables.C4598561[input - 0x7F];
 			switch (input) {
 			case 0x60: return 0xA3L;
 			}
@@ -68,11 +68,11 @@ public class XSinclairqlCharset extends Charset {
 			return "\u00B3\u009D`\u00B7\u009E\u00EA\u00B6\u0000\u007F\u0000\u00B8\u0000\u0000\u00D2\u0000\u00BA\u00D9\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00B9\u00EC\u00ED\u00EE\u00B4\u0000\u0000\u0000\u00A1\u00A0\u00A2\u00AA\u00A8\u0000\u00A3\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00A9\u0000\u0000\u0000\u00A5\u00A4\u0000\u00A6\u0000\u0000\u0000\u00A7\u0000\u0000\u009C\u008D\u008C\u008E\u0081\u0080\u0082\u008A\u0088\u0090\u0083\u0091\u008F\u0094\u0093\u0095\u0092\u0000\u0089\u0097\u0096\u0098\u0085\u0084\u00BB\u0086\u009A\u0099\u009B\u0087".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0xA1 && input <= 0xFC) return GETOUTPUT0_A1[input - 0xA1];
-			if (input >= 0x393 && input <= 0x3D5) return CommonSubtables.COMMON1759[input - 0x393];
+			if (input >= 0x393 && input <= 0x3D5) return CommonSubtables.C6441091[input - 0x393];
 			switch (input) {
 			case 0x60: return 0x9FL;
 			case 0x127: return 0xE8L;

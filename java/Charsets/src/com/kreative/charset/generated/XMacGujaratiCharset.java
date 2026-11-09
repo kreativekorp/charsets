@@ -49,7 +49,7 @@ public class XMacGujaratiCharset extends Charset {
 			return "\u0AAA\u0AAB\u0AAC\u0AAD\u0AAE\u0AAF\u0000\u0AB0\u0000\u0AB2\u0AB3\u0000\u0AB5\u0AB6\u0AB7\u0AB8\u0AB9\u200E\u0ABE\u0ABF\u0AC0\u0AC1\u0AC2\u0AC3\u0000\u0AC7\u0AC8\u0AC5\u0000\u0ACB\u0ACC\u0AC9\u0ACD\u0ABC\u0964\u0000\u0000\u0000\u0000\u0000\u0000\u0AE6\u0AE7\u0AE8\u0AE9\u0AEA\u0AEB\u0AEC\u0AED\u0AEE\u0AEF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xB3 && input <= 0xC6) return input - 0xB3 + 0xA95;
 			if (input >= 0x80 && input <= 0xB2) return GETOUTPUT0_80[input - 0x80];
@@ -118,7 +118,7 @@ public class XMacGujaratiCharset extends Charset {
 			return "\u00C8\u00C9\u00CA\u00CB\u00CC\u00CD\u00CF\u0000\u00D1\u00D2\u0000\u00D4\u00D5\u00D6\u00D7\u00D8\u0000\u0000\u00E9\u0000\u00DA\u00DB\u00DC\u00DD\u00DE\u00DF\uE9DF\u00E3\u0000\u00E1\u00E2\u00E7\u0000\u00E5\u00E6\u00E8\u0000\u0000\uE9A1\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\uE9AA\u0000\u0000\u0000\u0000\u0000\u00F1\u00F2\u00F3\u00F4\u00F5\u00F6\u00F7\u00F8\u00F9\u00FA".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA95 && input <= 0xAA8) return input - 0xA95 + 0xB3;
 			if (input >= 0xA81 && input <= 0xA94) return GETOUTPUT0_A81[input - 0xA81];

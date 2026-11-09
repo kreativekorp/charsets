@@ -33,7 +33,7 @@ public class XWindows1253Charset extends Charset {
 			return "\u20AC\u0000\u201A\u0192\u201E\u2026\u2020\u2021\u0000\u2030\u0000\u2039\u0000\u0000\u0000\u0000\u0000\u2018\u2019\u201C\u201D\u2022\u2013\u2014\u0000\u2122\u0000\u203A\u0000\u0000\u0000\u0000\u00A0\u0385\u0386\u00A3\u00A4\u00A5\u00A6\u00A7\u00A8\u00A9\u0000\u00AB\u00AC\u00AD\u00AE\u2015\u00B0\u00B1\u00B2\u00B3\u0384\u00B5\u00B6\u00B7\u0388\u0389\u038A\u00BB\u038C\u00BD".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xBE && input <= 0xD1) return input - 0xBE + 0x38E;
 			if (input >= 0x80 && input <= 0xBD) return GETOUTPUT0_80[input - 0x80];
@@ -64,7 +64,7 @@ public class XWindows1253Charset extends Charset {
 			return "\u0096\u0097\u00AF\u0000\u0000\u0091\u0092\u0082\u0000\u0093\u0094\u0084\u0000\u0086\u0087\u0095\u0000\u0000\u0000\u0085\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0089\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008B\u009B".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xBD) return GETOUTPUT0_A0[input - 0xA0];
 			if (input >= 0x38E && input <= 0x3A1) return input - 0x38E + 0xBE;

@@ -33,7 +33,7 @@ public class XDecMultinationalCharset extends Charset {
 			return "\u00A1\u00A2\u00A3\u0000\u00A5\u0000\u00A7\u00A4\u00A9\u00AA\u00AB\u0000\u0000\u0000\u0000\u00B0\u00B1\u00B2\u00B3\u0000\u00B5\u00B6\u00B7\u0000\u00B9\u00BA\u00BB\u00BC\u00BD".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x9F) return input - 0x20 + 0x20;
 			if (input >= 0xBF && input <= 0xCF) return input - 0xBF + 0xBF;
 			if (input >= 0xA1 && input <= 0xBD) return GETOUTPUT0_A1[input - 0xA1];
@@ -88,7 +88,7 @@ public class XDecMultinationalCharset extends Charset {
 			return "\u00A1\u00A2\u00A3\u00A8\u00A5\u0000\u00A7\u0000\u00A9\u00AA\u00AB\u0000\u0000\u0000\u0000\u00B0\u00B1\u00B2\u00B3\u0000\u00B5\u00B6\u00B7\u0000\u00B9\u00BA\u00BB\u00BC\u00BD".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x9F) return input - 0x20 + 0x20;
 			if (input >= 0xBF && input <= 0xCF) return input - 0xBF + 0xBF;
 			if (input >= 0xA1 && input <= 0xBD) return GETOUTPUT0_A1[input - 0xA1];

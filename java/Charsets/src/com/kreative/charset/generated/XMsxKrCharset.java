@@ -29,11 +29,11 @@ public class XMsxKrCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x5D && input <= 0x7F) return input - 0x5D + 0x5D;
 			if (input >= 0x8F && input <= 0xA1) return input - 0x8F + 0x3145;
-			if (input >= 0xA2 && input <= 0xFB) return CommonSubtables.COMMON1718[input - 0xA2];
+			if (input >= 0xA2 && input <= 0xFB) return CommonSubtables.C7570982[input - 0xA2];
 			switch (input) {
 			case 0x5C: return 0x20A9L;
 			case 0x80: return 0x2660L;
@@ -74,7 +74,7 @@ public class XMsxKrCharset extends Charset {
 			return "\u0086\u0087\u0000\u0088\u0000\u0000\u0089\u008A\u008B\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008C\u008D\u008E\u0000\u008F\u0090\u0091\u0092\u0093\u0094\u0095\u0096\u0097\u0098\u0000\u0000\u0000\u0099\u009A\u009B\u009C\u009D\u009E\u0000\u0000\u009F\u00A0\u00A1\u0000\u0000\u0000\u0000\u0000\u00A2\u00A3\u0000\u0000\u0000\u00A4\u0000\u0000\u00A5\u0000\u00A6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\\\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0084".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5B) return input - 0x20 + 0x20;
 			if (input >= 0x5D && input <= 0x7F) return input - 0x5D + 0x5D;
 			if (input >= 0x3145 && input <= 0x3157) return input - 0x3145 + 0x8F;

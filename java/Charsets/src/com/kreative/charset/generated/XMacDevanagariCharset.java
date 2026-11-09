@@ -61,7 +61,7 @@ public class XMacDevanagariCharset extends Charset {
 			return "\u095F\u0930\u0931\u0932\u0933\u0934\u0935\u0936\u0937\u0938\u0939\u200E\u093E\u093F\u0940\u0941\u0942\u0943\u0946\u0947\u0948\u0945\u094A\u094B\u094C\u0949\u094D\u093C\u0964\u0000\u0000\u0000\u0000\u0000\u0000\u0966\u0967\u0968\u0969\u096A\u096B\u096C\u096D\u096E\u096F".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xB3 && input <= 0xCD) return input - 0xB3 + 0x915;
 			if (input >= 0x80 && input <= 0xB2) return GETOUTPUT0_80[input - 0x80];
@@ -214,7 +214,7 @@ public class XMacDevanagariCharset extends Charset {
 			return "\u00CF\u00D0\u00D1\u00D2\u00D3\u00D4\u00D5\u00D6\u00D7\u00D8\u0000\u0000\u00E9\uE9EA\u00DA\u00DB\u00DC\u00DD\u00DE\u00DF\uE9DF\u00E3\u00E0\u00E1\u00E2\u00E7\u00E4\u00E5\u00E6\u00E8\u0000\u0000\uE9A1\u0000\u0000\u0000\u0000\u0000\u0000\u0000\uE9B3\uE9B4\uE9B5\uE9BA\uE9BF\uE9C0\uE9C9\u00CE\uE9AA\uE9A7\uE9DB\uE9DC\u00EA\u0090\u00F1\u00F2\u00F3\u00F4\u00F5\u00F6\u00F7\u00F8\u00F9\u00FA\u0091".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x915 && input <= 0x92F) return input - 0x915 + 0xB3;
 			if (input >= 0x901 && input <= 0x914) return GETOUTPUT0_901[input - 0x901];

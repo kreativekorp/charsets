@@ -33,7 +33,7 @@ public class XAdobeStandardCharset extends Charset {
 			return "\u00A1\u00A2\u00A3\u2044\u00A5\u0192\u00A7\u00A4\'\u201C\u00AB\u2039\u203A\uFB01\uFB02\u0000\u2013\u2020\u2021\u00B7\u0000\u00B6\u2022\u201A\u201E\u201D\u00BB\u2026\u2030\u0000\u00BF\u0000`\u00B4\u02C6\u02DC\u00AF\u02D8\u02D9\u00A8\u0000\u02DA\u00B8\u0000\u02DD\u02DB\u02C7\u2014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00C6\u0000\u00AA\u0000\u0000\u0000\u0000\u0141\u00D8\u0152\u00BA\u0000\u0000\u0000\u0000\u0000\u00E6\u0000\u0000\u0000\u0131\u0000\u0000\u0142\u00F8\u0153\u00DF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x28 && input <= 0x5F) return input - 0x28 + 0x28;
 			if (input >= 0x61 && input <= 0x9F) return input - 0x61 + 0x61;
 			if (input >= 0xA1 && input <= 0xFB) return GETOUTPUT0_A1[input - 0xA1];
@@ -74,7 +74,7 @@ public class XAdobeStandardCharset extends Charset {
 			return "\u00B1\u00D0\u0000\u0000\u0000`\'\u00B8\u0000\u00AA\u00BA\u00B9\u0000\u00B2\u00B3\u00B7\u0000\u0000\u0000\u00BC\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00BD\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00AC\u00AD\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00A4".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x28 && input <= 0x5F) return input - 0x28 + 0x28;
 			if (input >= 0x61 && input <= 0x9F) return input - 0x61 + 0x61;
 			if (input >= 0xA0 && input <= 0xC6) return GETOUTPUT0_A0[input - 0xA0];

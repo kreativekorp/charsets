@@ -47,7 +47,7 @@ public class XHp18161425Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return GETOUTPUT0_20[input - 0x20];
 			return 0;
 		}
@@ -97,7 +97,7 @@ public class XHp18161425Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			switch (input) {
 			case 0x20: return 0x20L;
 			case 0xA0: return 0x20L;

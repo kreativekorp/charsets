@@ -359,7 +359,7 @@ public class XIsoIr68Charset extends Charset {
 			return " \u00A8)<\u2264=>]\u2227\u2228\u2260\u00F7,+./0123456789([;\u00D7:\\\u00AF\u237A\u22A5\u2229\u230A\u220A_\u2207\u2206\u2373\u2218\'\u2395\u2223\u22A4\u25CB\u22C6?\u2374\u2308\u223C\u2193\u222A\u2375\u2283\u2191\u2282\u2190\u22A2\u2192\u2265-\u22C4".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
 			if (input >= 0x20 && input <= 0x60) return GETOUTPUT0_20[input - 0x20];
 			switch (input) {
@@ -797,7 +797,7 @@ public class XIsoIr68Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x61;
 			if (input >= 0x20 && input <= 0x3F) return GETOUTPUT0_20[input - 0x20];
 			if (input >= 0x61 && input <= 0x7B) return input - 0x61 + 0x61;

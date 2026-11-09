@@ -33,7 +33,7 @@ public class XZxspectrumDesktopCharset extends Charset {
 			return "\u00A9\u00E9\u00C9\u011B\u011A\u0161\u0160\u010D\u010C\u0159\u0158\u017E\u017D\u00FD\u00DD\u00E1\u00C1\u00ED\u00CD\u010F\u010E\u0148\u0147\u00F3\u00D3\u0165\u0164\u016F\u016E\u00FA\u00DA".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0x7F && input <= 0x9D) return GETOUTPUT0_7F[input - 0x7F];
@@ -64,7 +64,7 @@ public class XZxspectrumDesktopCharset extends Charset {
 			return "\u008F\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0081\u0000\u0000\u0000\u0091\u0000\u0000\u0000\u0000\u0000\u0097\u0000\u0000\u0000\u0000\u0000\u0000\u009D\u0000\u0000\u008D\u0000\u0000\u0000\u008E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0080\u0000\u0000\u0000\u0090\u0000\u0000\u0000\u0000\u0000\u0096\u0000\u0000\u0000\u0000\u0000\u0000\u009C\u0000\u0000\u008C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0087\u0086\u0093\u0092\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0083\u0082".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7E) return input - 0x61 + 0x61;
 			if (input >= 0xC1 && input <= 0x11B) return GETOUTPUT0_C1[input - 0xC1];

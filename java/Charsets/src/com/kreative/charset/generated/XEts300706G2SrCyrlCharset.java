@@ -53,7 +53,7 @@ public class XEts300706G2SrCyrlCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x1F) return input - 0x0 + 0x80;
-			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.COMMON1251[input - 0x20];
+			if (input >= 0x20 && input <= 0x7F) return CommonSubtables.C4697750[input - 0x20];
 			return 0;
 		}
 		private static final int[] GETOUTPUT1_40 = getOutput1_40();
@@ -301,9 +301,9 @@ public class XEts300706G2SrCyrlCharset extends Charset {
 			return "\u5C46\u7C46\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u4146\u6146\u4148\u6148\u0000\u0000\u4546\u6546\u0000\u0000\u0000\u0000\u5C48\u7C48\u5A48\u7A48\u0000\u0000\u4945\u6945\u4948\u6948\u4F48\u6F48\u0000\u0000\u0000\u0000\u0000\u0000\u5545\u7545\u5548\u7548\u554D\u754D\u4048\u6048".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x80];
-			if (input >= 0x44 && input <= 0x7A) return CommonSubtables.COMMON1252[input - 0x44];
-			if (input >= 0xA0 && input <= 0xBF) return CommonSubtables.COMMON1253[input - 0xA0];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.EAC0[input - 0x80];
+			if (input >= 0x44 && input <= 0x7A) return CommonSubtables.C7959458[input - 0x44];
+			if (input >= 0xA0 && input <= 0xBF) return CommonSubtables.C3580959[input - 0xA0];
 			if (input >= 0x4C1 && input <= 0x4F5) return GETOUTPUT0_4C1[input - 0x4C1];
 			switch (input) {
 			case 0x20: return 0x20L;

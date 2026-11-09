@@ -33,7 +33,7 @@ public class XOsborne1AltCharset extends Charset {
 			return "\u2395\u258C\u259E\u259F\u2590\u259C\u2596\u2597\u25E3\u250F\u25E2\u2503\u254B\u2022\u259A\u2533\u2513\u259B\u2598\u00BC\u259D\u25E5\u2588\u2580\u2584\u25E4\u2599\u2501\u2517\u00BD\u253B\u251B\u2395\u258C\u259E\u259F\u2590\u259C\u2596\u2597\u25E3\u250F\u25E2\u2503\u254B\u2022\u259A\u2533\u2513\u259B\u2598\u00BC\u259D\u25E5\u2588\u2580\u2584\u25E4\u2599\u2501\u2517\u00BD\u253B\u251B".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFE) return input - 0xA0 + 0x20;
 			if (input >= 0x60 && input <= 0x9F) return GETOUTPUT0_60[input - 0x60];
@@ -58,7 +58,7 @@ public class XOsborne1AltCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x60 && input <= 0x7E) return input - 0x60 + 0xE0;
 			switch (input) {

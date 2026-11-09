@@ -45,7 +45,7 @@ public class XSharpsciiJpAltCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x40) return input - 0x20 + 0x20;
 			if (input >= 0x41 && input <= 0x5A) return input - 0x41 + 0x61;
 			if (input >= 0x5B && input <= 0xFF) return GETOUTPUT0_5B[input - 0x5B];
@@ -85,11 +85,11 @@ public class XSharpsciiJpAltCharset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5D) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
-			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.COMMON1747[input - 0x256D];
-			if (input >= 0x3041 && input <= 0x309C) return CommonSubtables.COMMON1748[input - 0x3041];
+			if (input >= 0x256D && input <= 0x259E) return CommonSubtables.C429131[input - 0x256D];
+			if (input >= 0x3041 && input <= 0x309C) return CommonSubtables.C984379[input - 0x3041];
 			if (input >= 0xFF01 && input <= 0xFF3D) return input - 0xFF01 + 0x21;
 			if (input >= 0xFF41 && input <= 0xFF5A) return input - 0xFF41 + 0x41;
 			switch (input) {
@@ -197,7 +197,7 @@ public class XSharpsciiJpAltCharset extends Charset {
 			return 0;
 		}
 		private long getOutput4(int input) {
-			if (input >= 0xDF70 && input <= 0xDF8C) return CommonSubtables.COMMON1749[input - 0xDF70];
+			if (input >= 0xDF70 && input <= 0xDF8C) return CommonSubtables.C5125741[input - 0xDF70];
 			switch (input) {
 			case 0xDCB3: return 0x7FL;
 			case 0xDFC5: return 0x63L;

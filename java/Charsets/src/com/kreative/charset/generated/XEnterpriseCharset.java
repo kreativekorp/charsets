@@ -37,7 +37,7 @@ public class XEnterpriseCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x24 && input <= 0x5F) return input - 0x24 + 0x24;
 			if (input >= 0x61 && input <= 0x7B) return input - 0x61 + 0x61;
 			if (input >= 0x7C && input <= 0x9F) return GETOUTPUT0_7C[input - 0x7C];
@@ -79,7 +79,7 @@ public class XEnterpriseCharset extends Charset {
 			return "#\u0000\u0000|\u0099\u0000\u0080\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u009D\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0082\u0085\u0087\u0089\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0083\u0000\u0086\u0000\u0000\u0000\u0084\u0000\u0000\u0000\u008A\u0000\u0000\u0000\u0092\u0095\u0097\u0000\u0098\u0088\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0093\u0000\u0096\u0000\u0000\u0000\u0094".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x24 && input <= 0x7F) return input - 0x24 + 0x24;
 			if (input >= 0xA3 && input <= 0xFC) return GETOUTPUT0_A3[input - 0xA3];
 			switch (input) {

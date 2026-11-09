@@ -33,7 +33,7 @@ public class XMacRoman1984Charset extends Charset {
 			return "\u00C4\u00C5\u00C7\u00C9\u00D1\u00D6\u00DC\u00E1\u00E0\u00E2\u00E4\u00E3\u00E5\u00E7\u00E9\u00E8\u00EA\u00EB\u00ED\u00EC\u00EE\u00EF\u00F1\u00F3\u00F2\u00F4\u00F6\u00F5\u00FA\u00F9\u00FB\u00FC\u2020\u00B0\u00A2\u00A3\u00A7\u2022\u00B6\u00DF\u00AE\u00A9\u2122\u00B4\u00A8\u2260\u00C6\u00D8\u221E\u00B1\u2264\u2265\u00A5\u00B5\u2202\u2211\u220F\u03C0\u222B\u00AA\u00BA\u03A9\u00E6\u00F8\u00BF\u00A1\u00AC\u221A\u0192\u2248\u2206\u00AB\u00BB\u2026\u00A0\u00C0\u00C3\u00D5\u0152\u0153\u2013\u2014\u201C\u201D\u2018\u2019\u00F7\u25CA\u00FF\uE000".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xD9) return GETOUTPUT0_80[input - 0x80];
 			switch (input) {
@@ -61,7 +61,7 @@ public class XMacRoman1984Charset extends Charset {
 			return "\u00CA\u00C1\u00A2\u00A3\u0000\u00B4\u0000\u00A4\u00AC\u00A9\u00BB\u00C7\u00C2\u0000\u00A8\u0000\u00A1\u00B1\u0000\u0000\u00AB\u00B5\u00A6\u0000\u0000\u0000\u00BC\u00C8\u0000\u0000\u0000\u00C0\u00CB\u0000\u0000\u00CC\u0080\u0081\u00AE\u0082\u0000\u0083\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0084\u0000\u0000\u0000\u00CD\u0085\u0000\u00AF\u0000\u0000\u0000\u0086\u0000\u0000\u00A7\u0088\u0087\u0089\u008B\u008A\u008C\u00BE\u008D\u008F\u008E\u0090\u0091\u0093\u0092\u0094\u0095\u0000\u0096\u0098\u0097\u0099\u009B\u009A\u00D6\u00BF\u009D\u009C\u009E\u009F\u0000\u0000\u00D8".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFF) return GETOUTPUT0_A0[input - 0xA0];
 			switch (input) {

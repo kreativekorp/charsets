@@ -33,7 +33,7 @@ public class XIBM737Charset extends Charset {
 			return "\u03C3\u03C2\u03C4\u03C5\u03C6\u03C7\u03C8\u2591\u2592\u2593\u2502\u2524\u2561\u2562\u2556\u2555\u2563\u2551\u2557\u255D\u255C\u255B\u2510\u2514\u2534\u252C\u251C\u2500\u253C\u255E\u255F\u255A\u2554\u2569\u2566\u2560\u2550\u256C\u2567\u2568\u2564\u2565\u2559\u2558\u2552\u2553\u256B\u256A\u2518\u250C\u2588\u2584\u258C\u2590\u2580\u03C9\u03AC\u03AD\u03AE\u03CA\u03AF\u03CC\u03CD\u03CB\u03CE\u0386\u0388\u0389\u038A\u038C\u038E\u038F\u00B1\u2265\u2264\u03AA\u03AB\u00F7\u2248\u00B0\u2219\u00B7\u221A\u207F\u00B2\u25A0\u00A0".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0x90) return input - 0x80 + 0x391;
 			if (input >= 0x98 && input <= 0xA8) return input - 0x98 + 0x3B1;
@@ -65,11 +65,11 @@ public class XIBM737Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x391 && input <= 0x3A1) return input - 0x391 + 0x80;
 			if (input >= 0x3B1 && input <= 0x3C1) return input - 0x3B1 + 0x98;
-			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON266[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.C6547534[input - 0x2550];
 			switch (input) {
 			case 0xA0: return 0xFF01L;
 			case 0xB0: return 0xF8L;

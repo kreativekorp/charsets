@@ -33,7 +33,7 @@ public class XIBM852Charset extends Charset {
 			return "\u00C7\u00FC\u00E9\u00E2\u00E4\u016F\u0107\u00E7\u0142\u00EB\u0150\u0151\u00EE\u0179\u00C4\u0106\u00C9\u0139\u013A\u00F4\u00F6\u013D\u013E\u015A\u015B\u00D6\u00DC\u0164\u0165\u0141\u00D7\u010D\u00E1\u00ED\u00F3\u00FA\u0104\u0105\u017D\u017E\u0118\u0119\u00AC\u017A\u010C\u015F\u00AB\u00BB\u2591\u2592\u2593\u2502\u2524\u00C1\u00C2\u011A\u015E\u2563\u2551\u2557\u255D\u017B\u017C\u2510\u2514\u2534\u252C\u251C\u2500\u253C\u0102\u0103\u255A\u2554\u2569\u2566\u2560\u2550\u256C\u00A4\u0111\u0110\u010E\u00CB\u010F\u0147\u00CD\u00CE\u011B\u2518\u250C\u2588\u2584\u0162\u016E\u2580\u00D3\u00DF\u00D4\u0143\u0144\u0148\u0160\u0161\u0154\u00DA\u0155\u0170\u00FD\u00DD\u0163\u00B4\u00AD\u02DD\u02DB\u02C7\u02D8\u00A7\u00F7\u00B8\u00B0\u00A8\u02D9\u0171\u0158\u0159\u25A0\u00A0".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -62,7 +62,7 @@ public class XIBM852Charset extends Charset {
 			return "\u0091\u0092\u0000\u0000\u0095\u0096\u0000\u0000\u009D\u0088\u00E3\u00E4\u0000\u0000\u00D5\u00E5\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008A\u008B\u0000\u0000\u00E8\u00EA\u0000\u0000\u00FC\u00FD\u0097\u0098\u0000\u0000\u00B8\u00AD\u00E6\u00E7\u00DD\u00EE\u009B\u009C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00DE\u0085\u00EB\u00FB\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008D\u00AB\u00BD\u00BE\u00A6\u00A7".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0x11B) return GETOUTPUT0_A0[input - 0xA0];
 			if (input >= 0x139 && input <= 0x17E) return GETOUTPUT0_139[input - 0x139];

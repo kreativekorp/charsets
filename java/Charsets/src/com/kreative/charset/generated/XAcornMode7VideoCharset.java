@@ -85,10 +85,10 @@ public class XAcornMode7VideoCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x24 && input <= 0x5A) return input - 0x24 + 0x24;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x61;
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.EAC0[input - 0x80];
 			switch (input) {
 			case 0x20: return 0x20L;
 			case 0x21: return 0x21L;

@@ -42,7 +42,7 @@ public class XAquariusC0Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -78,7 +78,7 @@ public class XAquariusC0Charset extends Charset {
 			return "\u00CA\u00DA\u00D8\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0090\u0088\u00F0\u0000\u00FC\u0089\u0080\uFF01\u0091\u00C3\u0099\u00B5\u0098\u0097\u0081\u00EA\u0000\u0086\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00C4\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00C6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u008F\u0000\u0000\u0000\u008E\u0000\u0000\u0000\u0000\u0000\u009F\u0000\u0000\u0000\u009E\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0087".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x2571 && input <= 0x25CF) return GETOUTPUT0_2571[input - 0x2571];
 			switch (input) {
@@ -132,7 +132,7 @@ public class XAquariusC0Charset extends Charset {
 		private long getOutput3(int input) {
 			if (input >= 0xDF00 && input <= 0xDF13) return input - 0xDF00 + 0xA1;
 			if (input >= 0xDF28 && input <= 0xDF3B) return input - 0xDF28 + 0xEB;
-			if (input >= 0xDF14 && input <= 0xDF27) return CommonSubtables.COMMON1222[input - 0xDF14];
+			if (input >= 0xDF14 && input <= 0xDF27) return CommonSubtables.C5896093[input - 0xDF14];
 			switch (input) {
 			case 0xDF8C: return 0x85L;
 			case 0xDF8D: return 0x95L;

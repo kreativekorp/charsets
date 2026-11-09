@@ -33,7 +33,7 @@ public class XHp18160642Charset extends Charset {
 			return " \u221A\u23AE\u00A7\u2207\u00B1\u221D\u2320\u00F7\u2243\u03A0\u0393\u03A8\u2261\u03A6\u039E\u2070\u00B9\u00B2\u00B3\u2074\u2075\u2076\u2077\u2078\u2079\u03A9\u039B\u221E\u2321\u2020\u03A3\u00B6\u03B1\u03B2\u03C8\u03C6\u03B5\u2202\u03BB\u03B7\u03B9\u0398\u03BA\u03C9\u03BC\u03BD\u03C1\u03C0\u03B3\u03B8\u03C3\u03C4\u03BE\u0394\u03B4\u03C7\u03C5\u03B6\u2191\u2192\u03D2\u2190\u2193".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return GETOUTPUT0_20[input - 0x20];
 			return 0;
 		}
@@ -57,7 +57,7 @@ public class XHp18160642Charset extends Charset {
 			return "+V\u0000\u0000\u0000J\u0000\u0000;\u0000\u0000/\u0000*\u0000\u0000?\u0000\u0000.\u0000,:\u0000\u0000\u0000\u0000\u0000\u0000\u0000ABQWEZHRIKGMNU\u0000PO\u0000STYDXCL\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000]".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x393 && input <= 0x3D2) return GETOUTPUT0_393[input - 0x393];
 			switch (input) {
 			case 0x20: return 0x20L;

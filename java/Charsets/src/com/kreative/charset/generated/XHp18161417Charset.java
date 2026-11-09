@@ -38,7 +38,7 @@ public class XHp18161417Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return GETOUTPUT0_20[input - 0x20];
 			return 0;
 		}
@@ -72,7 +72,7 @@ public class XHp18161417Charset extends Charset {
 			return ",;.:\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0000\u0000QT\u0000\u0000WF\u0000\u0000AG\u0000\u0000S5\u0000\u0000\u0000!\u0000\u000016\u0000\u0000\u0000\"\u0000\u000027\u0000\u0000#\u0000\u0000\u000038\u0000\u0000$\u0000\u0000\u00004/\u0000\u0000+\u0000\u0000*\u0000\u0000\u0000\u0000MNBV0\u0000\u0000\u0000\u00009)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000@%\u0000[&\u0000\'_\u0000(]\u0000><?".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x2500 && input <= 0x256C) return GETOUTPUT0_2500[input - 0x2500];
 			switch (input) {
 			case 0x20: return 0x20L;

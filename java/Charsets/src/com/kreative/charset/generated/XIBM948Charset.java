@@ -43,7 +43,7 @@ public class XIBM948Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			switch (input) {
 			case 0x80: return 0xA2L;
@@ -156,7 +156,7 @@ public class XIBM948Charset extends Charset {
 			return 0;
 		}
 		private long getOutput7(int input) {
-			if (input >= 0x40 && input <= 0x58) return CommonSubtables.COMMON442[input - 0x40];
+			if (input >= 0x40 && input <= 0x58) return CommonSubtables.C7957761[input - 0x40];
 			return 0;
 		}
 		private static final char[] GETOUTPUT8_40 = getOutput8_40();
@@ -1171,10 +1171,10 @@ public class XIBM948Charset extends Charset {
 			return "\u4981\u5E8B\u9481\u9081\u9381\u9581\u5D8B\u6981\u6A81\uB78A\u7B81\u4381\u7C81\u4481\u5E81\u4F82\u5082\u5182\u5282\u5382\u5482\u5582\u5682\u5782\u5882\u4681\u4781\u8381\u8181\u8481\u4881\u9781\u6082\u6182\u6282\u6382\u6482\u6582\u6682\u6782\u6882\u6982\u6A82\u6B82\u6C82\u6D82\u6E82\u6F82\u7082\u7182\u7282\u7382\u7482\u7582\u7682\u7782\u7882\u7982\u6D81\u5F81\u6E81\u4F81\u5181\u0000\u8182\u8282\u8382\u8482\u8582\u8682\u8782\u8882\u8982\u8A82\u8B82\u8C82\u8D82\u8E82\u8F82\u9082\u9182\u9282\u9382\u9482\u9582\u9682\u9782\u9882\u9982\u9A82\u6F81\u6281\u7081".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.COMMON334[input - 0x391];
-			if (input >= 0x401 && input <= 0x451) return CommonSubtables.COMMON335[input - 0x401];
+			if (input >= 0x391 && input <= 0x3C9) return CommonSubtables.C2583139[input - 0x391];
+			if (input >= 0x401 && input <= 0x451) return CommonSubtables.C2044909[input - 0x401];
 			if (input >= 0x2010 && input <= 0x203E) return GETOUTPUT0_2010[input - 0x2010];
 			if (input >= 0x2160 && input <= 0x2179) return GETOUTPUT0_2160[input - 0x2160];
 			if (input >= 0x2200 && input <= 0x223D) return GETOUTPUT0_2200[input - 0x2200];

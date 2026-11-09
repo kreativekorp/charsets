@@ -33,7 +33,7 @@ public class XIBM922Charset extends Charset {
 			return "\u0161\u00F1\u00F2\u00F3\u00F4\u00F5\u00F6\u00F7\u00F8\u00F9\u00FA\u00FB\u00FC\u00FD\u017E\u00FF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0xAE) return input - 0x20 + 0x20;
 			if (input >= 0xB0 && input <= 0xCF) return input - 0xB0 + 0xB0;
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;
@@ -74,7 +74,7 @@ public class XIBM922Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0xAE) return input - 0x20 + 0x20;
 			if (input >= 0xB0 && input <= 0xCF) return input - 0xB0 + 0xB0;
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;

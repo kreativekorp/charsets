@@ -33,12 +33,12 @@ public class XMacTurkishLatin11997Charset extends Charset {
 			return "\u2022\u2122\u2260\u221E\u2265\u2211\u222B\u03A9\u221A\u2248\u2026\u2014\u2018\u0178\u011E\u2202\u2206\u0152\u201A\u201E\u2030\uF8FF\u02C6\u02DC\u02D8\u02D9\u02DA\u02DD\u02DB\u02C7\uF8A0\u0192\u00A0\u00A1\u00A2\u00A3\u011F\u00A5\u0153\u00A7\u00A8\u00A9\u00AA\u00AB\u00AC\u2013\u00AE\u00AF\u00B0\u00B1\u201D\u201C\u00B4\u00B5\u00B6\u00B7\u00B8\u2019\u00BA\u00BB\u03C0\u220F\u2264".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xBF && input <= 0xCF) return input - 0xBF + 0xBF;
 			if (input >= 0x80 && input <= 0xBE) return GETOUTPUT0_80[input - 0x80];
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;
-			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.COMMON1217[input - 0xF0];
+			if (input >= 0xF0 && input <= 0xFF) return CommonSubtables.C4987142[input - 0xF0];
 			switch (input) {
 			case 0xD0: return 0x130L;
 			case 0xD1: return 0xD1L;
@@ -74,10 +74,10 @@ public class XMacTurkishLatin11997Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xBF && input <= 0xCF) return input - 0xBF + 0xBF;
-			if (input >= 0xA0 && input <= 0xBB) return CommonSubtables.COMMON1149[input - 0xA0];
+			if (input >= 0xA0 && input <= 0xBB) return CommonSubtables.C4802551[input - 0xA0];
 			if (input >= 0xDF && input <= 0xEF) return input - 0xDF + 0xDF;
 			switch (input) {
 			case 0xD1: return 0xD1L;

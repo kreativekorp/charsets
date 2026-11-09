@@ -33,7 +33,7 @@ public class XMacCyrillic1992Charset extends Charset {
 			return "\u2020\u00B0\u00A2\u00A3\u00A7\u2022\u00B6\u0406\u00AE\u00A9\u2122\u0402\u0452\u2260\u0403\u0453\u221E\u00B1\u2264\u2265\u0456\u00B5\u2202\u0408\u0404\u0454\u0407\u0457\u0409\u0459\u040A\u045A\u0458\u0405\u00AC\u221A\u0192\u2248\u2206\u00AB\u00BB\u2026\u00A0\u040B\u045B\u040C\u045C\u0455\u2013\u2014\u201C\u201D\u2018\u2019\u00F7\u201E\u040E\u045E\u040F\u045F\u2116\u0401\u0451\u044F".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0x9F) return input - 0x80 + 0x410;
 			if (input >= 0xE0 && input <= 0xFE) return input - 0xE0 + 0x430;
@@ -59,7 +59,7 @@ public class XMacCyrillic1992Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x410 && input <= 0x42F) return input - 0x410 + 0x80;
 			if (input >= 0x430 && input <= 0x44E) return input - 0x430 + 0xE0;

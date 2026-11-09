@@ -29,9 +29,9 @@ public class XKkSuper437C0Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1581[input - 0x80];
+			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.C1385427[input - 0x80];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -54,7 +54,7 @@ public class XKkSuper437C0Charset extends Charset {
 			return "\uFF01\u00AD\u009B\u009C\u009E\u009D\u00DD\u00E5\u0000\u00D6\u00A6\u00AE\u00AA\u00A9\u00D7\u00EF\u00F8\u00F1\u00FD\u00FE\u0000\u00E6\u00ED\u00FA\u0000\u00FC\u00A7\u00AF\u00AC\u00AB\u00DC\u00A8\u00B5\u00D0\u00B3\u00B4\u008E\u008F\u0092\u0080\u00BA\u0090\u00B8\u00B9\u00BD\u00D1\u00BC\u00BB\u00CC\u00A5\u00C5\u00D2\u00C3\u00C4\u0099\u00E7\u00B6\u00C7\u00D3\u00C6\u009A\u00B1\u00CD\u00E1\u0085\u00A0\u0083\u00BE\u0084\u0086\u0091\u0087\u008A\u0082\u0088\u0089\u008D\u00A1\u008C\u008B\u00CB\u00A4\u0095\u00A2\u0093\u00C9\u0094\u00F6\u00BF\u0097\u00A3\u0096\u0081\u00CA\u00CE\u0098".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFF) return GETOUTPUT0_A0[input - 0xA0];
 			switch (input) {

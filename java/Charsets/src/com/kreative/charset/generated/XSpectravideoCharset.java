@@ -38,7 +38,7 @@ public class XSpectravideoCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7B) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xD7) return GETOUTPUT0_A0[input - 0xA0];
 			switch (input) {
@@ -78,7 +78,7 @@ public class XSpectravideoCharset extends Charset {
 			return "\u00CE\u00C2\u00C4\u00C3\u00BC\u00BE\u00BD\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00A1\u00AB\u0000\u0000\u00B3\u0000\u0000\u0000\u00C9\u0000\u0000\u0000\u00A7\u0000\u0000\u00C5\u00A5\u0000\u00D2\u0000\u00AE\u00C8\u00B8\u00B1\u00AD\u0000\u00A6\u0000\u0000\u00B5\u00C0\u0000\u0000\u00AF".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x256D && input <= 0x25A1) return GETOUTPUT0_256D[input - 0x256D];
 			switch (input) {

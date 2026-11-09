@@ -50,7 +50,7 @@ public class XSixbitAsciiCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
-			if (input >= 0x40 && input <= 0x5F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x40];
+			if (input >= 0x40 && input <= 0x5F) return CommonSubtables.EAC0[input - 0x40];
 			if (input >= 0x68 && input <= 0x7A) return input - 0x68 + 0x8;
 			switch (input) {
 			case 0x61: return 0x101L;

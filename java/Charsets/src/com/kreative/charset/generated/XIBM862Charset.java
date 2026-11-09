@@ -33,7 +33,7 @@ public class XIBM862Charset extends Charset {
 			return "\u00A2\u00A3\u00A5\u20A7\u0192\u00E1\u00ED\u00F3\u00FA\u00F1\u00D1\u00AA\u00BA\u00BF\u2310\u00AC\u00BD\u00BC\u00A1\u00AB\u00BB\u2591\u2592\u2593\u2502\u2524\u2561\u2562\u2556\u2555\u2563\u2551\u2557\u255D\u255C\u255B\u2510\u2514\u2534\u252C\u251C\u2500\u253C\u255E\u255F\u255A\u2554\u2569\u2566\u2560\u2550\u256C\u2567\u2568\u2564\u2565\u2559\u2558\u2552\u2553\u256B\u256A\u2518\u250C\u2588\u2584\u258C\u2590\u2580\u03B1\u00DF\u0393\u03C0\u03A3\u03C3\u00B5\u03C4\u03A6\u0398\u03A9\u03B4\u221E\u03C6\u03B5\u2229\u2261\u00B1\u2265\u2264\u2320\u2321\u00F7\u2248\u00B0\u2219\u00B7\u221A\u207F\u00B2\u25A0\u00A0".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0x9A) return input - 0x80 + 0x5D0;
 			if (input >= 0x9B && input <= 0xFF) return GETOUTPUT0_9B[input - 0x9B];
@@ -59,11 +59,11 @@ public class XIBM862Charset extends Charset {
 			return "\uFF01\u00AD\u009B\u009C\u0000\u009D\u0000\u0000\u0000\u0000\u00A6\u00AE\u00AA\u0000\u0000\u0000\u00F8\u00F1\u00FD\u0000\u0000\u00E6\u0000\u00FA\u0000\u0000\u00A7\u00AF\u00AC\u00AB\u0000\u00A8".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xBF) return GETOUTPUT0_A0[input - 0xA0];
 			if (input >= 0x5D0 && input <= 0x5EA) return input - 0x5D0 + 0x80;
-			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.COMMON266[input - 0x2550];
+			if (input >= 0x2550 && input <= 0x256C) return CommonSubtables.C6547534[input - 0x2550];
 			switch (input) {
 			case 0xD1: return 0xA5L;
 			case 0xDF: return 0xE1L;

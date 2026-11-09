@@ -52,7 +52,7 @@ public class XKkVoynichV101Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7E) return GETOUTPUT0_20[input - 0x20];
 			if (input >= 0x95 && input <= 0xFF) return GETOUTPUT0_95[input - 0x95];
 			return 0;
@@ -82,7 +82,7 @@ public class XKkVoynichV101Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			switch (input) {
 			case 0x20: return 0x20L;
 			case 0x2C: return 0x2CL;

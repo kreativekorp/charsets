@@ -30,10 +30,10 @@ public class XTrs80m4aVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.COMMON1769[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.C1493673[input - 0x0];
 			if (input >= 0xC8 && input <= 0xD8) return input - 0xC8 + 0x3B1;
-			if (input >= 0x7F && input <= 0xC7) return CommonSubtables.COMMON1767[input - 0x7F];
-			if (input >= 0xD9 && input <= 0xFF) return CommonSubtables.COMMON1768[input - 0xD9];
+			if (input >= 0x7F && input <= 0xC7) return CommonSubtables.C30476[input - 0x7F];
+			if (input >= 0xD9 && input <= 0xFF) return CommonSubtables.C1925002[input - 0xD9];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

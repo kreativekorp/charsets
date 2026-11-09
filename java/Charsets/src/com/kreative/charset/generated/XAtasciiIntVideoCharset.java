@@ -31,10 +31,10 @@ public class XAtasciiIntVideoCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x0 && input <= 0x3F) return input - 0x0 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x61;
-			if (input >= 0x40 && input <= 0x60) return CommonSubtables.COMMON1228[input - 0x40];
+			if (input >= 0x40 && input <= 0x60) return CommonSubtables.C5489637[input - 0x40];
 			if (input >= 0x80 && input <= 0xBF) return input - 0x80 + 0x20;
 			if (input >= 0xE1 && input <= 0xFA) return input - 0xE1 + 0x61;
-			if (input >= 0xC0 && input <= 0xE0) return CommonSubtables.COMMON1228[input - 0xC0];
+			if (input >= 0xC0 && input <= 0xE0) return CommonSubtables.C5489637[input - 0xC0];
 			switch (input) {
 			case 0x7B: return 0xC4L;
 			case 0x7C: return 0x7CL;
@@ -78,7 +78,7 @@ public class XAtasciiIntVideoCharset extends Charset {
 			return "{Z\u0000\u0000\u0000C\u0000\u0000\u0000\u0000\u0000\u0000\u0000B\u0000\u0000\u0000\u0000L\u0000\u0000\u0000\u0000\u0000P\u0000\u0000\u0000Y@Q\u0000KX\u0000DUTW\u0000G\u0000SI\u0000VFNE\u0000O\u0000\u0000AMRJ".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x20 && input <= 0x3F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x20];
+			if (input >= 0x20 && input <= 0x3F) return CommonSubtables.EAC0[input - 0x20];
 			if (input >= 0x40 && input <= 0x5F) return input - 0x40 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x61;
 			if (input >= 0xC4 && input <= 0xFC) return GETOUTPUT0_C4[input - 0xC4];

@@ -33,7 +33,7 @@ public class XAdobeLatin1Charset extends Charset {
 			return "\u0131\u0300\u0301\u0302\u0303\u0304\u0306\u0307\u0308\u0099\u030A\u0327\u009C\u030B\u0328\u030C".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x8F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFF) return input - 0xA0 + 0xA0;
 			if (input >= 0x90 && input <= 0x9F) return GETOUTPUT0_90[input - 0x90];
@@ -55,7 +55,7 @@ public class XAdobeLatin1Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x8F) return input - 0x20 + 0x20;
 			if (input >= 0xA0 && input <= 0xFE) return input - 0xA0 + 0xA0;
 			switch (input) {

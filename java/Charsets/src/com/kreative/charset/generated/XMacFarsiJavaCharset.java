@@ -33,7 +33,7 @@ public class XMacFarsiJavaCharset extends Charset {
 			return "\u00C4\u00A0\u00C7\u00C9\u00D1\u00D6\u00DC\u00E1\u00E0\u00E2\u00E4\u06BA\u00AB\u00E7\u00E9\u00E8\u00EA\u00EB\u00ED\u2026\u00EE\u00EF\u00F1\u00F3\u00BB\u00F4\u00F6\u00F7\u00FA\u00F9\u00FB\u00FC\u0000\u0000\u0000\u0000\u0000\u066A\u0000\u0000\u0000\u0000\u0000\u0000\u060C\u0000\u0000\u0000\u06F0\u06F1\u06F2\u06F3\u06F4\u06F5\u06F6\u06F7\u06F8\u06F9\u0000\u061B\u0000\u0000\u0000\u061F\u066D".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xC1 && input <= 0xDA) return input - 0xC1 + 0x621;
 			if (input >= 0x80 && input <= 0xC0) return GETOUTPUT0_80[input - 0x80];
@@ -68,9 +68,9 @@ public class XMacFarsiJavaCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA0 && input <= 0xFC) return CommonSubtables.COMMON1104[input - 0xA0];
+			if (input >= 0xA0 && input <= 0xFC) return CommonSubtables.C4799265[input - 0xA0];
 			if (input >= 0x621 && input <= 0x63A) return input - 0x621 + 0xC1;
 			if (input >= 0x640 && input <= 0x652) return input - 0x640 + 0xE0;
 			switch (input) {

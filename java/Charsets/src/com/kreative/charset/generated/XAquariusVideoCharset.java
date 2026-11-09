@@ -38,7 +38,7 @@ public class XAquariusVideoCharset extends Charset {
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
 			if (input >= 0x0 && input <= 0x1F) return GETOUTPUT0_0[input - 0x0];
-			if (input >= 0x7F && input <= 0xFF) return CommonSubtables.COMMON1223[input - 0x7F];
+			if (input >= 0x7F && input <= 0xFF) return CommonSubtables.C3029935[input - 0x7F];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -69,7 +69,7 @@ public class XAquariusVideoCharset extends Charset {
 		}
 		private long getOutput0(int input) {
 			if (input >= 0x20 && input <= 0x7E) return input - 0x20 + 0x20;
-			if (input >= 0x2571 && input <= 0x25CF) return CommonSubtables.COMMON1224[input - 0x2571];
+			if (input >= 0x2571 && input <= 0x25CF) return CommonSubtables.C5212160[input - 0x2571];
 			switch (input) {
 			case 0xA0: return 0xA0L;
 			case 0xA3: return 0x1L;
@@ -109,7 +109,7 @@ public class XAquariusVideoCharset extends Charset {
 			return 0;
 		}
 		private long getOutput1(int input) {
-			if (input >= 0xDDE6 && input <= 0xDDFF) return CommonSubtables.COMMON1225[input - 0xDDE6];
+			if (input >= 0xDDE6 && input <= 0xDDFF) return CommonSubtables.C4149835[input - 0xDDE6];
 			return 0;
 		}
 		private long getOutput2(int input) {
@@ -121,7 +121,7 @@ public class XAquariusVideoCharset extends Charset {
 		private long getOutput3(int input) {
 			if (input >= 0xDF00 && input <= 0xDF13) return input - 0xDF00 + 0xA1;
 			if (input >= 0xDF28 && input <= 0xDF3B) return input - 0xDF28 + 0xEB;
-			if (input >= 0xDF14 && input <= 0xDF27) return CommonSubtables.COMMON1222[input - 0xDF14];
+			if (input >= 0xDF14 && input <= 0xDF27) return CommonSubtables.C5896093[input - 0xDF14];
 			switch (input) {
 			case 0xDF8C: return 0x85L;
 			case 0xDF8D: return 0x95L;

@@ -96,7 +96,7 @@ public class XBcdElectronikaFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput3(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1235[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C8333653[input - 0x20];
 			return 0;
 		}
 		private static final char[] GETOUTPUT4_20 = getOutput4_20();
@@ -172,35 +172,35 @@ public class XBcdElectronikaFullCharset extends Charset {
 			return 0;
 		}
 		private long getOutput13(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1236[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C4874030[input - 0x20];
 			return 0;
 		}
 		private long getOutput14(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1237[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C5158534[input - 0x20];
 			return 0;
 		}
 		private long getOutput15(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1238[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C3518913[input - 0x20];
 			return 0;
 		}
 		private long getOutput16(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1239[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C7849413[input - 0x20];
 			return 0;
 		}
 		private long getOutput17(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1236[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C4874030[input - 0x20];
 			return 0;
 		}
 		private long getOutput18(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1237[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C5158534[input - 0x20];
 			return 0;
 		}
 		private long getOutput19(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1238[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C3518913[input - 0x20];
 			return 0;
 		}
 		private long getOutput20(int input) {
-			if (input >= 0x20 && input <= 0x72) return CommonSubtables.COMMON1239[input - 0x20];
+			if (input >= 0x20 && input <= 0x72) return CommonSubtables.C7849413[input - 0x20];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {

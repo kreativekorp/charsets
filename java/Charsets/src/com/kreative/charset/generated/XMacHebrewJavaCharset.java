@@ -37,7 +37,7 @@ public class XMacHebrewJavaCharset extends Charset {
 			return "\u201E\u0000\u0000\u0000\u0000\u05BC\uFB4B\uFB35\u2026\u00A0\u05B8\u05B7\u05B5\u05B6\u05B4\u2013\u2014\u201C\u201D\u2018\u2019\uFB2A\uFB2B\u05BF\u05B0\u05B2\u05B1\u05BB\u05B9\u0000\u05B3".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xA6) return GETOUTPUT0_80[input - 0x80];
 			if (input >= 0xE0 && input <= 0xFA) return input - 0xE0 + 0x5D0;
@@ -60,9 +60,9 @@ public class XMacHebrewJavaCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xC4 && input <= 0xFC) return CommonSubtables.COMMON1144[input - 0xC4];
+			if (input >= 0xC4 && input <= 0xFC) return CommonSubtables.C2986436[input - 0xC4];
 			if (input >= 0x5D0 && input <= 0x5EA) return input - 0x5D0 + 0xE0;
 			switch (input) {
 			case 0xA0: return 0xCAL;

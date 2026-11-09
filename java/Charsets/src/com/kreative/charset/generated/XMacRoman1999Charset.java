@@ -29,9 +29,9 @@ public class XMacRoman1999Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.COMMON1200[input - 0x80];
+			if (input >= 0x80 && input <= 0xFF) return CommonSubtables.C672905[input - 0x80];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -50,10 +50,10 @@ public class XMacRoman1999Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.COMMON1201[input - 0xA0];
-			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.COMMON1199[input - 0x2013];
+			if (input >= 0xA0 && input <= 0xFF) return CommonSubtables.C7206232[input - 0xA0];
+			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.C1656394[input - 0x2013];
 			switch (input) {
 			case 0x131: return 0xF5L;
 			case 0x152: return 0xCEL;

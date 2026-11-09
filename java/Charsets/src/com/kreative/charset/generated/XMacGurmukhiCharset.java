@@ -337,7 +337,7 @@ public class XMacGurmukhiCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xB3 && input <= 0xC6) return input - 0xB3 + 0xA15;
 			if (input >= 0x80 && input <= 0xB1) return GETOUTPUT0_80[input - 0x80];
@@ -684,7 +684,7 @@ public class XMacGurmukhiCharset extends Charset {
 			return "\u00C8\u00C9\u00CA\u00CB\u00CC\u00CD\u00CF\u0000\u00D1\u0000\u0000\u00D4\u0000\u0000\u00D7\u00D8\u0000\u0000\u00E9\u0000\u00DA\u00DB\u00DC\u00DD\u00DE\u0000\u0000\u0000\u0000\u00E1\u00E2\u0000\u0000\u00E5\u00E6\u00E8\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\uE9B4\uE9B5\uE9BA\u0091\u0000\uE9C9\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00F1\u00F2\u00F3\u00F4\u00F5\u00F6\u00F7\u00F8\u00F9\u00FA\u00A2\u0090\u0093\u0092\u0094".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0xA15 && input <= 0xA28) return input - 0xA15 + 0xB3;
 			if (input >= 0xA2A && input <= 0xA74) return GETOUTPUT0_A2A[input - 0xA2A];

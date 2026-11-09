@@ -39,7 +39,7 @@ public class XTrs80m1Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5A) return input - 0x20 + 0x20;
 			if (input >= 0x60 && input <= 0x7A) return input - 0x60 + 0x40;
 			if (input >= 0x7B && input <= 0xBF) return GETOUTPUT0_7B[input - 0x7B];
@@ -77,7 +77,7 @@ public class XTrs80m1Charset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5A) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x41;
 			switch (input) {

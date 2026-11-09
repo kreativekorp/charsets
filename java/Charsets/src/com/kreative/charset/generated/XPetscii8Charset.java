@@ -40,7 +40,7 @@ public class XPetscii8Charset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA0) return input - 0x20 + 0x20;
 			if (input >= 0xA1 && input <= 0xFF) return GETOUTPUT0_A1[input - 0xA1];
 			return 0;
@@ -74,10 +74,10 @@ public class XPetscii8Charset extends Charset {
 			return "\u00E1\u00E2\u00E3\u0000\u00E5\u0000\u00E7\u0000\u00F3\u0000\u00EB\u00FC\u0000\u00F2\u0000\u00F0\u00F1\u0000\u0000\u0000\u00F5\u00F6\u00F7\u0000\u0000\u0000\u00FB\u0000\u0000\u0000\u00F9".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA0) return input - 0x20 + 0x20;
 			if (input >= 0xA1 && input <= 0xBF) return GETOUTPUT0_A1[input - 0xA1];
-			if (input >= 0x256D && input <= 0x259D) return CommonSubtables.COMMON1734[input - 0x256D];
+			if (input >= 0x256D && input <= 0x259D) return CommonSubtables.C7650513[input - 0x256D];
 			switch (input) {
 			case 0xD7: return 0xF4L;
 			case 0xF7: return 0xF8L;

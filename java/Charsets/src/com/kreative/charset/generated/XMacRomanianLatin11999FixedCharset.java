@@ -42,7 +42,7 @@ public class XMacRomanianLatin11999FixedCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -75,10 +75,10 @@ public class XMacRomanianLatin11999FixedCharset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA0 && input <= 0x103) return CommonSubtables.COMMON1207[input - 0xA0];
-			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.COMMON1203[input - 0x2013];
+			if (input >= 0xA0 && input <= 0x103) return CommonSubtables.C6036990[input - 0xA0];
+			if (input >= 0x2013 && input <= 0x2044) return CommonSubtables.C5480636[input - 0x2013];
 			switch (input) {
 			case 0x131: return 0x9EL;
 			case 0x152: return 0x91L;

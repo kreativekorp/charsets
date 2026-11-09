@@ -38,12 +38,12 @@ public class XOricsciiAltCharset extends Charset {
 			};
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x60 && input <= 0x7F) return input - 0x60 + 0xF060;
 			if (input >= 0x20 && input <= 0x5F) return GETOUTPUT0_20[input - 0x20];
 			if (input >= 0x80 && input <= 0xA0) return input - 0x80 + 0x80;
 			if (input >= 0xE0 && input <= 0xFF) return input - 0xE0 + 0xF060;
-			if (input >= 0xA1 && input <= 0xDF) return CommonSubtables.COMMON1721[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xDF) return CommonSubtables.C3046703[input - 0xA1];
 			return 0;
 		}
 		protected long getOutput(int state, int input) {
@@ -71,7 +71,7 @@ public class XOricsciiAltCharset extends Charset {
 			}
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x80 && input <= 0x9F) return input - 0x80 + 0x80;
 			if (input >= 0xF060 && input <= 0xF07F) return input - 0xF060 + 0x60;
 			switch (input) {

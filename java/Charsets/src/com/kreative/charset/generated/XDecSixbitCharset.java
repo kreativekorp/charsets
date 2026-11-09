@@ -48,7 +48,7 @@ public class XDecSixbitCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x20 && input <= 0x3F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x20];
+			if (input >= 0x20 && input <= 0x3F) return CommonSubtables.EAC0[input - 0x20];
 			if (input >= 0x40 && input <= 0x5F) return input - 0x40 + 0x20;
 			if (input >= 0x61 && input <= 0x7A) return input - 0x61 + 0x21;
 			return 0;

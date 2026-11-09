@@ -33,7 +33,7 @@ public class XIBM856JavaCharset extends Charset {
 			return "\u00A3\u0000\u00D7\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00AE\u00AC\u00BD\u00BC\u0000\u00AB\u00BB\u2591\u2592\u2593\u2502\u2524\u0000\u0000\u0000\u00A9\u2563\u2551\u2557\u255D\u00A2\u00A5\u2510\u2514\u2534\u252C\u251C\u2500\u253C\u0000\u0000\u255A\u2554\u2569\u2566\u2560\u2550\u256C\u00A4\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u2518\u250C\u2588\u2584\u00A6\u0000\u2580\u0000\u0000\u0000\u0000\u0000\u0000\u00B5\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u203E\u00B4\u00AD\u00B1\u2017\u00BE\u00B6\u00A7\u00F7\u00B8\u00B0\u00A8\u2022\u00B9\u00B3\u00B2\u25A0\u00A0".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0x9A) return input - 0x80 + 0x5D0;
 			if (input >= 0x9C && input <= 0xFF) return GETOUTPUT0_9C[input - 0x9C];
@@ -55,9 +55,9 @@ public class XIBM856JavaCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA0 && input <= 0xBE) return CommonSubtables.COMMON280[input - 0xA0];
+			if (input >= 0xA0 && input <= 0xBE) return CommonSubtables.C7071784[input - 0xA0];
 			if (input >= 0x5D0 && input <= 0x5EA) return input - 0x5D0 + 0x80;
 			switch (input) {
 			case 0xD7: return 0x9EL;

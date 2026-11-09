@@ -33,7 +33,7 @@ public class XIso88597Charset extends Charset {
 			return "\u2018\u2019\u00A3\u20AC\u20AF\u00A6\u00A7\u00A8\u00A9\u037A\u00AB\u00AC\u00AD\u0000\u2015\u00B0\u00B1\u00B2\u00B3\u0384\u0385\u0386\u00B7\u0388\u0389\u038A\u00BB\u038C\u00BD".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA0) return input - 0x20 + 0x20;
 			if (input >= 0xBE && input <= 0xD1) return input - 0xBE + 0x38E;
 			if (input >= 0xA1 && input <= 0xBD) return GETOUTPUT0_A1[input - 0xA1];
@@ -56,7 +56,7 @@ public class XIso88597Charset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0xA0) return input - 0x20 + 0x20;
 			if (input >= 0x38E && input <= 0x3A1) return input - 0x38E + 0xBE;
 			if (input >= 0x3A3 && input <= 0x3CE) return input - 0x3A3 + 0xD3;

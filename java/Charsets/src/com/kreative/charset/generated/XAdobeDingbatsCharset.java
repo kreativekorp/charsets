@@ -29,12 +29,12 @@ public class XAdobeDingbatsCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x2C && input <= 0x47) return input - 0x2C + 0x270C;
 			if (input >= 0x49 && input <= 0x6B) return input - 0x49 + 0x2729;
-			if (input >= 0x6C && input <= 0x8D) return CommonSubtables.COMMON1135[input - 0x6C];
+			if (input >= 0x6C && input <= 0x8D) return CommonSubtables.C1578666[input - 0x6C];
 			if (input >= 0xB6 && input <= 0xD4) return input - 0xB6 + 0x2776;
-			if (input >= 0xA1 && input <= 0xB5) return CommonSubtables.COMMON1136[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xB5) return CommonSubtables.C5384948[input - 0xA1];
 			if (input >= 0xD8 && input <= 0xEF) return input - 0xD8 + 0x2798;
 			switch (input) {
 			case 0x20: return 0x20L;
@@ -86,11 +86,11 @@ public class XAdobeDingbatsCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x270C && input <= 0x2727) return input - 0x270C + 0x2C;
 			if (input >= 0x2729 && input <= 0x274B) return input - 0x2729 + 0x49;
 			if (input >= 0x2776 && input <= 0x2794) return input - 0x2776 + 0xB6;
-			if (input >= 0x274D && input <= 0x2767) return CommonSubtables.COMMON1137[input - 0x274D];
+			if (input >= 0x274D && input <= 0x2767) return CommonSubtables.C2314924[input - 0x274D];
 			if (input >= 0x2798 && input <= 0x27AF) return input - 0x2798 + 0xD8;
 			switch (input) {
 			case 0x20: return 0x20L;

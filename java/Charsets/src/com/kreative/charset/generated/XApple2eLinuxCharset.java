@@ -40,7 +40,7 @@ public class XApple2eLinuxCharset extends Charset {
 			if (input >= 0x20 && input <= 0x3F) return input - 0x20 + 0x20;
 			if (input >= 0x60 && input <= 0x7E) return input - 0x60 + 0x60;
 			if (input >= 0x40 && input <= 0x5F) return GETOUTPUT0_40[input - 0x40];
-			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.DECODE_ASCII_C0[input - 0x80];
+			if (input >= 0x80 && input <= 0x9F) return CommonSubtables.DAC0[input - 0x80];
 			if (input >= 0xA0 && input <= 0xFE) return input - 0xA0 + 0x20;
 			switch (input) {
 			case 0x7F: return 0x2427L;

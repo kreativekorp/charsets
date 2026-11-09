@@ -33,7 +33,7 @@ public class XRiscosBfontCharset extends Charset {
 			return "\u00A6}~\u007F\u00C4\u00C5\u00C6\u00C7\u00C9\u00D6\u00DC\u00A9\u2190\u2192\u2193\u2191\u00E0\u00E8\u00EB\u00EA\u00E4\u00E5\u00E6\u00E7\u00E9\u00F6\u00FC\u00EC\u00EE\u00F2\u00F4\u00F9\u00FB\u00FF\u00A4\u00A7\u00B0\u2577\u2576\u250C\u2574\u2510\u2500\u252C\u2575\u2502\u2514\u251C\u2518\u2524\u2534\u253C\u256D\u256E\u2570\u256F\u00BF\u00A1\u00D1\u00F1\u2020\u2021\u02D9`\u00B6\u00B7\u221A\u2592\u00D8".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7B) return input - 0x61 + 0x61;
 			if (input >= 0xC1 && input <= 0xD1) return input - 0xC1 + 0x391;
@@ -93,7 +93,7 @@ public class XRiscosBfontCharset extends Charset {
 			return "\u00B5\u0000`\u009E\u0000|\u009F\u0000\u0087\u0000\u0000\u0000\u0000\u0000\u0000\u00A0\u00DA\u0000\u0000\u0000\u0000\u00BC\u00BD\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00B4\u0000\u0000\u0000\u0000\u0080\u0081\u0082\u0083\u0000\u0084\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00B6\u0000\u0000\u0000\u0000\u0085\u0000\u00C0\u0000\u0000\u0000\u0086\u0000\u0000\u0000\u008C\u0000\u0000\u0000\u0090\u0091\u0092\u0093\u008D\u0094\u008F\u008E\u0097\u0000\u0098\u0000\u0000\u00B7\u0099\u0000\u009A\u0000\u0095\u0000\u00E0\u009B\u0000\u009C\u0096\u0000\u0000\u009D".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x5F) return input - 0x20 + 0x20;
 			if (input >= 0x61 && input <= 0x7B) return input - 0x61 + 0x61;
 			if (input >= 0xA1 && input <= 0xFF) return GETOUTPUT0_A1[input - 0xA1];

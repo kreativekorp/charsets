@@ -33,7 +33,7 @@ public class XGemdosCharset extends Charset {
 			return "\u00C7\u00FC\u00E9\u00E2\u00E4\u00E0\u00E5\u00E7\u00EA\u00EB\u00E8\u00EF\u00EE\u00EC\u00C4\u00C5\u00C9\u00E6\u00C6\u00F4\u00F6\u00F2\u00FB\u00F9\u00FF\u00D6\u00DC\u00F8\u00A3\u00D8\u00A4\u0192\u00E1\u00ED\u00F3\u00FA\u00F1\u00D1\u00AA\u00BA\u00BF\u201C\u201D\u2039\u203A\u00A1\u00AB\u00BB\u00E3\u00F5\u00A5\u00A2\u0153\u0152\u00C0\u00C3\u00D5\u00A7\u2021\u2020\u00B6\u00A9\u00AE\u2122\u201E\u2026\u2030\u2022\u2013\u2014\u00B0\u00C1\u00C2\u00C8\u00CA\u00CB\u00CC\u00CD\u00CE\u00CF\u00D2\u00D3\u00D4\u0160\u0161\u00D9\u00DA\u00DB\u0178\u00DF\u0000\u0000\u0000\u0000\u0000\u0000\u03B1\u03B2\u0393\u03C0\u03A3\u03C3\u00B5\u03C4\u03A6\u0398\u03A9\u03B4\u222E\u03D5\u2208\u2229\u2261\u00B1\u2265\u2264\u2320\u2321\u00F7\u2248\u00B0\u2219\u00B7\u221A\u207F\u00B2\u25A0\u2205".toCharArray();
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DECODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.DAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
 			if (input >= 0x80 && input <= 0xFF) return GETOUTPUT0_80[input - 0x80];
 			return 0;
@@ -54,9 +54,9 @@ public class XGemdosCharset extends Charset {
 			return 0;
 		}
 		private long getOutput0(int input) {
-			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.ENCODE_ASCII_C0[input - 0x0];
+			if (input >= 0x0 && input <= 0x1F) return CommonSubtables.EAC0[input - 0x0];
 			if (input >= 0x20 && input <= 0x7F) return input - 0x20 + 0x20;
-			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.COMMON1255[input - 0xA1];
+			if (input >= 0xA1 && input <= 0xFF) return CommonSubtables.C389718[input - 0xA1];
 			switch (input) {
 			case 0x152: return 0xB5L;
 			case 0x153: return 0xB4L;
