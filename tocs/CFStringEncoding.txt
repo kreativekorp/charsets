@@ -157,7 +157,7 @@ kCFStringEncodingKOI8_U                         2568            x-koi8-u
 # Other platform encodings begin at 0xB00
 kCFStringEncodingNextStepLatin                  2817            x-nextstep
 # kCFStringEncodingNextStepJapanese             2818            x-nextstep-jp
-# kCFStringEncodingNonLossyASCII                3071            x-us-ascii-non-lossy
+kCFStringEncodingNonLossyASCII                  3071            x-us-ascii-non-lossy
 
 # EBCDIC & IBM host encodings begin at 0xC00
 # kCFStringEncodingEBCDIC_US                    3073            x-ebcdic-us

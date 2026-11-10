@@ -4,7 +4,7 @@ NSJapaneseEUCStringEncoding             3               EUC-JP
 NSUTF8StringEncoding                    4               UTF-8
 NSISOLatin1StringEncoding               5               x-iso-8859-1
 NSSymbolStringEncoding                  6               x-adobe-symbol
-# NSNonLossyASCIIStringEncoding         7               x-us-ascii-non-lossy
+NSNonLossyASCIIStringEncoding           7               x-us-ascii-non-lossy
 NSShiftJISStringEncoding                8               x-shift-jis-generic
 NSISOLatin2StringEncoding               9               x-iso-8859-2
 NSUnicodeStringEncoding                 10              UTF-16
