@@ -323,6 +323,87 @@ function utf32DecodeFn(littleEndian) {
 CharsetDecoder.register('utf-32be', [], 1, {decode: utf32DecodeFn(false)});
 CharsetDecoder.register('utf-32le', ['utf-32'], 1, {decode: utf32DecodeFn(true)});
 
+function nonLossyASCIIDecodeFn() {
+	const alphabet = {
+		0x30:0, 0x31:1, 0x32:2, 0x33:3, 0x34:4,
+		0x35:5, 0x36:6, 0x37:7, 0x38:8, 0x39:9,
+		0x41:10, 0x42:11, 0x43:12, 0x44:13, 0x45:14, 0x46:15,
+		0x61:10, 0x62:11, 0x63:12, 0x64:13, 0x65:14, 0x66:15
+	};
+	const readDigits = function(buffer, inpos, inlen, count, radix, prefixLen) {
+		let value = 0;
+		for (let i = 0; i < count; i++) {
+			if (inpos >= inlen) return {'underflow': prefixLen + i};
+			const digit = alphabet[buffer[inpos++]];
+			if (digit === undefined || digit >= radix) return {'malformed': prefixLen + i};
+			value = value * radix + digit;
+		}
+		return {'result': value};
+	};
+	const underflow = function(buffer, options, out, ip) {
+		if (options.stream) options.tail(new Uint8Array(buffer.buffer, buffer.byteOffset+ip, buffer.byteLength-ip));
+		else if (options.fatal) throw new TypeError('CharsetDecoder.decode: Decoding failed.');
+		else Array.prototype.push.apply(out, options.replacement);
+		return buffer.byteLength;
+	};
+	const malformed = function(options, out, ip, length) {
+		if (options.fatal) throw new TypeError('CharsetDecoder.decode: Decoding failed.');
+		else Array.prototype.push.apply(out, options.replacement);
+		return ip + length;
+	};
+	const readLowSurrogate = function(buffer, options, inpos, inlen, out, ip, highSurrogate) {
+		if (inpos >= inlen) return underflow(buffer, options, out, ip);
+		const b = buffer[inpos++];
+		if (b !== 0x5C) return malformed(options, out, ip, 6);
+		if (inpos >= inlen) return underflow(buffer, options, out, ip);
+		const e = buffer[inpos++];
+		if (e !== 0x55 && e !== 0x75) return malformed(options, out, ip, 6);
+		const r = readDigits(buffer, inpos, inlen, 4, 16, 8);
+		if (r.underflow) return underflow(buffer, options, out, ip);
+		if (r.malformed) return malformed(options, out, ip, r.malformed);
+		if (r.result < 0xDC00 || r.result > 0xDFFF) return malformed(options, out, ip, 6);
+		out.push(highSurrogate, r.result);
+		return inpos + 4;
+	};
+	const readHexEscape = function(buffer, options, inpos, inlen, out, ip) {
+		const r = readDigits(buffer, inpos, inlen, 4, 16, 2);
+		if (r.underflow) return underflow(buffer, options, out, ip);
+		if (r.malformed) return malformed(options, out, ip, r.malformed);
+		if (r.result < 0xD800 || r.result > 0xDFFF) { out.push(r.result); return inpos + 4; }
+		if (r.result >= 0xDC00 && r.result <= 0xDFFF) return malformed(options, out, ip, 6);
+		return readLowSurrogate(buffer, options, inpos + 4, inlen, out, ip, r.result);
+	};
+	const readOctEscape = function(buffer, options, inpos, inlen, out, ip, mostSignificantDigit) {
+		const r = readDigits(buffer, inpos, inlen, 2, 8, 2);
+		if (r.underflow) return underflow(buffer, options, out, ip);
+		if (r.malformed) return malformed(options, out, ip, r.malformed);
+		out.push((mostSignificantDigit << 6) | r.result);
+		return inpos + 2;
+	};
+	const readEscape = function(buffer, options, inpos, inlen, out, ip) {
+		if (inpos >= inlen) return underflow(buffer, options, out, ip);
+		const e = buffer[inpos++];
+		if (e === 0x5C) { out.push(0x5C); return inpos; }
+		if (e === 0x55 || e === 0x75) return readHexEscape(buffer, options, inpos, inlen, out, ip);
+		if (e >= 0x30 && e <= 0x33) return readOctEscape(buffer, options, inpos, inlen, out, ip, e & 7);
+		return malformed(options, out, ip, 2);
+	};
+	const readSequence = function(buffer, options, inpos, inlen, out) {
+		const ip = inpos; const b = buffer[inpos++];
+		if (b === 0x5C) return readEscape(buffer, options, inpos, inlen, out, ip);
+		if (b >= 0x80) return malformed(options, out, ip, 1);
+		out.push(b);
+		return inpos;
+	};
+	return function(buffer, options) {
+		let inpos = 0; const inlen = buffer.byteLength; const out = [];
+		while (inpos < inlen) inpos = readSequence(buffer, options, inpos, inlen, out);
+		return String.fromCharCode.apply(String, out);
+	};
+}
+
+CharsetDecoder.register('x-us-ascii-non-lossy', [], 1, {decode: nonLossyASCIIDecodeFn()});
+
 class CharsetEncoder {
 	static #minimize(name) {
 		const tokens = [];
@@ -655,6 +736,67 @@ function utf32EncodeFn(littleEndian) {
 
 CharsetEncoder.register('utf-32be', [], 4, {encodeInto: utf32EncodeFn(false)});
 CharsetEncoder.register('utf-32le', ['utf-32'], 4, {encodeInto: utf32EncodeFn(true)});
+
+function nonLossyASCIIEncodeFn() {
+	const alphabet = [0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x61,0x62,0x63,0x64,0x65,0x66];
+	const writeOct = function(buffer, outpos, cp) {
+		buffer[outpos++] = 0x5C;
+		buffer[outpos++] = alphabet[(cp >> 6) & 3];
+		buffer[outpos++] = alphabet[(cp >> 3) & 7];
+		buffer[outpos++] = alphabet[(cp >> 0) & 7];
+	};
+	const writeHex = function(buffer, outpos, cp) {
+		buffer[outpos++] = 0x5C;
+		buffer[outpos++] = 0x75;
+		buffer[outpos++] = alphabet[(cp >> 12) & 15];
+		buffer[outpos++] = alphabet[(cp >>  8) & 15];
+		buffer[outpos++] = alphabet[(cp >>  4) & 15];
+		buffer[outpos++] = alphabet[(cp >>  0) & 15];
+	};
+	return function(string, buffer, options) {
+		let inpos = 0;
+		let outpos = 0;
+		const inlen = string.length;
+		const outlen = buffer.byteLength;
+		while (inpos < inlen) {
+			const cp = string.codePointAt(inpos);
+			if (cp == 0x5C) {
+				if (outpos + 2 > outlen) break;
+				buffer[outpos++] = 0x5C;
+				buffer[outpos++] = 0x5C;
+				inpos++;
+			} else if (cp <= 0x7F) {
+				if (outpos >= outlen) break;
+				buffer[outpos++] = cp;
+				inpos++;
+			} else if (cp <= 0xFF) {
+				if (outpos + 4 > outlen) break;
+				writeOct(buffer, outpos, cp);
+				outpos += 4;
+				inpos++;
+			} else if (cp > 0xFFFF) {
+				if (outpos + 12 > outlen) break;
+				writeHex(buffer, outpos+0, string.charCodeAt(inpos+0));
+				writeHex(buffer, outpos+6, string.charCodeAt(inpos+1));
+				outpos += 12;
+				inpos += 2;
+			} else if (cp < 0xD800 || cp > 0xDFFF) {
+				if (outpos + 6 > outlen) break;
+				writeHex(buffer, outpos, cp);
+				outpos += 6;
+				inpos++;
+			} else {
+				if (outpos + 6 > outlen) break;
+				writeHex(buffer, outpos, 0xFFFD);
+				outpos += 6;
+				inpos++;
+			}
+		}
+		return {'read': inpos, 'written': outpos};
+	};
+}
+
+CharsetEncoder.register('x-us-ascii-non-lossy', [], 6, {encodeInto: nonLossyASCIIEncodeFn()});
 
 if (module) {
 	module.exports = {

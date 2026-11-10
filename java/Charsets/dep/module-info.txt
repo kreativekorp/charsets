@@ -1,4 +1,5 @@
 module com.kreative.charset {
 	provides java.nio.charset.spi.CharsetProvider with
+		com.kreative.charset.AlgorithmicCharsetProvider,
 		com.kreative.charset.generated.GeneratedCharsetProvider;
 }

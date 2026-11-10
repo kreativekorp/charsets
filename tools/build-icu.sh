@@ -62,6 +62,7 @@ GLOBIGNORE=$GLOBIGNORE:'../tests/x-apple2gs.txt'
 GLOBIGNORE=$GLOBIGNORE:'../tests/x-hp-1816-1425.txt'
 GLOBIGNORE=$GLOBIGNORE:'../tests/x-smalltalk72.txt'
 GLOBIGNORE=$GLOBIGNORE:'../tests/x-smalltalk78.txt'
+GLOBIGNORE=$GLOBIGNORE:'../tests/x-us-ascii-non-lossy.txt'
 
 cd "$REPO_ROOT/icu"
 make clean
