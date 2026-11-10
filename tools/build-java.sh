@@ -31,9 +31,13 @@ GLOBIGNORE=$GLOBIGNORE:../../tables/x-IBM1166.txt # -generic maintains LINE FEED
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-IBM1383.txt # Java maps U+F83D and U+F83E to byte sequences that don't round-trip
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-IBM33722.txt # Java lacks a mapping from 0xA2C3 to U+FFE4 needed for round-trip
 
-# Java's UTF-32 decodes surrogates which it shouldn't.
+# Java's CESU-8 and UTF-32 decode surrogates which they shouldn't.
+GLOBIGNORE=$GLOBIGNORE:../../tests/CESU-8.txt
 GLOBIGNORE=$GLOBIGNORE:../../tests/utf-32be.txt
 GLOBIGNORE=$GLOBIGNORE:../../tests/utf-32le.txt
+
+# Java's UTF-8 differs in replacement characters.
+GLOBIGNORE=$GLOBIGNORE:../../tests/utf-8.txt
 
 java -cp charsetskk.jar \
 	com.kreative.charset.test.VerifyTable \

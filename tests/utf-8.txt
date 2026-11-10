@@ -1,0 +1,69 @@
+0x00	U+0000	# first single-byte sequence
+0x7F	U+007F	# last single-byte sequence
+0x80	U+FFFD	# first continuation byte
+0xBF	U+FFFD	# last continuation byte
+0xC0	U+FFFD	# truncated
+0xC080	U+FFFD+FFFD	# first overlong double-byte sequence
+0xC1	U+FFFD	# truncated
+0xC1BF	U+FFFD+FFFD	# last overlong double-byte sequence
+0xC2	U+FFFD	# truncated
+0xC280	U+0080	# first valid double-byte sequence
+0xDF	U+FFFD	# truncated
+0xDFBF	U+07FF	# last valid double-byte sequence
+0xE0	U+FFFD	# truncated
+0xE080	U+FFFD+FFFD	# truncated
+0xE08080	U+FFFD+FFFD+FFFD	# first overlong triple-byte sequence
+0xE09F	U+FFFD+FFFD	# truncated
+0xE09FBF	U+FFFD+FFFD+FFFD	# last overlong triple-byte sequence
+0xE0A0	U+FFFD	# truncated
+0xE0A080	U+0800	# first valid triple-byte sequence
+0xE0BF	U+FFFD	# truncated
+0xE0BFBF	U+0FFF	#
+0xEF	U+FFFD	# truncated
+0xEF80	U+FFFD	# truncated
+0xEF8080	U+F000	#
+0xEFBF	U+FFFD	# truncated
+0xEFBFBF	U+FFFF	# last valid triple-byte sequence
+0xF0	U+FFFD	# truncated
+0xF080	U+FFFD+FFFD	# truncated
+0xF08080	U+FFFD+FFFD+FFFD	# truncated
+0xF0808080	U+FFFD+FFFD+FFFD+FFFD	# first overlong 4-byte sequence
+0xF08F	U+FFFD+FFFD	# truncated
+0xF08FBF	U+FFFD+FFFD+FFFD	# truncated
+0xF08FBFBF	U+FFFD+FFFD+FFFD+FFFD	# last overlong 4-byte sequence
+0xF090	U+FFFD	# truncated
+0xF09080	U+FFFD	# truncated
+0xF0908080	U+10000	# first valid 4-byte sequence
+0xF4	U+FFFD	# truncated
+0xF48F	U+FFFD	# truncated
+0xF48FBF	U+FFFD	# truncated
+0xF48FBFBF	U+10FFFF	# last valid 4-byte sequence
+0xF490	U+FFFD+FFFD	# truncated
+0xF49080	U+FFFD+FFFD+FFFD	# truncated
+0xF4908080	U+FFFD+FFFD+FFFD+FFFD	# first non-Unicode 4-byte sequence
+0xF7	U+FFFD	# truncated
+0xF7BF	U+FFFD+FFFD	# truncated
+0xF7BFBF	U+FFFD+FFFD+FFFD	# truncated
+0xF7BFBFBF	U+FFFD+FFFD+FFFD+FFFD	# last non-Unicode 4-byte sequence
+
+0xED	U+FFFD	# truncated
+0xEDA0	U+FFFD+FFFD	# truncated
+0xEDA0BE	U+FFFD+FFFD+FFFD	# unpaired high surrogate
+0xEDA0BEED	U+FFFD+FFFD+FFFD+FFFD	# truncated
+0xEDA0BEEDBF	U+FFFD+FFFD+FFFD+FFFD+FFFD	# truncated
+0xEDA0BEEDBF89	U+FFFD+FFFD+FFFD+FFFD+FFFD+FFFD	# surrogate pair
+0xEDBF	U+FFFD+FFFD	# truncated
+0xEDBF89	U+FFFD+FFFD+FFFD	# unpaired low surrogate
+
+U+0000	0x00	# first single-byte sequence
+U+007F	0x7F	# last single-byte sequence
+U+0080	0xC280	# first valid double-byte sequence
+U+07FF	0xDFBF	# last valid double-byte sequence
+U+0800	0xE0A080	# first valid triple-byte sequence
+U+FFFF	0xEFBFBF	# last valid triple-byte sequence
+U+10000	0xF0908080	# first valid 4-byte sequence
+U+10FFFF	0xF48FBFBF	# last valid 4-byte sequence
+
+U+D83E	0xEFBFBD	# unpaired high surrogate
+U+DFC9	0xEFBFBD	# unpaired low surrogate
+U+1FBC9	0xF09FAF89	# non-BMP character

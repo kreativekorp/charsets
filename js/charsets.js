@@ -323,6 +323,68 @@ function utf32DecodeFn(littleEndian) {
 CharsetDecoder.register('utf-32be', [], 1, {decode: utf32DecodeFn(false)});
 CharsetDecoder.register('utf-32le', ['utf-32'], 1, {decode: utf32DecodeFn(true)});
 
+function cesu8DecodeFn() {
+	const readSequence = function(buffer, inpos, inlen) {
+		if (inpos >= inlen) return {'underflow': -1};
+		const lead = buffer[inpos++];
+		if (lead < 0x80) return {'cp': lead, 'len': 1};
+		if (lead < 0xC2 || lead > 0xEF) return {'malformed': 1};
+		if (inpos >= inlen) return {'underflow': 1};
+		const cont1 = buffer[inpos++];
+		if (cont1 < 0x80 || cont1 > 0xBF) return {'malformed': 2};
+		if (lead < 0xE0) return {'cp': (((lead & 0x1F) << 6) | (cont1 & 0x3F)), 'len': 2};
+		if (lead === 0xE0 && cont1 < 0xA0) return {'malformed': 2};
+		if (inpos >= inlen) return {'underflow': 2};
+		const cont2 = buffer[inpos++];
+		if (cont2 < 0x80 || cont2 > 0xBF) return {'malformed': 3};
+		return {'cp': (((lead & 0x0F) << 12) | ((cont1 & 0x3F) << 6) | (cont2 & 0x3F)), 'len': 3};
+	};
+	return function(buffer, options) {
+		let inpos = 0;
+		const inlen = buffer.byteLength;
+		const out = [];
+		while (inpos < inlen) {
+			const ch = readSequence(buffer, inpos, inlen);
+			if (ch.underflow) {
+				if (options.stream) options.tail(new Uint8Array(buffer.buffer, buffer.byteOffset+inpos, buffer.byteLength-inpos));
+				else if (options.fatal) throw new TypeError('CharsetDecoder.decode: Decoding failed.');
+				else Array.prototype.push.apply(out, options.replacement);
+				break;
+			} else if (ch.malformed) {
+				if (options.fatal) throw new TypeError('CharsetDecoder.decode: Decoding failed.');
+				else Array.prototype.push.apply(out, options.replacement);
+				inpos++;
+			} else if (ch.cp >= 0xD800 && ch.cp <= 0xDBFF) {
+				const cl = readSequence(buffer, inpos + 3, inlen);
+				if (cl.underflow) {
+					if (options.stream) options.tail(new Uint8Array(buffer.buffer, buffer.byteOffset+inpos, buffer.byteLength-inpos));
+					else if (options.fatal) throw new TypeError('CharsetDecoder.decode: Decoding failed.');
+					else Array.prototype.push.apply(out, options.replacement);
+					if (options.stream) break;
+					inpos += 3;
+				} else if (cl.malformed || cl.cp < 0xDC00 || cl.cp > 0xDFFF) {
+					if (options.fatal) throw new TypeError('CharsetDecoder.decode: Decoding failed.');
+					else Array.prototype.push.apply(out, options.replacement);
+					inpos += 3;
+				} else {
+					out.push(ch.cp, cl.cp);
+					inpos += 6;
+				}
+			} else if (ch.cp >= 0xDC00 && ch.cp <= 0xDFFF) {
+				if (options.fatal) throw new TypeError('CharsetDecoder.decode: Decoding failed.');
+				else Array.prototype.push.apply(out, options.replacement);
+				inpos += 3;
+			} else {
+				out.push(ch.cp);
+				inpos += ch.len;
+			}
+		}
+		return String.fromCharCode.apply(String, out);
+	};
+}
+
+CharsetDecoder.register('CESU-8', [], 1, {decode: cesu8DecodeFn()});
+
 function nonLossyASCIIDecodeFn() {
 	const alphabet = {
 		0x30:0, 0x31:1, 0x32:2, 0x33:3, 0x34:4,
@@ -736,6 +798,52 @@ function utf32EncodeFn(littleEndian) {
 
 CharsetEncoder.register('utf-32be', [], 4, {encodeInto: utf32EncodeFn(false)});
 CharsetEncoder.register('utf-32le', ['utf-32'], 4, {encodeInto: utf32EncodeFn(true)});
+
+function cesu8EncodeFn() {
+	const write3 = function(buffer, outpos, cp) {
+		buffer[outpos++] = 0xE0 | ((cp >> 12) & 0x0F);
+		buffer[outpos++] = 0x80 | ((cp >>  6) & 0x3F);
+		buffer[outpos++] = 0x80 | ((cp >>  0) & 0x3F);
+	};
+	return function(string, buffer, options) {
+		let inpos = 0;
+		let outpos = 0;
+		const inlen = string.length;
+		const outlen = buffer.byteLength;
+		while (inpos < inlen) {
+			const cp = string.codePointAt(inpos);
+			if (cp < 0x80) {
+				if (outpos >= outlen) break;
+				buffer[outpos++] = cp;
+				inpos++;
+			} else if (cp < 0x800) {
+				if (outpos + 2 > outlen) break;
+				buffer[outpos++] = 0xC0 | ((cp >> 6) & 0x1F);
+				buffer[outpos++] = 0x80 | ((cp >> 0) & 0x3F);
+				inpos++;
+			} else if (cp > 0xFFFF) {
+				if (outpos + 6 > outlen) break;
+				write3(buffer, outpos+0, string.charCodeAt(inpos+0));
+				write3(buffer, outpos+3, string.charCodeAt(inpos+1));
+				outpos += 6;
+				inpos += 2;
+			} else if (cp < 0xD800 || cp > 0xDFFF) {
+				if (outpos + 3 > outlen) break;
+				write3(buffer, outpos, cp);
+				outpos += 3;
+				inpos++;
+			} else {
+				if (outpos + 3 > outlen) break;
+				write3(buffer, outpos, 0xFFFD);
+				outpos += 3;
+				inpos++;
+			}
+		}
+		return {'read': inpos, 'written': outpos};
+	};
+}
+
+CharsetEncoder.register('CESU-8', [], 3, {encodeInto: cesu8EncodeFn()});
 
 function nonLossyASCIIEncodeFn() {
 	const alphabet = [0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x61,0x62,0x63,0x64,0x65,0x66];
