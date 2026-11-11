@@ -417,6 +417,8 @@ CHARMAP
 <UFF9B>	\xDB	|4
 <UFF9C>	\xDC	|4
 <UFF9D>	\xDD	|4
+<UFF9E>	\xDE	|4
+<UFF9F>	\xDF	|4
 <UFFE3>	\x7E	|4
 <UFFE5>	\x5C	|4
 <UFFE8>	\x91	|4

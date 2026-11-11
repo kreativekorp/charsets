@@ -503,6 +503,8 @@ public class GeneratedCharsetProvider extends AbstractCharsetProvider {
 			new XRiscosBfontCharset(),
 			new XRiscosEffCharset(),
 			new XRobotronCharset(),
+			new XSegaSc3000EuCharset(),
+			new XSegaSc3000JpCharset(),
 			new XSharpsciiEuCharset(),
 			new XSharpsciiEuAltVideoCharset(),
 			new XSharpsciiEuVideoCharset(),

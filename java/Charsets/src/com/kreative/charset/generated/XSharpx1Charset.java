@@ -70,7 +70,7 @@ public class XSharpx1Charset extends Charset {
 			if (input >= 0x309B && input <= 0x30FC) return CommonSubtables.C6725438[input - 0x309B];
 			if (input >= 0xFF01 && input <= 0xFF3B) return input - 0xFF01 + 0x21;
 			if (input >= 0xFF3D && input <= 0xFF5D) return input - 0xFF3D + 0x5D;
-			if (input >= 0xFF61 && input <= 0xFF9D) return input - 0xFF61 + 0xA1;
+			if (input >= 0xFF61 && input <= 0xFF9F) return input - 0xFF61 + 0xA1;
 			switch (input) {
 			case 0xA0: return 0xA0L;
 			case 0xA5: return 0x5CL;
