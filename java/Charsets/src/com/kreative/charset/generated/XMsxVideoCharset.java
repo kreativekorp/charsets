@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMsxVideoCharset extends Charset {
 	public XMsxVideoCharset() {
-		super("x-msx-video", new String[]{});
+		super("x-msx-video", new String[]{"x-msx-fi-video", "x-msx-se-video"});
 	}
 
 	public boolean contains(Charset cs) {

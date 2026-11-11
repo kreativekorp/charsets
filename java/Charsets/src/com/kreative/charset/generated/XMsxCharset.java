@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMsxCharset extends Charset {
 	public XMsxCharset() {
-		super("x-msx", new String[]{});
+		super("x-msx", new String[]{"x-msx-fi", "x-msx-se"});
 	}
 
 	public boolean contains(Charset cs) {
