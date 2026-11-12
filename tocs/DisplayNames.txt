@@ -1,3 +1,11 @@
+CESU-8	Unicode|CESU-8
+UTF-8	Unicode|UTF-8
+UTF-16	Unicode|UTF-16
+UTF-16BE	Unicode|UTF-16 (Big Endian)
+UTF-16LE	Unicode|UTF-16 (Little Endian)
+UTF-32	Unicode|UTF-32
+UTF-32BE	Unicode|UTF-32 (Big Endian)
+UTF-32LE	Unicode|UTF-32 (Little Endian)
 x-acorn-atom	Acorn|Acorn Atom
 x-acorn-atom-video	Acorn|Acorn Atom (Video)
 x-acorn-electron	Acorn|Acorn Electron
@@ -564,18 +572,32 @@ x-msx-ar-eu-dir	MSX|MSX Arabic/European (Directional)
 x-msx-ar-eu-nondir	MSX|MSX Arabic/European (Nondirectional)
 x-msx-ar-eu-video-dir	MSX|MSX Arabic/European (Video) (Directional)
 x-msx-ar-eu-video-nondir	MSX|MSX Arabic/European (Video) (Nondirectional)
+x-msx-ar-eu-digits-dir	MSX|MSX Arabic with European Digits (Directional)
+x-msx-ar-eu-digits-nondir	MSX|MSX Arabic with European Digits (Nondirectional)
+x-msx-ar-eu-digits-video-dir	MSX|MSX Arabic with European Digits (Video) (Directional)
+x-msx-ar-eu-digits-video-nondir	MSX|MSX Arabic with European Digits (Video) (Nondirectional)
 x-msx-br	MSX|MSX Brazilian
 x-msx-br-video	MSX|MSX Brazilian (Video)
 x-msx-br-gradiente	MSX|MSX Brazilian (Gradiente)
 x-msx-br-gradiente-video	MSX|MSX Brazilian (Gradiente) (Video)
 x-msx-br-sharp	MSX|MSX Brazilian (Sharp)
 x-msx-br-sharp-video	MSX|MSX Brazilian (Sharp) (Video)
+x-msx-dk	MSX|MSX Denmark/Norway
+x-msx-dk-video	MSX|MSX Denmark/Norway (Video)
+x-msx-fi	MSX|MSX Finland/Sweden
+x-msx-fi-video	MSX|MSX Finland/Sweden (Video)
 x-msx-jp	MSX|MSX Japanese
 x-msx-jp-video	MSX|MSX Japanese (Video)
 x-msx-kr	MSX|MSX Korean
 x-msx-kr-video	MSX|MSX Korean (Video)
+x-msx-no	MSX|MSX Denmark/Norway
+x-msx-no-video	MSX|MSX Denmark/Norway (Video)
+x-msx-pl	MSX|MSX Polish
+x-msx-pl-video	MSX|MSX Polish (Video)
 x-msx-ru	MSX|MSX Russian
 x-msx-ru-video	MSX|MSX Russian (Video)
+x-msx-se	MSX|MSX Finland/Sweden
+x-msx-se-video	MSX|MSX Finland/Sweden (Video)
 x-nextstep	Miscellaneous|NeXTSTEP Multinational
 x-oricscii	Tangerine|OricSCII
 x-oricscii-video	Tangerine|OricSCII (Video)
@@ -607,6 +629,8 @@ x-riscos	Acorn|RISC OS
 x-riscos-bfont	Acorn|RISC OS (BFont)
 x-riscos-eff	Acorn|RISC OS (EFF)
 x-robotron	Miscellaneous|Robotron
+x-sega-sc3000-eu	Sega|Sega SC-3000 European
+x-sega-sc3000-jp	Sega|Sega SC-3000 Japanese
 x-sharpscii-eu	Sharp|SharpSCII European
 x-sharpscii-eu-video	Sharp|SharpSCII European (Video)
 x-sharpscii-eu-alt-video	Sharp|SharpSCII European Alternate (Video)
@@ -681,6 +705,7 @@ x-trs80m4a	Tandy|TRS-80 Model 4a
 x-trs80m4a-video	Tandy|TRS-80 Model 4a (Video)
 x-trs80m4a-alt-video	Tandy|TRS-80 Model 4a Alternate (Video)
 x-us-ascii	ASCII|US-ASCII
+x-us-ascii-non-lossy	Unicode|Non-Lossy ASCII
 x-us-ascii-quotes	ASCII|US-ASCII-Quotes
 x-viscii	Vietnamese|VISCII
 x-vscii1	Vietnamese|VSCII-1
