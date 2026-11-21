@@ -4,6 +4,8 @@ This directory contains indices of names and identifiers for character encodings
 
 * `IANA.txt` - Maps names and `MIBenum` constants from the IANA charset registry to the identifiers used in this repository.
 
+* `Microsoft.txt` - Maps Windows code page identifiers and .NET code page names to the identifiers used in this repository.
+
 * `CFStringEncoding.txt` - Maps `CFStringEncoding` constants from Apple's Core Foundation framework to the identifiers used in this repository.
 
 * `NSStringEncoding.txt` - Maps `NSStringEncoding` constants from NeXT and Apple's Foundation framework to the identifiers used in this repository.
