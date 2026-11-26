@@ -12,12 +12,17 @@ OK = '\x1B[1;32mOK\x1B[0m'
 ALL_OK = '\x1B[1;32mALL OK\x1B[0m'
 
 def lint_lines(lines, round_trip=True, auto_reverse=False, then_call=None, with_name=None):
+	description = None
 	chars_to_id = {}
 	id_to_chars = {}
 	pua_chars = {}
 	ok = True
 	for line in lines:
-		line = line.partition('#')[0].strip()
+		line, _, comment = [p.strip() for p in line.partition('#')]
+		if comment.startswith('Description:'):
+			description = comment[12:].strip()
+		if comment.startswith('Desc:'):
+			description = comment[5:].strip()
 		if not line:
 			continue
 		m = re.match(CHARS_TO_ID, line)
@@ -89,7 +94,7 @@ def lint_lines(lines, round_trip=True, auto_reverse=False, then_call=None, with_
 	if pua_chars:
 		print('  PUA %s' % ' '.join('%04X' % cp for cp in sorted(pua_chars)))
 	if ok and then_call:
-		if then_call(with_name, chars_to_id, id_to_chars) is False:
+		if then_call(with_name, description, chars_to_id, id_to_chars) is False:
 			ok = False
 	if ok:
 		print('  %s %d %d' % (OK, len(chars_to_id), len(id_to_chars)))
