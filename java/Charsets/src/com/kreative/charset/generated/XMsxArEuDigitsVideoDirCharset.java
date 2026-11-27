@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMsxArEuDigitsVideoDirCharset extends Charset {
 	public XMsxArEuDigitsVideoDirCharset() {
-		super("x-msx-ar-eu-digits-video-dir", new String[]{});
+		super("x-msx-ar-eu-digits-video-dir", new String[]{"x-msx-ar-eu-digits-video"});
 	}
 
 	public boolean contains(Charset cs) {

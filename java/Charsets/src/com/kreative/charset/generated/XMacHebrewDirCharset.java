@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMacHebrewDirCharset extends Charset {
 	public XMacHebrewDirCharset() {
-		super("x-MacHebrew-dir", new String[]{});
+		super("x-MacHebrew-dir", new String[]{"x-MacHebrew"});
 	}
 
 	public boolean contains(Charset cs) {

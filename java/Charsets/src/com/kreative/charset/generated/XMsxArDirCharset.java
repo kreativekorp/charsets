@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMsxArDirCharset extends Charset {
 	public XMsxArDirCharset() {
-		super("x-msx-ar-dir", new String[]{"x-msx-ar-eu-dir"});
+		super("x-msx-ar-dir", new String[]{"x-msx-ar-eu-dir", "x-msx-ar-eu", "x-msx-ar"});
 	}
 
 	public boolean contains(Charset cs) {

@@ -6,6 +6,7 @@
 <subchar>	\x3F
 <icu:state>	0-fe, ff.u
 <icu:charsetFamily>	"ASCII"
+<icu:alias>	"x-msx-ar-eu-digits"
 
 CHARMAP
 <U0000>	\x00	|0

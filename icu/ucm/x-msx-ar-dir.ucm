@@ -7,6 +7,8 @@
 <icu:state>	0-fe, ff.u
 <icu:charsetFamily>	"ASCII"
 <icu:alias>	"x-msx-ar-eu-dir"
+<icu:alias>	"x-msx-ar-eu"
+<icu:alias>	"x-msx-ar"
 
 CHARMAP
 <U0000>	\x00	|0

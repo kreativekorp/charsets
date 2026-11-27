@@ -1,4 +1,4 @@
-# Name: Apple IIgs Alternate; logos replaced with modern modifier key symbols
+# Name: Apple IIc/IIgs Alternate; logos replaced with modern modifier key symbols
 # Date: 2026-10-08
 # Auth: Rebecca Bettencourt
 

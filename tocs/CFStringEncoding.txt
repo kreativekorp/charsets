@@ -3,8 +3,8 @@ kCFStringEncodingMacRoman                       0               x-MacRoman
 kCFStringEncodingMacJapanese                    1               x-MacJapanese
 kCFStringEncodingMacChineseTrad                 2               x-MacChineseTraditional
 kCFStringEncodingMacKorean                      3               x-MacKorean
-kCFStringEncodingMacArabic                      4               x-MacArabic-dir
-kCFStringEncodingMacHebrew                      5               x-MacHebrew-dir
+kCFStringEncodingMacArabic                      4               x-MacArabic
+kCFStringEncodingMacHebrew                      5               x-MacHebrew
 kCFStringEncodingMacGreek                       6               x-MacGreek
 kCFStringEncodingMacCyrillic                    7               x-MacCyrillic
 kCFStringEncodingMacDevanagari                  9               x-MacDevanagari
@@ -29,7 +29,7 @@ kCFStringEncodingMacChineseSimp                 25              x-MacChineseSimp
 # kCFStringEncodingMacEthiopic                  28              x-MacEthiopic
 kCFStringEncodingMacCentralEurRoman             29              x-MacCentralEuropean
 # kCFStringEncodingMacVietnamese                30              x-MacVietnamese
-# kCFStringEncodingMacExtArabic                 31              x-MacExtArabic-dir
+# kCFStringEncodingMacExtArabic                 31              x-MacExtArabic
 kCFStringEncodingMacSymbol                      33              x-MacSymbol
 kCFStringEncodingMacDingbats                    34              x-MacDingbats
 kCFStringEncodingMacTurkish                     35              x-MacTurkish
@@ -38,7 +38,7 @@ kCFStringEncodingMacIcelandic                   37              x-MacIcelandic
 kCFStringEncodingMacRomanian                    38              x-MacRomanian
 kCFStringEncodingMacCeltic                      39              x-MacCeltic
 kCFStringEncodingMacGaelic                      40              x-MacGaelic
-kCFStringEncodingMacFarsi                       140             x-MacFarsi-dir
+kCFStringEncodingMacFarsi                       140             x-MacFarsi
 kCFStringEncodingMacUkrainian                   152             x-MacUkrainian
 kCFStringEncodingMacInuit                       236             x-MacInuit
 kCFStringEncodingMacVT100                       252             x-MacVT100

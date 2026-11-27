@@ -17,9 +17,11 @@ for i in `locate charsetskk.jar`; do
 done
 
 # Some of Java's Mac encodings are older versions and we can't override them.
+GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacArabic.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacCroatian.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacCyrillic.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacGreek.txt
+GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacHebrew.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacSymbol.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacThai.txt
 GLOBIGNORE=$GLOBIGNORE:../../tables/x-MacTurkish.txt

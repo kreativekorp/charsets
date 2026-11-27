@@ -6,6 +6,7 @@
 <subchar>	\x3F
 <icu:state>	0-f.u, 10-1c, 1d-1f.u, 20-7e, 7f.u, 80-fe, ff.u
 <icu:charsetFamily>	"ASCII"
+<icu:alias>	"x-msx-ar-video"
 
 CHARMAP
 <U0020>	\x20	|4

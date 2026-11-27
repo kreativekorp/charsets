@@ -1,4 +1,4 @@
-<code_set_name>	"x-apple2e"
+<code_set_name>	"x-apple2e-apple"
 <char_name_mask>	"AXXXX"
 <mb_cur_min>	1
 <mb_cur_max>	1
@@ -6,6 +6,7 @@
 <subchar>	\xBF
 <icu:state>	0-41, 42.p, 43-44, 45-47.p, 48-4e, 4f-52.p, 53, 54.p, 55-56, 57-59.p, 5a-5b, 5c-5e.p, 5f-ff
 <icu:charsetFamily>	"ASCII"
+<icu:alias>	"x-apple2e"
 
 CHARMAP
 <U0000>	\x80	|0

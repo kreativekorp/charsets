@@ -675,7 +675,7 @@ Latin8                                  x-iso-8859-14
 latin8                                  x-iso-8859-14
 Latin9                                  x-iso-8859-15
 mac                                     x-MacRoman
-MacArabic                               x-MacArabic-dir
+MacArabic                               x-MacArabic
 MacCeltic                               x-MacCeltic
 MacCentralEuropean                      x-MacCentralEuropean
 MacChineseSimplified                    x-MacChineseSimplified
@@ -684,12 +684,12 @@ MacCroatian                             x-MacCroatian
 MacCyrillic                             x-MacCyrillic
 MacDevanagari                           x-MacDevanagari
 MacDingbats                             x-MacDingbats
-MacFarsi                                x-MacFarsi-dir
+MacFarsi                                x-MacFarsi
 MacGaelic                               x-MacGaelic
 MacGreek                                x-MacGreek
 MacGujarati                             x-MacGujarati
 MacGurmukhi                             x-MacGurmukhi
-MacHebrew                               x-MacHebrew-dir
+MacHebrew                               x-MacHebrew
 MacIcelandic                            x-MacIcelandic
 Macintosh                               x-MacRoman
 macintosh                               x-MacRoman
@@ -697,7 +697,7 @@ MacInuit                                x-MacInuit
 MacJapanese                             x-MacJapanese
 MacKeyboard                             x-MacKeyboard
 MacKorean                               x-MacKorean
-MacOSArabic                             x-MacArabic-dir
+MacOSArabic                             x-MacArabic
 MacOSCeltic                             x-MacCeltic
 MacOSCentralEuropean                    x-MacCentralEuropean
 MacOSChineseSimplified                  x-MacChineseSimplified
@@ -706,12 +706,12 @@ MacOSCroatian                           x-MacCroatian
 MacOSCyrillic                           x-MacCyrillic
 MacOSDevanagari                         x-MacDevanagari
 MacOSDingbats                           x-MacDingbats
-MacOSFarsi                              x-MacFarsi-dir
+MacOSFarsi                              x-MacFarsi
 MacOSGaelic                             x-MacGaelic
 MacOSGreek                              x-MacGreek
 MacOSGujarati                           x-MacGujarati
 MacOSGurmukhi                           x-MacGurmukhi
-MacOSHebrew                             x-MacHebrew-dir
+MacOSHebrew                             x-MacHebrew
 MacOSIcelandic                          x-MacIcelandic
 MacOSInuit                              x-MacInuit
 MacOSJapanese                           x-MacJapanese
@@ -739,10 +739,10 @@ MacVT100                                x-MacVT100
 # MinitelG1                             x-minitel-g1
 MS936                                   x-windows-936
 MSKanji                                 x-shift-jis-generic
-MSXArabic                               x-msx-ar-dir
-MSXArabicEuropean                       x-msx-ar-eu-dir
-MSXArabicEuropeanVideo                  x-msx-ar-eu-video-dir
-MSXArabicVideo                          x-msx-ar-video-dir
+MSXArabic                               x-msx-ar
+MSXArabicEuropean                       x-msx-ar-eu
+MSXArabicEuropeanVideo                  x-msx-ar-eu-video
+MSXArabicVideo                          x-msx-ar-video
 MSXBrazilian                            x-msx-br
 MSXBrazilianGradiente                   x-msx-br-gradiente
 MSXBrazilianGradienteVideo              x-msx-br-gradiente-video
@@ -894,7 +894,7 @@ xkksupermultinational                   x-kk-supermultinational-full
 xkksupermultinationalc0                 x-kk-supermultinational-c0
 xkksuperroman                           x-kk-superroman-full
 xkksuperromanc0                         x-kk-superroman-c0
-xmacarabic                              x-MacArabic-dir
+xmacarabic                              x-MacArabic
 xmacce                                  x-MacCentralEuropean
 xmacceltic                              x-MacCeltic
 xmaccentraleurroman                     x-MacCentralEuropean
@@ -904,12 +904,12 @@ xmaccroatian                            x-MacCroatian
 xmaccyrillic                            x-MacCyrillic
 xmacdevanagari                          x-MacDevanagari
 xmacdingbats                            x-MacDingbats
-xmacfarsi                               x-MacFarsi-dir
+xmacfarsi                               x-MacFarsi
 xmacgaelic                              x-MacGaelic
 xmacgreek                               x-MacGreek
 xmacgujarati                            x-MacGujarati
 xmacgurmukhi                            x-MacGurmukhi
-xmachebrew                              x-MacHebrew-dir
+xmachebrew                              x-MacHebrew
 xmacicelandic                           x-MacIcelandic
 xmacinuit                               x-MacInuit
 xmacjapanese                            x-MacJapanese

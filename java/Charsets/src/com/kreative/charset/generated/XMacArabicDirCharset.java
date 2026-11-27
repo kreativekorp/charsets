@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMacArabicDirCharset extends Charset {
 	public XMacArabicDirCharset() {
-		super("x-MacArabic-dir", new String[]{});
+		super("x-MacArabic-dir", new String[]{"x-MacArabic"});
 	}
 
 	public boolean contains(Charset cs) {

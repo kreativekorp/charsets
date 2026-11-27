@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 
 public class XMacFarsiDirCharset extends Charset {
 	public XMacFarsiDirCharset() {
-		super("x-MacFarsi-dir", new String[]{});
+		super("x-MacFarsi-dir", new String[]{"x-MacFarsi"});
 	}
 
 	public boolean contains(Charset cs) {

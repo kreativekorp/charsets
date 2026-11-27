@@ -24,15 +24,18 @@ x-ansi-x34-1963	ASCII|ANSI X3.4-1963
 x-ansi-x34-1965	ASCII|ANSI X3.4-1965
 x-ansi-x34-1967	ASCII|ANSI X3.4-1967
 x-apple2	Apple II|Apple II
-x-apple2c	Apple II|Apple IIc (Apple)
+x-apple2c	Apple II|Apple IIc
+x-apple2c-apple	Apple II|Apple IIc (Apple)
 x-apple2c-emoji	Apple II|Apple IIc (Emoji)
 x-apple2c-linux	Apple II|Apple IIc (Linux)
 x-apple2c-mod	Apple II|Apple IIc (Modern)
-x-apple2e	Apple II|Apple IIe (Apple)
+x-apple2e	Apple II|Apple IIe
+x-apple2e-apple	Apple II|Apple IIe (Apple)
 x-apple2e-emoji	Apple II|Apple IIe (Emoji)
 x-apple2e-linux	Apple II|Apple IIe (Linux)
 x-apple2e-mod	Apple II|Apple IIe (Modern)
-x-apple2gs	Apple II|Apple IIgs (Apple)
+x-apple2gs	Apple II|Apple IIgs
+x-apple2gs-apple	Apple II|Apple IIgs (Apple)
 x-apple2gs-emoji	Apple II|Apple IIgs (Emoji)
 x-apple2gs-linux	Apple II|Apple IIgs (Linux)
 x-apple2gs-mod	Apple II|Apple IIgs (Modern)
@@ -453,6 +456,7 @@ x-ksx-1001	CJK|KS X 1001
 x-ksx-1003	CJK|KS X 1003
 x-kz-1048	Cyrillic|KZ-1048
 x-latin9p-video	Commodore|Latin-9P (Video)
+x-MacArabic	Mac OS Classic|Mac OS Arabic
 x-MacArabic-dir	Mac OS Classic|Mac OS Arabic (Directional)
 x-MacArabic-java	Mac OS Classic|Mac OS Arabic (Java)
 x-MacArabic-nondir	Mac OS Classic|Mac OS Arabic (Nondirectional)
@@ -479,6 +483,7 @@ x-MacDevanagari	Mac OS Classic|Mac OS Devanagari
 x-MacDingbats	Mac OS Classic|Mac OS Dingbats
 x-MacDingbats-1992	Mac OS Classic|Mac OS Dingbats (1992)
 x-MacDingbats-2002	Mac OS Classic|Mac OS Dingbats (2002)
+x-MacFarsi	Mac OS Classic|Mac OS Farsi
 x-MacFarsi-dir	Mac OS Classic|Mac OS Farsi (Directional)
 x-MacFarsi-java	Mac OS Classic|Mac OS Farsi (Java)
 x-MacFarsi-nondir	Mac OS Classic|Mac OS Farsi (Nondirectional)
@@ -493,6 +498,7 @@ x-MacGreek-1998	Mac OS Classic|Mac OS Greek (1998)
 x-MacGreek-2002	Mac OS Classic|Mac OS Greek (2002)
 x-MacGujarati	Mac OS Classic|Mac OS Gujarati
 x-MacGurmukhi	Mac OS Classic|Mac OS Gurmukhi
+x-MacHebrew	Mac OS Classic|Mac OS Hebrew
 x-MacHebrew-dir	Mac OS Classic|Mac OS Hebrew (Directional)
 x-MacHebrew-java	Mac OS Classic|Mac OS Hebrew (Java)
 x-MacHebrew-nondir	Mac OS Classic|Mac OS Hebrew (Nondirectional)
@@ -564,16 +570,22 @@ x-mousedesk-qmk	Apple II|MouseGraphics (MGTK) Mikiana
 x-mousedesk-sv	Apple II|MouseGraphics (MGTK) Swedish
 x-msx	MSX|MSX International
 x-msx-video	MSX|MSX International (Video)
+x-msx-ar	MSX|MSX Arabic
 x-msx-ar-dir	MSX|MSX Arabic (Directional)
 x-msx-ar-nondir	MSX|MSX Arabic (Nondirectional)
+x-msx-ar-video	MSX|MSX Arabic (Video)
 x-msx-ar-video-dir	MSX|MSX Arabic (Video) (Directional)
 x-msx-ar-video-nondir	MSX|MSX Arabic (Video) (Nondirectional)
+x-msx-ar-eu	MSX|MSX Arabic/European
 x-msx-ar-eu-dir	MSX|MSX Arabic/European (Directional)
 x-msx-ar-eu-nondir	MSX|MSX Arabic/European (Nondirectional)
+x-msx-ar-eu-video	MSX|MSX Arabic/European (Video)
 x-msx-ar-eu-video-dir	MSX|MSX Arabic/European (Video) (Directional)
 x-msx-ar-eu-video-nondir	MSX|MSX Arabic/European (Video) (Nondirectional)
+x-msx-ar-eu-digits	MSX|MSX Arabic with European Digits
 x-msx-ar-eu-digits-dir	MSX|MSX Arabic with European Digits (Directional)
 x-msx-ar-eu-digits-nondir	MSX|MSX Arabic with European Digits (Nondirectional)
+x-msx-ar-eu-digits-video	MSX|MSX Arabic with European Digits (Video)
 x-msx-ar-eu-digits-video-dir	MSX|MSX Arabic with European Digits (Video) (Directional)
 x-msx-ar-eu-digits-video-nondir	MSX|MSX Arabic with European Digits (Video) (Nondirectional)
 x-msx-br	MSX|MSX Brazilian

@@ -4,9 +4,9 @@ import com.kreative.charset.TableCharsetDecoder;
 import com.kreative.charset.TableCharsetEncoder;
 import java.nio.charset.Charset;
 
-public class XApple2eCharset extends Charset {
-	public XApple2eCharset() {
-		super("x-apple2e", new String[]{});
+public class XApple2eAppleCharset extends Charset {
+	public XApple2eAppleCharset() {
+		super("x-apple2e-apple", new String[]{"x-apple2e"});
 	}
 
 	public boolean contains(Charset cs) {
@@ -14,15 +14,15 @@ public class XApple2eCharset extends Charset {
 	}
 
 	public TableCharsetDecoder newDecoder() {
-		return new XApple2eCharsetDecoder(this);
+		return new XApple2eAppleCharsetDecoder(this);
 	}
 
 	public TableCharsetEncoder newEncoder() {
-		return new XApple2eCharsetEncoder(this);
+		return new XApple2eAppleCharsetEncoder(this);
 	}
 
-	private static final class XApple2eCharsetDecoder extends TableCharsetDecoder {
-		private XApple2eCharsetDecoder(Charset cs) {
+	private static final class XApple2eAppleCharsetDecoder extends TableCharsetDecoder {
+		private XApple2eAppleCharsetDecoder(Charset cs) {
 			super(cs, 1.06641f, 2f, 1);
 		}
 		protected int getNextState(int state, int input) {
@@ -56,8 +56,8 @@ public class XApple2eCharset extends Charset {
 		}
 	}
 
-	private static final class XApple2eCharsetEncoder extends TableCharsetEncoder {
-		private XApple2eCharsetEncoder(Charset cs) {
+	private static final class XApple2eAppleCharsetEncoder extends TableCharsetEncoder {
+		private XApple2eAppleCharsetEncoder(Charset cs) {
 			super(cs, 1f, 1f, new byte[]{-65}, 2);
 		}
 		private int getNextState0(int input) {

@@ -127,7 +127,7 @@ koi8-u.kte                              346965          x-koi8-u
 ksc5601.kte                             333281          x-ksc-5601
 ksx1001.kte                             328681          x-ksx-1001
 kz-1048.kte                             328728          x-kz-1048
-macarabic.kte                           263168          x-MacArabic-dir
+macarabic.kte                           263168          x-MacArabic
 macceltic.kte                           262272          x-MacCeltic
 maccentraleuropean.kte                  269568          x-MacCentralEuropean
 macchinesesimplified.kte                268544          x-MacChineseSimplified
@@ -136,12 +136,12 @@ maccroatian.kte                         262162          x-MacCroatian
 maccyrillic.kte                         263936          x-MacCyrillic
 macdevanagari.kte                       264448          x-MacDevanagari
 macdingbats.kte                         270349          x-MacDingbats
-macfarsi.kte                            263199          x-MacFarsi-dir
+macfarsi.kte                            263199          x-MacFarsi
 macgaelic.kte                           262179          x-MacGaelic
 macgreek.kte                            263680          x-MacGreek
 macgujarati.kte                         264960          x-MacGujarati
 macgurmukhi.kte                         264704          x-MacGurmukhi
-machebrew.kte                           263424          x-MacHebrew-dir
+machebrew.kte                           263424          x-MacHebrew
 macicelandic.kte                        262159          x-MacIcelandic
 macinuit.kte                            269455          x-MacInuit
 macjapanese.kte                         262400          x-MacJapanese
