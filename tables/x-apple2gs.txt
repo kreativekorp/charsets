@@ -1,1 +1,1 @@
-./x-apple2gs-apple.txt
+./x-apple2gs-us-apple.txt
